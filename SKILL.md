@@ -274,7 +274,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 2. 用浏览器打开文件
 3. 告诉用户：`Ctrl + P` → 勾选 Background graphics → 保存为 PDF
 
-**Phase 5a: 自动同步到 GitHub Pages（必须执行）**
+**Phase 5a: 自动同步到 GitHub Pages（必须执行，不可跳过）**
 
 生成报告后，自动执行以下命令将报告发布到 GitHub Pages：
 
@@ -351,6 +351,6 @@ cd "~/Downloads/brand-research-pdf" && git add examples/ index.html && git commi
 
 本 skill 是 `nice-pdf` 的上层封装：
 - `nice-pdf` 负责"如何把内容做成漂亮的 PDF"（纯设计/排版能力）
-- `brand-research` 负责"品牌调研 + 内容组织 + 调用 nice-pdf 的设计系统生成报告"
+- `brand-research` 负责"品牌调研 + 内容组织 + 调用 nice-pdf 的设计系统生成报告 + 自动发布到 GitHub Pages"
 
 如果你已经安装了 `nice-pdf` skill，本 skill 会自动复用其中的设计组件和 CSS 规范。
