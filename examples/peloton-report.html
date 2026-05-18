@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Peloton 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+
+:root {
+    --warm-cream: #FFF8F0;
+    --terracotta: #E07A5F;
+    --sage: #81B29A;
+    --navy: #3D5A80;
+    --charcoal: #2B2D42;
+    --soft-peach: #F4ACB7;
+    --mid-gray: #8B8B8B;
+    --border-light: #E6DFD3;
+    --bg-stripe: #FCFAF7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
+    font-size: 13.5px; line-height: 1.55;
+    color: var(--charcoal); background: #D5CFC6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    width: 297mm; min-height: 210mm;
+    margin: 16px auto; background: var(--warm-cream);
+    position: relative; page-break-after: always;
+    padding: 28px 52px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.page.cover {
+    display: flex; flex-direction: row; align-items: center;
+    justify-content: center; text-align: left; gap: 70px;
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%);
+    padding: 45px 65px;
+}
+.cover-label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 28px; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 18px; color: var(--navy); line-height: 1.5; }
+.cover-line { width: 60px; height: 3px; background: var(--terracotta); margin: 26px 0; }
+.cover-footer { font-size: 11px; color: var(--mid-gray); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.7); border-radius: 10px; padding: 20px 26px; text-align: center; }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--terracotta); }
+.cover-stat .cs-label { font-size: 10px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px; }
+
+.page-number { position: absolute; top: 24px; right: 52px; font-family: 'Crimson Pro', serif; font-size: 11px; color: var(--mid-gray); }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; color: var(--charcoal); margin-bottom: 14px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--navy); margin: 14px 0 8px 0; }
+h3 { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+p { margin-bottom: 7px; color: #3D3D3D; }
+
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 16px 0; }
+.callout { background: #FDF2EC; border-left: 3px solid var(--terracotta); padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #5D4037; page-break-inside: avoid; }
+.callout strong { color: var(--terracotta); }
+
+.info-table { width: 100%; border-collapse: collapse; font-size: 12.5px; page-break-inside: avoid; }
+.info-table thead th { background: var(--charcoal); color: white; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+.info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-right { text-align: right !important; }
+.td-impact { text-align: center; font-weight: 700; }
+.impact-up { color: var(--sage); }
+.impact-down { color: var(--terracotta); }
+.impact-neutral { color: var(--navy); }
+
+.stat-row { display: flex; gap: 12px; page-break-inside: avoid; }
+.stat-card { flex: 1; background: white; border-radius: 8px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--terracotta); }
+.stat-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 1px; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; page-break-inside: avoid; }
+.kpi-card { background: white; border-radius: 8px; padding: 12px 10px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--terracotta); }
+.kpi-label { font-size: 9.5px; color: var(--mid-gray); }
+.kpi-compare { font-size: 9px; margin-top: 2px; }
+.kpi-up { color: var(--sage); }
+.kpi-down { color: var(--terracotta); }
+
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; page-break-inside: avoid; }
+.insight-card { background: white; border-radius: 10px; padding: 18px 20px 16px; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
+.insight-card.right { border-top: 3px solid var(--sage); }
+.insight-card.wrong { border-top: 3px solid var(--terracotta); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; opacity: 0.12; position: absolute; top: 8px; right: 14px; }
+.insight-card.right .insight-num { color: var(--sage); }
+.insight-card.wrong .insight-num { color: var(--terracotta); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 17px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; padding-right: 40px; }
+.insight-kpi { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.insight-card.right .insight-kpi { color: var(--sage); }
+.insight-card.wrong .insight-kpi { color: var(--terracotta); }
+.insight-card p { font-size: 12px; color: #4A4A4A; line-height: 1.5; margin-bottom: 10px; }
+.insight-vs { font-size: 10.5px; color: var(--mid-gray); padding-top: 8px; border-top: 1px solid var(--border-light); }
+.insight-vs span { font-weight: 600; color: var(--navy); }
+
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; page-break-inside: avoid; }
+
+.quote-card { background: white; border-left: 3px solid var(--sage); padding: 10px 14px; margin: 6px 0; border-radius: 0 6px 6px 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 14px; font-style: italic; color: #3D3D3D; page-break-inside: avoid; }
+.quote-source { display: block; margin-top: 4px; font-size: 10.5px; font-style: normal; color: var(--mid-gray); }
+
+.review-stat-box { display: flex; align-items: center; gap: 24px; background: white; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); margin-bottom: 12px; }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--sage); }
+.review-big-label { font-size: 11px; color: var(--mid-gray); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; }
+.bar-track { flex: 1; height: 14px; background: #EBE5DA; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--sage); }
+.bar-4 { background: #A3C4B3; }
+.bar-3 { background: #C9A96E; }
+.bar-2 { background: #E8927A; }
+.bar-1 { background: var(--terracotta); }
+.pct-label { width: 40px; text-align: right; font-weight: 500; }
+
+.conclusion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; page-break-inside: avoid; }
+.conclusion-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; color: var(--terracotta); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 3px; font-size: 14px; color: var(--navy); }
+.conclusion-card p { font-size: 12px; color: #3D3D3D; margin-top: 4px; line-height: 1.5; }
+
+@media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    body { background: white; }
+    .page { margin: 0; page-break-after: always; box-shadow: none; }
+    h1, h2, h3 { page-break-after: avoid; }
+    .callout, .info-table, .stat-row, .quote-card, .insight-card, .insight-grid,
+    .conclusion-card, .col-2, .conclusion-grid, .review-stat-box, .kpi-grid, .kpi-card { page-break-inside: avoid; }
+}
+@page { size: A4 landscape; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 01: COVER ==================== -->
+<div class="page cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">Peloton<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">
+            从 $50B 市值到濒临破产 · 全球最大互联健身品牌的崛起与坠落<br>社区崇拜 · 供应链灾难 · 三度换帅 · 安全召回
+        </div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">$50B</div><div class="cs-label">2020 峰值市值</div></div>
+            <div class="cover-stat"><div class="cs-num">$1.2B</div><div class="cs-label">2025 市值（-97.6%）</div></div>
+            <div class="cover-stat"><div class="cs-num">$4B</div><div class="cs-label">FY2021 营收峰值</div></div>
+            <div class="cover-stat"><div class="cs-num">2.88M</div><div class="cs-label">互联健身订阅用户</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 02: TIMELINE ==================== -->
+<div class="page">
+    <div class="page-number">01</div>
+    <div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2012–2025）</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:75px">时间</th>
+                <th style="width:380px">事件</th>
+                <th style="width:310px">关键细节</th>
+                <th style="width:65px">影响</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2012</strong></td>
+                <td>John Foley 在纽约创立 Peloton</td>
+                <td>Foley 曾是 Barnes & Noble 电商总裁，因为带两个孩子无法去健身房的痛点创办 Peloton。自掏 $5 万、动用了 401(k) 养老金。最初 VC 拒绝了 400 次</td>
+                <td class="td-impact impact-neutral">冷启动</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2013.07</strong></td>
+                <td>Kickstarter 众筹 $307K，297 位支持者</td>
+                <td>第一台单车原型发布；在新泽西开设首家零售展厅。Foley 称："我们不是卖单车的公司，我们是媒体公司"</td>
+                <td class="td-impact impact-up">验证 PMF</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2019.09</strong></td>
+                <td>NASDAQ 上市（PTON），$29/股，估值 $8.1B</td>
+                <td>上市首日跌 11%——2019 年独角兽 IPO 表现倒数第二。但 FY2019 营收 $9.15 亿（+110% YoY），140 万+ 订阅用户，95%+ 留存率</td>
+                <td class="td-impact impact-up">公开市场</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>疫情爆发——市值从 $8B→$50B</td>
+                <td>Q4 2020 首次盈利；营收 +172%；订阅用户 1.09M（+113%）；总会员 3.1M+。被贴上"疫情最大赢家"标签，股价触及 $162/股</td>
+                <td class="td-impact impact-up">巅峰</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021</strong></td>
+                <td>跑步机致死事故 + 需求骤降</td>
+                <td>Tread+ 导致 1 名儿童死亡和 ~70 人受伤。Foley 起初拒绝召回（后被 CPSC 强制召回）。投资 $4.2 亿收购 Precor、宣布建俄亥俄"Peloton Output Park"超级工厂。需求开始崩塌</td>
+                <td class="td-impact impact-down">致命转折</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022.02</strong></td>
+                <td>John Foley 下台，Barry McCarthy 接任 CEO</td>
+                <td>裁员 2,800 人（20%）；取消俄亥俄工厂；将制造外包给台湾 Rexon；股价从 $162 跌至 ~$11。McCarthy 是前 Netflix/Spotify CFO</td>
+                <td class="td-impact impact-down">紧急换帅</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>第二次大规模召回 + 营收继续下滑</td>
+                <td>召回 220 万辆原版 Bike（座杆缺陷）；$1,900 万民事罚款（未及时报告 Tread+ 缺陷）；FY2023 营收 -14% 至 $28 亿；净亏损 $12.6 亿</td>
+                <td class="td-impact impact-down">信任危机</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024.05</strong></td>
+                <td>CEO McCarthy 下台 + 再裁员 400 人</td>
+                <td>股价创历史新低 ~$2.70（-98% vs 峰值）；债务 $9.47 亿；$95 二手单车激活费引发用户愤怒；Lululemon 合作终止</td>
+                <td class="td-impact impact-down">谷底</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025.01</strong></td>
+                <td>Peter Stern 出任第三任 CEO</td>
+                <td>Stern 来自 Apple Fitness+，提出"健康寿命"新战略（力量+心理健康+营养）。年底召回 83.3 万辆 Bike+，明星教练离职潮</td>
+                <td class="td-impact impact-neutral">换帅重启</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ==================== PAGE 03: FINANCIALS ==================== -->
+<div class="page">
+    <div class="page-number">02</div>
+    <div class="section-label">Financials</div>
+    <h1>二、收入与估值变化</h1>
+
+    <div class="callout">
+        <strong>核心矛盾：</strong>Peloton 从 $50B 市值跌到 $1.2B（-97.6%），但仍然是全球最大的互联健身平台——2.88M 订阅用户，年营收 ~$27 亿。问题是：它的商业模式从未真正盈利，且营收连续 3 年下滑。债务 $9.47 亿，现金仅 $9.14 亿，Altman Z-Score <strong>-1.71</strong>（破产风险区）。
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">$4.0B</div><div class="stat-label">FY2021 营收峰值</div></div>
+        <div class="stat-card"><div class="stat-number">$2.7B</div><div class="stat-label">FY2024 营收（-33%）</div></div>
+        <div class="stat-card"><div class="stat-number">$50B</div><div class="stat-label">2020 峰值市值</div></div>
+        <div class="stat-card"><div class="stat-number">$1.2B</div><div class="stat-label">2025 市值（-97.6%）</div></div>
+        <div class="stat-card"><div class="stat-number">$947M</div><div class="stat-label">长期债务</div></div>
+        <div class="stat-card"><div class="stat-number">$914M</div><div class="stat-label">现金储备</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>营收变化</h2>
+            <table class="info-table">
+                <thead><tr><th>财年</th><th style="width:90px">营收</th><th style="width:80px">YoY</th><th style="width:100px">净利/亏损</th></tr></thead>
+                <tbody>
+                    <tr><td>FY2019</td><td class="td-right">$915M</td><td class="td-center impact-up">+110%</td><td class="td-right">-$196M</td></tr>
+                    <tr><td>FY2020</td><td class="td-right">$1.83B</td><td class="td-center impact-up">+100%</td><td class="td-right">-$72M</td></tr>
+                    <tr><td>FY2021</td><td class="td-right"><strong>$4.02B</strong></td><td class="td-center impact-up">+120%</td><td class="td-right">-$189M</td></tr>
+                    <tr><td>FY2022</td><td class="td-right">$3.58B</td><td class="td-center impact-down">-11%</td><td class="td-right">-$2.83B</td></tr>
+                    <tr><td>FY2023</td><td class="td-right">$2.80B</td><td class="td-center impact-down">-22%</td><td class="td-right">-$1.26B</td></tr>
+                    <tr><td>FY2024</td><td class="td-right">$2.70B</td><td class="td-center impact-down">-3.5%</td><td class="td-right">-$552M</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:90px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>互联健身订阅（2024）</td><td class="td-right">2.88M（YoY -6%）</td></tr>
+                    <tr><td>App 订阅（2024）</td><td class="td-right">-15-21% YoY</td></tr>
+                    <tr><td>设备收入占比（FY2021）</td><td class="td-right">78% → 33%（FY2025E）</td></tr>
+                    <tr><td>订阅收入占比</td><td class="td-right">22% → 67%</td></tr>
+                    <tr><td>月均流失率</td><td class="td-right">1.5-2%（高于 Tonal <1%）</td></tr>
+                    <tr><td>IPO 以来 CEO</td><td class="td-right">Foley→McCarthy→Stern（3任）</td></tr>
+                    <tr><td>Altman Z-Score</td><td class="td-right"><strong>-1.71（破产风险）</strong></td></tr>
+                    <tr><td>2019 IPO 价→2024 最低</td><td class="td-right">$29 → $2.70（-91%）</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 04: COMPETITIVE ==================== -->
+<div class="page">
+    <div class="page-number">03</div>
+    <div class="section-label">Competitive Landscape</div>
+    <h1>三、竞争对手同期对比</h1>
+
+    <p>Peloton 曾是互联健身的代名词。但在 2021-2025 年间，其市值蒸发 97.6%，而竞对不同命运：Tonal 估值腰斩但活了下来，Mirror 直接归零，Tempo 稳步运营。</p>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:60px">时间</th>
+                <th style="width:195px">Peloton</th>
+                <th style="width:195px">Tonal（力量训练）</th>
+                <th style="width:195px">Mirror / Lululemon</th>
+                <th style="width:195px">Apple Fitness+</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2019</strong></td>
+                <td>IPO $8.1B；$9.15 亿营收</td>
+                <td>$45M Series C，早期增长</td>
+                <td>Lululemon 尚未收购</td>
+                <td>尚未发布</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>疫情红利：$50B 市值，$4B 营收</td>
+                <td>销量 8× 暴增；$110M D 轮</td>
+                <td>被 Lululemon $5 亿收购</td>
+                <td>12 月发布，$9.99/月，苹果生态</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022</strong></td>
+                <td>Foley 下台；股价 -76%；裁员 2,800</td>
+                <td>裁员 35%；寻求出售</td>
+                <td>销售远低于预期，Lululemon 注销 $4.43 亿</td>
+                <td>用户增长稳定（苹果用户 10 亿+）</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>召回 220 万辆；营收 -22%；净亏 $12.6 亿</td>
+                <td>$130M 融资；估值 -66%；CEO 换人</td>
+                <td><strong>正式停产</strong>；与 Peloton 合作</td>
+                <td>不断扩展内容品类</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024</strong></td>
+                <td>股价 $2.70 最低；CEO 再换；$95 激活费争议</td>
+                <td>再换 CEO；$100M+ ARR</td>
+                <td>硬件已死，App 免费化</td>
+                <td>持续蚕食低价市场</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>Peter Stern 接任；83.3 万 Bike+ 召回；教练流失</td>
+                <td>PE 接管（第 4 任 CEO）</td>
+                <td>不存在了</td>
+                <td>全球最大健身内容平台之一</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">$1.2B</div>
+            <div class="kpi-label">Peloton 市值</div>
+            <div class="kpi-compare kpi-down">-97.6% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$550M</div>
+            <div class="kpi-label">Tonal 估值</div>
+            <div class="kpi-compare kpi-down">-66% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$0</div>
+            <div class="kpi-label">Mirror 残值</div>
+            <div class="kpi-compare kpi-down">$500M→$0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">2.88M</div>
+            <div class="kpi-label">Peloton 订阅用户</div>
+            <div class="kpi-compare">行业最大</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">Z:-1.71</div>
+            <div class="kpi-label">破产风险评分</div>
+            <div class="kpi-compare kpi-down">危险区</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 05: RIGHT 1/2 ==================== -->
+<div class="page">
+    <div class="page-number">04</div>
+    <div class="section-label">Success Factors</div>
+    <h1>四、Peloton 做对了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">01</div>
+            <h4>内容即产品：教练明星化 + 社区崇拜</h4>
+            <div class="insight-kpi">NPS 长期 >70 · 留存率峰值 >95% · 教练粉丝数量堪比网红 · "185 周连续打卡"用户常见</div>
+            <p>Peloton 最根本的发明不是联网单车（联网单车早就有了），而是<strong>把健身教练变成了媒体明星</strong>。Alex Toussaint、Cody Rigsby、Robin Arzon 等明星教练拥有粉丝数百万，用户购买 Peloton 不是因为需要单车，而是因为想上这些教练的课。这形成了强大的情感绑定：用户在社交媒体上展示骑行数据（#PelotonMoms、#HardCORE），形成社群认同。Peloton 的 NPS 在 70+ 的超高区间维持了多年——这是苹果级别的用户忠诚度。就连 2024 年$95 激活费引发轩然大波时，用户骂的不是产品，而是管理层——他们仍然深爱着教练和课程。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 的核心价值在硬件（电磁阻力），内容为辅。Peloton 的核心价值在内容，硬件为辅。<span>vs Apple Fitness+:</span> 内容质量不差，但缺乏真人教练的情感连接和社区感。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">02</div>
+            <h4>硬件+订阅的"Kindle 模式"：教科书级的捆绑经济学</h4>
+            <div class="insight-kpi">峰值订阅收入 $1B+ · 用户 LTV $3,000+ · 硬件毛利 35% + 订阅毛利 65% · 从"卖设备"→"卖服务"转型</div>
+            <p>Foley 从亚马逊 Kindle 身上学到了"封闭生态 + 内容消费"的商业模式：硬件以成本加成价卖出（甚至亏损），靠订阅内容赚取终身价值。这个模式在工作时极为强大——硬件锁定了用户（Bike $1,445+ 不可能随便扔掉），订阅提供了持续收入流（$44/月 × 终身）。2021 年峰值时 78% 的收入来自硬件销售，但到 2025 年 67% 的收入已经来自订阅——这正是 Foley 最初构想的"媒体公司"转型。而且 Peloton 的订阅毛利率高达 ~65%，高于 Netflix（~40%）和 Spotify（~25%），因为内容制作成本（工作室+教练薪资）远低于影视制作。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 订阅毛利率更高（数字内容+无影视成本），但用户基数小得多（~10 万 vs ~300 万）。<span>vs Netflix:</span> Netflix 内容成本 $170 亿/年，Peloton 内容成本估计不到 $1 亿/年。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">03</div>
+            <h4>垂直整合：从工厂到屏幕的全链条控制</h4>
+            <div class="insight-kpi">自有工厂（Precor + 台湾 Rexon）· 自营零售店 · 自有物流 · 自产内容 · 自研软件</div>
+            <p>在巅峰时期，Peloton 控制了价值链的每一个环节：设计、制造（收购 Precor + 自建工厂）、零售（100+ 家展厅）、最后一公里物流（Peloton 认证团队上门安装）、内容制作（NYC + London 工作室）、软件和应用层。这种垂直整合的好处是体验一致性和高壁垒——竞争对手可以造一台更便宜的单车，但无法在几个月内复制"从工厂到屏幕"的完整体验。即使在 2022 年转向外包制造后，Peloton 仍然保留了软件、内容、零售和品牌的核心控制权。Apple Fitness+ 有内容和平台但没有硬件；Tonal 有硬件但没有媒体级的教练 IP。</p>
+            <div class="insight-vs"><span>vs Apple Fitness+:</span> 苹果没有自有硬件（不卖健身设备），无法形成硬件+内容的闭环锁定。<span>vs Tonal:</span> Tonal 有硬件壁垒但内容只是"够用"，远没有 Peloton 的媒体基因。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">04</div>
+            <h4>疫情时机：2020 年完美风暴中的精准执行</h4>
+            <div class="insight-kpi">Q4 2020 首次盈利 · 营收 +172% YoY · 订阅用户翻倍至 1.09M · 股价从 $29→$162</div>
+            <p>疫情是 Peloton 最大的运气，但也是它证明执行力的时刻。在健身房全面关闭的 2020 年，Peloton 不仅抓住了需求激增，还做到了：迅速扩大产能（虽然仍跟不上需求）、推出直播课程数量翻倍、在户外骑行需求暴增时推出"Lanebreak"游戏化功能、利用用户社交分享（骑行统计截图）进行病毒式获客。2020 年 9 月 Peloton 的 Google 搜索量同比增长 400%。没有一家竞对能在速度上匹敌——Mirror 交付延迟 8-10 周，Tonal 同样缺货，只有 Peloton 在混乱中依然维持了相对稳定的交付。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 也受益于疫情，但产能和品牌影响力远不及 Peloton，最大年营收只有 Peloton 的 ~3%。<span>vs Mirror:</span> Lululemon 收购后未能有效整合，疫情红利转瞬即逝。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 06: RIGHT 2/2 ==================== -->
+<div class="page">
+    <div class="page-number">05</div>
+    <div class="section-label">Success Factors (Cont.)</div>
+    <h1>四、Peloton 做对了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">05</div>
+            <h4>从"杀死健身房"到"与健身房共存"的战略转向</h4>
+            <div class="insight-kpi">Lululemon 合作 · Amazon 销售 · 酒店/企业合作伙伴 · 二手市场激活费（争议但增收）</div>
+            <p>Peloton 最初的营销口号是"消灭健身房"（disrupt the gym）。但在 McCarthy 时代，公司做出了一个关键的务实转向：拥抱多渠道分销和合作伙伴关系。2023 年与 Lululemon 签署五年内容合作（虽然后来终止了硬件部分）；在 Amazon 上架 Bike；与酒店集团（Hilton、Marriott）合作在客房和健身房放置 Peloton 设备；通过 Costco 销售入门款。这标志着 Peloton 从傲慢的"独自革命"转向务实的"融入生态"——承认自己不可能替代健身房，但可以成为健身生态中最大的内容层。2025 年 Stern 提出的"健康寿命"战略进一步扩展到了力量训练、营养和心理健康。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 至今仍走 DTC 直销路线，未尝试多渠道分销。<span>vs Mirror:</span> Mirror 在 Lululemon 体系内试图走高端零售路线，但缺乏独立品牌力。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">06</div>
+            <h4>游戏化 + 数据 = 成瘾性体验</h4>
+            <div class="insight-kpi">Lanebreak 游戏模式 · Power Zone 训练 · 实时排行榜 · 连续打卡徽章 · Strava 同步</div>
+            <p>Peloton 的用户体验设计堪称行为心理学教科书。(1) 实时排行榜让你跟同时上课的几百人竞争排名——每次踩踏都变成一场小型比赛；(2) Power Zone 训练根据 FTP（功能阈值功率）个性化定制强度区间，让训练有科学依据和可衡量的进步；(3) Lanebreak 将骑行变成音乐驱动的节奏游戏，大幅降低了"今天不想骑车"的心理障碍；(4) 连续打卡徽章（7 天/30 天/52 周/年度回顾）利用损失厌恶心理激励坚持；(5) Strava 同步将 Peloton 数据导出到更大的运动社交网络。这些功能不是简单的 feature checklist——它们被精心设计为一套<strong>让用户上瘾的系统</strong>。</p>
+            <div class="insight-vs"><span>vs Apple Fitness+:</span> 苹果的游戏化极为克制（只有基本的 Activity Rings），缺乏排行榜和社交竞争。<span>vs Tonal:</span> Tonal 的 Strength Score 有争议（算法惩罚休息用户），游戏化设计不如 Peloton 成熟。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 07: WRONG 1/2 ==================== -->
+<div class="page">
+    <div class="page-number">06</div>
+    <div class="section-label">Risks & Mistakes</div>
+    <h1>五、Peloton 做错了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">01</div>
+            <h4>把疫情红利当永久需求：$4.2B 扩张灾难</h4>
+            <div class="insight-kpi">$4.2 亿收购 Precor · 俄亥俄"Peloton Output Park"工厂 · 3 次大规模裁员（-65% 员工）· 库存积压数十亿</div>
+            <p>这是 Peloton 最根本的战略错误。在 2020-2021 年——当 $50B 市值的泡沫顶峰时——管理层坚信"在家健身永久取代了健身房"。于是发生了：$4.2 亿收购健身器材制造商 Precor → 宣布在俄亥俄州建 100 万平方英尺的"Peloton Output Park"超级工厂 → 雇佣了 8,600 名员工 → 生产了大量单车和跑步机。当 2022 年健身房重新开放时，所有这些都变成了沉没成本：工厂项目被取消，Precor 被降价处置，3 次大规模裁员削减了 65% 的员工，仓库积压了数十亿美元的未售库存。如果 Foley 在 2021 年做了哪怕一次场景规划（"如果需求恢复到疫情前水平会怎样？"），就不会犯下这个级别的错误。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 犯了同样的错误（员工 110→750→350），但规模是 Peloton 的 1/10（$2.5 亿融资 vs Peloton $4.2B 收购）。<span>vs Mirror:</span> Lululemon 在 2020 年收购 Mirror 也是基于"永久在家健身"假设——$5 亿几乎全损。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">02</div>
+            <h4>跑步机致死事故 + 拒绝召回：品牌信任的核爆</h4>
+            <div class="insight-kpi">1 名儿童死亡 · ~70 人受伤 · Foley 起初拒绝 CPSC 召回 · $1,900 万民事罚款 · 永久性品牌污点</div>
+            <p>2021 年，Peloton Tread+ 跑步机导致 1 名 6 岁儿童被卷入机器死亡，另有 ~70 起受伤报告。CPSC（美国消费品安全委员会）发布罕见的安全警告，敦促消费者"立即停止使用"。John Foley 的回应是灾难性的：他<strong>最初拒绝召回</strong>，称 CPSC 的警告"不准确且具有误导性"。经过数周的公众压力和媒体报道后，Foley 最终道歉并同意召回。但这已经造成了不可逆的损害：(1) 消费者信任被严重侵蚀——一家声称"关心你的健康"的公司拒绝召回导致儿童死亡的产品；(2) $1,900 万民事罚款；(3) 品牌从"高端生活方式"变成了"危险产品"。2023 年和 2025 年的后续召回（座杆断裂）让用户每 2 年就要经历一次安全隐患。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 没有致命安全事件，但硬件故障率同样引发信任问题。<span>vs 行业标准:</span> 汽车行业的"主动召回"是品牌负责的表现。Peloton 的"拒绝→迫于压力→召回"路径是最糟糕的危机处理。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">03</div>
+            <h4>傲慢的"封闭花园"：拒绝 Amazon/第三方分销</h4>
+            <div class="insight-kpi">DTC 直销 100% → 2023 年才上 Amazon · 拒绝了所有 OEM/授权请求 · TAM 被压缩到富裕家庭</div>
+            <p>Peloton 早期坚持 DTC（直销）模式——只能从官网和自营展厅购买。这在品牌建设初期是正确的（控制体验），但在 2020 年之后变成了增长的限制器。当市场需求存在但获客成本飙升时，Peloton 仍然拒绝在 Amazon、Best Buy 或 Costco 上架。当其他健身硬件公司希望授权 Peloton 的内容（让他们的设备也能播放 Peloton 课程）时，Peloton 全部拒绝。这意味着：(1) 竞争对手（Echelon、NordicTrack）推出了自己的联网单车，用更便宜的价格占领了 Peloton 未触及的市场；(2) Peloton 的 TAM 被自己限制在"愿意去 Peloton 官网花 $1,445+ 的人"——一个远比"想在家骑车的人"小的多的群体。直到 2023 年才在 Amazon 上架 Bike。</p>
+            <div class="insight-vs"><span>vs Apple:</span> 苹果的封闭生态之所以有效是因为 iPhone 是必需品。Peloton Bike 不是。<span>vs Netflix:</span> Netflix 在 2011 年犯过类似错误（试图分拆 DVD 业务），但及时纠正。Peloton 的纠偏晚了 3 年。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">04</div>
+            <h4>$95 二手激活费：把最忠诚的用户变成敌人</h4>
+            <div class="insight-kpi">2024 年 8 月推出 · Reddit / Ars Technica / NY Post 集体声讨 · 二手机市场严重受损</div>
+            <p>2024 年 8 月，Peloton 推出了一个"天才"创收方案：任何人从 Marketplace/Facebook/Craigslist 买到二手 Peloton 设备后，必须支付 $95 的"激活费"才能解锁全部功能——在已经在付 $44/月订阅费的基础上。这个政策的荒谬之处在于：它惩罚的是最有可能成为长期付费用户的人（愿意买二手机说明他们对 Peloton 有兴趣但对价格敏感），同时严重打击了老用户的设备转售价值（买家会说"还要再交 $95？那我砍你 $95"）。Reddit 上的反应可以用"群情激愤"来形容，Ars Technica 和 NY Post 都做了负面报道。Peloton 后来将激活费内容包装为"包含 $25 配件信用+50% off 鞋+虚拟入门"，但这只是让糟糕的政策看起来更愚蠢。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 二手机直接剥夺保修和订阅功能，甚至更狠。但 Tonal 至少没有在已经收 $60/月的情况下再加收激活费。<span>vs 行业:</span> 没有其他大型硬件公司对二手购买者收取激活费——这本质上是"二手税"。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: WRONG 2/2 ==================== -->
+<div class="page">
+    <div class="page-number">07</div>
+    <div class="section-label">Risks & Mistakes (Cont.)</div>
+    <h1>五、Peloton 做错了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">05</div>
+            <h4>PR 灾难不断：从圣诞广告到 SATC 角色之死</h4>
+            <div class="insight-kpi">2019 圣诞广告"性别歧视+反乌托邦" · SATC 角色死在 Peloton 上 · 品牌从"酷"变成"梗"</div>
+            <p>Peloton 的 PR 团队似乎有"制造 meme 级灾难"的特殊天赋。2019 年的圣诞广告：一个丈夫送给已经很瘦的妻子一辆 Peloton Bike，妻子用一年时间拍摄自己的"蜕变"（她本来就瘦），然后给丈夫看。社交媒体立即炸了——"性别歧视"、"反乌托邦"、"丈夫嫌妻子胖的隐形暴力"。广告导致 Peloton 股价单日下跌 9%。然后是 2021 年 12 月，《欲望都市》重启版中一个核心角色（Mr. Big）在骑完 Peloton 后心脏病发作死亡。Peloton 紧急找 Ryan Reynolds 拍了一个反击广告，但伤害已经造成——品牌从高端生活方式的象征变成了互联网笑话的对象。这对一个靠"社区归属感"和"身份认同"来做营销的品牌来说是致命打击。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 的 Serena Williams 超级碗广告和 LeBron James 背书都正面，没有出现过 meme 级 PR 灾难。<span>vs Peloton 自己:</span> Foley 下台后 PR 策略有所改善，但品牌形象已深埋文化记忆中。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">06</div>
+            <h4>三次大规模安全召回 + 客服崩溃 = 信任的死亡螺旋</h4>
+            <div class="insight-kpi">3 次召回：Tread+（2021）→ 220 万 Bike（2023）→ 83.3 万 Bike+（2025）· 客服响应慢+外包+推卸责任</div>
+            <p>在 4 年内发生 3 次大规模召回，累计涉及超过 300 万台设备——这让消费者每次骑上 Peloton 时都多了一层"这东西会不会断？"的心理阴影。与之叠加的是客服质量的持续恶化：Trustpilot 上大量投诉集中在交付损坏、零件错误、维修等待 6 周+、Peloton 推卸责任给第三方物流（"你找 JB Hunt/XPO，不是我们的事"）。一台 $2,495 的 Bike+ 如果出了问题，用户期望的是 Apple Store 级别的售后——而他们得到的是 Comcast 级别的客服。当一个品牌同时面对"产品可能伤害我"和"出了问题没人管我"两个问题时，消费者信任的崩溃是加速的。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 硬件故障率同样高（Trustpilot 1.9/5），但至少没有致命安全事件。两者在客户服务上都是差生。<span>vs 行业最佳:</span> Apple 的 Genius Bar 是硬件+服务品牌的售后标杆——Peloton 离这个标准差了一个银河系。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 09: CUSTOMER REVIEWS ==================== -->
+<div class="page">
+    <div class="page-number">08</div>
+    <div class="section-label">Voice of Customer</div>
+    <h1>六、客户真实评价（含评分数据）</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>Trustpilot 评分（onepeloton.com）</h2>
+
+            <div class="review-stat-box">
+                <div>
+                    <div class="review-big-score">4.1<span style="font-size:24px">/5</span></div>
+                    <div class="review-big-label">"Great" · 6,700+ 条评价</div>
+                </div>
+                <div style="flex:1">
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-5" style="width:52%"></span></span>
+                        <span class="pct-label">~52%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-4" style="width:18%"></span></span>
+                        <span class="pct-label">~18%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-3" style="width:10%"></span></span>
+                        <span class="pct-label">~10%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-2" style="width:8%"></span></span>
+                        <span class="pct-label">~8%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★</span>
+                        <span class="bar-track"><span class="bar-fill bar-1" style="width:12%"></span></span>
+                        <span class="pct-label">~12%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                ※ 百分比基于 4.1 均值 + 6,700+ 评价内容反推估算。Peloton 回复了约 75% 的负面评价（通常在 2 周内）。Trustpilot 4.1/5 在健身硬件品类中属于中上——但投诉集中在少数特定问题上（交付、客服、召回）。
+            </p>
+
+            <h2>投诉主题分布</h2>
+            <table class="info-table">
+                <thead><tr><th>投诉类型</th><th style="width:50px">占比</th><th>代表性内容</th></tr></thead>
+                <tbody>
+                    <tr><td>交付/物流</td><td class="td-center"><strong>~35%</strong></td><td>"送货迟到数周"、"零件缺失"、"第三方物流推卸责任"</td></tr>
+                    <tr><td>客服响应</td><td class="td-center"><strong>~25%</strong></td><td>"等 6 周修不好"、"推给物流公司"、"外包客服敷衍"</td></tr>
+                    <tr><td>产品质量/召回</td><td class="td-center"><strong>~20%</strong></td><td>"座杆断裂"、"屏幕故障"、"新车就坏"</td></tr>
+                    <tr><td>收费/账单</td><td class="td-center"><strong>~12%</strong></td><td>"$95 激活费"、"重复扣费 2 年"、"退订后继续收费"</td></tr>
+                    <tr><td>软件/App 问题</td><td class="td-center"><strong>~8%</strong></td><td>"Strava 同步断开"、"FTP 数据 bug"、"卡顿"</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>正面评价</h2>
+
+            <div class="quote-card">
+                "这是我做过的最好的决定之一。内容和连接的体验非常出色——我已经连续 185 周没有中断了。"
+                <span class="quote-source">— Trustpilot 5 星评价（2025 年 3 月）</span>
+            </div>
+
+            <div class="quote-card">
+                "Peloton 的教练们太棒了。他们让我觉得我是重要的。每次骑上车我都能感受到一种在其他地方找不到的能量。"
+                <span class="quote-source">— Trustpilot 5 星评价（2024 年 11 月）</span>
+            </div>
+
+            <div class="quote-card">
+                "如果你从来没有用过 Peloton App、跑步机或者单车，你就错过了。2025 年是你尝试的年份！"
+                <span class="quote-source">— Trustpilot 5 星评价（2024 年 12 月）</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>负面评价</h2>
+
+            <div class="quote-card" style="border-left-color:var(--terracotta)">
+                "这是你能体验到的最糟糕的客服。他们把你当成麻烦，如果你能打通电话的话。"
+                <span class="quote-source">— Trustpilot 1 星评价（2024 年 10 月）</span>
+            </div>
+
+            <div class="quote-card" style="border-left-color:var(--terracotta)">
+                "$95 激活费简直是公然抢劫。我从 Facebook Marketplace 上买的二手车，现在要多付 $95 才能在已经付了每月 $44 的基础上使用它？疯了。"
+                <span class="quote-source">— Reddit r/pelotoncycle（2024 年 8 月）</span>
+            </div>
+
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:65px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>Trustpilot</td><td class="td-center"><strong>4.1/5</strong></td><td>健身硬件中上（Tonal 1.9）</td></tr>
+                    <tr><td>峰值 NPS</td><td class="td-center"><strong>70+</strong></td><td>苹果级别忠诚度</td></tr>
+                    <tr><td>订阅用户（仍在使用）</td><td class="td-center"><strong>2.88M</strong></td><td>尽管下滑，仍是行业最大</td></tr>
+                    <tr><td>流失率</td><td class="td-center">1.5-2%/月</td><td>可接受，但高于 Tonal（<1%）</td></tr>
+                    <tr><td>App 评分（iOS）</td><td class="td-center"><strong>4.8/5</strong></td><td>非常高</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                <strong>结论：</strong>Peloton 的评分数据展示了一个有趣的"分裂"——Trustpilot 4.1/5（远高于 Tonal 1.9），NPS 70+，App 4.8/5。说明 <strong>产品+内容是好的，但交付+客服体验正在侵蚀这个基础</strong>。而且 Trustpilot 上的好评更多是关于教练和课程的情感表达，差评更多是关于具体运营问题——这说明 Peloton 的"前台"（内容）和"后台"（运营）之间存在类似 Hyrox 的结构性断层。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 10: DATA + CONCLUSIONS ==================== -->
+<div class="page">
+    <div class="page-number">09</div>
+    <div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 &amp; 关键结论</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-right">2012，纽约</td></tr>
+                    <tr><td>创始人</td><td class="td-right">John Foley（2022 年离职）</td></tr>
+                    <tr><td>IPO</td><td class="td-right">2019.09 · NASDAQ: PTON · $29/股</td></tr>
+                    <tr><td>峰值市值（2020）</td><td class="td-right"><strong>$50B</strong></td></tr>
+                    <tr><td>当前市值（2025）</td><td class="td-right"><strong>~$1.2B（-97.6%）</strong></td></tr>
+                    <tr><td>FY2021 营收峰值</td><td class="td-right"><strong>$4.02B</strong></td></tr>
+                    <tr><td>FY2024 营收</td><td class="td-right"><strong>$2.70B（-33%）</strong></td></tr>
+                    <tr><td>互联健身订阅</td><td class="td-right"><strong>2.88M</strong>（YoY -6%）</td></tr>
+                    <tr><td>月订阅费</td><td class="td-right">$44/月（All-Access）</td></tr>
+                    <tr><td>硬件价格</td><td class="td-right">Bike $1,445 / Bike+ $2,495</td></tr>
+                    <tr><td>债务 / 现金</td><td class="td-right">$947M / $914M</td></tr>
+                    <tr><td>Altman Z-Score</td><td class="td-right"><strong>-1.71（破产风险）</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-right"><strong>4.1/5</strong> · 6,700+ 评价</td></tr>
+                    <tr><td>CEO（2025）</td><td class="td-right">Peter Stern（第 3 任，Apple 背景）</td></tr>
+                    <tr><td>安全召回</td><td class="td-right">3 次 · 300 万+ 设备</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card">
+                    <div class="cc-num">01</div>
+                    <h3>Peloton 的核心资产不是硬件，是内容和社区</h3>
+                    <p>市值蒸发 97.6%，但 2.88M 订阅用户、NPS 70+、Trustpilot 4.1/5、App 4.8/5——这些指标说明产品本身依然被爱着。问题从来不是"Peloton 好不好用"，而是"管理层把一家好公司运营到了濒临破产"。如果 Peter Stern 能保留内容优势同时修复运营问题，Peloton 仍然有翻盘的基本盘。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">02</div>
+                    <h3>三个"如果"构成了 Peloton 的平行宇宙</h3>
+                    <p>如果 Foucault 2021 年做了需求场景规划（而不是投 $4.2B 建工厂）→ 如果 Tread+ 事故后主动召回（而不是说 CPSC 的报告"不准确"）→ 如果在 2020 年就开放 Amazon/第三方分销（而不是等到 2023 年）。这三个"如果"的答案将决定 Peloton 是一个"被疫情摧毁的好公司"还是"被自己的傲慢摧毁的好产品"。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">03</div>
+                    <h3>债务是定时炸弹，但用户是安全气囊</h3>
+                    <p>$947M 债务 + $914M 现金 = 几乎没有净现金缓冲。Altman Z-Score -1.71 明确指向 2 年内破产风险。但 2.88M 订阅用户每月产生 ~$127M 经常性收入，且毛利高——这意味着即使公司进入破产保护，订阅业务本身仍然有独立价值。最可能的结局不是"Peloton 消失"，而是被 Apple、Amazon 或 Nike 以折扣价收购。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">04</div>
+                    <h3>互联健身赛道没有死——但"封闭生态"模式已经死了</h3>
+                    <p>Mirror 归零、Tonal 估值腰斩、Peloton 市值蒸发 97.6%——三家"硬件+订阅"的封闭生态模式全部失败。而 Apple Fitness+（开放平台、多设备、低价）活得很好。结论是清晰的：健身内容的未来不是把用户锁在一个硬件上，而是在所有设备上触达用户。Peloton 的 4.1/5 评分和 2.88M 订阅证明了它的内容质量——如果它能彻底拥抱"内容平台"而非"硬件公司"的定位，它可能还有第二个故事。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

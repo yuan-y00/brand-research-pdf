@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Research PDF — 品牌调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
+    background: #F5F0E8; color: #2B2D42;
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center; padding: 60px 20px 40px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 42px; font-weight: 900; margin-bottom: 12px;
+}
+
+.hero p { font-size: 16px; color: #8B8B8B; }
+
+.reports {
+    max-width: 900px; margin: 0 auto; padding: 0 20px 60px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+
+.card {
+    background: white; border-radius: 12px; padding: 28px 30px;
+    text-decoration: none; color: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: all .2s;
+    border-left: 4px solid #E07A5F;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+.card h2 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 26px; font-weight: 900; margin-bottom: 6px;
+}
+
+.card .subtitle { font-size: 13px; color: #8B8B8B; margin-bottom: 12px; }
+
+.card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    background: #FDF2EC; color: #E07A5F; font-weight: 500;
+}
+
+.footer {
+    text-align: center; padding: 30px 20px 50px;
+    font-size: 13px; color: #BBB;
+}
+
+.footer a { color: #8B8B8B; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Brand Research PDF</h1>
+    <p>输入品牌名，自动生成深度调研报告。以下为示例报告。</p>
+</div>
+
+<div class="reports">
+    <a href="examples/hyrox-report.html" class="card">
+        <h2>Hyrox</h2>
+        <div class="subtitle">健身赛事 · 德国 · 2017 年创立</div>
+        <div class="tags">
+            <span class="tag">$1.4亿营收</span>
+            <span class="tag">650K参赛者</span>
+            <span class="tag">0付费广告</span>
+        </div>
+    </a>
+
+    <a href="examples/tonal-report.html" class="card">
+        <h2>Tonal</h2>
+        <div class="subtitle">智能家庭力量训练 · 美国 · 2015 年创立</div>
+        <div class="tags">
+            <span class="tag">$1.6B峰值估值</span>
+            <span class="tag">$550M当前估值</span>
+            <span class="tag">>$100M ARR</span>
+        </div>
+    </a>
+
+    <a href="examples/peloton-report.html" class="card">
+        <h2>Peloton</h2>
+        <div class="subtitle">互联健身 · 美国 · 2012 年创立</div>
+        <div class="tags">
+            <span class="tag">$50B→$1.2B市值</span>
+            <span class="tag">$4B营收峰值</span>
+            <span class="tag">2.88M订阅用户</span>
+        </div>
+    </a>
+
+    <a href="examples/speediance-report.html" class="card">
+        <h2>Speediance</h2>
+        <div class="subtitle">中国智能健身出海 · 深圳 · 2020 年创立</div>
+        <div class="tags">
+            <span class="tag">$49M营收</span>
+            <span class="tag">$13.6M融资</span>
+            <span class="tag">零强制订阅</span>
+        </div>
+    </a>
+</div>
+
+<div class="footer">
+    Powered by <a href="https://github.com/yuan-y00/brand-research-pdf">brand-research-pdf</a> · Claude Code Skill
+</div>
+
+</body>
+</html>

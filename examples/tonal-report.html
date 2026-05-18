@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Tonal 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+
+:root {
+    --warm-cream: #FFF8F0;
+    --terracotta: #E07A5F;
+    --sage: #81B29A;
+    --navy: #3D5A80;
+    --charcoal: #2B2D42;
+    --soft-peach: #F4ACB7;
+    --mid-gray: #8B8B8B;
+    --border-light: #E6DFD3;
+    --bg-stripe: #FCFAF7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
+    font-size: 13.5px; line-height: 1.55;
+    color: var(--charcoal); background: #D5CFC6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    width: 297mm; min-height: 210mm;
+    margin: 16px auto; background: var(--warm-cream);
+    position: relative; page-break-after: always;
+    padding: 28px 52px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.page.cover {
+    display: flex; flex-direction: row; align-items: center;
+    justify-content: center; text-align: left; gap: 70px;
+    background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%);
+    padding: 45px 65px;
+}
+.cover-label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 28px; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 18px; color: var(--navy); line-height: 1.5; }
+.cover-line { width: 60px; height: 3px; background: var(--terracotta); margin: 26px 0; }
+.cover-footer { font-size: 11px; color: var(--mid-gray); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.7); border-radius: 10px; padding: 20px 26px; text-align: center; }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--terracotta); }
+.cover-stat .cs-label { font-size: 10px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px; }
+
+.page-number { position: absolute; top: 24px; right: 52px; font-family: 'Crimson Pro', serif; font-size: 11px; color: var(--mid-gray); }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; color: var(--charcoal); margin-bottom: 14px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--navy); margin: 14px 0 8px 0; }
+h3 { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+p { margin-bottom: 7px; color: #3D3D3D; }
+
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 16px 0; }
+
+.callout { background: #FDF2EC; border-left: 3px solid var(--terracotta); padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #5D4037; page-break-inside: avoid; }
+.callout strong { color: var(--terracotta); }
+
+.info-table { width: 100%; border-collapse: collapse; font-size: 12.5px; page-break-inside: avoid; }
+.info-table thead th { background: var(--charcoal); color: white; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+.info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-right { text-align: right !important; }
+.td-impact { text-align: center; font-weight: 700; }
+.impact-up { color: var(--sage); }
+.impact-down { color: var(--terracotta); }
+.impact-neutral { color: var(--navy); }
+
+.stat-row { display: flex; gap: 12px; page-break-inside: avoid; }
+.stat-card { flex: 1; background: white; border-radius: 8px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--terracotta); }
+.stat-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 1px; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; page-break-inside: avoid; }
+.kpi-card { background: white; border-radius: 8px; padding: 12px 10px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--terracotta); }
+.kpi-label { font-size: 9.5px; color: var(--mid-gray); }
+.kpi-compare { font-size: 9px; margin-top: 2px; }
+.kpi-up { color: var(--sage); }
+.kpi-down { color: var(--terracotta); }
+
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; page-break-inside: avoid; }
+.insight-card { background: white; border-radius: 10px; padding: 18px 20px 16px; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
+.insight-card.right { border-top: 3px solid var(--sage); }
+.insight-card.wrong { border-top: 3px solid var(--terracotta); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; opacity: 0.12; position: absolute; top: 8px; right: 14px; }
+.insight-card.right .insight-num { color: var(--sage); }
+.insight-card.wrong .insight-num { color: var(--terracotta); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 17px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; padding-right: 40px; }
+.insight-kpi { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.insight-card.right .insight-kpi { color: var(--sage); }
+.insight-card.wrong .insight-kpi { color: var(--terracotta); }
+.insight-card p { font-size: 12px; color: #4A4A4A; line-height: 1.5; margin-bottom: 10px; }
+.insight-vs { font-size: 10.5px; color: var(--mid-gray); padding-top: 8px; border-top: 1px solid var(--border-light); }
+.insight-vs span { font-weight: 600; color: var(--navy); }
+
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; page-break-inside: avoid; }
+
+.quote-card { background: white; border-left: 3px solid var(--sage); padding: 10px 14px; margin: 6px 0; border-radius: 0 6px 6px 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 14px; font-style: italic; color: #3D3D3D; page-break-inside: avoid; }
+.quote-source { display: block; margin-top: 4px; font-size: 10.5px; font-style: normal; color: var(--mid-gray); }
+
+.review-stat-box { display: flex; align-items: center; gap: 24px; background: white; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); margin-bottom: 12px; }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--terracotta); }
+.review-big-label { font-size: 11px; color: var(--mid-gray); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; }
+.bar-track { flex: 1; height: 14px; background: #EBE5DA; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-1 { background: var(--terracotta); }
+.bar-2 { background: #E8927A; }
+.bar-3 { background: #C9A96E; }
+.bar-4 { background: #A3C4B3; }
+.bar-5 { background: var(--sage); }
+.pct-label { width: 40px; text-align: right; font-weight: 500; }
+
+.conclusion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; page-break-inside: avoid; }
+.conclusion-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; color: var(--terracotta); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 3px; font-size: 14px; color: var(--navy); }
+.conclusion-card p { font-size: 12px; color: #3D3D3D; margin-top: 4px; line-height: 1.5; }
+
+@media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    body { background: white; }
+    .page { margin: 0; page-break-after: always; box-shadow: none; }
+    h1, h2, h3 { page-break-after: avoid; }
+    .callout, .info-table, .stat-row, .quote-card, .insight-card, .insight-grid,
+    .conclusion-card, .col-2, .conclusion-grid, .review-stat-box, .kpi-grid, .kpi-card { page-break-inside: avoid; }
+}
+@page { size: A4 landscape; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 01: COVER ==================== -->
+<div class="page cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">Tonal<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">
+            从 $1.6B 独角兽到估值腰斩 · 智能家庭健身赛道沉浮录<br>硬件护城河 · 订阅经济 · CEO 三度换帅
+        </div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">$1.6B</div><div class="cs-label">2021 峰值估值</div></div>
+            <div class="cover-stat"><div class="cs-num">$550M</div><div class="cs-label">2023 估值（-66%）</div></div>
+            <div class="cover-stat"><div class="cs-num">$100M+</div><div class="cs-label">年经常性收入（ARR）</div></div>
+            <div class="cover-stat"><div class="cs-num">$615M+</div><div class="cs-label">累计融资总额</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 02: TIMELINE ==================== -->
+<div class="page">
+    <div class="page-number">01</div>
+    <div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2015–2025）</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:75px">时间</th>
+                <th style="width:380px">事件</th>
+                <th style="width:310px">关键细节</th>
+                <th style="width:65px">影响</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2015.03</strong></td>
+                <td>Aly Orady 在旧金山创立 Tonal</td>
+                <td>Orady 本人超重、糖尿病，靠力量训练减重 70 lbs 后，决定用电���阻力替代物理哑铃，在厨房台面上造出第一台原型机（当时叫 RiptLabs）</td>
+                <td class="td-impact impact-neutral">概念验证</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>COVID 疫情 — 销量暴增 8 倍+</td>
+                <td>家庭健身需求井喷；员工从 ~110 激增至 750；同年获 $110M Series D</td>
+                <td class="td-impact impact-up">爆发增长</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021.03</strong></td>
+                <td>$250M Series E，估值 $1.6B，成为独角兽</td>
+                <td>超级碗广告（Serena Williams 出镜）；LeBron James 宣布投资并担任品牌大使；Nordstrom 60 家门店合作</td>
+                <td class="td-impact impact-up">巅峰</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022.07</strong></td>
+                <td>裁员 35%（~260 人），关闭洛杉矶工作室</td>
+                <td>公司目标从"增长"转向"盈利"；疫情后家庭健身需求骤降；现金储备承压</td>
+                <td class="td-impact impact-down">危机</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.02</strong></td>
+                <td>寻求出售或新融资，估值降至 ~$500M</td>
+                <td>据报与 Peloton 谈判收购未果；产品涨价至 $3,995；会员费从 $49→$59.95/月；Foxconn 起诉 $50 万欠款</td>
+                <td class="td-impact impact-down">估值腰斩</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.04</strong></td>
+                <td>$130M Series F 融资 + 创始人卸任 CEO</td>
+                <td>L Catterton 领投；估值 ~$550-600M（较峰值 -66%）；Aly Orady 转任 CTO，Krystal Zell 升任 CEO。累计融资 ~$615M——已超过公司估值</td>
+                <td class="td-impact impact-neutral">重启</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.09</strong></td>
+                <td>竞对 Lululemon Mirror 正式停产</td>
+                <td>Lululemon 注销 $4.43 亿 Mirror 资产，几乎亏光 $5 亿收购价。Tonal 趁机推出 $250 以旧换新方案收割 Mirror 用户</td>
+                <td class="td-impact impact-up">收割竞对</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024.09</strong></td>
+                <td>Krystal Zell 离任，Darren MacDonald 接任 CEO</td>
+                <td>MacDonald 来自 Petco/Walmart 背景；公司年 ARR >$1 亿，约 350 名员工</td>
+                <td class="td-impact impact-neutral">CEO 再换</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>三度换帅：Todd Bartee 出任新 CEO</td>
+                <td>Bartee 是 L Catterton 运营合伙人，前 Aquasana CEO；信号：PE 股东亲自下场，聚焦 AI + 软件整合，硬件战略是否保留存疑</td>
+                <td class="td-impact impact-neutral">PE 接管</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ==================== PAGE 03: REVENUE & VALUATION ==================== -->
+<div class="page">
+    <div class="page-number">02</div>
+    <div class="section-label">Financials</div>
+    <h1>二、收入与估值变化</h1>
+
+    <div class="callout">
+        <strong>核心矛盾：</strong>Tonal 累计融资 <strong>$615M+</strong>，但当前估值仅 <strong>$550-600M</strong>——融到的钱比公司还值钱。ARR >$1 亿但未披露是否盈利。疫情后估值从 $1.6B 暴跌 66%，同行 Peloton 市值蒸发 <strong>97%</strong>。
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">$1.6B</div><div class="stat-label">2021 峰值估值</div></div>
+        <div class="stat-card"><div class="stat-number">$550M</div><div class="stat-label">2023 估值（-66%）</div></div>
+        <div class="stat-card"><div class="stat-number">$615M+</div><div class="stat-label">累计融资</div></div>
+        <div class="stat-card"><div class="stat-number">>$100M</div><div class="stat-label">年经常性收入 ARR</div></div>
+        <div class="stat-card"><div class="stat-number">$3,995</div><div class="stat-label">硬件售价</div></div>
+        <div class="stat-card"><div class="stat-number">$59.95</div><div class="stat-label">月订阅费</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>融资历程</h2>
+            <table class="info-table">
+                <thead><tr><th>时间</th><th>轮次</th><th style="width:90px">金额</th><th style="width:100px">估值 / 状态</th></tr></thead>
+                <tbody>
+                    <tr><td>2016.05</td><td>Seed</td><td class="td-right">$1.5M</td><td>Bolt / Mayfield</td></tr>
+                    <tr><td>2020.09</td><td>Series D</td><td class="td-right">$110M</td><td>疫情爆发增长期</td></tr>
+                    <tr><td>2021.03</td><td>Series E</td><td class="td-right"><strong>$250M</strong></td><td><strong>$1.6B 估值 · 巅峰</strong></td></tr>
+                    <tr><td>2023.04</td><td>Series F</td><td class="td-right"><strong>$130M</strong></td><td>$550-600M · -66%</td></tr>
+                    <tr><td colspan="2">累计</td><td class="td-right"><strong>$615M+</strong></td><td>融资 > 估值</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>业务模型与利润率估算</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:100px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>硬件售价</td><td class="td-right"><strong>$3,995</strong>（含专业安装）</td></tr>
+                    <tr><td>月订阅费</td><td class="td-right"><strong>$59.95</strong>（12月强制）</td></tr>
+                    <tr><td>ARR（2023）</td><td class="td-right"><strong>>$100M</strong></td></tr>
+                    <tr><td>用户流失率</td><td class="td-right"><strong><1%</strong>（极低）</td></tr>
+                    <tr><td>估值/ARR 倍数</td><td class="td-right"><strong>~5.5x</strong></td></tr>
+                    <tr><td>员工（2024）</td><td class="td-right">~350（峰值 750）</td></tr>
+                    <tr><td>累计融资</td><td class="td-right">$615M+</td></tr>
+                    <tr><td>盈利状态</td><td class="td-right"><strong>未披露 / 可能仍亏损</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 04: COMPETITIVE LANDSCAPE ==================== -->
+<div class="page">
+    <div class="page-number">03</div>
+    <div class="section-label">Competitive Landscape</div>
+    <h1>三、竞争对手同期对比</h1>
+
+    <p>智能家庭健身赛道在 2021 年达到泡沫顶峰，2022 年起随疫情退潮全线下滑。Tonal、Peloton、Mirror、Tempo 四家公司的命运分叉点在于：<strong>硬件是否有真正的技术壁垒</strong>。</p>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:65px">时间</th>
+                <th style="width:180px">Tonal（电磁阻力）</th>
+                <th style="width:180px">Peloton（单车/跑步机）</th>
+                <th style="width:180px">Mirror / Lululemon</th>
+                <th style="width:180px">Tempo（自由重量）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>销量 8× 暴增；$110M D 轮</td>
+                <td>股价翻 5 倍；市值 ~$50B 峰值</td>
+                <td>被 Lululemon $5 亿收购</td>
+                <td>$60M B 轮；快速增长</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021</strong></td>
+                <td>$1.6B 估值；LeBron 投资；超级碗广告</td>
+                <td>营收 $4B；股价从 $171 开始暴跌</td>
+                <td>销售远低于预期；品牌改为 Lululemon Studio</td>
+                <td>$220M C 轮；估值未公开</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022</strong></td>
+                <td>裁员 35%；现金流危机；寻求出售</td>
+                <td>CEO Foley 下台；裁员 2,800；股价 -76%</td>
+                <td>Lululemon 注销 $4.43 亿；Mirror 大幅打折</td>
+                <td>裁员；缩减营销</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>$130M 融资；CEO 换人；硬件涨价；估值 -66%</td>
+                <td>营收 -30%；自行车召回（220 万辆）；亏损 $12.6 亿</td>
+                <td><strong>正式停产</strong>；裁员 120；与 Peloton 合作，App 免费化</td>
+                <td>$2,495 Studio + $495 Move；3D AI 教练差异化</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024</strong></td>
+                <td>第 2 个 CEO 离任；第 3 个 CEO 上任；ARR >$1 亿</td>
+                <td>股价 $2.70 历史新低（-98%）；CEO McCarthy 下台；裁员 400</td>
+                <td>已退出硬件市场；成为 Peloton 内容分发渠道</td>
+                <td>稳步运营；定位"AI 私教 + 真实杠铃"</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>PE 老将 Todd Bartee 任 CEO；聚焦 AI + 软件</td>
+                <td>债务 $9.47 亿；Altman Z-Score -1.71（破产风险）；明星教练离职</td>
+                <td>不存在了</td>
+                <td>独立运营；未寻求出售</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">$550M</div>
+            <div class="kpi-label">Tonal 估值</div>
+            <div class="kpi-compare kpi-down">-66% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$1.2B</div>
+            <div class="kpi-label">Peloton 市值</div>
+            <div class="kpi-compare kpi-down">-97% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$0</div>
+            <div class="kpi-label">Mirror 残值</div>
+            <div class="kpi-compare kpi-down">$500M→$0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$3,995</div>
+            <div class="kpi-label">Tonal 硬件单价</div>
+            <div class="kpi-compare">行业最高</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value"><1%</div>
+            <div class="kpi-label">Tonal 月流失率</div>
+            <div class="kpi-compare kpi-up">行业极低</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 05: WHAT THEY DID RIGHT (1/2) ==================== -->
+<div class="page">
+    <div class="page-number">04</div>
+    <div class="section-label">Success Factors & Competitive Moat</div>
+    <h1>四、Tonal 做对了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">01</div>
+            <h4>真正的硬件护城河：电磁数字阻力</h4>
+            <div class="insight-kpi">200 lbs 数字阻力 · 17 个传感器 · Spotter / Eccentric / Chains 模式 · AI 自动重量调节</div>
+            <p>这不是一个带屏幕的镜子，也不是一个联网的动感单车。<strong>Tonal 的核心发明是电磁阻力引擎</strong>——用电磁场替代物理哑铃，可以在 200 lbs 范围内以 1 lb 精度调节重量。这带来了三个不可替代的体验：(1) AI 实时检测用户的力竭程度并自动调整重量——这是物理哑铃做不到的；(2) Spotter 模式在检测到力竭时自动减重防止受伤；(3) Eccentric 模式和 Chains 模式模拟高级训练技巧，通常需要教练或专业设备。Peloton 和 Mirror 本质上只是"带屏幕的内容播放器"——离开内容，硬件无价值。Tonal 离开内容依然是世界上最先进的力量训练设备。</p>
+            <div class="insight-vs"><span>vs Mirror:</span> 只是一面镜子+屏幕，用户需自备哑铃，无法跟踪重量或提供阻力。<span>vs Peloton:</span> 单车硬件差异化低，市面上$300就能买到类似单车+Tonal App。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">02</div>
+            <h4>极致的用户粘性：月流失率 <1%</h4>
+            <div class="insight-kpi">月流失率 <1% · 年 ARR >$100M · 订阅12月强制锁定 · 非订阅模式设备几乎不可用</div>
+            <p>Tonal 的订阅模式设计得非常"硬"：(1) 购买硬件后强制 12 个月 $59.95/月订阅；(2) 取消订阅后，设备退化为一台"不能记录数据的普通缆绳机"——AI 重量调节、Spotter 模式、Eccentric 模式、所有课程和数据追踪全部失效；(3) 这意味着用户如果停止订阅，$3,995 的硬件投资大幅贬值。结果是月流失率低于 1%——这是 Peloton（~1.5-2%/月）和绝大多数 SaaS 公司都达不到的水平。Tonal 实质上是一个"卖剃须刀架 + 终身卖刀片"的模型，且刀片被锁定在这个剃须刀架上。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 月流失率 1.5-2%，且 App 用户可随时切换为免费或低价方案；Peloton Bike 可配合任何骑行 App 使用。<span>vs Tempo:</span> Tempo 使用真实哑铃，用户不订阅也能正常训练。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">03</div>
+            <h4>聚焦力量训练：一个确定性增长的赛道</h4>
+            <div class="insight-kpi">力量训练是第二大健身品类 · 与长寿/代谢健康直接关联 · 用户 LTV 远超有氧设备</div>
+            <p>Peloton 赌的是"在家骑动感单车的人足够多"，Mirror 赌的是"在家做瑜伽/HIIT 的人足够多"。Tonal 赌的是<strong>"愿意花钱认真做力量训练的人足够多"</strong>。力量训练用户的画像与有氧用户有本质区别：他们更在意训练效果（力量增长、体态改善），因此对设备的专业性和数据反馈要求更高，付费意愿和留存率也远高于有氧用户。随着长寿科学越来越强调肌肉质量对代谢健康的重要性，力量训练是确定性增长的赛道。Tonal 在这条赛道上几乎没有直接竞对——Peloton Guide 已停产，Tempo 用真实哑铃（不是同一细分），Mirror 已死。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 有氧品类门槛低、替代品多（户外跑、家用单车、App）。<span>vs Tempo:</span> 真实哑铃用户可自购设备，Tempo 的硬件壁垒低于 Tonal。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">04</div>
+            <h4>明星+运动员矩阵：不花钱的投资人代言</h4>
+            <div class="insight-kpi">30+ 运动员投资人 · LeBron James · Serena Williams · Steph Curry · Mike Tyson</div>
+            <p>Tonal 没有像 Peloton 那样烧 $5M+ 拍圣诞广告或请明星代言——它让明星成为<strong>股东</strong>。LeBron James、Serena Williams、Steph Curry、Klay Thompson、Mike Tyson、Drew Brees、Maria Sharapova、Sue Bird 等 30+ 位顶级运动员都在 Series E 或更早轮次投资了 Tonal。让明星成为投资人而不是代言人，产生了两个效果：(1) 他们会在社交媒体上自发宣传，因为他们跟公司的利益是一致的；(2) 营销成本极低——Tonal 的营销投入远低于 Peloton 的烧钱水平。Serena Williams 甚至出演了 2021 年超级碗广告，这通常要花 $5M+，但如果有股权激励，成本结构完全不同。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 烧大量现金在付费广告和明星代言上（2021 圣诞广告争议巨大）。<span>vs Mirror:</span> Lululemon 收购后未能有效利用品牌渠道，反而因为内部冲突导致产品方向迷失。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 06: WHAT THEY DID RIGHT (2/2) ==================== -->
+<div class="page">
+    <div class="page-number">05</div>
+    <div class="section-label">Success Factors & Competitive Moat (Cont.)</div>
+    <h1>四、Tonal 做对了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">05</div>
+            <h4>竞对退出时的精准收割</h4>
+            <div class="insight-kpi">Mirror 停产 → Tonal $250 以旧换新 · 2023 年 9 月时机精准</div>
+            <p>2023 年 9 月，Lululemon 宣布 Mirror 正式停产并退出硬件市场。Tonal 几乎在同一天推出了<strong>$250 以旧换新计划</strong>：Mirror 用户将旧设备寄回 Tonal，购买 Tonal 硬件时可获得 $250 折扣。这不是一个大金额，但时机和执行堪称教科书级别：在 Mirror 用户感到被背叛和抛弃的时候，给他们一个"升级"的出路。Tonal 在 2023 年还趁机雇佣了多名前 Mirror/Lululemon Studio 的内容制作人员，进一步充实了自己的教练和课程团队。</p>
+            <div class="insight-vs"><span>vs Tempo:</span> 同期未见类似竞对收割策略。<span>vs Peloton:</span> Peloton 自己也在挣扎求生，无力收割竞对。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">06</div>
+            <h4>数据飞轮：17 传感器 × 百万次训练 = 无法复制的数据集</h4>
+            <div class="insight-kpi">17 个传感器实时采集 · 每次训练数千数据点 · AI 模型随数据量增长持续改进</div>
+            <p>Tonal 的 AI 不仅仅是营销噱头——17 个传感器在每次训练中实时采集力量输出、动作幅度、速度、力竭程度等数千个数据点。随着用户训练次数增加，AI 对用户的力量曲线、恢复速度、弱点肌群的了解越来越精准，从而实现<strong>真正个性化的训练方案</strong>。这个数据集的积累是时间的朋友：新进入者可以复制硬件形态，但无法复制数百万次训练产生的 AI 模型和数据。这也是为什么 Tonal 坚持硬件必须由自己制造（而非授权技术给第三方）——数据是壁垒，而数据只能从自有硬件中获取。</p>
+            <div class="insight-vs"><span>vs Tempo:</span> Tempo 有 3D 体感传感器，但数据维度不同（更多是动作形态而非力量输出）。<span>vs Peloton:</span> Peloton 的输出数据主要是踏频和心率，远不如力量训练数据有长期训练价值。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 07: WHAT THEY DID WRONG (1/2) ==================== -->
+<div class="page">
+    <div class="page-number">06</div>
+    <div class="section-label">Risks, Mistakes & Failures</div>
+    <h1>五、Tonal 做错了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">01</div>
+            <h4>过度融资 + 烧钱失控：融的钱比公司还值钱</h4>
+            <div class="insight-kpi">融资 $615M+ vs 估值 $550M · 超级碗广告 ~$5M · 员工从 750→350</div>
+            <p>Tonal 陷入了经典的"硅谷过度融资陷阱"：在 2021 年拿到 $250M Series E 后，公司以为疫情带来的需求增长是永久性的。于是在超级碗投放广告（~$5M）、扩张到 750 名员工、在 Nordstrom 60 家门店开设专柜、自建洛杉矶内容制作工作室。当 2022 年市场需求骤降时，所有扩张变成了沉没成本。35% 的裁员（~260 人）、关闭洛杉矶工作室、Nordstrom 撤柜——说明管理层在 2021 年严重高估了市场天花板。最讽刺的是：<strong>Tonal 累计融资 $615M 已经超过了它的当前估值 $550M</strong>——这意味着投资者在账面上整体亏损。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Peloton 的错误规模更大（$4B→$1.2B 市值，$9.47 亿债务），但问题性质相同——把疫情期间的一次性需求当成了永久性需求。<span>vs Mirror:</span> Lululemon $500M 收购后几乎全损——Tonal 至少在独立运营。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">02</div>
+            <h4>三年三任 CEO：领导层极度不稳定</h4>
+            <div class="insight-kpi">Aly Orady（创始人→CTO）→ Krystal Zell（2023.04→2024.09）→ Darren MacDonald（2024.09→2025）→ Todd Bartee（2025→至今）</div>
+            <p>从 2023 年 4 月到 2025 年，不到两年时间里 Tonal 换了 <strong>4 任 CEO</strong>。创始人 Aly Orady 转任 CTO（通常意味着投资者认为他不适合管运营）；Krystal Zell 在融资后仅 17 个月就离任；Darren MacDonald（来自 Petco/Walmart 的零售背景）只待了不到一年；2025 年 L Catterton 直接派了自己的运营合伙人 Todd Bartee 接管。<strong>PE 亲自下场通常是公司遇到严重问题的信号</strong>——职业经理人解决不了，只得自己来。频繁换帅导致战略方向反复摇摆：从"增长优先"→"盈利优先"→"AI 软件整合"。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Foley→McCarthy→联席 CEO，也是 3 任，但每任至少 2 年以上。<span>vs Tempo:</span> 创始人 Moawia Eldeeb 仍在位，领导层稳定。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">03</div>
+            <h4>硬件可靠性问题：Trustpilot 1.9/5 的根源</h4>
+            <div class="insight-kpi">Trustpilot 1.9/5 · SiteJabber 1.7/5 · 74% 1 星 · 保修从 3 年缩至 1 年 · 出保维修 $400-795</div>
+            <p>Tonal 的硬件故障率高到公司自己把保修期从 3 年缩短到了 1 年——在一个 $3,995 的产品上，这是一个非常负面的信号。常见的硬件问题包括：屏幕冻结并报错、扶手/按键在一年内损坏、需要整机更换（费用 ~$900）、线缆是耗材但不在保修范围内。安装环节也同样糟糕：BBB 上有安装团队钻破水管导致 $8,000 水损、Tonal 拒绝赔偿的投诉；还有用户等了 7 个月才安装完成。高故障率 + 高维修费用 + 封闭式维修（用户不能自己修）= 用户口碑崩塌。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 自行车召回（座杆缺陷 220 万辆）和跑步机召回（儿童死亡），安全问题更严重但响应更快。<span>vs Tempo:</span> 使用真实哑铃，几乎没有硬件故障问题。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">04</div>
+            <h4>订阅锁死策略：短期留存 vs 长期口碑的矛盾</h4>
+            <div class="insight-kpi">不订阅 = 设备几乎不可用 · 无数据导出 · 二手机器功能受限 · Apple Music 也要订阅才能用</div>
+            <p>Tonal 的订阅锁死策略是一把双刃剑。它确实带来了 <1% 的超低流失率，但也造成了巨大的用户愤怒。取消 $59.95/月订阅后，几乎所有的智能功能都失效：AI 重量调节、Spotter 模式、Eccentric 模式、训练数据记录、自定义训练计划——全部消失。甚至连 Apple Music 集成都需要订阅。二手机器的新用户不仅需要重新订阅，而且保修自动失效。更糟的是<strong>用户无法导出自己的训练数据</strong>——没有公开 API、没有数据下载、没有可移植性。这种"数据监禁"在 GDPR 和消费者权益意识上升的时代是越来越危险的设计。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 取消订阅后仍可骑行（只是没有课程和数据），硬件基本功能保留。<span>vs Tempo:</span> 不订阅也可使用真实哑铃训练，只是失去 AI 指导。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: WHAT THEY DID WRONG (2/2) ==================== -->
+<div class="page">
+    <div class="page-number">07</div>
+    <div class="section-label">Risks, Mistakes & Failures (Cont.)</div>
+    <h1>五、Tonal 做错了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">05</div>
+            <h4>定价策略反复：$3,495→$3,995→涨价逼走潜在用户</h4>
+            <div class="insight-kpi">硬件 $3,495→$3,995 · 配件 $495 · 月费 $49→$59.95 · 用户获取成本高企</div>
+            <p>2023 年 1 月 Tonal 将硬件价格从 $3,495 上调至 <strong>$3,995</strong>（+14%），一个月后又将月费从 $49 涨至 <strong>$59.95</strong>（+22%）。对于一个已经面临需求下降和竞对退出的公司来说，涨价是"砍掉低价值客户、从高价值客户身上榨取更多"的典型 PE 操作。但这种做法有两个问题：(1) 硬件 + 12 个月订阅的入门成本已超过 <strong>$4,700</strong>——这是一个接近 Peloton Bike+（$2,495）两倍的价格，对于新客获客极为不利；(2) 涨价没有伴随产品升级——如果在涨价的同时推出 Tonal 2（250 lbs 阻力、更大屏幕），用户会觉得物有所值。但涨价的消息让正在观望的潜在用户直接放弃。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Peloton 多次降价（Bike 从 $2,245→$1,445）以清库存和获客，Tonal 逆势涨价——要么是自信，要么是获客已停滞，只能靠涨价维持 ARR。<span>vs Tempo:</span> Move $495 低价入门版降低了获客门槛。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">06</div>
+            <h4>空间限制 + 专业安装 = 天然的天花板</h4>
+            <div class="insight-kpi">需 7'×7' 空间 + 承重墙 · 必须专业安装 · 不可自己搬移 · 租房用户基本无缘</div>
+            <p>Tonal 的产品设计有一个<strong>结构性的增长天花板</strong>：它必须安装在承重墙上（不能是石膏板墙），需要专业安装团队上门打孔固定，需要 7'×7' 的净空空间，搬家时必须由 Tonal 认证人员拆卸和重新安装（否则保修失效）。这天然排除了租房用户（美国 36% 的家庭租房）、公寓住户（可能不允许在墙上打孔）、以及经常搬家的人。相比之下，Peloton Bike 占地 4'×2'、可以自己移动、不需要墙上打孔；Tempo Move 只需要一个柜子+手机+电视。在家庭健身这个品类，<strong>"不需要在墙上钻洞"是一个被低估的购买决策因素</strong>。</p>
+            <div class="insight-vs"><span>vs Peloton Bike:</span> 4'×2' 占地，可自行组装移动，适合公寓。<span>vs Tempo Move:</span> $495，无需安装，手机+电视即可。<span>vs Mirror:</span> 可壁挂或支架，安装简单。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 09: CUSTOMER REVIEWS ==================== -->
+<div class="page">
+    <div class="page-number">08</div>
+    <div class="section-label">Voice of Customer</div>
+    <h1>六、客户真实评价（含评分数据）</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>Trustpilot 评分（tonal.com）</h2>
+
+            <div class="review-stat-box">
+                <div>
+                    <div class="review-big-score">1.9<span style="font-size:24px">/5</span></div>
+                    <div class="review-big-label">"Poor" · 32 条公开评价</div>
+                </div>
+                <div style="flex:1">
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-5" style="width:11%"></span></span>
+                        <span class="pct-label">~11%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-4" style="width:6%"></span></span>
+                        <span class="pct-label">~6%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-3" style="width:5%"></span></span>
+                        <span class="pct-label">~5%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-2" style="width:8%"></span></span>
+                        <span class="pct-label">~8%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★</span>
+                        <span class="bar-track"><span class="bar-fill bar-1" style="width:70%"></span></span>
+                        <span class="pct-label">~70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                ※ 百分比基于 1.9 均值 + 公开评价内容反推估算。Trustpilot 存在选择偏差（不满用户更倾向评价）。另有无偏见的长期使用评测（ian.gay 博客）提供了更平衡的视角。Trustpilot 不同分页显示3.6分（受邀评价）和4.7分——差异说明有机评价和受邀评价之间存在巨大落差。
+            </p>
+
+            <h2>SiteJabber 评分</h2>
+            <table class="info-table" style="margin-bottom:8px">
+                <thead><tr><th>指标</th><th style="width:80px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>总评分</td><td class="td-center"><strong>1.7 / 5</strong></td></tr>
+                    <tr><td>1 星占比</td><td class="td-center"><strong>74%</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h2>BBB（商业改进局）</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:80px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>认证状态</td><td class="td-center"><strong>未认证</strong></td></tr>
+                    <tr><td>总投诉（历史）</td><td class="td-center"><strong>136 件</strong></td></tr>
+                    <tr><td>近 12 个月投诉</td><td class="td-center"><strong>32 件</strong></td></tr>
+                    <tr><td>用户评价数</td><td class="td-center"><strong>110 条</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>投诉主题分布（估算）</h2>
+            <table class="info-table">
+                <thead><tr><th>投诉类型</th><th style="width:50px">占比</th><th>代表性内容</th></tr></thead>
+                <tbody>
+                    <tr><td>硬件故障/维修</td><td class="td-center"><strong>~35%</strong></td><td>"2-7 个月就坏了"、"整机更换 $900"、"出保维修 $400-795"、"屏幕冻结报错"</td></tr>
+                    <tr><td>客服/售后</td><td class="td-center"><strong>~25%</strong></td><td>"外包客服"、"居高临下"、"完全不作为"、"等几个月没解决"</td></tr>
+                    <tr><td>安装/搬迁</td><td class="td-center"><strong>~15%</strong></td><td>"钻破水管$8K不赔"、"等7个月"、"搬家取消失败"</td></tr>
+                    <tr><td>订阅锁死</td><td class="td-center"><strong>~15%</strong></td><td>"退订后设备变砖"、"不能导出数据"、"二手机保修作废"</td></tr>
+                    <tr><td>账单纠纷</td><td class="td-center"><strong>~10%</strong></td><td>"重复扣费"、"取消后扣了好几年"、"不给退款"</td></tr>
+                </tbody>
+            </table>
+
+            <div class="divider"></div>
+
+            <h2>正面评价</h2>
+
+            <div class="quote-card">
+                "过去 2 年每周使用 5-6 天，力量增加了 35-40%。我是真心相信这款产品。作为一项投资，它已经回本了。"
+                <span class="quote-source">— ian.gay 长期评测（非赞助）</span>
+            </div>
+
+            <div class="quote-card">
+                "如果你想在家认真做力量训练——而不是只用哑铃摆弄几下——Tonal 是唯一的选择。它不是健身玩具，它是一台真正的训练机器。"
+                <span class="quote-source">— PCMag Editors' Choice 评价</span>
+            </div>
+
+            <div class="quote-card">
+                "作为一名有两个孩子的前大学运动员，Tonal 让我在 30 分钟内完成等同于以前 90 分钟健身房的训练量。AI 重量调节是改变游戏规则的功能。"
+                <span class="quote-source">— Trustpilot 5 星正面评价</span>
+            </div>
+
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:65px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>月流失率</td><td class="td-center"><strong><1%</strong></td><td>一旦订阅，很少离开（但也可能是锁死效应）</td></tr>
+                    <tr><td>ARR</td><td class="td-center"><strong>>$100M</strong></td><td>订阅收入稳定且可预测</td></tr>
+                    <tr><td>推荐率</td><td class="td-center">高</td><td>长期评测博主和 PCMag 编辑均自发推荐</td></tr>
+                    <tr><td>复购/升级</td><td class="td-center">待观察</td><td>Tonal 2 发布后的升级率是关键指标</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                <strong>结论：</strong>Trustpilot 1.9 分与 <1% 流失率之间看似矛盾。一种解释是"硬件体验优秀 → 高留存；客服和售后体验极差 → 差评集中"。另一种解释是"订阅锁死 → 低流失 ≠ 高满意度"。真相可能是两者的混合——Tonal 的产品是好产品，但公司在客服、售后、保修政策上严重投入不足。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: KEY DATA + CONCLUSIONS ==================== -->
+<div class="page">
+    <div class="page-number">09</div>
+    <div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 &amp; 关键结论</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-right">2015，旧金山</td></tr>
+                    <tr><td>创始人</td><td class="td-right">Aly Orady（现任 CTO）</td></tr>
+                    <tr><td>核心投资方</td><td class="td-right">L Catterton（PE，控股级影响力）</td></tr>
+                    <tr><td>硬件售价</td><td class="td-right"><strong>$3,995</strong> + $495 配件</td></tr>
+                    <tr><td>月订阅费</td><td class="td-right"><strong>$59.95</strong>（12 月强制）</td></tr>
+                    <tr><td>年经常性收入</td><td class="td-right"><strong>>$100M ARR</strong></td></tr>
+                    <tr><td>峰值估值（2021）</td><td class="td-right"><strong>$1.6B</strong></td></tr>
+                    <tr><td>当前估值（2023）</td><td class="td-right"><strong>$550-600M（-66%）</strong></td></tr>
+                    <tr><td>累计融资</td><td class="td-right"><strong>$615M+（> 估值）</strong></td></tr>
+                    <tr><td>员工数</td><td class="td-right">~350（峰值 750）</td></tr>
+                    <tr><td>月流失率</td><td class="td-right"><strong><1%</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-right"><strong>1.9/5</strong> · ~70% 1星</td></tr>
+                    <tr><td>BBB 投诉</td><td class="td-right">136 件（历史）· 未认证</td></tr>
+                    <tr><td>运动员投资人</td><td class="td-right">LeBron / Serena / Curry / 30+</td></tr>
+                    <tr><td>CEO（2025）</td><td class="td-right">Todd Bartee（PE 背景，第 4 任）</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card">
+                    <div class="cc-num">01</div>
+                    <h3>硬件护城河是真实的——但与"好生意"是两回事</h3>
+                    <p>Tonal 的电磁数字阻力技术确实无法被 App 或内容替代，这是它区别于 Peloton 和 Mirror 的核心壁垒。但硬件护城河意味着更高的制造成本、更高的故障率、更复杂的售后物流、更窄的客群。$3,995 的价格 + 专业安装要求将 TAM 限制在了自有房产、有承重墙空间、有 $4,700+ 预算的人群。技术壁垒 ≠ 商业壁垒。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">02</div>
+                    <h3>订阅锁死是"饮鸩止渴"</h3>
+                    <p><1% 的月流失率是 Tonal 最好的指标也是最危险的指标。高留存可能来自产品卓越，也可能来自"不订阅设备就变砖"的锁死效应。Trustpilot 1.9/5 和 BBB 136 件投诉指向后者。当用户感觉被困住而不是被服务时，NPS 和口碑转介绍会持续恶化。在竞对几乎全军覆没的今天，这可能还不是致命问题——但如果 Tempo 或新进入者提供更开放的替代方案，切换成本可能没有 Tonal 想的那么高。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">03</div>
+                    <h3>PE 亲下场是最危险的信号</h3>
+                    <p>L Catterton 的运营合伙人 Todd Bartee 直接出任 CEO 意味着两件事：(1) 前三任 CEO 都没能解决公司的核心问题；(2) PE 股东认为需要亲自操刀来保护投资。历史上 PE 亲下场的结局有两种：成功的扭亏为盈（如 Burger King / 3G Capital）或失败的资产剥离（如 Toys "R" Us）。Tonal 本身有>$100M ARR 和 <1% 流失率作为安全垫，但在融资已超估值的处境下，PE 的耐心是有限的——他们需要看到盈利或退出。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">04</div>
+                    <h3>赛道没有死，但 Tonal 需要证明"不只是疫情概念股"</h3>
+                    <p>家庭力量训练的需求是真实的——2024 年 58% 的美国人仍然首选在家健身。Peloton 市值蒸发 97%、Mirror 归零、Tonal 估值腰斩——问题不在于需求不存在，而在于疫情把 5 年的增长压缩到了 18 个月，所有公司都以为那是新常态。现在泡沫破了，剩下来的玩家需要证明自己能在"正常增速"下盈利。Tonal 的 >$100M ARR 和 <1% 流失率说明它有一个坚实的核心用户群。但如果不能解决硬件可靠性、客服质量和定价门槛这三个问题，它无法突破这个核心圈层。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
