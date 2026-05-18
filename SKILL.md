@@ -1,385 +1,375 @@
 ---
 name: brand-research
-description: 输入任意品牌/公司名称，自动完成深度调研并生成横版 A4 精美 PDF 报告。覆盖品牌大事年表、收入增长、竞对对比、成功因素、失败教训、客户评价（含百分比）、核心数据与结论。基于 Hyrox 调研方法论的通用化版本。
+description: 输入任意品牌/公司名称，自动完成深度调研并生成精美的连续网页报告。覆盖创始团队与资金来源、品牌大事年表、收入增长、竞对对比、成功因素、失败教训、用户画像（含百分比）、客户评价（含百分比）、Reddit/YouTube 口碑、核心数据与结论。基于 Hyrox/Tonal/Peloton/Speediance/AEKE/Growl/FightCamp/蓝思科技 8 份报告的经验总结。
 ---
 
-# Brand Research PDF — 品牌调研报告自动生成
+# Brand Research — 品牌深度调研报告自动生成
 
-输入品牌名，自动完成 Web 调研 → 内容组织 → 排版分页 → 生成可导出 PDF 的 HTML 文件。
+输入品牌名，自动 Web 调研 → 内容组织 → 生成精美连续网页。用户可直接在浏览器中查看，或导出 PDF。
 
 ## 触发方式
 
-用户说以下任意一句即可：
-
 - "帮我调研 [品牌名]"
-- "生成 [品牌名] 的调研报告 PDF"
-- "/brand-research [品牌名]"
+- "生成 [品牌名] 的调研报告"
 
 ## 工作流程
 
-### Phase 1: Web 调研（自动搜索以下维度）
+### Phase 1: Web 调研
 
-按以下 7 个维度并行搜索，每项搜索至少获取 2 个独立来源：
+按以下维度并行搜索，每项 ≥2 个独立来源：
 
-1. **品牌大事年表** — 搜索 "品牌名 history founding timeline milestones 2017-2026"
-2. **收入/规模数据** — 搜索 "品牌名 revenue growth financial performance 2022 2023 2024 2025"
-3. **竞对对比** — 搜索 "品牌名 vs competitor1 vs competitor2 comparison 2024"
-4. **成功因素** — 搜索 "品牌名 success factors business model strategy right decisions"
-5. **问题/争议** — 搜索 "品牌名 controversy mistakes criticism problems 2024 2025"
-6. **客户评价** — 搜索 "品牌名 customer reviews reddit Trustpilot complaints ratings"
-7. **竞对同期动态** — 搜索 "competitor1 competitor2 revenue decline bankruptcy what happened 2022-2025"
-
-搜索结果中的**每一个数字、百分比、金额、日期都必须注明来源**。
+1. **创始人与资金来源** — "品牌名 founder background story initial funding source"
+2. **品牌大事年表** — "品牌名 history founding timeline milestones 2017-2026"
+3. **收入/规模/估值** — "品牌名 revenue growth financial performance valuation 2022-2026"
+4. **竞对对比** — "品牌名 vs competitor comparison market share 2024 2025"
+5. **成功因素** — "品牌名 success factors business model right decisions strategy"
+6. **问题/争议/失败** — "品牌名 controversy mistakes criticism problems risks 2024 2025"
+7. **客户评价** — "品牌名 customer reviews Trustpilot Reddit complaints ratings"
+8. **竞对同期动态** — "competitor1 competitor2 revenue decline what happened 2022-2025"
 
 ### Phase 2: 内容组织
 
-将调研结果组织为以下 7 章结构：
-
 | 章节 | 内容要求 |
 |------|---------|
-| 一、品牌大事年表 | 10 行表格：时间 / 事件 / 关键细节 / 影响（颜色编码） |
-| 二、收入与规模增长 | KPI stat-row（6 卡片）+ 营收结构表 + 利润率表 |
-| 三、竞争对手同期对比 | 5-6 行 × 5 列表格 + KPI 对比网格 + 文字总结 |
-| 四、做对了什么 | 6 张详细卡片（2 列 × 3 行），每张含 KPI 行 + 正文 + vs 竞对 |
-| 五、做错了什么 | 6 张详细卡片（2 列 × 3 行），每张含 KPI 行 + 正文 + 竞对教训 |
-| 六、客户真实评价 | Trustpilot 评分 + 星级分布柱状图 + 正负面引用 + 投诉主题占比表 |
-| 七、核心数据 & 结论 | 15 行数据汇总表 + 4 张结论卡片 |
+| 封面 | 品牌名 + 4 个核心 KPI 卡片（如：营收/估值/融资/用户数） |
+| 一 | 创始团队与品牌大事年表。**必须含创始人背景表格**（姓名/职位/履历/初始资金来源具体金额） |
+| 二 | 财务表现与竞争格局。营收趋势表 + vs 竞对对比表 + KPI stat-row |
+| 三 | 护城河与商业模式分析（4 张 insight 卡片） |
+| 四 | 做对了什么（6 张卡片，含 KPI 行 + 正文 + vs 竞对 + 来源，分两页各 4+2） |
+| 五 | 做错了什么/面临什么风险（6 张卡片，同上分页规则） |
+| 六 | 用户画像（含百分比） + 客户真实评价（Trustpilot 星级图 + 投诉主题占比表 + Reddit/YouTube 口碑） |
+| 七 | 核心数据汇总 + 4 条关键结论 |
 
-**内容质量标准：**
-- 每个数字必须有来源
-- 每条分析必须有竞对对比视角
-- 客户评价必须有百分比
-- 结论必须包含风险判断
+### Phase 3: 生成 HTML
 
-### Phase 3: 分页规划（必须输出）
-
-```
-Page 01（封面）：横版，左右结构 + 4 个 KPI 卡片
-
-Page 02（大事年表）：
-  - h1 + section-label: 50px
-  - info-table (表头 + 10行): 40 + 420 = 460px
-  总计: ~510px ✓
-
-Page 03（收入规模）：
-  - h1 + section-label: 50px
-  - callout: 45px
-  - stat-row (6卡片): 85px
-  - divider: 30px
-  - col-2 (营收表 + 利润率表): ~280px
-  总计: ~490px ✓
-
-Page 04（竞对对比）：
-  - h1 + section-label: 50px
-  - info-table (表头 + 7行): 40 + 294 = 334px
-  - divider: 30px
-  - kpi-grid (5卡片): 85px
-  总计: ~499px ✓
-
-Page 05（做对了什么）：
-  - h1 + section-label: 50px
-  - 6 张 insight-card (2列×3行): 3 × ~220 = 660px
-  总计: ~710px ✓
-
-Page 06（做错了什么）：
-  - h1 + section-label: 50px
-  - 6 张 insight-card (2列×3行): 3 × ~220 = 660px
-  总计: ~710px ✓
-
-Page 07（客户评价）：
-  - h1 + section-label: 50px
-  - col-2: 左侧 review-stat-box + 柱状图 + 投诉表 ≈ 500px
-  总计: ~550px ✓
-
-Page 08（核心数据 + 结论）：
-  - h1 + section-label: 50px
-  - col-2: 左侧数据总表 + 右侧 4 张结论卡 ≈ 600px
-  总计: ~650px ✓
-```
-
-横版 A4 可用高度：**~734px**（210mm - 上下 60px padding）
-
-### Phase 4: 生成 HTML
-
-使用以下 HTML 骨架（已修复所有已知坑）：
+使用以下完整 CSS 骨架，**直接复制，不要修改核心变量**：
 
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[品牌名] 深度调研报告</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
 
+/* ============ DESIGN TOKENS ============ */
 :root {
-    --warm-cream: #FFF8F0;
-    --terracotta: #E07A5F;
-    --sage: #81B29A;
-    --navy: #3D5A80;
-    --charcoal: #2B2D42;
-    --soft-peach: #F4ACB7;
-    --mid-gray: #8B8B8B;
-    --border-light: #E6DFD3;
-    --bg-stripe: #FCFAF7;
+    --bg-page: #F9F7F2;        /* 暖白底色 */
+    --bg-card: #FFFFFF;        /* 卡片白 */
+    --bg-stripe: #F5F2EC;      /* 表格斑马纹 */
+    --ink: #1C1C1C;            /* 正文黑 */
+    --ink-light: #555555;      /* 次级文字 */
+    --ink-muted: #999999;      /* 三级文字 */
+    --accent: #C2513B;         /* 陶土红 — 强调色 */
+    --positive: #5B8C6F;       /* 鼠尾草绿 — 正面/增长 */
+    --negative: #C2513B;       /* 陶土红 — 负面/下降 */
+    --neutral: #4A6FA5;        /* 蓝灰 — 中性 */
+    --border: #E8E4DA;         /* 卡片边框 */
+    --border-light: #F0EDE5;   /* 浅分割线 */
+    --shadow: 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-hover: 0 4px 16px rgba(0,0,0,0.06);
+    --radius: 12px;
+    --radius-sm: 8px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 13.5px; line-height: 1.55;
-    color: var(--charcoal); background: #D5CFC6;
-    -webkit-font-smoothing: antialiased;
+    font-size: 15px; line-height: 1.7; color: var(--ink);
+    background: #E8E5DE; -webkit-font-smoothing: antialiased;
 }
 
-.page {
-    width: 100%;
-    max-width: 1200px;
-    min-height: auto;
-    margin: 0 auto;
-    background: var(--warm-cream);
-    position: relative;
-    padding: 40px 64px;
-    border-bottom: 1px solid #E6DFD3;
+/* ============ SECTION ============ */
+.section {
+    width: 100%; max-width: 1040px; margin: 0 auto;
+    background: var(--bg-page); padding: 56px 72px;
+    border-bottom: 1px solid var(--border-light);
 }
-
-.page:last-child { border-bottom: none; }
+.section:last-child { border-bottom: none; }
+.section.cover {
+    display: flex; flex-direction: row; align-items: center;
+    justify-content: center; gap: 80px; min-height: 55vh;
+    background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%);
+    padding: 64px 80px;
+}
 
 /* ============ COVER ============ */
-.page.cover {
-    display: flex; flex-direction: row; align-items: center;
-    justify-content: center; text-align: left; gap: 70px;
-    background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%);
-    padding: 45px 65px;
+.cover-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px; font-weight: 600;
 }
-.cover-label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 28px; }
-.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; }
-.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 18px; color: var(--navy); line-height: 1.5; }
-.cover-line { width: 60px; height: 3px; background: var(--terracotta); margin: 26px 0; }
-.cover-footer { font-size: 11px; color: var(--mid-gray); letter-spacing: 2px; }
+.cover-title {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 56px; font-weight: 900; color: var(--ink);
+    line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px;
+}
+.cover-subtitle {
+    font-family: 'Crimson Pro', 'Noto Serif SC', serif;
+    font-size: 19px; color: var(--neutral); line-height: 1.6;
+}
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
 .cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cover-stat { background: rgba(255,255,255,0.7); border-radius: 10px; padding: 20px 26px; text-align: center; }
-.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--terracotta); }
-.cover-stat .cs-label { font-size: 10px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px; }
+.cover-stat {
+    background: rgba(255,255,255,0.6); border-radius: var(--radius);
+    padding: 22px 28px; text-align: center; backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.cover-stat .cs-num {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1.1;
+}
+.cover-stat .cs-label {
+    font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px;
+}
 
-/* ============ PAGE ELEMENTS ============ */
-.page-number { position: absolute; top: 24px; right: 52px; font-family: 'Crimson Pro', serif; font-size: 11px; color: var(--mid-gray); }
-.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
-h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; color: var(--charcoal); margin-bottom: 14px; }
-h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--navy); margin: 14px 0 8px 0; }
-h3 { font-size: 14px; font-weight: 700; }
-p { margin-bottom: 7px; color: #3D3D3D; }
+/* ============ TYPOGRAPHY ============ */
+.section-label {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px; font-weight: 600;
+}
+h1 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 32px; font-weight: 900; color: var(--ink);
+    margin-bottom: 20px; letter-spacing: -0.3px;
+}
+h2 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 21px; font-weight: 700; color: var(--neutral);
+    margin: 28px 0 14px 0;
+}
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
 
-/* ============ COMPONENTS ============ */
-.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 16px 0; }
-.callout { background: #FDF2EC; border-left: 3px solid var(--terracotta); padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #5D4037; page-break-inside: avoid; }
+/* ============ CALLOUT ============ */
+.callout {
+    background: #FDF6F2; border-left: 3px solid var(--accent);
+    padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14px; color: #5D3A2E;
+}
+.callout strong { color: var(--accent); }
 
-/* TABLE */
-.info-table { width: 100%; border-collapse: collapse; font-size: 12.5px; page-break-inside: avoid; }
-.info-table thead th { background: var(--charcoal); color: white; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; text-align: left; }
-.info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+/* ============ DIVIDER ============ */
+.divider {
+    border: none; height: 1px;
+    background: linear-gradient(to right, var(--accent) 0%, var(--accent) 60px, var(--border) 60px, transparent 100%);
+    margin: 32px 0;
+}
+
+/* ============ TABLE ============ */
+.info-table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0;
+}
+.info-table thead th {
+    background: var(--ink); color: white;
+    font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 12px 16px; text-align: left;
+}
+.info-table tbody td {
+    padding: 11px 16px; border-bottom: 1px solid var(--border);
+    vertical-align: middle; line-height: 1.5;
+}
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
 .td-num { text-align: left; font-variant-numeric: tabular-nums; }
-.td-impact { text-align: center; font-weight: 700; }
-.impact-up { color: var(--sage); }
-.impact-down { color: var(--terracotta); }
-.impact-neutral { color: var(--navy); }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); }
+.impact-down { color: var(--negative); }
+.impact-neutral { color: var(--neutral); }
 
-/* STAT ROW */
-.stat-row { display: flex; gap: 12px; page-break-inside: avoid; }
-.stat-card { flex: 1; background: white; border-radius: 8px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--terracotta); }
-.stat-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 1px; }
+/* ============ STAT ROW ============ */
+.stat-row {
+    display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap;
+}
+.stat-card {
+    flex: 1; min-width: 130px; background: var(--bg-card);
+    border-radius: var(--radius-sm); padding: 18px 16px;
+    text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light);
+}
+.stat-number {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 28px; font-weight: 900; color: var(--accent); line-height: 1.1;
+}
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
 
-/* KPI GRID */
-.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; page-break-inside: avoid; }
-.kpi-card { background: white; border-radius: 8px; padding: 12px 10px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--terracotta); }
-.kpi-label { font-size: 9.5px; color: var(--mid-gray); }
-.kpi-compare { font-size: 9px; margin-top: 2px; }
-.kpi-up { color: var(--sage); }
-.kpi-down { color: var(--terracotta); }
+/* ============ KPI GRID ============ */
+.kpi-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0;
+}
+.kpi-card {
+    background: var(--bg-card); border-radius: var(--radius-sm);
+    padding: 14px 12px; text-align: center; box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+}
+.kpi-value {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 22px; font-weight: 900; color: var(--accent);
+}
+.kpi-label { font-size: 10px; color: var(--ink-muted); }
+.kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); }
+.kpi-down { color: var(--negative); }
 
-/* INSIGHT CARD GRID */
-.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; page-break-inside: avoid; }
-.insight-card { background: white; border-radius: 10px; padding: 18px 20px 16px; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
-.insight-card.right { border-top: 3px solid var(--sage); }
-.insight-card.wrong { border-top: 3px solid var(--terracotta); }
-.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; opacity: 0.12; position: absolute; top: 8px; right: 14px; }
-.insight-card.right .insight-num { color: var(--sage); }
-.insight-card.wrong .insight-num { color: var(--terracotta); }
-.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 17px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; padding-right: 40px; }
-.insight-kpi { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
-.insight-card.right .insight-kpi { color: var(--sage); }
-.insight-card.wrong .insight-kpi { color: var(--terracotta); }
-.insight-card p { font-size: 12px; color: #4A4A4A; line-height: 1.5; margin-bottom: 10px; }
-.insight-vs { font-size: 10.5px; color: var(--mid-gray); padding-top: 8px; border-top: 1px solid var(--border-light); }
-.insight-vs span { font-weight: 600; color: var(--navy); }
+/* ============ INSIGHT CARD GRID (最常用组件) ============ */
+.insight-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0;
+}
+.insight-card {
+    background: var(--bg-card); border-radius: var(--radius);
+    padding: 24px 28px; position: relative; overflow: hidden;
+    box-shadow: var(--shadow); border: 1px solid var(--border-light);
+}
+.insight-card.right { border-top: 3px solid var(--positive); }
+.insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 44px; font-weight: 900; opacity: 0.08;
+    position: absolute; top: 10px; right: 18px;
+}
+.insight-card.right .insight-num { color: var(--positive); }
+.insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 19px; font-weight: 700; color: var(--ink);
+    margin-bottom: 8px; padding-right: 44px; line-height: 1.3;
+}
+.insight-kpi {
+    font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4;
+}
+.insight-card.right .insight-kpi { color: var(--positive); }
+.insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p {
+    font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px;
+}
+.insight-vs {
+    font-size: 11.5px; color: var(--ink-muted); padding-top: 10px;
+    border-top: 1px solid var(--border-light); line-height: 1.5;
+}
+.insight-vs span { font-weight: 600; color: var(--neutral); }
 
-/* 2-COL */
-.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; page-break-inside: avoid; }
+/* ============ 2-COLUMN LAYOUT ============ */
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
 
-/* QUOTE */
-.quote-card { background: white; border-left: 3px solid var(--sage); padding: 10px 14px; margin: 6px 0; border-radius: 0 6px 6px 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 14px; font-style: italic; color: #3D3D3D; page-break-inside: avoid; }
-.quote-source { display: block; margin-top: 4px; font-size: 10.5px; font-style: normal; color: var(--mid-gray); }
+/* ============ QUOTE CARD ============ */
+.quote-card {
+    background: var(--bg-card); border-left: 3px solid var(--positive);
+    padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-family: 'Crimson Pro', 'Noto Serif SC', serif;
+    font-size: 15px; font-style: italic; color: var(--ink-light);
+    box-shadow: var(--shadow);
+}
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source {
+    display: block; margin-top: 6px; font-size: 11px;
+    font-style: normal; color: var(--ink-muted);
+}
 
-/* REVIEW BAR */
-.review-stat-box { display: flex; align-items: center; gap: 24px; background: white; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); margin-bottom: 12px; }
-.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--terracotta); }
-.review-big-label { font-size: 11px; color: var(--mid-gray); }
-.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px; }
-.stars-label { width: 50px; text-align: right; font-weight: 600; }
-.bar-track { flex: 1; height: 14px; background: #EBE5DA; border-radius: 7px; overflow: hidden; }
+/* ============ REVIEW BAR CHART ============ */
+.review-stat-box {
+    display: flex; align-items: center; gap: 28px;
+    background: var(--bg-card); border-radius: var(--radius);
+    padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px;
+    border: 1px solid var(--border-light);
+}
+.review-big-score {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 48px; font-weight: 900; color: var(--neutral);
+}
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 7px; }
-.bar-1 { background: var(--terracotta); }
-.bar-2 { background: #E8927A; }
-.bar-3 { background: #C9A96E; }
-.bar-4 { background: #A3C4B3; }
-.bar-5 { background: var(--sage); }
-.pct-label { width: 40px; text-align: right; font-weight: 500; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; }
+.bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; }
+.bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
 
-/* CONCLUSION */
-.conclusion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; page-break-inside: avoid; }
-.conclusion-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
-.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; color: var(--terracotta); opacity: 0.7; }
-.conclusion-card h3 { margin-top: 3px; font-size: 14px; color: var(--navy); }
-.conclusion-card p { font-size: 12px; color: #3D3D3D; margin-top: 4px; line-height: 1.5; }
+/* ============ CONCLUSION GRID ============ */
+.conclusion-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;
+}
+.conclusion-card {
+    background: var(--bg-card); border-radius: var(--radius);
+    padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light);
+}
+.conclusion-card .cc-num {
+    font-family: 'Playfair Display', 'Noto Serif SC', serif;
+    font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7;
+}
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+    .section { padding: 32px 24px; }
+    .section.cover { flex-direction: column; text-align: center; }
+    .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; }
+    .cover-stat-block { grid-template-columns: 1fr 1fr; }
+}
 
 /* ============ PRINT ============ */
 @media print {
-    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: white; }
-    .page { margin: 0; border-bottom: none; box-shadow: none; }
+    .section { border-bottom: none; page-break-after: always; }
+    .section:last-child { page-break-after: auto; }
     h1, h2, h3 { page-break-after: avoid; }
-    .callout, .info-table, .stat-row, .quote-card, .insight-card, .insight-grid,
-    .conclusion-card, .col-2, .conclusion-grid, .review-stat-box, .kpi-grid, .kpi-card { page-break-inside: avoid; }
 }
 </style>
 </head>
 <body>
-<!-- 按分页规划填充 8 页内容 -->
+<!-- 按内容规划填充 .section -->
 </body>
 </html>
 ```
 
-**关键规则：**
-- `<style>` 标签绝对不能漏！CSS 必须在 `<style>...</style>` 内
-- 字体 @import 必须包含 `Noto Sans SC` + `Noto Serif SC`
-- 表格每列必须设置 `style="width:XXpx"`
-- 所有表格、卡片网格、col-2 都要加 `page-break-inside: avoid`
+## 设计系统速查
 
-### Phase 5: 输出与自动发布
+| Token | 值 | 用途 |
+|-------|-----|------|
+| `--bg-page` | `#F9F7F2` | 页面底色（暖白） |
+| `--bg-card` | `#FFFFFF` | 卡片背景 |
+| `--accent` | `#C2513B` | 陶土红 — 封面标签、KPI 数字、强调 |
+| `--positive` | `#5B8C6F` | 鼠尾草绿 — 正面信息、增长、做对了 |
+| `--negative` | `#C2513B` | 陶土红 — 负面信息、风险、做错了 |
+| `--neutral` | `#4A6FA5` | 蓝灰 — h2 标题、中性评价 |
+| `--ink` | `#1C1C1C` | 正文黑色 |
+| Font 标题 | `Playfair Display + Noto Serif SC` | h1/h2/h4 |
+| Font 正文 | `DM Sans + Noto Sans SC` | 正文/表格 |
+| Font 装饰 | `Crimson Pro` | 引用/封面副标题 |
 
-生成 HTML 后，执行以下步骤自动同步到 GitHub Pages：
+## 必须遵守的规则（按出错频率排序）
+
+### 🔴 绝对不允许
+
+1. **使用 `td-right` 类名** — 已废弃。所有数据单元格用 `td-num`（左对齐+等宽数字）
+2. **CSS 不放在 `<style>` 标签内** — 导致整个样式失效
+3. **忘记导入中文字体** — `Noto Sans SC` + `Noto Serif SC` 必须在 @import 中
+4. **使用 Inter / Roboto / Arial / Space Grotesk** — 用 Playfair+DM Sans+Crimson Pro
+
+### 🟠 必须包含
+
+5. **创始团队背景表格** — 第二章必须有：创始人姓名、职位、具体履历、初始资金来源（具体金额）
+6. **用户画像含百分比** — 第六章必须有年龄/性别/收入/动机的量化画像
+7. **客户评价含百分比** — Trustpilot 星级分布图 + 投诉主题占比表
+8. **Reddit/YouTube 口碑分析** — 讨论热度、社群形成情况、对购买决策的影响
+9. **竞对视角贯穿始终** — 每张 insight 卡片必须有 vs 竞对对比
+10. **所有数字标注来源**
+
+### 🟢 排版规范
+
+11. **连续网页，不分页** — 用 `.section` 替代 `.page`，底部用细线分隔
+12. **表格列宽必须设置** — 给 `<th>` 加 `style="width:XXpx"` 防止文字竖排
+13. **insight 卡片 4+2 拆分** — 6 张卡片分两页（第一页 4 张，第二页 2 张），避免内容溢出
+14. **字体大小从 13.5px 起步** — 比之前的 12px 更易读
+
+### Phase 4: 输出
 
 1. 文件保存到 `~/Downloads/[品牌名]-report.html`
-2. 用浏览器打开文件
-3. 告诉用户：`Ctrl + P` → 勾选 Background graphics → 保存为 PDF
-
-**Phase 5a: 自动同步到 GitHub Pages（必须执行，不可跳过）**
-
-生成报告后，自动执行以下命令将报告发布到 GitHub Pages：
-
-```bash
-# 1. 复制报告到项目 examples 目录
-cp "~/Downloads/[品牌名]-report.html" "~/Downloads/brand-research-pdf/examples/"
-
-# 2. 用 Edit 工具更新 index.html，在 <div class="reports"> 内、最后一个 </a> 之后、</div> 之前，新增一张报告卡片
-```
-
-**index.html 卡片模板：**
-
-```html
-    <a href="examples/[品牌名]-report.html" class="card">
-        <h2>[品牌名英文]</h2>
-        <div class="subtitle">[一句话描述] · [国家] · [年份] 年创立</div>
-        <div class="tags">
-            <span class="tag">[关键数据1]</span>
-            <span class="tag">[关键数据2]</span>
-            <span class="tag">[关键数据3]</span>
-        </div>
-    </a>
-```
-
-**3. 更新后自动提交并推送。** 使用 `run_in_background` 参数执行以下 git 命令，避免阻塞用户操作：
-
-```bash
-cd "~/Downloads/brand-research-pdf" && git add examples/ index.html && git commit -m "Add [品牌名] report" && git push
-```
-
-**提交信息格式**：`Add Hyrox report` / `Add Tonal report` / `Add Peloton report` 等，英文品牌名。
-
-## 内容质量标准
-
-### 核心用户深度画像（必须包含）
-
-在"客户评价"章节或独立页面中，必须包含：
-
-- 用户画像：年龄/性别/收入/健身水平/家庭状态的量化描述
-- 用户群体占比：各画像占全部用户的百分比（如有数据）
-- 目标用户心理动机和痛点
-
-### 众筹/营销战役故事（必须包含）
-
-如果品牌通过 Kickstarter/Indiegogo/其他众筹平台启动，必须在"做对了什么"中单独一张卡片详细分析：
-
-- 众筹金额、支持者数、超募比例
-- 操盘团队（如 TCF）和核心策略（预发布漏斗、广告 ROAS、PR、KOL）
-- 为什么在这个时间点、这个平台取得了成功
-
-### Reddit/YouTube 真人口碑（必须包含）
-
-在"客户评价"章节中，必须包含：
-
-- YouTube 真实评测/拆箱视频的亮点和槽点
-- Reddit 讨论热度和社区形成情况
-- 社交媒体口碑对购买决策的影响分析
-- 如果某个平台没有讨论，必须说明（这也是重要信息）
-
-### 做对了什么（6 张卡片，每张必须包含）
-
-- KPI 数据行（具体数字）
-- 5-8 句正文：解释做了什么、为什么有效、数据支撑
-- vs 竞对对比（至少 1 个竞对的具体做法和数据）
-- 来源标注
-
-### 做错了什么（6 张卡片，每张必须包含）
-
-- KPI 数据行
-- 5-8 句正文：具体事件、数据、后果
-- vs 竞对对比或竞对类似教训
-- 来源标注
-
-### 客户评价（必须包含）
-
-- Trustpilot 评分（如适用）+ 星级分布柱状图
-- 投诉主题百分比表（≥5 个主题，每个有占比）
-- 至少 3 条正面引用 + 来源
-- 间接满意度指标表（增长数据、复购行为、画像数据）
-- 选择偏差提示
-
-### 结论（4 张卡片，每张必须包含）
-
-- 至少 1 个竞对数据对比
-- 风险判断
-- 具体数据支撑
-
-## 避免踩坑
-
-1. **CSS 必须在 `<style>` 标签内** — 最常见错误
-2. **中文字体必须导入** — `Noto Sans SC` + `Noto Serif SC`
-3. **表格列宽必须设置** — 否则文字可能竖排
-4. **分页先算高度** — 不要猜
-5. **内容不能太简化** — 每张卡片至少 5 句正文 + 数据
-6. **所有数字必须标注来源**
-7. **竞对视角必须贯穿始终** — 这是报告的核心价值
-
-## 与 nice-pdf skill 的关系
-
-本 skill 是 `nice-pdf` 的上层封装：
-- `nice-pdf` 负责"如何把内容做成漂亮的 PDF"（纯设计/排版能力）
-- `brand-research` 负责"品牌调研 + 内容组织 + 调用 nice-pdf 的设计系统生成报告 + 自动发布到 GitHub Pages"
-
-如果你已经安装了 `nice-pdf` skill，本 skill 会自动复用其中的设计组件和 CSS 规范。
+2. 复制到项目 `examples/` 目录
+3. 更新 `index.html` 添加新卡片
+4. 自动 git commit + push
