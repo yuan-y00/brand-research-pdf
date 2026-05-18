@@ -134,12 +134,17 @@ body {
 }
 
 .page {
-    width: 297mm; min-height: 210mm;
-    margin: 16px auto; background: var(--warm-cream);
-    position: relative; page-break-after: always;
-    padding: 28px 52px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    width: 100%;
+    max-width: 1200px;
+    min-height: auto;
+    margin: 0 auto;
+    background: var(--warm-cream);
+    position: relative;
+    padding: 40px 64px;
+    border-bottom: 1px solid #E6DFD3;
 }
+
+.page:last-child { border-bottom: none; }
 
 /* ============ COVER ============ */
 .page.cover {
@@ -246,12 +251,11 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
     body { background: white; }
-    .page { margin: 0; page-break-after: always; box-shadow: none; }
+    .page { margin: 0; border-bottom: none; box-shadow: none; }
     h1, h2, h3 { page-break-after: avoid; }
     .callout, .info-table, .stat-row, .quote-card, .insight-card, .insight-grid,
     .conclusion-card, .col-2, .conclusion-grid, .review-stat-box, .kpi-grid, .kpi-card { page-break-inside: avoid; }
 }
-@page { size: A4 landscape; margin: 0; }
 </style>
 </head>
 <body>
