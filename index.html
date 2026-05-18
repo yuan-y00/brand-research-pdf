@@ -6,110 +6,85 @@
 <title>Brand Research PDF — 品牌调研报告</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    background: #F5F0E8; color: #2B2D42;
-    min-height: 100vh;
-}
-
-.hero {
-    text-align: center; padding: 60px 20px 40px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 42px; font-weight: 900; margin-bottom: 12px;
-}
-
-.hero p { font-size: 16px; color: #8B8B8B; }
-
-.reports {
-    max-width: 900px; margin: 0 auto; padding: 0 20px 60px;
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-}
-
-.card {
-    background: white; border-radius: 12px; padding: 28px 30px;
-    text-decoration: none; color: inherit;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: all .2s;
-    border-left: 4px solid #E07A5F;
-}
-
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; background: #F5F0E8; color: #2B2D42; min-height: 100vh; }
+.hero { text-align: center; padding: 60px 20px 30px; }
+.hero h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 42px; font-weight: 900; margin-bottom: 8px; }
+.hero p { font-size: 15px; color: #8B8B8B; }
+.reports { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.card { background: white; border-radius: 12px; padding: 22px 26px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all .2s; border-left: 4px solid #E07A5F; display: flex; flex-direction: column; gap: 10px; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-
-.card h2 {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 26px; font-weight: 900; margin-bottom: 6px;
-}
-
-.card .subtitle { font-size: 13px; color: #8B8B8B; margin-bottom: 12px; }
-
+.card h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; }
+.card .subtitle { font-size: 12px; color: #8B8B8B; }
 .card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-.tag {
-    font-size: 11px; padding: 3px 10px; border-radius: 20px;
-    background: #FDF2EC; color: #E07A5F; font-weight: 500;
-}
-
-.footer {
-    text-align: center; padding: 30px 20px 50px;
-    font-size: 13px; color: #BBB;
-}
-
+.tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #FDF2EC; color: #E07A5F; font-weight: 500; }
+.card .actions { display: flex; gap: 10px; margin-top: 2px; }
+.btn { display: inline-flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none; transition: all .15s; }
+.btn-primary { background: #E07A5F; color: white; } .btn-primary:hover { background: #C9604A; }
+.btn-pdf { background: #FDF2EC; color: #E07A5F; border: 1px solid #F4ACB7; } .btn-pdf:hover { background: #FDE8D8; }
+.btn-disabled { background: #F5F5F5; color: #CCC; border: 1px solid #E8E8E8; cursor: not-allowed; pointer-events: none; }
+.footer { text-align: center; padding: 30px 20px 50px; font-size: 13px; color: #BBB; }
 .footer a { color: #8B8B8B; }
+@media (max-width: 700px) { .reports { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <div class="hero">
     <h1>Brand Research PDF</h1>
-    <p>输入品牌名，自动生成深度调研报告。以下为示例报告。</p>
+    <p>输入品牌名，自动生成深度调研报告。🖥️ 在线查看 &nbsp;|&nbsp; 📥 下载 PDF</p>
 </div>
 
 <div class="reports">
-    <a href="examples/hyrox-report.html" class="card">
+    <div class="card">
         <h2>Hyrox</h2>
         <div class="subtitle">健身赛事 · 德国 · 2017 年创立</div>
-        <div class="tags">
-            <span class="tag">$1.4亿营收</span>
-            <span class="tag">650K参赛者</span>
-            <span class="tag">0付费广告</span>
+        <div class="tags"><span class="tag">$1.4亿营收</span><span class="tag">650K参赛者</span><span class="tag">0付费广告</span></div>
+        <div class="actions">
+            <a href="examples/hyrox-report.html" class="btn btn-primary">🖥️ 在线查看</a>
+            <a href="examples/hyrox-report.pdf" class="btn btn-pdf">📥 PDF</a>
         </div>
-    </a>
+    </div>
 
-    <a href="examples/tonal-report.html" class="card">
+    <div class="card">
         <h2>Tonal</h2>
         <div class="subtitle">智能家庭力量训练 · 美国 · 2015 年创立</div>
-        <div class="tags">
-            <span class="tag">$1.6B峰值估值</span>
-            <span class="tag">$550M当前估值</span>
-            <span class="tag">>$100M ARR</span>
+        <div class="tags"><span class="tag">$1.6B峰值估值</span><span class="tag">$550M当前估值</span><span class="tag">>$100M ARR</span></div>
+        <div class="actions">
+            <a href="examples/tonal-report.html" class="btn btn-primary">🖥️ 在线查看</a>
+            <a href="#" class="btn btn-disabled">📥 PDF 待上传</a>
         </div>
-    </a>
+    </div>
 
-    <a href="examples/peloton-report.html" class="card">
+    <div class="card">
         <h2>Peloton</h2>
         <div class="subtitle">互联健身 · 美国 · 2012 年创立</div>
-        <div class="tags">
-            <span class="tag">$50B→$1.2B市值</span>
-            <span class="tag">$4B营收峰值</span>
-            <span class="tag">2.88M订阅用户</span>
+        <div class="tags"><span class="tag">$50B→$1.2B市值</span><span class="tag">$4B营收峰值</span><span class="tag">2.88M订阅用户</span></div>
+        <div class="actions">
+            <a href="examples/peloton-report.html" class="btn btn-primary">🖥️ 在线查看</a>
+            <a href="#" class="btn btn-disabled">📥 PDF 待上传</a>
         </div>
-    </a>
+    </div>
 
-    <a href="examples/speediance-report.html" class="card">
+    <div class="card">
         <h2>Speediance</h2>
         <div class="subtitle">中国智能健身出海 · 深圳 · 2020 年创立</div>
-        <div class="tags">
-            <span class="tag">$49M营收</span>
-            <span class="tag">$13.6M融资</span>
-            <span class="tag">零强制订阅</span>
+        <div class="tags"><span class="tag">$49M营收</span><span class="tag">$13.6M融资</span><span class="tag">零强制订阅</span></div>
+        <div class="actions">
+            <a href="examples/speediance-report.html" class="btn btn-primary">🖥️ 在线查看</a>
+            <a href="#" class="btn btn-disabled">📥 PDF 待上传</a>
         </div>
-    </a>
+    </div>
+
+    <div class="card">
+        <h2>AEKE</h2>
+        <div class="subtitle">AI 镜面力量训练 · 深圳 · 2022 年创立</div>
+        <div class="tags"><span class="tag">$1.5M众筹</span><span class="tag">43"4K镜面</span><span class="tag">0 VC融资</span></div>
+        <div class="actions">
+            <a href="examples/aeke-report.html" class="btn btn-primary">🖥️ 在线查看</a>
+            <a href="#" class="btn btn-disabled">📥 PDF 待上传</a>
+        </div>
+    </div>
 </div>
 
 <div class="footer">
