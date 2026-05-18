@@ -176,7 +176,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 .info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
-.td-right { text-align: right !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
 .td-impact { text-align: center; font-weight: 700; }
 .impact-up { color: var(--sage); }
 .impact-down { color: var(--terracotta); }
