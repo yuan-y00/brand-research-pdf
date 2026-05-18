@@ -4,86 +4,87 @@
 <meta charset="UTF-8">
 <title>Growl 深度调研报告</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
-:root { --warm-cream: #FFF8F0; --terracotta: #E07A5F; --sage: #81B29A; --navy: #3D5A80; --charcoal: #2B2D42; --soft-peach: #F4ACB7; --mid-gray: #8B8B8B; --border-light: #E6DFD3; --bg-stripe: #FCFAF7; }
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 13.5px; line-height: 1.55; color: var(--charcoal); background: #D5CFC6; -webkit-font-smoothing: antialiased; }
-.page { width: 297mm; min-height: 210mm; margin: 16px auto; background: var(--warm-cream); position: relative; page-break-after: always; padding: 28px 52px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
-.page.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: left; gap: 70px; background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%); padding: 45px 65px; }
-.cover-label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 28px; }
-.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 54px; font-weight: 900; color: var(--charcoal); line-height: 1.1; margin-bottom: 16px; }
-.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 18px; color: var(--navy); line-height: 1.5; }
-.cover-line { width: 60px; height: 3px; background: var(--terracotta); margin: 26px 0; }
-.cover-footer { font-size: 11px; color: var(--mid-gray); letter-spacing: 2px; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
 .cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.cover-stat { background: rgba(255,255,255,0.7); border-radius: 10px; padding: 20px 26px; text-align: center; }
-.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--terracotta); }
-.cover-stat .cs-label { font-size: 10px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px; }
-.page-number { position: absolute; top: 24px; right: 52px; font-family: 'Crimson Pro', serif; font-size: 11px; color: var(--mid-gray); }
-.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 4px; }
-h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; color: var(--charcoal); margin-bottom: 14px; }
-h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--navy); margin: 14px 0 8px 0; }
-h3 { font-size: 14px; font-weight: 700; color: var(--charcoal); }
-p { margin-bottom: 7px; color: #3D3D3D; }
-.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 16px 0; }
-.callout { background: #FDF2EC; border-left: 3px solid var(--terracotta); padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0; font-size: 12.5px; color: #5D4037; page-break-inside: avoid; }
-.callout strong { color: var(--terracotta); }
-.info-table { width: 100%; border-collapse: collapse; font-size: 12.5px; page-break-inside: avoid; }
-.info-table thead th { background: var(--charcoal); color: white; font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 14px; text-align: left; }
-.info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
 .td-num { text-align: left; font-variant-numeric: tabular-nums; }
-.td-impact { text-align: center; font-weight: 700; }
-.impact-up { color: var(--sage); } .impact-down { color: var(--terracotta); } .impact-neutral { color: var(--navy); }
-.stat-row { display: flex; gap: 12px; page-break-inside: avoid; }
-.stat-card { flex: 1; background: white; border-radius: 8px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--terracotta); }
-.stat-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 1px; }
-.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; page-break-inside: avoid; }
-.kpi-card { background: white; border-radius: 8px; padding: 12px 10px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--terracotta); }
-.kpi-label { font-size: 9.5px; color: var(--mid-gray); } .kpi-compare { font-size: 9px; margin-top: 2px; }
-.kpi-up { color: var(--sage); } .kpi-down { color: var(--terracotta); }
-.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; page-break-inside: avoid; }
-.insight-card { background: white; border-radius: 10px; padding: 18px 20px 16px; position: relative; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
-.insight-card.right { border-top: 3px solid var(--sage); } .insight-card.wrong { border-top: 3px solid var(--terracotta); }
-.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; opacity: 0.12; position: absolute; top: 8px; right: 14px; }
-.insight-card.right .insight-num { color: var(--sage); } .insight-card.wrong .insight-num { color: var(--terracotta); }
-.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 17px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; padding-right: 40px; }
-.insight-kpi { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
-.insight-card.right .insight-kpi { color: var(--sage); } .insight-card.wrong .insight-kpi { color: var(--terracotta); }
-.insight-card p { font-size: 12px; color: #4A4A4A; line-height: 1.5; margin-bottom: 10px; }
-.insight-vs { font-size: 10.5px; color: var(--mid-gray); padding-top: 8px; border-top: 1px solid var(--border-light); }
-.insight-vs span { font-weight: 600; color: var(--navy); }
-.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; page-break-inside: avoid; }
-.quote-card { background: white; border-left: 3px solid var(--sage); padding: 10px 14px; margin: 6px 0; border-radius: 0 6px 6px 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 14px; font-style: italic; color: #3D3D3D; page-break-inside: avoid; }
-.quote-source { display: block; margin-top: 4px; font-size: 10.5px; font-style: normal; color: var(--mid-gray); }
-.review-stat-box { display: flex; align-items: center; gap: 24px; background: white; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); margin-bottom: 12px; }
-.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--navy); }
-.review-big-label { font-size: 11px; color: var(--mid-gray); }
-.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px; }
-.stars-label { width: 50px; text-align: right; font-weight: 600; }
-.bar-track { flex: 1; height: 14px; background: #EBE5DA; border-radius: 7px; overflow: hidden; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 7px; }
-.bar-5 { background: var(--sage); } .bar-4 { background: #A3C4B3; } .bar-3 { background: #C9A96E; } .bar-2 { background: #E8927A; } .bar-1 { background: var(--terracotta); }
-.pct-label { width: 40px; text-align: right; font-weight: 500; }
-.conclusion-grid { display: grid; grid-template-columns: 1fr; gap: 12px; page-break-inside: avoid; }
-.conclusion-card { background: white; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid; }
-.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; color: var(--terracotta); opacity: 0.7; }
-.conclusion-card h3 { margin-top: 3px; font-size: 14px; color: var(--navy); }
-.conclusion-card p { font-size: 12px; color: #3D3D3D; margin-top: 4px; line-height: 1.5; }
-@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; } body { background: white; } .page { margin: 0; page-break-after: always; box-shadow: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .quote-card, .insight-card, .insight-grid, .conclusion-card, .col-2, .conclusion-grid, .review-stat-box, .kpi-grid, .kpi-card { page-break-inside: avoid; } }
-@page { size: A4 landscape; margin: 0; }
-</style>
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
 </head>
 <body>
-<div class="page cover">
+<div class="section cover">
     <div class="cover-left"><div class="cover-label">Industry Research Report · 2026.05</div><div class="cover-title">Growl<br>深度调研报告</div><div class="cover-line"></div><div class="cover-subtitle">全球首款 AI 投影拳击沙袋 · $4.75M 种子轮<br>4K 投影虚拟教练 · UFC 冠军 Ciryl Gane 背书</div><div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div></div>
     <div class="cover-right"><div class="cover-stat-block"><div class="cover-stat"><div class="cs-num">$4.75M</div><div class="cs-label">种子轮融资</div></div><div class="cover-stat"><div class="cs-num">$4,500</div><div class="cs-label">零售价</div></div><div class="cover-stat"><div class="cs-num">2026.02</div><div class="cs-label">预计发货</div></div><div class="cover-stat"><div class="cs-num">$144K+</div><div class="cs-label">Kickstarter（进行中）</div></div></div></div>
 </div>
 
-<div class="page"><div class="page-number">01</div><div class="section-label">Brand Timeline</div><h1>一、品牌大事年表</h1>
+<div class="section"><div class="section-label">Brand Timeline</div><h1>一、品牌大事年表</h1>
 <table class="info-table"><thead><tr><th style="width:75px">时间</th><th style="width:410px">事件</th><th style="width:290px">关键细节</th><th style="width:65px">影响</th></tr></thead><tbody>
 <tr><td class="td-center"><strong>2022</strong></td><td>Léo Desrumaux（CEO）和 Nicolas de Maubeuge（CTO）创立 Growl</td><td>法裔美国创业公司，总部奥斯汀。Desrumaux 16 岁从法国搬到美国，靠拳击融入新环境——"想让每个人都能在家体验拳击的力量"</td><td class="td-impact impact-neutral">冷启动</td></tr>
 <tr><td class="td-center"><strong>2024.12</strong></td><td>结束隐身模式，宣布 $4.75M 种子轮</td><td>领投方 Skip Capital（Atlassian 联合创始人 Scott Farquhar 的家族基金）。跟投：Kima Ventures、Teampact。UFC 重量级冠军 Ciryl Gane 个人投资。顾问包括前 Peloton VP Sam Bowen</td><td class="td-impact impact-up">资本+背书</td></tr>
@@ -91,7 +92,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 <tr><td class="td-center"><strong>2025.06</strong></td><td>Kickstarter 预计结束</td><td>众筹将持续至 6 月 14 日。获得 The Verge、TechCrunch、Engadget 等顶级科技媒体报道</td><td class="td-impact impact-up">媒体曝光</td></tr>
 <tr><td class="td-center"><strong>2026.02</strong></td><td>预计首批发货</td><td>面向北美市场。零售价 $4,500-4,949。月付方案 $150-190/月（含硬件+内容）。订阅单独 ~$60/月</td><td class="td-impact impact-neutral">待验证</td></tr></tbody></table></div>
 
-<div class="page"><div class="page-number">02</div><div class="section-label">Financials & Business Model</div><h1>二、创始团队与商业模式</h1>
+<div class="section"><div class="section-label">Financials & Business Model</div><h1>二、创始团队与商业模式</h1>
     <h2>创始团队</h2>
     <table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:110px">创始人</th><th style="width:55px">职位</th><th>背景</th><th style="width:150px">初始资金</th></tr></thead><tbody>
     <tr><td><strong>Léo Desrumaux</strong></td><td class="td-center">CEO</td><td><strong>法裔美国人</strong>·16 岁从法国搬到美国，靠拳击融入新环境。创办 Growl 前无公开的创业经历——这是他第一次创业。产品理念来自个人体验："想让每个人都能在家体验拳击的力量"</td><td class="td-center"><strong>个人积蓄+种子轮 $4.75M</strong>（Skip Capital 领投·Atlassian 联合创始人 Scott Farquhar 的家族基金）</td></tr>
@@ -102,7 +103,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 <div class="divider"></div>
 <div class="col-2"><div class="col-2-left"><h2>融资详情</h2><table class="info-table"><thead><tr><th>轮次</th><th style="width:85px">金额</th><th>领投/跟投</th></tr></thead><tbody><tr><td>种子轮</td><td class="td-num">$4.75M</td><td>Skip Capital（领投）+ Kima + Teampact</td></tr><tr><td>Kickstarter</td><td class="td-num">$144K+</td><td>658+ 支持者（目标 $20K）</td></tr><tr><td>个人投资人</td><td class="td-num">—</td><td>Ciryl Gane（UFC 重量级冠军）</td></tr><tr><td>顾问</td><td class="td-num">—</td><td>Sam Bowen（前 Peloton/Tonal/Amazon VP）</td></tr></tbody></table></div><div class="col-2-right"><h2>vs FightCamp / Peloton</h2><table class="info-table"><thead><tr><th>维度</th><th style="width:80px">Growl</th><th style="width:80px">FightCamp</th><th style="width:75px">Peloton</th></tr></thead><tbody><tr><td>硬件</td><td class="td-num">$4,500</td><td class="td-num">$699-999</td><td class="td-num">$0</td></tr><tr><td>月费</td><td class="td-num">~$60</td><td class="td-num">$39</td><td class="td-num">$13-44</td></tr><tr><td>拳击类型</td><td class="td-center">AI 沙袋</td><td class="td-center">实体沙袋+追踪器</td><td class="td-center">空击</td></tr><tr><td>状态</td><td class="td-center">预购</td><td class="td-center">在售</td><td class="td-center">在售</td></tr></tbody></table></div></div></div>
 
-<div class="page"><div class="page-number">03</div><div class="section-label">Competitive Landscape</div><h1>三、居家拳击健身赛道格局</h1>
+<div class="section"><div class="section-label">Competitive Landscape</div><h1>三、居家拳击健身赛道格局</h1>
 <p>居家拳击健身是智能健身赛道中增长最快的新兴品类。Growl（AI 投影沙袋）、FightCamp（追踪器+沙袋）、Peloton Boxing（空击跟练）代表了三种截然不同的产品哲学。</p>
 <table class="info-table"><thead><tr><th style="width:70px">维度</th><th style="width:170px">Growl</th><th style="width:170px">FightCamp</th><th style="width:170px">Peloton Boxing</th><th style="width:170px">Liteboxer</th></tr></thead><tbody>
 <tr><td class="td-center"><strong>创立</strong></td><td>2022 · 奥斯汀</td><td>2014 · 蒙特利尔→加州</td><td>2012 · 纽约</td><td>2020 · 波士顿</td></tr>
@@ -115,31 +116,31 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 <tr><td class="td-center"><strong>核心优势</strong></td><td>真实打击+AI教练+沉浸</td><td>专业追踪+大内容库</td><td>零成本+大平台</td><td>节奏游戏+灯光</td></tr></tbody></table>
 <div class="divider"></div><div class="kpi-grid"><div class="kpi-card"><div class="kpi-value">$4,500</div><div class="kpi-label">Growl 硬件价</div><div class="kpi-compare">品类最贵</div></div><div class="kpi-card"><div class="kpi-value">$60/月</div><div class="kpi-label">Growl 月费</div><div class="kpi-compare">品类最高</div></div><div class="kpi-card"><div class="kpi-value">$94M</div><div class="kpi-label">FightCamp 融资</div><div class="kpi-compare kpi-up">20× Growl</div></div><div class="kpi-card"><div class="kpi-value">$144K</div><div class="kpi-label">Growl KS 已筹</div><div class="kpi-compare kpi-up">720% 超募</div></div><div class="kpi-card"><div class="kpi-value">未发货</div><div class="kpi-label">Growl 最大风险</div><div class="kpi-compare kpi-down">FightCamp 在售 5 年+</div></div></div></div>
 
-<div class="page"><div class="page-number">04</div><div class="section-label">Success Factors</div><h1>四、Growl 做对了什么</h1>
+<div class="section"><div class="section-label">Success Factors</div><h1>四、Growl 做对了什么</h1>
 <div class="insight-grid">
 <div class="insight-card right"><div class="insight-num">01</div><h4>4K 投影 + AI 教练：重新定义拳击沙袋</h4><div class="insight-kpi">壁挂式沙袋 + 4K 超短焦投影 · 多摄像头 3D 动作追踪 · 红外 ToF 传感器 · 边缘 AI 实时反馈</div><p>传统的拳击沙袋是一个被动的物体——Growl 把它变成了一个<strong>智能交互界面</strong>。核心技术栈：4K 超短焦投影仪将虚拟教练和训练内容直接投射到沙袋表面，多摄像头 3D 视觉系统实时追踪用户的每一次出拳、每一个动作，红外 ToF（飞行时间）传感器检测打击力度和位置，边缘 AI 芯片在本地处理数据并实时给出形态纠正和力度反馈。这个技术组合在家庭健身领域是前所未有的——FightCamp 只能追踪拳速和次数（通过手套里的加速计），Peloton Boxing 只能跟练（没有任何追踪）。Growl 实现的是"一个真正的 AI 教练站在你面前，看着你打拳，实时纠正你"的体验。</p><div class="insight-vs"><span>vs FightCamp:</span> 追踪器只能计拳速/次数，无形态纠正。<span>vs Peloton:</span> 无任何追踪。<span>vs Liteboxer:</span> 有灯光节奏游戏但无 AI 视觉追踪。</div></div>
 <div class="insight-card right"><div class="insight-num">02</div><h4>拳击是增长最快的健身品类 + 时机精准</h4><div class="insight-kpi">拳击是美国 18-45 岁人群最想尝试的 #1 健身方式 · $322B 全球健身市场 · 后疫情家庭健身习惯已固化</div><p>Growl 进入了一个确定性增长的市场窗口。根据行业数据，拳击/搏击健身是美国 18-45 岁成年人中增长速度最快的健身品类。但目前的家庭健身解决方案要么太简陋（Peloton 空击课只是跟练），要么太传统（FightCamp 本质上是一个普通沙袋+追踪器）。Growl 的时机优势：(1) 后疫情家庭健身习惯已经固化——人们不会回到 100% 健身房生活；(2) AI 技术成熟度和成本已经降到可以嵌入消费级硬件；(3) Peloton 和 Tonal 的衰落释放了消费者对"新品类领导者"的期待空间。</p><div class="insight-vs"><span>vs FightCamp:</span> 2014 年进入市场太早——当时"互联健身"概念尚未成熟。<span>vs Peloton:</span> 拳击只是 Peloton 的边角料内容，不是战略重心。</div></div>
 <div class="insight-card right"><div class="insight-num">03</div><h4>投资人+顾问阵容：Peloton/Tonal 基因</h4><div class="insight-kpi">Skip Capital（Atlassian 联合创始人）· Ciryl Gane（UFC 冠军）· Sam Bowen（前 Peloton/Tonal/Amazon VP）</div><p>Growl 的早期支持者和顾问团队展示了一种精准的"经验的搬运"策略。Sam Bowen 在 Peloton、Tonal 和 Amazon 都担任过硬件工程 VP——这意味着 Growl 的领导层可以获得 Peloton 和 Tonal 在供应链、硬件制造、内容制作、订阅模式上十几年经验的血泪教训，而不必重蹈覆辙。Ciryl Gane 作为 UFC 重量级冠军（且是法国人——与法裔创始人有文化共鸣）为产品提供了真实的竞技拳击背书。Skip Capital 的 Scott Farquhar 是 Atlassian 联合创始人——熟悉从 0 到 $10B 的完整创业旅程。</p><div class="insight-vs"><span>vs FightCamp:</span> Mike Tyson + Floyd Mayweather 背书，但投资人阵容中缺少"前 Peloton/Tonal 高管"这种运营经验型角色。<span>vs Tonal:</span> LeBron/Serena 代言但后期 PE 接管后失去了创始人驱动。</div></div>
 <div class="insight-card right"><div class="insight-num">04</div><h4>Unreal Engine 游戏化：让拳击变成 Beat Saber</h4><div class="insight-kpi">Unreal Engine 5 驱动 · Beat Saber 式拳击游戏 · 家庭友好（10 岁+）· 拳击+力量+瑜伽多品类</div><p>Growl 的游戏化策略比任何竞对都走得更远——不是简单的排行榜和徽章，而是用 <strong>Unreal Engine 5</strong> 构建了完整的交互式游戏体验。在"Beat Saber 式"拳击游戏中，用户需要用正确的拳法打击沙袋上出现的视觉目标——就像在玩街机游戏，但实际在做拳击训练。这解决了家庭健身最核心的问题之一：<strong>"如何让不爱健身的人（尤其是孩子）愿意运动"</strong>。Growl 自称覆盖 10 岁以上用户——这意味着它可以成为整个家庭的娱乐+健身中心，而不仅仅是"健身爱好者的训练工具"。</p><div class="insight-vs"><span>vs Peloton:</span> Lanebreak 游戏化骑行——同思路但品类不同。<span>vs FightCamp:</span> 排行榜和挑战是表层游戏化，没有沉浸式视觉游戏。</div></div></div></div>
 
-<div class="page"><div class="page-number">05</div><div class="section-label">Success Factors (Cont.)</div><h1>四、Growl 做对了什么（续）</h1>
+<div class="section"><div class="section-label">Success Factors (Cont.)</div><h1>四、Growl 做对了什么（续）</h1>
 <div class="insight-grid">
 <div class="insight-card right"><div class="insight-num">05</div><h4>Kickstarter 冷启动 + 顶级科技媒体矩阵</h4><div class="insight-kpi">2025.05 上线 · 目标 $20K → 实际 $144K+（720%）· 658+ 支持者 · The Verge/TechCrunch/Engadget 报道</div><p>Growl 的 Kickstarter 策略是典型的"低目标+高曝光"。目标仅设 $2 万——快速达成后触发平台算法推荐和社交证明效应。但真正强大的不是众筹本身，而是与 Kickstarter 同步的<strong>顶级科技媒体 PR 矩阵</strong>：The Verge、TechCrunch、Engadget、Mixed News、GlobeNewswire 几乎在同一时间发布了报道。这不是偶然——这说明 Growl 的 PR 团队在 Kickstarter 上线前就做好了媒体种子（embargo 策略）：提前让记者体验产品、写好报道、约定好发布时间。这种"众筹+媒体同步引爆"的打法比单纯的 Kickstarter 广告更有效——媒体背书提供了广告无法提供的可信度。</p><div class="insight-vs"><span>vs AEKE Kickstarter:</span> TCF 操盘 $1.52M（34 家媒体），但缺少 The Verge/TechCrunch 级别的科技媒体。<span>vs Speediance:</span> Kickstarter 更低调，更多靠产品评测而非媒体引爆。</div></div>
 <div class="insight-card right"><div class="insight-num">06</div><h4>"拳击是有氧+力量"的自然融合</h4><div class="insight-kpi">拳击 = 心肺 + 核心 + 上肢力量 + 协调性 · 一机替代单车+哑铃+沙袋</div><p>Growl 的核心价值主张不只是"AI 拳击教练"——它的深层定位是<strong>"用一台设备解决有氧+力量两个需求"</strong>。Peloton 只能做有氧（单车），Tonal 只能做力量（电磁阻力），但拳击本身就是一项同时锻炼心肺和力量的运动——每一次出拳都在消耗卡路里（有氧）和募集核心/上肢肌群（力量）。Growl 还扩展到了瑜伽和 Pilates 课程——进一步扩大内容覆盖面。如果说 Peloton 是"有氧王者"、Tonal 是"力量王者"，Growl 的叙事是"为什么二选一？拳击本来就两者兼得"。</p><div class="insight-vs"><span>vs Peloton+Tonal:</span> 需要两台设备 $6,000+ 才能覆盖有氧+力量。Growl 一台 $4,500。当然——Tonal 的力量训练深度远超 Growl。</div></div></div></div>
 
-<div class="page"><div class="page-number">06</div><div class="section-label">Risks & Mistakes</div><h1>五、Growl 做错了什么 / 面临什么风险</h1>
+<div class="section"><div class="section-label">Risks & Mistakes</div><h1>五、Growl 做错了什么 / 面临什么风险</h1>
 <div class="insight-grid">
 <div class="insight-card wrong"><div class="insight-num">01</div><h4>产品尚未发货：一切数据都是"承诺"</h4><div class="insight-kpi">目前仅一台原型机 · 零真实用户体验 · 零第三方评测 · Kickstarter 2026.02 发货承诺</div><p>这是 Growl 最根本的风险——它是 5 份报告中唯一一个<strong>产品尚未交付</strong>的公司。所有关于 AI 追踪精准度、投影质量、内容体验、硬件可靠性的描述都来自公司自己的宣传和少数媒体记者的短暂试用（The Verge 记者去了一趟 Growl 的奥斯汀工作室）。历史上无数 Kickstarter 硬件项目——从 Coolest Cooler 到 Skully AR 头盔——都证明了"原型机很棒 ≠ 量产机同样好"。FightCamp 已经在市场上销售了 5 年+，有数千条真实用户评价——Growl 的用户口碑是零。</p><div class="insight-vs"><span>vs FightCamp:</span> 5 年+ 量产经验，数千条真实评价，$94M 融资支撑供应链。<span>vs Peloton:</span> 10 年+ 量产经验。</div></div>
 <div class="insight-card wrong"><div class="insight-num">02</div><h4>定价 $4,500 + $60/月 = 品类最贵</h4><div class="insight-kpi">3 年总成本 $6,660 · 5 年总成本 $8,100 · FightCamp 3 年 ~$2,100 · Peloton 空击 ~$468/年</div><p>Growl 是居家拳击品类中<strong>最贵的选择</strong>——甚至比已经算"贵"的 FightCamp（$999+$39/月）贵了 3 倍以上。在 Kickstarter 早鸟价 $2,449 时确实有吸引力（此时 3 年总成本 ~$4,600），但零售价 $4,500 + $60/月意味着消费者在第一年需要支出 ~$5,220。这个价格已经接近"购买一台高端家庭健身设备 + 一个健身房会员"的总和。FightCamp 的存在让 Growl 的价格显得尤其高——同样是有真实沙袋的体验，FightCamp 的入门成本只有 Growl 的 15%。</p><div class="insight-vs"><span>vs FightCamp:</span> $999+$39/月 = 3 年 $2,100。<span>vs Peloton Bike:</span> $1,445+$44/月 = 3 年 $3,029。Growl 比 Peloton Bike 还贵。</div></div>
 <div class="insight-card wrong"><div class="insight-num">03</div><h4>壁挂安装 + 投影距离 = 空间门槛高</h4><div class="insight-kpi">需承重墙（同 Tonal）· 需一定投影距离 · 不可移动 · 租房用户基本无缘</div><p>Growl 的壁挂设计与 Tonal 面临同样的结构性问题：必须安装在承重墙上，需要专业安装（打孔固定），搬家时需重新安装，租房用户可能不被允许在墙上打孔。此外 Growl 还有一个额外限制——4K 超短焦投影仪需要一定的投影距离来覆盖沙袋表面。虽然超短焦技术可以将距离压缩到几十厘米，但仍然意味着设备前方需要保持净空。FightCamp 的立式沙袋虽然占地大（~8'×4'），但至少不需要在墙上钻洞。</p><div class="insight-vs"><span>vs FightCamp:</span> 立式沙袋+底座（250-350 lbs 沙/水），可移动但占地大。<span>vs Peloton:</span> 零空间要求。<span>vs Tonal:</span> 同病相怜——壁挂排除了租房用户。</div></div>
 <div class="insight-card wrong"><div class="insight-num">04</div><h4>拳击品类的天花板：多少人真的想"在家打沙袋"？</h4><div class="insight-kpi">拳击是 #1 "想尝试"但未必是 #1 "愿意花 $4,500 购买"</div><p>拳击确实是增长最快的心愿品类——但"心愿"和"购买"之间有巨大的鸿沟。Peloton 单车之所以能卖到全球 300 万+ 台，是因为"在家骑车"这件事几乎没有技能门槛——任何人都可以坐上去踩。但拳击是一个需要学习基础技术才能正确进行的运动——没有教练指导，初学者可能打出错误姿势导致手腕受伤。Growl 的 AI 教练精确到试图解决这个问题——但如果 AI 不够精准（而这是初代产品几乎必然的问题），那么"在家打沙袋"的体验可能不会像 Kickstarter 视频里那么美好。</p><div class="insight-vs"><span>vs Peloton:</span> 骑车的技能门槛 ≈ 0。<span>vs Tonal:</span> 力量训练有教练指导+自动重量调节，受伤风险较低。<span>vs FightCamp:</span> 有大量初学者课程和循序渐进的训练路径——5 年迭代。</div></div></div></div>
 
-<div class="page"><div class="page-number">07</div><div class="section-label">Risks & Mistakes (Cont.)</div><h1>五、Growl 做错了什么（续）</h1>
+<div class="section"><div class="section-label">Risks & Mistakes (Cont.)</div><h1>五、Growl 做错了什么（续）</h1>
 <div class="insight-grid">
 <div class="insight-card wrong"><div class="insight-num">05</div><h4>$4.75M 种子轮对硬件公司来说极度紧张</h4><div class="insight-kpi">$4.75M 种子轮 · 需覆盖研发+制造+内容+物流+客服 · Speediance 拿了 $13.6M · Tonal 拿了 $615M</div><p>$4.75M 对于一家软件公司来说是很好的种子轮——对于一家要做硬件制造+AI 视觉+内容工作室+全球物流+客服体系的硬件公司来说，这是极度紧张的预算。对比：Speediance 拿了 $13.6M VC 才做到 $49M 营收，Tonal 烧了 $615M+。Growl 的 Kickstarter 补充了 $144K+（毛毛雨），但远不足以填补制造和物流的资金缺口。如果 Growl 无法在 2026 年 2 月按时交付 Kickstarter 订单——或者交付后出现大规模质量问题——它可能没有足够的资金来应对召回或维修。</p><div class="insight-vs"><span>vs Speediance:</span> $13.6M VC 才勉强够——Growl 只有 1/3。<span>vs 众筹硬件平均失败率:</span> Kickstarter 硬件项目约 9% 从未交付——Growl 属于高风险类别。</div></div>
 <div class="insight-card wrong"><div class="insight-num">06</div><h4>Kickstarter 评价尚可但样本极小 + 零 Reddit/YouTube</h4><div class="insight-kpi">Kickstarter 658 支持者 · 零 Trustpilot · 零 Reddit 有机讨论 · 零 YouTube 真实评测 · 仅媒体记者试用</div><p>Growl 目前没有任何形式的有机用户口碑。所有关于产品体验的信息都来自：(1) Kickstarter 页面上的宣传视频（公司自制）；(2) The Verge/TechCrunch/Engadget 记者在奥斯汀工作室的短暂试用。没有 YouTube 博主的独立深度评测（至少一个月以上的日常使用），没有 Reddit 上的用户讨论（连一个帖子都没有），没有 Trustpilot 评价。对于一个声称要在 2026 年 2 月发货的 $4,500 产品来说，缺乏有机社区讨论是一个不应该被忽视的信号。FightCamp 在同样阶段（发货前）已经在 YouTube 上有搏击健身博主的评测视频。</p><div class="insight-vs"><span>vs FightCamp:</span> 发货前已有搏击社区 KOL 评测。<span>vs Speediance:</span> 发货后有活跃的 Facebook 社群和 Reddit 讨论。</div></div></div></div>
 
-<div class="page"><div class="page-number">08</div><div class="section-label">Voice of Customer & Persona</div><h1>六、目标用户画像与市场验证</h1>
+<div class="section"><div class="section-label">Voice of Customer & Persona</div><h1>六、目标用户画像与市场验证</h1>
 <div class="col-2"><div class="col-2-left"><h2>核心用户画像（综合推断）</h2><table class="info-table" style="margin-bottom:10px"><thead><tr><th>维度</th><th style="width:170px">画像</th></tr></thead><tbody>
 <tr><td><strong>年龄</strong></td><td class="td-center"><strong>25-45 岁（~75%）</strong> · 美国 18-45 岁 #1 心愿健身品类</td></tr>
 <tr><td><strong>性别</strong></td><td class="td-center"><strong>男性偏多（~65%）</strong> · 拳击天然偏男性但女性拳击健身增长快</td></tr>
@@ -154,7 +155,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 <tr><td>Reddit 讨论</td><td class="td-center"><strong>零</strong></td><td>⚠️ 无有机社群</td></tr>
 <tr><td>YouTube 评测</td><td class="td-center"><strong>零</strong></td><td>⚠️ 无独立深度评测</td></tr></tbody></table><p style="font-size:10.5px;color:var(--mid-gray);margin-top:8px"><strong>结论：</strong>Growl 处于"纯概念验证阶段"——Kickstarter 数据和媒体关注证明了品类需求存在，但零用户口碑意味着所有对产品的假设都尚未经过市场检验。这是 5 份报告中<strong>不确定性最高</strong>的品牌。</p></div></div></div>
 
-<div class="page"><div class="page-number">09</div><div class="section-label">Data & Conclusions</div><h1>七、核心数据与关键结论</h1>
+<div class="section"><div class="section-label">Data & Conclusions</div><h1>七、核心数据与关键结论</h1>
 <div class="col-2"><div class="col-2-left"><h2>核心数据汇总</h2><table class="info-table"><thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead><tbody>
 <tr><td>创立</td><td class="td-center">2022 · 奥斯汀（法裔创始人）</td></tr>
 <tr><td>CEO/CTO</td><td class="td-center">Léo Desrumaux / Nicolas de Maubeuge</td></tr>

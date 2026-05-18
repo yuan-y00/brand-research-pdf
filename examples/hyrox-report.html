@@ -4,401 +4,84 @@
 <meta charset="UTF-8">
 <title>Hyrox 深度调研报告</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
-
-:root {
-    --warm-cream: #FFF8F0;
-    --terracotta: #E07A5F;
-    --sage: #81B29A;
-    --navy: #3D5A80;
-    --charcoal: #2B2D42;
-    --soft-peach: #F4ACB7;
-    --mid-gray: #8B8B8B;
-    --border-light: #E6DFD3;
-    --bg-stripe: #FCFAF7;
-    --gold: #C9A96E;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 13.5px;
-    line-height: 1.55;
-    color: var(--charcoal);
-    background: #D5CFC6;
-    -webkit-font-smoothing: antialiased;
-}
-
-.page {
-    width: 297mm;
-    min-height: 210mm;
-    margin: 16px auto;
-    background: var(--warm-cream);
-    position: relative;
-    page-break-after: always;
-    padding: 28px 52px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-}
-
-/* COVER */
-.page.cover {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    gap: 70px;
-    background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%);
-    padding: 45px 65px;
-}
-
-.cover-left { flex: 0 0 auto; }
-
-.cover-label {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 11px; letter-spacing: 5px;
-    text-transform: uppercase; color: var(--terracotta);
-    margin-bottom: 28px; font-weight: 500;
-}
-
-.cover-title {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 54px; font-weight: 900;
-    color: var(--charcoal); line-height: 1.1;
-    margin-bottom: 16px;
-}
-
-.cover-subtitle {
-    font-family: 'Crimson Pro', 'Noto Serif SC', serif;
-    font-size: 18px; color: var(--navy);
-    font-weight: 400; line-height: 1.5;
-}
-
-.cover-line { width: 60px; height: 3px; background: var(--terracotta); margin: 26px 0; }
-
-.cover-footer {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 11px; color: var(--mid-gray); letter-spacing: 2px;
-}
-
-.cover-right { flex: 0 0 auto; }
-
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
 .cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.cover-stat {
-    background: rgba(255,255,255,0.7); border-radius: 10px;
-    padding: 20px 26px; text-align: center; backdrop-filter: blur(10px);
-}
-
-.cover-stat .cs-num {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 36px; font-weight: 900; color: var(--terracotta); line-height: 1;
-}
-
-.cover-stat .cs-label {
-    font-size: 10px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px;
-}
-
-/* PAGE ELEMENTS */
-.page-number {
-    position: absolute; top: 24px; right: 52px;
-    font-family: 'Crimson Pro', serif; font-size: 11px; color: var(--mid-gray);
-}
-
-.section-label {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 10px;
-    letter-spacing: 4px; text-transform: uppercase;
-    color: var(--terracotta); margin-bottom: 4px; font-weight: 500;
-}
-
-h1 {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 30px; font-weight: 900; color: var(--charcoal);
-    margin-bottom: 14px; line-height: 1.2;
-}
-
-h2 {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 19px; font-weight: 700; color: var(--navy); margin: 14px 0 8px 0;
-}
-
-h3 {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 3px;
-}
-
-p { margin-bottom: 7px; color: #3D3D3D; }
-
-/* COMPONENTS */
-.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 16px 0; }
-
-.callout {
-    background: #FDF2EC; border-left: 3px solid var(--terracotta);
-    padding: 10px 16px; margin: 10px 0; border-radius: 0 6px 6px 0;
-    font-size: 12.5px; color: #5D4037; page-break-inside: avoid;
-}
-.callout strong { color: var(--terracotta); }
-
-/* TABLES */
-.info-table {
-    width: 100%; border-collapse: collapse;
-    font-size: 12.5px; page-break-inside: avoid;
-}
-
-.info-table thead th {
-    background: var(--charcoal); color: white;
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-weight: 500; font-size: 10.5px; letter-spacing: 1.5px;
-    text-transform: uppercase; padding: 10px 14px; text-align: left; white-space: nowrap;
-}
-
-.info-table thead th:last-child { text-align: center; }
-
-.info-table tbody td {
-    padding: 9px 14px; border-bottom: 1px solid var(--border-light);
-    vertical-align: middle; line-height: 1.4;
-}
-
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
-
 .td-center { text-align: center !important; }
 .td-num { text-align: left; font-variant-numeric: tabular-nums; }
-.td-impact { text-align: center; font-weight: 700; width: 80px; font-size: 12px; }
-
-.impact-up { color: var(--sage); }
-.impact-down { color: var(--terracotta); }
-.impact-neutral { color: var(--navy); }
-
-/* STATS */
-.stat-row { display: flex; gap: 12px; page-break-inside: avoid; }
-
-.stat-card {
-    flex: 1; background: white; border-radius: 8px; padding: 14px 12px;
-    text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
-
-.stat-number {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 28px; font-weight: 900; color: var(--terracotta); line-height: 1.1;
-}
-
-.stat-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 3px; }
-
-.stat-detail { font-size: 10px; color: var(--navy); margin-top: 2px; }
-
-/* NUMBERED LIST */
-.num-list { counter-reset: num; list-style: none; padding: 0; }
-.num-list li { counter-increment: num; padding: 0; margin-bottom: 9px; page-break-inside: avoid; }
-.num-list li::before { content: none; }
-
-.num-marker {
-    display: inline-block; min-width: 22px; width: 22px; height: 22px;
-    background: var(--terracotta); color: white; border-radius: 50%;
-    text-align: center; line-height: 22px; font-size: 11px;
-    font-weight: 700; margin-right: 7px; flex-shrink: 0;
-}
-
-.num-item-header { display: flex; align-items: baseline; margin-bottom: 2px; }
-.num-item-header h3 { display: inline; margin: 0; font-size: 14px; }
-
-.num-item-content {
-    padding-left: 29px; font-size: 12.5px; color: #3D3D3D; line-height: 1.5;
-}
-
-.num-item-content strong { color: var(--navy); }
-
-/* DATA BADGE */
-.data-badge {
-    display: inline-block; background: var(--navy); color: white;
-    font-size: 10px; padding: 2px 8px; border-radius: 3px;
-    font-weight: 500; margin-right: 4px;
-}
-
-.vs-badge {
-    display: inline-block; background: #FDF2EC; color: var(--terracotta);
-    font-size: 10px; padding: 2px 8px; border-radius: 3px;
-    font-weight: 600; margin-left: 4px; border: 1px solid var(--soft-peach);
-}
-
-/* QUOTE */
-.quote-card {
-    background: white; border-left: 3px solid var(--sage);
-    padding: 10px 14px; margin: 6px 0; border-radius: 0 6px 6px 0;
-    font-family: 'Crimson Pro', 'Noto Serif SC', serif;
-    font-size: 14px; font-style: italic; color: #3D3D3D;
-    page-break-inside: avoid;
-}
-
-.quote-source {
-    display: block; margin-top: 4px;
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 10.5px; font-style: normal; color: var(--mid-gray);
-}
-
-/* COLUMNS */
-.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; page-break-inside: avoid; }
-.col-2-left, .col-2-right { min-width: 0; }
-
-/* CONCLUSION CARDS */
-.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; page-break-inside: avoid; }
-
-.conclusion-card {
-    background: white; border-radius: 8px; padding: 14px 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04); page-break-inside: avoid;
-}
-
-.conclusion-card .cc-num {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 24px; font-weight: 900; color: var(--terracotta); opacity: 0.7; line-height: 1;
-}
-
-.conclusion-card h3 { margin-top: 3px; font-size: 14px; color: var(--navy); }
-.conclusion-card p { font-size: 12px; color: #3D3D3D; margin-top: 4px; line-height: 1.5; }
-
-/* REVIEW BAR CHART */
-.review-bar-row {
-    display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 11px;
-}
-
-.review-bar-row .stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--charcoal); }
-
-.review-bar-row .bar-track {
-    flex: 1; height: 14px; background: #EBE5DA; border-radius: 7px; overflow: hidden;
-}
-
-.review-bar-row .bar-fill { height: 100%; border-radius: 7px; }
-
-.review-bar-row .pct-label { width: 40px; text-align: right; font-weight: 500; color: var(--charcoal); }
-
-.bar-1 { background: var(--terracotta); }
-.bar-2 { background: #E8927A; }
-.bar-3 { background: var(--gold); }
-.bar-4 { background: #A3C4B3; }
-.bar-5 { background: var(--sage); }
-
-/* REVIEW STAT BOX */
-.review-stat-box {
-    display: flex; align-items: center; gap: 24px;
-    background: white; border-radius: 10px; padding: 16px 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04); margin-bottom: 12px;
-}
-
-.review-big-score {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 48px; font-weight: 900; color: var(--terracotta); line-height: 1;
-}
-
-.review-big-label { font-size: 11px; color: var(--mid-gray); letter-spacing: 1px; }
-
-.review-meta { font-size: 11px; color: var(--mid-gray); }
-
-/* KPI GRID */
-.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; page-break-inside: avoid; }
-.kpi-card {
-    background: white; border-radius: 8px; padding: 12px 10px; text-align: center;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
-.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--terracotta); line-height: 1.1; }
-.kpi-label { font-size: 9.5px; color: var(--mid-gray); letter-spacing: 0.5px; margin-top: 3px; }
-.kpi-compare { font-size: 9px; margin-top: 2px; }
-.kpi-up { color: var(--sage); }
-.kpi-down { color: var(--terracotta); }
-
-/* INSIGHT CARD GRID (Page 05 & 06) */
-.insight-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    page-break-inside: avoid;
-}
-
-.insight-card {
-    background: white;
-    border-radius: 10px;
-    padding: 18px 20px 16px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    page-break-inside: avoid;
-}
-
-.insight-card.right { border-top: 3px solid var(--sage); }
-.insight-card.wrong { border-top: 3px solid var(--terracotta); }
-
-.insight-num {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 38px;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.12;
-    position: absolute;
-    top: 8px;
-    right: 14px;
-}
-
-.insight-card.right .insight-num { color: var(--sage); }
-.insight-card.wrong .insight-num { color: var(--terracotta); }
-
-.insight-card h4 {
-    font-family: 'Playfair Display', 'Noto Serif SC', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--charcoal);
-    margin: 0 0 6px 0;
-    padding-right: 40px;
-    line-height: 1.25;
-}
-
-.insight-kpi {
-    font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.insight-card.right .insight-kpi { color: var(--sage); }
-.insight-card.wrong .insight-kpi { color: var(--terracotta); }
-
-.insight-card p {
-    font-size: 12px;
-    color: #4A4A4A;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-.insight-vs {
-    font-size: 10.5px;
-    color: var(--mid-gray);
-    padding-top: 8px;
-    border-top: 1px solid var(--border-light);
-    line-height: 1.4;
-}
-
-.insight-vs span {
-    font-weight: 600;
-    color: var(--navy);
-}
-
-/* PRINT */
-@media print {
-    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
-    body { background: white; }
-    .page { margin: 0; page-break-after: always; box-shadow: none; }
-    h1, h2, h3 { page-break-after: avoid; }
-    .callout, .info-table, .stat-row, .quote-card, .num-list li,
-    .conclusion-card, .col-2, .conclusion-grid, .review-stat-box,
-    .kpi-grid, .kpi-card, .review-bar-row, .insight-card, .insight-grid { page-break-inside: avoid; }
-}
-
-@page { size: A4 landscape; margin: 0; }
-</style>
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
 </head>
 <body>
 
 <!-- ==================== PAGE 01: COVER ==================== -->
-<div class="page cover">
+<div class="section cover">
     <div class="cover-left">
         <div class="cover-label">Industry Research Report · 2026.05</div>
         <div class="cover-title">Hyrox<br>深度调研报告</div>
@@ -419,9 +102,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 02: TIMELINE ==================== -->
-<div class="page">
-    <div class="page-number">01</div>
-    <div class="section-label">Brand Timeline</div>
+<div class="section"><div class="section-label">Brand Timeline</div>
     <h1>一、品牌大事年表（2017–2026）</h1>
 
     <table class="info-table">
@@ -499,9 +180,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 03: GROWTH METRICS ==================== -->
-<div class="page">
-    <div class="page-number">02</div>
-    <div class="section-label">Growth Metrics</div>
+<div class="section"><div class="section-label">Growth Metrics</div>
     <h1>二、创始团队与收入增长</h1>
     <h2>创始团队</h2>
     <table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:130px">创始人</th><th>背景</th><th style="width:140px">初始资金</th></tr></thead><tbody>
@@ -558,9 +237,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 04: COMPETITIVE LANDSCAPE ==================== -->
-<div class="page">
-    <div class="page-number">03</div>
-    <div class="section-label">Competitive Landscape</div>
+<div class="section"><div class="section-label">Competitive Landscape</div>
     <h1>三、竞争对手同期对比</h1>
 
     <p>Hyrox 崛起的核心背景：三大竞争对手在 2020–2025 年间同时陷入各自危机，释放大量市场空白。下表按年份横向对比。</p>
@@ -653,9 +330,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 05: WHAT THEY DID RIGHT ==================== -->
-<div class="page">
-    <div class="page-number">04</div>
-    <div class="section-label">Success Factors & Competitive Moat</div>
+<div class="section"><div class="section-label">Success Factors & Competitive Moat</div>
     <h1>四、Hyrox 做对了什么</h1>
 
     <div class="insight-grid">
@@ -710,9 +385,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 06: WHAT THEY DID WRONG ==================== -->
-<div class="page">
-    <div class="page-number">05</div>
-    <div class="section-label">Risks, Mistakes & Failures</div>
+<div class="section"><div class="section-label">Risks, Mistakes & Failures</div>
     <h1>五、Hyrox 做错了什么</h1>
 
     <div class="insight-grid">
@@ -775,9 +448,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 07: CUSTOMER REVIEWS WITH PERCENTAGES ==================== -->
-<div class="page">
-    <div class="page-number">06</div>
-    <div class="section-label">Voice of Customer & Persona</div>
+<div class="section"><div class="section-label">Voice of Customer & Persona</div>
     <h1>六、用户画像与真实评价</h1>
 
     <div class="col-2">
@@ -897,9 +568,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 </div>
 
 <!-- ==================== PAGE 08: KEY DATA + CONCLUSIONS ==================== -->
-<div class="page">
-    <div class="page-number">07</div>
-    <div class="section-label">Data & Conclusions</div>
+<div class="section"><div class="section-label">Data & Conclusions</div>
     <h1>七、核心数据 &amp; 关键结论</h1>
 
     <div class="col-2">

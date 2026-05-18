@@ -1,83 +1,92 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>蓝思科技 / 周群飞 深度调研报告</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
-:root { --warm-cream: #FFF8F0; --terracotta: #E07A5F; --sage: #81B29A; --navy: #3D5A80; --charcoal: #2B2D42; --soft-peach: #F4ACB7; --mid-gray: #8B8B8B; --border-light: #E6DFD3; --bg-stripe: #FCFAF7; }
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.65; color: var(--charcoal); background: #E8E3DC; }
-.page { width: 100%; max-width: 1100px; margin: 0 auto; background: var(--warm-cream); padding: 50px 72px; border-bottom: 1px solid #E6DFD3; }
-.page:last-child { border-bottom: none; }
-.page.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; text-align: left; gap: 80px; background: linear-gradient(135deg, #FFF8F0 0%, #FFF1E6 50%, #FDE8D8 100%); padding: 60px 80px; min-height: 50vh; }
-.cover-left { flex: 0 0 auto; }
-.cover-label { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 32px; font-weight: 500; }
-.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 58px; font-weight: 900; color: var(--charcoal); line-height: 1.1; margin-bottom: 18px; }
-.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--navy); line-height: 1.6; }
-.cover-line { width: 70px; height: 3px; background: var(--terracotta); margin: 28px 0; }
-.cover-footer { font-size: 12px; color: var(--mid-gray); letter-spacing: 2px; }
-.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.cover-stat { background: rgba(255,255,255,0.7); border-radius: 12px; padding: 22px 28px; text-align: center; }
-.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 38px; font-weight: 900; color: var(--terracotta); }
-.cover-stat .cs-label { font-size: 11px; color: var(--mid-gray); letter-spacing: 1px; margin-top: 4px; }
-.section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 8px; font-weight: 500; }
-h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 34px; font-weight: 900; color: var(--charcoal); margin-bottom: 18px; }
-h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 700; color: var(--navy); margin: 24px 0 12px 0; }
-h3 { font-size: 16px; font-weight: 700; color: var(--charcoal); margin-bottom: 6px; }
-p { margin-bottom: 10px; color: #3D3D3D; }
-.divider { border: none; height: 1px; background: linear-gradient(to right, var(--terracotta), transparent); margin: 28px 0; }
-.callout { background: #FDF2EC; border-left: 3px solid var(--terracotta); padding: 14px 20px; margin: 18px 0; border-radius: 0 8px 8px 0; font-size: 14px; color: #5D4037; }
-.callout strong { color: var(--terracotta); }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
 .info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
-.info-table thead th { background: var(--charcoal); color: white; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
-.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
 .td-num { text-align: left; font-variant-numeric: tabular-nums; }
-.td-impact { text-align: center; font-weight: 700; }
-.impact-up { color: var(--sage); } .impact-down { color: var(--terracotta); } .impact-neutral { color: var(--navy); }
-.stat-row { display: flex; gap: 14px; margin: 18px 0; flex-wrap: wrap; }
-.stat-card { flex: 1; min-width: 140px; background: white; border-radius: 10px; padding: 18px 16px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 30px; font-weight: 900; color: var(--terracotta); }
-.stat-label { font-size: 10.5px; color: var(--mid-gray); letter-spacing: 1px; }
-.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 18px 0; }
-.kpi-card { background: white; border-radius: 10px; padding: 14px 12px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; color: var(--terracotta); }
-.kpi-label { font-size: 10.5px; color: var(--mid-gray); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
-.kpi-up { color: var(--sage); } .kpi-down { color: var(--terracotta); }
-.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 18px 0; }
-.insight-card { background: white; border-radius: 12px; padding: 22px 26px; position: relative; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-.insight-card.right { border-top: 3px solid var(--sage); } .insight-card.wrong { border-top: 3px solid var(--terracotta); }
-.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 42px; font-weight: 900; opacity: 0.1; position: absolute; top: 10px; right: 18px; }
-.insight-card.right .insight-num { color: var(--sage); } .insight-card.wrong .insight-num { color: var(--terracotta); }
-.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; padding-right: 44px; }
-.insight-kpi { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
-.insight-card.right .insight-kpi { color: var(--sage); } .insight-card.wrong .insight-kpi { color: var(--terracotta); }
-.insight-card p { font-size: 13.5px; color: #4A4A4A; line-height: 1.6; margin-bottom: 12px; }
-.insight-vs { font-size: 11.5px; color: var(--mid-gray); padding-top: 10px; border-top: 1px solid var(--border-light); }
-.insight-vs span { font-weight: 600; color: var(--navy); }
-.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 18px 0; }
-.quote-card { background: white; border-left: 3px solid var(--sage); padding: 14px 18px; margin: 10px 0; border-radius: 0 8px 8px 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: #3D3D3D; }
-.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--mid-gray); }
-.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
-.conclusion-card { background: white; border-radius: 10px; padding: 18px 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--terracotta); opacity: 0.7; }
-.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--navy); }
-.conclusion-card p { font-size: 13px; color: #3D3D3D; margin-top: 6px; line-height: 1.6; }
-@media (max-width: 900px) { .page { padding: 32px 24px; } .cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .kpi-grid { grid-template-columns: 1fr; } .cover-stat-block { grid-template-columns: 1fr 1fr; } }
-@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .page { border-bottom: none; } }
-</style>
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
 </head>
 <body>
 
-<div class="page cover">
+<div class="section cover">
     <div class="cover-left"><div class="cover-label">Founder Deep Dive · 2026.05</div><div class="cover-title">周群飞 & 蓝思科技<br>深度调研报告</div><div class="cover-line"></div><div class="cover-subtitle">15 岁辍学打工妹 → 中国女首富 · HK$2 万家庭作坊 → 全球玻璃女王<br>苹果依赖症 · 700 亿营收 · 2026 Q1 巨亏 · A+H 双上市</div><div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div></div>
     <div class="cover-right"><div class="cover-stat-block"><div class="cover-stat"><div class="cs-num">HK$2万</div><div class="cs-label">1993 年创业初始资金</div></div><div class="cover-stat"><div class="cs-num">¥700亿</div><div class="cs-label">2024 年营收</div></div><div class="cover-stat"><div class="cs-num">50%+</div><div class="cs-label">全球手机玻璃市场份额</div></div><div class="cover-stat"><div class="cs-num">¥500亿</div><div class="cs-label">2015 年 IPO 时身家（女首富）</div></div></div></div>
 </div>
 
-<div class="page"><div class="section-label">Founder & Brand Timeline</div><h1>一、创始人与品牌大事年表</h1>
+<div class="section"><div class="section-label">Founder & Brand Timeline</div><h1>一、创始人与品牌大事年表</h1>
 
 <h2>创始人背景：从打工妹到女首富</h2>
 <table class="info-table" style="margin-bottom:16px"><thead><tr><th style="width:100px">创始人</th><th style="width:90px">职位</th><th>背景</th><th style="width:160px">初始资金</th></tr></thead><tbody>
@@ -96,7 +105,7 @@ p { margin-bottom: 10px; color: #3D3D3D; }
 <tr><td class="td-center"><strong>2025</strong></td><td>港交所二次上市（H 股）· 周群飞家族分红 ~¥47 亿</td><td>A+H 双平台。争议：一边巨额分红一边赴港募资 ¥45.9 亿，大存大贷质疑声起</td><td class="td-impact impact-neutral">高光+争议</td></tr>
 <tr><td class="td-center"><strong>2026 Q1</strong></td><td>上市以来首次单季度亏损 · 市值蒸发 ¥208 亿</td><td>净亏损 ¥1.5 亿，营收 -17%。苹果砍单+汇率波动+关税三重打击。A 股单日跌超 15%，H 股跌超 20%</td><td class="td-impact impact-down">业绩暴雷</td></tr></tbody></table></div>
 
-<div class="page"><div class="section-label">Financials & Competition</div><h1>二、财务表现与竞争格局</h1>
+<div class="section"><div class="section-label">Financials & Competition</div><h1>二、财务表现与竞争格局</h1>
 <div class="callout"><strong>核心矛盾：</strong>蓝思科技是全球手机玻璃绝对龙头（份额 50%+），但<strong>"离开苹果会死，依赖苹果会穷"</strong>。营收从 ¥467 亿（2022）增至 ¥700 亿（2024），但毛利率从 18.3% 降至 14.6%。2026 Q1 首次单季亏损——苹果砍单+关税+汇率三重暴击。</div>
 <div class="stat-row"><div class="stat-card"><div class="stat-number">¥700亿</div><div class="stat-label">2024 年营收</div></div><div class="stat-card"><div class="stat-number">¥36亿</div><div class="stat-label">2024 年净利润</div></div><div class="stat-card"><div class="stat-number">14.6%</div><div class="stat-label">2024 年毛利率（2022: 18.3%）</div></div><div class="stat-card"><div class="stat-number">49.5%</div><div class="stat-label">苹果营收占比（2022: 71%）</div></div><div class="stat-card"><div class="stat-number">50%+</div><div class="stat-label">全球手机玻璃份额</div></div><div class="stat-card"><div class="stat-number">¥1,500亿</div><div class="stat-label">A 股市值（2025）</div></div></div>
 <div class="divider"></div>
@@ -114,28 +123,28 @@ p { margin-bottom: 10px; color: #3D3D3D; }
 <tr><td>最大客户</td><td class="td-center">苹果（49.5%）</td><td class="td-center">苹果+三星</td><td class="td-center">华为/小米</td></tr>
 <tr><td>新业务</td><td class="td-center">汽车/机器人/AR</td><td class="td-center">折叠屏跟进</td><td class="td-center">汽车电子</td></tr></tbody></table></div></div></div>
 
-<div class="page"><div class="section-label">Competitive Moat & Business Model</div><h1>三、蓝思科技的护城河与商业模式</h1>
+<div class="section"><div class="section-label">Competitive Moat & Business Model</div><h1>三、蓝思科技的护城河与商业模式</h1>
 <div class="insight-grid">
 <div class="insight-card right"><div class="insight-num">01</div><h4>技术壁垒：2,200+ 专利 + 全球首家 3D 玻璃量产</h4><div class="insight-kpi">2,200+ 专利 · UTG 折叠玻璃良率 95% · iPhone 超瓷晶独家供应 · 全球首家 3D 曲面玻璃量产</div><p>蓝思科技的核心护城河不是规模——而是<strong>工艺 know-how</strong>。苹果 iPhone 的玻璃面板规格是全球最苛刻的：透光率>92%、硬度>7H、跌落测试>1.5 米、厚度公差<0.01mm。这些参数的实现不是靠买设备就能解决的——需要数十年积累的离子交换配方、镀膜工艺参数、抛光液配比、热弯曲线控制。蓝思 2,200+ 专利中大多是工艺方法专利（而非产品设计专利），这意味着即使竞争对手买到同样的设备也无法复制同样的良率和质量。UTG（超薄折叠玻璃）良率 95% 是一个被行业低估的成就——三星 Galaxy Z Fold 系列最初因 UTG 良率不足导致产能受限，蓝思是少数能稳定量产的供应商。</p></div>
 <div class="insight-card right"><div class="insight-num">02</div><h4>苹果深度绑定：既是护城河也是牢笼</h4><div class="insight-kpi">苹果营收 ~49.5%（>$300 亿）· 合作 18 年（2007-2025）· iPhone 超瓷晶独家 · 苹果提供研发补助</div><p>蓝思与苹果的关系是一个经典的"金手铐"故事。好处：<strong>苹果是蓝思最大的研发合作伙伴</strong>——苹果不仅下订单，还提供研发补助（2018 年 ¥8.31 亿）和工程师驻场支持。坏处：苹果拥有绝对议价权——iPhone 玻璃单价从 2021 年的 ~¥15/片降至 2024 年的 9.8 元/片（降幅 35%）。苹果推行"双供/三供"策略，不断引入京东方、亚世光电等新供应商来压低蓝思和伯恩的价格。固定资产 363 亿（占总资产 45%），设备高度定制化——一旦被踢出果链，这些设备几乎无法转产。苹果要求 2025 年前供应商 25% 产能转移至中国以外——越南工厂良率比国内低 5-8 个百分点。</p></div>
 <div class="insight-card right"><div class="insight-num">03</div><h4>垂直整合：从玻璃到整机组装</h4><div class="insight-kpi">材料→部件→模组→整机组装 · 覆盖消费电子/汽车/XR 三大场景 · 8 万+ 员工 · 中越墨三国产能</div><p>蓝思已经不是一家"玻璃加工厂"——它沿着价值链向上下游延伸：上游投资玻璃原材料配方，中游做精密切割/抛光/镀膜/热弯，下游拓展到触摸模组、摄像头模组、甚至整机组装（为小米/华为提供手机整机代工）。这种垂直整合意味着：客户可以在蓝思完成从"一块玻璃"到"一个完整的手机前面板模组"的全部工序——不需要再找多家供应商分别做玻璃、贴合、组装。在汽车领域，蓝思同时提供中控屏玻璃、仪表盘盖板、HUD 反射镜、B 柱装饰件——一台智能汽车的玻璃/显示交互界面，蓝思可以一站式供应。</p></div>
 <div class="insight-card right"><div class="insight-num">04</div><h4>第二曲线：汽车 + 机器人 + AR</h4><div class="insight-kpi">汽车座舱 ¥64.6 亿（+8.9%）· 智能穿戴 ¥39.8 亿（+14%）· 机器人 <¥6,000 万（基数极小）</div><p>周群飞十年前就意识到"不能只靠苹果"——但多元化执行效果参差不齐。汽车座舱业务 ¥64.6 亿（占比 9.2%）是最大亮点——蓝思已成为全球车载座舱显示交互界面的第一大供应商（份额 20.9%），客户包括特斯拉和比亚迪。但毛利率仅 7.22%，远低于福耀玻璃（~23%）。人形机器人 2025 年全年营收不足 ¥6,000 万——不到蓝思单日营收的十分之一。AR 眼镜仍在"烧钱验证期"。蓝思的多元化战略方向正确，但"四处撒网"导致资源分散——同时布局汽车、机器人、AR、液冷、商业航天、NFC 支付等太多赛道。</p></div></div></div>
 
-<div class="page"><div class="section-label">Risks & Mistakes</div><h1>四、做错了什么 / 面临什么风险</h1>
+<div class="section"><div class="section-label">Risks & Mistakes</div><h1>四、做错了什么 / 面临什么风险</h1>
 <div class="insight-grid">
 <div class="insight-card wrong"><div class="insight-num">01</div><h4>苹果依赖症 18 年未解——2026 Q1 暴雷是必然</h4><div class="insight-kpi">苹果占营收 49.5%（2024）→ 71%（2022 峰值）· 第二三大客户仅 23.36% / 3.15% · 前五大 >80%</div><p>周群飞在 2018 年的采访中就说过"我们太依赖苹果了"——然后 5 年过去了，苹果占比只从 71% 降到了 49.5%，仍然是断层式第一大客户。这意味着：<strong>苹果的任何风吹草动——砍单、压价、换供应商、加关税——都会对蓝思造成致命打击</strong>。2026 年 Q1 的暴雷（净亏损 ¥1.5 亿）就是苹果砍单+汇率波动（7.2→6.9，损失 ~¥5 亿）+美国对中国消费电子核心组件加征 25% 关税的三重暴击。欧菲光被踢出果链后市值蒸发 90% 的前车之鉴就在眼前——蓝思比欧菲光好的是它有技术壁垒（苹果需要它），但"需要"不等于"不会压价"。</p><div class="insight-vs"><span>前车之鉴：</span>欧菲光被踢出果链→市值蒸发 90%。<span>vs 伯恩光学：</span>同样依赖苹果+三星，但占比更集中——伯恩的客户集中度风险比蓝思更高。</div></div>
 <div class="insight-card wrong"><div class="insight-num">02</div><h4>"一边哭穷一边分红"：大存大贷 + 巨额分红 = 信任崩塌</h4><div class="insight-kpi">上市以来累计分红 ¥74.81 亿 · 周群飞家族分走 ~¥47 亿 · 同时短期+长期借款 ¥157.66 亿 · 2026 Q1 巨亏仍计划分红 ¥29 亿</div><p>这是蓝思科技最严重的治理争议。账上有货币资金 ¥95.12 亿，但短期+长期借款合计 ¥157.66 亿——典型的"大存大贷"结构（资金充裕却大量举债，通常意味着资金使用效率极低或存在关联方资金占用）。与此同时，2024-2025 两年周群飞夫妇通过分红获得近 ¥30 亿。2026 年 Q1 巨亏之际，公司仍计划分红 ¥28.97 亿——同时启动港股 IPO 募资 ¥45.9 亿。市场质疑的核心逻辑是：<strong>"如果你需要钱转型，为什么分掉 ¥29 亿？如果你不缺钱，为什么去香港募资 ¥46 亿？"</strong>机构投资者已用脚投票——A 股前十大流通股东中已无公募、险资或外资。</p><div class="insight-vs"><span>vs 行业标杆：</span>福耀玻璃的分红率 ~60% 但无大存大贷，且毛利率远高于蓝思。<span>vs 苹果供应链其他公司：</span>立讯精密的分红率更保守，更多利润用于再投资。</div></div>
 <div class="insight-card wrong"><div class="insight-num">03</div><h4>多元化转型：方向正确但执行分散</h4><div class="insight-kpi">汽车毛利率 7.22% · 机器人营收 <¥6,000 万 · 同时布局 6+ 个新赛道 · 研发投入仅占营收 ~4%</div><p>蓝思科技的多元化有一个根本矛盾：<strong>它同时在太多赛道上"撒网"却没有任何一个形成了规模</strong>。汽车座舱 ¥64.6 亿听着不少——但毛利率仅 7.22%，远低于福耀玻璃的 ~23%。人形机器人全年营收不足 ¥6,000 万——这在 ¥700 亿的营收基数下连"蚊子腿"都算不上。AR 眼镜/光波导、液冷散热、商业航天、NFC 支付——每个赛道都有布局但每个都没有深度。对于一个毛利率只有 14.6% 的公司来说，<strong>研发投入仅占营收 ~4%</strong>（约 ¥28 亿）——这个数字不足以同时支撑 6 个新赛道的技术突破。</p><div class="insight-vs"><span>vs 比亚迪电子：</span>背靠比亚迪集团生态，汽车电子协同效应强。<span>vs 福耀玻璃：</span>聚焦汽车玻璃单一品类，毛利率 23%，不撒网。</div></div>
 <div class="insight-card wrong"><div class="insight-num">04</div><h4>重资产陷阱：363 亿固定资产 = 每年 20 亿折旧</h4><div class="insight-kpi">固定资产 ¥363 亿（占总资产 45%）· 年折旧 ~¥20 亿 · 设备高度定制化 · 开工率不足时压力巨大</div><p>蓝思科技是典型的<strong>重资产制造商</strong>——固定资产从 2016 年的 ¥109 亿飙升至 2025 年的 ¥363 亿，占总资产 45%。这意味着即使没有一分钱收入，每年也要承担 ~¥20 亿的折旧费用。更危险的是，这些设备高度定制化——为苹果专门设计的 CNC 精雕机、热弯机、镀膜线——一旦苹果砍单或转单，这些设备几乎无法转产给其他客户。2022-2026 年多次苹果砍单直接导致产能闲置→折旧计提→利润暴雷的连锁反应。2026 年 Q1 的亏损中，产能利用率不足导致的固定成本摊薄恶化是一个核心原因。</p><div class="insight-vs"><span>vs 伯恩光学：</span>同样重资产，但历史更久（1989 年起），设备可能已折旧完毕。<span>vs 立讯精密：</span>资产更轻（代工模式为主），毛利率虽低但资产周转率高。</div></div></div></div>
 
-<div class="page"><div class="section-label">Founder Deep Dive</div><h1>五、周群飞：一个"非典型"中国女首富</h1>
+<div class="section"><div class="section-label">Founder Deep Dive</div><h1>五、周群飞：一个"非典型"中国女首富</h1>
 <div class="insight-grid">
 <div class="insight-card right"><div class="insight-num">A</div><h4>钱从哪来：加班费偷攒 7 年 + 小时装店</h4><div class="insight-kpi">正工资全寄给父亲 · 加班费自己偷存 · 业余开小时装店 · 7 年攒下 HK$2 万</div><p>周群飞的 HK$2 万启动资金不是家里给的、不是老公给的、不是投资人给的——是<strong>自己偷攒了 7 年的加班费</strong>。她在澳亚光学打工时，正工资全部寄给湖南农村的父亲，<strong>加班费偷偷自己存下来</strong>，另外还开了一间小时装店攒钱。1993 年 3 月 18 日，23 岁的她带着 8 个亲戚——哥哥、嫂子、姐姐、姐夫、两个堂姐妹——在深圳宝安租下一套三室一厅的农民房。房间做宿舍，客厅做印刷包装车间，厨房做食堂。买了一块大铝板切割后自己组装成手动印刷机——这就是蓝思科技的前身。</p></div>
 <div class="insight-card right"><div class="insight-num">B</div><h4>最绝望的时刻：香港红磡站险些跳轨</h4><div class="insight-kpi">2003 年 · 为拿下摩托罗拉订单倾尽身家 · 资金链断裂 · 女儿一通电话拉回</div><p>2003 年，周群飞为拿下摩托罗拉 V3 的玻璃面板订单，几乎倾尽全部身家投入研发和产能。但订单还没到手，资金链就断了——供应商催款、员工等工资、银行不贷款。她独自走到香港红磡站的月台上，想过跳下去。是<strong>女儿的一通电话</strong>把她拉了回来——"妈妈你什么时候回来？"这通电话让她转身回去，继续想办法。此后摩托罗拉 V3 全球热卖超 1 亿台，蓝思一战成名。但这段经历也解释了周群飞后来的行为模式——极度重视现金流（因为经历过断裂）、极度重视大客户（因为大客户让她活了下来）。</p></div>
 <div class="insight-card wrong"><div class="insight-num">C</div><h4>两次卖房发工资——但后来分红 47 亿</h4><div class="insight-kpi">创业初期：两次卖掉自己的房子给员工发工资 · 上市后：家族分红 ~¥47 亿</div><p>创业初期，周群飞两次因为客户赖账而<strong>卖掉自己的房子</strong>给员工发工资。这个"卖房发工资"的故事是蓝思科技企业文化中最动人的部分——它塑造了周群飞"负责任的企业家"的形象。但上市后的行为与这个形象产生了张力：上市以来累计分红 ¥74.81 亿，周群飞家族（持股 ~62%）分走约 ¥47 亿。2026 年 Q1 巨亏之际仍计划分红 ¥29 亿。市场开始质疑：当年那个"卖房发工资"的女企业家，现在是不是在"一边哭穷一边分钱"？</p></div>
 <div class="insight-card wrong"><div class="insight-num">D</div><h4>国宴 C 位：坐在马斯克和库克中间的女人</h4><div class="insight-kpi">2026 年 5 月 · 中国国宴 · 马斯克（左）+ 库克（右）· 全球科技权力场中心</div><p>2026 年 5 月，一张照片在中国互联网引爆了讨论：中国国宴上，周群飞坐在<strong>特斯拉 CEO 埃隆·马斯克和苹果 CEO 蒂姆·库克中间</strong>。这个位置不是偶然——蓝思同时是苹果（最大玻璃供应商）和特斯拉（车载座舱玻璃供应商）的核心供应商，周群飞是全球科技供应链中最有权势的女性之一。但讽刺的是：这场国宴之后不到一个月，蓝思科技发布了 2026 年 Q1 亏损报告——库克旁边的供应商正在被苹果压价，马斯克旁边的供应商毛利率只有 7.22%。国宴 C 位是荣耀，但荣耀之下是残酷的供应链生存法则。</p></div></div></div>
 
-<div class="page"><div class="section-label">Voice of Customer & Governance</div><h1>六、市场评价与治理争议</h1>
+<div class="section"><div class="section-label">Voice of Customer & Governance</div><h1>六、市场评价与治理争议</h1>
 <div class="col-2"><div class="col-2-left"><h2>市场评价</h2>
 <div class="quote-card">"如果把苹果比作一个帝国，蓝思科技就是帝国内最忠实也最脆弱的诸侯。它享受了帝国的庇护，也承受了帝国的压榨。"<span class="quote-source">— 界面新闻《女首富，挣脱果链不容易》</span></div>
 <div class="quote-card">"周群飞是制造业中少有的女性创始人——她的故事比董明珠更励志，但她的困境也比格力更无解：格力的客户是消费者，蓝思的客户只有一个。"<span class="quote-source">— 财经媒体评论</span></div>
@@ -159,7 +168,7 @@ p { margin-bottom: 10px; color: #3D3D3D; }
 <tr><td>苹果占比趋势</td><td class="td-center impact-up">↓ 71%→49.5%</td><td>有所改善但仍过高</td></tr>
 <tr><td>分红率</td><td class="td-center">~52%</td><td>偏高（立讯精密 ~15%）</td></tr></tbody></table></div></div></div>
 
-<div class="page"><div class="section-label">Data & Conclusions</div><h1>七、核心数据与关键结论</h1>
+<div class="section"><div class="section-label">Data & Conclusions</div><h1>七、核心数据与关键结论</h1>
 <div class="col-2"><div class="col-2-left"><h2>核心数据汇总</h2><table class="info-table"><thead><tr><th>指标</th><th style="width:130px">数据</th></tr></thead><tbody>
 <tr><td>创始人</td><td class="td-center">周群飞（1970 年出生 · 湖南湘乡）</td></tr>
 <tr><td>教育</td><td class="td-center">初二辍学 · 深圳大学成人夜校</td></tr>
