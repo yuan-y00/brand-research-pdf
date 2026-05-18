@@ -67,7 +67,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 .info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
-.td-right { text-align: right !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
 .td-impact { text-align: center; font-weight: 700; }
 .impact-up { color: var(--sage); }
 .impact-down { color: var(--terracotta); }
@@ -261,12 +261,12 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>财年</th><th style="width:90px">营收</th><th style="width:80px">YoY</th><th style="width:100px">净利/亏损</th></tr></thead>
                 <tbody>
-                    <tr><td>FY2019</td><td class="td-right">$915M</td><td class="td-center impact-up">+110%</td><td class="td-right">-$196M</td></tr>
-                    <tr><td>FY2020</td><td class="td-right">$1.83B</td><td class="td-center impact-up">+100%</td><td class="td-right">-$72M</td></tr>
-                    <tr><td>FY2021</td><td class="td-right"><strong>$4.02B</strong></td><td class="td-center impact-up">+120%</td><td class="td-right">-$189M</td></tr>
-                    <tr><td>FY2022</td><td class="td-right">$3.58B</td><td class="td-center impact-down">-11%</td><td class="td-right">-$2.83B</td></tr>
-                    <tr><td>FY2023</td><td class="td-right">$2.80B</td><td class="td-center impact-down">-22%</td><td class="td-right">-$1.26B</td></tr>
-                    <tr><td>FY2024</td><td class="td-right">$2.70B</td><td class="td-center impact-down">-3.5%</td><td class="td-right">-$552M</td></tr>
+                    <tr><td>FY2019</td><td class="td-num">$915M</td><td class="td-center impact-up">+110%</td><td class="td-num">-$196M</td></tr>
+                    <tr><td>FY2020</td><td class="td-num">$1.83B</td><td class="td-center impact-up">+100%</td><td class="td-num">-$72M</td></tr>
+                    <tr><td>FY2021</td><td class="td-num"><strong>$4.02B</strong></td><td class="td-center impact-up">+120%</td><td class="td-num">-$189M</td></tr>
+                    <tr><td>FY2022</td><td class="td-num">$3.58B</td><td class="td-center impact-down">-11%</td><td class="td-num">-$2.83B</td></tr>
+                    <tr><td>FY2023</td><td class="td-num">$2.80B</td><td class="td-center impact-down">-22%</td><td class="td-num">-$1.26B</td></tr>
+                    <tr><td>FY2024</td><td class="td-num">$2.70B</td><td class="td-center impact-down">-3.5%</td><td class="td-num">-$552M</td></tr>
                 </tbody>
             </table>
         </div>
@@ -275,14 +275,14 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>指标</th><th style="width:90px">数据</th></tr></thead>
                 <tbody>
-                    <tr><td>互联健身订阅（2024）</td><td class="td-right">2.88M（YoY -6%）</td></tr>
-                    <tr><td>App 订阅（2024）</td><td class="td-right">-15-21% YoY</td></tr>
-                    <tr><td>设备收入占比（FY2021）</td><td class="td-right">78% → 33%（FY2025E）</td></tr>
-                    <tr><td>订阅收入占比</td><td class="td-right">22% → 67%</td></tr>
-                    <tr><td>月均流失率</td><td class="td-right">1.5-2%（高于 Tonal <1%）</td></tr>
-                    <tr><td>IPO 以来 CEO</td><td class="td-right">Foley→McCarthy→Stern（3任）</td></tr>
-                    <tr><td>Altman Z-Score</td><td class="td-right"><strong>-1.71（破产风险）</strong></td></tr>
-                    <tr><td>2019 IPO 价→2024 最低</td><td class="td-right">$29 → $2.70（-91%）</td></tr>
+                    <tr><td>互联健身订阅（2024）</td><td class="td-num">2.88M（YoY -6%）</td></tr>
+                    <tr><td>App 订阅（2024）</td><td class="td-num">-15-21% YoY</td></tr>
+                    <tr><td>设备收入占比（FY2021）</td><td class="td-num">78% → 33%（FY2025E）</td></tr>
+                    <tr><td>订阅收入占比</td><td class="td-num">22% → 67%</td></tr>
+                    <tr><td>月均流失率</td><td class="td-num">1.5-2%（高于 Tonal <1%）</td></tr>
+                    <tr><td>IPO 以来 CEO</td><td class="td-num">Foley→McCarthy→Stern（3任）</td></tr>
+                    <tr><td>Altman Z-Score</td><td class="td-num"><strong>-1.71（破产风险）</strong></td></tr>
+                    <tr><td>2019 IPO 价→2024 最低</td><td class="td-num">$29 → $2.70（-91%）</td></tr>
                 </tbody>
             </table>
         </div>
@@ -631,21 +631,21 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
                 <tbody>
-                    <tr><td>创立</td><td class="td-right">2012，纽约</td></tr>
-                    <tr><td>创始人</td><td class="td-right">John Foley（2022 年离职）</td></tr>
-                    <tr><td>IPO</td><td class="td-right">2019.09 · NASDAQ: PTON · $29/股</td></tr>
-                    <tr><td>峰值市值（2020）</td><td class="td-right"><strong>$50B</strong></td></tr>
-                    <tr><td>当前市值（2025）</td><td class="td-right"><strong>~$1.2B（-97.6%）</strong></td></tr>
-                    <tr><td>FY2021 营收峰值</td><td class="td-right"><strong>$4.02B</strong></td></tr>
-                    <tr><td>FY2024 营收</td><td class="td-right"><strong>$2.70B（-33%）</strong></td></tr>
-                    <tr><td>互联健身订阅</td><td class="td-right"><strong>2.88M</strong>（YoY -6%）</td></tr>
-                    <tr><td>月订阅费</td><td class="td-right">$44/月（All-Access）</td></tr>
-                    <tr><td>硬件价格</td><td class="td-right">Bike $1,445 / Bike+ $2,495</td></tr>
-                    <tr><td>债务 / 现金</td><td class="td-right">$947M / $914M</td></tr>
-                    <tr><td>Altman Z-Score</td><td class="td-right"><strong>-1.71（破产风险）</strong></td></tr>
-                    <tr><td>Trustpilot</td><td class="td-right"><strong>4.1/5</strong> · 6,700+ 评价</td></tr>
-                    <tr><td>CEO（2025）</td><td class="td-right">Peter Stern（第 3 任，Apple 背景）</td></tr>
-                    <tr><td>安全召回</td><td class="td-right">3 次 · 300 万+ 设备</td></tr>
+                    <tr><td>创立</td><td class="td-num">2012，纽约</td></tr>
+                    <tr><td>创始人</td><td class="td-num">John Foley（2022 年离职）</td></tr>
+                    <tr><td>IPO</td><td class="td-num">2019.09 · NASDAQ: PTON · $29/股</td></tr>
+                    <tr><td>峰值市值（2020）</td><td class="td-num"><strong>$50B</strong></td></tr>
+                    <tr><td>当前市值（2025）</td><td class="td-num"><strong>~$1.2B（-97.6%）</strong></td></tr>
+                    <tr><td>FY2021 营收峰值</td><td class="td-num"><strong>$4.02B</strong></td></tr>
+                    <tr><td>FY2024 营收</td><td class="td-num"><strong>$2.70B（-33%）</strong></td></tr>
+                    <tr><td>互联健身订阅</td><td class="td-num"><strong>2.88M</strong>（YoY -6%）</td></tr>
+                    <tr><td>月订阅费</td><td class="td-num">$44/月（All-Access）</td></tr>
+                    <tr><td>硬件价格</td><td class="td-num">Bike $1,445 / Bike+ $2,495</td></tr>
+                    <tr><td>债务 / 现金</td><td class="td-num">$947M / $914M</td></tr>
+                    <tr><td>Altman Z-Score</td><td class="td-num"><strong>-1.71（破产风险）</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num"><strong>4.1/5</strong> · 6,700+ 评价</td></tr>
+                    <tr><td>CEO（2025）</td><td class="td-num">Peter Stern（第 3 任，Apple 背景）</td></tr>
+                    <tr><td>安全召回</td><td class="td-num">3 次 · 300 万+ 设备</td></tr>
                 </tbody>
             </table>
         </div>

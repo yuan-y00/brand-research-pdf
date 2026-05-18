@@ -68,7 +68,7 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 .info-table tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-light); vertical-align: middle; }
 .info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
 .td-center { text-align: center !important; }
-.td-right { text-align: right !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
 .td-impact { text-align: center; font-weight: 700; }
 .impact-up { color: var(--sage); }
 .impact-down { color: var(--terracotta); }
@@ -262,11 +262,11 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>时间</th><th>轮次</th><th style="width:90px">金额</th><th style="width:100px">估值 / 状态</th></tr></thead>
                 <tbody>
-                    <tr><td>2016.05</td><td>Seed</td><td class="td-right">$1.5M</td><td>Bolt / Mayfield</td></tr>
-                    <tr><td>2020.09</td><td>Series D</td><td class="td-right">$110M</td><td>疫情爆发增长期</td></tr>
-                    <tr><td>2021.03</td><td>Series E</td><td class="td-right"><strong>$250M</strong></td><td><strong>$1.6B 估值 · 巅峰</strong></td></tr>
-                    <tr><td>2023.04</td><td>Series F</td><td class="td-right"><strong>$130M</strong></td><td>$550-600M · -66%</td></tr>
-                    <tr><td colspan="2">累计</td><td class="td-right"><strong>$615M+</strong></td><td>融资 > 估值</td></tr>
+                    <tr><td>2016.05</td><td>Seed</td><td class="td-num">$1.5M</td><td>Bolt / Mayfield</td></tr>
+                    <tr><td>2020.09</td><td>Series D</td><td class="td-num">$110M</td><td>疫情爆发增长期</td></tr>
+                    <tr><td>2021.03</td><td>Series E</td><td class="td-num"><strong>$250M</strong></td><td><strong>$1.6B 估值 · 巅峰</strong></td></tr>
+                    <tr><td>2023.04</td><td>Series F</td><td class="td-num"><strong>$130M</strong></td><td>$550-600M · -66%</td></tr>
+                    <tr><td colspan="2">累计</td><td class="td-num"><strong>$615M+</strong></td><td>融资 > 估值</td></tr>
                 </tbody>
             </table>
         </div>
@@ -275,14 +275,14 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>指标</th><th style="width:100px">数据</th></tr></thead>
                 <tbody>
-                    <tr><td>硬件售价</td><td class="td-right"><strong>$3,995</strong>（含专业安装）</td></tr>
-                    <tr><td>月订阅费</td><td class="td-right"><strong>$59.95</strong>（12月强制）</td></tr>
-                    <tr><td>ARR（2023）</td><td class="td-right"><strong>>$100M</strong></td></tr>
-                    <tr><td>用户流失率</td><td class="td-right"><strong><1%</strong>（极低）</td></tr>
-                    <tr><td>估值/ARR 倍数</td><td class="td-right"><strong>~5.5x</strong></td></tr>
-                    <tr><td>员工（2024）</td><td class="td-right">~350（峰值 750）</td></tr>
-                    <tr><td>累计融资</td><td class="td-right">$615M+</td></tr>
-                    <tr><td>盈利状态</td><td class="td-right"><strong>未披露 / 可能仍亏损</strong></td></tr>
+                    <tr><td>硬件售价</td><td class="td-num"><strong>$3,995</strong>（含专业安装）</td></tr>
+                    <tr><td>月订阅费</td><td class="td-num"><strong>$59.95</strong>（12月强制）</td></tr>
+                    <tr><td>ARR（2023）</td><td class="td-num"><strong>>$100M</strong></td></tr>
+                    <tr><td>用户流失率</td><td class="td-num"><strong><1%</strong>（极低）</td></tr>
+                    <tr><td>估值/ARR 倍数</td><td class="td-num"><strong>~5.5x</strong></td></tr>
+                    <tr><td>员工（2024）</td><td class="td-num">~350（峰值 750）</td></tr>
+                    <tr><td>累计融资</td><td class="td-num">$615M+</td></tr>
+                    <tr><td>盈利状态</td><td class="td-num"><strong>未披露 / 可能仍亏损</strong></td></tr>
                 </tbody>
             </table>
         </div>
@@ -646,21 +646,21 @@ p { margin-bottom: 7px; color: #3D3D3D; }
             <table class="info-table">
                 <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
                 <tbody>
-                    <tr><td>创立</td><td class="td-right">2015，旧金山</td></tr>
-                    <tr><td>创始人</td><td class="td-right">Aly Orady（现任 CTO）</td></tr>
-                    <tr><td>核心投资方</td><td class="td-right">L Catterton（PE，控股级影响力）</td></tr>
-                    <tr><td>硬件售价</td><td class="td-right"><strong>$3,995</strong> + $495 配件</td></tr>
-                    <tr><td>月订阅费</td><td class="td-right"><strong>$59.95</strong>（12 月强制）</td></tr>
-                    <tr><td>年经常性收入</td><td class="td-right"><strong>>$100M ARR</strong></td></tr>
-                    <tr><td>峰值估值（2021）</td><td class="td-right"><strong>$1.6B</strong></td></tr>
-                    <tr><td>当前估值（2023）</td><td class="td-right"><strong>$550-600M（-66%）</strong></td></tr>
-                    <tr><td>累计融资</td><td class="td-right"><strong>$615M+（> 估值）</strong></td></tr>
-                    <tr><td>员工数</td><td class="td-right">~350（峰值 750）</td></tr>
-                    <tr><td>月流失率</td><td class="td-right"><strong><1%</strong></td></tr>
-                    <tr><td>Trustpilot</td><td class="td-right"><strong>1.9/5</strong> · ~70% 1星</td></tr>
-                    <tr><td>BBB 投诉</td><td class="td-right">136 件（历史）· 未认证</td></tr>
-                    <tr><td>运动员投资人</td><td class="td-right">LeBron / Serena / Curry / 30+</td></tr>
-                    <tr><td>CEO（2025）</td><td class="td-right">Todd Bartee（PE 背景，第 4 任）</td></tr>
+                    <tr><td>创立</td><td class="td-num">2015，旧金山</td></tr>
+                    <tr><td>创始人</td><td class="td-num">Aly Orady（现任 CTO）</td></tr>
+                    <tr><td>核心投资方</td><td class="td-num">L Catterton（PE，控股级影响力）</td></tr>
+                    <tr><td>硬件售价</td><td class="td-num"><strong>$3,995</strong> + $495 配件</td></tr>
+                    <tr><td>月订阅费</td><td class="td-num"><strong>$59.95</strong>（12 月强制）</td></tr>
+                    <tr><td>年经常性收入</td><td class="td-num"><strong>>$100M ARR</strong></td></tr>
+                    <tr><td>峰值估值（2021）</td><td class="td-num"><strong>$1.6B</strong></td></tr>
+                    <tr><td>当前估值（2023）</td><td class="td-num"><strong>$550-600M（-66%）</strong></td></tr>
+                    <tr><td>累计融资</td><td class="td-num"><strong>$615M+（> 估值）</strong></td></tr>
+                    <tr><td>员工数</td><td class="td-num">~350（峰值 750）</td></tr>
+                    <tr><td>月流失率</td><td class="td-num"><strong><1%</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num"><strong>1.9/5</strong> · ~70% 1星</td></tr>
+                    <tr><td>BBB 投诉</td><td class="td-num">136 件（历史）· 未认证</td></tr>
+                    <tr><td>运动员投资人</td><td class="td-num">LeBron / Serena / Curry / 30+</td></tr>
+                    <tr><td>CEO（2025）</td><td class="td-num">Todd Bartee（PE 背景，第 4 任）</td></tr>
                 </tbody>
             </table>
         </div>
