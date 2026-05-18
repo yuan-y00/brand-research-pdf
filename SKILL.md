@@ -266,11 +266,46 @@ p { margin-bottom: 7px; color: #3D3D3D; }
 - 表格每列必须设置 `style="width:XXpx"`
 - 所有表格、卡片网格、col-2 都要加 `page-break-inside: avoid`
 
-### Phase 5: 输出
+### Phase 5: 输出与自动发布
+
+生成 HTML 后，执行以下步骤自动同步到 GitHub Pages：
 
 1. 文件保存到 `~/Downloads/[品牌名]-report.html`
 2. 用浏览器打开文件
 3. 告诉用户：`Ctrl + P` → 勾选 Background graphics → 保存为 PDF
+
+**Phase 5a: 自动同步到 GitHub Pages（必须执行）**
+
+生成报告后，自动执行以下命令将报告发布到 GitHub Pages：
+
+```bash
+# 1. 复制报告到项目 examples 目录
+cp "~/Downloads/[品牌名]-report.html" "~/Downloads/brand-research-pdf/examples/"
+
+# 2. 用 Edit 工具更新 index.html，在 <div class="reports"> 内、最后一个 </a> 之后、</div> 之前，新增一张报告卡片
+```
+
+**index.html 卡片模板：**
+
+```html
+    <a href="examples/[品牌名]-report.html" class="card">
+        <h2>[品牌名英文]</h2>
+        <div class="subtitle">[一句话描述] · [国家] · [年份] 年创立</div>
+        <div class="tags">
+            <span class="tag">[关键数据1]</span>
+            <span class="tag">[关键数据2]</span>
+            <span class="tag">[关键数据3]</span>
+        </div>
+    </a>
+```
+
+**3. 更新后自动提交并推送。** 使用 `run_in_background` 参数执行以下 git 命令，避免阻塞用户操作：
+
+```bash
+cd "~/Downloads/brand-research-pdf" && git add examples/ index.html && git commit -m "Add [品牌名] report" && git push
+```
+
+**提交信息格式**：`Add Hyrox report` / `Add Tonal report` / `Add Peloton report` 等，英文品牌名。
 
 ## 内容质量标准
 
