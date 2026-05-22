@@ -155,6 +155,7 @@ function showHelp() {
     '  --update-index       Insert or update the report card in index.html.',
     '  --publish            Shortcut: --append + --update-index.',
     '                        Generates the GTM report and adds it to the index.',
+    '                        New GTM cards appear at the TOP of the reports list.',
     '                        NOTE: --publish does NOT git push. Use --push for that.',
     '  --push               Git add + commit + push the generated files.',
     '                        Only valid with --publish or --update-index.',
@@ -412,6 +413,8 @@ function runUpdateIndex(brandName, brandSlug, outPath, indexPath) {
     '--report', outPath,
     '--index', indexPath,
     '--write',
+    '--position', 'top',
+    '--move-existing-to-top',
     '--allow-existing',
   ];
 
@@ -575,6 +578,8 @@ function printDryRun(brandName, paths, candidates, opts) {
       '--report', paths.outPath,
       '--index', indexPath,
       '--write',
+      '--position', 'top',
+      '--move-existing-to-top',
       '--allow-existing',
     ];
     console.log('  ' + indexArgs.join(' '));

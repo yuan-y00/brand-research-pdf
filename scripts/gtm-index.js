@@ -67,6 +67,13 @@ Options:
   --out <path>          Write result to this file instead of modifying index.html
   --write               Write result back to index.html (explicit opt-in)
   --dry-run             Preview only — print analysis and card HTML, write nothing
+  --position <pos>      Where to insert the new card (default: top)
+                        top         — before the first card in reports list
+                        after-brand — after the original brand card
+                        end         — at the end of reports list
+  --move-existing-to-top  If the report link already exists in index, move the
+                        existing card to the top of the reports list instead of
+                        inserting a duplicate.
   --allow-existing      If the report link already exists in the index, treat it
                         as a success (no-op) instead of refusing. Useful for
                         idempotent workflow runs.
@@ -97,6 +104,8 @@ function parseArgs(args) {
     dryRun: false,
     force: false,
     allowExisting: false,
+    position: 'top',
+    moveExistingToTop: false,
   };
 
   let i = 0;
@@ -141,6 +150,12 @@ function parseArgs(args) {
         break;
       case '--allow-existing':
         opts.allowExisting = true;
+        break;
+      case '--position':
+        opts.position = args[++i] || 'top';
+        break;
+      case '--move-existing-to-top':
+        opts.moveExistingToTop = true;
         break;
       default:
         // ignore unknown
@@ -188,6 +203,11 @@ function validate(opts) {
     errors.push('Index file not found: ' + opts.index);
   }
 
+  var validPositions = ['top', 'after-brand', 'end'];
+  if (validPositions.indexOf(opts.position) === -1) {
+    errors.push('Invalid --position value: "' + opts.position + '". Must be one of: ' + validPositions.join(', '));
+  }
+
   return errors;
 }
 
@@ -207,28 +227,160 @@ function hasReportLink(html, reportPath) {
 }
 
 // ---------------------------------------------------------------------------
+// Card range & position helpers
+// ---------------------------------------------------------------------------
+
+/**
+ * Finds the start/end range of an existing card <a> element that links to
+ * `reportPath`. Returns { start, end } or null.
+ */
+function findCardRange(html, reportPath) {
+  var normalized = normalizePathForHtml(reportPath);
+  var escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  var hrefPattern = new RegExp('href\\s*=\\s*["\']' + escaped + '["\']', 'i');
+  var hrefMatch = html.match(hrefPattern);
+  if (!hrefMatch) return null;
+
+  var hrefPos = hrefMatch.index;
+
+  // Search backwards for the opening <a tag
+  var searchStart = Math.max(0, hrefPos - 600);
+  var beforeHref = html.substring(searchStart, hrefPos);
+  var lastA = beforeHref.lastIndexOf('<a ');
+  if (lastA === -1) return null;
+
+  var cardStart = searchStart + lastA;
+
+  // Search forward for the matching </a>
+  var afterHref = html.substring(hrefPos);
+  var closeA = afterHref.indexOf('</a>');
+  if (closeA === -1) return null;
+
+  var cardEnd = hrefPos + closeA + 4;
+
+  return { start: cardStart, end: cardEnd };
+}
+
+/**
+ * Returns the character position just before the first <a class="card"> inside
+ * <div class="reports">, or null if no card is found.
+ */
+function findFirstCardInReports(html) {
+  var reportsMatch = html.match(/<div\s+class="reports"[^>]*>/i);
+  if (!reportsMatch) return null;
+
+  var afterReports = html.substring(reportsMatch.index + reportsMatch[0].length);
+  var firstA = afterReports.match(/<a\s/);
+  if (!firstA) return null;
+
+  return reportsMatch.index + reportsMatch[0].length + firstA.index;
+}
+
+/**
+ * Returns the character position of the closing </div> for the reports
+ * container, or null.
+ */
+function findReportsEnd(html) {
+  var reportsStartMatch = html.match(/<div\s+class="reports"[^>]*>/i);
+  if (!reportsStartMatch) return null;
+
+  var depth = 1;
+  var i = reportsStartMatch.index + reportsStartMatch[0].length;
+  while (i < html.length && depth > 0) {
+    if (html.substring(i, i + 5) === '<div ' || html.substring(i, i + 5) === '<div>') {
+      depth++;
+      i += 4;
+    } else if (html.substring(i, i + 6) === '</div>') {
+      depth--;
+      if (depth === 0) return i;
+      i += 5;
+    }
+    i++;
+  }
+  return null;
+}
+
+// ---------------------------------------------------------------------------
 // Insertion-point search
 // ---------------------------------------------------------------------------
 
 /**
  * Finds where to insert the new card.
  *
- * Priority:
+ * @param {string} html — full index.html content
+ * @param {string} slug — brand slug
+ * @param {string} position — 'top', 'after-brand', or 'end'
+ *
+ * Priority for 'top':
+ *   1. Before the first <a> card inside <div class="reports">
+ *   2. After <div class="reports"> opening tag (if no cards)
+ *   3. Fallback to after original brand card logic
+ *
+ * Priority for 'after-brand':
  *   1. Right after the original brand report card (examples/{slug}-report.html)
  *   2. After the last card in <div class="reports">
  *   3. Before </body>
  *
+ * Priority for 'end':
+ *   1. Before the closing </div> of <div class="reports">
+ *   2. Before </body>
+ *
  * Returns { position: <char index>, strategy: <human-readable label> } or null.
  */
-function findInsertPosition(html, slug) {
-  // --- Priority 1: find the original brand card --------------------------------
+function findInsertPosition(html, slug, position) {
+  position = position || 'top';
+
+  // --- Position: top ---------------------------------------------------------
+  if (position === 'top') {
+    var topPos = findFirstCardInReports(html);
+    if (topPos !== null) {
+      return {
+        position: topPos,
+        strategy: 'top of reports list (before first card)',
+      };
+    }
+
+    // No cards yet — insert right after the reports opening tag
+    var reportsOpen = html.match(/<div\s+class="reports"[^>]*>/i);
+    if (reportsOpen) {
+      return {
+        position: reportsOpen.index + reportsOpen[0].length,
+        strategy: 'top of reports list (after opening div, no cards found)',
+      };
+    }
+
+    // Fallback to after-brand logic
+    return findInsertPosition(html, slug, 'after-brand');
+  }
+
+  // --- Position: end ---------------------------------------------------------
+  if (position === 'end') {
+    var endPos = findReportsEnd(html);
+    if (endPos !== null) {
+      return {
+        position: endPos,
+        strategy: 'end of reports list (before closing </div>)',
+      };
+    }
+
+    // Fallback
+    var bodyMatchEnd = html.match(/<\/body>/i);
+    if (bodyMatchEnd) {
+      return {
+        position: bodyMatchEnd.index,
+        strategy: 'before </body> (reports container not found)',
+      };
+    }
+    return null;
+  }
+
+  // --- Position: after-brand (original logic) --------------------------------
   var originalPath = 'examples/' + slug + '-report.html';
   var escapedPath = originalPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   var originalPattern = new RegExp('href\\s*=\\s*["\']' + escapedPath + '["\']', 'i');
   var originalMatch = html.match(originalPattern);
 
   if (originalMatch) {
-    // Find the closing </a> that belongs to this card
     var afterHref = html.substring(originalMatch.index);
     var closeMatch = afterHref.match(/<\/a>/i);
     if (closeMatch) {
@@ -239,39 +391,13 @@ function findInsertPosition(html, slug) {
     }
   }
 
-  // --- Priority 2: end of reports list ----------------------------------------
+  // Fallback: end of reports list
   var reportsStartMatch = html.match(/<div\s+class="reports"[^>]*>/i);
   if (reportsStartMatch) {
-    // Find the closing </div> for the reports container.
-    // Simple approach: walk forward counting <div and </div levels.
-    var depth = 0;
-    var inTag = false;
-    var reportsEnd = -1;
-    for (var i = reportsStartMatch.index; i < html.length; i++) {
-      var ch = html[i];
-      if (ch === '<') {
-        inTag = true;
-        if (html.substring(i, i + 5) === '<div ' || html.substring(i, i + 5) === '<div>') {
-          depth++;
-          i += 3; // skip ahead (loop increment handles the rest)
-        } else if (html.substring(i, i + 6) === '</div>') {
-          depth--;
-          if (depth === 0) {
-            reportsEnd = i;
-            break;
-          }
-          i += 4;
-        }
-        continue;
-      }
-      if (ch === '>') {
-        inTag = false;
-      }
-    }
-
-    if (reportsEnd > 0) {
+    var reportsEndResult = findReportsEnd(html);
+    if (reportsEndResult !== null) {
       // Find the last </a> before </div>
-      var reportsContent = html.substring(reportsStartMatch.index, reportsEnd);
+      var reportsContent = html.substring(reportsStartMatch.index, reportsEndResult);
       var allCloseA = [];
       var re = /<\/a>/gi;
       var m;
@@ -288,7 +414,7 @@ function findInsertPosition(html, slug) {
     }
   }
 
-  // --- Priority 3: before </body> ---------------------------------------------
+  // Final fallback
   var bodyMatch = html.match(/<\/body>/i);
   if (bodyMatch) {
     return {
@@ -368,12 +494,112 @@ function main() {
   console.log('  Description:  ' + opts.description);
   console.log('  Tags:         ' + opts.tag);
   console.log('  Index:        ' + opts.index);
+  console.log('  Position:     ' + opts.position);
+  console.log('  Move to top:  ' + (opts.moveExistingToTop ? 'YES' : 'no'));
   console.log('  Already in index: ' + (duplicate ? 'YES' : 'no'));
 
   if (duplicate) {
     console.log('');
     console.log('[gtm-index] Report already exists in index: ' + reportPath);
 
+    // --- move-existing-to-top ------------------------------------------------
+    if (opts.moveExistingToTop) {
+      var cardRange = findCardRange(html, opts.report);
+      if (!cardRange) {
+        console.error('[gtm-index] Cannot locate existing card element for: ' + reportPath);
+        process.exitCode = 1;
+        return;
+      }
+
+      // Check if already near the top
+      var firstCardPos = findFirstCardInReports(html);
+      if (firstCardPos !== null && cardRange.start <= firstCardPos + 150) {
+        console.log('[gtm-index] Card is already at the top of the reports list. No move needed.');
+        if (opts.dryRun) {
+          console.log('[gtm-index] --dry-run: No files written.');
+          return;
+        }
+        if (opts.out) {
+          var outDirMT = path.dirname(opts.out);
+          if (!fs.existsSync(outDirMT)) fs.mkdirSync(outDirMT, { recursive: true });
+          fs.writeFileSync(opts.out, html, 'utf-8');
+          console.log('[gtm-index] Written to: ' + opts.out + ' (copied as-is, card already at top)');
+          return;
+        }
+        if (opts.write) {
+          console.log('[gtm-index] Card already at top — nothing to change in ' + opts.index + '.');
+          return;
+        }
+        return;
+      }
+
+      // Extract card with surrounding whitespace
+      var extractStart = cardRange.start;
+      var before = html.substring(Math.max(0, extractStart - 100), extractStart);
+      var nlNl = before.lastIndexOf('\n\n');
+      if (nlNl !== -1) {
+        extractStart = extractStart - (before.length - nlNl - 2);
+      }
+      var cardHtmlContent = html.substring(extractStart, cardRange.end);
+
+      // Also capture trailing newline if present
+      var trailingEnd = cardRange.end;
+      if (html.substring(trailingEnd, trailingEnd + 1) === '\n') {
+        trailingEnd++;
+      }
+
+      // Remove card from current position
+      var htmlWithoutCard = html.substring(0, extractStart) + html.substring(trailingEnd);
+
+      // Find insertion point at top
+      var moveInsertPos = findFirstCardInReports(htmlWithoutCard);
+      if (moveInsertPos === null) {
+        var roMatch2 = htmlWithoutCard.match(/<div\s+class="reports"[^>]*>/i);
+        if (roMatch2) {
+          moveInsertPos = roMatch2.index + roMatch2[0].length;
+        }
+      }
+
+      if (moveInsertPos === null) {
+        console.error('[gtm-index] Cannot find reports insertion point for move-to-top.');
+        process.exitCode = 1;
+        return;
+      }
+
+      var movedHtml = htmlWithoutCard.substring(0, moveInsertPos) + cardHtmlContent + htmlWithoutCard.substring(moveInsertPos);
+
+      console.log('[gtm-index] Moving existing card to top of reports list.');
+
+      if (opts.dryRun) {
+        console.log('');
+        console.log('[gtm-index] --dry-run: No files written.');
+        console.log('[gtm-index] Card would be moved to top.');
+        return;
+      }
+
+      if (opts.out) {
+        var outDirMT2 = path.dirname(opts.out);
+        if (!fs.existsSync(outDirMT2)) fs.mkdirSync(outDirMT2, { recursive: true });
+        fs.writeFileSync(opts.out, movedHtml, 'utf-8');
+        console.log('');
+        console.log('[gtm-index] Written to: ' + opts.out + ' (card moved to top)');
+        console.log('[gtm-index] Original ' + opts.index + ' unchanged.');
+        return;
+      }
+
+      if (opts.write) {
+        fs.writeFileSync(opts.index, movedHtml, 'utf-8');
+        console.log('');
+        console.log('[gtm-index] Written to: ' + opts.index + ' (card moved to top)');
+        return;
+      }
+
+      console.log('');
+      console.log('[gtm-index] No action specified. Use --write, --out <path>, or --dry-run.');
+      return;
+    }
+
+    // --- allow-existing (no-op) ----------------------------------------------
     if (opts.allowExisting) {
       console.log('[gtm-index] No changes needed.');
       process.exitCode = 0;
@@ -436,7 +662,7 @@ function main() {
   // --- Not a duplicate — proceed with normal insertion -------------------------
 
   // Find insertion point
-  var insertPos = findInsertPosition(html, opts.slug);
+  var insertPos = findInsertPosition(html, opts.slug, opts.position);
   if (!insertPos) {
     console.error('[gtm-index] Cannot determine a safe insertion position in ' + opts.index + '.');
     console.error('[gtm-index] The file structure may not support automatic insertion.');
