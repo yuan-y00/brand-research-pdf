@@ -130,18 +130,46 @@
 
 每处理完一个目标，在此处追加或更新状态：
 
-```
-### [YYYY-MM-DD] — {Brand Name}
+## 7. 已处理 / 追加队列
 
-- 状态：not_started / in_progress / local_done / published
-- TARGET_TYPE：company / person / product / platform
-- JSON 路径：data/gtm/{slug}.json
-- 报告路径：examples/{slug}-report-gtm.html
-- 原始报告：examples/{slug}-report.html
-- gtm-check 结果：
-- publish 结果：
-- push 结果：
-- 主要 sources 数量：
+### [2026-05-22] — DJI (大疆创新)
+
+- 状态：local_done（DO_PUSH=false，未 push）
+- TARGET_TYPE：company
+- JSON 路径：data/gtm/dji.json
+- 报告路径：examples/dji-report-gtm.html
+- 原始报告：examples/dji-report.html
+- gtm-check 结果：PASS（无 warning）
+- publish 结果：成功 — examples/dji-report-gtm.html 生成（943 行），index.html 已更新（DJI GTM 卡片在首页最前面）
+- push 结果：未 push（本轮 DO_PUSH=false）
+- 主要 sources 数量：全局 14 条 + 3 个产品各 4 条（合计约 26 条来源引用）
+- top_products：Phantom 系列、Mavic 系列、DJI Enterprise & Agriculture 生态
 - 低可信度内容：
+  - DJI 2025 年农业无人机出货 20 万台为行业报告数据（medium confidence）
+  - DJI 农业无人机全球市场份额 59% vs 30-34% 不同来源口径不一致
+  - 2025 年营收、估值等数字为媒体估算（DJI 为私有公司）
+- 品牌上下文：包含完整的 founder_background、brand_timeline、major_turning_points、controversies_or_failures
+- 授权店/代理/服务网络：包含 S/A/B 三级代理商体系、400+ 授权零售店、双轨制渠道分析
+- 美国市场风险：包含 Entity List → CMC → FCC Covered List 完整时间线和影响分析
 - 下一步：
-```
+  1. 本地验证通过后，将 DO_PUSH 改为 true 并执行 --publish --push
+  2. 或手动执行：`node scripts/gtm-workflow.js "DJI" --publish --push --commit-message "Publish DJI GTM report"`
+  3. 建议下一个目标：Bambu Lab（3D 打印，品类开创者路径与 DJI 的 Phantom 类似）
+
+### [2026-05-21] — NVIDIA
+
+- 状态：published
+- TARGET_TYPE：company
+- JSON 路径：data/gtm/nvidia.json
+- 报告路径：examples/nvidia-report-gtm.html
+- gtm-check 结果：PASS
+- push 结果：已 push
+
+### [2026-05-20] — Anker
+
+- 状态：published
+- TARGET_TYPE：company
+- JSON 路径：data/gtm/anker.json
+- 报告路径：examples/anker-report-gtm.html
+- gtm-check 结果：PASS
+- push 结果：已 push
