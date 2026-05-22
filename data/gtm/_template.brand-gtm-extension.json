@@ -1,0 +1,61 @@
+{
+  "brand": "Example Brand",
+  "brand_slug": "example-brand",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "VSCode AI research",
+  "disclaimer": "This report is for learning and pattern recognition. It does not perform strict fact auditing.",
+  "gtm_extension": {
+    "summary": "",
+    "one_sentence_gtm": "",
+    "channel_path": [],
+    "channels": {
+      "crowdfunding": "",
+      "dtc": "",
+      "amazon": "",
+      "ecommerce": "",
+      "social_media": "",
+      "retail": "",
+      "dealer": "",
+      "authorized_store": "",
+      "offline": "",
+      "service_network": ""
+    },
+    "market_entry": {
+      "us_market": "",
+      "china_market": "",
+      "global_market": "",
+      "notes": ""
+    },
+    "business_model": {
+      "hardware": "",
+      "subscription": "",
+      "consumables": "",
+      "accessories": "",
+      "service": "",
+      "repair": "",
+      "training": "",
+      "dealer_margin_or_channel": "",
+      "other": ""
+    },
+    "offline_and_dealer_model": {
+      "has_offline_model": "",
+      "retail_partners": [],
+      "dealer_or_distributor": "",
+      "authorized_store": "",
+      "service_and_repair": "",
+      "training_or_demo": "",
+      "notes": ""
+    },
+    "top_products_selection_rule": "Choose no more than 3 products or product lines based on public evidence of success, market impact, GTM learning value, and product innovation.",
+    "top_products": [],
+    "learning_summary": {
+      "can_copy": [],
+      "cannot_copy": [],
+      "best_lessons": [],
+      "open_questions": []
+    },
+    "sources": []
+  }
+}

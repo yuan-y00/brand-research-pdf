@@ -86,3 +86,63 @@ Claude 会自动：
 ## License
 
 MIT
+
+---
+
+## GTM Extension / 增长路径与代表产品学习
+
+在原品牌报告后面追加"GTM & Product Learning"板块，用于学习品牌增长路径、渠道、商业模式和最成功产品。
+
+### 标准使用流程
+
+```
+# 1. 生成研究 prompt
+node scripts/gtm-workflow.js "Anker"
+
+# 2. 把 tmp/anker-gtm-research-prompt.txt 复制给 VSCode AI
+# AI 会自动研究公开资料并输出 JSON
+
+# 3. 保存 AI 输出
+# → data/gtm/anker.json
+
+# 4. 质量检查
+node scripts/gtm-check.js data/gtm/anker.json
+
+# 5. 追加到报告
+node scripts/gtm-workflow.js "Anker" --append
+
+# 6. 打开报告
+# examples/anker-report-gtm.html
+```
+
+### English-first research
+
+研究美国 / 全球品牌时，务必优先使用英文资料搜索。中文资料只作为补充。详见 [docs/gtm-quality-rules.md](docs/gtm-quality-rules.md)。
+
+### 项目边界
+
+- 不做爬虫
+- 不做数据库
+- 不做事实审计
+- 不覆盖旧报告
+- 零依赖（纯 Node.js 原生模块）
+- AI 负责研究和生成 JSON
+- 工具只负责渲染和追加
+
+### 脚本一览
+
+| 脚本 | 用途 |
+|------|------|
+| `scripts/gtm-workflow.js` | 品牌名工作流（prepare + append） |
+| `scripts/gtm-render.js` | JSON → HTML section 渲染 |
+| `scripts/gtm-append.js` | HTML section 插入报告 |
+| `scripts/gtm-check.js` | 质量检查 |
+
+### Anker 示例
+
+完整端到端样例：[examples/anker-report-gtm.html](examples/anker-report-gtm.html)
+
+基于 [examples/anker-report.html](examples/anker-report.html)（原始报告未修改）追加 GTM section：
+- 3 个代表产品分析（GaN 充电器、PowerCore 移动电源、eufy 智能家居）
+- 6 步渠道路径 + 10 个渠道分析 + 商业模式 + 线下代理
+- 10 条全局来源，每个产品 2-4 条来源

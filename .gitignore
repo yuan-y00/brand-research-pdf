@@ -1,6 +1,7 @@
 *.pdf
 .DS_Store
 Thumbs.db
+tmp/
 
 # Allow example PDFs
 !/examples/*.pdf
