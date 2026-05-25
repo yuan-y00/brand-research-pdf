@@ -134,31 +134,17 @@
 
 ### [2026-05-25] — Bambu Lab (拓竹科技)
 
-- 状态：local_done（DO_PUSH=false，未 push）
+- 状态：published（AUTO_PUSH=true，本轮已 push）
 - TARGET_TYPE：company
 - JSON 路径：data/gtm/bambu-lab.json
 - 报告路径：examples/bambu-lab-report-gtm.html
 - 原始报告：examples/bambulab-report.html
 - gtm-check 结果：PASS（无 warning）
-- publish 结果：成功 — examples/bambu-lab-report-gtm.html 生成（911 行），index.html 已更新（Bambu Lab GTM 卡片在首页最前面）
-- push 结果：未 push（本轮 DO_PUSH=false）
-- 主要 sources 数量：全局 15 条 + 3 个产品各 4 条（合计约 27 条来源引用）
-- top_products：X1 Carbon / X1 Series、AMS 多色系统 + RFID 耗材生态、A1 Mini + MakerWorld
-- 低可信度内容：
-  - Bambu Lab 年出货量（120 万/200 万）为媒体估算（private company）
-  - 耗材占营收比例不公开
-  - 经销商网络具体规模和结构信息有限
-- 品牌上下文：包含完整的 founder_background（5 人创始团队全来自大疆）、brand_timeline（2020-2026 年 18 个关键节点）、major_turning_points、controversies_or_failures
-- MakerWorld / DTC / AMS / 耗材生态：包含 MakerWorld 5000 万用户、创作者积分/佣金/众筹机制、RFID 加密锁定分析、DTC 月访问 1100 万+
-- 争议和风险：包含固件门（2025-2026 社区反弹和法律威胁）、RFID 锁定争议、Stratasys 诉讼、客服体验短板
-- 下一步：
-  1. 本地验证通过后，将 DO_PUSH 改为 true 并执行 publish --push
-  2. 或手动执行：`node scripts/gtm-workflow.js "Bambu Lab" --publish --report examples/bambulab-report.html --out examples/bambu-lab-report-gtm.html --push --commit-message "Publish Bambu Lab GTM report"`
-  3. 建议下一个目标：Oura（健康戒指品类开创者，订阅+硬件双收入模型，与 Bambu Lab 的「剃刀+刀片」模型有很好的对比学习价值）
+- push 结果：已 push（commit `e66e088` "Publish pending GTM reports"）
 
 ### [2026-05-22] — DJI (大疆创新)
 
-- 状态：local_done（DO_PUSH=false，未 push）
+- 状态：published（commit `a352af2`，已 push）
 - TARGET_TYPE：company
 - JSON 路径：data/gtm/dji.json
 - 报告路径：examples/dji-report-gtm.html
@@ -197,3 +183,27 @@
 - 报告路径：examples/anker-report-gtm.html
 - gtm-check 结果：PASS
 - push 结果：已 push
+
+### [2026-05-25] — SpaceX
+
+- 状态：published（AUTO_PUSH=true，本轮已 push）
+- TARGET_TYPE：company / space_company
+- JSON 路径：data/gtm/spacex.json
+- 报告路径：examples/spacex-report-gtm.html
+- 基础报告路径：examples/spacex-report.html（本轮新创建）
+- gtm-check 结果：PASS（无 warning，无 critical）
+- 全局 sources：15 条（SpaceX/Starlink官网、NASA、FAA、FCC、Bloomberg、Reuters、CNBC、SpaceNews、Ars Technica、NASASpaceFlight、Payload、The Verge、YouTube官方频道）
+- top_products：
+  1. Falcon 9 / Falcon Heavy — 可回收火箭（high confidence）
+  2. Starlink — 低轨卫星互联网星座（medium confidence）
+  3. Starship / Super Heavy — 超重型全复用运载系统（medium confidence）
+- 品牌上下文：包含完整 founder_background（Musk从PayPal到SpaceX）、brand_timeline（2002-2025年25个关键节点）、major_turning_points（6个关键转折）、controversies_or_failures（11项争议/失败）
+- 低可信度内容：
+  - SpaceX 2024年营收估算$13-15B+（private company，基于Payload Space等第三方估算）
+  - Starlink 2024年收入估算$8-10B+（private company）
+  - 估值$350B来自tender offer媒体报道而非正式财务文件
+  - Starlink 用户数500万+来自公开公告但可能有延迟
+  - Starship $10B+研发投入为行业分析估算
+- NASA/FAA/FCC/Starlink/defense/launch market 分析：均包含
+- 争议和风险：Falcon 1三次失败、CRS-7/Amos-6爆炸、Starlink乌克兰争议、Boca Chica环境争议、天文观测争议、FAA监管摩擦、Musk个人政治风险
+- 下一步建议：下一个目标 Figure AI（人形机器人最具话题的创企，OpenAI/Microsoft/NVIDIA注资，从概念到BMW工厂试点的速度）
