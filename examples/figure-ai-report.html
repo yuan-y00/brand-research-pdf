@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure AI 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root{--bg-page:#F9F7F2;--bg-card:#FFFFFF;--bg-stripe:#F5F2EC;--ink:#1C1C1C;--ink-light:#555555;--ink-muted:#999999;--accent:#C2513B;--positive:#5B8C6F;--negative:#C2513B;--neutral:#4A6FA5;--border:#E8E4DA;--border-light:#F0EDE5;--shadow:0 1px 3px rgba(0,0,0,0.04);--radius:12px;--radius-sm:8px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans','Noto Sans SC',sans-serif;font-size:15px;line-height:1.7;color:var(--ink);background:#E8E5DE;-webkit-font-smoothing:antialiased}.section{width:100%;max-width:1040px;margin:0 auto;background:var(--bg-page);padding:56px 72px;border-bottom:1px solid var(--border-light)}.section:last-child{border-bottom:none}.section.cover{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:80px;min-height:55vh;background:linear-gradient(160deg,#F9F7F2 0%,#F4EFE6 50%,#EDE4D4 100%);padding:64px 80px}.cover-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:28px;font-weight:600}.cover-title{font-family:'Playfair Display','Noto Serif SC',serif;font-size:56px;font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px}.cover-subtitle{font-family:'Crimson Pro','Noto Serif SC',serif;font-size:19px;color:var(--neutral);line-height:1.6}.cover-line{width:60px;height:2px;background:var(--accent);margin:28px 0}.cover-footer{font-size:11px;color:var(--ink-muted);letter-spacing:2px}.cover-stat-block{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cover-stat{background:rgba(255,255,255,0.6);border-radius:var(--radius);padding:22px 28px;text-align:center;backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.04)}.cover-stat .cs-num{font-family:'Playfair Display','Noto Serif SC',serif;font-size:36px;font-weight:900;color:var(--accent);line-height:1.1}.cover-stat .cs-label{font-size:10px;color:var(--ink-muted);letter-spacing:1px;margin-top:4px}.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}h1{font-family:'Playfair Display','Noto Serif SC',serif;font-size:32px;font-weight:900;color:var(--ink);margin-bottom:20px;letter-spacing:-0.3px}h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:21px;font-weight:700;color:var(--neutral);margin:28px 0 14px 0}h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}p{margin-bottom:10px;color:var(--ink-light)}.callout{background:#FDF6F2;border-left:3px solid var(--accent);padding:14px 20px;margin:20px 0;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:#5D3A2E}.callout strong{color:var(--accent)}.divider{border:none;height:1px;background:linear-gradient(to right,var(--accent) 0%,var(--accent) 60px,var(--border) 60px,transparent 100%);margin:32px 0}.info-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0}.info-table thead th{background:var(--ink);color:white;font-size:10.5px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:12px 16px;text-align:left}.info-table tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.5}.info-table tbody tr:nth-child(even){background:var(--bg-stripe)}.stat-row{display:flex;gap:14px;margin:20px 0;flex-wrap:wrap}.stat-card{flex:1;min-width:130px;background:var(--bg-card);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border-light)}.stat-number{font-family:'Playfair Display','Noto Serif SC',serif;font-size:28px;font-weight:900;color:var(--accent);line-height:1.1}.stat-label{font-size:10px;color:var(--ink-muted);letter-spacing:1px;margin-top:4px}.insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:20px 0}.insight-card{background:var(--bg-card);border-radius:var(--radius);padding:24px 28px;position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border-light)}.insight-card.right{border-top:3px solid var(--positive)}.insight-card.wrong{border-top:3px solid var(--negative)}.insight-num{font-family:'Playfair Display','Noto Serif SC',serif;font-size:44px;font-weight:900;opacity:.08;position:absolute;top:10px;right:18px}.insight-card.right .insight-num{color:var(--positive)}.insight-card.wrong .insight-num{color:var(--negative)}.insight-card h4{font-family:'Playfair Display','Noto Serif SC',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px;padding-right:44px;line-height:1.3}.insight-card p{font-size:13.5px;color:var(--ink-light);line-height:1.65;margin-bottom:12px}.col-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:20px 0}@media(max-width:900px){.section{padding:32px 24px}.section.cover{flex-direction:column;text-align:center}.insight-grid,.col-2{grid-template-columns:1fr}.cover-stat-block{grid-template-columns:1fr 1fr}}@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{background:white}.section{border-bottom:none;page-break-after:always}.section:last-child{page-break-after:auto}h1,h2,h3{page-break-after:avoid}}
+</style>
+</head>
+<body>
+<div class="section cover"><div><div class="cover-label">Embodied AI · Humanoid Robotics</div><div class="cover-title">Figure AI</div><div class="cover-subtitle">人形机器人领域融资最多、话题最强的初创公司<br>从创立到BMW工厂试点仅用2年，AI+机器人垂直整合的典范</div><div class="cover-line"></div><div class="cover-footer">FIGURE AI, INC. · BRETT ADCOCK · EST. 2022 · SUNNYVALE, CA</div></div><div class="cover-stat-block"><div class="cover-stat"><div class="cs-num">~$40B</div><div class="cs-label">最新估值 (2025)</div></div><div class="cover-stat"><div class="cs-num">$1.7B+</div><div class="cs-label">累计融资总额</div></div><div class="cover-stat"><div class="cs-num">2022</div><div class="cs-label">创立年份</div></div><div class="cover-stat"><div class="cs-num">BMW</div><div class="cs-label">首个商业客户</div></div></div></div>
+
+<div class="section"><div class="section-label">Section 01</div><h1>公司概况与起源</h1><h2>创始人：Brett Adcock</h2><table class="info-table"><thead><tr><th style="width:80px">姓名</th><th style="width:120px">职位</th><th>核心履历</th><th style="width:140px">关键数据</th></tr></thead><tbody><tr><td>Brett Adcock</td><td>创始人/CEO (2022至今)</td><td>中部农家长大（Illinois）；University of Florida 商学院；2012年创办 Vettery（AI 招聘平台），2020年被 Adecco 以 $100M 收购；2018年联合创办 Archer Aviation（eVTOL飞行器），2021年带领 Archer 以 $2.7B SPAC 上市(NYSE: ACHR)；2022年卸任 Archer 联合 CEO 后创办 Figure AI</td><td>连续创业者，两家公司成功退出/上市；Figure AI 创立仅3年估值~$40B；正在成为人形机器人领域最受关注的创始人</td></tr></tbody></table><hr class="divider"><h2>公司起源：面向劳动力短缺的通用人形机器人</h2><div class="callout"><strong>关键故事：</strong>2022年 Brett Adcock 观察到两个大趋势的交汇：(1) 发达国家面临严重的劳动力短缺（制造业、仓储、物流数百万岗位难以填补），(2) AI（特别是大语言模型和计算机视觉）进步到了一个临界点——使通用人形机器人不再是纯粹的科幻。Adcock 用自有资金 $100M 创立 Figure AI，目标是在 3-5 年内将通用人形机器人投入商业运营，解决 "dull, dirty, dangerous"（枯燥、肮脏、危险）的工作。</div><p>Figure AI 创立于2022年，总部位于加州 Sunnyvale。早期团队来自 Boston Dynamics、Tesla Optimus、Apple、Google DeepMind、IHMC 等顶级机器人实验室和公司。公司的核心假设是：人形形态（humanoid form factor）是最适合在"为人类设计的物理世界"中工作的机器人形态——不需要改造工厂、仓库或家庭就可以直接部署。公司使命：<strong>"将通用人形机器人引入劳动力市场以解决全球劳动力短缺"</strong>。</p><hr class="divider"><h2>融资与估值历程</h2><table class="info-table"><thead><tr><th style="width:80px">年份</th><th style="width:160px">轮次/事件</th><th style="width:120px">金额/估值</th><th>领投/参投方</th></tr></thead><tbody><tr><td>2022</td><td>种子 / 创始人自有资金</td><td>$100M</td><td>Brett Adcock (自投)</td></tr><tr><td>2023-05</td><td>Series A</td><td>$70M，估值未公开</td><td>Parkway Venture Capital 领投</td></tr><tr><td>2024-02</td><td>Series B</td><td>$675M，估值$2.6B</td><td>Jeff Bezos (via Explore Investments), Microsoft, NVIDIA, OpenAI, Intel, LG Innotek, Samsung, Parkway, Align Ventures, ARK Invest 等</td></tr><tr><td>2025</td><td>后续融资 / tender offer?</td><td>估值~$40B (未经正式确认, low_confidence)</td><td>媒体报道称多轮后续融资估值攀升至$40B (2025). Sources: Bloomberg, TechCrunch, The Verge</td></tr></tbody></table><p class="callout"><strong>注：</strong>Figure AI 为私有公司。融资金额和估值来源于公司公告和媒体报道（Bloomberg、Reuters、TechCrunch 等），2025年 $40B 估值尚未经公司正式确认，标为 low_confidence。</p></div>
+
+<div class="section"><div class="section-label">Section 02</div><h1>品牌大事年表</h1><table class="info-table"><thead><tr><th style="width:100px">时间</th><th>事件</th></tr></thead><tbody>
+<tr><td>2022-01</td><td>Brett Adcock 卸任 Archer Aviation 联合 CEO，用 $100M 自有资金创立 Figure AI</td></tr>
+<tr><td>2023-03</td><td>Figure AI 从 stealth mode 公开亮相，发布 Figure 01 概念视频和团队介绍</td></tr>
+<tr><td>2023-05</td><td>完成 $70M Series A， Parkway Venture Capital 领投</td></tr>
+<tr><td>2023-10</td><td>Figure 01 首次动态行走视频发布——全自主双足行走</td></tr>
+<tr><td>2024-01</td><td>Figure 01 首次展示咖啡机操作——观看人类演示后自主学习制作咖啡</td></tr>
+<tr><td>2024-02</td><td>完成 $675M Series B（估值$2.6B）——Jeff Bezos, Microsoft, NVIDIA, OpenAI, Intel 等参投</td></tr>
+<tr><td>2024-03</td><td>Figure 01 + OpenAI GPT 集成演示爆红——机器人可以听懂自然语言并推理完成任务</td></tr>
+<tr><td>2024-06</td><td>宣布 Figure 02 设计，公布与 BMW 的合作伙伴关系——在 BMW Spartanburg 工厂部署测试</td></tr>
+<tr><td>2024-08</td><td>Figure 02 正式发布——内置电池（取消外部线缆）、灵巧手指、3倍计算能力、板载 VLM 推理</td></tr>
+<tr><td>2025-02</td><td>Figure AI 终止与 OpenAI 的合作关系——宣布自研通用 AI 模型（可能包含 Helix）</td></tr>
+<tr><td>2025-03</td><td>发布 Helix——自研 vision-language-action (VLA) 模型，实现端到端的感知→推理→动作</td></tr>
+<tr><td>2025-04</td><td>宣布 BotQ——首个人形机器人量产工厂计划，目标年产12,000台机器人</td></tr>
+<tr><td>2025</td><td>Figure 02 在 BMW 工厂进行钣金件搬运和装配等任务的持续测试部署</td></tr>
+</tbody></table></div>
+
+<div class="section"><div class="section-label">Section 03</div><h1>代表产品与系统</h1>
+<h2>1. Figure 01 — 首代通用人形机器人原型</h2>
+<div class="callout"><strong>核心数据：</strong>身高~5'6" (168cm)，体重~60kg，有效载荷~20kg，运行时间~5小时，全电驱动，全自主双足行走，多指灵巧手，集成 OpenAI GPT 进行自然语言推理（后改为自研）</div>
+<p>Figure 01 在短短 12 个月内从概念到全自主行走。2024年3月与 OpenAI 集成的演示（听懂"给我一个苹果"并根据场景推理出递苹果给人类）在社交媒体获得数亿次观看，成为人形机器人行业的 "ChatGPT moment"。Figure 01 证明了：（1）极短周期内可以造出可靠行走的人形机器人，（2）LLM/VLM 与机器人控制的集成可以产生接近科幻的自然交互体验。</p>
+
+<h2>2. Figure 02 — 首个面向商业部署的人形机器人</h2>
+<div class="callout"><strong>核心数据：</strong>内置电池(2.25kWh, 续航~5小时)，板载 3x 推理计算能力(自研 AI 模型本地运行)，第四代灵巧手(16自由度，人类级握力)，全身深度摄像头+激光雷达+IMU，语音对话能力，IP等级防尘防水适合工厂环境</div>
+<p>Figure 02 是 Figure AI 首个真正面向工厂部署的产品。2024年6月起在 BMW Spartanburg 工厂进行钣金件搬运和装配测试。Figure 02 的工业设计升级显著——去掉外部线缆、集成电池、提升计算能力使板载 VLM 推理成为可能。2025年 Figure AI 宣布 Figure 02 将配合自研 Helix 模型运行。</p>
+
+<h2>3. Helix + BotQ — 从 AI 大脑到量产的完整闭环</h2>
+<div class="callout"><strong>核心数据：</strong>Helix: 自研 vision-language-action (VLA) 基础模型，端到端训练；BotQ: 首个人形机器人量产工厂规划，目标年产 12,000 台；2025年公开发布，标志着 Figure AI 从 R&D 阶段进入"规模化"阶段</div>
+<p>2025年初 Figure AI 宣布终止与 OpenAI 的合作，转而全力开发自研 AI 模型 Helix。这标志着公司从"硬件+外部AI"模式转向"全栈垂直整合"。BotQ 是 Figure AI 的规模化宣言——如果年产12,000台的目标实现，Figure AI 将从一个R&D公司变为真正的硬件制造企业。这两个产品/平台共同构成了 Figure AI 的长期护城河：自有模型 + 自有制造 = 不受制于外部 AI 供应商和代工厂。</p></div>
+
+<div class="section"><div class="section-label">Section 04</div><h1>商业模式概览</h1>
+<div class="insight-grid">
+<div class="insight-card right"><div class="insight-num">01</div><h4>机器人即服务 (Robot-as-a-Service, RaaS)</h4><p>Figure AI 最可能的商业模式。客户(制造工厂、仓库、物流中心)不购买机器人，而是按使用时长/产出付费。这降低了客户的前期投资门槛，同时让 Figure AI 获得经常性收入。对标：Agility Robotics Digit 已在物流仓库按此模式运营。具体定价未公布。</p></div>
+<div class="insight-card right"><div class="insight-num">02</div><h4>垂直行业先行：汽车制造</h4><p>Figure AI 选择汽车制造(以 BMW 为首个客户)作为切入点——汽车工厂有大量重复性体力劳动(钣金搬运、零部件装配、质检)，且工控环境相对结构化、安全标准明确。BMW 合作不仅提供真实部署场景，也是对外部客户的最强背书。</p></div>
+<div class="insight-card right"><div class="insight-num">03</div><h4>全栈垂直整合</h4><p>Figure AI 正在复制 "Tesla/SpaceX 模式"——从机械结构、执行器、电池、手部到 AI 模型(Helix)、制造工厂(BotQ)全部自研自产。这避免了依赖外部供应商的迭代速度和质量瓶颈。如果成功，这将成为 Figure AI 最深的护城河。</p></div>
+<div class="insight-card right"><div class="insight-num">04</div><h4>数据飞轮：越多机器人 → 越多数据 → 越好的模型</h4><p>Figure AI 的长期护城河是数据。每台部署在真实工厂的 Figure 02 都在收集真实操作的训练数据。这些数据用来训练 Helix 模型——模型越好，机器人越能完成复杂任务——更多客户愿意部署——更多机器人收集更多数据。这个飞轮与 Tesla 的 FSD 数据飞轮逻辑相同。</p></div>
+</div></div>
+
+<div class="section"><div class="section-label">Section 05</div><h1>争议与风险</h1>
+<div class="insight-grid">
+<div class="insight-card wrong"><div class="insight-num">01</div><h4>Demo vs. 真实部署的巨大差距</h4><p>Figure AI 的演示视频极其吸睛（与人类对话、自主煮咖啡、递苹果），但实验室演示与24/7工厂部署之间的差距是人形机器人行业最大的风险。真实工厂环境有噪音、灰尘、不规则光照、不可预测的人类行为——一个在实验室完美的机器人在工厂可能每小时都需要人工干预。</p></div>
+<div class="insight-card wrong"><div class="insight-num">02</div><h4>终止 OpenAI 合作后的 AI 自主开发风险</h4><p>2025年初 Figure AI 突然宣布终止与 OpenAI 的合作关系，转向自研 Helix 模型。虽然全栈控制的长期逻辑成立，但短期内失去了全球最强 AI 模型的支撑。Helix 是否能达到（或超过）GPT 的推理能力仍是重大未知数。</p></div>
+<div class="insight-card wrong"><div class="insight-num">03</div><h4>制造规模化：BotQ 的 "Tesla production hell" 风险</h4><p>年产12,000台人形机器人是极其激进的制造目标。即使是 Tesla 在 Model 3 也经历了 "production hell"。人形机器人的制造复杂度远超电动车（精密执行器、传感器、灵巧手、平衡控制），Figure AI 是否能真正量产仍是开放问题。</p></div>
+<div class="insight-card wrong"><div class="insight-num">04</div><h4>激烈竞争：Tesla Optimus / Boston Dynamics / 中国</h4><p>人形机器人赛道人满为患——Tesla Optimus 拥有 Tesla 的制造能力和 AI 资源，Boston Dynamics 有数十年的运动控制经验，中国公司(Unitree/傅利叶/小米等)有成本和制造优势。Figure AI 虽然话题性强但每一家竞争对手都有独特的护城河。这场竞赛不是赢家通吃但会非常残酷。</p></div>
+<div class="insight-card wrong"><div class="insight-num">05</div><h4>安全、劳动力替代与监管</h4><p>工厂工人和工会对"被机器人替代"的抵触、机器人在人类旁边工作的安全标准(ISO 10218等)、受伤/事故的责任归属——这些都是人形机器人大规模部署前必须解决的难题。Figure AI 尚未公布详细的安全认证路线图。</p></div>
+</div></div>
+
+<div class="section"><div class="section-label">Sources</div><h1>信息来源</h1>
+<ol style="font-size:13px;color:var(--ink-light);line-height:2.2;padding-left:20px;">
+<li><a href="https://www.figure.ai/" target="_blank" style="color:var(--neutral)">Figure AI Official Website</a></li>
+<li><a href="https://www.figure.ai/master-plan" target="_blank" style="color:var(--neutral)">Figure AI Master Plan</a></li>
+<li><a href="https://www.bloomberg.com/" target="_blank" style="color:var(--neutral)">Bloomberg — Figure AI coverage</a></li>
+<li><a href="https://www.reuters.com/" target="_blank" style="color:var(--neutral)">Reuters — Figure AI coverage</a></li>
+<li><a href="https://techcrunch.com/" target="_blank" style="color:var(--neutral)">TechCrunch — Figure AI funding and product coverage</a></li>
+<li><a href="https://www.cnbc.com/" target="_blank" style="color:var(--neutral)">CNBC — Figure AI coverage</a></li>
+<li><a href="https://www.theverge.com/" target="_blank" style="color:var(--neutral)">The Verge — Figure AI coverage</a></li>
+<li><a href="https://www.bmwgroup.com/" target="_blank" style="color:var(--neutral)">BMW Group — Spartanburg plant and innovation</a></li>
+<li><a href="https://openai.com/" target="_blank" style="color:var(--neutral)">OpenAI — Figure AI partnership announcement (archived)</a></li>
+<li><a href="https://www.nvidia.com/" target="_blank" style="color:var(--neutral)">NVIDIA — robotics and Isaac platform</a></li>
+</ol></div></body></html>

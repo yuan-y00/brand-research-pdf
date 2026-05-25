@@ -207,3 +207,28 @@
 - NASA/FAA/FCC/Starlink/defense/launch market 分析：均包含
 - 争议和风险：Falcon 1三次失败、CRS-7/Amos-6爆炸、Starlink乌克兰争议、Boca Chica环境争议、天文观测争议、FAA监管摩擦、Musk个人政治风险
 - 下一步建议：下一个目标 Figure AI（人形机器人最具话题的创企，OpenAI/Microsoft/NVIDIA注资，从概念到BMW工厂试点的速度）
+
+### [2026-05-25] — Figure AI
+
+- 状态：published（AUTO_PUSH=true，本轮已 push）
+- TARGET_TYPE：embodied_ai_company
+- JSON 路径：data/gtm/figure-ai.json
+- 报告路径：examples/figure-ai-report-gtm.html
+- 基础报告路径：examples/figure-ai-report.html（本轮新创建）
+- gtm-check 结果：PASS（无 warning，无 critical）
+- 全局 sources：12 条（Figure AI官网、Bloomberg、Reuters、TechCrunch、CNBC、The Verge、BMW Group、NVIDIA、Archer Aviation等）
+- top_products：
+  1. Figure 01 / 01 + OpenAI Integration — 初代平台+AI集成爆红（high confidence）
+  2. Figure 02 — BMW 工厂部署的商业化版本（medium confidence）
+  3. Helix (VLA Model) + BotQ Manufacturing Platform — 全栈自主战略（low confidence）
+- 品牌上下文：包含完整 founder_background（Brett Adcock从Vettery/Archer到Figure AI）、brand_timeline（2022-2025年14个关键节点）、major_turning_points（5个关键转折）、controversies_or_failures（8项争议/风险）
+- 低可信度内容：
+  - 2025年 $40B 估值未正式确认（媒体报道，low_confidence）
+  - 年 burn rate $150-300M 为行业估算（private company）
+  - Figure 02 制造成本 $100K-$250K 为行业估算
+  - BotQ 年产12,000台为规划目标，尚未建成
+  - RaaS 定价模型为 industry assumption，Figure AI 未公开
+  - 公司 pre-revenue（near zero revenue），所有商业数据尚未公开
+- BMW / OpenAI / Microsoft / NVIDIA / Jeff Bezos / Helix / BotQ / manufacturing 分析：均包含
+- 争议和风险：demo与真实部署鸿沟、OpenAI合作终止、制造规模化风险、估值泡沫质疑、竞争加剧、劳动力替代社会阻力
+- 下一步建议：Agility Robotics（Digit已在Amazon/GXO仓库商业化运行，是人形机器人商业化最前沿的验证案例）
