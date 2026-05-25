@@ -232,3 +232,29 @@
 - BMW / OpenAI / Microsoft / NVIDIA / Jeff Bezos / Helix / BotQ / manufacturing 分析：均包含
 - 争议和风险：demo与真实部署鸿沟、OpenAI合作终止、制造规模化风险、估值泡沫质疑、竞争加剧、劳动力替代社会阻力
 - 下一步建议：Agility Robotics（Digit已在Amazon/GXO仓库商业化运行，是人形机器人商业化最前沿的验证案例）
+
+### [2026-05-25] — Agility Robotics
+
+- 状态：published（AUTO_PUSH=true，本轮已 push）
+- TARGET_TYPE：robotics_company
+- JSON 路径：data/gtm/agility-robotics.json
+- 报告路径：examples/agility-robotics-report-gtm.html
+- 基础报告路径：examples/agility-robotics-report.html（本轮新创建）
+- gtm-check 结果：PASS（无 warning，无 critical）
+- 全局 sources：16 条（Agility Robotics官网、Wikipedia、Willamette Week、OregonLive、The Robot Report、NASDAQ/GlobeNewswire、Yahoo Finance、TechSpot、New Atlas、Parsers VC、Newo.ai、OSU Terra Magazine等）
+- top_products：
+  1. Cassie — 双足研究平台（high confidence）：DARPA 资助→学术销售→技术验证→品牌信誉的基础路径
+  2. Digit — 仓储人形机器人 V1-V5（high confidence）：全球首个商业部署的人形机器人，GXO 多年 RaaS 合同，100,000+ tote 搬运
+  3. Agility Arc + RoboFab — 部署与制造平台（medium confidence）：云端编队管理 + 全球首个人形机器人量产工厂
+- 品牌上下文：包含完整 founder_background（Jonathan Hurst / Damion Shelton / Mikhail Jones / Peggy Johnson）、brand_origin（ATRIAS→Cassie→Digit→Arc+RoboFab）、funding_or_capital_background（种子→C轮→新一轮 $400M）、brand_timeline（2008-2025 年 20+ 个关键节点）、major_turning_points（7 个关键转折）、controversies_or_failures（8 项争议/风险）
+- 低可信度内容：
+  - Digit V4 制造成本 $150K-$250K 为行业估算（private company，未公开）
+  - RaaS 定价 ~$30/hr 来自第三方行业分析，非官方价格表
+  - 估值 $1.75B pre-money / $2.5B post-money 来自媒体（The Information）而非正式财务文件
+  - $400M 新融资和 SoftBank 参与来自媒体报道（2025 年 4 月），官方未确认
+  - Schaeffler 100 家工厂部署时间表和具体交付数量未公开
+  - Amazon 试点最终评估结论未公开发布
+- GXO / Amazon / Schaeffler / RaaS / Arc / RoboFab / safety / ROI / labor shortage / humanoid hype / China volume dominance / reliability gap 分析：均包含
+- 争议和风险：humanoid hype vs real ROI、narrow task scope、safety 集成成本高（$80/$100）、autonomy vs workflow scripting、制造规模化风险、99%→99.9% 可靠性鸿沟、中国厂商出货量碾压（85% vs 3%）、劳动力替代社会阻力
+- 下一步建议：Apptronik（Mercedes-Benz/GXO 试点，与 Agility 在同一 3PL 直接竞争，可对比两种人形机器人 GTM 策略）
+
