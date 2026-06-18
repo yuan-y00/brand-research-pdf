@@ -65,14 +65,62 @@
           ]
         },
         "sources": [
-          { "title": "Figure AI — Official Blog: Figure 01 Introduction", "url": "https://www.figure.ai/", "source_type": "official" },
-          { "title": "Figure AI — Figure 01 + OpenAI Integration Demo (March 2024)", "url": "https://www.youtube.com/@FigureAI", "source_type": "official" },
-          { "title": "TechCrunch — Figure AI raises $675M at $2.6B valuation (Feb 2024)", "url": "https://techcrunch.com/", "source_type": "media" },
-          { "title": "The Verge — Figure 01 robot with OpenAI GPT integration", "url": "https://www.theverge.com/", "source_type": "media" },
-          { "title": "Bloomberg — Figure AI Series B and investor consortium", "url": "https://www.bloomberg.com/", "source_type": "media" },
-          { "title": "Figure AI — Coffee Making Demo (January 2024)", "url": "https://www.youtube.com/@FigureAI", "source_type": "official" }
+          {
+            "title": "Figure AI — Official Blog: Figure 01 Introduction",
+            "url": "https://www.figure.ai/",
+            "source_type": "official"
+          },
+          {
+            "title": "Figure AI — Figure 01 + OpenAI Integration Demo (March 2024)",
+            "url": "https://www.youtube.com/@FigureAI",
+            "source_type": "official"
+          },
+          {
+            "title": "TechCrunch — Figure AI raises $675M at $2.6B valuation (Feb 2024)",
+            "url": "https://techcrunch.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "The Verge — Figure 01 robot with OpenAI GPT integration",
+            "url": "https://www.theverge.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Bloomberg — Figure AI Series B and investor consortium",
+            "url": "https://www.bloomberg.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Figure AI — Coffee Making Demo (January 2024)",
+            "url": "https://www.youtube.com/@FigureAI",
+            "source_type": "official"
+          }
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "pricing_model": {
+          "competitor_price": "Unitree G1 around $16K public research humanoid; Agility Digit and Apptronik Apollo enterprise deployments are quote-based.",
+          "notes": "Do not invent Figure 01 unit price; public evidence supports pilot/deployment narrative, not MSRP.",
+          "sources": [
+            {
+              "title": "Figure AI official site",
+              "url": "https://www.figure.ai/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Figure AI company profile",
+              "url": "https://en.wikipedia.org/wiki/Figure_AI",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Unitree G1 product page",
+              "url": "https://www.unitree.com/g1",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "Figure 02",
@@ -100,14 +148,62 @@
           ]
         },
         "sources": [
-          { "title": "Figure AI — Figure 02 Official Announcement (August 2024)", "url": "https://www.figure.ai/", "source_type": "official" },
-          { "title": "BMW Group — Figure AI partnership at Spartanburg plant", "url": "https://www.bmwgroup.com/", "source_type": "official" },
-          { "title": "Reuters — Figure AI BMW factory deployment", "url": "https://www.reuters.com/", "source_type": "media" },
-          { "title": "CNBC — Figure 02 launch and BMW manufacturing pilot", "url": "https://www.cnbc.com/", "source_type": "media" },
-          { "title": "TechCrunch — Figure 02 humanoid robot for manufacturing", "url": "https://techcrunch.com/", "source_type": "media" },
-          { "title": "The Verge — Figure 02 BMW factory robot deployment", "url": "https://www.theverge.com/", "source_type": "media" }
+          {
+            "title": "Figure AI — Figure 02 Official Announcement (August 2024)",
+            "url": "https://www.figure.ai/",
+            "source_type": "official"
+          },
+          {
+            "title": "BMW Group — Figure AI partnership at Spartanburg plant",
+            "url": "https://www.bmwgroup.com/",
+            "source_type": "official"
+          },
+          {
+            "title": "Reuters — Figure AI BMW factory deployment",
+            "url": "https://www.reuters.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "CNBC — Figure 02 launch and BMW manufacturing pilot",
+            "url": "https://www.cnbc.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "TechCrunch — Figure 02 humanoid robot for manufacturing",
+            "url": "https://techcrunch.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "The Verge — Figure 02 BMW factory robot deployment",
+            "url": "https://www.theverge.com/",
+            "source_type": "media"
+          }
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "pricing_model": {
+          "competitor_price": "Unitree G1 around $16K is the low public anchor; Agility/Apptronik/Tesla enterprise humanoid pricing remains quote-based or unavailable.",
+          "notes": "Treat Figure 02 as commercial-pilot evidence, not a SKU with public price.",
+          "sources": [
+            {
+              "title": "Figure AI official site",
+              "url": "https://www.figure.ai/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Figure AI company profile",
+              "url": "https://en.wikipedia.org/wiki/Figure_AI",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Unitree G1 product page",
+              "url": "https://www.unitree.com/g1",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "Helix (VLA Model) + BotQ Manufacturing Platform",
@@ -136,30 +232,119 @@
           ]
         },
         "sources": [
-          { "title": "Figure AI — Helix VLA Model Official Announcement (March 2025)", "url": "https://www.figure.ai/", "source_type": "official" },
-          { "title": "Figure AI — BotQ Manufacturing Facility Announcement (April 2025)", "url": "https://www.figure.ai/", "source_type": "official" },
-          { "title": "TechCrunch — Figure AI ends OpenAI partnership, develops in-house AI (Feb 2025)", "url": "https://techcrunch.com/", "source_type": "media" },
-          { "title": "Reuters — Figure AI Helix and BotQ strategy analysis", "url": "https://www.reuters.com/", "source_type": "media" },
-          { "title": "Bloomberg — Figure AI valuation and vertical integration strategy", "url": "https://www.bloomberg.com/", "source_type": "media" },
-          { "title": "The Verge — Figure AI drops OpenAI, builds own AI models", "url": "https://www.theverge.com/", "source_type": "media" }
+          {
+            "title": "Figure AI — Helix VLA Model Official Announcement (March 2025)",
+            "url": "https://www.figure.ai/",
+            "source_type": "official"
+          },
+          {
+            "title": "Figure AI — BotQ Manufacturing Facility Announcement (April 2025)",
+            "url": "https://www.figure.ai/",
+            "source_type": "official"
+          },
+          {
+            "title": "TechCrunch — Figure AI ends OpenAI partnership, develops in-house AI (Feb 2025)",
+            "url": "https://techcrunch.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Reuters — Figure AI Helix and BotQ strategy analysis",
+            "url": "https://www.reuters.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Bloomberg — Figure AI valuation and vertical integration strategy",
+            "url": "https://www.bloomberg.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "The Verge — Figure AI drops OpenAI, builds own AI models",
+            "url": "https://www.theverge.com/",
+            "source_type": "media"
+          }
         ],
-        "confidence": "low"
+        "confidence": "low",
+        "pricing_model": {
+          "notes": "Use Helix/BotQ as capability and scale signal, not as priced GTM product.",
+          "sources": [
+            {
+              "title": "Figure AI official site",
+              "url": "https://www.figure.ai/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Figure AI company profile",
+              "url": "https://en.wikipedia.org/wiki/Figure_AI",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        }
       }
     ],
     "learning_summary": "Figure AI 的 GTM 路径是 '极速 demo 建立品牌 + 顶级投资者联盟获取资源和客户 + 灯塔客户(BMW)验证商业场景 + 自研AI和制造全栈内化'。核心学习点: (1) demo-driven GTM 在 AI+硬件领域的威力无与伦比——一个 Figure 01 + OpenAI demo 视频免费获得了比 $100M 广告预算还好的品牌传播效果; (2) 速度本身是核心竞争策略——12个月从0到行走、24个月到BMW工厂、30个月自研VLA模型——这种速度给竞争对手施加了巨大压力、吸引了最好的人才; (3) 投资者网络即渠道——Jeff Bezos, Microsoft, NVIDIA, OpenAI 不只是出钱，更是客户引荐、技术支持和生态资源的入口; (4) 灯塔客户策略(BMW)为 B2B 高端硬件提供了最可信的背书——一个 BMW 的信任胜过100个冷电话; (5) 核心能力必须自控——与 OpenAI 的分手是痛苦的但正确的——AI 不能外包; (6) 从产品到平台的野心——Helix(BotQ) 的战略意图是把 Figure AI 从 '人形机器人制造商' 升维到 '具身智能平台公司'。不能照抄的是: Brett Adcock 的个人资本($100M自投)和连续创业者信誉(Archer/Vettery的成功退出)是普通创业者无法复制的; 极速策略的风险极高——质量/安全/技术债务可能积累; 人形机器人行业的整体商业化仍处于极早期——Figure AI 的很多假设(工厂需求/ROI/安全性)尚未被验证; $40B 估值在没有收入的情况下更像是对 '未来潜力' 的赌注而非当前价值的反映。",
     "sources": [
-      { "title": "Figure AI Official Website", "url": "https://www.figure.ai/", "source_type": "official" },
-      { "title": "Figure AI — Master Plan", "url": "https://www.figure.ai/master-plan", "source_type": "official" },
-      { "title": "Figure AI — Official YouTube Channel (Demos & Announcements)", "url": "https://www.youtube.com/@FigureAI", "source_type": "official" },
-      { "title": "Bloomberg — Figure AI valuation, funding, and strategy", "url": "https://www.bloomberg.com/", "source_type": "media" },
-      { "title": "Reuters — Figure AI company news and analysis", "url": "https://www.reuters.com/", "source_type": "media" },
-      { "title": "TechCrunch — Figure AI funding rounds and product launches", "url": "https://techcrunch.com/", "source_type": "media" },
-      { "title": "CNBC — Figure AI business and manufacturing deployment", "url": "https://www.cnbc.com/", "source_type": "media" },
-      { "title": "The Verge — Figure AI product coverage and analysis", "url": "https://www.theverge.com/", "source_type": "media" },
-      { "title": "BMW Group — Innovation and Spartanburg Plant", "url": "https://www.bmwgroup.com/", "source_type": "corporate_partner" },
-      { "title": "NVIDIA — Robotics and Isaac Platform (partner ecosystem)", "url": "https://developer.nvidia.com/isaac", "source_type": "partner" },
-      { "title": "Archer Aviation — Brett Adcock background (NYSE: ACHR)", "url": "https://www.archer.com/", "source_type": "background" },
-      { "title": "TIME / Fortune / Business Insider — Figure AI feature stories", "url": "https://time.com/", "source_type": "media" }
+      {
+        "title": "Figure AI Official Website",
+        "url": "https://www.figure.ai/",
+        "source_type": "official"
+      },
+      {
+        "title": "Figure AI — Master Plan",
+        "url": "https://www.figure.ai/master-plan",
+        "source_type": "official"
+      },
+      {
+        "title": "Figure AI — Official YouTube Channel (Demos & Announcements)",
+        "url": "https://www.youtube.com/@FigureAI",
+        "source_type": "official"
+      },
+      {
+        "title": "Bloomberg — Figure AI valuation, funding, and strategy",
+        "url": "https://www.bloomberg.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "Reuters — Figure AI company news and analysis",
+        "url": "https://www.reuters.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "TechCrunch — Figure AI funding rounds and product launches",
+        "url": "https://techcrunch.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "CNBC — Figure AI business and manufacturing deployment",
+        "url": "https://www.cnbc.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "The Verge — Figure AI product coverage and analysis",
+        "url": "https://www.theverge.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "BMW Group — Innovation and Spartanburg Plant",
+        "url": "https://www.bmwgroup.com/",
+        "source_type": "corporate_partner"
+      },
+      {
+        "title": "NVIDIA — Robotics and Isaac Platform (partner ecosystem)",
+        "url": "https://developer.nvidia.com/isaac",
+        "source_type": "partner"
+      },
+      {
+        "title": "Archer Aviation — Brett Adcock background (NYSE: ACHR)",
+        "url": "https://www.archer.com/",
+        "source_type": "background"
+      },
+      {
+        "title": "TIME / Fortune / Business Insider — Figure AI feature stories",
+        "url": "https://time.com/",
+        "source_type": "media"
+      }
     ],
     "brand_context": {
       "founder_background": [
@@ -181,20 +366,62 @@
         "资本特点: (1) 战略投资者主导（不仅出钱还出技术/渠道/MOU），(2) 投资者之间的协同——NVIDIA 提供 GPU 和 AI 平台，Microsoft 提供 Azure 云，OpenAI 提供模型（直到2025年），Intel 提供芯片，(3) Bezos 的参与暗示 Amazon 仓储的潜在需求"
       ],
       "brand_timeline": [
-        { "year": "2022-01", "event": "Brett Adcock 卸任 Archer Aviation 联合 CEO，用 $100M 自有资金在加州 Sunnyvale 创立 Figure AI" },
-        { "year": "2022", "event": "Stealth mode 运营——秘密招募团队（前 Boston Dynamics, Tesla Optimus, Apple, Google DeepMind, IHMC 等机构的机器人/AI工程师）" },
-        { "year": "2023-03", "event": "从 stealth mode 公开亮相——发布 Figure 01 概念图和公司使命：'将通用人形机器人引入劳动力市场'" },
-        { "year": "2023-05", "event": "完成 $70M Series A，Parkway Venture Capital 领投" },
-        { "year": "2023-10", "event": "Figure 01 首次全自主双足行走视频发布——12个月从0到行走" },
-        { "year": "2024-01", "event": "Figure 01 展示自主学习煮咖啡——通过观察人类演示10小时后学会（模仿学习/IL）" },
-        { "year": "2024-02", "event": "完成 $675M Series B（估值$2.6B）——Jeff Bezos, Microsoft, NVIDIA, OpenAI, Intel, LG, Samsung, Parkway, Align, ARK 等参投。史上最大人形机器人融资轮" },
-        { "year": "2024-03", "event": "Figure 01 + OpenAI GPT 集成演示爆红——机器人理解自然语言、推理场景、递苹果并解释为什么。全球数亿次观看，人形机器人的 ChatGPT moment" },
-        { "year": "2024-06", "event": "宣布与 BMW 的合作伙伴关系——将在 BMW 南卡罗来纳 Spartanburg 工厂部署 Figure 02 进行钣金件搬运和装配等任务测试" },
-        { "year": "2024-08", "event": "Figure 02 正式发布——内置电池、板载AI推理、第四代灵巧手(16 DOF)、工厂级可靠性。从 '实验室原型' 到 '商业产品' 的转变" },
-        { "year": "2025-02", "event": "Figure AI 宣布终止与 OpenAI 的合作关系——转向自研通用 AI 模型。人形机器人行业最受关注的 '分手事件'" },
-        { "year": "2025-03", "event": "发布 Helix——自研 vision-language-action (VLA) 基础模型。从感知→推理→动作的端到端神经网络" },
-        { "year": "2025-04", "event": "宣布 BotQ——首个人形机器人大规模量产工厂规划，目标年产12,000台。'机器人造机器人' 的制造愿景" },
-        { "year": "2025", "event": "Figure 02 在 BMW Spartanburg 持续测试部署；估值 reportedly 攀升至 ~$40B（low_confidence）；预计继续融资以支持 Helix 训练和 BotQ 建设" }
+        {
+          "year": "2022-01",
+          "event": "Brett Adcock 卸任 Archer Aviation 联合 CEO，用 $100M 自有资金在加州 Sunnyvale 创立 Figure AI"
+        },
+        {
+          "year": "2022",
+          "event": "Stealth mode 运营——秘密招募团队（前 Boston Dynamics, Tesla Optimus, Apple, Google DeepMind, IHMC 等机构的机器人/AI工程师）"
+        },
+        {
+          "year": "2023-03",
+          "event": "从 stealth mode 公开亮相——发布 Figure 01 概念图和公司使命：'将通用人形机器人引入劳动力市场'"
+        },
+        {
+          "year": "2023-05",
+          "event": "完成 $70M Series A，Parkway Venture Capital 领投"
+        },
+        {
+          "year": "2023-10",
+          "event": "Figure 01 首次全自主双足行走视频发布——12个月从0到行走"
+        },
+        {
+          "year": "2024-01",
+          "event": "Figure 01 展示自主学习煮咖啡——通过观察人类演示10小时后学会（模仿学习/IL）"
+        },
+        {
+          "year": "2024-02",
+          "event": "完成 $675M Series B（估值$2.6B）——Jeff Bezos, Microsoft, NVIDIA, OpenAI, Intel, LG, Samsung, Parkway, Align, ARK 等参投。史上最大人形机器人融资轮"
+        },
+        {
+          "year": "2024-03",
+          "event": "Figure 01 + OpenAI GPT 集成演示爆红——机器人理解自然语言、推理场景、递苹果并解释为什么。全球数亿次观看，人形机器人的 ChatGPT moment"
+        },
+        {
+          "year": "2024-06",
+          "event": "宣布与 BMW 的合作伙伴关系——将在 BMW 南卡罗来纳 Spartanburg 工厂部署 Figure 02 进行钣金件搬运和装配等任务测试"
+        },
+        {
+          "year": "2024-08",
+          "event": "Figure 02 正式发布——内置电池、板载AI推理、第四代灵巧手(16 DOF)、工厂级可靠性。从 '实验室原型' 到 '商业产品' 的转变"
+        },
+        {
+          "year": "2025-02",
+          "event": "Figure AI 宣布终止与 OpenAI 的合作关系——转向自研通用 AI 模型。人形机器人行业最受关注的 '分手事件'"
+        },
+        {
+          "year": "2025-03",
+          "event": "发布 Helix——自研 vision-language-action (VLA) 基础模型。从感知→推理→动作的端到端神经网络"
+        },
+        {
+          "year": "2025-04",
+          "event": "宣布 BotQ——首个人形机器人大规模量产工厂规划，目标年产12,000台。'机器人造机器人' 的制造愿景"
+        },
+        {
+          "year": "2025",
+          "event": "Figure 02 在 BMW Spartanburg 持续测试部署；估值 reportedly 攀升至 ~$40B（low_confidence）；预计继续融资以支持 Helix 训练和 BotQ 建设"
+        }
       ],
       "major_turning_points": [
         "2023年3月 stealth → public 亮相——从 '这家公司是谁' 到 '这是人形机器人行业的领跑者' 的认知转变",
@@ -215,5 +442,87 @@
       ],
       "notes": "Figure AI 是目前人形机器人赛道中最具 'Tesla式叙事' 的公司——有争议的创始人、极快的速度、顶级的资本支持、大胆的自研战略、以及 '改变世界' 的宏大叙事。但 Figure AI 与早期 Tesla 有一个关键区别：Tesla 在 Roadster 量产前已经有很多预订单收入和汽车行业对电动车的明确需求信号，而 Figure AI 的 '人形机器人市场需求' 更多是一个假设。如果这个假设成立（制造业真的需要大量人形机器人且愿意付费），Figure AI 有最好的位置。如果假设不成立（人形机器人商业化的时间线比预期长5-10年），Figure AI 的 $40B 估值将是硅谷历史上最大的泡沫之一。Figure AI 最值得学习的地方不是它的技术（尚未被完全验证），而是它的品牌建设、资本动员、和战略速度——这些都是 Brett Adcock 作为连续创业者的核心能力。"
     }
+  },
+  "generated_by": "AI-assisted public-source research; evidence repair 2026-06-17",
+  "research_checked_at": "2026-06-17",
+  "brand_context": {
+    "founder_profiles": [
+      {
+        "name": "Brett Adcock",
+        "role": "Founder / CEO",
+        "background_summary": "Serial entrepreneur; co-founded Vettery and Archer Aviation before founding Figure AI in 2022.",
+        "profile_links": [
+          {
+            "title": "Brett Adcock website",
+            "url": "https://www.brettadcock.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Figure AI company profile",
+            "url": "https://en.wikipedia.org/wiki/Figure_AI",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2022",
+        "event": "founding",
+        "currency": "USD",
+        "description": "Figure AI was founded by Brett Adcock to build general-purpose humanoid robots.",
+        "source": {
+          "title": "Figure AI company profile",
+          "url": "https://en.wikipedia.org/wiki/Figure_AI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2023-05",
+        "event": "funding",
+        "amount": "$70M including $20M from Brett Adcock",
+        "currency": "USD",
+        "description": "Early funding round included founder capital and outside venture participation.",
+        "source": {
+          "title": "Figure AI company profile",
+          "url": "https://en.wikipedia.org/wiki/Figure_AI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2024-02",
+        "event": "funding",
+        "amount": "$675M at $2.6B valuation",
+        "currency": "USD",
+        "description": "Large strategic round included Microsoft, NVIDIA, OpenAI Startup Fund, Bezos-related capital, Intel, and others.",
+        "source": {
+          "title": "Figure AI company profile",
+          "url": "https://en.wikipedia.org/wiki/Figure_AI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025-09",
+        "event": "funding",
+        "amount": "$1B+ at reported $39B valuation",
+        "currency": "USD",
+        "description": "Later financing reportedly lifted valuation dramatically; treat as media/secondary until primary filing exists.",
+        "source": {
+          "title": "Figure AI company profile",
+          "url": "https://en.wikipedia.org/wiki/Figure_AI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "low"
+      }
+    ]
   }
 }

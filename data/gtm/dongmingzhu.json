@@ -1,0 +1,394 @@
+{
+  "brand": "Dong Mingzhu / Gree",
+  "brand_slug": "dongmingzhu",
+  "market_focus": "Person / platform methodology",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; person-platform GTM repair 2026-06-17",
+  "disclaimer": "This is not a normal brand SKU report. It maps product methodology to commercialization paths. Unsupported founder cash, exact margins, live valuations, private-company losses, or platform fee rates are kept in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Dong Mingzhu: Not the founder of Gree; she is the professional-manager symbol of sales discipline and channel governance.",
+      "Zhu Jianghong: Important early Gree leader and Dong’s predecessor; needed to avoid rewriting Gree history as a one-person founding story."
+    ],
+    "brand_timeline": [
+      "1990: salary about RMB 200/month - Base report records Dong’s early monthly salary as a salesperson; this is personal career context, not company capital.",
+      "1990: cash_collection RMB 420K - Base report records her famous first-year debt collection case as a sales-governance signal.",
+      "1992: regional_sales RMB 16M - Base report records Anhui sales of about RMB 16M; useful as sales-ability evidence, not audited segment revenue.",
+      "2023: company_profit $4.1B profit - Forbes-cited public profile says Gree fiscal 2023 profit reached about $4.1B."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Dong Mingzhu",
+        "role": "Chairwoman / professional manager",
+        "background_summary": "Not the founder of Gree; she is the professional-manager symbol of sales discipline and channel governance.",
+        "profile_links": [
+          {
+            "title": "Dong Mingzhu public profile",
+            "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Zhu Jianghong",
+        "role": "Gree early leader",
+        "background_summary": "Important early Gree leader and Dong’s predecessor; needed to avoid rewriting Gree history as a one-person founding story.",
+        "profile_links": [
+          {
+            "title": "Zhu Jianghong public profile",
+            "url": "https://en.wikipedia.org/wiki/Zhu_Jianghong",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "1990",
+        "event": "salary",
+        "amount": "about RMB 200/month",
+        "currency": "CNY",
+        "description": "Base report records Dong’s early monthly salary as a salesperson; this is personal career context, not company capital.",
+        "source": {
+          "title": "Dong Mingzhu public profile",
+          "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1990",
+        "event": "cash_collection",
+        "amount": "RMB 420K",
+        "currency": "CNY",
+        "description": "Base report records her famous first-year debt collection case as a sales-governance signal.",
+        "source": {
+          "title": "Dong Mingzhu public profile",
+          "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1992",
+        "event": "regional_sales",
+        "amount": "RMB 16M",
+        "currency": "CNY",
+        "description": "Base report records Anhui sales of about RMB 16M; useful as sales-ability evidence, not audited segment revenue.",
+        "source": {
+          "title": "Dong Mingzhu public profile",
+          "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2023",
+        "event": "company_profit",
+        "amount": "$4.1B profit",
+        "currency": "USD",
+        "description": "Forbes-cited public profile says Gree fiscal 2023 profit reached about $4.1B.",
+        "source": {
+          "title": "Dong Mingzhu public profile",
+          "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Do not treat Dong as Gree founder.",
+      "Exact live-commerce GMV, dealer rebate cash flow, and phone/Yinlong losses need primary sources before writing as facts.",
+      "Gree SKU prices should be captured by region and installation package."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Dong Mingzhu should be read as a professional-manager GTM case, not a founder-brand case. Her product methodology is channel discipline, price authority, service credibility, and manufacturing control around air conditioners. The commercialization path was not a charismatic DTC startup story: it was distributor governance, seasonal rebate design, cash collection, national retail coverage, and later live commerce. The limit is also clear: the same strong-person sales system struggled in smartphones, EV diversification, and succession.",
+    "one_sentence_gtm": "Dong Mingzhu should be read as a professional-manager GTM case, not a founder-brand case.",
+    "channel_path": [
+      "Front-line debt collection and sales credibility",
+      "Distributor rebate / channel discipline system",
+      "Gree air-conditioner quality and service promise",
+      "Chairwoman personal IP and live commerce",
+      "Diversification attempts reveal the boundary of the method"
+    ],
+    "channels": {
+      "product_method": "The person creates a repeatable product principle, not just a single product launch.",
+      "platform": "The strongest outputs become platforms, ecosystems, or distribution standards.",
+      "commercialization": "Monetization appears through hardware margin, services, commissions, ads, subscriptions, contracts, or enterprise fees.",
+      "community": "Developers, merchants, fans, users, channels, or government customers become the adoption network.",
+      "governance": "Platform risk comes from rules, support, safety, regulation, succession, and founder overreach.",
+      "dealer_network": "Gree historically depended on dealer discipline and seasonal channel financing.",
+      "live_commerce": "Dong personal IP later became a direct-sales and public-trust channel."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Residential air conditioners",
+        "Commercial HVAC",
+        "Small appliances and service",
+        "Dealer channel inventory",
+        "Direct retail / live commerce"
+      ],
+      "pricing_logic": "Maintain premium service and dealer discipline instead of pure low-price competition.",
+      "channel_economics": "The system monetizes through channel control and service trust, but risks channel rigidity and overdependence on one category."
+    },
+    "top_products_selection_rule": "For person/platform reports, choose no more than 3 product-methodology platforms, not ordinary SKUs.",
+    "top_products": [
+      {
+        "name": "Gree air-conditioner channel system",
+        "type": "commercialization_method",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "This is Dong Mingzhu’s real GTM product: a disciplined channel system around a high-ticket durable appliance.",
+        "origin_story": "Dong entered Gree as a salesperson, built credibility through debt collection and regional sales, then scaled sales governance.",
+        "pre_market": "The pre-market issue was not user demand for cooling; it was channel cash discipline, inventory timing, and price control.",
+        "innovation": "Seasonal rebate logic, strict dealer rules, and service promise turned a commodity appliance into a controlled distribution system.",
+        "breakout": "Gree became one of China’s air-conditioner leaders and Dong became the face of sales discipline.",
+        "customer_impact": "Consumers see a durable appliance with installation and service confidence, not just a compressor price.",
+        "ecosystem_impact": "The method influenced how Chinese appliance makers think about dealer power and retail price stability.",
+        "pricing_model": {
+          "product_price": "Gree is not a single SKU: wall-mounted, cabinet, central and commercial AC prices vary by region, capacity, installation and warranty.",
+          "subscription_fee": "No core consumer software subscription; smart-home app features are support layer, not the main revenue model.",
+          "accessory_service_fee": "Accessory/service price: installation, copper pipe length, outdoor-unit bracket, cleaning, warranty and repair are part of total cost.",
+          "competitor_price": "Competitor price comparison: Midea, Haier, Hisense and AUX compete by capacity, energy efficiency, installation package and warranty; compare category by category, not brand average.",
+          "sources": [
+            {
+              "title": "Gree Electric public profile",
+              "url": "https://en.wikipedia.org/wiki/Gree_Electric",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Gree Comfort official site",
+              "url": "https://greecomfort.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Midea Group public profile",
+              "url": "https://en.wikipedia.org/wiki/Midea_Group",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Haier Smart Home public profile",
+              "url": "https://en.wikipedia.org/wiki/Haier",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Dong Mingzhu public profile",
+            "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Gree Electric public profile",
+            "url": "https://en.wikipedia.org/wiki/Gree_Electric",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Dong Mingzhu personal IP / live commerce",
+        "type": "distribution_method",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "Her public persona became a trust and traffic channel for Gree.",
+        "origin_story": "After decades as a sales leader, Dong’s identity became inseparable from Gree quality and discipline.",
+        "pre_market": "Before live commerce, Gree relied more on dealer networks; later direct sales let Dong bypass some channel friction.",
+        "innovation": "Founder-like executive livestreaming turns authority into conversion for durable goods.",
+        "breakout": "It can move inventory and reinforce trust, but it also makes the organization too dependent on one face.",
+        "customer_impact": "Consumers may trust the person more than the product line, which helps conversion but hurts succession.",
+        "ecosystem_impact": "It shows how Chinese industrial brands can use executive IP without being founder-led startups.",
+        "pricing_model": {
+          "product_price": "Livestream product prices vary by event and SKU; write live offer price only when the event page is preserved.",
+          "subscription_fee": "No mandatory subscription; monetization is hardware sales and service attach.",
+          "accessory_service_fee": "Accessory/service price: delivery, installation and after-sales service remain the real conversion promise.",
+          "competitor_price": "Competitor price comparison: Midea and Haier use broader brand/retail systems rather than one-person IP; Xiaomi/Lei Jun uses founder IP for launches, but with a younger ecosystem narrative.",
+          "sources": [
+            {
+              "title": "Dong Mingzhu public profile",
+              "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Midea Group public profile",
+              "url": "https://en.wikipedia.org/wiki/Midea_Group",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Dong Mingzhu public profile",
+            "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "South China Morning Post Dong Mingzhu profile",
+            "url": "https://www.scmp.com/business/companies/article/2080583/chinas-home-appliance-queen-dong-mingzhu-backs-ambitious-gree",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Diversification boundary: phone / Yinlong / new energy",
+        "type": "failure_boundary",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "The failed extensions explain where Dong’s method stops working.",
+        "origin_story": "Gree’s air-conditioner success tempted expansion into phones and new energy vehicles.",
+        "pre_market": "The market did not need a Gree phone just because it trusted Gree air conditioners.",
+        "innovation": "The same command-and-control confidence produced fast decisions but weak product-market fit.",
+        "breakout": "Phone and Yinlong stories became cautionary examples in the base report.",
+        "customer_impact": "Users punish irrelevant diversification because durable-appliance trust does not automatically transfer to phones or EVs.",
+        "ecosystem_impact": "The lesson is that channel power cannot replace category-native product truth.",
+        "pricing_model": {
+          "product_price": "Gree phone and Yinlong-related prices/valuation should not be quoted without preserved sources; report keeps them as failure-boundary cases.",
+          "subscription_fee": "No subscription/software fee is the core issue; the issue is category fit and capital allocation.",
+          "accessory_service_fee": "Accessory/service price: EV and phone service networks require different service economics from air conditioners.",
+          "competitor_price": "Competitor price comparison: Xiaomi/Apple in phones and BYD/Tesla in EVs have platform-native advantages that Gree did not possess.",
+          "sources": [
+            {
+              "title": "Gree Electric public profile",
+              "url": "https://en.wikipedia.org/wiki/Gree_Electric",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tesla Model Y official page",
+              "url": "https://www.tesla.com/modely",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple iPhone official page",
+              "url": "https://www.apple.com/iphone/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Dong Mingzhu public profile",
+            "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Gree Electric public profile",
+            "url": "https://en.wikipedia.org/wiki/Gree_Electric",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "The learnable part is channel governance, not personality worship.",
+      "A sales method can create a platform-like distribution advantage, but it may not transfer to unrelated categories.",
+      "Professional-manager reports must separate personal career money from company capital."
+    ],
+    "evidence_boundary": "Missing founder cash, exact platform take rates, CAC, refund loss, warranty reserve, private valuation, or live net worth is not filled unless a reliable source is present.",
+    "sources": [
+      {
+        "title": "Dong Mingzhu public profile",
+        "url": "https://en.wikipedia.org/wiki/Dong_Mingzhu",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Gree Electric public profile",
+        "url": "https://en.wikipedia.org/wiki/Gree_Electric",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Gree Comfort official site",
+        "url": "https://greecomfort.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Gree global official site",
+        "url": "https://global.gree.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Gree Electric investor relations",
+        "url": "https://www.gree.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Midea Group public profile",
+        "url": "https://en.wikipedia.org/wiki/Midea_Group",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Haier Smart Home public profile",
+        "url": "https://en.wikipedia.org/wiki/Haier",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "South China Morning Post Dong Mingzhu profile",
+        "url": "https://www.scmp.com/business/companies/article/2080583/chinas-home-appliance-queen-dong-mingzhu-backs-ambitious-gree",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

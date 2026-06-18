@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -7,196 +7,292 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; background: #F5F0E8; color: #2B2D42; min-height: 100vh; }
-.hero { text-align: center; padding: 60px 20px 30px; }
-.hero h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 42px; font-weight: 900; margin-bottom: 8px; }
-.hero p { font-size: 15px; color: #8B8B8B; }
-.reports { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.card { background: white; border-radius: 12px; padding: 22px 26px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: all .2s; border-left: 4px solid #E07A5F; text-decoration: none; color: inherit; display: block; }
-.card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-.card h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 24px; font-weight: 900; margin-bottom: 4px; }
-.card .subtitle { font-size: 12px; color: #8B8B8B; margin-bottom: 12px; }
-.card .tags { display: flex; gap: 6px; flex-wrap: wrap; }
-.tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #FDF2EC; color: #E07A5F; font-weight: 500; }
-.footer { text-align: center; padding: 30px 20px 50px; font-size: 13px; color: #BBB; }
-.footer a { color: #8B8B8B; }
-@media (max-width: 700px) { .reports { grid-template-columns: 1fr; } }
+body {
+  font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
+  background: #F5F0E8;
+  color: #2B2D42;
+  min-height: 100vh;
+}
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 54px 20px 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.08;
+}
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 20px 0;
+}
+.section h2 {
+  font-size: 15px;
+  color: #8B8B8B;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 8px 0 14px;
+}
+.reports {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px 26px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-left: 4px solid #E07A5F;
+  display: flex;
+  flex-direction: column;
+  min-height: 172px;
+}
+.card h3 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 24px;
+  line-height: 1.22;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+.subtitle {
+  font-size: 13px;
+  color: #8B8B8B;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: #E07A5F;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.actions {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #F3ECE4;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.actions a {
+  font-size: 12px;
+  color: #4A6FA5;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 4px 0;
+}
+.actions a.primary {
+  color: #C2513B;
+}
+.actions a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .reports { grid-template-columns: 1fr; }
+  .hero { padding-top: 38px; }
+  .hero h1 { font-size: 34px; }
+}
 </style>
 </head>
 <body>
 
 <div class="hero">
-    <h1>Brand Research PDF</h1>
-    <p>输入品牌名，自动生成深度调研报告。点击卡片直接查看。</p>
+  <h1>Brand Research PDF</h1>
 </div>
 
-<div class="reports">
-    
+<section class="section">
+  <h2>人物 / 产品方法论</h2>
+  <div class="reports">
+    <article class="card">
+      <h3>董明珠</h3>
+      <div class="subtitle">格力电器董事长 · 中国 · 1954年生</div>
+      <div class="tags"><span class="tag">格力¥2000亿营收</span><span class="tag">中国制造代言人</span><span class="tag">30年+格力生涯</span></div>
+      <div class="actions"><a class="primary" href="examples/dongmingzhu-report.html">基础报告</a><a href="examples/dongmingzhu-report-gtm.html">方法论 / 商业化</a></div>
+    </article>
 
-    
+    <article class="card">
+      <h3>Elon Musk 马斯克</h3>
+      <div class="subtitle">Tesla / SpaceX / xAI 创始人 · 南非→美国 · 1971年生</div>
+      <div class="tags"><span class="tag">$8000亿+净资产</span><span class="tag">SpaceX $350B估值</span><span class="tag">多公司并行</span></div>
+      <div class="actions"><a class="primary" href="examples/elonmusk-report.html">基础报告</a><a href="examples/elonmusk-report-gtm.html">方法论 / 商业化</a></div>
+    </article>
 
-    
+    <article class="card">
+      <h3>雷军</h3>
+      <div class="subtitle">小米创始人 · 金山董事长 · 中国 · 1969年生</div>
+      <div class="tags"><span class="tag">小米¥4573亿营收</span><span class="tag">SU7+YU7双爆款</span><span class="tag">玄戒O1 3nm芯片</span></div>
+      <div class="actions"><a class="primary" href="examples/leijun-report.html">基础报告</a><a href="examples/leijun-report-gtm.html">方法论 / 商业化</a></div>
+    </article>
 
-    
+    <article class="card">
+      <h3>Steve Jobs 乔布斯</h3>
+      <div class="subtitle">苹果联合创始人 · 美国 · 1955-2011</div>
+      <div class="tags"><span class="tag">颠覆6大行业</span><span class="tag">iPod/iPhone/iPad</span><span class="tag">产品审美</span></div>
+      <div class="actions"><a class="primary" href="examples/stevejobs-report.html">基础报告</a><a href="examples/stevejobs-report-gtm.html">方法论 / 商业化</a></div>
+    </article>
 
-    
+    <article class="card">
+      <h3>张小龙</h3>
+      <div class="subtitle">微信之父 · WXG总裁 · 中国 · 1969年生</div>
+      <div class="tags"><span class="tag">14.32亿微信MAU</span><span class="tag">Foxmail→微信</span><span class="tag">个人财富130亿</span></div>
+      <div class="actions"><a class="primary" href="examples/zhangxiaolong-report.html">基础报告</a><a href="examples/zhangxiaolong-report-gtm.html">方法论 / 商业化</a></div>
+    </article>
 
-    
+    <article class="card">
+      <h3>周群飞 & 蓝思科技</h3>
+      <div class="subtitle">手机玻璃女王 · 中国 · 1993 年创立</div>
+      <div class="tags"><span class="tag">HK$2万起家</span><span class="tag">¥700亿营收</span><span class="tag">全球50%+份额</span></div>
+      <div class="actions"><a class="primary" href="examples/lens-report.html">基础报告</a></div>
+    </article>
+  </div>
+</section>
 
-    <a href="examples/agility-robotics-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>Agility Robotics GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/figure-ai-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>Figure AI GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/spacex-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>SpaceX GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/bambu-lab-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>Bambu Lab GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/dji-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>DJI GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/nvidia-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>NVIDIA GTM &amp; Product Learning</h2>
-        <div class="subtitle">增长路径、渠道、商业模式与代表产品分析 · GTM 扩展版</div>
-        <div class="tags"><span class="tag">GTM 扩展</span><span class="tag">产品学习</span><span class="tag">渠道模式</span></div>
-    </a><a href="examples/hyrox-report.html" class="card">
-        <h2>Hyrox</h2>
-        <div class="subtitle">健身赛事 · 德国 · 2017 年创立</div>
-        <div class="tags"><span class="tag">$1.4亿营收</span><span class="tag">650K参赛者</span><span class="tag">0付费广告</span></div>
-    </a>
+<section class="section">
+  <h2>机器人 / 硬科技品牌</h2>
+  <div class="reports">
+    <article class="card">
+      <h3>Mammotion 库犸科技</h3>
+      <div class="subtitle">无边界线割草机器人 · 深圳 · 2022年创立</div>
+      <div class="tags"><span class="tag">LUBA核心产品</span><span class="tag">¥5.22亿收入线索</span><span class="tag">招聘信号观察</span></div>
+      <div class="actions"><a class="primary" href="examples/mammotion-case.html">创业案例</a><a href="examples/mammotion-report.html">基础报告</a><a href="examples/mammotion-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/tonal-report.html" class="card">
-        <h2>Tonal</h2>
-        <div class="subtitle">智能家庭力量训练 · 美国 · 2015 年创立</div>
-        <div class="tags"><span class="tag">$1.6B峰值估值</span><span class="tag">$550M当前估值</span><span class="tag">>$100M ARR</span></div>
-    </a>
+    <article class="card">
+      <h3>Agility Robotics</h3>
+      <div class="subtitle">双足人形机器人 · 美国 · 2015年创立</div>
+      <div class="tags"><span class="tag">Digit</span><span class="tag">GXO多年期RaaS</span><span class="tag">RoboFab工厂</span></div>
+      <div class="actions"><a class="primary" href="examples/agility-robotics-report.html">基础报告</a><a href="examples/agility-robotics-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/peloton-report.html" class="card">
-        <h2>Peloton</h2>
-        <div class="subtitle">互联健身 · 美国 · 2012 年创立</div>
-        <div class="tags"><span class="tag">$50B→$1.2B市值</span><span class="tag">$4B营收峰值</span><span class="tag">2.88M订阅用户</span></div>
-    </a>
+    <article class="card">
+      <h3>Figure AI</h3>
+      <div class="subtitle">通用人形机器人 · 美国 · 2022年创立</div>
+      <div class="tags"><span class="tag">~$40B估值</span><span class="tag">$1.7B+融资</span><span class="tag">BMW试点</span></div>
+      <div class="actions"><a class="primary" href="examples/figure-ai-report.html">基础报告</a><a href="examples/figure-ai-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/speediance-report.html" class="card">
-        <h2>Speediance</h2>
-        <div class="subtitle">中国智能健身出海 · 深圳 · 2020 年创立</div>
-        <div class="tags"><span class="tag">$49M营收</span><span class="tag">$13.6M融资</span><span class="tag">零强制订阅</span></div>
-    </a>
+    <article class="card">
+      <h3>DJI 大疆创新</h3>
+      <div class="subtitle">全球无人机霸主 · 深圳 · 2006年创立</div>
+      <div class="tags"><span class="tag">70%+全球市占</span><span class="tag">¥800亿+营收</span><span class="tag">12年连续盈利</span></div>
+      <div class="actions"><a class="primary" href="examples/dji-report.html">基础报告</a><a href="examples/dji-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/aeke-report.html" class="card">
-        <h2>AEKE</h2>
-        <div class="subtitle">AI 镜面力量训练 · 深圳 · 2022 年创立</div>
-        <div class="tags"><span class="tag">$1.5M众筹</span><span class="tag">43"4K镜面</span><span class="tag">0 VC融资</span></div>
-    </a>
+    <article class="card">
+      <h3>拓竹科技 Bambu Lab</h3>
+      <div class="subtitle">全球消费级3D打印第一 · 深圳 · 2020年创立</div>
+      <div class="tags"><span class="tag">29%全球市占</span><span class="tag">¥100亿营收</span><span class="tag">5位大疆前员工</span></div>
+      <div class="actions"><a class="primary" href="examples/bambulab-report.html">基础报告</a><a href="examples/bambu-lab-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/growl-report.html" class="card">
-        <h2>Growl</h2>
-        <div class="subtitle">AI 投影拳击沙袋 · 美国 · 2022 年创立</div>
-        <div class="tags"><span class="tag">$4.75M种子轮</span><span class="tag">$4,500硬件</span><span class="tag">2026发货</span></div>
-    </a>
+    <article class="card">
+      <h3>NVIDIA 英伟达</h3>
+      <div class="subtitle">AI时代基础设施 · 美国 · 1993年创立</div>
+      <div class="tags"><span class="tag">$4.6万亿市值</span><span class="tag">80-95% AI GPU份额</span><span class="tag">CUDA生态</span></div>
+      <div class="actions"><a class="primary" href="examples/nvidia-report.html">基础报告</a><a href="examples/nvidia-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/fightcamp-report.html" class="card">
-        <h2>FightCamp</h2>
-        <div class="subtitle">居家拳击健身 · 加拿大→美国 · 2014 年创立</div>
-        <div class="tags"><span class="tag">$94M融资</span><span class="tag">$699起</span><span class="tag">5年+量产</span></div>
-    </a>
+    <article class="card">
+      <h3>SpaceX</h3>
+      <div class="subtitle">可回收火箭与卫星互联网 · 美国 · 2002年创立</div>
+      <div class="tags"><span class="tag">~$350B估值</span><span class="tag">134次发射</span><span class="tag">Starlink 5M+用户</span></div>
+      <div class="actions"><a class="primary" href="examples/spacex-report.html">基础报告</a><a href="examples/spacex-report-gtm.html">GTM 扩展</a></div>
+    </article>
+  </div>
+</section>
 
-    <a href="examples/lens-report.html" class="card">
-        <h2>周群飞 & 蓝思科技</h2>
-        <div class="subtitle">手机玻璃女王 · 中国 · 1993 年创立</div>
-        <div class="tags"><span class="tag">HK$2万起家</span><span class="tag">¥700亿营收</span><span class="tag">全球50%+份额</span></div>
-    </a>
+<section class="section">
+  <h2>健身 / 运动品牌</h2>
+  <div class="reports">
+    <article class="card">
+      <h3>AEKE</h3>
+      <div class="subtitle">AI 镜面力量训练 · 深圳 · 2022 年创立</div>
+      <div class="tags"><span class="tag">$1.5M众筹</span><span class="tag">43"4K镜面</span><span class="tag">0 VC融资</span></div>
+      <div class="actions"><a class="primary" href="examples/aeke-report.html">基础报告</a><a href="examples/aeke-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/dongmingzhu-report.html" class="card">
-        <h2>董明珠</h2>
-        <div class="subtitle">格力电器董事长 · 中国 · 1954年生</div>
-        <div class="tags"><span class="tag">格力¥2000亿营收</span><span class="tag">中国制造代言人</span><span class="tag">30年+格力生涯</span></div>
-    </a>
+    <article class="card">
+      <h3>FightCamp</h3>
+      <div class="subtitle">居家拳击健身 · 加拿大→美国 · 2014 年创立</div>
+      <div class="tags"><span class="tag">$94M融资</span><span class="tag">$699起</span><span class="tag">5年+量产</span></div>
+      <div class="actions"><a class="primary" href="examples/fightcamp-report.html">基础报告</a><a href="examples/fightcamp-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/zhangxiaolong-report.html" class="card">
-        <h2>张小龙</h2>
-        <div class="subtitle">微信之父 · WXG总裁 · 中国 · 1969年生</div>
-        <div class="tags"><span class="tag">14.32亿微信MAU</span><span class="tag">Foxmail→微信</span><span class="tag">个人财富130亿</span></div>
-    </a>
+    <article class="card">
+      <h3>Growl</h3>
+      <div class="subtitle">AI 投影拳击沙袋 · 美国 · 2022 年创立</div>
+      <div class="tags"><span class="tag">$4.75M种子轮</span><span class="tag">$4,500硬件</span><span class="tag">2026发货</span></div>
+      <div class="actions"><a class="primary" href="examples/growl-report.html">基础报告</a><a href="examples/growl-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/dji-report.html" class="card">
-        <h2>DJI 大疆创新</h2>
-        <div class="subtitle">全球无人机霸主 · 深圳 · 2006年创立</div>
-        <div class="tags"><span class="tag">70%+全球市占</span><span class="tag">¥800亿+营收</span><span class="tag">12年连续盈利</span></div>
-    </a>
+    <article class="card">
+      <h3>HYROX</h3>
+      <div class="subtitle">健身赛事 · 德国 · 2017 年创立</div>
+      <div class="tags"><span class="tag">$1.4亿营收</span><span class="tag">650K参赛者</span><span class="tag">0付费广告</span></div>
+      <div class="actions"><a class="primary" href="examples/hyrox-report.html">基础报告</a><a href="examples/hyrox-report-gtm.html">GTM 扩展</a><a href="examples/hyrox-report.pdf">PDF</a></div>
+    </article>
 
-    <a href="examples/bambulab-report.html" class="card">
-        <h2>拓竹科技 Bambu Lab</h2>
-        <div class="subtitle">全球消费级3D打印第一 · 深圳 · 2020年创立</div>
-        <div class="tags"><span class="tag">29%全球市占</span><span class="tag">¥100亿营收</span><span class="tag">5位大疆前员工</span></div>
-    </a>
+    <article class="card">
+      <h3>Peloton</h3>
+      <div class="subtitle">互联健身 · 美国 · 2012 年创立</div>
+      <div class="tags"><span class="tag">$50B→$1.2B市值</span><span class="tag">$4B营收峰值</span><span class="tag">2.88M订阅用户</span></div>
+      <div class="actions"><a class="primary" href="examples/peloton-report.html">基础报告</a><a href="examples/peloton-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/leijun-report.html" class="card">
-        <h2>雷军</h2>
-        <div class="subtitle">小米创始人 · 金山董事长 · 中国 · 1969年生</div>
-        <div class="tags"><span class="tag">小米¥4573亿营收</span><span class="tag">SU7+YU7双爆款</span><span class="tag">玄戒O1 3nm芯片</span></div>
-    </a>
+    <article class="card">
+      <h3>Speediance</h3>
+      <div class="subtitle">中国智能健身出海 · 深圳 · 2020 年创立</div>
+      <div class="tags"><span class="tag">$49M营收</span><span class="tag">$13.6M融资</span><span class="tag">零强制订阅</span></div>
+      <div class="actions"><a class="primary" href="examples/speediance-report.html">基础报告</a><a href="examples/speediance-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/anker-report.html" class="card">
-        <h2>Anker 安克创新</h2>
-        <div class="subtitle">全球第一数码充电品牌 · 长沙/深圳 · 2011年创立</div>
-        <div class="tags"><span class="tag">¥305亿营收</span><span class="tag">11%充电线全球份额#1</span><span class="tag">2亿+用户</span></div>
-    </a>
+    <article class="card">
+      <h3>Tonal</h3>
+      <div class="subtitle">智能家庭力量训练 · 美国 · 2015 年创立</div>
+      <div class="tags"><span class="tag">$1.6B峰值估值</span><span class="tag">$550M当前估值</span><span class="tag">>$100M ARR</span></div>
+      <div class="actions"><a class="primary" href="examples/tonal-report.html">基础报告</a><a href="examples/tonal-report-gtm.html">GTM 扩展</a></div>
+    </article>
+  </div>
+</section>
 
-    <a href="examples/shokz-report.html" class="card">
-        <h2>Shokz 韶音</h2>
-        <div class="subtitle">全球骨传导耳机第一 · 深圳 · 2004/2011创立</div>
-        <div class="tags"><span class="tag">70%+全球份额</span><span class="tag">¥60亿+营收</span><span class="tag">零VC融资</span></div>
-    </a>
+<section class="section">
+  <h2>消费电子 / 品牌出海</h2>
+  <div class="reports">
+    <article class="card">
+      <h3>Anker 安克创新</h3>
+      <div class="subtitle">全球第一数码充电品牌 · 长沙/深圳 · 2011年创立</div>
+      <div class="tags"><span class="tag">¥305亿营收</span><span class="tag">11%充电线全球份额#1</span><span class="tag">2亿+用户</span></div>
+      <div class="actions"><a class="primary" href="examples/anker-report.html">基础报告</a><a href="examples/anker-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/mammotion-report.html" class="card">
-        <h2>Mammotion 库犸科技</h2>
-        <div class="subtitle">全球无边界割草机器人第一 · 深圳 · 2022年创立</div>
-        <div class="tags"><span class="tag">36%亚马逊份额</span><span class="tag">¥5.22亿营收</span><span class="tag">大疆RoboMaster团队</span></div>
-    </a>
+    <article class="card">
+      <h3>Apple 苹果</h3>
+      <div class="subtitle">全球市值最高公司 · 美国 · 1976年创立</div>
+      <div class="tags"><span class="tag">$4.3万亿市值</span><span class="tag">$4510亿TTM营收</span><span class="tag">23.5亿活跃设备</span></div>
+      <div class="actions"><a class="primary" href="examples/apple-report.html">基础报告</a><a href="examples/apple-report-gtm.html">GTM 扩展</a></div>
+    </article>
 
-    <a href="examples/apple-report.html" class="card">
-        <h2>Apple 苹果</h2>
-        <div class="subtitle">全球市值最高公司 · 美国 · 1976年创立</div>
-        <div class="tags"><span class="tag">$4.3万亿市值</span><span class="tag">$4510亿TTM营收</span><span class="tag">23.5亿活跃设备</span></div>
-    </a>
-
-    <a href="examples/stevejobs-report.html" class="card">
-        <h2>Steve Jobs 乔布斯</h2>
-        <div class="subtitle">苹果联合创始人 · 美国 · 1955-2011</div>
-        <div class="tags"><span class="tag">颠覆6大行业</span><span class="tag">iPod/iPhone/iPad</span><span class="tag">Stay Hungry</span></div>
-    </a>
-
-    <a href="examples/elonmusk-report.html" class="card">
-        <h2>Elon Musk 马斯克</h2>
-        <div class="subtitle">Tesla/SpaceX/xAI创始人 · 南非→美国 · 1971年生</div>
-        <div class="tags"><span class="tag">$8000亿+净资产</span><span class="tag">SpaceX $1.25万亿估值</span><span class="tag">8家公司</span></div>
-    </a>
-
-    <a href="examples/nvidia-report.html" class="card">
-        <h2>NVIDIA 英伟达</h2>
-        <div class="subtitle">AI时代基础设施 · 美国 · 1993年创立</div>
-        <div class="tags"><span class="tag">$4.6万亿市值</span><span class="tag">80-95% AI GPU份额</span><span class="tag">CUDA 500万+开发者</span></div>
-    </a>
-
-    <a href="examples/anker-report-gtm.html" class="card" style="border-left-color: #4A6FA5;">
-        <h2>Anker GTM & Product Learning</h2>
-        <div class="subtitle">增长路径 · 渠道 · 商业模式 · 代表产品分析</div>
-        <div class="tags"><span class="tag">GaN充电器</span><span class="tag">PowerCore</span><span class="tag">eufy</span><span class="tag">3产品分析</span></div>
-    </a>
-</div>
-
-<div class="footer">
-    Powered by <a href="https://github.com/yuan-y00/brand-research-pdf">brand-research-pdf</a> · Claude Code Skill
-</div>
+    <article class="card">
+      <h3>Shokz 韶音</h3>
+      <div class="subtitle">全球骨传导耳机第一 · 深圳 · 2004/2011创立</div>
+      <div class="tags"><span class="tag">70%+全球份额</span><span class="tag">¥60亿+营收</span><span class="tag">零VC融资</span></div>
+      <div class="actions"><a class="primary" href="examples/shokz-report.html">基础报告</a><a href="examples/shokz-report-gtm.html">GTM 扩展</a></div>
+    </article>
+  </div>
+</section>
 
 </body>
 </html>

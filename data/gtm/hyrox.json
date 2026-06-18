@@ -1,0 +1,448 @@
+{
+  "brand": "HYROX",
+  "brand_slug": "hyrox",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "Christian Toetzke: Mass-participation event operator; co-created HYROX and emphasized standardized accessible fitness racing.",
+      "Moritz Fürste: Two-time Olympic field hockey gold medalist; provides athlete credibility and sport-building perspective."
+    ],
+    "brand_timeline": [
+      "2017-2018: founding_event 650 participants - First HYROX event history in public profile; participant count rather than cash is the reliable early traction metric.",
+      "2019: investment minority investment - The Times reports Infront invested two years after founding; amount not made into a numeric claim.",
+      "2022: acquisition_control majority control - The Times reports Infront became sole investor / controlling investor in 2022.",
+      "2025: estimated_revenue £84M - The Times reports estimated turnover of £84M last year and entry fees around 90% of turnover; company does not publish audited detail."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Christian Toetzke",
+        "role": "Co-founder",
+        "background_summary": "Mass-participation event operator; co-created HYROX and emphasized standardized accessible fitness racing.",
+        "profile_links": [
+          {
+            "title": "The Times HYROX business profile",
+            "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "HYROX public profile",
+            "url": "https://en.wikipedia.org/wiki/Hyrox",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Moritz Fürste",
+        "role": "Co-founder",
+        "background_summary": "Two-time Olympic field hockey gold medalist; provides athlete credibility and sport-building perspective.",
+        "profile_links": [
+          {
+            "title": "Moritz Fuerste public profile",
+            "url": "https://en.wikipedia.org/wiki/Moritz_F%C3%BCrste",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "HYROX public profile",
+            "url": "https://en.wikipedia.org/wiki/Hyrox",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2017-2018",
+        "event": "founding_event",
+        "amount": "650 participants",
+        "currency": "participants",
+        "description": "First HYROX event history in public profile; participant count rather than cash is the reliable early traction metric.",
+        "source": {
+          "title": "HYROX public profile",
+          "url": "https://en.wikipedia.org/wiki/Hyrox",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2019",
+        "event": "investment",
+        "amount": "minority investment",
+        "currency": "EUR",
+        "description": "The Times reports Infront invested two years after founding; amount not made into a numeric claim.",
+        "source": {
+          "title": "The Times HYROX business profile",
+          "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2022",
+        "event": "acquisition_control",
+        "amount": "majority control",
+        "currency": "EUR",
+        "description": "The Times reports Infront became sole investor / controlling investor in 2022.",
+        "source": {
+          "title": "The Times HYROX business profile",
+          "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "estimated_revenue",
+        "amount": "£84M",
+        "currency": "GBP",
+        "description": "The Times reports estimated turnover of £84M last year and entry fees around 90% of turnover; company does not publish audited detail.",
+        "source": {
+          "title": "The Times HYROX business profile",
+          "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Official per-race ticket prices vary and should be captured event-by-event.",
+      "Exact Infront investment amount and founder personal cash input are not reliable public numbers."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "HYROX 的 GTM 不是卖家用硬件，而是把“标准化健身比赛”做成可全球复制的运动品牌。它用固定赛制、城市赛事、合作健身房、成绩榜、照片分享和赞助商形成增长飞轮；成本不是订阅费，而是报名、训练、装备、旅行、照片和合作健身房费用。",
+    "one_sentence_gtm": "HYROX 的 GTM 不是卖家用硬件，而是把“标准化健身比赛”做成可全球复制的运动品牌。",
+    "channel_path": [
+      "创始人用赛事运营和奥运运动员 IP 定义标准赛制",
+      "先在欧洲城市验证参赛需求",
+      "Infront 投资/控股后扩大赛事网络",
+      "合作健身房承担训练和获客",
+      "官方成绩、照片和社交传播推动下一轮参赛"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "events": "门票/报名费是核心收入来源。",
+      "gyms": "HYROX365 和 training clubs 是训练网络。",
+      "sponsors": "Puma、Myprotein、Concept2、Centr 等赞助/装备伙伴。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "race entry fees",
+        "sponsorships",
+        "affiliate gym fees",
+        "merchandise",
+        "food/drink/event services"
+      ],
+      "pricing_logic": "不卖强制软件订阅；用户总成本来自参赛链路。",
+      "channel_economics": "标准化室内赛事让城市复制和赞助销售更容易。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "HYROX Race Entry",
+        "type": "event_ticket",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "HYROX 的核心产品就是参赛资格。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "8 x 1km run + 8 workout stations 的全球统一格式。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Race entry price varies by city, division and batch; official Find My Race/ticket pages are the source for live price, so no single fixed global ticket price is written.",
+          "subscription_fee": "No mandatory subscription/software fee; rankings/results are event ecosystem features.",
+          "accessory_service_fee": "Accessory/service price: real athlete cost includes training plan, gym access, shoes, travel, lodging, photos/merch and race-day services.",
+          "competitor_price": "Competitor price comparison: Spartan/Tough Mudder sell event entries; CrossFit boxes charge gym memberships; Peloton/Tonal/Speediance sell hardware plus memberships or optional software.",
+          "sources": [
+            {
+              "title": "HYROX official global site",
+              "url": "https://hyrox.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "HYROX US official site",
+              "url": "https://hyroxus.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "HYROX find my race",
+              "url": "https://hyrox.com/find-my-race/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal membership official page",
+              "url": "https://tonal.com/pages/membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Wellness+ official page",
+              "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "HYROX official global site",
+            "url": "https://hyrox.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "HYROX find my race",
+            "url": "https://hyrox.com/find-my-race/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "HYROX365 / Training Clubs",
+        "type": "affiliate_training_network",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "合作健身房是 HYROX 的低资产获客网络。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "官方 affiliate/training club 提供品牌、训练和票务连接。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "The Times reports about £100/month for gyms to become HYROX affiliated.",
+          "subscription_fee": "Subscription/software boundary: this is gym affiliation/training access, not consumer hardware subscription.",
+          "accessory_service_fee": "Accessory/service price: gyms need SkiErg, sleds, rowers, kettlebells, wall balls and coaching education.",
+          "competitor_price": "Competitor price comparison: CrossFit affiliation commonly higher than HYROX affiliate fee in local report; Peloton/Tonal enterprise terms are quote-based; FightCamp gym extension is quote-based.",
+          "sources": [
+            {
+              "title": "The Times HYROX business profile",
+              "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "HYROX365 affiliation",
+              "url": "https://www.hyrox365.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "HYROX365 affiliation",
+            "url": "https://www.hyrox365.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "The Times HYROX business profile",
+            "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "HYROX World Championships / Sponsors / Shop",
+        "type": "event_media_commerce",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "赛事品牌的上限来自冠军、赞助和商品，而不只是报名费。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "官方成绩榜、品牌装备和赛事内容连接赞助销售。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Shop prices vary by item on official HYROX shop.",
+          "subscription_fee": "No mandatory software subscription; commerce is merchandise/sponsor driven.",
+          "accessory_service_fee": "Accessory/service price: apparel, shoes, grips, nutrition, travel and event photos are real add-on costs.",
+          "competitor_price": "Competitor price comparison: Peloton apparel and accessories are secondary; FightCamp/Growl sell training hardware; HYROX sells participation and identity.",
+          "sources": [
+            {
+              "title": "HYROX official global site",
+              "url": "https://hyrox.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "HYROX official shop",
+              "url": "https://us.hyrox-shop.com/",
+              "source_type": "marketplace",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "GROWL official site",
+              "url": "https://www.joingrowl.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "HYROX official global site",
+            "url": "https://hyrox.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "HYROX official shop",
+            "url": "https://us.hyrox-shop.com/",
+            "source_type": "marketplace",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "HYROX 的产品是规则和参赛身份。",
+      "运动品牌可以靠合作健身房扩张，而不是自建门店。",
+      "价格分析要算参赛总成本，不要只找订阅费。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "HYROX official global site",
+        "url": "https://hyrox.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "HYROX US official site",
+        "url": "https://hyroxus.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "HYROX find my race",
+        "url": "https://hyrox.com/find-my-race/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "HYROX365 affiliation",
+        "url": "https://www.hyrox365.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Times HYROX business profile",
+        "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "HYROX public profile",
+        "url": "https://en.wikipedia.org/wiki/Hyrox",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Moritz Fuerste public profile",
+        "url": "https://en.wikipedia.org/wiki/Moritz_F%C3%BCrste",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "HYROX official shop",
+        "url": "https://us.hyrox-shop.com/",
+        "source_type": "marketplace",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

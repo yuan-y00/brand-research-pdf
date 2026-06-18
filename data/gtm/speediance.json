@@ -1,0 +1,406 @@
+{
+  "brand": "Speediance",
+  "brand_slug": "speediance",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "刘韬 Liu Tao: 公开资料列为 Speediance 创始人；本地报告记录其来自 FITURE/极米产品背景，具备众筹和硬件产品经验。",
+      "俞健 Yu Jian: 本地报告记录其有华为/阿里/百度背景，并与刘韬有日本众筹项目合作经历。"
+    ],
+    "brand_timeline": [
+      "2021: crowdfunding $560K - Gym Monster 早期 Kickstarter 约 $560K，是第一批海外需求验证。",
+      "2022-2023: funding $13.6M - 本地报告和数据库资料记录 Speediance 累计融资约 $13.6M。",
+      "2024: revenue $49M - 本地报告记录 2024 年营收约 $49M；私营公司数字需按中等置信度使用。"
+    ],
+    "founder_profiles": [
+      {
+        "name": "刘韬 Liu Tao",
+        "role": "Founder / CEO",
+        "background_summary": "公开资料列为 Speediance 创始人；本地报告记录其来自 FITURE/极米产品背景，具备众筹和硬件产品经验。",
+        "profile_links": [
+          {
+            "title": "Speediance public profile",
+            "url": "https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc.",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Speediance About Us",
+            "url": "https://www.speediance.com/pages/about-us",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "俞健 Yu Jian",
+        "role": "COO",
+        "background_summary": "本地报告记录其有华为/阿里/百度背景，并与刘韬有日本众筹项目合作经历。",
+        "profile_links": [
+          {
+            "title": "Speediance About Us",
+            "url": "https://www.speediance.com/pages/about-us",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2021",
+        "event": "crowdfunding",
+        "amount": "$560K",
+        "currency": "USD",
+        "description": "Gym Monster 早期 Kickstarter 约 $560K，是第一批海外需求验证。",
+        "source": {
+          "title": "Speediance public profile",
+          "url": "https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc.",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2022-2023",
+        "event": "funding",
+        "amount": "$13.6M",
+        "currency": "USD",
+        "description": "本地报告和数据库资料记录 Speediance 累计融资约 $13.6M。",
+        "source": {
+          "title": "Speediance Crunchbase profile",
+          "url": "https://www.crunchbase.com/organization/speediance",
+          "source_type": "database",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2024",
+        "event": "revenue",
+        "amount": "$49M",
+        "currency": "USD",
+        "description": "本地报告记录 2024 年营收约 $49M；私营公司数字需按中等置信度使用。",
+        "source": {
+          "title": "Speediance public profile",
+          "url": "https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc.",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "创始人个人自筹金额未见可靠公开金额。",
+      "单台毛利、CAC、退货损失和专利诉讼费用没有可靠公开金额。"
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Speediance 的 GTM 是“深圳硬件效率 + 无强制订阅 + DTC/众筹验证”对 Tonal 强订阅模式的正面攻击。它用较少融资做出可比高端设备，靠 Gym Monster 2、可折叠免安装、全球评测和社区口碑建立信任；风险集中在专利诉讼、区域售后差异、软件体验和长期内容投入。",
+    "one_sentence_gtm": "Speediance 的 GTM 是“深圳硬件效率 + 无强制订阅 + DTC/众筹验证”对 Tonal 强订阅模式的正面攻击。",
+    "channel_path": [
+      "Kickstarter 验证第一批硬核健身用户",
+      "独立站/Amazon/区域经销商多渠道出货",
+      "评测媒体和社群建立“更自由的 Tonal 替代品”心智",
+      "无强制订阅降低购买阻力",
+      "Wellness+ 做可选增值而非锁死"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "ecommerce": "Amazon/区域站与经销商扩展覆盖。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Gym Monster / Gym Monster 2 硬件",
+        "配件与套装升级",
+        "Wellness+ 可选订阅",
+        "经销商/零售合作"
+      ],
+      "pricing_logic": "用 $2,499-$4,799 覆盖从入门到 2S 高配，并用无强制订阅对比 Tonal。",
+      "channel_economics": "硬件毛利和深圳供应链效率承担大部分商业模型压力。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "Gym Monster 2 / 2S",
+        "type": "smart_strength_machine",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "旗舰产品，直接对比 Tonal 2 和 AEKE K1。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "220lb 数字阻力、免钻墙、可折叠、多滑轮高度、丰富配件。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Official page shows Gym Monster 2 configurations around $3,390-$4,799 and legacy Gym Monster around $2,499-$3,249 during sale windows.",
+          "subscription_fee": "Core workouts and tracking are usable without mandatory subscription; Wellness+ is optional.",
+          "accessory_service_fee": "Accessory/service price: Works/Works Plus/Family Plus price differences include bench, rower, barbell, straps and rings; Smart Scale $108, Bluetooth Ring pack $99, PowerGrip $179 from official store.",
+          "competitor_price": "Competitor price comparison: Tonal 2 $4,295 + $495 accessories + $59.95/mo; AEKE K1 $3,298-$3,498 no mandatory subscription; Growl $4,500 + $60/mo; FightCamp packages start $299.",
+          "sources": [
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance official home",
+              "url": "https://www.speediance.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AEKE K1 official product page",
+              "url": "https://aeke.com/products/buy-aeke-k1",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Speediance Gym Monster 2 official page",
+            "url": "https://www.speediance.com/pages/gym-monster-2",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "WIRED Speediance Gym Monster 2 review",
+            "url": "https://www.wired.com/review/speediance-gym-monster-2/",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Wellness+",
+        "type": "optional_subscription",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "证明 Speediance 不是没有软件商业化，而是不把软件变成购买门槛。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "把可选订阅做成增强项。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Wellness+ pricing in local base report: $19.99/month or $119.88/year; official page is the current plan source.",
+          "subscription_fee": "Optional subscription/software fee; no mandatory subscription for core device use.",
+          "accessory_service_fee": "Accessory/service price: app/service bundled with hardware; no installation drilling fee like Tonal.",
+          "competitor_price": "Competitor subscription comparison: Tonal $59.95/mo 12-month commitment; Peloton All-Access $49.99/mo; FightCamp legacy $39/mo; Growl planned $60/mo.",
+          "sources": [
+            {
+              "title": "Speediance Wellness+ official page",
+              "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal membership official page",
+              "url": "https://tonal.com/pages/membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Speediance Wellness+ official page",
+            "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Speediance official home",
+            "url": "https://www.speediance.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "VeloNix / ecosystem expansion",
+        "type": "cardio_line",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "Speediance 从力量设备向完整家庭健身生态扩展的信号。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "将力量、骑行、AI 训练和配件归入一个账号生态。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "VeloNix official product page is current source; exact sale price changes by campaign.",
+          "subscription_fee": "Subscription/software boundary: Wellness+ optional, not a mandatory Peloton-style lock.",
+          "accessory_service_fee": "Accessory/service price: bike accessories and maintenance differ from GM2; shipping/return/warranty need逐项核算。",
+          "competitor_price": "Competitor price comparison: Peloton Bike official homepage financing footnote uses $1,695 for Cross Training Bike and $2,695 for Bike+; Speediance must win on bundle value, not just lower price.",
+          "sources": [
+            {
+              "title": "Speediance official home",
+              "url": "https://www.speediance.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Speediance official home",
+            "url": "https://www.speediance.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Peloton official site",
+            "url": "https://www.onepeloton.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Speediance 的关键学习是用商业模式攻击竞品痛点。",
+      "无强制订阅只有在硬件体验扎实时才成立。",
+      "售后和软件会决定它是挑战者还是领导者。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "Speediance official home",
+        "url": "https://www.speediance.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Speediance Gym Monster 2 official page",
+        "url": "https://www.speediance.com/pages/gym-monster-2",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Speediance Wellness+ official page",
+        "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "WIRED Speediance Gym Monster 2 review",
+        "url": "https://www.wired.com/review/speediance-gym-monster-2/",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tom’s Guide Speediance review",
+        "url": "https://www.tomsguide.com/wellness/fitness/i-tried-the-speediance-gym-monster-2-heres-what-i-love-and-dont",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "Speediance public profile",
+        "url": "https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc.",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Speediance Crunchbase profile",
+        "url": "https://www.crunchbase.com/organization/speediance",
+        "source_type": "database",
+        "confidence": "medium"
+      },
+      {
+        "title": "Speediance Trustpilot",
+        "url": "https://www.trustpilot.com/review/speediance.com",
+        "source_type": "review",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

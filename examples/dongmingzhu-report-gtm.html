@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>董明珠 深度调研报告</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root{--bg-page:#F9F7F2;--bg-card:#FFFFFF;--bg-stripe:#F5F2EC;--ink:#1C1C1C;--ink-light:#555;--ink-muted:#999;--accent:#C2513B;--positive:#5B8C6F;--negative:#C2513B;--neutral:#4A6FA5;--border:#E8E4DA;--border-light:#F0EDE5;--shadow:0 1px 3px rgba(0,0,0,.04);--radius:12px;--radius-sm:8px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Noto Sans SC',sans-serif;font-size:15px;line-height:1.7;color:var(--ink);background:#E8E5DE;-webkit-font-smoothing:antialiased}
+.section{width:100%;max-width:1040px;margin:0 auto;background:var(--bg-page);padding:56px 72px;border-bottom:1px solid var(--border-light)}
+.section:last-child{border-bottom:none}
+.section.cover{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:80px;min-height:55vh;background:linear-gradient(160deg,#F9F7F2 0%,#F4EFE6 50%,#EDE4D4 100%);padding:64px 80px}
+.cover-left{flex:0 0 auto}.cover-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:28px;font-weight:600}
+.cover-title{font-family:'Playfair Display','Noto Serif SC',serif;font-size:56px;font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:16px}
+.cover-subtitle{font-family:'Crimson Pro','Noto Serif SC',serif;font-size:19px;color:var(--neutral);line-height:1.6}
+.cover-line{width:60px;height:2px;background:var(--accent);margin:28px 0}.cover-footer{font-size:11px;color:var(--ink-muted);letter-spacing:2px}
+.cover-stat-block{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cover-stat{background:rgba(255,255,255,.6);border-radius:var(--radius);padding:22px 28px;text-align:center;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,.04)}
+.cover-stat .cs-num{font-family:'Playfair Display','Noto Serif SC',serif;font-size:36px;font-weight:900;color:var(--accent)}
+.cover-stat .cs-label{font-size:10px;color:var(--ink-muted);letter-spacing:1px;margin-top:4px}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600}
+h1{font-family:'Playfair Display','Noto Serif SC',serif;font-size:32px;font-weight:900;color:var(--ink);margin-bottom:20px}
+h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:21px;font-weight:700;color:var(--neutral);margin:28px 0 14px}
+h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}p{margin-bottom:10px;color:var(--ink-light)}
+.callout{background:#FDF6F2;border-left:3px solid var(--accent);padding:14px 20px;margin:20px 0;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:#5D3A2E}.callout strong{color:var(--accent)}
+.divider{border:none;height:1px;background:linear-gradient(to right,var(--accent) 0px,rgba(194,81,59,.3) 60px,var(--border) 60px,transparent 100%);margin:32px 0}
+.info-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:16px 0}.info-table thead th{background:var(--ink);color:#fff;font-size:10.5px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:12px 16px;text-align:left}
+.info-table tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:middle;line-height:1.5}.info-table tbody tr:nth-child(even){background:var(--bg-stripe)}
+.td-center{text-align:center!important}.td-num{text-align:left;font-variant-numeric:tabular-nums}.td-impact{text-align:center;font-weight:600}
+.impact-up{color:var(--positive)}.impact-down{color:var(--negative)}.impact-neutral{color:var(--neutral)}
+.stat-row{display:flex;gap:14px;margin:20px 0;flex-wrap:wrap}.stat-card{flex:1;min-width:130px;background:var(--bg-card);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border-light)}
+.stat-number{font-family:'Playfair Display','Noto Serif SC',serif;font-size:28px;font-weight:900;color:var(--accent)}.stat-label{font-size:10px;color:var(--ink-muted);letter-spacing:1px;margin-top:4px}
+.insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:20px 0}
+.insight-card{background:var(--bg-card);border-radius:var(--radius);padding:24px 28px;position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border-light)}.insight-card.right{border-top:3px solid var(--positive)}.insight-card.wrong{border-top:3px solid var(--negative)}
+.insight-num{font-family:'Playfair Display','Noto Serif SC',serif;font-size:44px;font-weight:900;opacity:.08;position:absolute;top:10px;right:18px}.insight-card.right .insight-num{color:var(--positive)}.insight-card.wrong .insight-num{color:var(--negative)}
+.insight-card h4{font-family:'Playfair Display','Noto Serif SC',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px;padding-right:44px;line-height:1.3}
+.insight-kpi{font-size:13px;font-weight:600;margin-bottom:10px;line-height:1.4}.insight-card.right .insight-kpi{color:var(--positive)}.insight-card.wrong .insight-kpi{color:var(--negative)}
+.insight-card p{font-size:13.5px;color:var(--ink-light);line-height:1.65;margin-bottom:12px}
+.insight-vs{font-size:11.5px;color:var(--ink-muted);padding-top:10px;border-top:1px solid var(--border-light);line-height:1.5}.insight-vs span{font-weight:600;color:var(--neutral)}
+.col-2{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:20px 0}
+.quote-card{background:var(--bg-card);border-left:3px solid var(--positive);padding:14px 18px;margin:10px 0;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-family:'Crimson Pro','Noto Serif SC',serif;font-size:15px;font-style:italic;color:var(--ink-light);box-shadow:var(--shadow)}.quote-card.critical{border-left-color:var(--negative)}
+.quote-source{display:block;margin-top:6px;font-size:11px;font-style:normal;color:var(--ink-muted)}
+.conclusion-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}.conclusion-card{background:var(--bg-card);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);border:1px solid var(--border-light)}
+.conclusion-card .cc-num{font-family:'Playfair Display','Noto Serif SC',serif;font-size:28px;font-weight:900;color:var(--accent);opacity:.7}
+.conclusion-card h3{margin-top:4px;font-size:16px;color:var(--neutral)}.conclusion-card p{font-size:13px;color:var(--ink-light);margin-top:6px;line-height:1.6}
+@media(max-width:900px){.section{padding:32px 24px}.section.cover{flex-direction:column;text-align:center}.insight-grid,.col-2,.conclusion-grid{grid-template-columns:1fr}}
+@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}body{background:#fff}.section{border-bottom:none}h1,h2,h3{page-break-after:avoid}.callout,.info-table,.insight-card,.insight-grid,.conclusion-card,.col-2{page-break-inside:avoid}}</style></head><body>
+
+<div class="section cover"><div class="cover-left"><div class="cover-label">Founder Deep Dive · 2026.05</div><div class="cover-title">董明珠<br>深度调研</div><div class="cover-line"></div><div class="cover-subtitle">36岁丧夫南下打工 · 基层业务员→格力董事长<br>30年职业生涯 · 中国最知名铁娘子</div><div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div></div><div class="cover-right"><div class="cover-stat-block"><div class="cover-stat"><div class="cs-num">¥200</div><div class="cs-label">1990年初入格力月薪</div></div><div class="cover-stat"><div class="cs-num">¥3650万</div><div class="cs-label">个人年销售额峰值</div></div><div class="cover-stat"><div class="cs-num">¥30亿</div><div class="cs-label">持股市值（~2020）</div></div><div class="cover-stat"><div class="cs-num">¥2000亿</div><div class="cs-label">格力电器市值</div></div></div></div></div>
+
+<div class="section"><div class="section-label">Founder & Timeline</div><h1>一、创始人与职场传奇</h1>
+<h2>背景：职业经理人，非创始人</h2><table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:80px">人物</th><th style="width:60px">角色</th><th>背景</th><th style="width:140px">初始资金/第一桶金</th></tr></thead><tbody>
+<tr><td><strong>董明珠</strong></td><td class="td-center">董事长</td><td>1954年南京出生，兄弟姐妹7人最小。1984年丈夫病逝（儿子仅2岁），1990年36岁辞去南京化工研究所行政工作，将8岁儿子托付母亲，孤身南下珠海打工。加入海利空调厂（格力前身），做基层业务员，<strong>底薪仅~¥200/月</strong></td><td class="td-center"><strong>销售提成</strong>：入职第一年追回¥42万欠款→收入超¥10万；1992年安徽销售额¥1,600万</td></tr>
+<tr><td><strong>朱江洪</strong></td><td class="td-center">创始元勋</td><td>格力的真正创始人。原冠雄塑胶厂+海利空调厂总经理，1991年两厂合并更名"格力电器"。是发现并提拔董明珠的伯乐</td><td class="td-center">国有企业（珠海国资委控股）</td></tr></tbody></table>
+<h2>晋升之路（1990→2012）</h2><table class="info-table"><thead><tr><th style="width:80px">年份</th><th>事件</th></tr></thead><tbody>
+<tr><td>1990</td><td>加入海利空调厂（格力前身），基层业务员</td></tr>
+<tr><td>1994</td><td>格力骨干业务员集体跳槽，董明珠临危受命出任经营部部长（年薪从¥100万降至¥10万+）</td></tr>
+<tr><td>1996</td><td>发明"淡季返利"模式——在空调淡季以优惠价供货给经销商，锁住渠道现金流。格力超越春兰成为行业第一</td></tr>
+<tr><td>2001</td><td>出任格力电器总经理（CEO）</td></tr>
+<tr><td>2005</td><td>股权分置改革：以¥760.5万成本获150万股激励→后来价值数十亿</td></tr>
+<tr><td>2012</td><td>朱江洪退休，董明珠正式接任格力集团董事长</td></tr>
+<tr><td>2015</td><td>宣布"格力手机"进军手机行业（失败）</td></tr>
+<tr><td>2016</td><td>个人举债投资珠海银隆（新能源），后银隆爆雷</td></tr>
+<tr><td>2024</td><td>格力电器营收~¥2,000亿，但被美的、海尔拉开差距</td></tr></tbody></table></div>
+
+<div class="section"><div class="section-label">Career Analysis</div><h1>二、董明珠做对了什么</h1>
+<div class="insight-grid">
+<div class="insight-card right"><div class="insight-num">01</div><h4>销售天才：从追债到年销3650万</h4><div class="insight-kpi">入职第一年追回¥42万欠款 · 1992年安徽¥1,600万 · 个人峰值¥3,650万</div><p>董明珠的营销能力是她一切成就的基石。1990年入职时，前任留下一笔¥42万的烂账——所有同事都说收不回来。董明珠用了40天死缠烂打，最终追回了这笔钱。总经理朱江洪因此对她刮目相看。此后她在安徽市场将销售额做到¥1,600万（占公司1/8），后来个人年销售额峰值达¥3,650万。她发明的"淡季返利"和"年终返利"模式——在空调销售淡季以优惠价供货给经销商，锁住渠道现金流——被整个家电行业沿用至今。</p></div>
+<div class="insight-card right"><div class="insight-num">02</div><h4>铁腕治理：六亲不认的"走过的路寸草不生"</h4><div class="insight-kpi">拒绝亲哥哥走后门→被踢出族谱 · 高管跳槽全部不留 · 建立不可撼动的制度权威</div><p>1995年旺季，一位经销商通过董明珠的亲哥哥找到她，想要优先拿货（当时空调供不应求），事成之后给2%回扣。董明珠不仅拒绝，还直接停了那个经销商的货。她哥哥大怒，写了一封绝交信，把她踢出了族谱。此后20多年兄妹没有来往。这种"六亲不认"的铁腕在格力内部建立了不可撼动的制度权威——所有人都知道，在格力走关系没用。1994年格力骨干业务员集体跳槽时，董明珠选择留下——不是因为钱多（她留下的年薪远低于跳槽收入），而是因为"朱江洪信任我"。</p></div>
+<div class="insight-card wrong"><div class="insight-num">03</div><h4>格力手机+"银隆陷阱"：多元化屡战屡败</h4><div class="insight-kpi">格力手机：开机画面是自己的头像→滞销 · 银隆新能源：个人举债¥10亿投资→爆雷 · 被美的¥4,000亿市值碾压</div><p>董明珠在主业（空调）上的决策几乎是完美的——但在多元化上几乎全败。格力手机的开机画面是董明珠的头像——这个产品决策被市场嘲笑至今。2016年她个人举债投资珠海银隆新能源，拉上王健林和刘强东一起投——结果银隆很快爆雷，创始人跑路，董明珠个人损失惨重。2024年格力营收~¥2,000亿，而其主要竞争对手美的集团已经做到¥4,000亿+，市值是格力的2倍多。格力的空调基本盘依然稳固（毛利率行业第一），但增长天花板已经清晰可见。</p></div>
+<div class="insight-card wrong"><div class="insight-num">04</div><h4>接班人之困：谁能在"董明珠之后"执掌格力？</h4><div class="insight-kpi">70岁仍在一线 · 22岁孟羽童"接班人"事件翻车 · 格力至今没有明确的二号人物</div><p>2021年，董明珠高调宣布22岁的孟羽童为"格力接班人"，将她带上综艺节目，全网热议。不到两年，孟羽童离职，双方交恶。这个"接班人"事件暴露了格力最根本的治理问题：董明珠的个人IP过于强大，以至于组织无法培养出一个独立于她的领导团队。她今年已经70岁了，仍然每天高强度工作——但她不可能永远掌舵。美的在方洪波的平稳过渡中证明了"交接班"是可能的——格力的交接班至今没有答案。</p></div></div></div>
+
+<div class="section"><div class="section-label">Key Data & Conclusions</div><h1>三、核心数据与关键结论</h1>
+<div class="col-2"><div class="col-2-left"><h2>核心数据</h2><table class="info-table"><thead><tr><th>指标</th><th style="width:130px">数据</th></tr></thead><tbody>
+<tr><td>出生</td><td class="td-center">1954年·南京</td></tr><tr><td>学历</td><td class="td-center">芜湖干部教育学院</td></tr><tr><td>加入格力</td><td class="td-center"><strong>1990年（36岁）</strong></td></tr><tr><td>初始工作</td><td class="td-center">基层业务员·底薪~¥200/月</td></tr><tr><td>出任CEO</td><td class="td-center"><strong>2001年</strong></td></tr><tr><td>出任董事长</td><td class="td-center"><strong>2012年</strong></td></tr><tr><td>个人持股价值</td><td class="td-num"><strong>~¥30亿</strong></td></tr><tr><td>格力营收(2024)</td><td class="td-num"><strong>~¥2,000亿</strong></td></tr><tr><td>美的营收(2024)</td><td class="td-num">~¥4,000亿</td></tr><tr><td>格力员工</td><td class="td-center">8万+</td></tr></tbody></table></div><div class="col-2-right"><h2>关键结论</h2><div class="conclusion-grid"><div class="conclusion-card"><div class="cc-num">01</div><h3>中国最传奇的职业经理人</h3><p>月薪¥200的基层业务员→执掌¥2,000亿帝国的董事长。30年在一家公司。这不是创始人故事——这是职业经理人故事。董明珠证明了一个人可以在不创业的情况下达到创业者的权力和财富高度。</p></div><div class="conclusion-card"><div class="cc-num">02</div><h3>成也铁腕，困也铁腕</h3><p>铁腕让格力在空调血战中活下来并成为第一。但同一种铁腕在手机、新能源、接班人问题上都造成了伤害。格力的组织能力严重依赖董明珠个人——这是最大的长期风险。</p></div><div class="conclusion-card"><div class="cc-num">03</div><h3>1万元原始股→3000万元</h3><p>董明珠的财富密码不是工资——是股权。2005年以¥760.5万获150万股激励；早年¥1万买的原始股变成¥3,000万+。这个3000倍回报来自中国资本市场早期制度红利。</p></div><div class="conclusion-card"><div class="cc-num">04</div><h3>格力被美的反超的本质</h3><p>不是董明珠不够努力——是格力的单一品类战略碰到了天花板。美的多元化（空调+冰箱+小家电+机器人）有更大的TAM。董明珠的挑战不是"如何卖更多空调"，而是"格力在空调之外是谁"。</p></div></div></div></div></div>
+<div class="section"><div class="section-label">Verification Notes</div><h1>来源、人物边界与收费核验</h1>
+<table class="info-table"><thead><tr><th style="width:150px">核验点</th><th>结论</th><th>入口</th></tr></thead><tbody>
+<tr><td>人物定位</td><td>董明珠是格力的关键职业经理人，不是格力电器的创始人；格力早期创始与工厂改制应同时看朱江洪和珠海国资背景。</td><td><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener">董明珠公开履历</a> / <a href="https://en.wikipedia.org/wiki/Zhu_Jianghong" target="_blank" rel="noopener">朱江洪公开履历</a></td></tr>
+<tr><td>产品/竞品价格</td><td>格力不是单一 SKU 公司；空调价格要按挂机/柜机/中央空调、能效、安装条件、保修和售后服务拆开看，并与美的、海尔等竞品分品类比较。</td><td><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener">Gree Electric</a></td></tr>
+<tr><td>配件/服务费</td><td>家电真实成本包含安装、铜管、支架、高空作业、延保、维修和滤网等服务/配件费用；报告不应只看机器标价。</td><td><a href="https://gree.com/" target="_blank" rel="noopener">格力官方入口</a></td></tr>
+</tbody></table>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-dongmingzhu">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">Dong Mingzhu / Gree</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">Person / platform methodology</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; person-platform GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">This is not a normal brand SKU report. It maps product methodology to commercialization paths. Unsupported founder cash, exact margins, live valuations, private-company losses, or platform fee rates are kept in research_gaps.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>Dong Mingzhu should be read as a professional-manager GTM case, not a founder-brand case.</div>
+<div class="gtm-card"><p>Dong Mingzhu should be read as a professional-manager GTM case, not a founder-brand case. Her product methodology is channel discipline, price authority, service credibility, and manufacturing control around air conditioners. The commercialization path was not a charismatic DTC startup story: it was distributor governance, seasonal rebate design, cash collection, national retail coverage, and later live commerce. The limit is also clear: the same strong-person sales system struggled in smartphones, EV...</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">Front-line debt collection and sales credibility</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Distributor rebate / channel discipline system</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Gree air-conditioner quality and service promise</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Chairwoman personal IP and live commerce</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Diversification attempts reveal the boundary of the method</span></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">For person/platform reports, choose no more than 3 product-methodology platforms, not ordinary SKUs.</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">Gree air-conditioner channel system</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">commercialization_method</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>This is Dong Mingzhu’s real GTM product: a disciplined channel system around a high-ticket durable appliance.</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Gree is not a single SKU: wall-mounted, cabinet, central and commercial AC prices vary by region, capacity, installation and warranty.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No core consumer software subscription; smart-home app features are support layer, not the main revenue model.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: installation, copper pipe length, outdoor-unit bracket, cleaning, warranty and repair are part of total cost.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Midea, Haier, Hisense and AUX compete by capacity, energy efficiency, installation package and warranty; compare category by category, not brand average.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener noreferrer">Gree Electric public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://greecomfort.com/" target="_blank" rel="noopener noreferrer">Gree Comfort official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Midea_Group" target="_blank" rel="noopener noreferrer">Midea Group public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Haier" target="_blank" rel="noopener noreferrer">Haier Smart Home public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>Study the product principle first, then the commercialization path.</li>
+<li><strong>可学习：</strong>Separate the person from the company balance sheet and from platform economics.</li>
+<li><strong>别照抄：</strong>Do not force a normal brand template onto a person or platform report.</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener noreferrer">Dong Mingzhu public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener noreferrer">Gree Electric public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">Dong Mingzhu personal IP / live commerce</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">distribution_method</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Her public persona became a trust and traffic channel for Gree.</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Livestream product prices vary by event and SKU; write live offer price only when the event page is preserved.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory subscription; monetization is hardware sales and service attach.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: delivery, installation and after-sales service remain the real conversion promise.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Midea and Haier use broader brand/retail systems rather than one-person IP; Xiaomi/Lei Jun uses founder IP for launches, but with a younger ecosystem narrative.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener noreferrer">Dong Mingzhu public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Midea_Group" target="_blank" rel="noopener noreferrer">Midea Group public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>Study the product principle first, then the commercialization path.</li>
+<li><strong>可学习：</strong>Separate the person from the company balance sheet and from platform economics.</li>
+<li><strong>别照抄：</strong>Do not force a normal brand template onto a person or platform report.</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener noreferrer">Dong Mingzhu public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.scmp.com/business/companies/article/2080583/chinas-home-appliance-queen-dong-mingzhu-backs-ambitious-gree" target="_blank" rel="noopener noreferrer">South China Morning Post Dong Mingzhu profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">Diversification boundary: phone / Yinlong / new energy</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">failure_boundary</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>The failed extensions explain where Dong’s method stops working.</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Gree phone and Yinlong-related prices/valuation should not be quoted without preserved sources; report keeps them as failure-boundary cases.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No subscription/software fee is the core issue; the issue is category fit and capital allocation.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: EV and phone service networks require different service economics from air conditioners.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Xiaomi/Apple in phones and BYD/Tesla in EVs have platform-native advantages that Gree did not possess.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener noreferrer">Gree Electric public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.tesla.com/modely" target="_blank" rel="noopener noreferrer">Tesla Model Y official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.apple.com/iphone/" target="_blank" rel="noopener noreferrer">Apple iPhone official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>Study the product principle first, then the commercialization path.</li>
+<li><strong>可学习：</strong>Separate the person from the company balance sheet and from platform economics.</li>
+<li><strong>别照抄：</strong>Do not force a normal brand template onto a person or platform report.</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener noreferrer">Dong Mingzhu public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener noreferrer">Gree Electric public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Dong_Mingzhu" target="_blank" rel="noopener noreferrer">Dong Mingzhu public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Gree_Electric" target="_blank" rel="noopener noreferrer">Gree Electric public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://greecomfort.com/" target="_blank" rel="noopener noreferrer">Gree Comfort official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://global.gree.com/" target="_blank" rel="noopener noreferrer">Gree global official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.gree.com/" target="_blank" rel="noopener noreferrer">Gree Electric investor relations</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Midea_Group" target="_blank" rel="noopener noreferrer">Midea Group public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Haier" target="_blank" rel="noopener noreferrer">Haier Smart Home public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.scmp.com/business/companies/article/2080583/chinas-home-appliance-queen-dong-mingzhu-backs-ambitious-gree" target="_blank" rel="noopener noreferrer">South China Morning Post Dong Mingzhu profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body></html>

@@ -1,0 +1,1098 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Tonal 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 01: COVER ==================== -->
+<div class="section cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">Tonal<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">
+            从 $1.6B 独角兽到估值腰斩 · 智能家庭健身赛道沉浮录<br>硬件护城河 · 订阅经济 · CEO 三度换帅
+        </div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">$1.6B</div><div class="cs-label">2021 峰值估值</div></div>
+            <div class="cover-stat"><div class="cs-num">$550M</div><div class="cs-label">2023 估值（-66%）</div></div>
+            <div class="cover-stat"><div class="cs-num">$100M+</div><div class="cs-label">年经常性收入（ARR）</div></div>
+            <div class="cover-stat"><div class="cs-num">$615M+</div><div class="cs-label">累计融资总额</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 02: TIMELINE ==================== -->
+<div class="section"><div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2015–2025）</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:75px">时间</th>
+                <th style="width:380px">事件</th>
+                <th style="width:310px">关键细节</th>
+                <th style="width:65px">影响</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2015.03</strong></td>
+                <td>Aly Orady 在旧金山创立 Tonal</td>
+                <td>Orady 本人超重、糖尿病，靠力量训练减重 70 lbs 后，决定用电���阻力替代物理哑铃，在厨房台面上造出第一台原型机（当时叫 RiptLabs）</td>
+                <td class="td-impact impact-neutral">概念验证</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>COVID 疫情 — 销量暴增 8 倍+</td>
+                <td>家庭健身需求井喷；员工从 ~110 激增至 750；同年获 $110M Series D</td>
+                <td class="td-impact impact-up">爆发增长</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021.03</strong></td>
+                <td>$250M Series E，估值 $1.6B，成为独角兽</td>
+                <td>超级碗广告（Serena Williams 出镜）；LeBron James 宣布投资并担任品牌大使；Nordstrom 60 家门店合作</td>
+                <td class="td-impact impact-up">巅峰</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022.07</strong></td>
+                <td>裁员 35%（~260 人），关闭洛杉矶工作室</td>
+                <td>公司目标从"增长"转向"盈利"；疫情后家庭健身需求骤降；现金储备承压</td>
+                <td class="td-impact impact-down">危机</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.02</strong></td>
+                <td>寻求出售或新融资，估值降至 ~$500M</td>
+                <td>据报与 Peloton 谈判收购未果；产品涨价至 $3,995；会员费从 $49→$59.95/月；Foxconn 起诉 $50 万欠款</td>
+                <td class="td-impact impact-down">估值腰斩</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.04</strong></td>
+                <td>$130M Series F 融资 + 创始人卸任 CEO</td>
+                <td>L Catterton 领投；估值 ~$550-600M（较峰值 -66%）；Aly Orady 转任 CTO，Krystal Zell 升任 CEO。累计融资 ~$615M——已超过公司估值</td>
+                <td class="td-impact impact-neutral">重启</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.09</strong></td>
+                <td>竞对 Lululemon Mirror 正式停产</td>
+                <td>Lululemon 注销 $4.43 亿 Mirror 资产，几乎亏光 $5 亿收购价。Tonal 趁机推出 $250 以旧换新方案收割 Mirror 用户</td>
+                <td class="td-impact impact-up">收割竞对</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024.09</strong></td>
+                <td>Krystal Zell 离任，Darren MacDonald 接任 CEO</td>
+                <td>MacDonald 来自 Petco/Walmart 背景；公司年 ARR >$1 亿，约 350 名员工</td>
+                <td class="td-impact impact-neutral">CEO 再换</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>三度换帅：Todd Bartee 出任新 CEO</td>
+                <td>Bartee 是 L Catterton 运营合伙人，前 Aquasana CEO；信号：PE 股东亲自下场，聚焦 AI + 软件整合，硬件战略是否保留存疑</td>
+                <td class="td-impact impact-neutral">PE 接管</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ==================== PAGE 03: REVENUE & VALUATION ==================== -->
+<div class="section"><div class="section-label">Financials</div>
+    <h1>二、创始团队与估值变化</h1>
+    <h2>创始团队</h2>
+    <table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:100px">创始人</th><th>背景</th><th style="width:140px">初始资金</th></tr></thead><tbody>
+    <tr><td><strong>Aly Orady</strong></td><td>计算机工程师·HP/Sun/Samsung 工作经历。35 岁时超重+糖尿病+睡眠呼吸暂停，<strong>辞职后用 9 个月靠力量训练减重 70 lbs</strong>——这个个人经历直接催生了 Tonal 的产品理念。2015 年在厨房台面造出第一台电磁阻力原型机（RiptLabs）。2023 年卸任 CEO 转任 CTO</td><td class="td-center"><strong>科技行业工资积蓄</strong>（HP/Sun/Samsung 工程师薪资）</td></tr></tbody></table>
+    <p style="font-size:10.5px;color:var(--mid-gray);margin-bottom:10px">※ 2016 年获 $1.5M 种子轮（Bolt/Mayfield），此后累计融资 $615M。Orady 2023 年卸任 CEO——PE 股东 L Catterton 认为他不适合管运营。当前估值 $550M 已经低于累计融资 $615M。</p>
+
+    <div class="callout">
+        <strong>核心矛盾：</strong>Tonal 累计融资 <strong>$615M+</strong>，但当前估值仅 <strong>$550-600M</strong>——融到的钱比公司还值钱。ARR >$1 亿但未披露是否盈利。疫情后估值从 $1.6B 暴跌 66%，同行 Peloton 市值蒸发 <strong>97%</strong>。
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">$1.6B</div><div class="stat-label">2021 峰值估值</div></div>
+        <div class="stat-card"><div class="stat-number">$550M</div><div class="stat-label">2023 估值（-66%）</div></div>
+        <div class="stat-card"><div class="stat-number">$615M+</div><div class="stat-label">累计融资</div></div>
+        <div class="stat-card"><div class="stat-number">>$100M</div><div class="stat-label">年经常性收入 ARR</div></div>
+        <div class="stat-card"><div class="stat-number">$3,995</div><div class="stat-label">硬件售价</div></div>
+        <div class="stat-card"><div class="stat-number">$59.95</div><div class="stat-label">月订阅费</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>融资历程</h2>
+            <table class="info-table">
+                <thead><tr><th>时间</th><th>轮次</th><th style="width:90px">金额</th><th style="width:100px">估值 / 状态</th></tr></thead>
+                <tbody>
+                    <tr><td>2016.05</td><td>Seed</td><td class="td-num">$1.5M</td><td>Bolt / Mayfield</td></tr>
+                    <tr><td>2020.09</td><td>Series D</td><td class="td-num">$110M</td><td>疫情爆发增长期</td></tr>
+                    <tr><td>2021.03</td><td>Series E</td><td class="td-num"><strong>$250M</strong></td><td><strong>$1.6B 估值 · 巅峰</strong></td></tr>
+                    <tr><td>2023.04</td><td>Series F</td><td class="td-num"><strong>$130M</strong></td><td>$550-600M · -66%</td></tr>
+                    <tr><td colspan="2">累计</td><td class="td-num"><strong>$615M+</strong></td><td>融资 > 估值</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>业务模型与利润率估算</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:100px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>硬件售价</td><td class="td-num"><strong>$3,995</strong>（含专业安装）</td></tr>
+                    <tr><td>月订阅费</td><td class="td-num"><strong>$59.95</strong>（12月强制）</td></tr>
+                    <tr><td>ARR（2023）</td><td class="td-num"><strong>>$100M</strong></td></tr>
+                    <tr><td>用户流失率</td><td class="td-num"><strong><1%</strong>（极低）</td></tr>
+                    <tr><td>估值/ARR 倍数</td><td class="td-num"><strong>~5.5x</strong></td></tr>
+                    <tr><td>员工（2024）</td><td class="td-num">~350（峰值 750）</td></tr>
+                    <tr><td>累计融资</td><td class="td-num">$615M+</td></tr>
+                    <tr><td>盈利状态</td><td class="td-num"><strong>未披露 / 可能仍亏损</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 04: COMPETITIVE LANDSCAPE ==================== -->
+<div class="section"><div class="section-label">Competitive Landscape</div>
+    <h1>三、竞争对手同期对比</h1>
+
+    <p>智能家庭健身赛道在 2021 年达到泡沫顶峰，2022 年起随疫情退潮全线下滑。Tonal、Peloton、Mirror、Tempo 四家公司的命运分叉点在于：<strong>硬件是否有真正的技术壁垒</strong>。</p>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:65px">时间</th>
+                <th style="width:180px">Tonal（电磁阻力）</th>
+                <th style="width:180px">Peloton（单车/跑步机）</th>
+                <th style="width:180px">Mirror / Lululemon</th>
+                <th style="width:180px">Tempo（自由重量）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>销量 8× 暴增；$110M D 轮</td>
+                <td>股价翻 5 倍；市值 ~$50B 峰值</td>
+                <td>被 Lululemon $5 亿收购</td>
+                <td>$60M B 轮；快速增长</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021</strong></td>
+                <td>$1.6B 估值；LeBron 投资；超级碗广告</td>
+                <td>营收 $4B；股价从 $171 开始暴跌</td>
+                <td>销售远低于预期；品牌改为 Lululemon Studio</td>
+                <td>$220M C 轮；估值未公开</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022</strong></td>
+                <td>裁员 35%；现金流危机；寻求出售</td>
+                <td>CEO Foley 下台；裁员 2,800；股价 -76%</td>
+                <td>Lululemon 注销 $4.43 亿；Mirror 大幅打折</td>
+                <td>裁员；缩减营销</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>$130M 融资；CEO 换人；硬件涨价；估值 -66%</td>
+                <td>营收 -30%；自行车召回（220 万辆）；亏损 $12.6 亿</td>
+                <td><strong>正式停产</strong>；裁员 120；与 Peloton 合作，App 免费化</td>
+                <td>$2,495 Studio + $495 Move；3D AI 教练差异化</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024</strong></td>
+                <td>第 2 个 CEO 离任；第 3 个 CEO 上任；ARR >$1 亿</td>
+                <td>股价 $2.70 历史新低（-98%）；CEO McCarthy 下台；裁员 400</td>
+                <td>已退出硬件市场；成为 Peloton 内容分发渠道</td>
+                <td>稳步运营；定位"AI 私教 + 真实杠铃"</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>PE 老将 Todd Bartee 任 CEO；聚焦 AI + 软件</td>
+                <td>债务 $9.47 亿；Altman Z-Score -1.71（破产风险）；明星教练离职</td>
+                <td>不存在了</td>
+                <td>独立运营；未寻求出售</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">$550M</div>
+            <div class="kpi-label">Tonal 估值</div>
+            <div class="kpi-compare kpi-down">-66% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$1.2B</div>
+            <div class="kpi-label">Peloton 市值</div>
+            <div class="kpi-compare kpi-down">-97% vs 峰值</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$0</div>
+            <div class="kpi-label">Mirror 残值</div>
+            <div class="kpi-compare kpi-down">$500M→$0</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$3,995</div>
+            <div class="kpi-label">Tonal 硬件单价</div>
+            <div class="kpi-compare">行业最高</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value"><1%</div>
+            <div class="kpi-label">Tonal 月流失率</div>
+            <div class="kpi-compare kpi-up">行业极低</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 05: WHAT THEY DID RIGHT (1/2) ==================== -->
+<div class="section"><div class="section-label">Success Factors & Competitive Moat</div>
+    <h1>四、Tonal 做对了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">01</div>
+            <h4>真正的硬件护城河：电磁数字阻力</h4>
+            <div class="insight-kpi">200 lbs 数字阻力 · 17 个传感器 · Spotter / Eccentric / Chains 模式 · AI 自动重量调节</div>
+            <p>这不是一个带屏幕的镜子，也不是一个联网的动感单车。<strong>Tonal 的核心发明是电磁阻力引擎</strong>——用电磁场替代物理哑铃，可以在 200 lbs 范围内以 1 lb 精度调节重量。这带来了三个不可替代的体验：(1) AI 实时检测用户的力竭程度并自动调整重量——这是物理哑铃做不到的；(2) Spotter 模式在检测到力竭时自动减重防止受伤；(3) Eccentric 模式和 Chains 模式模拟高级训练技巧，通常需要教练或专业设备。Peloton 和 Mirror 本质上只是"带屏幕的内容播放器"——离开内容，硬件无价值。Tonal 离开内容依然是世界上最先进的力量训练设备。</p>
+            <div class="insight-vs"><span>vs Mirror:</span> 只是一面镜子+屏幕，用户需自备哑铃，无法跟踪重量或提供阻力。<span>vs Peloton:</span> 单车硬件差异化低，市面上$300就能买到类似单车+Tonal App。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">02</div>
+            <h4>极致的用户粘性：月流失率 <1%</h4>
+            <div class="insight-kpi">月流失率 <1% · 年 ARR >$100M · 订阅12月强制锁定 · 非订阅模式设备几乎不可用</div>
+            <p>Tonal 的订阅模式设计得非常"硬"：(1) 购买硬件后强制 12 个月 $59.95/月订阅；(2) 取消订阅后，设备退化为一台"不能记录数据的普通缆绳机"——AI 重量调节、Spotter 模式、Eccentric 模式、所有课程和数据追踪全部失效；(3) 这意味着用户如果停止订阅，$3,995 的硬件投资大幅贬值。结果是月流失率低于 1%——这是 Peloton（~1.5-2%/月）和绝大多数 SaaS 公司都达不到的水平。Tonal 实质上是一个"卖剃须刀架 + 终身卖刀片"的模型，且刀片被锁定在这个剃须刀架上。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 月流失率 1.5-2%，且 App 用户可随时切换为免费或低价方案；Peloton Bike 可配合任何骑行 App 使用。<span>vs Tempo:</span> Tempo 使用真实哑铃，用户不订阅也能正常训练。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">03</div>
+            <h4>聚焦力量训练：一个确定性增长的赛道</h4>
+            <div class="insight-kpi">力量训练是第二大健身品类 · 与长寿/代谢健康直接关联 · 用户 LTV 远超有氧设备</div>
+            <p>Peloton 赌的是"在家骑动感单车的人足够多"，Mirror 赌的是"在家做瑜伽/HIIT 的人足够多"。Tonal 赌的是<strong>"愿意花钱认真做力量训练的人足够多"</strong>。力量训练用户的画像与有氧用户有本质区别：他们更在意训练效果（力量增长、体态改善），因此对设备的专业性和数据反馈要求更高，付费意愿和留存率也远高于有氧用户。随着长寿科学越来越强调肌肉质量对代谢健康的重要性，力量训练是确定性增长的赛道。Tonal 在这条赛道上几乎没有直接竞对——Peloton Guide 已停产，Tempo 用真实哑铃（不是同一细分），Mirror 已死。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 有氧品类门槛低、替代品多（户外跑、家用单车、App）。<span>vs Tempo:</span> 真实哑铃用户可自购设备，Tempo 的硬件壁垒低于 Tonal。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">04</div>
+            <h4>明星+运动员矩阵：不花钱的投资人代言</h4>
+            <div class="insight-kpi">30+ 运动员投资人 · LeBron James · Serena Williams · Steph Curry · Mike Tyson</div>
+            <p>Tonal 没有像 Peloton 那样烧 $5M+ 拍圣诞广告或请明星代言——它让明星成为<strong>股东</strong>。LeBron James、Serena Williams、Steph Curry、Klay Thompson、Mike Tyson、Drew Brees、Maria Sharapova、Sue Bird 等 30+ 位顶级运动员都在 Series E 或更早轮次投资了 Tonal。让明星成为投资人而不是代言人，产生了两个效果：(1) 他们会在社交媒体上自发宣传，因为他们跟公司的利益是一致的；(2) 营销成本极低——Tonal 的营销投入远低于 Peloton 的烧钱水平。Serena Williams 甚至出演了 2021 年超级碗广告，这通常要花 $5M+，但如果有股权激励，成本结构完全不同。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 烧大量现金在付费广告和明星代言上（2021 圣诞广告争议巨大）。<span>vs Mirror:</span> Lululemon 收购后未能有效利用品牌渠道，反而因为内部冲突导致产品方向迷失。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 06: WHAT THEY DID RIGHT (2/2) ==================== -->
+<div class="section"><div class="section-label">Success Factors & Competitive Moat (Cont.)</div>
+    <h1>四、Tonal 做对了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">05</div>
+            <h4>竞对退出时的精准收割</h4>
+            <div class="insight-kpi">Mirror 停产 → Tonal $250 以旧换新 · 2023 年 9 月时机精准</div>
+            <p>2023 年 9 月，Lululemon 宣布 Mirror 正式停产并退出硬件市场。Tonal 几乎在同一天推出了<strong>$250 以旧换新计划</strong>：Mirror 用户将旧设备寄回 Tonal，购买 Tonal 硬件时可获得 $250 折扣。这不是一个大金额，但时机和执行堪称教科书级别：在 Mirror 用户感到被背叛和抛弃的时候，给他们一个"升级"的出路。Tonal 在 2023 年还趁机雇佣了多名前 Mirror/Lululemon Studio 的内容制作人员，进一步充实了自己的教练和课程团队。</p>
+            <div class="insight-vs"><span>vs Tempo:</span> 同期未见类似竞对收割策略。<span>vs Peloton:</span> Peloton 自己也在挣扎求生，无力收割竞对。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">06</div>
+            <h4>数据飞轮：17 传感器 × 百万次训练 = 无法复制的数据集</h4>
+            <div class="insight-kpi">17 个传感器实时采集 · 每次训练数千数据点 · AI 模型随数据量增长持续改进</div>
+            <p>Tonal 的 AI 不仅仅是营销噱头——17 个传感器在每次训练中实时采集力量输出、动作幅度、速度、力竭程度等数千个数据点。随着用户训练次数增加，AI 对用户的力量曲线、恢复速度、弱点肌群的了解越来越精准，从而实现<strong>真正个性化的训练方案</strong>。这个数据集的积累是时间的朋友：新进入者可以复制硬件形态，但无法复制数百万次训练产生的 AI 模型和数据。这也是为什么 Tonal 坚持硬件必须由自己制造（而非授权技术给第三方）——数据是壁垒，而数据只能从自有硬件中获取。</p>
+            <div class="insight-vs"><span>vs Tempo:</span> Tempo 有 3D 体感传感器，但数据维度不同（更多是动作形态而非力量输出）。<span>vs Peloton:</span> Peloton 的输出数据主要是踏频和心率，远不如力量训练数据有长期训练价值。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 07: WHAT THEY DID WRONG (1/2) ==================== -->
+<div class="section"><div class="section-label">Risks, Mistakes & Failures</div>
+    <h1>五、Tonal 做错了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">01</div>
+            <h4>过度融资 + 烧钱失控：融的钱比公司还值钱</h4>
+            <div class="insight-kpi">融资 $615M+ vs 估值 $550M · 超级碗广告 ~$5M · 员工从 750→350</div>
+            <p>Tonal 陷入了经典的"硅谷过度融资陷阱"：在 2021 年拿到 $250M Series E 后，公司以为疫情带来的需求增长是永久性的。于是在超级碗投放广告（~$5M）、扩张到 750 名员工、在 Nordstrom 60 家门店开设专柜、自建洛杉矶内容制作工作室。当 2022 年市场需求骤降时，所有扩张变成了沉没成本。35% 的裁员（~260 人）、关闭洛杉矶工作室、Nordstrom 撤柜——说明管理层在 2021 年严重高估了市场天花板。最讽刺的是：<strong>Tonal 累计融资 $615M 已经超过了它的当前估值 $550M</strong>——这意味着投资者在账面上整体亏损。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Peloton 的错误规模更大（$4B→$1.2B 市值，$9.47 亿债务），但问题性质相同——把疫情期间的一次性需求当成了永久性需求。<span>vs Mirror:</span> Lululemon $500M 收购后几乎全损——Tonal 至少在独立运营。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">02</div>
+            <h4>三年三任 CEO：领导层极度不稳定</h4>
+            <div class="insight-kpi">Aly Orady（创始人→CTO）→ Krystal Zell（2023.04→2024.09）→ Darren MacDonald（2024.09→2025）→ Todd Bartee（2025→至今）</div>
+            <p>从 2023 年 4 月到 2025 年，不到两年时间里 Tonal 换了 <strong>4 任 CEO</strong>。创始人 Aly Orady 转任 CTO（通常意味着投资者认为他不适合管运营）；Krystal Zell 在融资后仅 17 个月就离任；Darren MacDonald（来自 Petco/Walmart 的零售背景）只待了不到一年；2025 年 L Catterton 直接派了自己的运营合伙人 Todd Bartee 接管。<strong>PE 亲自下场通常是公司遇到严重问题的信号</strong>——职业经理人解决不了，只得自己来。频繁换帅导致战略方向反复摇摆：从"增长优先"→"盈利优先"→"AI 软件整合"。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Foley→McCarthy→联席 CEO，也是 3 任，但每任至少 2 年以上。<span>vs Tempo:</span> 创始人 Moawia Eldeeb 仍在位，领导层稳定。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">03</div>
+            <h4>硬件可靠性问题：Trustpilot 1.9/5 的根源</h4>
+            <div class="insight-kpi">Trustpilot 1.9/5 · SiteJabber 1.7/5 · 74% 1 星 · 保修从 3 年缩至 1 年 · 出保维修 $400-795</div>
+            <p>Tonal 的硬件故障率高到公司自己把保修期从 3 年缩短到了 1 年——在一个 $3,995 的产品上，这是一个非常负面的信号。常见的硬件问题包括：屏幕冻结并报错、扶手/按键在一年内损坏、需要整机更换（费用 ~$900）、线缆是耗材但不在保修范围内。安装环节也同样糟糕：BBB 上有安装团队钻破水管导致 $8,000 水损、Tonal 拒绝赔偿的投诉；还有用户等了 7 个月才安装完成。高故障率 + 高维修费用 + 封闭式维修（用户不能自己修）= 用户口碑崩塌。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 自行车召回（座杆缺陷 220 万辆）和跑步机召回（儿童死亡），安全问题更严重但响应更快。<span>vs Tempo:</span> 使用真实哑铃，几乎没有硬件故障问题。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">04</div>
+            <h4>订阅锁死策略：短期留存 vs 长期口碑的矛盾</h4>
+            <div class="insight-kpi">不订阅 = 设备几乎不可用 · 无数据导出 · 二手机器功能受限 · Apple Music 也要订阅才能用</div>
+            <p>Tonal 的订阅锁死策略是一把双刃剑。它确实带来了 <1% 的超低流失率，但也造成了巨大的用户愤怒。取消 $59.95/月订阅后，几乎所有的智能功能都失效：AI 重量调节、Spotter 模式、Eccentric 模式、训练数据记录、自定义训练计划——全部消失。甚至连 Apple Music 集成都需要订阅。二手机器的新用户不仅需要重新订阅，而且保修自动失效。更糟的是<strong>用户无法导出自己的训练数据</strong>——没有公开 API、没有数据下载、没有可移植性。这种"数据监禁"在 GDPR 和消费者权益意识上升的时代是越来越危险的设计。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> 取消订阅后仍可骑行（只是没有课程和数据），硬件基本功能保留。<span>vs Tempo:</span> 不订阅也可使用真实哑铃训练，只是失去 AI 指导。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: WHAT THEY DID WRONG (2/2) ==================== -->
+<div class="section"><div class="section-label">Risks, Mistakes & Failures (Cont.)</div>
+    <h1>五、Tonal 做错了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">05</div>
+            <h4>定价策略反复：$3,495→$3,995→涨价逼走潜在用户</h4>
+            <div class="insight-kpi">硬件 $3,495→$3,995 · 配件 $495 · 月费 $49→$59.95 · 用户获取成本高企</div>
+            <p>2023 年 1 月 Tonal 将硬件价格从 $3,495 上调至 <strong>$3,995</strong>（+14%），一个月后又将月费从 $49 涨至 <strong>$59.95</strong>（+22%）。对于一个已经面临需求下降和竞对退出的公司来说，涨价是"砍掉低价值客户、从高价值客户身上榨取更多"的典型 PE 操作。但这种做法有两个问题：(1) 硬件 + 12 个月订阅的入门成本已超过 <strong>$4,700</strong>——这是一个接近 Peloton Bike+（$2,495）两倍的价格，对于新客获客极为不利；(2) 涨价没有伴随产品升级——如果在涨价的同时推出 Tonal 2（250 lbs 阻力、更大屏幕），用户会觉得物有所值。但涨价的消息让正在观望的潜在用户直接放弃。</p>
+            <div class="insight-vs"><span>vs Peloton:</span> Peloton 多次降价（Bike 从 $2,245→$1,445）以清库存和获客，Tonal 逆势涨价——要么是自信，要么是获客已停滞，只能靠涨价维持 ARR。<span>vs Tempo:</span> Move $495 低价入门版降低了获客门槛。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">06</div>
+            <h4>空间限制 + 专业安装 = 天然的天花板</h4>
+            <div class="insight-kpi">需 7'×7' 空间 + 承重墙 · 必须专业安装 · 不可自己搬移 · 租房用户基本无缘</div>
+            <p>Tonal 的产品设计有一个<strong>结构性的增长天花板</strong>：它必须安装在承重墙上（不能是石膏板墙），需要专业安装团队上门打孔固定，需要 7'×7' 的净空空间，搬家时必须由 Tonal 认证人员拆卸和重新安装（否则保修失效）。这天然排除了租房用户（美国 36% 的家庭租房）、公寓住户（可能不允许在墙上打孔）、以及经常搬家的人。相比之下，Peloton Bike 占地 4'×2'、可以自己移动、不需要墙上打孔；Tempo Move 只需要一个柜子+手机+电视。在家庭健身这个品类，<strong>"不需要在墙上钻洞"是一个被低估的购买决策因素</strong>。</p>
+            <div class="insight-vs"><span>vs Peloton Bike:</span> 4'×2' 占地，可自行组装移动，适合公寓。<span>vs Tempo Move:</span> $495，无需安装，手机+电视即可。<span>vs Mirror:</span> 可壁挂或支架，安装简单。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 09: CUSTOMER REVIEWS ==================== -->
+<div class="section"><div class="section-label">Voice of Customer & Persona</div>
+    <h1>六、用户画像与真实评价</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心用户画像</h2>
+            <table class="info-table" style="margin-bottom:12px">
+                <thead><tr><th>维度</th><th style="width:160px">画像</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>年龄</strong></td><td class="td-center"><strong>30-50 岁（~70%）</strong> · 中位 ~38</td></tr>
+                    <tr><td><strong>性别</strong></td><td class="td-center"><strong>男性偏多（~55%）</strong></td></tr>
+                    <tr><td><strong>收入</strong></td><td class="td-center"><strong>$150K+ HHI</strong> · $3,995+$60/月成本</td></tr>
+                    <tr><td><strong>健身水平</strong></td><td class="td-center"><strong>初中级（~65%）</strong> · 有力量训练基础</td></tr>
+                    <tr><td><strong>住房</strong></td><td class="td-center"><strong>自有房产（必须！）</strong> · 需承重墙安装</td></tr>
+                    <tr><td><strong>核心动机</strong></td><td class="td-center"><strong>"要私人教练的效果但不要私教的时间约束"</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h2>Trustpilot 评分（tonal.com）</h2>
+
+            <div class="review-stat-box">
+                <div>
+                    <div class="review-big-score">1.9<span style="font-size:24px">/5</span></div>
+                    <div class="review-big-label">"Poor" · 32 条公开评价</div>
+                </div>
+                <div style="flex:1">
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-5" style="width:11%"></span></span>
+                        <span class="pct-label">~11%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-4" style="width:6%"></span></span>
+                        <span class="pct-label">~6%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-3" style="width:5%"></span></span>
+                        <span class="pct-label">~5%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-2" style="width:8%"></span></span>
+                        <span class="pct-label">~8%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★</span>
+                        <span class="bar-track"><span class="bar-fill bar-1" style="width:70%"></span></span>
+                        <span class="pct-label">~70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                ※ 百分比基于 1.9 均值 + 公开评价内容反推估算。Trustpilot 存在选择偏差（不满用户更倾向评价）。另有无偏见的长期使用评测（ian.gay 博客）提供了更平衡的视角。Trustpilot 不同分页显示3.6分（受邀评价）和4.7分——差异说明有机评价和受邀评价之间存在巨大落差。
+            </p>
+
+            <h2>SiteJabber 评分</h2>
+            <table class="info-table" style="margin-bottom:8px">
+                <thead><tr><th>指标</th><th style="width:80px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>总评分</td><td class="td-center"><strong>1.7 / 5</strong></td></tr>
+                    <tr><td>1 星占比</td><td class="td-center"><strong>74%</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h2>BBB（商业改进局）</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:80px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>认证状态</td><td class="td-center"><strong>未认证</strong></td></tr>
+                    <tr><td>总投诉（历史）</td><td class="td-center"><strong>136 件</strong></td></tr>
+                    <tr><td>近 12 个月投诉</td><td class="td-center"><strong>32 件</strong></td></tr>
+                    <tr><td>用户评价数</td><td class="td-center"><strong>110 条</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>投诉主题分布（估算）</h2>
+            <table class="info-table">
+                <thead><tr><th>投诉类型</th><th style="width:50px">占比</th><th>代表性内容</th></tr></thead>
+                <tbody>
+                    <tr><td>硬件故障/维修</td><td class="td-center"><strong>~35%</strong></td><td>"2-7 个月就坏了"、"整机更换 $900"、"出保维修 $400-795"、"屏幕冻结报错"</td></tr>
+                    <tr><td>客服/售后</td><td class="td-center"><strong>~25%</strong></td><td>"外包客服"、"居高临下"、"完全不作为"、"等几个月没解决"</td></tr>
+                    <tr><td>安装/搬迁</td><td class="td-center"><strong>~15%</strong></td><td>"钻破水管$8K不赔"、"等7个月"、"搬家取消失败"</td></tr>
+                    <tr><td>订阅锁死</td><td class="td-center"><strong>~15%</strong></td><td>"退订后设备变砖"、"不能导出数据"、"二手机保修作废"</td></tr>
+                    <tr><td>账单纠纷</td><td class="td-center"><strong>~10%</strong></td><td>"重复扣费"、"取消后扣了好几年"、"不给退款"</td></tr>
+                </tbody>
+            </table>
+
+            <div class="divider"></div>
+
+            <h2>正面评价</h2>
+
+            <div class="quote-card">
+                "过去 2 年每周使用 5-6 天，力量增加了 35-40%。我是真心相信这款产品。作为一项投资，它已经回本了。"
+                <span class="quote-source">— ian.gay 长期评测（非赞助）</span>
+            </div>
+
+            <div class="quote-card">
+                "如果你想在家认真做力量训练——而不是只用哑铃摆弄几下——Tonal 是唯一的选择。它不是健身玩具，它是一台真正的训练机器。"
+                <span class="quote-source">— PCMag Editors' Choice 评价</span>
+            </div>
+
+            <div class="quote-card">
+                "作为一名有两个孩子的前大学运动员，Tonal 让我在 30 分钟内完成等同于以前 90 分钟健身房的训练量。AI 重量调节是改变游戏规则的功能。"
+                <span class="quote-source">— Trustpilot 5 星正面评价</span>
+            </div>
+
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:65px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>月流失率</td><td class="td-center"><strong><1%</strong></td><td>一旦订阅，很少离开（但也可能是锁死效应）</td></tr>
+                    <tr><td>ARR</td><td class="td-center"><strong>>$100M</strong></td><td>订阅收入稳定且可预测</td></tr>
+                    <tr><td>推荐率</td><td class="td-center">高</td><td>长期评测博主和 PCMag 编辑均自发推荐</td></tr>
+                    <tr><td>复购/升级</td><td class="td-center">待观察</td><td>Tonal 2 发布后的升级率是关键指标</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                <strong>结论：</strong>Trustpilot 1.9 分与 <1% 流失率之间看似矛盾。一种解释是"硬件体验优秀 → 高留存；客服和售后体验极差 → 差评集中"。另一种解释是"订阅锁死 → 低流失 ≠ 高满意度"。真相可能是两者的混合——Tonal 的产品是好产品，但公司在客服、售后、保修政策上严重投入不足。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: KEY DATA + CONCLUSIONS ==================== -->
+<div class="section"><div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 &amp; 关键结论</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-num">2015，旧金山</td></tr>
+                    <tr><td>创始人</td><td class="td-num">Aly Orady（现任 CTO）</td></tr>
+                    <tr><td>核心投资方</td><td class="td-num">L Catterton（PE，控股级影响力）</td></tr>
+                    <tr><td>硬件售价</td><td class="td-num"><strong>$3,995</strong> + $495 配件</td></tr>
+                    <tr><td>月订阅费</td><td class="td-num"><strong>$59.95</strong>（12 月强制）</td></tr>
+                    <tr><td>年经常性收入</td><td class="td-num"><strong>>$100M ARR</strong></td></tr>
+                    <tr><td>峰值估值（2021）</td><td class="td-num"><strong>$1.6B</strong></td></tr>
+                    <tr><td>当前估值（2023）</td><td class="td-num"><strong>$550-600M（-66%）</strong></td></tr>
+                    <tr><td>累计融资</td><td class="td-num"><strong>$615M+（> 估值）</strong></td></tr>
+                    <tr><td>员工数</td><td class="td-num">~350（峰值 750）</td></tr>
+                    <tr><td>月流失率</td><td class="td-num"><strong><1%</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num"><strong>1.9/5</strong> · ~70% 1星</td></tr>
+                    <tr><td>BBB 投诉</td><td class="td-num">136 件（历史）· 未认证</td></tr>
+                    <tr><td>运动员投资人</td><td class="td-num">LeBron / Serena / Curry / 30+</td></tr>
+                    <tr><td>CEO（2025）</td><td class="td-num">Todd Bartee（PE 背景，第 4 任）</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card">
+                    <div class="cc-num">01</div>
+                    <h3>硬件护城河是真实的——但与"好生意"是两回事</h3>
+                    <p>Tonal 的电磁数字阻力技术确实无法被 App 或内容替代，这是它区别于 Peloton 和 Mirror 的核心壁垒。但硬件护城河意味着更高的制造成本、更高的故障率、更复杂的售后物流、更窄的客群。$3,995 的价格 + 专业安装要求将 TAM 限制在了自有房产、有承重墙空间、有 $4,700+ 预算的人群。技术壁垒 ≠ 商业壁垒。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">02</div>
+                    <h3>订阅锁死是"饮鸩止渴"</h3>
+                    <p><1% 的月流失率是 Tonal 最好的指标也是最危险的指标。高留存可能来自产品卓越，也可能来自"不订阅设备就变砖"的锁死效应。Trustpilot 1.9/5 和 BBB 136 件投诉指向后者。当用户感觉被困住而不是被服务时，NPS 和口碑转介绍会持续恶化。在竞对几乎全军覆没的今天，这可能还不是致命问题——但如果 Tempo 或新进入者提供更开放的替代方案，切换成本可能没有 Tonal 想的那么高。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">03</div>
+                    <h3>PE 亲下场是最危险的信号</h3>
+                    <p>L Catterton 的运营合伙人 Todd Bartee 直接出任 CEO 意味着两件事：(1) 前三任 CEO 都没能解决公司的核心问题；(2) PE 股东认为需要亲自操刀来保护投资。历史上 PE 亲下场的结局有两种：成功的扭亏为盈（如 Burger King / 3G Capital）或失败的资产剥离（如 Toys "R" Us）。Tonal 本身有>$100M ARR 和 <1% 流失率作为安全垫，但在融资已超估值的处境下，PE 的耐心是有限的——他们需要看到盈利或退出。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">04</div>
+                    <h3>赛道没有死，但 Tonal 需要证明"不只是疫情概念股"</h3>
+                    <p>家庭力量训练的需求是真实的——2024 年 58% 的美国人仍然首选在家健身。Peloton 市值蒸发 97%、Mirror 归零、Tonal 估值腰斩——问题不在于需求不存在，而在于疫情把 5 年的增长压缩到了 18 个月，所有公司都以为那是新常态。现在泡沫破了，剩下来的玩家需要证明自己能在"正常增速"下盈利。Tonal 的 >$100M ARR 和 <1% 流失率说明它有一个坚实的核心用户群。但如果不能解决硬件可靠性、客服质量和定价门槛这三个问题，它无法突破这个核心圈层。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section"><div class="section-label">Verification Notes</div><h1>来源与创始人核验</h1>
+    <table class="info-table"><thead><tr><th style="width:150px">核验点</th><th>结论</th><th>入口</th></tr></thead><tbody>
+        <tr><td>创始人履历</td><td>Aly Orady 是 Tonal 创始人；报告的核心不是单个人物传奇，而是“电磁阻力硬件 + 强订阅锁定 + 高融资”的商业组合。</td><td><a href="https://www.tonal.com/" target="_blank" rel="noopener">Tonal 官方入口</a></td></tr>
+        <tr><td>价格/订阅</td><td>Tonal 必须按硬件、Smart Accessories、安装、强制 12 个月会员、维修和二手限制计算总成本；取消订阅后功能缩水是商业模式风险。</td><td><a href="https://www.tonal.com/membership/" target="_blank" rel="noopener">Tonal Membership</a></td></tr>
+    </tbody></table>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-tonal">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">Tonal</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">US / Global</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; fitness GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>Tonal 的 GTM 是“高技术壁垒硬件 + 强制会员 + 专业安装”的典型硅谷 connected fitness 模型。</div>
+<div class="gtm-card"><p>Tonal 的 GTM 是“高技术壁垒硬件 + 强制会员 + 专业安装”的典型硅谷 connected fitness 模型。它用电磁阻力、AI 自动调重和明星投资人建立高端心智，但过度融资、疫情后需求回落、售后差评和订阅锁死让估值从峰值大幅回撤。真正要学的是硬件护城河如何与订阅压力互相放大。</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">创始人个人问题驱动原型</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">VC 融资推动硬件与内容团队扩张</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">明星股东和高端家庭定位建立品牌</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">专业安装和会员锁定形成高 ARPU</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">PE 接管后转向效率和盈利</span></div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心渠道：</strong>官方独立站或官方票务页承接高意向购买。</li>
+</ul></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">Tonal 2</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">smart_strength_machine</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>核心旗舰和收入锚点。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>$4,295 official regular price.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>$59.95/mo membership required for 12 months; active membership needed for most features.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Essential Accessories Bundle $495 value; white-glove installation starts at $295; extended warranty optional.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Speediance GM2 $3,390-$4,799 with optional Wellness+; AEKE K1 $3,298-$3,498 no mandatory subscription; Peloton Bike+ $2,695 plus All-Access; Growl $4,500 plus $60/mo.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness" target="_blank" rel="noopener noreferrer">The Verge GROWL pricing and product report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">Tonal Membership</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">subscription</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>会员决定设备智能体验和 ARR。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Membership purchased separately from hardware.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>$59.95/month plus tax with 12-month initial commitment.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Service/accessory price: installation starts at $295; accessories $495; repair/warranty costs需按订单政策核算。</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor subscription comparison: Peloton All-Access $49.99/mo; Speediance Wellness+ optional $19.99/mo; FightCamp legacy $39/mo; Growl planned $60/mo.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/wellness-ai-personal-trainer" target="_blank" rel="noopener noreferrer">Speediance Wellness+ official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/" target="_blank" rel="noopener noreferrer">TechCrunch FightCamp $90M round</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness" target="_blank" rel="noopener noreferrer">The Verge GROWL pricing and product report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wired.com/review/tonal-2-home-gym/" target="_blank" rel="noopener noreferrer">WIRED Tonal 2 review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">Tonal 1 Certified Refurbished / accessories</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">refurbished_and_accessory</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>在高价旗舰之外提供较低入门和配件货架。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Tonal official comparison shows Certified Refurbished Tonal 1 at $2,495.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Membership remains required for personalized experience.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: Essential Accessories Bundle $495 value; installation still professional.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: used Peloton requires possible activation fee; Speediance older Gym Monster sale prices around $2,499-$3,249; AEKE has no refurb channel visible.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wired.com/review/tonal-2-home-gym/" target="_blank" rel="noopener noreferrer">WIRED Tonal 2 review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.tonal.com/" target="_blank" rel="noopener noreferrer">Tonal company site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.crunchbase.com/organization/tonal" target="_blank" rel="noopener noreferrer">Tonal Crunchbase profile</a> <span class="gtm-muted">[database]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.linkedin.com/in/alyorady/" target="_blank" rel="noopener noreferrer">Aly Orady LinkedIn</a> <span class="gtm-muted">[linkedin]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.trustpilot.com/review/tonal.com" target="_blank" rel="noopener noreferrer">Tonal Trustpilot</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.lcatterton.com/" target="_blank" rel="noopener noreferrer">L Catterton</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body>
+</html>

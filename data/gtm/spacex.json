@@ -76,13 +76,63 @@
           ]
         },
         "sources": [
-          { "title": "SpaceX Official — Falcon 9", "url": "https://www.spacex.com/vehicles/falcon-9/", "source_type": "official" },
-          { "title": "SpaceX Official — Falcon Heavy", "url": "https://www.spacex.com/vehicles/falcon-heavy/", "source_type": "official" },
-          { "title": "Ars Technica — Rocket Report: Falcon 9 reuse history and economics", "url": "https://arstechnica.com/science/", "source_type": "media" },
-          { "title": "CNBC — SpaceX launch cadence and market share 2024", "url": "https://www.cnbc.com/space/", "source_type": "media" },
-          { "title": "SpaceNews — Global launch market share analysis", "url": "https://spacenews.com/", "source_type": "media" }
+          {
+            "title": "SpaceX Official — Falcon 9",
+            "url": "https://www.spacex.com/vehicles/falcon-9/",
+            "source_type": "official"
+          },
+          {
+            "title": "SpaceX Official — Falcon Heavy",
+            "url": "https://www.spacex.com/vehicles/falcon-heavy/",
+            "source_type": "official"
+          },
+          {
+            "title": "Ars Technica — Rocket Report: Falcon 9 reuse history and economics",
+            "url": "https://arstechnica.com/science/",
+            "source_type": "media"
+          },
+          {
+            "title": "CNBC — SpaceX launch cadence and market share 2024",
+            "url": "https://www.cnbc.com/space/",
+            "source_type": "media"
+          },
+          {
+            "title": "SpaceNews — Global launch market share analysis",
+            "url": "https://spacenews.com/",
+            "source_type": "media"
+          }
         ],
-        "confidence": "high"
+        "confidence": "high",
+        "pricing_model": {
+          "product_price": "Falcon 9 commercial launch public pricing has historically been in the roughly $60M-$70M+ range; rideshare pricing is much lower per payload mass.",
+          "current_price": "Exact dedicated launch quote varies by mission, orbit, payload, integration, insurance, and customer type.",
+          "accessory_price": "Payload integration, mission assurance, rideshare dispenser, adapter, insurance, and range/service costs are additional.",
+          "service_fee": "Mission management, integration, and special requirements can materially change total contract value.",
+          "enterprise_or_raas_price": "NASA/DoD/government launches often price above commercial list due to mission assurance and requirements.",
+          "competitor_price": "Arianespace, ULA Vulcan/Atlas, Rocket Lab Neutron/Electron, and ISRO/Long March alternatives compete by orbit and payload class.",
+          "competitor_accessory_price": "Adapters, integration, mission assurance, and insurance are separate across launch providers.",
+          "notes": "Use Falcon price as service contract economics, not product MSRP.",
+          "sources": [
+            {
+              "title": "SpaceX launch services",
+              "url": "https://www.spacex.com/vehicles/falcon-9/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "SpaceX rideshare program",
+              "url": "https://www.spacex.com/rideshare/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Falcon 9 pricing history",
+              "url": "https://en.wikipedia.org/wiki/Falcon_9",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "Starlink",
@@ -111,14 +161,71 @@
           ]
         },
         "sources": [
-          { "title": "Starlink Official Website", "url": "https://www.starlink.com/", "source_type": "official" },
-          { "title": "SpaceX — Starlink Mission Updates", "url": "https://www.spacex.com/updates/", "source_type": "official" },
-          { "title": "CNBC — Starlink revenue estimates and user growth", "url": "https://www.cnbc.com/", "source_type": "media" },
-          { "title": "Bloomberg — Starlink valuation and financial analysis", "url": "https://www.bloomberg.com/", "source_type": "media" },
-          { "title": "SpaceNews — Starlink constellation and competition analysis", "url": "https://spacenews.com/", "source_type": "media" },
-          { "title": "Payload Space — Starlink financial estimates", "url": "https://payloadspace.com/", "source_type": "research" }
+          {
+            "title": "Starlink Official Website",
+            "url": "https://www.starlink.com/",
+            "source_type": "official"
+          },
+          {
+            "title": "SpaceX — Starlink Mission Updates",
+            "url": "https://www.spacex.com/updates/",
+            "source_type": "official"
+          },
+          {
+            "title": "CNBC — Starlink revenue estimates and user growth",
+            "url": "https://www.cnbc.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Bloomberg — Starlink valuation and financial analysis",
+            "url": "https://www.bloomberg.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "SpaceNews — Starlink constellation and competition analysis",
+            "url": "https://spacenews.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Payload Space — Starlink financial estimates",
+            "url": "https://payloadspace.com/",
+            "source_type": "research"
+          }
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "pricing_model": {
+          "product_price": "Starlink residential hardware and monthly service vary by country, plan, promotions, congestion, and refurbished kit availability.",
+          "current_price": "Verify current Starlink.com regional quote; US residential service has commonly been around the low-hundreds per month with hardware sold separately.",
+          "bundle_price": "Hardware kit + monthly service; mobile/roam, business, maritime, and aviation plans price separately.",
+          "accessory_price": "Mounts, routers, mesh nodes, cables, and mobility accessories add cost.",
+          "software_subscription": "Monthly Starlink service is the core subscription; plan price varies by service tier and geography.",
+          "service_fee": "Shipping, activation, priority data, mobile priority, or business support can add cost depending on plan.",
+          "enterprise_or_raas_price": "Business, maritime, aviation, and mobile priority plans are materially higher than residential service.",
+          "competitor_price": "Fiber/cable broadband often $50-$100/month where available; HughesNet/Viasat satellite alternatives differ by data caps and speed.",
+          "competitor_accessory_price": "Competing satellite systems also require equipment lease or purchase, mounts, and installation in some cases.",
+          "competitor_subscription": "All broadband competitors monetize monthly service; Starlink differentiates on low-Earth-orbit latency and coverage.",
+          "notes": "Starlink is the cleanest recurring-revenue product in the SpaceX portfolio.",
+          "sources": [
+            {
+              "title": "Starlink residential official page",
+              "url": "https://www.starlink.com/residential",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Starlink business official page",
+              "url": "https://www.starlink.com/business",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Viasat internet plans",
+              "url": "https://www.viasat.com/satellite-internet/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "Starship / Super Heavy",
@@ -147,33 +254,139 @@
           ]
         },
         "sources": [
-          { "title": "SpaceX Official — Starship", "url": "https://www.spacex.com/vehicles/starship/", "source_type": "official" },
-          { "title": "NASA — Artemis Human Landing System (Starship HLS)", "url": "https://www.nasa.gov/reference/human-landing-systems/", "source_type": "official" },
-          { "title": "SpaceNews — Starship development timeline", "url": "https://spacenews.com/", "source_type": "media" },
-          { "title": "Ars Technica — Eric Berger on Starship program", "url": "https://arstechnica.com/science/", "source_type": "media" },
-          { "title": "FAA — SpaceX Starship/Super Heavy Program EIS", "url": "https://www.faa.gov/space/stakeholder_engagement/spacex_starship", "source_type": "government" },
-          { "title": "NASASpaceFlight — Starship development updates", "url": "https://www.nasaspaceflight.com/", "source_type": "media" }
+          {
+            "title": "SpaceX Official — Starship",
+            "url": "https://www.spacex.com/vehicles/starship/",
+            "source_type": "official"
+          },
+          {
+            "title": "NASA — Artemis Human Landing System (Starship HLS)",
+            "url": "https://www.nasa.gov/reference/human-landing-systems/",
+            "source_type": "official"
+          },
+          {
+            "title": "SpaceNews — Starship development timeline",
+            "url": "https://spacenews.com/",
+            "source_type": "media"
+          },
+          {
+            "title": "Ars Technica — Eric Berger on Starship program",
+            "url": "https://arstechnica.com/science/",
+            "source_type": "media"
+          },
+          {
+            "title": "FAA — SpaceX Starship/Super Heavy Program EIS",
+            "url": "https://www.faa.gov/space/stakeholder_engagement/spacex_starship",
+            "source_type": "government"
+          },
+          {
+            "title": "NASASpaceFlight — Starship development updates",
+            "url": "https://www.nasaspaceflight.com/",
+            "source_type": "media"
+          }
         ],
-        "confidence": "medium"
+        "confidence": "medium",
+        "pricing_model": {
+          "accessory_price": "Payload integration, tanker/refueling architecture, launch site services, and mission assurance would be separate.",
+          "service_fee": "Mission design, payload integration, environmental/safety compliance, and launch operations priced by contract.",
+          "enterprise_or_raas_price": "NASA Human Landing System and other government contracts are program contracts, not per-launch MSRP.",
+          "competitor_price": "SLS, Blue Origin New Glenn, ULA Vulcan, and future super-heavy systems compete by mission class; direct price comparison is not straightforward.",
+          "competitor_accessory_price": "Mission integration and launch campaign costs are separate for all heavy-lift providers.",
+          "notes": "Do not present Starship as having a stable commercial price until SpaceX publishes a rate or contract terms.",
+          "sources": [
+            {
+              "title": "SpaceX Starship official page",
+              "url": "https://www.spacex.com/vehicles/starship/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "NASA Human Landing System",
+              "url": "https://www.nasa.gov/humans-in-space/human-landing-system/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       }
     ],
     "learning_summary": "SpaceX 的 GTM 路径是一个'政府信任为基石→商业市场验证经济性→消费者业务打开TAM→用下一个更大的产品重做整个飞轮'的递归模型。核心学习点: (1) 可回收火箭不是锦上添花而是根本性的成本结构变化——3% vs 100%的物质成本 vs 售价差异是可复用性的商业逻辑; (2) 垂直整合让 SpaceX 能以'快速试错→失败→修复→再飞'的方式迭代，而传统航天供应链让任何修改都需要数月/数年和数百万美元; (3) Starlink 的 DTC+订阅模型让深空探索有了可持续的资金来源——这是 NASA 模式无法实现的; (4) 从 to G(NASA)→to B(商业卫星)→to C(Starlink消费者)的扩张路径是可复制的; (5) 公开展示失败事实上是 SpaceX 最强悍的品牌策略——全世界都在看、都在紧张、都在感动，天文学级别的免费媒体曝光; (6) 不能照抄的是 Elon Musk 个人——他的工程第一性原则、极限风险承受能力(bet the company多次)、极端工作文化、以及 PayPal/Tesla/个人品牌提供的资本渠道是独一无二的。SpaceX 真正的护城河不是任何单一技术而是'Falcon 9收入→Starship研发→Starlink收入→火星研发'这个永续飞轮——每一环都用前环的现金流和已验证技术为下一环建立竞争壁垒。",
     "sources": [
-      { "title": "SpaceX Official Website", "url": "https://www.spacex.com/", "source_type": "official" },
-      { "title": "Starlink Official Website — Service Plans & Coverage", "url": "https://www.starlink.com/", "source_type": "official" },
-      { "title": "NASA Commercial Crew Program Overview", "url": "https://www.nasa.gov/humans-in-space/commercial-crew-program/", "source_type": "government" },
-      { "title": "NASA Commercial Resupply Services", "url": "https://www.nasa.gov/mission_pages/station/structure/elements/spacex-dragon/", "source_type": "government" },
-      { "title": "FAA Office of Commercial Space Transportation", "url": "https://www.faa.gov/space", "source_type": "government" },
-      { "title": "FCC — Starlink Authorizations and Proceedings", "url": "https://www.fcc.gov/", "source_type": "government" },
-      { "title": "Bloomberg — SpaceX Valuation, Funding, and Financial Analysis", "url": "https://www.bloomberg.com/", "source_type": "media" },
-      { "title": "Reuters — SpaceX News and Regulatory Coverage", "url": "https://www.reuters.com/", "source_type": "media" },
-      { "title": "CNBC — SpaceX Business and Starlink Growth", "url": "https://www.cnbc.com/", "source_type": "media" },
-      { "title": "SpaceNews — Industry Analysis and Launch Market Share", "url": "https://spacenews.com/", "source_type": "media" },
-      { "title": "Ars Technica — Eric Berger SpaceX Coverage (Rocket Report)", "url": "https://arstechnica.com/science/", "source_type": "media" },
-      { "title": "NASASpaceFlight — Starship Development and Live Coverage", "url": "https://www.nasaspaceflight.com/", "source_type": "media" },
-      { "title": "Payload Space — Space Industry Financial and Market Data", "url": "https://payloadspace.com/", "source_type": "research" },
-      { "title": "Elon Musk — Reusable Rocket and Cost Analysis (Various Public Talks)", "url": "https://www.youtube.com/@SpaceX", "source_type": "primary" },
-      { "title": "The Verge — SpaceX and Starlink Coverage", "url": "https://www.theverge.com/space", "source_type": "media" }
+      {
+        "title": "SpaceX Official Website",
+        "url": "https://www.spacex.com/",
+        "source_type": "official"
+      },
+      {
+        "title": "Starlink Official Website — Service Plans & Coverage",
+        "url": "https://www.starlink.com/",
+        "source_type": "official"
+      },
+      {
+        "title": "NASA Commercial Crew Program Overview",
+        "url": "https://www.nasa.gov/humans-in-space/commercial-crew-program/",
+        "source_type": "government"
+      },
+      {
+        "title": "NASA Commercial Resupply Services",
+        "url": "https://www.nasa.gov/mission_pages/station/structure/elements/spacex-dragon/",
+        "source_type": "government"
+      },
+      {
+        "title": "FAA Office of Commercial Space Transportation",
+        "url": "https://www.faa.gov/space",
+        "source_type": "government"
+      },
+      {
+        "title": "FCC — Starlink Authorizations and Proceedings",
+        "url": "https://www.fcc.gov/",
+        "source_type": "government"
+      },
+      {
+        "title": "Bloomberg — SpaceX Valuation, Funding, and Financial Analysis",
+        "url": "https://www.bloomberg.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "Reuters — SpaceX News and Regulatory Coverage",
+        "url": "https://www.reuters.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "CNBC — SpaceX Business and Starlink Growth",
+        "url": "https://www.cnbc.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "SpaceNews — Industry Analysis and Launch Market Share",
+        "url": "https://spacenews.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "Ars Technica — Eric Berger SpaceX Coverage (Rocket Report)",
+        "url": "https://arstechnica.com/science/",
+        "source_type": "media"
+      },
+      {
+        "title": "NASASpaceFlight — Starship Development and Live Coverage",
+        "url": "https://www.nasaspaceflight.com/",
+        "source_type": "media"
+      },
+      {
+        "title": "Payload Space — Space Industry Financial and Market Data",
+        "url": "https://payloadspace.com/",
+        "source_type": "research"
+      },
+      {
+        "title": "Elon Musk — Reusable Rocket and Cost Analysis (Various Public Talks)",
+        "url": "https://www.youtube.com/@SpaceX",
+        "source_type": "primary"
+      },
+      {
+        "title": "The Verge — SpaceX and Starlink Coverage",
+        "url": "https://www.theverge.com/space",
+        "source_type": "media"
+      }
     ],
     "brand_context": {
       "founder_background": [
@@ -202,31 +415,106 @@
         "总收入估算(low_confidence, private): 2023 ~$8.7B, 2024 ~$13-15B+, 2025估计 $17B+. Source: Payload Space estimates, various media reports"
       ],
       "brand_timeline": [
-        { "year": "2002-06", "event": "Elon Musk 在加州 Hawthorne 创立 SpaceX；招募 Tom Mueller、Gwynne Shotwell 等核心团队" },
-        { "year": "2006-03", "event": "Falcon 1 首飞——发动机起火，升空25秒后坠毁(第1次失败)" },
-        { "year": "2007-03", "event": "Falcon 1 第2次试飞——一级成功但二级燃料晃动导致提前关机，未入轨(第2次失败)" },
-        { "year": "2008-08", "event": "Falcon 1 第3次试飞——级间分离后碰撞，未入轨(第3次失败)。此时 SpaceX 仅剩最后一次发射的资金" },
-        { "year": "2008-09", "event": "Falcon 1 第4次发射成功——全球首个私人公司研制的液体燃料火箭入轨" },
-        { "year": "2008-12", "event": "NASA 授予 SpaceX $16亿 Commercial Resupply Services (CRS) 合同——12次货运任务。Musk 后来说'如果晚一个月 SpaceX 就死了'" },
-        { "year": "2010-06", "event": "Falcon 9 首次发射成功——9台 Merlin 发动机，设计目标从一开始就包括可回收" },
-        { "year": "2010-12", "event": "Dragon 飞船首飞并成功回收——首个由私人公司发射、入轨并回收的航天器" },
-        { "year": "2012-05", "event": "Dragon 首次对接国际空间站——全球首个由私人公司完成的 ISS 对接任务" },
-        { "year": "2014-09", "event": "NASA 授予 SpaceX $26亿 Commercial Crew 合同(Boeing 同时获得$42亿)" },
-        { "year": "2015-01", "event": "首次尝试海上无人船回收 Falcon 9 一级——以撞击告终但收集了大量数据" },
-        { "year": "2015-06", "event": "CRS-7 任务——Falcon 9 升空139秒后爆炸（氦气瓶支架故障），损失 Dragon 飞船和 ISS 补给物资" },
-        { "year": "2015-12", "event": "Falcon 9 首次成功陆地回收一级火箭(LZ-1)——人类航天史里程碑。Musk 说'我们终于可以认真地谈火星了'" },
-        { "year": "2016-04", "event": "Falcon 9 首次成功海上无人船回收(OCISLY)——海上回收更具灵活性(高能轨道需要的速度)" },
-        { "year": "2016-09", "event": "Amos-6 爆炸——Falcon 9 在静态点火测试中爆炸，损毁 $200M+ 以色列通信卫星。停飞4个月" },
-        { "year": "2017-03", "event": "SES-10 —— 全球首次复用回收火箭的商业发射。证明复用火箭的经济可行性" },
-        { "year": "2018-02", "event": "Falcon Heavy 首飞——将 Musk 的红色 Tesla Roadster 送入深空。两侧助推器同时回收的壮观画面全球刷屏" },
-        { "year": "2019-05", "event": "首批60颗 Starlink 量产卫星发射入轨——开启全球最大低轨星座建设" },
-        { "year": "2020-05", "event": "Crew Dragon Demo-2——Doug Hurley 和 Bob Behnken 搭乘 Crew Dragon 前往 ISS。美国时隔9年重新拥有自主载人航天能力" },
-        { "year": "2021-09", "event": "Inspiration4——全球首次全民用商业太空飞行，4名非专业航天员在轨3天" },
-        { "year": "2023-04", "event": "Starship IFT-1(首次轨道级试飞)——升空约4分钟后爆炸。发射台被33台 Raptor 炸出一个大坑。学到了需要水冷钢板" },
-        { "year": "2024-06", "event": "Starship IFT-4——首次 Super Heavy 和 Starship 两级同时受控溅落。关键里程碑" },
-        { "year": "2024-10", "event": "Starship IFT-5——Mechazilla 发射塔首次'筷子'捕获返回的 Super Heavy 助推器。全球最震撼的工程演示之一" },
-        { "year": "2024", "event": "全年134次 Falcon 9 发射(全球~50%)，入轨质量占全球85%+; Starlink 用户突破400万; 收入估算$13-15B+" },
-        { "year": "2025", "event": "Starlink 全球用户突破500万; Starship IFT-7 Block 2 首飞; Starlink Direct to Cell 开始服务; NASA Artemis HLS 开发持续推进; 估值~$350B; SpaceX 成为全球最有价值私有公司" }
+        {
+          "year": "2002-06",
+          "event": "Elon Musk 在加州 Hawthorne 创立 SpaceX；招募 Tom Mueller、Gwynne Shotwell 等核心团队"
+        },
+        {
+          "year": "2006-03",
+          "event": "Falcon 1 首飞——发动机起火，升空25秒后坠毁(第1次失败)"
+        },
+        {
+          "year": "2007-03",
+          "event": "Falcon 1 第2次试飞——一级成功但二级燃料晃动导致提前关机，未入轨(第2次失败)"
+        },
+        {
+          "year": "2008-08",
+          "event": "Falcon 1 第3次试飞——级间分离后碰撞，未入轨(第3次失败)。此时 SpaceX 仅剩最后一次发射的资金"
+        },
+        {
+          "year": "2008-09",
+          "event": "Falcon 1 第4次发射成功——全球首个私人公司研制的液体燃料火箭入轨"
+        },
+        {
+          "year": "2008-12",
+          "event": "NASA 授予 SpaceX $16亿 Commercial Resupply Services (CRS) 合同——12次货运任务。Musk 后来说'如果晚一个月 SpaceX 就死了'"
+        },
+        {
+          "year": "2010-06",
+          "event": "Falcon 9 首次发射成功——9台 Merlin 发动机，设计目标从一开始就包括可回收"
+        },
+        {
+          "year": "2010-12",
+          "event": "Dragon 飞船首飞并成功回收——首个由私人公司发射、入轨并回收的航天器"
+        },
+        {
+          "year": "2012-05",
+          "event": "Dragon 首次对接国际空间站——全球首个由私人公司完成的 ISS 对接任务"
+        },
+        {
+          "year": "2014-09",
+          "event": "NASA 授予 SpaceX $26亿 Commercial Crew 合同(Boeing 同时获得$42亿)"
+        },
+        {
+          "year": "2015-01",
+          "event": "首次尝试海上无人船回收 Falcon 9 一级——以撞击告终但收集了大量数据"
+        },
+        {
+          "year": "2015-06",
+          "event": "CRS-7 任务——Falcon 9 升空139秒后爆炸（氦气瓶支架故障），损失 Dragon 飞船和 ISS 补给物资"
+        },
+        {
+          "year": "2015-12",
+          "event": "Falcon 9 首次成功陆地回收一级火箭(LZ-1)——人类航天史里程碑。Musk 说'我们终于可以认真地谈火星了'"
+        },
+        {
+          "year": "2016-04",
+          "event": "Falcon 9 首次成功海上无人船回收(OCISLY)——海上回收更具灵活性(高能轨道需要的速度)"
+        },
+        {
+          "year": "2016-09",
+          "event": "Amos-6 爆炸——Falcon 9 在静态点火测试中爆炸，损毁 $200M+ 以色列通信卫星。停飞4个月"
+        },
+        {
+          "year": "2017-03",
+          "event": "SES-10 —— 全球首次复用回收火箭的商业发射。证明复用火箭的经济可行性"
+        },
+        {
+          "year": "2018-02",
+          "event": "Falcon Heavy 首飞——将 Musk 的红色 Tesla Roadster 送入深空。两侧助推器同时回收的壮观画面全球刷屏"
+        },
+        {
+          "year": "2019-05",
+          "event": "首批60颗 Starlink 量产卫星发射入轨——开启全球最大低轨星座建设"
+        },
+        {
+          "year": "2020-05",
+          "event": "Crew Dragon Demo-2——Doug Hurley 和 Bob Behnken 搭乘 Crew Dragon 前往 ISS。美国时隔9年重新拥有自主载人航天能力"
+        },
+        {
+          "year": "2021-09",
+          "event": "Inspiration4——全球首次全民用商业太空飞行，4名非专业航天员在轨3天"
+        },
+        {
+          "year": "2023-04",
+          "event": "Starship IFT-1(首次轨道级试飞)——升空约4分钟后爆炸。发射台被33台 Raptor 炸出一个大坑。学到了需要水冷钢板"
+        },
+        {
+          "year": "2024-06",
+          "event": "Starship IFT-4——首次 Super Heavy 和 Starship 两级同时受控溅落。关键里程碑"
+        },
+        {
+          "year": "2024-10",
+          "event": "Starship IFT-5——Mechazilla 发射塔首次'筷子'捕获返回的 Super Heavy 助推器。全球最震撼的工程演示之一"
+        },
+        {
+          "year": "2024",
+          "event": "全年134次 Falcon 9 发射(全球~50%)，入轨质量占全球85%+; Starlink 用户突破400万; 收入估算$13-15B+"
+        },
+        {
+          "year": "2025",
+          "event": "Starlink 全球用户突破500万; Starship IFT-7 Block 2 首飞; Starlink Direct to Cell 开始服务; NASA Artemis HLS 开发持续推进; 估值~$350B; SpaceX 成为全球最有价值私有公司"
+        }
       ],
       "major_turning_points": [
         "2008年圣诞节的 NASA $1.6B 合同——如果晚到一个月，SpaceX 资金耗尽。这是 SpaceX 历史上最重要的外部转折",
@@ -251,5 +539,87 @@
       ],
       "notes": "SpaceX 是一家极端 Musk 化的公司——它的成功、文化、速度、以及风险都与 Musk 个人深度绑定。如果要研究 SpaceX 的商业模式而不研究 Musk 的工程思维和风险哲学，会严重低估'创始人'这个变量在航天行业中的权重。同时，SpaceX 正在从一个'航天运输公司'向'全球垂直整合通信基础设施平台'转型——Starlink 的战略重要性正在超过发射业务。如果 Starship 成功，SpaceX 将拥有历史上第一个全复用的超重型运载系统，这将再次彻底改变太空经济的成本结构。长期看 SpaceX 的核心问题不是技术而是可持续性——如果没有 Musk(健康/年龄/政治)，公司是否还能保持这种极端工程驱动的文化？以及 Starlink 在各种地缘政治环境中的连续性如何保证？"
     }
+  },
+  "generated_by": "AI-assisted public-source research; evidence repair 2026-06-17",
+  "research_checked_at": "2026-06-17",
+  "brand_context": {
+    "founder_profiles": [
+      {
+        "name": "Elon Musk",
+        "role": "Founder / CEO / Chief Engineer",
+        "background_summary": "Founded SpaceX in 2002 after PayPal; used private capital and NASA contracts to build a reusable launch company.",
+        "profile_links": [
+          {
+            "title": "SpaceX company page",
+            "url": "https://www.spacex.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Elon Musk profile",
+            "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2002",
+        "event": "founder_cash",
+        "amount": "about $100M often cited from Musk personal capital",
+        "currency": "USD",
+        "description": "SpaceX was initially funded largely with Elon Musk personal capital after PayPal.",
+        "source": {
+          "title": "SpaceX company profile",
+          "url": "https://en.wikipedia.org/wiki/SpaceX",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2006",
+        "event": "contract",
+        "amount": "$278M initial NASA COTS agreement, later increased",
+        "currency": "USD",
+        "description": "NASA COTS milestone payments helped fund Falcon 9 / Dragon development after Falcon 1.",
+        "source": {
+          "title": "Falcon 9 development history",
+          "url": "https://en.wikipedia.org/wiki/Falcon_9",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2008",
+        "event": "contract",
+        "amount": "$1.6B NASA CRS contract",
+        "currency": "USD",
+        "description": "Commercial Resupply Services contract gave SpaceX a major revenue backlog and survival path after early Falcon failures.",
+        "source": {
+          "title": "SpaceX company profile",
+          "url": "https://en.wikipedia.org/wiki/SpaceX",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2020s",
+        "event": "revenue",
+        "currency": "USD",
+        "description": "SpaceX remains private; revenue estimates vary and should be treated as estimates unless using filings or official contract data.",
+        "source": {
+          "title": "SpaceX official site",
+          "url": "https://www.spacex.com/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "low"
+      }
+    ]
   }
 }

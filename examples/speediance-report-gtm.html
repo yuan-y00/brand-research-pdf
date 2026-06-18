@@ -1,0 +1,1093 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Speediance 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 01: COVER ==================== -->
+<div class="section cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">Speediance<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">
+            中国智能健身出海的"效率怪兽" · 融资 $13.6M 年营收 $49M<br>零强制订阅 · Tonal 专利诉讼 · 全球 22 国扩张
+        </div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">$49M</div><div class="cs-label">2024 年营收</div></div>
+            <div class="cover-stat"><div class="cs-num">$13.6M</div><div class="cs-label">累计融资</div></div>
+            <div class="cover-stat"><div class="cs-num">$3,749</div><div class="cs-label">Gym Monster 2 起售价</div></div>
+            <div class="cover-stat"><div class="cs-num">$0</div><div class="cs-label">强制订阅费（核心功能免费）</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 02: TIMELINE ==================== -->
+<div class="section"><div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2020–2025）</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:75px">时间</th>
+                <th style="width:380px">事件</th>
+                <th style="width:310px">关键细节</th>
+                <th style="width:65px">影响</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2020.12</strong></td>
+                <td>刘韬在深圳创立 Speediance（速境）</td>
+                <td>核心团队 4 人从车库起步——CEO 刘韬来自健身独角兽 FITURE，CTO 黄九铭 & 工程负责人高世帆来自清华/港大/中科大，COO 俞健来自百度和阿里。只用一台电机原型起步</td>
+                <td class="td-impact impact-neutral">冷启动</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021.11</strong></td>
+                <td>Kickstarter 众筹 $56 万 + 入选腾讯 Top 100 新锐品牌</td>
+                <td>初代产品 Gym Monster 在 Kickstarter 上获得近 300 位支持者。同月完成天使轮 ~$2M（WaveFront Ventures）</td>
+                <td class="td-impact impact-up">验证 PMF</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022.05</strong></td>
+                <td>Gym Monster 量产 + 上线天猫</td>
+                <td>Pre-A 轮 ~$1.57M（峰瑞资本领投）。产品开始在国内高端健身市场建立认知</td>
+                <td class="td-impact impact-up">产品上市</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023.07</strong></td>
+                <td>A 轮融资 ~$1,000 万 + 月营收突破 $145 万</td>
+                <td>元禾原点/海益投资领投。Gym Pal 发布（紧凑版），Gym Monster 获 Good Housekeeping "Epic Equipment" 奖。进入 Sundan 高端零售渠道</td>
+                <td class="td-impact impact-up">规模化</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023 末</strong></td>
+                <td>Tonal 在得克萨斯州东区法院起诉 Speediance</td>
+                <td>Tonal 指控 Speediance 侵犯 6 项专利（涵盖数字力量训练系统、动态阻力模式、互动内容、硬件连接器等）。Speediance 被指控"故意逃避送达"——原始诉讼因未能送达而撤销，Tonal 已重新提交</td>
+                <td class="td-impact impact-down">法律风险</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024.11</strong></td>
+                <td>Gym Monster 2 + VeloNix 单车发布</td>
+                <td>GM2 升级至 220 lbs 阻力（110 lbs/臂），21.5"触摸屏，免墙上安装，折叠设计，20-30 分钟自行组装。价格 $3,749 起。Series A 轮完成</td>
+                <td class="td-impact impact-up">产品迭代</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025.01</strong></td>
+                <td>CES 2025 亮相（威尼斯人会展中心）</td>
+                <td>首次在国际消费电子展独立展出，向全球市场释放信号：Speediance 不只是"中国的 Tonal 替代品"，而是独立的全球品牌</td>
+                <td class="td-impact impact-up">全球化</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025.08-12</strong></td>
+                <td>Gym Monster 2 获 Global Tech Awards + 北美/欧洲加速扩张</td>
+                <td>被 Global Tech Awards 评为 2025 年度健身科技类别最佳。全球 22+ 国家/地区销售。累计融资仅 ~$1,360 万但 2024 年营收 $4,900 万</td>
+                <td class="td-impact impact-up">高光</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ==================== PAGE 03: FINANCIALS ==================== -->
+<div class="section"><div class="section-label">Financials & Business Model</div>
+    <h1>二、创始团队与商业模式</h1>
+    <h2>创始团队</h2>
+    <table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:80px">创始人</th><th style="width:50px">职位</th><th>背景</th><th style="width:130px">初始资金</th></tr></thead><tbody>
+    <tr><td><strong>刘韬</strong></td><td class="td-center">CEO</td><td>前 <strong>FITURE</strong>（智能健身镜独角兽）产品经理+<strong>极米</strong>（投影仪上市公司）产品经理。所负责产品销售额累计超十亿元。此前在日本众筹平台创下 7,400 万日元纪录——有已验证的众筹操盘经验</td><td class="td-center"><strong>大厂工资+股权</strong>（FITURE/极米）</td></tr>
+    <tr><td><strong>俞健</strong></td><td class="td-center">COO</td><td>前 <strong>华为、阿里、百度</strong> 三大大厂背景。与刘韬在日本众筹项目中有合作经验</td><td class="td-center">大厂薪资+股权积累</td></tr></tbody></table>
+    <p style="font-size:10.5px;color:var(--mid-gray);margin-bottom:10px">※ Speediance 2020 年 12 月成立。2021 年 Kickstarter 众筹 ~$56 万冷启动。2022-2023 年获 $13.6M VC。创始人用中国大厂薪资积蓄+Kickstarter 众筹完成了从 0 到 1。</p>
+
+    <div class="callout">
+        <strong>核心亮点：</strong>Speediance 用 <strong>$1,360 万</strong> 融资做到了 <strong>$4,900 万</strong> 年营收——资本效率比 Tonal（$6.15 亿融资 / ~$1 亿+ ARR）高出约 <strong>20 倍</strong>。零强制订阅模式直接攻击了 Tonal/Peloton 最被诟病的弱点。
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">$49M</div><div class="stat-label">2024 年营收</div></div>
+        <div class="stat-card"><div class="stat-number">$13.6M</div><div class="stat-label">累计融资</div></div>
+        <div class="stat-card"><div class="stat-number">$3,749</div><div class="stat-label">GM2 起售价</div></div>
+        <div class="stat-card"><div class="stat-number">$0</div><div class="stat-label">强制订阅费</div></div>
+        <div class="stat-card"><div class="stat-number">220 lbs</div><div class="stat-label">数字阻力上限</div></div>
+        <div class="stat-card"><div class="stat-number">22+</div><div class="stat-label">覆盖国家/地区</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>融资历程</h2>
+            <table class="info-table">
+                <thead><tr><th>时间</th><th>轮次</th><th style="width:80px">金额</th><th>领投方</th></tr></thead>
+                <tbody>
+                    <tr><td>2021.04</td><td>天使轮</td><td class="td-num">~$2M</td><td>WaveFront Ventures</td></tr>
+                    <tr><td>2022.03</td><td>Pre-A</td><td class="td-num">~$1.6M</td><td>峰瑞资本（Frees Fund）</td></tr>
+                    <tr><td>2022.10</td><td>Pre-A+</td><td class="td-num">~$1.4M</td><td>多机构跟投</td></tr>
+                    <tr><td>2023.07</td><td>A 轮</td><td class="td-num">~$7M</td><td>元禾原点 + 海益投资</td></tr>
+                    <tr><td>2024</td><td>A+ 轮</td><td class="td-num">~$1.6M</td><td>系列完成</td></tr>
+                    <tr><td colspan="2">累计</td><td class="td-num"><strong>$13.6M</strong></td><td>资本效率极高</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>vs Tonal：商业模式对比</h2>
+            <table class="info-table">
+                <thead><tr><th>维度</th><th style="width:95px">Speediance</th><th style="width:95px">Tonal</th></tr></thead>
+                <tbody>
+                    <tr><td>硬件价格</td><td class="td-num"><strong>$3,749-4,499</strong></td><td class="td-num">$3,995+$495 配件</td></tr>
+                    <tr><td>安装费</td><td class="td-num"><strong>免费（DIY 30min）</strong></td><td class="td-num">$250-500（专业）</td></tr>
+                    <tr><td>强制订阅</td><td class="td-num"><strong>无</strong></td><td class="td-num">$59.95/月（12月）</td></tr>
+                    <tr><td>第一年总成本</td><td class="td-num"><strong>~$3,749</strong></td><td class="td-num">~$5,500+</td></tr>
+                    <tr><td>最大阻力</td><td class="td-num">220 lbs</td><td class="td-num"><strong>250 lbs</strong></td></tr>
+                    <tr><td>安装方式</td><td class="td-num"><strong>独立放置/可折叠</strong></td><td class="td-num">需承重墙+打孔</td></tr>
+                    <tr><td>可选订阅</td><td class="td-num">$19.99/月 Wellness+</td><td class="td-num">强制 $59.95/月</td></tr>
+                    <tr><td>累计融资</td><td class="td-num"><strong>$13.6M</strong></td><td class="td-num">$615M+</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 04: COMPETITIVE ==================== -->
+<div class="section"><div class="section-label">Competitive Landscape</div>
+    <h1>三、竞争对手同期对比</h1>
+
+    <p>Speediance 是智能家庭健身赛道中唯一一个"用竞对 1/50 的融资做到竞对 1/2 的营收"的公司。它的出现打破了 Tonal 在数字力量训练领域的准垄断地位——以至于 Tonal 选择用专利诉讼而非产品竞争来应对。</p>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:70px">维度</th>
+                <th style="width:170px">Speediance</th>
+                <th style="width:170px">Tonal</th>
+                <th style="width:170px">Peloton</th>
+                <th style="width:170px">Tempo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>创立</strong></td>
+                <td>2020，深圳</td>
+                <td>2015，旧金山</td>
+                <td>2012，纽约</td>
+                <td>2015，旧金山</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>品类</strong></td>
+                <td>数字力量训练</td>
+                <td>数字力量训练</td>
+                <td>有氧（单车/跑步机）</td>
+                <td>自由重量+AI</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>累计融资</strong></td>
+                <td class="td-num">$13.6M</td>
+                <td class="td-num">$615M+</td>
+                <td class="td-num">$4B+</td>
+                <td class="td-num">$300M+</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024 营收</strong></td>
+                <td class="td-num"><strong>$49M</strong></td>
+                <td class="td-num">>$100M ARR</td>
+                <td class="td-num">$2.7B</td>
+                <td class="td-num">未公开</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>资本效率</strong></td>
+                <td class="td-num"><strong>3.6x</strong>（营收/融资）</td>
+                <td class="td-num">~0.16x</td>
+                <td class="td-num">~0.68x</td>
+                <td class="td-num">N/A</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>强制订阅</strong></td>
+                <td><strong>无（核心功能免费）</strong></td>
+                <td>$59.95/月（强制 12 月）</td>
+                <td>$44/月（可选）</td>
+                <td>$39/月（可选）</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>硬件壁垒</strong></td>
+                <td>电机驱动数字阻力</td>
+                <td>电磁数字阻力</td>
+                <td>单车/跑步机（低壁垒）</td>
+                <td>3D 传感器+真实哑铃</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>Trustpilot</strong></td>
+                <td class="td-num">3.1-4.4（区域差异大）</td>
+                <td class="td-num">1.9/5</td>
+                <td class="td-num">4.1/5</td>
+                <td class="td-num">N/A</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>关键风险</strong></td>
+                <td>Tonal 专利诉讼 · 客服区域不均</td>
+                <td>融资 > 估值 · PE 接管 · 硬件故障</td>
+                <td>债务 $947M · Z:-1.71</td>
+                <td>品类需求增长缓慢</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">3.6x</div>
+            <div class="kpi-label">Speediance 营收/融资比</div>
+            <div class="kpi-compare kpi-up">Tonal 0.16x · 高 22 倍</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$0</div>
+            <div class="kpi-label">Speediance 强制订阅</div>
+            <div class="kpi-compare kpi-up">Tonal $60/月 · Peloton $44/月</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">$3,749</div>
+            <div class="kpi-label">第一年总拥有成本</div>
+            <div class="kpi-compare kpi-up">Tonal $5,500 · 便宜 32%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">22+</div>
+            <div class="kpi-label">覆盖国家</div>
+            <div class="kpi-compare">中国出海品牌</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">诉讼中</div>
+            <div class="kpi-label">Tonal 专利诉讼</div>
+            <div class="kpi-compare kpi-down">最大法律风险</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 05: RIGHT 1/2 ==================== -->
+<div class="section"><div class="section-label">Success Factors</div>
+    <h1>四、Speediance 做对了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">01</div>
+            <h4>零强制订阅：对准 Tonal/Peloton 最大痛点</h4>
+            <div class="insight-kpi">核心功能完全免费 · 可选 Wellness+ $19.99/月 · 第一年节省 $720 vs Tonal</div>
+            <p>Speediance 最聪明的战略决策可能不是技术，而是商业模式。<strong>在 Tonal 强制 12 个月 $59.95/月订阅（$720/年）和 Peloton 收 $44/月的市场中，Speediance 宣布所有核心功能永久免费</strong>——包括 AI 重量调节、400+ 内置训练计划、数据追踪。可选订阅 Wellness+（$19.99/月或 $119.88/年）提供额外的高级课程和分析，但用户不订阅也完全不影响设备的正常使用。这对于被 Tonal "退订=设备变砖"伤害过的消费者来说是一个极具吸引力的价值主张。在 Trustpilot 和 Reddit 的正面评价中，"不需要每月付费"是被提及最多的购买理由之一，仅次于产品性能本身。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 强制 $60/月 × 终身——取消订阅后 AI 调节、数据追踪等功能全部失效。<span>vs Peloton:</span> $44/月 + $95 二手激活费。<span>vs Tempo:</span> 可选 $39/月。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">02</div>
+            <h4>极致资本效率：$13.6M 融资 → $49M 营收</h4>
+            <div class="insight-kpi">营收/融资比 3.6x · 51-200 名员工 · 无超级碗广告 · 无自建工厂 · 无巨额营销支出</div>
+            <p>Speediance 的运营哲学与硅谷"烧钱换增长"模式完全相反。在 Tonal 烧掉 $6.15 亿融资只做到 ~$1 亿 ARR（融资是营收的 6 倍）、Peloton 烧掉 $40 亿+ 只做到 $27 亿营收（还在亏损）的背景下，Speediance 用 <strong>$1,360 万的极小资本做到了 $4,900 万年营收</strong>——资本效率是 Tonal 的 22 倍。做到这一点的关键：(1) 不投放超级碗广告（Tonal 的 $5M+ Peloton 的数亿）；(2) 不自建工厂（深圳的制造业生态天然提供产能）；(3) 不做线下零售门店（DTC 电商为主）；(4) 团队保持在 51-200 人的精干规模。这是一家"中国式的精益创业公司"在跟"硅谷式的资本密集型公司"竞争。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> $615M 融资 → ~$100M ARR，营收/融资比 0.16x。<span>vs Peloton:</span> $4B+ 融资 → $2.7B 营收但仍在亏损。Speediance 的 3.6x 在健身硬件行业中没有对手。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">03</div>
+            <h4>免墙上安装 + 可折叠：消除了"最大的购买障碍"</h4>
+            <div class="insight-kpi">独立放置 · 20-30 分钟自行组装 · 可折叠收纳 · 带滚轮移动 · 无需承重墙</div>
+            <p>Tonal 最大的结构性天花板是它必须安装在承重墙上——这天然排除了租房用户（美国 36%）、公寓住户和经常搬家的人。Speediance 的产品设计从根本上解决了这个问题：Gym Monster 2 是一个<strong>独立放置的垂直设备</strong>（不依赖墙壁），可以在 20-30 分钟内自行组装（不需要专业安装团队），使用完毕后可以折叠收纳，底部带有滚轮可以推到房间角落。这不仅大幅降低了安装成本（免费 vs Tonal $250-500），更重要的是消除了"我要在墙上打孔吗？"这个心理障碍——对于租房用户来说，这是决定性的购买因素。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 必须承重墙+专业安装，TAM 被压缩到自有房产用户。<span>vs Peloton Bike:</span> 也是独立放置、可移动，但 Peloton 是有氧设备，品类不同。<span>vs Tempo:</span> Tempo 也是独立放置但需要一个柜子的空间。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">04</div>
+            <h4>中国供应链 + 全球 DTC = 价格屠夫</h4>
+            <div class="insight-kpi">深圳总部 · 电机成本远低于 Tonal 的电磁系统 · 天猫/Amazon/独立站多渠道分销</div>
+            <p>Speediance 的定价优势不是靠"烧钱补贴"实现的，而是<strong>结构性的成本优势</strong>：深圳的硬件制造业生态让 Speediance 的电机驱动数字阻力系统的制造成本远低于 Tonal 在美国制造的电磁阻力系统。加上精简的团队（51-200 人 vs Tonal 350+）、零门店租金（DTC 电商为主）、零超级碗广告费，Speediance 可以在定价比 Tonal 低 $250-750 的同时仍然有健康的毛利。Speediance 同时在多个渠道销售——中国天猫、全球 Amazon、自有独立站、以及区域经销商——形成了多元化的分销网络，不依赖任何一个单一渠道。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 美国制造+专业安装+门店零售，成本结构高出至少 40-50%。<span>vs 其他中国出海健身品牌:</span> Speediance 的品牌建设和产品质量明显高于"白牌"竞品。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 06: RIGHT 2/2 ==================== -->
+<div class="section"><div class="section-label">Success Factors (Cont.)</div>
+    <h1>四、Speediance 做对了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">05</div>
+            <h4>从"中国创业公司"到"全球品牌"的叙事升级</h4>
+            <div class="insight-kpi">CES 2025 独立展出 · Global Tech Awards 健身科技类别最佳 · 22+ 国家 · Kickstarter $56 万</div>
+            <p>Speediance 的品牌建设路径堪称中国出海硬件的教科书案例。它没有把自己包装成"中国的 Tonal"（那是死亡标签），而是从一开始就建立了独立的全球品牌叙事：Kickstarter 众筹（$56 万，297 位早期支持者）→ 获得国际奖项（Good Housekeeping "Epic Equipment"、GQ 健身奖、Global Tech Awards 最佳健身科技）→ CES 2025 独立展台（与三星、LG 等全球品牌同台）→ 在全球媒体（PCMag、Esquire）获得评测报道。这条路径让 Speediance 绕过了"中国品牌 = 廉价/低质量"的刻板印象，直接以"创新健身科技品牌"的身份进入消费者心智。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 的品牌建立在"硅谷创新+顶级运动员背书"上，Speediance 走的是"全球评测认可+众筹社区"路线。<span>vs 大多数中国出海品牌:</span> 多数停留在 Amazon 白牌阶段，缺乏品牌建设。</div>
+        </div>
+        <div class="insight-card right">
+            <div class="insight-num">06</div>
+            <h4>Kickstarter 冷启动 + 独立站 DTC：10 小时 $10 万</h4>
+            <div class="insight-kpi">2021.11 Kickstarter · 不到 10 小时破 $10 万 · 最终 ~$56 万 · 唯一数字力量训练品类纪录</div>
+            <p>Speediance 的 Kickstarter 是经典的中国 DTC 出海冷启动案例。<strong>核心打法拆解：</strong><br>(1) <strong>独立站 + App 全链路</strong>：与 Shoplazza 合作打通独立站和 App——用户从了解→购买→训练→社区互动，一个账号全链路无缝衔接，大大缩短了"看到广告→下单支付"的转化路径；<br>(2) <strong>"人群打法"精准定位</strong>：创始人刘韬明确提出先打硬核男性健身人群——这个群体对新事物接受度高、在社交媒体上活跃、购买决策快——形成口碑后再向更广泛人群渗透；<br>(3) <strong>场景化内容矩阵</strong>：独立站大量使用场景化 GIF、视频和 KOL 真实评测而非渲染图——在众筹这个"信任为王"的场景中，真实感比精美感更重要；<br>(4) <strong>团队众筹经验丰富</strong>：创始人刘韬和 COO 俞健此前在日本众筹平台创下 7,400 万日元纪录——不是第一次做众筹，所有坑都踩过了。Kickstarter 不到 10 小时破 $10 万验证了 PMF，也为后续 $13.6M VC 融资铺平了道路。</p>
+            <div class="insight-vs"><span>vs AEKE Kickstarter:</span> AEKE $1.52M（2025）规模更大但时间晚了 4 年——Speediance 是第一波吃螃蟹的。<span>vs Tonal:</span> Tonal 从未走众筹路线，直接拿 VC。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 07: WRONG 1/2 ==================== -->
+<div class="section"><div class="section-label">Risks & Mistakes</div>
+    <h1>五、Speediance 做错了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">01</div>
+            <h4>Tonal 专利诉讼：悬在头上的达摩克利斯之剑</h4>
+            <div class="insight-kpi">6 项专利侵权指控 · 得克萨斯州东区法院（专利诉讼"天堂"）· Tonal 已重新提交诉状</div>
+            <p>这是 Speediance 面临的最大单一风险。Tonal 指控 Speediance 侵犯了 6 项美国专利，涵盖数字力量训练系统的核心功能——包括动态阻力模式、互动健身内容、硬件连接器等。诉讼地在得克萨斯州东区——美国专利诉讼最活跃的法院，以对专利权人友好著称。虽然 Tonal 最初的诉状因"Speediance 故意逃避送达"而被撤销，但 Tonal 已经重新提交。如果 Tonal 胜诉，可能的后果包括：Speediance 产品在美国禁售、支付巨额赔偿金、或被强制更改产品设计。即使 Speediance 最终胜诉，诉讼本身的费用和时间也会对一个仅融资 $1,360 万的公司造成重大财务压力。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 本身在 2022 年也被 Foxconn 起诉 $50 万欠款——但规模不可比。专利诉讼是 Speediance 面临的最大不对称风险。<span>行业先例:</span> Fitbit 被 Jawbone 起诉、Pebble 被各种专利诉讼缠身——小公司在专利战中处于天然劣势。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">02</div>
+            <h4>客服质量严重不均衡：UK 4.4 分 vs 全球站 3.2 分</h4>
+            <div class="insight-kpi">Trustpilot UK 4.4/5 · 澳洲 4.3/5 · 全球站 3.2/5 · 无人工电话客服 · 仅靠聊天/邮件</div>
+            <p>Speediance 的客服体验因地区而异，差异大到像是两家不同的公司。英国（4.4/5）和澳大利亚（4.3/5）的用户普遍反馈客服响应迅速、零件更换及时；但全球站/美国站（3.2/5）的用户经常遭遇数周无响应、被要求自行拆机维修（包括更换电机/驱动板等核心部件）、退货流程长达数月。一个典型案例：某澳洲用户等待 ~6 个月仍未解决故障机器问题（2025 年 1 月评价）。Speediance 没有人工电话客服——只有在线聊天和邮件——这意味着紧急问题无法即时解决。对于一个 $3,749 的产品来说，没有电话客服是不可接受的。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal Trustpilot 1.9/5（更低），但至少有电话客服和上门维修。<span>vs Peloton:</span> 4.1/5 + 75% 负面评价回复率，客服体系更成熟。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">03</div>
+            <h4>软件体验仍显粗糙：没有直播课、没有 AI 形态纠正</h4>
+            <div class="insight-kpi">无直播课程 · 无摄像头/AI 形态反馈 · 无自动 Spotter · 固件升级偶发问题</div>
+            <p>Speediance 的硬件在纸面规格上不输 Tonal（220 lbs vs 250 lbs，免安装 vs 需安装，价格低 32%），但在软件和内容上差距明显。(1) 没有直播课程——Speediance 只有录播训练计划，而 Tonal 和 Peloton 的直播课程是用户粘性的核心来源；(2) 没有基于摄像头的 AI 形态纠正——Speediance 的"智能"仅限于电机阻力调节，不能像 Tonal 那样实时检测动作姿态；(3) 没有自动 Spotter 模式——Tonal 可以在检测到力竭时自动减重，Speediance 需要用户手动按蓝牙环上的按钮；(4) 用户反馈固件升级偶有卡顿和故障，少数需要手动通过笔记本电脑刷机。这些软件差距对于追求"数字私教"体验的高端用户来说是实质性的。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 17 传感器 + 摄像头 + AI 形态纠正 + 自动 Spotter + Eccentric/Chains 模式。<span>vs Peloton:</span> 直播课程 + 排行榜 + 游戏化 + 社区互动。Speediance 的软件栈大概落后 Tonal 2-3 年。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">04</div>
+            <h4>蓝牙环 + 把手连接问题：硬件可靠性的阿喀琉斯之踵</h4>
+            <div class="insight-kpi">多起蓝牙环/把手连接掉线投诉 · 部分通过更换解决 · 影响核心使用体验</div>
+            <p>在 Trustpilot 和 Reddit 的负面评价中，蓝牙环（用于手动控制重量和 Spotter）和蓝牙把手的连接问题是被反复提及的硬件痛点。连接掉线、配对失败、需要频繁重新配对——对于一个依赖蓝牙配件来控制重量的设备来说，这是直接的功能性障碍。虽然部分用户通过更换配件解决了问题，但蓝牙配件的可靠性仍然是一个系统性问题。Speediance 在 Kickstarter 评论区和 Trustpilot 上对这些问题表现出一定的响应改进（通过固件更新），但根本性的硬件可靠性提升需要供应链质量控制的改善——这对一个年营收 $4,900 万、员工 51-200 人的公司来说是一个不小的挑战。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 的硬件问题更严重（整机故障率、屏幕冻结），但至少控制按钮是集成在设备上的，不依赖无线蓝牙。<span>vs Tempo:</span> Tempo 用 3D 传感器+真实哑铃，不需要蓝牙配件。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: WRONG 2/2 ==================== -->
+<div class="section"><div class="section-label">Risks & Mistakes (Cont.)</div>
+    <h1>五、Speediance 做错了什么（续）</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">05</div>
+            <h4>物流和库存管理：从"10-15 天"到"等了一个多月"</h4>
+            <div class="insight-kpi">2024 年集中投诉 · 预购承诺未兑现 · 配件（可调式训练凳）经常缺货</div>
+            <p>Speediance 的物流和库存管理在 2024 年暴露出明显问题。多位用户在 Trustpilot 上报告：被告知"10-15 天发货"但等了一个多月；预购 Gym Monster 2 的用户发现发货日期一推再推；高端配件（如可调式训练凳）经常显示缺货。还有用户报告收到产品后发现缺少配件，需要额外等待数周才能补发。对于一个全球 DTC 品牌来说，库存预测和物流管理是基本功——Speediance 在这方面的表现暴露了它仍然是一个"初创公司"而非"成熟全球品牌"的运营能力。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 在疫情期间同样有严重的交付延迟（10 周+），但 2024 年后已大幅改善。Tonal 的物流问题更多是安装端而非发货端。<span>vs Peloton:</span> 疫情高峰期交付灾难（10 周+），但现已将制造外包给 Rexon 解决。</div>
+        </div>
+        <div class="insight-card wrong">
+            <div class="insight-num">06</div>
+            <h4>"中国公司"的信任赤字：地缘政治 + 数据隐私 + 长期支持的不确定性</h4>
+            <div class="insight-kpi">深圳总部 · 用户数据存储在中国服务器 · 无美国实体 · 潜在关税风险</div>
+            <p>Speediance 作为一家中国公司在全球市场（尤其是美国市场）面临着结构性的信任赤字。(1) <strong>数据隐私</strong>：用户训练数据（力量输出、体重、训练频率等健康相关信息）存储在中国的服务器上——这对于越来越重视隐私的美国消费者来说是一个真实的顾虑；(2) <strong>地缘政治风险</strong>：中美贸易摩擦可能导致额外关税（已有多轮健身器材关税的先例），直接影响 Speediance 在美国市场的价格竞争力；(3) <strong>长期支持的可持续性</strong>：如果 Speediance 因为专利诉讼或其他原因退出美国市场，美国用户的设备会变成"孤儿设备"——内容更新停止、配件供应中断、保修失效。Tonal 虽然也有业务风险，但它是一家美国公司，用户不会怀疑它会"一夜之间消失"。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 旧金山公司，数据存在美国，受美国法律保护。<span>vs 中国品牌先例:</span> DJI（大疆）在美国面临禁令威胁，华为被实体清单制裁——中国硬件品牌在美国的长期运营不确定性是系统性的。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 09: CUSTOMER REVIEWS ==================== -->
+<div class="section"><div class="section-label">Voice of Customer & Persona</div>
+    <h1>六、用户画像与真实评价</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心用户画像（综合研究）</h2>
+            <table class="info-table" style="margin-bottom:10px">
+                <thead><tr><th>维度</th><th style="width:180px">核心画像</th><th>说明</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>年龄</strong></td><td class="td-center"><strong>30-50 岁（~60%）</strong></td><td>主力人群；50-65 岁为第二梯队（~18%），关注长寿和康复</td></tr>
+                    <tr><td><strong>性别</strong></td><td class="td-center"><strong>男性为主（~62%）</strong></td><td>力量训练品类自然偏男性；但女性群体（~38%）增长快——时间紧张的职场妈妈</td></tr>
+                    <tr><td><strong>收入</strong></td><td class="td-center"><strong>$100K-250K HHI</strong></td><td>能负担 $3,749 一次性支出，但极度厌恶月度订阅费</td></tr>
+                    <tr><td><strong>健身水平</strong></td><td class="td-center"><strong>中高阶（~70%）</strong></td><td>有杠铃/健身房训练经验，在家复现健身房力量训练是核心诉求</td></tr>
+                    <tr><td><strong>住房</strong></td><td class="td-center"><strong>公寓/城市住宅</strong></td><td>不需墙上打孔、可折叠移动是关键购买决策因素</td></tr>
+                    <tr><td><strong>心理动机</strong></td><td class="td-center"><strong>"讨厌商业健身房"</strong></td><td>不想排队等器械、不想被看、不想通勤——要"随时练"的自由</td></tr>
+                    <tr><td><strong>典型画像 A</strong></td><td class="td-center"><strong>"中年力量回归者"（38-52岁男）</strong></td><td>年轻时举铁，中年发福，想在家恢复训练。决策触发：健康焦虑+便利</td></tr>
+                    <tr><td><strong>典型画像 B</strong></td><td class="td-center"><strong>"时间紧张的职场妈妈"（33-45岁女）</strong></td><td>前 Peloton 用户转向力量训练。决策触发：效率+家庭共享</td></tr>
+                </tbody>
+            </table>
+            <h2>Trustpilot 评分（区域差异）</h2>
+
+            <table class="info-table" style="margin-bottom:12px">
+                <thead><tr><th>区域</th><th style="width:65px">评分</th><th>评价</th></tr></thead>
+                <tbody>
+                    <tr><td>🇬🇧 UK（speediance.co.uk）</td><td class="td-center"><strong>4.4/5</strong></td><td>Excellent</td></tr>
+                    <tr><td>🇦🇺 澳洲（speediance.com.au）</td><td class="td-center"><strong>4.3/5</strong></td><td>Excellent</td></tr>
+                    <tr><td>🇺🇸 全球站（speediance.com）</td><td class="td-center"><strong>3.2/5</strong></td><td>Average</td></tr>
+                    <tr><td>🇦🇺 澳洲备用页</td><td class="td-center"><strong>3.1/5</strong></td><td>Average</td></tr>
+                </tbody>
+            </table>
+
+            <h2>全球站星级分布（估算）</h2>
+            <div class="review-stat-box">
+                <div>
+                    <div class="review-big-score" style="color:var(--navy)">3.2<span style="font-size:24px">/5</span></div>
+                    <div class="review-big-label">"Average" · speediance.com</div>
+                </div>
+                <div style="flex:1">
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★★</span><span class="bar-track"><span class="bar-fill bar-5" style="width:35%"></span></span><span class="pct-label">~35%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★</span><span class="bar-track"><span class="bar-fill bar-4" style="width:12%"></span></span><span class="pct-label">~12%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★</span><span class="bar-track"><span class="bar-fill bar-3" style="width:8%"></span></span><span class="pct-label">~8%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★</span><span class="bar-track"><span class="bar-fill bar-2" style="width:15%"></span></span><span class="pct-label">~15%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★</span><span class="bar-track"><span class="bar-fill bar-1" style="width:30%"></span></span><span class="pct-label">~30%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size:11px;color:var(--mid-gray)">
+                ※ UK 站（4.4 分）的天花板远高于全球站（3.2 分），说明 Speediance 的客服和物流质量在不同区域差异极大。产品本身获得的好评基本一致——差距在于售后体验。
+            </p>
+
+            <h2>投诉主题分布（估算）</h2>
+            <table class="info-table">
+                <thead><tr><th>投诉类型</th><th style="width:50px">占比</th><th>代表性内容</th></tr></thead>
+                <tbody>
+                    <tr><td>客服响应慢</td><td class="td-center"><strong>~30%</strong></td><td>"等几周才有回复"、"模板式回应"、"6个月没解决故障"</td></tr>
+                    <tr><td>硬件/配件问题</td><td class="td-center"><strong>~25%</strong></td><td>"蓝牙环连接掉线"、"把手失灵"、"电机/驱动板故障"</td></tr>
+                    <tr><td>物流/发货</td><td class="td-center"><strong>~20%</strong></td><td>"预购推迟一个多月"、"配件缺货"、"承诺10-15天实际数周"</td></tr>
+                    <tr><td>自行维修要求</td><td class="td-center"><strong>~15%</strong></td><td>"被要求自己拆机更换马达"、"没有上门维修选项"</td></tr>
+                    <tr><td>软件/固件</td><td class="td-center"><strong>~10%</strong></td><td>"升级卡顿"、"需要笔记本手动刷机"、"缺少高级功能"</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>正面评价</h2>
+
+            <div class="quote-card">
+                "我已经取消了健身房会员。Gym Monster 2 非常紧凑，不占空间，数字阻力比我预期的要好得多。最重要的是——不需要每月付费！"
+                <span class="quote-source">— Trustpilot UK 5 星评价</span>
+            </div>
+
+            <div class="quote-card">
+                "固件和软件经常更新，每次更新都会增加社区反馈的功能。Facebook 用户群非常活跃，有人甚至开发了第三方训练计划。"
+                <span class="quote-source">— Trustpilot 澳洲 5 星评价</span>
+            </div>
+
+            <div class="quote-card">
+                "我们买了它作为 Tonal 的替代品——省了 $2,000 安装费+订阅费。产品质量超出预期，组装只用了 20 分钟。唯一的遗憾是没有早点换。"
+                <span class="quote-source">— Reddit r/speediance 用户</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>负面评价</h2>
+
+            <div class="quote-card" style="border-left-color:var(--terracotta)">
+                "发了几十封邮件，绝大多数被无视。要求退货时被要求拍摄 286 磅机器的完好的外包装箱。最后靠 Affirm 争议才拿回钱。"
+                <span class="quote-source">— Trustpilot 全球站 1 星评价（2024 年 4 月）</span>
+            </div>
+
+            <div class="quote-card" style="border-left-color:var(--terracotta)">
+                "被预购时的'10-15 天发货'承诺欺骗了。等了一个多月，中间没有任何主动沟通。客服只是一遍遍地复制粘贴道歉模板。"
+                <span class="quote-source">— Trustpilot 全球站 1 星评价（2024 年）</span>
+            </div>
+
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:65px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>Trustpilot UK</td><td class="td-center"><strong>4.4/5</strong></td><td>在客服好的区域，用户非常满意</td></tr>
+                    <tr><td>Trustpilot 全球</td><td class="td-center"><strong>3.2/5</strong></td><td>客服差的区域拖累了整体评分</td></tr>
+                    <tr><td>Facebook 社区</td><td class="td-center"><strong>非常活跃</strong></td><td>用户自发互助——说明产品粘性强</td></tr>
+                    <tr><td>营收/融资比</td><td class="td-center"><strong>3.6x</strong></td><td>说明产品有真实需求（不是补贴出来的）</td></tr>
+                    <tr><td>复购/推荐率</td><td class="td-center">高（定性）</td><td>大量"推荐给朋友"的评价</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                <strong>结论：</strong>Speediance 的产品满意度（硬件+软件+无订阅）和客服满意度之间存在巨大落差——与 Hyrox 和 Tonal 的情况高度相似。评分呈现明显的"双峰分布"：拿到好产品的用户给 4-5 星，遇到故障且客服无响应的用户给 1 星。UK/澳洲的分站因为客服做得更好而获得了显著更高的评分，说明客服问题是可解决的——只是全球站还没有跟上。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 10: DATA + CONCLUSIONS ==================== -->
+<div class="section"><div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 &amp; 关键结论</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-num">2020.12，深圳</td></tr>
+                    <tr><td>创始人/CEO</td><td class="td-num">刘韬（前 FITURE 高管）</td></tr>
+                    <tr><td>核心产品</td><td class="td-num">Gym Monster 2（$3,749 起）</td></tr>
+                    <tr><td>产品矩阵</td><td class="td-num">GM2 / Gym Pal / VeloNix / 商用</td></tr>
+                    <tr><td>2024 年营收</td><td class="td-num"><strong>$49M</strong></td></tr>
+                    <tr><td>累计融资</td><td class="td-num"><strong>$13.6M</strong></td></tr>
+                    <tr><td>营收/融资比</td><td class="td-num"><strong>3.6x</strong>（Tonal 0.16x）</td></tr>
+                    <tr><td>强制订阅</td><td class="td-num"><strong>$0（核心功能免费）</strong></td></tr>
+                    <tr><td>可选订阅</td><td class="td-num">$19.99/月 Wellness+</td></tr>
+                    <tr><td>第一年总成本</td><td class="td-num">~$3,749（vs Tonal ~$5,500）</td></tr>
+                    <tr><td>覆盖国家</td><td class="td-num">22+</td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num">UK 4.4 / 全球 3.2</td></tr>
+                    <tr><td>关键法律风险</td><td class="td-num">Tonal 6 项专利诉讼（美国）</td></tr>
+                    <tr><td>员工数</td><td class="td-num">51-200 人</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card">
+                    <div class="cc-num">01</div>
+                    <h3>资本效率是 Speediance 最深的护城河——不是技术</h3>
+                    <p>Speediance 的技术（电机驱动数字阻力）Tonal 可以复制（电磁阻力更高级），但 Speediance 的资本效率——$13.6M 融资做到 $49M 年营收——Tonal 完全无法复制。Tonal 需要 ~$1 亿 ARR 才能覆盖 $615M 的资本成本，而 Speediance 在 $49M 时可能已经接近盈利。如果这是一场"谁先烧完钱"的战争，Speediance 赢面很大。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">02</div>
+                    <h3>"零强制订阅"是对 Tonal/Peloton 商业模式的正面挑战</h3>
+                    <p>Speediance 证明了"硬件+可选订阅"在家用数字力量训练品类是可行的。如果这个模式持续成功，它将迫使 Tonal 和 Peloton 重新思考自己的强制订阅策略——就像 Spotify 免费版迫使 Tidal 和 Apple Music 降低入门门槛一样。但这也意味着 Speediance 的硬件毛利必须足够高——如果硬件价格被竞对压下来，而 Speediance 又没有订阅收入做缓冲，利润空间会被压缩。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">03</div>
+                    <h3>专利诉讼是 Speediance 的"生死劫"——不是概率问题，是生存问题</h3>
+                    <p>Tonal 的 6 项专利诉讼不是一个"输了赔钱"的风险——它是"输了退出美国市场"的风险。对于一个 $13.6M 融资的公司来说，美国专利诉讼的律师费用（$200-500 万+）本身就是巨大的财务负担。Speediance 需要在两个战线上同时作战：法律战场（应诉、无效化对方专利、证明不侵权）和市场战场（继续扩张、获取用户、提高营收）。如果任何一个战场失守，公司都会陷入严重困境。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">04</div>
+                    <h3>客服和软件是 Speediance 从"挑战者"变成"领导者"必须跨越的鸿沟</h3>
+                    <p>Speediance 目前是一款"硬件很棒、客服抽奖、软件及格"的产品。Trustpilot 3.2-4.4 的区域差异和"自行拆机维修"的投诉说明公司还没有建立起全球统一的售后体系。软件上，缺乏直播课程、AI 形态纠正和自动 Spotter——这些是 Tonal 用户忠诚度的核心来源。如果 Speediance 想要从"更便宜的 Tonal 替代品"变成"比 Tonal 更好的选择"，它需要在客服和软件上投入至少相当于当前研发预算 2-3 倍的资源。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-speediance">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">Speediance</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">US / Global</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; fitness GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>Speediance 的 GTM 是“深圳硬件效率 + 无强制订阅 + DTC/众筹验证”对 Tonal 强订阅模式的正面攻击。</div>
+<div class="gtm-card"><p>Speediance 的 GTM 是“深圳硬件效率 + 无强制订阅 + DTC/众筹验证”对 Tonal 强订阅模式的正面攻击。它用较少融资做出可比高端设备，靠 Gym Monster 2、可折叠免安装、全球评测和社区口碑建立信任；风险集中在专利诉讼、区域售后差异、软件体验和长期内容投入。</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">Kickstarter 验证第一批硬核健身用户</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">独立站/Amazon/区域经销商多渠道出货</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">评测媒体和社群建立“更自由的 Tonal 替代品”心智</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">无强制订阅降低购买阻力</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Wellness+ 做可选增值而非锁死</span></div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心渠道：</strong>官方独立站或官方票务页承接高意向购买。</li>
+</ul></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">Gym Monster 2 / 2S</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">smart_strength_machine</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>旗舰产品，直接对比 Tonal 2 和 AEKE K1。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Official page shows Gym Monster 2 configurations around $3,390-$4,799 and legacy Gym Monster around $2,499-$3,249 during sale windows.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Core workouts and tracking are usable without mandatory subscription; Wellness+ is optional.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: Works/Works Plus/Family Plus price differences include bench, rower, barbell, straps and rings; Smart Scale $108, Bluetooth Ring pack $99, PowerGrip $179 from official store.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Tonal 2 $4,295 + $495 accessories + $59.95/mo; AEKE K1 $3,298-$3,498 no mandatory subscription; Growl $4,500 + $60/mo; FightCamp packages start $299.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/" target="_blank" rel="noopener noreferrer">Speediance official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness" target="_blank" rel="noopener noreferrer">The Verge GROWL pricing and product report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://joinfightcamp.com/" target="_blank" rel="noopener noreferrer">FightCamp official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wired.com/review/speediance-gym-monster-2/" target="_blank" rel="noopener noreferrer">WIRED Speediance Gym Monster 2 review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">Wellness+</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">optional_subscription</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>证明 Speediance 不是没有软件商业化，而是不把软件变成购买门槛。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Wellness+ pricing in local base report: $19.99/month or $119.88/year; official page is the current plan source.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Optional subscription/software fee; no mandatory subscription for core device use.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: app/service bundled with hardware; no installation drilling fee like Tonal.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor subscription comparison: Tonal $59.95/mo 12-month commitment; Peloton All-Access $49.99/mo; FightCamp legacy $39/mo; Growl planned $60/mo.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/pages/wellness-ai-personal-trainer" target="_blank" rel="noopener noreferrer">Speediance Wellness+ official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/" target="_blank" rel="noopener noreferrer">TechCrunch FightCamp $90M round</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness" target="_blank" rel="noopener noreferrer">The Verge GROWL pricing and product report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/pages/wellness-ai-personal-trainer" target="_blank" rel="noopener noreferrer">Speediance Wellness+ official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/" target="_blank" rel="noopener noreferrer">Speediance official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">VeloNix / ecosystem expansion</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">cardio_line</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Speediance 从力量设备向完整家庭健身生态扩展的信号。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>VeloNix official product page is current source; exact sale price changes by campaign.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Subscription/software boundary: Wellness+ optional, not a mandatory Peloton-style lock.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: bike accessories and maintenance differ from GM2; shipping/return/warranty need逐项核算。</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Peloton Bike official homepage financing footnote uses $1,695 for Cross Training Bike and $2,695 for Bike+; Speediance must win on bundle value, not just lower price.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/" target="_blank" rel="noopener noreferrer">Speediance official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/" target="_blank" rel="noopener noreferrer">Speediance official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.speediance.com/" target="_blank" rel="noopener noreferrer">Speediance official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/wellness-ai-personal-trainer" target="_blank" rel="noopener noreferrer">Speediance Wellness+ official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wired.com/review/speediance-gym-monster-2/" target="_blank" rel="noopener noreferrer">WIRED Speediance Gym Monster 2 review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.tomsguide.com/wellness/fitness/i-tried-the-speediance-gym-monster-2-heres-what-i-love-and-dont" target="_blank" rel="noopener noreferrer">Tom’s Guide Speediance review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc." target="_blank" rel="noopener noreferrer">Speediance public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.crunchbase.com/organization/speediance" target="_blank" rel="noopener noreferrer">Speediance Crunchbase profile</a> <span class="gtm-muted">[database]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.trustpilot.com/review/speediance.com" target="_blank" rel="noopener noreferrer">Speediance Trustpilot</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body>
+</html>

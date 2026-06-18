@@ -4,7 +4,7 @@
   "market_focus": "US / Global",
   "report_type": "gtm_extension",
   "version": "1.0",
-  "generated_by": "VSCode AI research",
+  "generated_by": "AI-assisted public-source research; evidence repair 2026-06-17",
   "disclaimer": "This report is for learning and pattern recognition. It does not perform strict fact auditing. DJI is a private company; revenue and market share figures are based on media reports and industry estimates.",
   "brand_context": {
     "founder_background": [
@@ -28,23 +28,74 @@
       "2025 年行业分析估值区间 $15B-$150B，差距巨大源于私有公司信息不透明"
     ],
     "brand_timeline": [
-      { "year": "2006", "event": "汪滔在 HKUST 宿舍创立大疆，同年搬到深圳车公庙 20 平米仓库" },
-      { "year": "2009", "event": "XP3.1 飞控系统发布，珠峰航拍 demo 获得市场关注" },
-      { "year": "2010", "event": "ACE ONE 飞控系统发布，面向专业航拍市场" },
-      { "year": "2011", "event": "首款四旋翼发布；在北美建立 DJI North America" },
-      { "year": "2013", "event": "Phantom 1 发布 — 全球首款到手即飞的消费级四旋翼，定价 $679，开启消费级无人机时代" },
-      { "year": "2014", "event": "Phantom 2 Vision+ 发布，内置 3 轴云台相机；Inspire 1 发布" },
-      { "year": "2015", "event": "Phantom 3 发布（内置 Lightbridge 图传）；首款农业植保无人机 Agras MG-1 发布" },
-      { "year": "2016", "event": "Mavic Pro 发布 — 折叠式便携无人机定义新品类；DJI Enterprise 独立业务线成立；开设首批授权零售店" },
-      { "year": "2017", "event": "Spark 掌上无人机发布（手势控制）；美国陆军下令禁用大疆无人机" },
-      { "year": "2018", "event": "Mavic 2 系列发布（首次搭载哈苏相机）；与微软战略合作；发布全球首款消费级 GaN 充电器（Anker 更早）——此条修正：DJI 未涉及 GaN 充电器" },
-      { "year": "2019", "event": "教育机器人 RoboMaster S1 发布；Mavic Mini（249 克）面市，规避多数国家注册要求；Osmo Action 运动相机发布" },
-      { "year": "2020", "event": "被美国商务部加入 Entity List；DJI FPV 发布（第一人称飞行体验）；Osmo Mobile 4 磁吸设计" },
-      { "year": "2021", "event": "Mavic 3 双摄旗舰发布；Agras T40/T20P 农业无人机发布；美国财政部投资禁令" },
-      { "year": "2022", "event": "深圳全球总部'天空之城'启用；Mini 3 Pro 发布；被美国国防部加入中国涉军企业（CMC）名单；教育产品线停售" },
-      { "year": "2023", "event": "Inspire 3 8K 全画幅电影无人机发布；首款运载无人机 FlyCart 30 发布；退出教育机器人市场" },
-      { "year": "2024", "event": "营收突破 800 亿元；比亚迪 × 大疆车载无人机'灵鸢'发布；Osmo Action 5 Pro 发布；FlyCart 30 创珠峰 6000 米运输纪录；DJI Neo 入门级发布；2024 年 10 月 CBP 以 UFLPA 为由扣押 DJI 进口货物" },
-      { "year": "2025", "event": "Mavic 4 Pro 三摄旗舰发布；首款扫地机器人 ROMO 发布；全景相机 Osmo 360 发布；获奥斯卡科学技术奖；获艾美奖；2025 年 12 月 FCC 将 DJI 加入 Covered List，禁止新款外国无人机在美销售" }
+      {
+        "year": "2006",
+        "event": "汪滔在 HKUST 宿舍创立大疆，同年搬到深圳车公庙 20 平米仓库"
+      },
+      {
+        "year": "2009",
+        "event": "XP3.1 飞控系统发布，珠峰航拍 demo 获得市场关注"
+      },
+      {
+        "year": "2010",
+        "event": "ACE ONE 飞控系统发布，面向专业航拍市场"
+      },
+      {
+        "year": "2011",
+        "event": "首款四旋翼发布；在北美建立 DJI North America"
+      },
+      {
+        "year": "2013",
+        "event": "Phantom 1 发布 — 全球首款到手即飞的消费级四旋翼，定价 $679，开启消费级无人机时代"
+      },
+      {
+        "year": "2014",
+        "event": "Phantom 2 Vision+ 发布，内置 3 轴云台相机；Inspire 1 发布"
+      },
+      {
+        "year": "2015",
+        "event": "Phantom 3 发布（内置 Lightbridge 图传）；首款农业植保无人机 Agras MG-1 发布"
+      },
+      {
+        "year": "2016",
+        "event": "Mavic Pro 发布 — 折叠式便携无人机定义新品类；DJI Enterprise 独立业务线成立；开设首批授权零售店"
+      },
+      {
+        "year": "2017",
+        "event": "Spark 掌上无人机发布（手势控制）；美国陆军下令禁用大疆无人机"
+      },
+      {
+        "year": "2018",
+        "event": "Mavic 2 系列发布（首次搭载哈苏相机）；与微软战略合作；发布全球首款消费级 GaN 充电器（Anker 更早）——此条修正：DJI 未涉及 GaN 充电器"
+      },
+      {
+        "year": "2019",
+        "event": "教育机器人 RoboMaster S1 发布；Mavic Mini（249 克）面市，规避多数国家注册要求；Osmo Action 运动相机发布"
+      },
+      {
+        "year": "2020",
+        "event": "被美国商务部加入 Entity List；DJI FPV 发布（第一人称飞行体验）；Osmo Mobile 4 磁吸设计"
+      },
+      {
+        "year": "2021",
+        "event": "Mavic 3 双摄旗舰发布；Agras T40/T20P 农业无人机发布；美国财政部投资禁令"
+      },
+      {
+        "year": "2022",
+        "event": "深圳全球总部'天空之城'启用；Mini 3 Pro 发布；被美国国防部加入中国涉军企业（CMC）名单；教育产品线停售"
+      },
+      {
+        "year": "2023",
+        "event": "Inspire 3 8K 全画幅电影无人机发布；首款运载无人机 FlyCart 30 发布；退出教育机器人市场"
+      },
+      {
+        "year": "2024",
+        "event": "营收突破 800 亿元；比亚迪 × 大疆车载无人机'灵鸢'发布；Osmo Action 5 Pro 发布；FlyCart 30 创珠峰 6000 米运输纪录；DJI Neo 入门级发布；2024 年 10 月 CBP 以 UFLPA 为由扣押 DJI 进口货物"
+      },
+      {
+        "year": "2025",
+        "event": "Mavic 4 Pro 三摄旗舰发布；首款扫地机器人 ROMO 发布；全景相机 Osmo 360 发布；获奥斯卡科学技术奖；获艾美奖；2025 年 12 月 FCC 将 DJI 加入 Covered List，禁止新款外国无人机在美销售"
+      }
     ],
     "major_turning_points": [
       "2013 Phantom 发布：从飞控组件商转型为消费级整机品牌，创造了消费级无人机这个品类",
@@ -63,7 +114,85 @@
       "教育机器人 RoboMaster 产品线 2023 年停售 — 教育市场尝试基本失败",
       "Colin Guinn 诉讼 — 2015 年 DJI 北美前 CEO 因合同纠纷起诉 DJI，后和解（细节保密）"
     ],
-    "notes": "DJI 是全球极少数从零开始、没有依赖 VC 烧钱、靠技术创新和产品力建立绝对市场统治的中国科技品牌。其核心竞争力是全栈垂直整合——飞控、云台、图传、相机、AI 避障全部自研，竞争对手无法通过组装第三方组件来匹敌。美国监管压力是 DJI 当前最大的单一风险——一旦新机型无法进入美国市场，长期看可能给 Skydio 等美国替代品创造追赶窗口。但 DJI 的技术代差（业界公认领先 3-5 年）和全球其他市场的持续增长（农业、行业应用、新兴市场）为其提供了缓冲。"
+    "notes": "DJI 是全球极少数从零开始、没有依赖 VC 烧钱、靠技术创新和产品力建立绝对市场统治的中国科技品牌。其核心竞争力是全栈垂直整合——飞控、云台、图传、相机、AI 避障全部自研，竞争对手无法通过组装第三方组件来匹敌。美国监管压力是 DJI 当前最大的单一风险——一旦新机型无法进入美国市场，长期看可能给 Skydio 等美国替代品创造追赶窗口。但 DJI 的技术代差（业界公认领先 3-5 年）和全球其他市场的持续增长（农业、行业应用、新兴市场）为其提供了缓冲。",
+    "founder_profiles": [
+      {
+        "name": "Frank Wang / Wang Tao",
+        "role": "Founder / CEO",
+        "background_summary": "HKUST-trained engineer who built flight-control prototypes in his dorm room and founded DJI in 2006.",
+        "profile_links": [
+          {
+            "title": "Frank Wang profile",
+            "url": "https://en.wikipedia.org/wiki/Frank_Wang",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "DJI company profile",
+            "url": "https://en.wikipedia.org/wiki/DJI",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2006",
+        "event": "founder_cash",
+        "currency": "CNY/USD",
+        "description": "Wang built early prototypes while at HKUST and moved to Shenzhen with limited personal/family capital.",
+        "source": {
+          "title": "DJI company history",
+          "url": "https://en.wikipedia.org/wiki/DJI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "early years",
+        "event": "first_revenue",
+        "amount": "about RMB 50,000 per flight-control system cited in secondary summaries",
+        "currency": "CNY",
+        "description": "Early DJI sold flight-control components to universities and industrial customers before consumer drones.",
+        "source": {
+          "title": "Frank Wang profile",
+          "url": "https://en.wikipedia.org/wiki/Frank_Wang",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2006-2009",
+        "event": "founder_support",
+        "amount": "$90,000",
+        "currency": "USD",
+        "description": "Secondary histories cite support from family friend Lu Di, who managed finances in the early years.",
+        "source": {
+          "title": "DJI company history",
+          "url": "https://en.wikipedia.org/wiki/DJI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2020",
+        "event": "revenue",
+        "amount": "CNY 24B / about $3.83B",
+        "currency": "CNY/USD",
+        "description": "Public company summaries cite DJI revenue around CNY 24B for 2020.",
+        "source": {
+          "title": "DJI company profile",
+          "url": "https://en.wikipedia.org/wiki/DJI",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ]
   },
   "gtm_extension": {
     "summary": "DJI 是全球消费级和工业级无人机市场的绝对霸主（消费级全球市占率 70-80%，工业级 50%+，农业级 59%），也是极少数在海外以高端品牌形象立足且拥有绝对定价权的中国科技品牌。DJI 的 GTM 路径堪称教科书级：从航模论坛直销飞控组件起步，靠 Phantom 系列（2013）创造'到手即飞'消费级无人机品类，通过 Mavic 系列（2016）以折叠设计击溃 GoPro Karma 并定义便携无人机品类，再以全栈垂直整合（飞控、云台、图传、相机、AI 避障全部自研）建立竞争对手无法逾越的技术护城河。渠道方面，DJI 从线上起量（官网 DTC + Amazon + Apple Store 首发）逐步构建了覆盖 400+ 授权零售店、Best Buy/Costco/Walmart 等主流零售商、以及 S/A/B 三级代理商体系的全球全渠道网络。DJI 的'同心圆'品类扩张逻辑（飞控核心技术 → 无人机 → 手持云台 → 运动相机 → 车载传感器 → 扫地机器人 → 户外电源）极为清晰，每一项新业务都是核心能力的自然延伸。农业无人机业务 2025 年全球出货 20 万台、营收约 187 亿元、毛利率 58%，已成为第二大利润支柱。但 2025 年 12 月 FCC 将 DJI 加入 Covered List 导致美国市场新机型禁售，是 DJI 有史以来最严重的单一市场风险——美国约占海外营收 40-45%。同时五角大楼 CMC 名单诉讼仍在进行中。DJI 证明了'把基础技术做到极致、不被 VC 节奏绑架、用代差级产品定义品类'可以建立一家年营收 800 亿+的全球科技品牌。",
@@ -78,7 +207,6 @@
       "美国市场面临结构性渠道断裂风险（2025-现在）：FCC Covered List 禁售新机型，Best Buy 等零售商清空库存"
     ],
     "channels": {
-      "crowdfunding": "not_found_or_not_core — DJI 从未使用 Kickstarter 或 Indiegogo 等众筹平台。其早期资金来自创始人自筹和熟人网络，产品验证通过航模论坛社区直销实现，而非众筹。这是 DJI 与大多数消费电子 DTC 品牌的重要区别。",
       "dtc": "官方独立站（store.dji.com）是 DJI 最重要的销售渠道和品牌阵地，承担新品全球首发、全系列销售、用户社区运营（SkyPixel 5500 万注册用户）。DTC 让 DJI 保持对定价、品牌体验和用户数据的完全掌控。DJI 还设有直营旗舰店（深圳、上海、北京、香港、首尔、纽约第五大道等）作为品牌标杆和体验中心。",
       "amazon": "Amazon 是 DJI 在北美和欧洲的重要电商渠道，但不是绝对主力——DJI 的渠道依赖度比 Anker 低得多。DJI 在 Amazon 上销售全系消费级产品，但更倾向于将流量引导至官方独立站。2024 年底因 CBP 扣押进口货物，Amazon 上 DJI 库存也出现严重短缺。",
       "ecommerce": "除 Amazon 和自有独立站外，DJI 在中国通过天猫、京东旗舰店销售；在日本通过乐天、Amazon Japan 等；在不同国家使用当地主流电商平台组合。DJI 也通过 B&H Photo、Adorama 等专业摄影器材电商销售，这些渠道对专业影像用户有特殊价值。",
@@ -369,7 +497,37 @@
             "note": "DJI 从宿舍到全球霸主的完整创业故事",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "Original DJI Phantom launched as an entry drone around $629; later Phantom 4 Pro-class products moved above $1,000 before discontinuation.",
+          "current_price": "Phantom line is largely discontinued; current new price not_applicable / reseller only.",
+          "accessory_price": "Extra batteries, propellers, chargers, cases, ND filters, and DJI Care add meaningful attachment revenue.",
+          "software_subscription": "DJI app use was free; enterprise/cloud services not core to Phantom consumer line.",
+          "service_fee": "DJI Care Refresh / repair coverage varies by model and term.",
+          "competitor_price": "GoPro Karma and early 3DR/Parrot drones competed around several hundred to low-thousand-dollar bands; most exited or lost share.",
+          "competitor_accessory_price": "Drone batteries, propellers, cases, and camera/gimbal accessories were separate across competitors.",
+          "notes": "Use Phantom as historical pricing evidence, not current DJI catalog.",
+          "sources": [
+            {
+              "title": "DJI Phantom history",
+              "url": "https://en.wikipedia.org/wiki/DJI_Phantom",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "DJI company history",
+              "url": "https://en.wikipedia.org/wiki/DJI",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "DJI Care Refresh official page",
+              "url": "https://www.dji.com/service/djicare-refresh",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "DJI Mavic 系列 — 便携折叠无人机品类的定义者",
@@ -532,7 +690,6 @@
             "Mini 系列催生了'无人机博主入门套装'等第三方整合产品",
             "便携无人机的旅行场景催生了无人机旅行保险等专项保险"
           ],
-          "new_channels": [],
           "content_or_community": [
             "Mavic 航拍 Vlog 成为 YouTube 和 B 站上最受欢迎的内容类型之一",
             "Mavic Mini 让无人机测评内容从专业频道扩展到生活方式频道",
@@ -599,7 +756,39 @@
             "note": "中文科技媒体对 Mavic Pro 中国发布会的报道",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "Mavic consumer/prosumer drones range from sub-$1,000 Mini/Air lines to $2,000+ Pro/Cine bundles depending on generation.",
+          "current_price": "Verify current Mavic SKU on DJI official store because availability varies by region and regulatory status.",
+          "bundle_price": "Fly More / Creator / Cine combos add batteries, chargers, bags, RC controllers, and storage; often hundreds to more than $1,000 above base SKU.",
+          "accessory_price": "Extra batteries, propellers, ND filters, charging hubs, controllers, and bags are major attachment products.",
+          "software_subscription": "Consumer app is free; DJI Care Refresh and cloud/enterprise tools are separate where applicable.",
+          "service_fee": "DJI Care Refresh varies by model and coverage term.",
+          "competitor_price": "Autel EVO, Skydio, and Parrot alternatives generally compete from high hundreds to several thousand dollars.",
+          "competitor_accessory_price": "Competitor drone batteries and controllers are typically high-margin add-ons.",
+          "competitor_subscription": "Some competitors bundle cloud/fleet features for enterprise; consumer subscriptions are less central.",
+          "notes": "For Mavic, bundle and accessory ARPU are as important as base drone MSRP.",
+          "sources": [
+            {
+              "title": "DJI official store",
+              "url": "https://store.dji.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "DJI Care Refresh official page",
+              "url": "https://www.dji.com/service/djicare-refresh",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Autel Robotics official store",
+              "url": "https://www.autelrobotics.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "DJI Enterprise & Agriculture 生态系统 — Matrice / Agras / DJI Dock 行业平台",
@@ -847,7 +1036,38 @@
             "note": "DJI 农业官方页面，含全球覆盖数据和产品信息",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "Enterprise/agriculture platforms such as Matrice, Agras, Dock, and payloads are usually dealer/quote-based or high four-to-five-figure systems.",
+          "bundle_price": "Enterprise bundles include aircraft, controller, batteries, charging station, payloads, RTK, dock, and service plan.",
+          "accessory_price": "Payload cameras, sprayers, batteries, RTK modules, docks, and maintenance parts are major add-on costs.",
+          "software_subscription": "DJI FlightHub 2 and related cloud/fleet tools may require paid plans for advanced enterprise management.",
+          "service_fee": "DJI Care Enterprise / dealer service / training priced by model and region.",
+          "competitor_price": "Skydio X10, Autel Dragonfish/EVO Max, and agricultural drone vendors compete in quote-based enterprise bands.",
+          "competitor_accessory_price": "Enterprise payloads, docks, batteries, and service plans are separate across competitors.",
+          "competitor_subscription": "Skydio and other enterprise vendors commonly monetize fleet/cloud software.",
+          "notes": "Do not treat enterprise DJI as a simple hardware sale; payload, dock, software, and service attach are core.",
+          "sources": [
+            {
+              "title": "DJI Enterprise official site",
+              "url": "https://enterprise.dji.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "DJI Agriculture official site",
+              "url": "https://ag.dji.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "DJI FlightHub 2 official page",
+              "url": "https://enterprise.dji.com/flighthub-2",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       }
     ],
     "learning_summary": {
@@ -988,5 +1208,6 @@
         "confidence": "medium"
       }
     ]
-  }
+  },
+  "research_checked_at": "2026-06-17"
 }

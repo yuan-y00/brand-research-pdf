@@ -1,0 +1,384 @@
+{
+  "brand": "Shokz",
+  "brand_slug": "shokz",
+  "market_focus": "Global / China where relevant",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; consumer GTM repair 2026-06-17",
+  "disclaimer": "Only sourced money events are written as facts. Unsupported founder cash, margin, burn, loss, CAC, refund or subsidy amounts remain in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Ken Chen / 陈皞: T3 interview identifies Ken Chen as a Shokz co-founder and explains the factory-to-open-ear brand evolution.",
+      "陈迁 / 齐心: Local base report records the three-founder story and 250K RMB startup narrative; keep it as public narrative unless audited."
+    ],
+    "brand_timeline": [
+      "early_start: founder_cash RMB 250K public narrative - Local base report records a 250K RMB startup narrative; not treated as audited finance.",
+      "2011: brand_launch CES small booth / AfterShokz - Founder interview describes early CES education and poor initial sales before product-market fit.",
+      "2012-2015: distribution_learning 18 units in 1,000 stores - Founder interview says an early retail report showed only 18 sales from 1,000 stores, a useful GTM failure signal."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Ken Chen / 陈皞",
+        "role": "Co-founder / CEO",
+        "background_summary": "T3 interview identifies Ken Chen as a Shokz co-founder and explains the factory-to-open-ear brand evolution.",
+        "profile_links": [
+          {
+            "title": "T3 Shokz founder / open-ear history",
+            "url": "https://www.t3.com/tech/headphones/how-shokz-built-its-open-ear-empire-from-the-struggles-to-success",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Shokz official site",
+            "url": "https://shokz.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "陈迁 / 齐心",
+        "role": "Co-founders",
+        "background_summary": "Local base report records the three-founder story and 250K RMB startup narrative; keep it as public narrative unless audited.",
+        "profile_links": [
+          {
+            "title": "Shokz official site",
+            "url": "https://shokz.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "T3 Shokz founder / open-ear history",
+            "url": "https://www.t3.com/tech/headphones/how-shokz-built-its-open-ear-empire-from-the-struggles-to-success",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "early_start",
+        "event": "founder_cash",
+        "amount": "RMB 250K public narrative",
+        "currency": "CNY",
+        "description": "Local base report records a 250K RMB startup narrative; not treated as audited finance.",
+        "source": {
+          "title": "Shokz official site",
+          "url": "https://shokz.com/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2011",
+        "event": "brand_launch",
+        "amount": "CES small booth / AfterShokz",
+        "currency": "USD",
+        "description": "Founder interview describes early CES education and poor initial sales before product-market fit.",
+        "source": {
+          "title": "T3 Shokz founder / open-ear history",
+          "url": "https://www.t3.com/tech/headphones/how-shokz-built-its-open-ear-empire-from-the-struggles-to-success",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2012-2015",
+        "event": "distribution_learning",
+        "amount": "18 units in 1,000 stores",
+        "currency": "units",
+        "description": "Founder interview says an early retail report showed only 18 sales from 1,000 stores, a useful GTM failure signal.",
+        "source": {
+          "title": "T3 Shokz founder / open-ear history",
+          "url": "https://www.t3.com/tech/headphones/how-shokz-built-its-open-ear-empire-from-the-struggles-to-success",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "No audited revenue, profit, founder cash split or financing table is public in the sources used.",
+      "Accessory replacement prices vary by region and should be captured from official store at purchase time.",
+      "Do not write zero VC as audited unless confirmed by primary company disclosure."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Shokz 的 GTM 是“开放式听音安全场景 + 跑步骑行人群 + 线下试戴教育 + 运动口碑”的细分品类打法。它没有靠 VC 烧钱讲大故事，而是长期教育用户为什么“不入耳”在运动时更安全、更舒适。现在的问题是开放式耳机从小众变成红海，Bose、Sony、华为、Anker/Soundcore 都在用不同形态和价格夹击。",
+    "one_sentence_gtm": "Shokz 的 GTM 是“开放式听音安全场景 + 跑步骑行人群 + 线下试戴教育 + 运动口碑”的细分品类打法。",
+    "channel_path": [
+      "Two-way radio / factory capability builds audio hardware base",
+      "AfterShokz CES education introduces bone conduction",
+      "Running stores and grassroots trials solve user education",
+      "OpenRun/OpenFit expands from runners to mainstream open-ear users",
+      "Future AI glasses/hearing solutions test broader wearable platform"
+    ],
+    "channels": {
+      "dtc": "Official site/store is the clearest conversion path and pricing source.",
+      "ecommerce": "Marketplaces, retailers, and regional stores broaden reach beyond owned traffic.",
+      "pr_media": "Reviews, launch events, and credible media explain why the product deserves attention.",
+      "community": "User reviews, forums, creator content, or owner communities decide whether early demand becomes trust.",
+      "service": "Warranty, repair, delivery, setup, installation, and support determine long-term brand quality.",
+      "sports_retail": "Running/cycling stores and race visibility explain why open-ear matters.",
+      "trials": "Try-before-believe is critical because bone/open-ear audio feels unfamiliar."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "OpenRun/OpenRun Pro headphones",
+        "OpenFit/OpenDots open earbuds",
+        "Accessories and replacements",
+        "Future AI/hearing wearables"
+      ],
+      "pricing_logic": "Mid-to-premium open-ear pricing, with safety/comfort as the reason to pay more than commodity earbuds.",
+      "channel_economics": "Category education is expensive but creates strong word-of-mouth among runners."
+    },
+    "top_products_selection_rule": "最多选 3 个产品或产品线；按公开证据、价格结构、GTM 学习价值和用户购买决策选择。",
+    "top_products": [
+      {
+        "name": "OpenRun Pro 2",
+        "type": "bone_conduction_headphones",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "Flagship sports identity product and the clearest Shokz wedge.",
+        "origin_story": "Shokz built credibility by making bone conduction practical for runners and cyclists.",
+        "pre_market": "Users need to believe open-ear awareness is worth trading off ANC/isolation.",
+        "innovation": "DualPitch / bone + air conduction, 12-hour battery and USB-C charging in reviews.",
+        "breakout": "It keeps Shokz as the default running headphone brand.",
+        "customer_impact": "Runners get music without fully blocking traffic and race surroundings.",
+        "ecosystem_impact": "It created a durable sports-open-ear category before big brands entered.",
+        "pricing_model": {
+          "product_price": "Review sources list OpenRun Pro 2 at about $179.95 / £169 / €199 depending on region and promotion.",
+          "subscription_fee": "No mandatory software subscription; app EQ/customization is product support rather than revenue pillar.",
+          "accessory_service_fee": "Accessory/service price: carrying case, charging cable, warranty replacement and non-replaceable battery are total-cost considerations.",
+          "competitor_price": "Competitor price comparison: Bose Ultra Open Earbuds launch $299; Suunto Wing about £145; Creative Outlier Free Pro+ about £80; AirPods and Sony compete for general audio but not the same safety job.",
+          "sources": [
+            {
+              "title": "The Guardian Shokz OpenRun Pro 2 review",
+              "url": "https://www.theguardian.com/technology/article/2024/aug/28/shokz-openrun-pro-2-review-bringing-bass-to-bone-conduction-headphones",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "Shokz warranty",
+              "url": "https://shokz.com/pages/warranty",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge Shokz OpenDots One report",
+              "url": "https://www.theverge.com/news/659701/shokz-opendots-one-bluetooth-wireless-headphones-open",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "The Guardian Shokz OpenRun Pro 2 review",
+            "url": "https://www.theguardian.com/technology/article/2024/aug/28/shokz-openrun-pro-2-review-bringing-bass-to-bone-conduction-headphones",
+            "source_type": "review",
+            "confidence": "medium"
+          },
+          {
+            "title": "Shokz warranty",
+            "url": "https://shokz.com/pages/warranty",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "OpenFit Pro / OpenFit 2 line",
+        "type": "open_ear_earhook",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "This line moves Shokz from runner-only into everyday open-ear audio.",
+        "origin_story": "After bone conduction proved the safety job, Shokz expanded into air-conduction open earbuds.",
+        "pre_market": "Users compare comfort, bass, stability and price against Bose/Sony/Huawei/Anker.",
+        "innovation": "OpenFit Pro review highlights premium open-ear design, IP55 and app audio features.",
+        "breakout": "It broadens TAM beyond road runners to office, commuting and gym users.",
+        "customer_impact": "Users get all-day comfort and awareness, but still lack true ANC isolation.",
+        "ecosystem_impact": "It turns open-ear from niche sport gear into mainstream lifestyle audio.",
+        "pricing_model": {
+          "product_price": "OpenFit Pro launched at $249 / £219; OpenFit 2 and 2+ reported around $179.95-$199.95.",
+          "subscription_fee": "No mandatory subscription; companion app and firmware are included.",
+          "accessory_service_fee": "Accessory/service price: eartips are not the model, but charging case, warranty and battery longevity matter; Shokz warranty page is service boundary.",
+          "competitor_price": "Competitor price comparison: Bose Ultra Open $299, Sony LinkBuds Open about $199, Huawei FreeClip / FreeClip 2 and Soundcore AeroClip around $129 compete by style and price.",
+          "sources": [
+            {
+              "title": "Tom’s Guide Shokz OpenFit Pro review",
+              "url": "https://www.tomsguide.com/audio/earbuds/shokz-openfit-pro-review",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "Shokz warranty",
+              "url": "https://shokz.com/pages/warranty",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechRadar Shokz OpenDots 2 review",
+              "url": "https://www.techradar.com/health-fitness/fitness-headphones/shoks-opendots-2-review-comfortable-stable-long-lasting-open-ear-buds-that-arent-just-for-fitness",
+              "source_type": "review",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Tom’s Guide Shokz OpenFit Pro review",
+            "url": "https://www.tomsguide.com/audio/earbuds/shokz-openfit-pro-review",
+            "source_type": "review",
+            "confidence": "medium"
+          },
+          {
+            "title": "TechRadar Shokz OpenDots 2 review",
+            "url": "https://www.techradar.com/health-fitness/fitness-headphones/shoks-opendots-2-review-comfortable-stable-long-lasting-open-ear-buds-that-arent-just-for-fitness",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "OpenDots 2 / clip-on open earbuds",
+        "type": "clip_on_open_earbuds",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "Clip-on buds show Shokz following the market from sports neckband to fashion/open-ear daily wear.",
+        "origin_story": "OpenDots follows the broader clip-on boom created by Bose/Huawei and social visibility.",
+        "pre_market": "Users want comfort, glasses compatibility, low leakage and secure fit.",
+        "innovation": "TechRadar/Tom’s Guide report $199-$199.95 price, IP rating and long battery life.",
+        "breakout": "It gives Shokz a product in the fastest-growing open-ear form factor.",
+        "customer_impact": "Users get jewelry-like open-ear earbuds, but must accept always-transparent listening.",
+        "ecosystem_impact": "It tests whether Shokz brand can win outside its original neckband sports silhouette.",
+        "pricing_model": {
+          "product_price": "OpenDots 2 reported at $199-$199.95 in the US, £179-£179.99 in the UK, AU$339 in Australia; OpenDots Air reported at $129/£129.",
+          "subscription_fee": "No mandatory subscription; app EQ/control settings are included.",
+          "accessory_service_fee": "Accessory/service price: case, battery degradation, warranty and replacement policy affect total cost.",
+          "competitor_price": "Competitor price comparison: Bose Ultra Open $299, Soundcore AeroClip $129, AirPods 4 with ANC $179, Huawei FreeClip/FreeClip 2 around the same open-ear segment.",
+          "sources": [
+            {
+              "title": "TechRadar Shokz OpenDots 2 review",
+              "url": "https://www.techradar.com/health-fitness/fitness-headphones/shoks-opendots-2-review-comfortable-stable-long-lasting-open-ear-buds-that-arent-just-for-fitness",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge Shokz OpenDots One report",
+              "url": "https://www.theverge.com/news/659701/shokz-opendots-one-bluetooth-wireless-headphones-open",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "TechRadar Shokz OpenDots 2 review",
+            "url": "https://www.techradar.com/health-fitness/fitness-headphones/shoks-opendots-2-review-comfortable-stable-long-lasting-open-ear-buds-that-arent-just-for-fitness",
+            "source_type": "review",
+            "confidence": "medium"
+          },
+          {
+            "title": "The Verge Shokz OpenDots One report",
+            "url": "https://www.theverge.com/news/659701/shokz-opendots-one-bluetooth-wireless-headphones-open",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Shokz 的第一性原理是安全和舒适，不是音质参数。",
+      "新品类需要教育成本，线下试戴和运动口碑比广告更关键。",
+      "开放式耳机变红海后，Shokz 必须证明品牌心智不只是骨传导专利。"
+    ],
+    "evidence_boundary": "找不到的内容不补写；缺失的创始人现金、单台毛利、广告投放、退货损失、售后成本留在 research_gaps。",
+    "sources": [
+      {
+        "title": "Shokz official site",
+        "url": "https://shokz.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Shokz products page",
+        "url": "https://shokz.com/collections/all",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Shokz warranty",
+        "url": "https://shokz.com/pages/warranty",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "T3 Shokz founder / open-ear history",
+        "url": "https://www.t3.com/tech/headphones/how-shokz-built-its-open-ear-empire-from-the-struggles-to-success",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "TechRadar Shokz OpenDots 2 review",
+        "url": "https://www.techradar.com/health-fitness/fitness-headphones/shoks-opendots-2-review-comfortable-stable-long-lasting-open-ear-buds-that-arent-just-for-fitness",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tom’s Guide Shokz OpenFit Pro review",
+        "url": "https://www.tomsguide.com/audio/earbuds/shokz-openfit-pro-review",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Guardian Shokz OpenRun Pro 2 review",
+        "url": "https://www.theguardian.com/technology/article/2024/aug/28/shokz-openrun-pro-2-review-bringing-bass-to-bone-conduction-headphones",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Verge Shokz OpenDots One report",
+        "url": "https://www.theverge.com/news/659701/shokz-opendots-one-bluetooth-wireless-headphones-open",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

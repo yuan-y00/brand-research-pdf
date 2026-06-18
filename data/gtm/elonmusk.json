@@ -1,0 +1,445 @@
+{
+  "brand": "Elon Musk / Tesla-SpaceX-X",
+  "brand_slug": "elonmusk",
+  "market_focus": "Person / platform methodology",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; person-platform GTM repair 2026-06-17",
+  "disclaimer": "This is not a normal brand SKU report. It maps product methodology to commercialization paths. Unsupported founder cash, exact margins, live valuations, private-company losses, or platform fee rates are kept in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Elon Musk: Zip2, X.com/PayPal, SpaceX, Tesla, X, xAI, Neuralink and Boring Company must be treated as separate company lines.",
+      "Gwynne Shotwell / SpaceX operating context: Important operating counterweight for SpaceX; avoids reducing platform execution to Musk alone."
+    ],
+    "brand_timeline": [
+      "1999: Zip2_exit $307M sale / about $22M to Musk - Compaq bought Zip2; public profiles record Musk’s first major liquidity event.",
+      "2002: PayPal_exit $1.5B sale / about $175M to Musk - eBay bought PayPal; Musk used proceeds for SpaceX, Tesla and SolarCity-related bets.",
+      "2006: NASA_COTS $278M then $396M - Falcon 9 profile records NASA COTS milestone funding and later increase.",
+      "2008: NASA_CRS $1.6B - Base report records SpaceX survival inflection through NASA resupply contract.",
+      "2022: Twitter_acquisition $44B - Musk acquired Twitter for $44B; later valuation claims should be sourced separately.",
+      "2026: FSD_subscription $99/month - Tesla official support page lists FSD (Supervised) subscription at $99/month and states supervision is required."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Elon Musk",
+        "role": "Founder / CEO / investor across companies",
+        "background_summary": "Zip2, X.com/PayPal, SpaceX, Tesla, X, xAI, Neuralink and Boring Company must be treated as separate company lines.",
+        "profile_links": [
+          {
+            "title": "Elon Musk public profile",
+            "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Tesla official Elon Musk bio",
+            "url": "https://www.tesla.com/elon-musk",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Gwynne Shotwell / SpaceX operating context",
+        "role": "President / COO context",
+        "background_summary": "Important operating counterweight for SpaceX; avoids reducing platform execution to Musk alone.",
+        "profile_links": [
+          {
+            "title": "Gwynne Shotwell public profile",
+            "url": "https://en.wikipedia.org/wiki/Gwynne_Shotwell",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "SpaceX public profile",
+            "url": "https://en.wikipedia.org/wiki/SpaceX",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "1999",
+        "event": "Zip2_exit",
+        "amount": "$307M sale / about $22M to Musk",
+        "currency": "USD",
+        "description": "Compaq bought Zip2; public profiles record Musk’s first major liquidity event.",
+        "source": {
+          "title": "Elon Musk public profile",
+          "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2002",
+        "event": "PayPal_exit",
+        "amount": "$1.5B sale / about $175M to Musk",
+        "currency": "USD",
+        "description": "eBay bought PayPal; Musk used proceeds for SpaceX, Tesla and SolarCity-related bets.",
+        "source": {
+          "title": "Elon Musk public profile",
+          "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2006",
+        "event": "NASA_COTS",
+        "amount": "$278M then $396M",
+        "currency": "USD",
+        "description": "Falcon 9 profile records NASA COTS milestone funding and later increase.",
+        "source": {
+          "title": "Falcon 9 public profile and pricing",
+          "url": "https://en.wikipedia.org/wiki/Falcon_9",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2008",
+        "event": "NASA_CRS",
+        "amount": "$1.6B",
+        "currency": "USD",
+        "description": "Base report records SpaceX survival inflection through NASA resupply contract.",
+        "source": {
+          "title": "SpaceX public profile",
+          "url": "https://en.wikipedia.org/wiki/SpaceX",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2022",
+        "event": "Twitter_acquisition",
+        "amount": "$44B",
+        "currency": "USD",
+        "description": "Musk acquired Twitter for $44B; later valuation claims should be sourced separately.",
+        "source": {
+          "title": "Elon Musk public profile",
+          "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026",
+        "event": "FSD_subscription",
+        "amount": "$99/month",
+        "currency": "USD",
+        "description": "Tesla official support page lists FSD (Supervised) subscription at $99/month and states supervision is required.",
+        "source": {
+          "title": "Tesla FSD subscription official support",
+          "url": "https://www.tesla.com/support/full-self-driving-subscriptions",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Do not use live net worth or private-company valuation without current reliable source.",
+      "Do not combine Tesla, SpaceX, X and xAI revenue into a single Musk revenue line.",
+      "SpaceX IPO/xAI merger claims require official filings or highly reliable sources before use.",
+      "FSD autonomy claims must preserve Tesla’s supervised-driver disclaimer."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Elon Musk should be mapped as a portfolio-of-platforms methodology: first-principles cost attack, vertical integration, mission narrative, founder-led demand generation, and high-risk capital recycling. The commercialization paths differ by company: Tesla monetizes vehicles, software and charging; SpaceX monetizes launch contracts and Starlink subscriptions; X monetizes ads and subscriptions; xAI monetizes AI access and compute narrative. These must not be blended into one fake Musk revenue stream or one live net-worth claim.",
+    "one_sentence_gtm": "Elon Musk should be mapped as a portfolio-of-platforms methodology: first-principles cost attack, vertical integration, mission narrative, founder-led demand generation, and high-risk capital recycling.",
+    "channel_path": [
+      "Zip2 and PayPal exits create founder capital",
+      "SpaceX and Tesla recycle risk capital into impossible categories",
+      "Founder narrative creates demand and talent density",
+      "Vertical integration reduces cost and increases iteration speed",
+      "Software/subscription layers attempt to turn hardware/platforms into recurring revenue"
+    ],
+    "channels": {
+      "product_method": "The person creates a repeatable product principle, not just a single product launch.",
+      "platform": "The strongest outputs become platforms, ecosystems, or distribution standards.",
+      "commercialization": "Monetization appears through hardware margin, services, commissions, ads, subscriptions, contracts, or enterprise fees.",
+      "community": "Developers, merchants, fans, users, channels, or government customers become the adoption network.",
+      "governance": "Platform risk comes from rules, support, safety, regulation, succession, and founder overreach.",
+      "mission": "Mars, sustainable energy and free-speech/AI narratives recruit users, talent and capital.",
+      "contracts": "Government contracts and fixed-price launch services are core SpaceX GTM.",
+      "subscriptions": "FSD, Starlink and X Premium are separate recurring models."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Tesla vehicle sales",
+        "FSD and connectivity subscriptions",
+        "SpaceX launch contracts",
+        "Starlink hardware/service",
+        "X ads and Premium subscriptions",
+        "xAI subscriptions/API/enterprise access"
+      ],
+      "pricing_logic": "Use high-visibility hardware/platform wedge, then add software, service or contract revenue.",
+      "channel_economics": "Founder attention is a channel and a risk; each company has separate economics and governance."
+    },
+    "top_products_selection_rule": "For person/platform reports, choose no more than 3 product-methodology platforms, not ordinary SKUs.",
+    "top_products": [
+      {
+        "name": "Tesla EV + FSD software path",
+        "type": "hardware_software_platform",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "Tesla is the clearest example of Musk turning hardware into a software-upgrade narrative.",
+        "origin_story": "Musk joined Tesla as early investor/chairman and later CEO, pushing Roadster -> Model S -> Model 3/Y scale.",
+        "pre_market": "Pre-market obstacle was belief that EVs were slow, ugly and low range.",
+        "innovation": "Battery integration, direct sales, OTA updates, Supercharger network and FSD narrative.",
+        "breakout": "Tesla made EVs aspirational and forced the auto industry to respond.",
+        "customer_impact": "Customers buy a vehicle, then face optional software subscriptions and charging ecosystem lock-in.",
+        "ecosystem_impact": "It made the car a software platform, but autonomy promises create legal and trust risk.",
+        "pricing_model": {
+          "product_price": "Tesla vehicle prices vary by model and region; use official Tesla order page for live Model Y/3/S/X/Cybertruck price.",
+          "subscription_fee": "FSD (Supervised) subscription official price: $99/month; Tesla states it requires active driver supervision and is not autonomous.",
+          "accessory_service_fee": "Accessory/service price: charging hardware, Supercharging, Premium Connectivity, tires, insurance, repairs and hardware upgrades affect total cost.",
+          "competitor_price": "Competitor price comparison: BYD, Xiaomi SU7/YU7, Ford, GM, Hyundai/Kia and premium German EVs compete on price, range, software and charging network.",
+          "sources": [
+            {
+              "title": "Tesla FSD subscription official support",
+              "url": "https://www.tesla.com/support/full-self-driving-subscriptions",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tesla Model Y official page",
+              "url": "https://www.tesla.com/modely",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Xiaomi SU7 public profile",
+              "url": "https://en.wikipedia.org/wiki/Xiaomi_SU7",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Xiaomi YU7 public profile",
+              "url": "https://en.wikipedia.org/wiki/Xiaomi_YU7",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Tesla official Elon Musk bio",
+            "url": "https://www.tesla.com/elon-musk",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Tesla FSD subscription official support",
+            "url": "https://www.tesla.com/support/full-self-driving-subscriptions",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "SpaceX launch + Starlink subscription stack",
+        "type": "infrastructure_platform",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "SpaceX is the cost-attack and infrastructure-platform version of Musk GTM.",
+        "origin_story": "Musk used PayPal proceeds to found SpaceX and challenge cost-plus aerospace norms.",
+        "pre_market": "Pre-market obstacle was launch cost, reliability and government procurement credibility.",
+        "innovation": "Reusable Falcon 9, vertical integration, NASA fixed-price milestones and Starlink internal demand for launches.",
+        "breakout": "Falcon 9 changed commercial launch economics; Starlink turns launch capacity into consumer/enterprise connectivity.",
+        "customer_impact": "Customers buy launch capacity or satellite internet rather than a consumer gadget.",
+        "ecosystem_impact": "It shows how infrastructure can become a platform when internal demand and external customers reinforce each other.",
+        "pricing_model": {
+          "product_price": "Falcon 9 public profile lists advertised Block 5 launch price around $74M in 2026; government missions can price higher. Starlink US residential coverage reports Standard Kit $349 and service around $120/month, with promotions in some markets.",
+          "subscription_fee": "Starlink is a monthly service subscription; launch customers pay mission contracts, not subscriptions.",
+          "accessory_service_fee": "Accessory/service price: Starlink hardware kit, routers, mounts, demand surcharge, installation and cancellation/change terms can add cost.",
+          "competitor_price": "Competitor price comparison: ULA, Arianespace, Blue Origin and Rocket Lab compete in launch; Amazon Leo/Kuiper, OneWeb/Eutelsat and terrestrial broadband compete with Starlink.",
+          "sources": [
+            {
+              "title": "Falcon 9 public profile and pricing",
+              "url": "https://en.wikipedia.org/wiki/Falcon_9",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Starlink residential official page",
+              "url": "https://www.starlink.com/residential",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge Starlink residential pricing coverage",
+              "url": "https://www.theverge.com/column/837202/starlink-work-from-home",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "SpaceX public profile",
+            "url": "https://en.wikipedia.org/wiki/SpaceX",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Falcon 9 public profile and pricing",
+            "url": "https://en.wikipedia.org/wiki/Falcon_9",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "X / xAI attention and AI subscription layer",
+        "type": "attention_ai_platform",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "This is the highest-risk platform commercialization path in the Musk portfolio.",
+        "origin_story": "Musk bought Twitter for $44B and renamed it X; xAI later became the AI-company layer around Grok.",
+        "pre_market": "Pre-market issue was not user demand, but whether the platform could survive advertiser trust loss and governance shocks.",
+        "innovation": "X Premium turns identity, ranking, long posts, creator monetization and Grok limits into subscription tiers.",
+        "breakout": "The acquisition created huge attention but also advertiser, regulatory and valuation controversy.",
+        "customer_impact": "Users may pay for status, reach and AI access, while advertisers price brand-safety risk.",
+        "ecosystem_impact": "It shows that founder-led distribution can also destroy platform trust if governance fails.",
+        "pricing_model": {
+          "product_price": "X Premium official web pricing starts at Basic $3/month or $32/year, Premium $8/month or $84/year, Premium+ $40/month or $395/year.",
+          "subscription_fee": "Subscription/software fee is central: X Premium tiers and Grok limits; xAI/Grok commercial terms should be checked separately.",
+          "accessory_service_fee": "Accessory/service price: creator payouts, ad spend, brand safety tools, API access and organization verification are platform service costs.",
+          "competitor_price": "Competitor price comparison: Meta/Instagram monetize mostly ads, YouTube Premium combines ads/subscription, OpenAI/Claude/Gemini monetize AI subscriptions and API access.",
+          "sources": [
+            {
+              "title": "X Premium official help page",
+              "url": "https://help.x.com/en/using-x/x-premium",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Elon Musk public profile",
+            "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "X Premium official help page",
+            "url": "https://help.x.com/en/using-x/x-premium",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Musk’s learnable method is first-principles cost attack plus vertical integration, not personal chaos.",
+      "Each company has distinct monetization: cars/software, launches/contracts, satellite service, social/AI subscriptions.",
+      "Founder attention is both the GTM engine and the governance risk."
+    ],
+    "evidence_boundary": "Missing founder cash, exact platform take rates, CAC, refund loss, warranty reserve, private valuation, or live net worth is not filled unless a reliable source is present.",
+    "sources": [
+      {
+        "title": "Elon Musk public profile",
+        "url": "https://en.wikipedia.org/wiki/Elon_Musk",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tesla official Elon Musk bio",
+        "url": "https://www.tesla.com/elon-musk",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tesla FSD subscription official support",
+        "url": "https://www.tesla.com/support/full-self-driving-subscriptions",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tesla Model Y official page",
+        "url": "https://www.tesla.com/modely",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "SpaceX public profile",
+        "url": "https://en.wikipedia.org/wiki/SpaceX",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Falcon 9 public profile and pricing",
+        "url": "https://en.wikipedia.org/wiki/Falcon_9",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Starlink residential official page",
+        "url": "https://www.starlink.com/residential",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Verge Starlink residential pricing coverage",
+        "url": "https://www.theverge.com/column/837202/starlink-work-from-home",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "X Premium official help page",
+        "url": "https://help.x.com/en/using-x/x-premium",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tesla Autopilot public profile",
+        "url": "https://en.wikipedia.org/wiki/Tesla_Autopilot",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

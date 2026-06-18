@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "brand_context": {
+    "brand_name": "Example Brand",
+    "slug": "example-brand",
+    "category": "Smart hardware / SaaS / consumer brand",
+    "one_line": "One sentence explaining what the brand sells and why it matters.",
+    "report_date": "2026-06-17",
+    "founder_profiles": [
+      {
+        "name": "Founder Name",
+        "role": "Founder / CEO",
+        "summary": "Short sourced profile. Do not invent missing background.",
+        "links": [
+          {
+            "label": "Official bio or credible profile",
+            "url": "https://example.com/founder"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "YYYY-MM",
+        "event_type": "founder_first_money",
+        "amount": "100000",
+        "currency": "USD",
+        "description": "What happened, who paid, what it enabled, and what is still unknown.",
+        "sources": [
+          {
+            "label": "Source label",
+            "url": "https://example.com/source"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ]
+  },
+  "cover": {
+    "label": "Brand Research",
+    "title": "Example Brand 深度调研报告",
+    "subtitle": "产品价格 · 创始人履历 · 资金路径 · 用户反馈 · 可学习经验",
+    "stats": [
+      {
+        "value": "$999",
+        "label": "核心产品价格"
+      },
+      {
+        "value": "$19/mo",
+        "label": "订阅或服务费"
+      },
+      {
+        "value": "2+",
+        "label": "竞品价格对比"
+      },
+      {
+        "value": "5+",
+        "label": "公开来源"
+      }
+    ]
+  },
+  "pricing": {
+    "boundary_notes": {
+      "accessory_service": {
+        "label": "Accessory/service boundary",
+        "value": "If no separate accessory or service fee exists, explain the category boundary with a source.",
+        "source": {
+          "label": "Official support or pricing page",
+          "url": "https://example.com/support"
+        },
+        "confidence": "medium"
+      },
+      "subscription_software": {
+        "label": "Subscription/software boundary",
+        "value": "If no subscription exists, explain why software is bundled or not monetized separately.",
+        "source": {
+          "label": "Official pricing or product page",
+          "url": "https://example.com/pricing"
+        },
+        "confidence": "medium"
+      }
+    },
+    "products": [
+      {
+        "name": "Flagship Product",
+        "category": "Hardware / software / service",
+        "product_price": {
+          "label": "MSRP",
+          "amount": "999",
+          "currency": "USD",
+          "notes": "Official listed price.",
+          "source": {
+            "label": "Official pricing page",
+            "url": "https://example.com/pricing"
+          },
+          "confidence": "high"
+        },
+        "accessories": [
+          {
+            "label": "Replacement part / accessory",
+            "amount": "49",
+            "currency": "USD",
+            "source": {
+              "label": "Official accessories page",
+              "url": "https://example.com/accessories"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "subscriptions": [
+          {
+            "label": "Membership / software plan",
+            "amount": "19",
+            "currency": "USD",
+            "period": "month",
+            "source": {
+              "label": "Official subscription page",
+              "url": "https://example.com/subscription"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "services": [
+          {
+            "label": "Installation / support / warranty",
+            "amount": "99",
+            "currency": "USD",
+            "source": {
+              "label": "Official support page",
+              "url": "https://example.com/support"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "competitors": [
+          {
+            "brand": "Competitor A",
+            "product": "Comparable Product",
+            "price": {
+              "label": "MSRP",
+              "amount": "899",
+              "currency": "USD",
+              "source": {
+                "label": "Competitor official page",
+                "url": "https://example.com/competitor-a"
+              },
+              "confidence": "high"
+            },
+            "notes": "Explain whether this is truly comparable."
+          },
+          {
+            "brand": "Competitor B",
+            "product": "Alternative Product",
+            "price": {
+              "label": "MSRP",
+              "amount": "1299",
+              "currency": "USD",
+              "source": {
+                "label": "Competitor official page",
+                "url": "https://example.com/competitor-b"
+              },
+              "confidence": "high"
+            },
+            "notes": "Explain the tradeoff."
+          }
+        ],
+        "unit_economics": [
+          {
+            "label": "Gross margin / recall loss / CAC / payback signal",
+            "value": "Use only sourced values.",
+            "source": {
+              "label": "Filing or credible source",
+              "url": "https://example.com/filing"
+            },
+            "confidence": "medium"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "kicker": "Money Trail",
+      "title": "一、资金路径",
+      "summary": "Explain where the first money came from, how revenue started, what was spent, and where capital was raised or lost.",
+      "blocks": [
+        {
+          "type": "callout",
+          "title": "阅读原则",
+          "text": "找不到的事实不要硬写；保留缺口给审计报告。"
+        },
+        {
+          "type": "key_events",
+          "events": [
+            {
+              "date": "YYYY-MM",
+              "title": "First money / first order / funding / loss",
+              "text": "Event summary with amount and source."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kicker": "Pricing",
+      "title": "二、产品与竞品价格",
+      "summary": "Product price, accessories, subscriptions, services, and competitor prices.",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Do not describe pricing as a single number when the real business model includes accessories, warranty, services, or subscription."
+        }
+      ]
+    },
+    {
+      "kicker": "Learning",
+      "title": "三、关键学习",
+      "blocks": [
+        {
+          "type": "lessons",
+          "items": [
+            {
+              "label": "Can learn",
+              "text": "Reusable lesson backed by evidence."
+            },
+            {
+              "label": "Cannot copy",
+              "text": "Context-specific advantage or risky behavior."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Official pricing or filing",
+      "url": "https://example.com/source",
+      "publisher": "Official / filing / credible media",
+      "used_for": "Pricing, founder profile, capital history, or user evidence."
+    }
+  ]
+}

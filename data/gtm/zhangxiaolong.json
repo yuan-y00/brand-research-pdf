@@ -1,0 +1,419 @@
+{
+  "brand": "Zhang Xiaolong / WeChat",
+  "brand_slug": "zhangxiaolong",
+  "market_focus": "Person / platform methodology",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; person-platform GTM repair 2026-06-17",
+  "disclaimer": "This is not a normal brand SKU report. It maps product methodology to commercialization paths. Unsupported founder cash, exact margins, live valuations, private-company losses, or platform fee rates are kept in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Zhang Xiaolong / Allen Zhang: Foxmail creator and Tencent executive who led WeChat; not the founder of Tencent.",
+      "Pony Ma / Tencent: Tencent and Pony Ma provided the internal platform and capital context; WeChat is an internal project, not Zhang’s independent company."
+    ],
+    "brand_timeline": [
+      "2000: Foxmail_sale RMB 12M - Chinese Foxmail public profile records Foxmail sale to Boda for RMB 12M; use as Zhang’s pre-WeChat commercialization event.",
+      "2005: Tencent_acquisition Tencent acquired Foxmail - Foxmail was acquired by Tencent, bringing Zhang into Tencent context.",
+      "2026-Q1: platform_users 1.40B MAU - Tencent reporting/coverage cites Weixin + WeChat combined MAU around 1.40B at the end of March 2025/2026 period depending on report.",
+      "2026-Q1: company_revenue RMB 196.46B - WSJ coverage of Tencent Q1 2026 reports revenue of RMB 196.46B; use as Tencent-level context, not WeChat standalone revenue."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Zhang Xiaolong / Allen Zhang",
+        "role": "WeChat product leader",
+        "background_summary": "Foxmail creator and Tencent executive who led WeChat; not the founder of Tencent.",
+        "profile_links": [
+          {
+            "title": "Allen Zhang public profile",
+            "url": "https://en.wikipedia.org/wiki/Allen_Zhang",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Foxmail public profile",
+            "url": "https://en.wikipedia.org/wiki/Foxmail",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Pony Ma / Tencent",
+        "role": "Corporate sponsor context",
+        "background_summary": "Tencent and Pony Ma provided the internal platform and capital context; WeChat is an internal project, not Zhang’s independent company.",
+        "profile_links": [
+          {
+            "title": "Pony Ma public profile",
+            "url": "https://en.wikipedia.org/wiki/Ma_Huateng",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Tencent financial releases",
+            "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2000",
+        "event": "Foxmail_sale",
+        "amount": "RMB 12M",
+        "currency": "CNY",
+        "description": "Chinese Foxmail public profile records Foxmail sale to Boda for RMB 12M; use as Zhang’s pre-WeChat commercialization event.",
+        "source": {
+          "title": "Foxmail Chinese public profile",
+          "url": "https://zh.wikipedia.org/wiki/Foxmail",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2005",
+        "event": "Tencent_acquisition",
+        "amount": "Tencent acquired Foxmail",
+        "currency": "N/A",
+        "description": "Foxmail was acquired by Tencent, bringing Zhang into Tencent context.",
+        "source": {
+          "title": "Foxmail public profile",
+          "url": "https://en.wikipedia.org/wiki/Foxmail",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-Q1",
+        "event": "platform_users",
+        "amount": "1.40B MAU",
+        "currency": "users",
+        "description": "Tencent reporting/coverage cites Weixin + WeChat combined MAU around 1.40B at the end of March 2025/2026 period depending on report.",
+        "source": {
+          "title": "Tencent financial releases",
+          "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-Q1",
+        "event": "company_revenue",
+        "amount": "RMB 196.46B",
+        "currency": "CNY",
+        "description": "WSJ coverage of Tencent Q1 2026 reports revenue of RMB 196.46B; use as Tencent-level context, not WeChat standalone revenue.",
+        "source": {
+          "title": "WSJ Tencent Q1 2026 coverage",
+          "url": "https://www.wsj.com/business/earnings/tencent-maintains-double-digit-profit-growth-amid-intensified-ai-investment-7847e010",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "WeChat standalone revenue, exact payment take rate and mini-program commission should not be invented.",
+      "Zhang personal wealth is not a product-methodology fact unless sourced.",
+      "AI AgentOS claims need official Tencent confirmation before writing as fact."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Zhang Xiaolong is a product-methodology and platform case, not a normal company founder case. The product method is restraint, low interruption, relationship-chain priority, and invisible commercialization. WeChat monetizes by letting payments, ads, mini programs, channels, enterprise tools and merchants sit on top of the social graph. The risk is that the same restraint can become slow iteration, weak support, closed ecosystem governance, and an AI-era product hesitation.",
+    "one_sentence_gtm": "Zhang Xiaolong is a product-methodology and platform case, not a normal company founder case.",
+    "channel_path": [
+      "Foxmail proves small-tool product taste",
+      "Tencent internal support gives WeChat room to attack QQ/mobile messaging",
+      "Social graph becomes daily identity layer",
+      "Payments and mini programs convert utility into commerce",
+      "Ads, Channels and enterprise tools monetize without charging users directly"
+    ],
+    "channels": {
+      "product_method": "The person creates a repeatable product principle, not just a single product launch.",
+      "platform": "The strongest outputs become platforms, ecosystems, or distribution standards.",
+      "commercialization": "Monetization appears through hardware margin, services, commissions, ads, subscriptions, contracts, or enterprise fees.",
+      "community": "Developers, merchants, fans, users, channels, or government customers become the adoption network.",
+      "governance": "Platform risk comes from rules, support, safety, regulation, succession, and founder overreach.",
+      "social_graph": "The user relationship chain is the core channel.",
+      "merchants": "Payments, mini programs and Channels turn merchants into platform participants.",
+      "ads": "Marketing services monetize attention without making WeChat a paid consumer app."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Payment service fees",
+        "Mini program commerce and services",
+        "Advertising / marketing services",
+        "Channels commerce and livestreaming",
+        "Enterprise WeChat / cloud ecosystem"
+      ],
+      "pricing_logic": "Consumer app is free; monetization is hidden in merchant fees, ad auctions, cloud/enterprise services and platform commerce.",
+      "channel_economics": "A massive social graph lowers distribution cost but creates governance and support burdens."
+    },
+    "top_products_selection_rule": "For person/platform reports, choose no more than 3 product-methodology platforms, not ordinary SKUs.",
+    "top_products": [
+      {
+        "name": "WeChat social graph / use-and-leave philosophy",
+        "type": "product_methodology",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "This is the core product principle that made WeChat a national default.",
+        "origin_story": "Zhang moved from Foxmail to Tencent and built WeChat as a mobile-first social utility.",
+        "pre_market": "The pre-market problem was mobile messaging and fragmented social identity.",
+        "innovation": "Restraint, low-friction messaging, QR identity, groups and moments created a daily utility layer.",
+        "breakout": "WeChat became infrastructure rather than just an app.",
+        "customer_impact": "Consumers pay zero direct price but pay switching cost through relationships, history, payments and identity.",
+        "ecosystem_impact": "It became the distribution base for Tencent’s consumer internet ecosystem.",
+        "pricing_model": {
+          "product_price": "Consumer price: RMB 0 / free app; the price is switching cost and data/identity dependence rather than SKU price.",
+          "subscription_fee": "No mandatory consumer subscription for core chat; monetization comes indirectly through services, ads, payments and enterprise products.",
+          "accessory_service_fee": "Accessory/service price: no hardware accessory; service cost appears as customer support burden, account recovery, cloud/enterprise tools and merchant service fees.",
+          "competitor_price": "Competitor price comparison: WhatsApp and Telegram are also free consumer messaging apps; WeChat differs by embedding payments, mini programs and broader China life services.",
+          "sources": [
+            {
+              "title": "Allen Zhang public profile",
+              "url": "https://en.wikipedia.org/wiki/Allen_Zhang",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "WeChat official site",
+              "url": "https://www.wechat.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "WhatsApp public profile",
+              "url": "https://en.wikipedia.org/wiki/WhatsApp",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Telegram public profile",
+              "url": "https://en.wikipedia.org/wiki/Telegram_(software)",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Allen Zhang public profile",
+            "url": "https://en.wikipedia.org/wiki/Allen_Zhang",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "WeChat official site",
+            "url": "https://www.wechat.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "WeChat Pay + Mini Programs",
+        "type": "platform_commercialization",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "This is the commercialization layer that turned a messenger into infrastructure.",
+        "origin_story": "Tencent added payment and mini programs on top of the social graph rather than charging users for chat.",
+        "pre_market": "Merchants needed a low-friction way to transact inside the place where users already communicate.",
+        "innovation": "QR payments, mini programs and official accounts convert traffic to transactions without app installs.",
+        "breakout": "The platform made WeChat a commerce, services and local-life layer.",
+        "customer_impact": "Consumers experience convenience; merchants pay through fees, ads, service providers and platform dependence.",
+        "ecosystem_impact": "It reshaped China’s mobile internet into app-within-app distribution.",
+        "pricing_model": {
+          "product_price": "Consumer price: free; merchant pricing is contract/category dependent and should be checked in Weixin Pay merchant documentation.",
+          "subscription_fee": "No consumer subscription; platform monetization is payment service fee, ads, service provider tools and cloud/enterprise products.",
+          "accessory_service_fee": "Accessory/service price: service provider fees, payment settlement, compliance, customer support and mini-program development are real merchant costs.",
+          "competitor_price": "Competitor price comparison: Alipay monetizes payments/finance more directly; Douyin/Kuaishou monetize content-commerce traffic; Apple App Store takes app commissions in a different operating-system layer.",
+          "sources": [
+            {
+              "title": "Tencent financial releases",
+              "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Weixin Pay official site",
+              "url": "https://pay.weixin.qq.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple App Store Small Business Program",
+              "url": "https://developer.apple.com/app-store/small-business-program/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Tencent financial releases",
+            "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Weixin Pay official site",
+            "url": "https://pay.weixin.qq.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "WeChat Channels / ads / AI boundary",
+        "type": "attention_and_ai_layer",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "This shows where Zhang’s restraint collides with modern content and AI commercialization.",
+        "origin_story": "WeChat historically resisted aggressive feed monetization, then added Channels and more ad inventory slowly.",
+        "pre_market": "Short video, livestreaming and AI search forced WeChat to compete with ByteDance and other content platforms.",
+        "innovation": "Channels monetizes attention while trying not to break the social utility core.",
+        "breakout": "Tencent financial releases link Weixin/WeChat to advertising and fintech/business services growth.",
+        "customer_impact": "Users get content and creator commerce, but also more platform governance issues.",
+        "ecosystem_impact": "The platform’s next test is whether AI can be embedded without destroying the product philosophy.",
+        "pricing_model": {
+          "product_price": "Consumer price: free; ads are auction-priced and merchant/creator costs vary by campaign.",
+          "subscription_fee": "No mandatory subscription; AI, search and content features are platform services rather than paid consumer tiers in the cited sources.",
+          "accessory_service_fee": "Accessory/service price: creator tools, merchant service providers, customer support, moderation and compliance are the real platform costs.",
+          "competitor_price": "Competitor price comparison: Douyin/TikTok monetizes attention more aggressively; Telegram has Premium subscription; WhatsApp focuses more on business messaging and ads are less central.",
+          "sources": [
+            {
+              "title": "Tencent financial releases",
+              "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tencent 2026 Q1 results page",
+              "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+              "source_type": "filing",
+              "confidence": "medium"
+            },
+            {
+              "title": "Telegram public profile",
+              "url": "https://en.wikipedia.org/wiki/Telegram_(software)",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Tencent financial releases",
+            "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Tencent 2026 Q1 results page",
+            "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+            "source_type": "filing",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "WeChat is a platform monetization case hidden behind a free consumer product.",
+      "Zhang’s method is restraint and relationship-chain priority, not growth hacking.",
+      "The biggest risk is that restraint becomes slow platform governance in AI and short-video eras."
+    ],
+    "evidence_boundary": "Missing founder cash, exact platform take rates, CAC, refund loss, warranty reserve, private valuation, or live net worth is not filled unless a reliable source is present.",
+    "sources": [
+      {
+        "title": "Allen Zhang public profile",
+        "url": "https://en.wikipedia.org/wiki/Allen_Zhang",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Foxmail public profile",
+        "url": "https://en.wikipedia.org/wiki/Foxmail",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tencent financial releases",
+        "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tencent 2026 Q1 results page",
+        "url": "https://www.tencent.com/en-us/investors/financial-news.html",
+        "source_type": "filing",
+        "confidence": "medium"
+      },
+      {
+        "title": "WeChat official site",
+        "url": "https://www.wechat.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Weixin Pay official site",
+        "url": "https://pay.weixin.qq.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Tencent Cloud WeCom / WeChat ecosystem",
+        "url": "https://www.tencentcloud.com/products/wecom",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "WhatsApp public profile",
+        "url": "https://en.wikipedia.org/wiki/WhatsApp",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Telegram public profile",
+        "url": "https://en.wikipedia.org/wiki/Telegram_(software)",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

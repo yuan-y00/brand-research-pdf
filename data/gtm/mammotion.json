@@ -1,0 +1,405 @@
+{
+  "brand": "Mammotion",
+  "brand_slug": "mammotion",
+  "market_focus": "Global / China where relevant",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; consumer GTM repair 2026-06-17",
+  "disclaimer": "Only sourced money events are written as facts. Unsupported founder cash, margin, burn, loss, CAC, refund or subsidy amounts remain in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "魏基栋 Jayden Wei: Local report identifies Wei as founder/CEO with DJI RoboMaster and robotics background; do not expand beyond public/company sources.",
+      "Mammotion / AgileX robotics team: Base report connects Mammotion to AgileX and robotics navigation experience; team-level capability is part of the GTM story."
+    ],
+    "brand_timeline": [
+      "2022: crowdfunding $3.37M - Local report records LUBA Kickstarter at about $3.37M, a category-launch proof point.",
+      "2022-2024: crowdfunding_total $5.57M - Base report records two Kickstarter campaigns totaling about $5.57M; verify final campaign pages before investor-grade use.",
+      "2024: revenue RMB 522M - Local base report records mower revenue around RMB 522M and about 30K units in 2024.",
+      "2025: supply_commitment 1.2M lidar units - Local base report records a 1.2M-unit lidar supply agreement as a scale signal, not cash revenue."
+    ],
+    "founder_profiles": [
+      {
+        "name": "魏基栋 Jayden Wei",
+        "role": "Founder / CEO",
+        "background_summary": "Local report identifies Wei as founder/CEO with DJI RoboMaster and robotics background; do not expand beyond public/company sources.",
+        "profile_links": [
+          {
+            "title": "Mammotion official site",
+            "url": "https://www.mammotion.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Mammotion Kickstarter profile",
+            "url": "https://www.kickstarter.com/profile/mammotion/created",
+            "source_type": "marketplace",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Mammotion / AgileX robotics team",
+        "role": "Founding team",
+        "background_summary": "Base report connects Mammotion to AgileX and robotics navigation experience; team-level capability is part of the GTM story.",
+        "profile_links": [
+          {
+            "title": "Mammotion official site",
+            "url": "https://www.mammotion.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Mammotion Kickstarter profile",
+            "url": "https://www.kickstarter.com/profile/mammotion/created",
+            "source_type": "marketplace",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2022",
+        "event": "crowdfunding",
+        "amount": "$3.37M",
+        "currency": "USD",
+        "description": "Local report records LUBA Kickstarter at about $3.37M, a category-launch proof point.",
+        "source": {
+          "title": "Mammotion Kickstarter profile",
+          "url": "https://www.kickstarter.com/profile/mammotion/created",
+          "source_type": "marketplace",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2022-2024",
+        "event": "crowdfunding_total",
+        "amount": "$5.57M",
+        "currency": "USD",
+        "description": "Base report records two Kickstarter campaigns totaling about $5.57M; verify final campaign pages before investor-grade use.",
+        "source": {
+          "title": "Mammotion Kickstarter profile",
+          "url": "https://www.kickstarter.com/profile/mammotion/created",
+          "source_type": "marketplace",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2024",
+        "event": "revenue",
+        "amount": "RMB 522M",
+        "currency": "CNY",
+        "description": "Local base report records mower revenue around RMB 522M and about 30K units in 2024.",
+        "source": {
+          "title": "Mammotion official site",
+          "url": "https://www.mammotion.com/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "supply_commitment",
+        "amount": "1.2M lidar units",
+        "currency": "units",
+        "description": "Local base report records a 1.2M-unit lidar supply agreement as a scale signal, not cash revenue.",
+        "source": {
+          "title": "Mammotion official site",
+          "url": "https://www.mammotion.com/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Exact VC round amounts from Sequoia/FiveY/Vertex are described as large local-report signals but need primary funding source before writing exact CNY amount.",
+      "No reliable public data for refund loss, warranty reserve, CAC or gross margin by SKU.",
+      "Live accessory prices should be pulled from official store by region before quoting to buyers."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Mammotion 的 GTM 是“大疆系机器人技术 + Kickstarter 验证 + Amazon/DTC 爆发 + 线下零售扩张”的庭院机器人出海样本。它用 RTK、视觉和激光雷达把传统埋线割草机升级为无边界机器人，再用 LUBA/YUKA/SPINO 把单品扩成庭院智能生态。风险是高客单产品的售后、安装、地图稳定性和季节性需求，一旦支持跟不上，技术领先会被差评抵消。",
+    "one_sentence_gtm": "Mammotion 的 GTM 是“大疆系机器人技术 + Kickstarter 验证 + Amazon/DTC 爆发 + 线下零售扩张”的庭院机器人出海样本。",
+    "channel_path": [
+      "AgileX / DJI RoboMaster background builds robotics credibility",
+      "Kickstarter validates LUBA demand and collects first global users",
+      "DTC and Amazon convert early adopters",
+      "Retailers such as Lowe’s/Costco/Walmart broaden mainstream yard-care reach",
+      "SPINO and accessories extend from mowing to yard ecosystem"
+    ],
+    "channels": {
+      "dtc": "Official site/store is the clearest conversion path and pricing source.",
+      "ecommerce": "Marketplaces, retailers, and regional stores broaden reach beyond owned traffic.",
+      "pr_media": "Reviews, launch events, and credible media explain why the product deserves attention.",
+      "community": "User reviews, forums, creator content, or owner communities decide whether early demand becomes trust.",
+      "service": "Warranty, repair, delivery, setup, installation, and support determine long-term brand quality.",
+      "crowdfunding": "Kickstarter reduced category-launch risk and created proof for retailers.",
+      "retailers": "Big-box retail matters because lawn care buyers want return/support confidence."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "LUBA robotic mowers",
+        "YUKA robotic mowers",
+        "SPINO pool robots",
+        "Accessories, blades, garage/RTK/service parts"
+      ],
+      "pricing_logic": "Premium robotic mower pricing justified by wire-free setup and navigation stack.",
+      "channel_economics": "High hardware gross ticket must fund support, seasonal inventory and regional service coverage."
+    },
+    "top_products_selection_rule": "最多选 3 个产品或产品线；按公开证据、价格结构、GTM 学习价值和用户购买决策选择。",
+    "top_products": [
+      {
+        "name": "LUBA 2 / LUBA 3 AWD",
+        "type": "robot_lawn_mower",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "LUBA is the flagship proof of Mammotion’s boundary-free mower thesis.",
+        "origin_story": "Team translated robotics/AGV navigation into consumer lawn care.",
+        "pre_market": "Pre-market users wanted no perimeter wire, reliable mapping and slope handling.",
+        "innovation": "Tri-Fusion navigation, AWD, RTK / NetRTK, AI vision and in LUBA 3 lidar mapping.",
+        "breakout": "The Verge reports LUBA 3 AWD starts at $2,399 and extends Mammotion’s premium range.",
+        "customer_impact": "Users buy back mowing time but expect appliance-level reliability.",
+        "ecosystem_impact": "It pushes traditional mower brands toward wire-free navigation.",
+        "pricing_model": {
+          "product_price": "The Verge reports LUBA 3 AWD starting at $2,399 / £2,099 / €2,299; local report gives LUBA 2 premium range roughly $2,599-$4,999.",
+          "subscription_fee": "Software boundary: mapping/app/OTA are part of core product; no reliable mandatory subscription is written. NetRTK/4G availability and fees must be checked by region.",
+          "accessory_service_fee": "Accessory/service price: RTK station, garage, replacement blades, wheel/charging parts, 4G connectivity and warranty/service are real total-cost items.",
+          "competitor_price": "Competitor price comparison: Husqvarna EPOS models can reach $5,899; Segway Navimow and Worx Landroid compete across lower and mid tiers; Dreame/Eufy challenge with camera-based approaches.",
+          "sources": [
+            {
+              "title": "The Verge Mammotion LUBA 3 AWD CES 2026",
+              "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Mammotion robot lawn mowers",
+              "url": "https://www.mammotion.com/collections/robot-lawn-mowers",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Mammotion support",
+              "url": "https://www.mammotion.com/pages/support",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "The Verge Mammotion LUBA 3 AWD CES 2026",
+            "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Mammotion robot lawn mowers",
+            "url": "https://www.mammotion.com/collections/robot-lawn-mowers",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "YUKA / YUKA Mini",
+        "type": "robot_lawn_mower",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "YUKA brings Mammotion into smaller lawns and more affordable segments.",
+        "origin_story": "After LUBA proved premium demand, Mammotion needed a lower-entry model and auto-empty/lawn-sweeping story.",
+        "pre_market": "Users compare setup complexity, lawn size, RTK placement and app quality.",
+        "innovation": "YUKA Mini review reports compact wire-free mowing with AI camera and RTK station.",
+        "breakout": "It gives Mammotion more price coverage against Segway/Dreame/Eufy.",
+        "customer_impact": "Small-yard users can enter below LUBA pricing while accepting setup learning curve.",
+        "ecosystem_impact": "It broadens Mammotion from high-end yards to mainstream suburban lawns.",
+        "pricing_model": {
+          "product_price": "TechRadar reports Yuka Mini S in US at $1,099; 600H $1,099 and 800H $1,299; UK/AU model prices vary.",
+          "subscription_fee": "Software/subscription boundary: app, mapping and core mowing are included; no mandatory software subscription is written.",
+          "accessory_service_fee": "Accessory/service price: charging station, RTK receiver, blades, garage and replacement consumables; setup support has hidden time cost.",
+          "competitor_price": "Competitor price comparison: Dreame E15, Eufy robot mower and Segway Navimow compete in lower-to-mid price tiers; LUBA Mini AWD 800 review lists $1,599 as a mid-high option.",
+          "sources": [
+            {
+              "title": "TechRadar Mammotion Yuka Mini review",
+              "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "T3 Mammotion Luba Mini AWD review",
+              "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "Mammotion support",
+              "url": "https://www.mammotion.com/pages/support",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "TechRadar Mammotion Yuka Mini review",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review",
+            "source_type": "review",
+            "confidence": "medium"
+          },
+          {
+            "title": "T3 Mammotion Luba Mini AWD review",
+            "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "SPINO / yard ecosystem accessories",
+        "type": "yard_robot_ecosystem",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "SPINO shows Mammotion wants to own the yard, not only grass.",
+        "origin_story": "Pool cleaning shares outdoor robotics, navigation and affluent-home customer overlap with mowing.",
+        "pre_market": "Users need proof the brand can support multiple expensive outdoor robots.",
+        "innovation": "Extends robotics stack into pool cleaning and yard maintenance accessories.",
+        "breakout": "It raises ceiling from mower company to outdoor home robotics platform.",
+        "customer_impact": "Customers can buy a broader yard-care system but face more support dependency.",
+        "ecosystem_impact": "It follows DJI-style adjacent-category expansion: same capability, adjacent use case.",
+        "pricing_model": {
+          "product_price": "SPINO live price varies by SKU/region; use Mammotion official store for current quote.",
+          "subscription_fee": "No mandatory subscription is written; app/software service boundary should be checked per SKU.",
+          "accessory_service_fee": "Accessory/service price: brushes, filters, blades, docks/garages, RTK parts and replacement consumables affect total cost.",
+          "competitor_price": "Competitor price comparison: Aiper, Beatbot, Dolphin/Maytronics and Wybot compete in pool robots; Husqvarna/Segway compete in mowers, so Mammotion’s ecosystem must justify cross-category trust.",
+          "sources": [
+            {
+              "title": "Mammotion official site",
+              "url": "https://www.mammotion.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Mammotion robot lawn mowers",
+              "url": "https://www.mammotion.com/collections/robot-lawn-mowers",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Mammotion support",
+              "url": "https://www.mammotion.com/pages/support",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Mammotion official site",
+            "url": "https://www.mammotion.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Mammotion support",
+            "url": "https://www.mammotion.com/pages/support",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Mammotion 的第一性原理是用更高级机器人能力解决传统庭院维护痛点。",
+      "众筹到 Amazon 到线下零售是一条清晰放大路径，但售后必须跟上高客单价。",
+      "从 LUBA 到 SPINO 的生态扩张只有在服务体系成熟时才成立。"
+    ],
+    "evidence_boundary": "找不到的内容不补写；缺失的创始人现金、单台毛利、广告投放、退货损失、售后成本留在 research_gaps。",
+    "sources": [
+      {
+        "title": "Mammotion official site",
+        "url": "https://www.mammotion.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Mammotion robot lawn mowers",
+        "url": "https://www.mammotion.com/collections/robot-lawn-mowers",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Mammotion support",
+        "url": "https://www.mammotion.com/pages/support",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Verge Mammotion LUBA 3 AWD CES 2026",
+        "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "TechRadar Mammotion Yuka Mini review",
+        "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "T3 Mammotion Luba Mini AWD review",
+        "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "Mammotion Kickstarter profile",
+        "url": "https://www.kickstarter.com/profile/mammotion/created",
+        "source_type": "marketplace",
+        "confidence": "medium"
+      },
+      {
+        "title": "Mammotion Trustpilot",
+        "url": "https://www.trustpilot.com/review/mammotion.com",
+        "source_type": "review",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

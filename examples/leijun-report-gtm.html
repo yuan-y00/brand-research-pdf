@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雷军 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --shadow-hover: 0 4px 16px rgba(0,0,0,0.06); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1.1; }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; } .callout strong { color: var(--accent); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0%, var(--accent) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; } .td-num { text-align: left; font-variant-numeric: tabular-nums; } .td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); line-height: 1.1; }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; } .kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; } .insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } .cover-stat-block { grid-template-columns: 1fr 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; page-break-after: always; } .section:last-child { page-break-after: auto; } h1, h2, h3 { page-break-after: avoid; } }
+</style>
+</head>
+<body>
+
+<div class="section cover">
+    <div>
+        <div class="cover-label">Tech Entrepreneur & Visionary</div>
+        <div class="cover-title">雷军</div>
+        <div class="cover-subtitle">小米科技创始人 · 金山软件董事长 · 顺为资本创始人<br>从程序员到千亿帝国，"风口论"与"顺势而为"的中国商业传奇</div>
+        <div class="cover-line"></div>
+        <div class="cover-footer">LEI JUN · XIAOMI · EST. 2010 · BEIJING</div>
+    </div>
+    <div class="cover-stat-block">
+        <div class="cover-stat"><div class="cs-num">4,573亿</div><div class="cs-label">小米2025年营收 (元)</div></div>
+        <div class="cover-stat"><div class="cs-num">$435亿</div><div class="cs-label">雷军个人净资产 (2025福布斯)</div></div>
+        <div class="cover-stat"><div class="cs-num">24万辆</div><div class="cs-label">小米YU7 18小时锁单量</div></div>
+        <div class="cover-stat"><div class="cs-num">1,050亿</div><div class="cs-label">五年累计研发投入 (元)</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 01</div>
+    <h1>创始团队与品牌大事年表</h1>
+    <h2>创始人背景</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:80px">姓名</th><th style="width:120px">职位</th><th>核心履历</th><th style="width:160px">初始资金来源</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center">雷军<br><span style="font-size:11px;color:var(--ink-muted)">Lei Jun</span></td><td>小米创始人/董事长/CEO</td><td>1969年生于湖北仙桃；武汉大学计算机学士（两年修完）；大学开发BITLOK加密软件大三即成百万富翁；1992年加入金山，28岁任总经理；2000年创办卓越网2004年以7500万美元卖给亚马逊；2008-2010年天使投资YY/UC等；2010年创立小米</td><td>个人积蓄来自金山16年+卓越网出售获利约<span style="color:var(--accent);font-weight:600">上亿元</span>；小米A轮融资<span style="color:var(--accent);font-weight:600">4100万美元</span>(估值2.5亿)</td></tr>
+            <tr><td class="td-center">林斌</td><td>联合创始人/副董事长</td><td>前微软/谷歌高管，谷歌中国工程研究院副院长，Android中国负责人。2010年与雷军共同创立小米</td><td>个人出资+早期核心团队</td></tr>
+            <tr><td class="td-center">黎万强</td><td>联合创始人(已离职)</td><td>前金山软件设计总监，MIUI早期核心，小米"粉丝经济"和"参与感"营销体系的缔造者</td><td>创始团队成员</td></tr>
+        </tbody>
+    </table>
+    <div class="callout"><strong>关键洞察：</strong>雷军的创业路径是"程序员→职业经理人→创业者→天使投资人→二次创业"的完美闭环。他不是白手起家的少年天才，而是<strong>用16年在金山"读了一个商学院"</strong>，40岁带着上亿资本、丰富人脉和对"势"的深刻理解再出发。小米的成功不是运气，是厚积薄发。</div>
+    <hr class="divider">
+    <h2>品牌大事年表 (2017-2026)</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:70px">年份</th><th>关键事件</th><th style="width:140px">战略意义</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center"><strong>2017</strong></td><td>澎湃S1芯片发布；小米MIX全面屏概念机；小米6发布</td><td class="td-impact impact-up">技术探索</td></tr>
+            <tr><td class="td-center"><strong>2018</strong></td><td>港交所上市(港股首支同股不同权)；全年出货首破1亿台；暂停SoC芯片研发</td><td class="td-impact impact-up">资本化</td></tr>
+            <tr><td class="td-center"><strong>2019</strong></td><td>Redmi独立(卢伟冰带队)；首次进入世界500强(最年轻企业)；研发仅75亿</td><td class="td-impact impact-up">双品牌</td></tr>
+            <tr><td class="td-center"><strong>2020</strong></td><td>小米10冲击高端；触及灵魂的大反思：从"互联网公司"转向"硬核科技"，宣布5年1000亿研发</td><td class="td-impact impact-up">战略转型</td></tr>
+            <tr><td class="td-center"><strong>2021</strong></td><td>正式宣布造车(10年投100亿美元)；重启造芯；Q2全球出货量首超苹果达第二</td><td class="td-impact impact-up">双线作战</td></tr>
+            <tr><td class="td-center"><strong>2022</strong></td><td>营收首次下滑15%；现金流压力巨大(同时供造车+芯片两个"孩子上大学")</td><td class="td-impact impact-down">低谷承压</td></tr>
+            <tr><td class="td-center"><strong>2023</strong></td><td>营收再降3%；3nm芯片投片准备；联系纽北赛道</td><td class="td-impact impact-neutral">蓄力待发</td></tr>
+            <tr><td class="td-center"><strong>2024</strong></td><td>SU7发布交付13.69万辆；3nm芯片投片一次成功；营收3659亿创新高；SU7 Ultra纽北创纪录</td><td class="td-impact impact-up">造车爆发</td></tr>
+            <tr><td class="td-center"><strong>2025</strong></td><td>玄戒O1 3nm芯片发布(全球第四家)；YU7上市18小时锁单24万；Q1手机中国第一；营收4573亿；研发累计超千亿</td><td class="td-impact impact-up">全面开花</td></tr>
+            <tr><td class="td-center"><strong>2026</strong></td><td>武汉智能家电工厂量产；汽车产能爬坡；新五年研发规划2000亿；人车家全生态深度融合</td><td class="td-impact impact-up">生态成型</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 02</div>
+    <h1>财务表现与竞争格局</h1>
+    <h2>小米营收与利润趋势</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:80px">年份</th><th style="width:140px">营收 (亿元)</th><th style="width:120px">净利润 (亿元)</th><th style="width:100px">净利率</th><th>关键事件</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center">2022</td><td class="td-num">2,800</td><td class="td-num">24.7</td><td class="td-num">0.9%</td><td>全球手机市场疲软，营收↓15%</td></tr>
+            <tr><td class="td-center">2023</td><td class="td-num">2,710</td><td class="td-num">174.8</td><td class="td-num">6.5%</td><td>高端化见效，净利润↑606%</td></tr>
+            <tr><td class="td-center">2024</td><td class="td-num">3,659</td><td class="td-num">236.6</td><td class="td-num">6.4%</td><td>SU7交付13.7万辆，IoT营收首破千亿</td></tr>
+            <tr><td class="td-center">2025</td><td class="td-num">4,573</td><td class="td-num">416.4</td><td class="td-num">9.1%</td><td>SU7+YU7双爆款，净利↑76.6%</td></tr>
+            <tr><td class="td-center">2026E</td><td class="td-num">~4,940</td><td class="td-num">~302</td><td class="td-num">~6.1%</td><td>汽车高投入期，利润短期回调</td></tr>
+        </tbody>
+    </table>
+    <div class="callout"><strong>财务解读：</strong>小米2025年净利润是2022年的<strong>16.8倍</strong>，实现教科书级V型反转。互联网服务毛利率76.6%贡献36.6%的毛利，是真正的利润基石。汽车业务毛利率超20%，正在成为第二增长曲线。分析师综合评级"买入"，12个月目标价HK$43.91。</div>
+    <hr class="divider">
+    <h2>竞对对比：中国智能手机市场 (2025)</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:100px">维度</th><th style="width:145px">小米 (雷军)</th><th style="width:145px">华为</th><th style="width:145px">苹果</th></tr></thead>
+        <tbody>
+            <tr><td><strong>2025中国份额</strong></td><td class="td-num">Q1第一(19%)→全年第二</td><td class="td-num">全年第一(16.4%)</td><td class="td-num">Q2第五→全年第三</td></tr>
+            <tr><td><strong>核心优势</strong></td><td>人车家全生态协同、线上渠道、价格透明</td><td>麒麟芯片+鸿蒙生态、折叠屏69%垄断、超高端统治力</td><td>品牌溢价、全球高端62%份额</td></tr>
+            <tr><td><strong>差异化赛道</strong></td><td>汽车(SU7/YU7)、AIoT(10亿连接设备)</td><td>纯血鸿蒙、卫星通信、自研芯片完整</td><td>iOS生态、A系列芯片、隐私安全</td></tr>
+            <tr><td><strong>增长引擎</strong></td><td>汽车从0到1、家电高速增长</td><td>麒麟回归全线5G、折叠屏红利</td><td>Apple Intelligence(AI)</td></tr>
+            <tr><td><strong>核心风险</strong></td><td>造车质量争议、产能不足、流量反噬</td><td>美国制裁持续、芯片代工受限</td><td>中国AI功能缺失、份额六连降</td></tr>
+        </tbody>
+    </table>
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">4,573亿</div><div class="stat-label">2025年集团营收 (元)</div></div>
+        <div class="stat-card"><div class="stat-number">#32</div><div class="stat-label">雷军福布斯全球排名</div></div>
+        <div class="stat-card"><div class="stat-number">1,050亿</div><div class="stat-label">五年累计研发投入 (元)</div></div>
+        <div class="stat-card"><div class="stat-number">10亿台</div><div class="stat-label">AIoT连接设备数</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 03</div>
+    <h1>护城河与商业模式分析</h1>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">01</div><h4>人车家全生态：全球唯一同时做手机×汽车×AIoT的消费科技平台</h4><div class="insight-kpi">手机全球前三 · 汽车SU7/YU7双爆款 · AIoT连接10亿设备 · 智能家电中国前三</div><p>小米是全球唯一一家同时在智能手机（全球前三）、智能电动车（SU7销量超Model 3）、AIoT（10亿连接设备）三个万亿级赛道都进入第一梯队的公司。这种跨品类协同的深度和广度没有第二家公司拥有——苹果没有汽车和IoT体量、华为没有全屋家电、特斯拉没有手机。</p><div class="insight-vs"><span>vs 苹果/华为/特斯拉：</span>苹果放弃了造车，华为不造车（只做供应商），特斯拉没有手机和IoT。小米是唯一"全都要"且每个都做出了名堂的公司。来源：小米年报、36氪</div></div>
+        <div class="insight-card right"><div class="insight-num">02</div><h4>"铁人三项"商业模型：硬件引流+互联网变现+新零售闭环</h4><div class="insight-kpi">硬件综合净利率≤5% (自限) · 互联网服务毛利76.6% · 线上+线下12000+门店</div><p>小米独创"智能硬件+互联网服务+新零售"铁人三项模型——硬件以接近成本价销售获取用户，互联网服务（广告、游戏、金融）贡献高利润，小米之家/小米商城实现高效触达。硬件"不超过5%净利率"的自限承诺既是道德高地也是竞争壁垒——竞品即使做出同等产品也无法在同样价格下盈利。</p><div class="insight-vs"><span>vs 苹果/OPPO/vivo：</span>苹果硬件毛利极高（40%+），OV依赖渠道加价。小米的低硬件毛利+高互联网利润模式在中国市场独树一帜。来源：小米招股书、年报</div></div>
+        <div class="insight-card right"><div class="insight-num">03</div><h4>雷军个人IP：中国科技圈最强的"创始人品牌"</h4><div class="insight-kpi">微博13000+条 · 2024年抖音涨粉2500万 · 年度演讲直播观看破亿</div><p>雷军将个人IP经营成了小米最大的营销资产——从"Are you OK"鬼畜视频的自嘲传播到年度演讲的超高关注度，从SU7发布会"保时捷式"定价悬念到每条微博亲自回复用户。在中国科技圈，没有一个创始人的个人号召力能和雷军匹敌。这种"创始人即品牌"的模式极大降低了小米的营销成本——SU7发布会几乎没有投任何广告就引爆了全网。</p><div class="insight-vs"><span>vs 余承东/库克：</span>余承东有"余大嘴"标签但影响力限于科技圈，库克永远不会成为社交媒体网红。雷军的"全国人民都认识"级别IP是中国企业家的天花板。来源：抖音、微博</div></div>
+        <div class="insight-card right"><div class="insight-num">04</div><h4>自研芯片的"第二次长征"：从澎湃S1失败到玄戒O1全球第四</h4><div class="insight-kpi">3nm 190亿晶体管 · 安兔兔300万分 · 全球第四家3nm手机SoC厂商</div><p>小米2017年澎湃S1失败后没有放弃芯片梦，而是从中吸取了核心教训"做中低端没机会，只有做最高端才有一线生机"。2021年重启玄戒项目，2024年初3nm一次投片成功（投片费超2000万美元），2025年玄戒O1成为大陆首颗3nm手机SoC。这个过程中雷军顶住了团队崩溃、同行解散的巨大压力，展现了一个顶级企业家的战略定力。</p><div class="insight-vs"><span>vs 华为/OPPO：</span>华为麒麟受制裁限制产能，OPPO哲库2023年3000人团队突然解散。小米在芯片上的坚持使其成为中国大陆唯一坚持手机SoC自研的品牌。来源：雷军2025年度演讲</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 04</div>
+    <h1>做对了什么</h1>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">01</div><h4>2020年"触及灵魂的大反思"：从互联网公司到硬核科技的自我革命</h4><div class="insight-kpi">半年50余次复盘会 · 研发从2019年75亿→2025年300亿 · 研发人员从1万→2万+</div><p>2020年小米十周年时，雷军面临"组装厂"的标签和团队疲态，内部进行了长达半年的系统性反思。最终确立了从"互联网公司"向"硬核科技公司"的根本转型，以"技术为本"为铁律。这一决策改变了小米的命运——如果没有这次自我革命，小米不会有玄戒O1、不会有SU7、不会有今天的估值重估。</p><div class="insight-vs"><span>vs 联想/OPPO：</span>联想长期停留在"贸工技"路线缺乏核心技术投入，OPPO哲库造芯半途而废。小米的"自我革命"是中国消费电子公司转型硬科技的标杆案例。来源：雷军2025年度演讲</div></div>
+        <div class="insight-card right"><div class="insight-num">02</div><h4>造车决策：雷军亲自带队+全资子公司+切最高端赛道</h4><div class="insight-kpi">SU7全年交付13.7万辆 · YU7 18小时锁单24万 · SU7 Ultra纽北全球第三</div><p>小米造车的三个关键决策全部正确：①全资子公司（不受投资人短期回报压力影响）；②雷军亲自带队（最高决策权+最强资源调度能力）；③直接对标保时捷和特斯拉切高端赛道（而非从低端"小米模式"起步）。SU7系列已成为20万以上中国轿车销冠，YU7引爆SUV市场。小米造车用了3年就走完了蔚小理10年的路。</p><div class="insight-vs"><span>vs 蔚来/理想/小鹏：</span>蔚小理成立早小米7-8年，但SU7交付首年即超越三者单车销量。小米的供应链管理+品牌力+渠道力在汽车行业展现了降维优势。来源：小米汽车官方数据</div></div>
+        <div class="insight-card right"><div class="insight-num">03</div><h4>"对标第一、学习第一、赶超第一"：从自卑到自信的进化论</h4><div class="insight-kpi">手机对标苹果 · 造车对标保时捷和特斯拉 · 芯片对标高通/苹果A系列</div><p>雷军为小米建立了一套"敢对标世界第一"的文化——从小米12开始喊"对标苹果"，到SU7直接对标保时捷Taycan，到玄戒O1对标A18 Pro。这种"不自量力"的姿态曾被视为营销噱头，但2025年回头看——手机Q1中国第一、SU7 Ultra纽北全球第三、玄戒O1安兔兔破300万分——"对标"正在变成"超越"。</p><div class="insight-vs"><span>vs 多数中国品牌：</span>中国品牌长期以"性价比"和"差异化"回避正面竞争。小米是唯一敢在发布会上一帧一帧对标苹果、保时捷、特斯拉的中国品牌。这种自信本身就是品牌升级。来源：小米发布会</div></div>
+        <div class="insight-card right"><div class="insight-num">04</div><h4>"顺势而为"的战略节奏：在正确的时间点做出正确的赌注</h4><div class="insight-kpi">2010移动互联网风口→2021新能源风口→2024 AI风口 · 每次大赌注都踩准了</div><p>雷军的核心方法论是"顺势而为"——他的顺为基金就以此命名。2010年移动互联网风口创立小米，2021年新能源风口宣布造车，2024年AI风口全面投入。每次都是在趋势确认但尚未饱和的最佳时间窗口All-in。这种对"势"的判断力来自他在金山16年"逆势而为"的痛苦——"越努力差距越大"的领悟让他成为了中国最敏锐的"风口猎手"。</p><div class="insight-vs"><span>vs 马云/马化腾：</span>马云抓住了电商的时代趋势，马化腾抓住了社交的时代趋势。雷军的不同之处在于他连续抓住了三个时代趋势——移动互联网、新能源车、AI——这需要不断自我清零的勇气。来源：雷军公开演讲</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 04</div>
+    <h1>做对了什么（续）</h1>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">05</div><h4>"参与感"与粉丝经济：从100个梦想赞助商到千万米粉</h4><div class="insight-kpi">MIUI早期100位"梦想赞助商"→全球月活6亿+ MIUI用户</div><p>小米早期"不花一分钱做到100万用户"的粉丝运营是中国互联网营销的教科书。MIUI通过招募"梦想赞助商"深度参与产品设计，形成了强烈的情感绑定。"因为米粉，所以小米"不是口号而是战略——SU7首发购买者中超过50%是小米手机用户，生态协同的转化效率惊人。</p><div class="insight-vs"><span>vs 华为/苹果：</span>华为和苹果的用户忠诚度同样高但以产品体验驱动，小米的用户忠诚度更多来自"参与感"和"陪伴感"的情感链接。来源：黎万强《参与感》</div></div>
+        <div class="insight-card right"><div class="insight-num">06</div><h4>"小米模式"的全球化复制：印度第一→欧洲第一</h4><div class="insight-kpi">全球第三大手机厂商 · 欧洲曾超越苹果登顶 · 印度连续多年第一</div><p>小米将中国的性价比+电商+粉丝模式成功复制到海外。印度市场连续多年第一，欧洲市场2025年Q2一度超越苹果重返第一，拉美和东南亚持续增长。虽然印度遭遇地缘政治挫折（被冻结资产），但小米的全球化版图已是所有中国手机品牌中最广的。</p><div class="insight-vs"><span>vs OPPO/vivo：</span>OV的海外扩张以线下渠道为主，小米以线上+Mi Home模式进入，在年轻消费者中的品牌认知度领先。来源：Canalys、IDC</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 05</div>
+    <h1>做错了什么 / 面临什么风险</h1>
+    <div class="insight-grid">
+        <div class="insight-card wrong"><div class="insight-num">01</div><h4>SU7安全事故：造车"上半场"赢在产品，"下半场"考验安全与责任</h4><div class="insight-kpi">2025.3 SU7致命车祸3人死亡 · OTA"锁马力"争议 · 累计召回超14万台</div><p>2025年3月安徽SU7高速碰撞起火致3人死亡，至今调查结果未完全公开。此后SU7 Ultra OTA将1548匹马力限制至~900匹（需赛道条件解锁），引发车主"虚假宣传"愤怒。两次大规模召回（智能泊车3万台+辅助驾驶11万台）。小米需要认识到：汽车不是手机，产品缺陷可能致命，安全容错率为零。</p><div class="insight-vs"><span>vs 特斯拉：</span>特斯拉也经历过Autopilot事故和"刹车门"，但特斯拉用时间和技术迭代逐渐挽回了安全声誉。小米正在经历同样的阵痛期。来源：易车、汽车之家</div></div>
+        <div class="insight-card wrong"><div class="insight-num">02</div><h4>"流量反噬"：手机时代的营销打法在汽车行业水土不服</h4><div class="insight-kpi">"小字文学" · "好看比安全重要"断章取义 · 冬测争议八个狗头回应 · 雷军人设从"顶流"跌到"每个负面都得亲自辟谣"</div><p>小米把手机行业的"互联网营销"打法原样搬到汽车行业，正在遭遇严重的水土不服。手机是2000元快消品，过度宣传顶多被骂几天；汽车是20万+耐用消费品，一点夸大就会被无限放大。雷军从"众星捧月"变为"每个负面都要亲自发微博辟谣"——流量是双刃剑。</p><div class="insight-vs"><span>vs 比亚迪/蔚来：</span>比亚迪王传福和蔚来李斌的公众形象更"制造业"，雷军的"网红"人设在汽车行业的安全敏感语境下面临信任挑战。来源：上海证券报、易车</div></div>
+        <div class="insight-card wrong"><div class="insight-num">03</div><h4>产品质量争议：尾灯开裂+车机黑屏+AEB误触，品控跟不上销量</h4><div class="insight-kpi">中国汽车质量网Q1新能源中大型纯电质量排名倒数第一 · 尾灯批量开裂</div><p>SU7在中国汽车质量网2025年Q1新能源中大型纯电质量排名中位列倒数第一。用户投诉集中：尾灯无故开裂起雾（批量问题）、车机/仪表盘黑屏重启、AEB误触（70码突然刹死）、副驾座椅异响、哨兵模式失效等。小米从"零"到"年产30万辆"只用了3年，但制造能力的积累需要时间——品控是造车最慢的功课。</p><div class="insight-vs"><span>vs 特斯拉/比亚迪：</span>特斯拉经历了"生产地狱"后品控才稳定下来，比亚迪用了20年。小米需要在"保交付"和"保质量"之间找到平衡。来源：315.auto.china.com.cn、12365auto.com</div></div>
+        <div class="insight-card wrong"><div class="insight-num">04</div><h4>交付能力危机：YU7等车近一年，竞争对手乘机"挖墙脚"</h4><div class="insight-kpi">YU7交付周期45-48周 · 用户等待近1年 · 蔚来/极氪/阿维塔推出定向补贴"挖墙脚"</div><p>YU7上市3分钟大定超20万辆创造了奇迹，但交付等待长达45-48周——用户交定金后要等近一年才能提车。这给了竞争对手可乘之机：蔚来、极氪、阿维塔等品牌纷纷推出针对YU7定金用户的置换补贴，试图将"等不及"的小米订单转化为自己的销量。产能爬坡是小米汽车当前最紧迫的瓶颈。</p><div class="insight-vs"><span>vs 比亚迪/特斯拉：</span>比亚迪和特斯拉的交付周期通常在数周到10余周。小米汽车的产能规划和供应链管理仍处在学习曲线上。来源：易车、汽车之家</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 05</div>
+    <h1>做错了什么 / 面临什么风险（续）</h1>
+    <div class="insight-grid">
+        <div class="insight-card wrong"><div class="insight-num">05</div><h4>法人架构规避维权：拆分为四家独立法人，消费者维权面临"告错主体"</h4><div class="insight-kpi">小米汽车拆分为生产/销售/交付/专利四家独立法人 · 南京庭审抛出"雷军不懂结构"</div><p>小米汽车将业务拆分为四家独立法人（生产、销售、交付、专利公司），消费者维权时面临"告错主体"的循环困境。南京庭审中小米方甚至抛出"雷军不懂结构，微博宣传不算数"的辩词，极大地损害了雷军的个人信誉。这种明显的诉讼规避设计在法律上或许合理，但在品牌上极其危险。</p><div class="insight-vs"><span>vs 特斯拉/蔚来：</span>特斯拉和蔚来虽然也有法务层面的设计，但从未在庭审中"切割创始人"。小米需要用更多的透明度和责任感来对冲这种法律架构带来的信任损害。来源：上海证券报</div></div>
+        <div class="insight-card wrong"><div class="insight-num">06</div><h4>高端化与性价比的"人格分裂"：品牌定位仍需厘清</h4><div class="insight-kpi">小米17系列跳过"16"命名对齐苹果 · 但Redmi仍主打千元机 · 品牌内部左右互搏</div><p>小米一方面用小米17系列对标苹果（甚至跳过"16"命名），另一方面Redmi仍在千元机市场厮杀。这种"高端化"和"性价比"的双重身份在内部造成了品牌认知的混乱。用户花6499元买了小米17 Pro Max，但别人问"你用什么手机"时说"小米"——这仍然是品牌升级的最后一公里。</p><div class="insight-vs"><span>vs 华为/苹果：</span>华为通过Mate/P系列实现了品牌高端化，苹果从一开始就是高端。小米的品牌升级仍在路上——SU7的热销证明"小米"品牌可以承载高客单价，但手机品类的品牌溢价仍需时间积累。来源：36氪、界面新闻</div></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 06</div>
+    <h1>用户画像与客户真实评价</h1>
+    <h2>小米用户画像（含百分比估算）</h2>
+    <div class="col-2">
+        <div><h3>产品生态分布</h3><table class="info-table"><thead><tr><th style="width:110px">用户类型</th><th style="width:80px">占比</th><th>特征</th></tr></thead><tbody><tr><td class="td-center">手机用户</td><td class="td-num">~65%</td><td>核心用户，MIUI月活6亿+</td></tr><tr><td class="td-center">AIoT用户</td><td class="td-num">~25%</td><td>智能家居/穿戴，10亿连接设备</td></tr><tr><td class="td-center">汽车用户</td><td class="td-num">~7%</td><td>SU7/YU7车主，快速增长中</td></tr><tr><td class="td-center">互联网服务</td><td class="td-num">~3%</td><td>纯软件用户(米家App等)</td></tr></tbody></table></div>
+        <div><h3>年龄分布</h3><table class="info-table"><thead><tr><th style="width:80px">年龄段</th><th style="width:80px">占比</th><th>特征</th></tr></thead><tbody><tr><td class="td-center">18-25岁</td><td class="td-num">~30%</td><td>学生/初入职场，Redmi主力</td></tr><tr><td class="td-center">26-35岁</td><td class="td-num">~35%</td><td>核心消费群，小米数字系列+SU7</td></tr><tr><td class="td-center">36-45岁</td><td class="td-num">~20%</td><td>家庭用户，汽车+全屋智能</td></tr><tr><td class="td-center">45岁以上</td><td class="td-num">~15%</td><td>雷军同龄粉丝，品牌忠诚度高</td></tr></tbody></table></div>
+    </div>
+    <div class="col-2">
+        <div><h3>性别分布变化</h3><p>2010年小米早期：男性~85% / 女性~15%。2025年：女性用户占比已接近50%，SU7/小米17系列/定制服务显著吸引了女性消费者，"极客品牌"标签正在褪去。</p></div>
+        <div><h3>收入分布</h3><p>月收入3000-8000元 ~40% (Redmi/中端) | 8000-20000元 ~35% | 20000元以上 ~25% (SU7/小米数字Pro/Ultra系列)。汽车业务拉高了高收入用户占比。</p></div>
+    </div>
+    <hr class="divider">
+    <h2>用户评价分布 (综合京东/天猫/315投诉/社交媒体)</h2>
+    <div class="review-stat-box">
+        <div><div class="review-big-score">4.0</div><div class="review-big-label">综合产品评分<br>（手机+IOT加权）</div></div>
+        <div style="flex:1;">
+            <div class="review-bar-row"><span class="stars-label">5 星</span><div class="bar-track"><div class="bar-fill bar-5" style="width:45%"></div></div><span class="pct-label">45%</span></div>
+            <div class="review-bar-row"><span class="stars-label">4 星</span><div class="bar-track"><div class="bar-fill bar-4" style="width:25%"></div></div><span class="pct-label">25%</span></div>
+            <div class="review-bar-row"><span class="stars-label">3 星</span><div class="bar-track"><div class="bar-fill bar-3" style="width:15%"></div></div><span class="pct-label">15%</span></div>
+            <div class="review-bar-row"><span class="stars-label">2 星</span><div class="bar-track"><div class="bar-fill bar-2" style="width:8%"></div></div><span class="pct-label">8%</span></div>
+            <div class="review-bar-row"><span class="stars-label">1 星</span><div class="bar-track"><div class="bar-fill bar-1" style="width:7%"></div></div><span class="pct-label">7%</span></div>
+        </div>
+    </div>
+    <h3>SU7车主主要投诉主题占比</h3>
+    <table class="info-table">
+        <thead><tr><th style="width:180px">投诉类别</th><th style="width:80px">估计占比</th><th>典型内容</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center">智能驾驶问题</td><td class="td-num">~30%</td><td>AEB误触、NOA异常变道、辅助驾驶预警不足</td></tr>
+            <tr><td class="td-center">车身质量问题</td><td class="td-num">~25%</td><td>尾灯开裂起雾(批量)、车机黑屏、座椅异响</td></tr>
+            <tr><td class="td-center">售后服务不满</td><td class="td-num">~20%</td><td>推卸责任、拒读后台数据、玩文字游戏</td></tr>
+            <tr><td class="td-center">OTA/软件争议</td><td class="td-num">~15%</td><td>锁马力、功能宣传与实车不符</td></tr>
+            <tr><td class="td-center">交付等待过长</td><td class="td-num">~10%</td><td>YU7等车45-48周，竞争对手挖墙脚</td></tr>
+        </tbody>
+    </table>
+    <hr class="divider">
+    <h2>社交媒体/社区口碑分析</h2>
+    <div class="col-2">
+        <div><h3>微博 / 抖音 (雷军个人IP)</h3><p>雷军微博拥有海量粉丝，每条微博互动量堪比一线明星。2024年仅抖音就涨粉2500万。正面：人设亲切、接地气、"企业家顶流"。负面：2025年后辟谣频率大增，"每个负面都要亲自回应"被解读为品牌信任度下滑的信号。</p><p style="font-size:13px;color:var(--ink-muted)">热度：⭐⭐⭐⭐⭐ | 情绪：2024高度正面→2025两极分化</p></div>
+        <div><h3>NGA / 懂车帝 / 豆瓣</h3><p>SU7试驾评价两极分化：操控被认可（"接近特斯拉水准"），但内饰用料（"塑料感""无线充电绒布极易脏"）、后排舒适度（"坐小板凳"）被频繁吐槽。小米15用户反映发热严重、续航差、夜间模式屏幕炫光。</p><p style="font-size:13px;color:var(--ink-muted)">热度：⭐⭐⭐⭐ | 情绪：产品力认可，品控和细节批评较多</p></div>
+    </div>
+    <div class="col-2" style="margin-top:12px;">
+        <div><h3>Reddit (r/Xiaomi / r/electricvehicles)</h3><p>海外Reddit对小米SU7讨论量有限且偏娱乐化。小米手机版块活跃，HyperOS更新和Redmi性价比讨论为主。Redmi Note 13 Pro 5G爆炸事件引发了对小米品控的质疑讨论。</p></div>
+        <div><h3>中国官方投诉平台</h3><p>315.auto.china.com.cn和12365auto.com是SU7投诉集中地——尾灯开裂（多个独立投诉）、AEB误触、仪表盘黑屏是高频关键词。投诉量随交付量增加而增长。</p></div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-label">Section 07</div>
+    <h1>核心数据汇总与关键结论</h1>
+    <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-value">4,573亿</div><div class="kpi-label">2025年集团营收 (元)</div><div class="kpi-compare kpi-up">↑ 同比增25%</div></div>
+        <div class="kpi-card"><div class="kpi-value">$435亿</div><div class="kpi-label">雷军净资产 (2025)</div><div class="kpi-compare">福布斯全球第32位</div></div>
+        <div class="kpi-card"><div class="kpi-value">1,050亿</div><div class="kpi-label">五年累计研发投入 (元)</div><div class="kpi-compare kpi-up">新五年目标2000亿</div></div>
+        <div class="kpi-card"><div class="kpi-value">24万辆</div><div class="kpi-label">YU7 18小时锁单</div><div class="kpi-compare kpi-up">SU7全年交付13.7万</div></div>
+        <div class="kpi-card"><div class="kpi-value">10亿台</div><div class="kpi-label">AIoT连接设备</div><div class="kpi-compare">全球最大消费级IoT平台</div></div>
+    </div>
+    <hr class="divider">
+    <h2>四条关键结论</h2>
+    <div class="conclusion-grid">
+        <div class="conclusion-card"><div class="cc-num">01</div><h3>雷军是中国最擅长"顺势而为"的连续成功创业者</h3><p>从金山软件到卓越网（出售给亚马逊），从天使投资（YY 112倍回报）到创立小米，从手机到造车到芯片——雷军连续抓住了四个时代级趋势。他的核心能力不是技术创新，而是"在正确的时间做正确的赌注"的战略判断力，以及"40岁清零再出发"的勇气。</p></div>
+        <div class="conclusion-card"><div class="cc-num">02</div><h3>"人车家全生态"是全球独一无二的商业模式</h3><p>小米是全球唯一一家同时在手机（全球前三）、电动车（SU7/YU7双爆款）、AIoT（10亿设备）三个万亿级赛道进入第一梯队的公司。这种跨品类协同的护城河——用户买SU7因为小米手机好用，买小米手机因为全屋智能好用——竞争对手极难复制。</p></div>
+        <div class="conclusion-card"><div class="cc-num">03</div><h3>造车是雷军迄今为止最大的赌注，成败尚未可知</h3><p>SU7和YU7的产品力和销售数据证明"小米会造好车"。但汽车行业的竞争维度与手机完全不同——安全、品控、售后、供应链管理、法规合规——这些都是小米正在"交学费"的领域。2025年的安全事故和质量投诉只是开胃菜，真正的考验在交付100万辆之后。</p></div>
+        <div class="conclusion-card"><div class="cc-num">04</div><h3>"流量反噬"是雷军个人IP面临的最大风险</h3><p>雷军将个人形象经营成了小米最强大的营销武器，但流量的另一面是反噬。当SU7出现安全事故时，所有火都烧向雷军本人——因为小米的公众形象与雷军的个人形象高度绑定。如何在"网红创始人"和"可靠制造业领袖"之间找到新的平衡，是雷军未来最大的个人课题。</p></div>
+    </div>
+    <div class="callout" style="margin-top:32px;"><strong>调研后记：</strong>雷军是当代中国最复杂、也最有研究价值的企业家之一。他是一个"逆天改命"的信仰者——从仙桃小城到武汉大学，从金山16年到小米帝国，从"组装厂"到3nm自研芯片。他的故事验证了一个底层规律：<strong>一个人可以在40岁之后重新开始，而且第二次出发可以比第一次走得更远。</strong>但他的挑战同样巨大——造车的成败将在未来5年定义他的最终遗产。</div>
+</div>
+<div class="section"><div class="section-label">Verification Notes</div><h1>来源、创始人与服务收费核验</h1>
+    <table class="info-table"><thead><tr><th style="width:150px">核验点</th><th>结论</th><th>入口</th></tr></thead><tbody>
+        <tr><td>创始人履历</td><td>雷军的履历要按金山、卓越网、天使投资、小米、汽车五段看；小米不是“白手起家”，而是连续创业与资本积累后的再出发。</td><td><a href="https://en.wikipedia.org/wiki/Lei_Jun" target="_blank" rel="noopener">Lei Jun 公开履历</a></td></tr>
+        <tr><td>价格/配件服务费</td><td>小米总收入不能只看手机/汽车主机价；配件、延保、维修、云服务、IoT 设备、汽车选装件和软件服务共同影响用户生命周期价值。</td><td><a href="https://www.mi.com/" target="_blank" rel="noopener">小米官方入口</a></td></tr>
+    </tbody></table>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-leijun">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">Lei Jun / Xiaomi</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">Global / China where relevant</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; consumer GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">Only sourced money events are written as facts. Unsupported founder cash, margin, burn, loss, CAC, refund or subsidy amounts remain in research_gaps.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>雷军报告的 GTM 应该写成“创始人 IP + 极致性价比 + 生态链 + 发布会转化 + 小米汽车放大器”，而不是把雷军个人经历当成单一品牌财务表。</div>
+<div class="gtm-card"><p>雷军报告的 GTM 应该写成“创始人 IP + 极致性价比 + 生态链 + 发布会转化 + 小米汽车放大器”，而不是把雷军个人经历当成单一品牌财务表。雷军的核心作用是把小米的产品故事人格化：手机时代靠 MIUI 社群和性价比，IoT 时代靠生态链，汽车时代靠 SU7/YU7 发布会、工厂叙事和极强社交传播完成高客单价迁移。</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">Kingsoft/Joyo/angel investing creates founder credibility</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">MIUI community validates software-first phone demand</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Xiaomi phone + online flash sale builds price-performance identity</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">IoT ecosystem expands household touchpoints</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">SU7/YU7 uses Lei Jun personal IP to sell high-ticket EVs</span></div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心渠道：</strong>Official site/store is the clearest conversion path and pricing source.</li>
+</ul></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">最多选 3 个产品或产品线；按公开证据、价格结构、GTM 学习价值和用户购买决策选择。</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">Xiaomi SU7 / YU7 Auto</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">ev_line</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Xiaomi Auto is the biggest test of Lei Jun’s founder-led GTM.</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>SU7 original prices: RMB 215,900 / 245,900 / 299,900; SU7 Ultra launched at RMB 529,900; YU7 reported starting price RMB 253,500 with Pro/Max at RMB 279,900 / 329,900.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Software boundary: HyperOS/cockpit and updates are part of vehicle experience; no reliable mandatory consumer software subscription is written here.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: insurance, charging, autonomous-driving options, maintenance, tires, accessories and extended warranty need buyer-level quote; do not invent fixed service fee.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Tesla Model 3/Y, BYD Han/Seal, Nio ET/ES and Xpeng compete; YU7 was reported as slightly below Tesla Model Y in China.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi_SU7" target="_blank" rel="noopener noreferrer">Xiaomi SU7 public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi_YU7" target="_blank" rel="noopener noreferrer">Xiaomi YU7 public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6" target="_blank" rel="noopener noreferrer">Business Insider YU7 orders and price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。</li>
+<li><strong>可学习：</strong>GTM 的重点是让用户相信长期价值，而不是只看首发声量。</li>
+<li><strong>别照抄：</strong>不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi_SU7" target="_blank" rel="noopener noreferrer">Xiaomi SU7 public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6" target="_blank" rel="noopener noreferrer">Business Insider YU7 orders and price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">Xiaomi 15 / 15 Ultra + HyperOS</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">smartphone_line</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Smartphones remain the ecosystem entry and Apple/Huawei comparison point.</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>European launch coverage: Xiaomi 15 from €999 / £899; Xiaomi 15 Ultra from €1,499 / £1,299; China prices vary by SKU and promotion.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Software/subscription boundary: HyperOS is included; Xiaomi Cloud, app store, content and internet services monetize users separately.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: photography kit for Xiaomi 15 Ultra reported at £179; cases, chargers, warranties and cloud storage add cost.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: iPhone 17 family, Galaxy S Ultra and Huawei Pura/Mate occupy similar high-end bands; Apple iPhone 17 starts around $799 and Pro models price higher by storage.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc" target="_blank" rel="noopener noreferrer">The Verge Xiaomi 15 / 15 Ultra Europe price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.apple.com/iphone/" target="_blank" rel="noopener noreferrer">Apple iPhone official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。</li>
+<li><strong>可学习：</strong>GTM 的重点是让用户相信长期价值，而不是只看首发声量。</li>
+<li><strong>别照抄：</strong>不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc" target="_blank" rel="noopener noreferrer">The Verge Xiaomi 15 / 15 Ultra Europe price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi" target="_blank" rel="noopener noreferrer">Xiaomi public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">Xiaomi AIoT / Home ecosystem</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">ecosystem_line</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>生态链是雷军方法论从手机扩张到家庭和汽车的中间层。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Product prices vary widely from smart bands to TVs, appliances and scooters; use official Xiaomi regional stores for live SKU prices.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Subscription/software boundary: many devices work without subscription, but cloud storage, content services and app services may be paid.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: installation, filters, consumables, batteries, spare parts and warranties are meaningful total-cost items.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Apple Home, Samsung SmartThings, Huawei HarmonyOS, Anker/Eufy, DJI ecosystem and Roborock/Dreame compete by category.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi" target="_blank" rel="noopener noreferrer">Xiaomi public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a" target="_blank" rel="noopener noreferrer">WSJ Xiaomi 2025 earnings coverage</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.apple.com/apple-one/" target="_blank" rel="noopener noreferrer">Apple One official pricing</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。</li>
+<li><strong>可学习：</strong>GTM 的重点是让用户相信长期价值，而不是只看首发声量。</li>
+<li><strong>别照抄：</strong>不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi" target="_blank" rel="noopener noreferrer">Xiaomi public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a" target="_blank" rel="noopener noreferrer">WSJ Xiaomi 2025 earnings coverage</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Lei_Jun" target="_blank" rel="noopener noreferrer">Lei Jun public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi" target="_blank" rel="noopener noreferrer">Xiaomi public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi_SU7" target="_blank" rel="noopener noreferrer">Xiaomi SU7 public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Xiaomi_YU7" target="_blank" rel="noopener noreferrer">Xiaomi YU7 public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.businessinsider.com/xiaomi-ev-profitable-china-tesla-byd-2025-11" target="_blank" rel="noopener noreferrer">Business Insider Xiaomi EV profitability report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a" target="_blank" rel="noopener noreferrer">WSJ Xiaomi 2025 earnings coverage</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc" target="_blank" rel="noopener noreferrer">The Verge Xiaomi 15 / 15 Ultra Europe price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6" target="_blank" rel="noopener noreferrer">Business Insider YU7 orders and price</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://time.com/3741842/meet-lei-jun-chinas-phone-king/" target="_blank" rel="noopener noreferrer">Time profile: Lei Jun</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body>
+</html>

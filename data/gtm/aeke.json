@@ -1,0 +1,410 @@
+{
+  "brand": "AEKE",
+  "brand_slug": "aeke",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "钟质峰 Peter: 本地报告显示其来自 OPPO 渠道与教育科技创业积累；未把个人自筹金额写成事实。",
+      "龙春泠 Loong: 本地报告记录其有在线教育创业背景并参与 2022 年 AEKE 项目启动；未找到可靠个人金额披露。",
+      "范炜 Richard: 负责 AI 视觉、骨骼追踪和数字阻力相关技术；个人履历金额不写入事实表。"
+    ],
+    "brand_timeline": [
+      "2025-01: crowdfunding $1.52M - Kickstarter 众筹约 $1.52M，635+ 支持者，是公开可见的主要外部资金信号。",
+      "2026: product_price $3,298-$3,498 - AEKE K1 官方独立站显示 K1 Complete Set 与 Bench 组合价格。"
+    ],
+    "founder_profiles": [
+      {
+        "name": "钟质峰 Peter",
+        "role": "Co-founder / CEO",
+        "background_summary": "本地报告显示其来自 OPPO 渠道与教育科技创业积累；未把个人自筹金额写成事实。",
+        "profile_links": [
+          {
+            "title": "AEKE About Us",
+            "url": "https://aeke.com/pages/about-us",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "龙春泠 Loong",
+        "role": "Co-founder / COO",
+        "background_summary": "本地报告记录其有在线教育创业背景并参与 2022 年 AEKE 项目启动；未找到可靠个人金额披露。",
+        "profile_links": [
+          {
+            "title": "AEKE About Us",
+            "url": "https://aeke.com/pages/about-us",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "范炜 Richard",
+        "role": "Co-founder / CTO",
+        "background_summary": "负责 AI 视觉、骨骼追踪和数字阻力相关技术；个人履历金额不写入事实表。",
+        "profile_links": [
+          {
+            "title": "AEKE official home",
+            "url": "https://aeke.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2025-01",
+        "event": "crowdfunding",
+        "amount": "$1.52M",
+        "currency": "USD",
+        "description": "Kickstarter 众筹约 $1.52M，635+ 支持者，是公开可见的主要外部资金信号。",
+        "source": {
+          "title": "AEKE Kickstarter campaign link from official nav",
+          "url": "https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym",
+          "source_type": "marketplace",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026",
+        "event": "product_price",
+        "amount": "$3,298-$3,498",
+        "currency": "USD",
+        "description": "AEKE K1 官方独立站显示 K1 Complete Set 与 Bench 组合价格。",
+        "source": {
+          "title": "AEKE K1 official product page",
+          "url": "https://aeke.com/products/buy-aeke-k1",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "没有找到可靠来源披露三位创始人各自出资金额。",
+      "没有找到经审计营收、毛利、退货损失或售后成本。"
+    ]
+  },
+  "gtm_extension": {
+    "summary": "AEKE 的 GTM 核心是用“AI 私教镜 + 买断制 + 众筹验证”切入高端家庭力量训练。它不是先靠 VC 烧钱铺渠道，而是用 Kickstarter、设计奖、媒体评测和官方独立站把早期需求压缩成预售订单；优势是零强制订阅和客厅友好形态，风险是线缆结构、软件成熟度、真实社区声量和售后交付都还在早期。",
+    "one_sentence_gtm": "AEKE 的 GTM 核心是用“AI 私教镜 + 买断制 + 众筹验证”切入高端家庭力量训练。",
+    "channel_path": [
+      "中国供应链和创始团队自有资源立项",
+      "Kickstarter/TCF 做海外预热和早鸟转化",
+      "独立站承接高客单价购买",
+      "媒体评测与体育明星背书建立信任",
+      "售后、软件 OTA 和用户社区决定复购与口碑"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "crowdfunding": "Kickstarter 提供早期 PMF 验证和第一批现金流。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "K1 硬件买断",
+        "Bench 与智能配件",
+        "未来软件/课程可选增值"
+      ],
+      "pricing_logic": "用 $3,298-$3,498 锚定低于 Tonal 总成本、接近 Speediance 的高端带。",
+      "channel_economics": "众筹降低冷启动库存风险，但后续获客成本和售后成本会变成核心考验。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "AEKE Smart Home Gym K1",
+        "type": "smart_home_gym",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "核心收入与品牌识别产品。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "43 英寸 4K 镜面、AI 实时指导、220lb 数字阻力、无强制订阅。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "$3,298 K1 Complete Set；$3,398-$3,498 含不同 Bench 组合；官方页显示原价 $4,798 与限时折扣。",
+          "subscription_fee": "No mandatory subscription / 无强制订阅；官方产品页写明 No Subscription Required 与 Lifetime Free 内容。",
+          "accessory_service_fee": "Bench B1/B3、Smart Grips、Barbell、Heart Rate Armband、Scale、backup cords 等配件随套装或单卖；例如 Extender Belt $99、Barbell Squat Pad $69。",
+          "competitor_price": "Competitor price comparison: Speediance Gym Monster 2 $3,390-$4,799；Tonal 2 $4,295 + $495 accessories + $59.95/mo membership；FightCamp packages start $299；Growl $4,500 + $60/mo.",
+          "sources": [
+            {
+              "title": "AEKE K1 official product page",
+              "url": "https://aeke.com/products/buy-aeke-k1",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AEKE Fitness Bench B1 official page",
+              "url": "https://aeke.com/products/buy-aeke-b1",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "AEKE K1 official product page",
+            "url": "https://aeke.com/products/buy-aeke-k1",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "T3 AEKE Smart Home Gym review",
+            "url": "https://www.t3.com/active/aeke-smart-home-gym-review-i-tried",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "AEKE Bench / Smart Accessories",
+        "type": "accessory_stack",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "高客单价硬件必须靠配件完成动作覆盖。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "蓝牙配件和身体评估补齐 AI 私教叙事。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Bench 套装官方价 $3,398-$3,498；配件单品页面显示 B1/Smart Accessories。",
+          "subscription_fee": "No mandatory subscription；课程和动作库作为买断设备体验的一部分。",
+          "accessory_service_fee": "Accessory/service price: Extender Belt $99、Barbell Squat Pad $69、Workout Towel $69；售后备用绳和配件需要明确。",
+          "competitor_price": "Competitor accessory price comparison: Tonal Essential Accessories Bundle $495；Speediance Works/Family Plus 价差覆盖 bench/rower/barbell；FightCamp Elite 包含 bag/gloves/HR monitor。",
+          "sources": [
+            {
+              "title": "AEKE Fitness Bench B1 official page",
+              "url": "https://aeke.com/products/buy-aeke-b1",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AEKE Smart Accessories official page",
+              "url": "https://aeke.com/collections/accessories",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "AEKE Fitness Bench B1 official page",
+            "url": "https://aeke.com/products/buy-aeke-b1",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "AEKE Smart Accessories official page",
+            "url": "https://aeke.com/collections/accessories",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "AEKE Kickstarter campaign",
+        "type": "crowdfunding_offer",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "众筹是 AEKE 的冷启动渠道，不只是销售渠道。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "把无 VC 叙事转化为“由用户验证”的品牌资产。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Base report records about $1.52M from 635+ backers; pledge tiers varied by package.",
+          "subscription_fee": "No mandatory subscription signal remains a core campaign selling point.",
+          "accessory_service_fee": "Accessory/service price: pledge bundles included K1 sets, bench and smart accessories; shipping/tax vary by region.",
+          "competitor_price": "Competitor crowdfunding comparison: Speediance 2021 Kickstarter about $560K; Growl Kickstarter early-bird hardware around $2,449 versus MSRP about $4,500; Tonal/Peloton did not rely on Kickstarter for the current flagship model.",
+          "sources": [
+            {
+              "title": "AEKE Kickstarter campaign link from official nav",
+              "url": "https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym",
+              "source_type": "marketplace",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance public profile",
+              "url": "https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc.",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "GROWL Kickstarter",
+              "url": "https://www.kickstarter.com/projects/joingrowl/growl-the-ai-powered-boxing-and-fitness-coach",
+              "source_type": "marketplace",
+              "confidence": "medium"
+            },
+            {
+              "title": "AEKE K1 official product page",
+              "url": "https://aeke.com/products/buy-aeke-k1",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "AEKE Kickstarter campaign link from official nav",
+            "url": "https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym",
+            "source_type": "marketplace",
+            "confidence": "medium"
+          },
+          {
+            "title": "T3 AEKE Smart Home Gym review",
+            "url": "https://www.t3.com/active/aeke-smart-home-gym-review-i-tried",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "AEKE 的第一性原理是让用户相信一台高客单 AI 硬件能替代部分私教。",
+      "无强制订阅是清晰优势，但也意味着硬件毛利必须覆盖内容和软件维护。",
+      "找不到的资金细节不能补想象，应该留在研究缺口。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "AEKE official home",
+        "url": "https://aeke.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE K1 official product page",
+        "url": "https://aeke.com/products/buy-aeke-k1",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE About Us",
+        "url": "https://aeke.com/pages/about-us",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE Fitness Bench B1 official page",
+        "url": "https://aeke.com/products/buy-aeke-b1",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE Smart Accessories official page",
+        "url": "https://aeke.com/collections/accessories",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "T3 AEKE Smart Home Gym review",
+        "url": "https://www.t3.com/active/aeke-smart-home-gym-review-i-tried",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE Kickstarter campaign link from official nav",
+        "url": "https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym",
+        "source_type": "marketplace",
+        "confidence": "medium"
+      },
+      {
+        "title": "AEKE Trustpilot",
+        "url": "https://www.trustpilot.com/review/aeke.com",
+        "source_type": "review",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

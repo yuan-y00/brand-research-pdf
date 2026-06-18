@@ -133,7 +133,7 @@ function showHelp() {
     '',
     'Standard workflow:',
     '  1. node scripts/gtm-workflow.js "Anker"              → generate research prompt',
-    '  2. Copy tmp/anker-gtm-research-prompt.txt to VSCode AI',
+    '  2. Copy tmp/anker-gtm-research-prompt.txt to your current AI tool',
     '  3. Save AI output as data/gtm/anker.json',
     '  4. node scripts/gtm-workflow.js "Anker" --append     → append GTM section',
     '  5. node scripts/gtm-workflow.js "Anker" --update-index → insert card into index.html',
@@ -329,7 +329,7 @@ function generateResearchPrompt(brandName, brandSlug, promptPath, reportPath, fo
   // Build the final prompt with instructions header
   const header = [
     '============================================================',
-    '以下是指定品牌的研究 prompt，请复制全部内容发给 VSCode AI',
+    '以下是指定品牌的研究 prompt，请复制全部内容发给当前使用的 AI 工具',
     '============================================================',
     '',
     '保存要求：',
@@ -341,12 +341,12 @@ function generateResearchPrompt(brandName, brandSlug, promptPath, reportPath, fo
     '     - 不要输出 Markdown',
     '     - 不要在 JSON 外写解释',
     '     - top_products 不超过 3 个',
-    '     - 不确定的内容写 unknown / not_found / low_confidence',
+    '     - 不确定且没有可靠来源的内容不要写进报告；省略字段，让审计暴露缺口',
     '  3. 旧报告路径（参考，用于后续 append）：',
     '     ' + reportPath,
     '',
     '============================================================',
-    '以下复制给 VSCode AI',
+    '以下复制给当前使用的 AI 工具',
     '============================================================',
     '',
   ].join('\n');
@@ -784,8 +784,8 @@ function main(argv) {
   console.error('  ' + result.promptPath);
   console.error('');
   console.error('Next steps:');
-  console.error('  1. Copy the prompt file to VSCode AI');
-  console.error('  2. AI will research and output JSON');
+  console.error('  1. Copy the prompt file to your current AI tool');
+  console.error('  2. AI or human research will output JSON');
   console.error('  3. Save the JSON as:');
   console.error('     ' + paths.jsonPath);
   console.error('  4. Then run:');

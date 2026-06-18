@@ -4,7 +4,7 @@
   "market_focus": "US / Global",
   "report_type": "gtm_extension",
   "version": "1.0",
-  "generated_by": "VSCode AI research",
+  "generated_by": "AI-assisted public-source research; evidence repair 2026-06-17",
   "disclaimer": "This report is for learning and pattern recognition. It does not perform strict fact auditing. All sources are English-first public information.",
   "brand_context": {
     "founder_background": [
@@ -21,26 +21,106 @@
       "Market cap reached $4 trillion+ in 2025, the first company in history to do so."
     ],
     "brand_timeline": [
-      {"date": "1993.04", "event": "NVIDIA founded by Jensen Huang, Chris Malachowsky, Curtis Priem at Denny's in San Jose. Huang becomes CEO at age 30.", "type": "founding"},
-      {"date": "1995", "event": "NV1 released — NVIDIA's first chip. Multimedia accelerator with integrated audio. Commercial failure; nearly bankrupted the company.", "type": "product"},
-      {"date": "1997", "event": "RIVA 128 released — first major success. Sold 1 million units in 4 months. Saved NVIDIA from bankruptcy. Established company as a viable graphics chip maker.", "type": "product"},
-      {"date": "1999.01", "event": "NASDAQ IPO. Raised $42 million. Stock priced at $12/share.", "type": "corporate"},
-      {"date": "1999.10", "event": "GeForce 256 launched — marketed as the world's first 'GPU' (Graphics Processing Unit). Introduced hardware transform and lighting.", "type": "product"},
-      {"date": "2000", "event": "Acquired 3dfx's intellectual property assets after 3dfx's bankruptcy. Former arch-rival eliminated.", "type": "corporate"},
-      {"date": "2006.11", "event": "CUDA (Compute Unified Device Architecture) launched with GeForce 8800 GTX (G80 architecture). Enabled general-purpose parallel computing on GPU. Wall Street criticized the investment as having no addressable market.", "type": "product"},
-      {"date": "2007", "event": "Tesla GPU product line launched — first dedicated GPU computing products for HPC and scientific computing.", "type": "product"},
-      {"date": "2009", "event": "Tegra mobile processor line launched. Attempted entry into smartphone/tablet market. Ultimately failed in phones but found success in automotive and Nintendo Switch.", "type": "product"},
-      {"date": "2012", "event": "AlexNet (trained on NVIDIA GTX 580 GPUs) won ImageNet competition by a massive margin, sparking the deep learning revolution. GPU-accelerated AI training became the standard.", "type": "industry_event"},
-      {"date": "2014", "event": "Shield line launched (handheld, tablet, TV). Modest commercial success but proved NVIDIA's commitment to consumer devices.", "type": "product"},
-      {"date": "2016", "event": "DGX-1 deep learning system unveiled — first purpose-built AI supercomputer-in-a-box. Huang personally delivered the first DGX-1 to OpenAI.", "type": "product"},
-      {"date": "2017", "event": "Volta architecture with Tensor Cores — first GPU designed specifically for AI workloads.", "type": "product"},
-      {"date": "2018", "event": "Turing architecture with RT Cores — real-time ray tracing for consumer GPUs (GeForce RTX 20 series).", "type": "product"},
-      {"date": "2019", "event": "Acquired Mellanox Technologies for $6.9 billion — gained control of InfiniBand networking, critical for connecting thousands of GPUs in AI clusters.", "type": "acquisition"},
-      {"date": "2020", "event": "Attempted to acquire Arm Holdings from SoftBank for $40 billion. Deal abandoned in February 2022 due to regulatory opposition.", "type": "corporate"},
-      {"date": "2022.11", "event": "ChatGPT launched (trained on NVIDIA A100 GPUs). AI demand exploded. NVIDIA became the central infrastructure provider for the generative AI era.", "type": "industry_event"},
-      {"date": "2023-2024", "event": "H100 GPU became 'the most sought-after product in Silicon Valley history' (Wall Street Journal). Supply constrained, multi-month waitlists. NVIDIA's data center revenue exceeded $47.5B in FY2024.", "type": "growth"},
-      {"date": "2024", "event": "Blackwell platform (B200/GB200) announced at GTC 2024. Named after David Blackwell, the first African American inducted into the National Academy of Sciences. Delivers 4x training performance and 30x inference performance vs Hopper.", "type": "product"},
-      {"date": "2025", "event": "Market cap exceeded $4 trillion — first company in history. Revenue topped $215 billion in FY2026. Data center business alone larger than entire semiconductor industry peers combined.", "type": "milestone"}
+      {
+        "date": "1993.04",
+        "event": "NVIDIA founded by Jensen Huang, Chris Malachowsky, Curtis Priem at Denny's in San Jose. Huang becomes CEO at age 30.",
+        "type": "founding"
+      },
+      {
+        "date": "1995",
+        "event": "NV1 released — NVIDIA's first chip. Multimedia accelerator with integrated audio. Commercial failure; nearly bankrupted the company.",
+        "type": "product"
+      },
+      {
+        "date": "1997",
+        "event": "RIVA 128 released — first major success. Sold 1 million units in 4 months. Saved NVIDIA from bankruptcy. Established company as a viable graphics chip maker.",
+        "type": "product"
+      },
+      {
+        "date": "1999.01",
+        "event": "NASDAQ IPO. Raised $42 million. Stock priced at $12/share.",
+        "type": "corporate"
+      },
+      {
+        "date": "1999.10",
+        "event": "GeForce 256 launched — marketed as the world's first 'GPU' (Graphics Processing Unit). Introduced hardware transform and lighting.",
+        "type": "product"
+      },
+      {
+        "date": "2000",
+        "event": "Acquired 3dfx's intellectual property assets after 3dfx's bankruptcy. Former arch-rival eliminated.",
+        "type": "corporate"
+      },
+      {
+        "date": "2006.11",
+        "event": "CUDA (Compute Unified Device Architecture) launched with GeForce 8800 GTX (G80 architecture). Enabled general-purpose parallel computing on GPU. Wall Street criticized the investment as having no addressable market.",
+        "type": "product"
+      },
+      {
+        "date": "2007",
+        "event": "Tesla GPU product line launched — first dedicated GPU computing products for HPC and scientific computing.",
+        "type": "product"
+      },
+      {
+        "date": "2009",
+        "event": "Tegra mobile processor line launched. Attempted entry into smartphone/tablet market. Ultimately failed in phones but found success in automotive and Nintendo Switch.",
+        "type": "product"
+      },
+      {
+        "date": "2012",
+        "event": "AlexNet (trained on NVIDIA GTX 580 GPUs) won ImageNet competition by a massive margin, sparking the deep learning revolution. GPU-accelerated AI training became the standard.",
+        "type": "industry_event"
+      },
+      {
+        "date": "2014",
+        "event": "Shield line launched (handheld, tablet, TV). Modest commercial success but proved NVIDIA's commitment to consumer devices.",
+        "type": "product"
+      },
+      {
+        "date": "2016",
+        "event": "DGX-1 deep learning system unveiled — first purpose-built AI supercomputer-in-a-box. Huang personally delivered the first DGX-1 to OpenAI.",
+        "type": "product"
+      },
+      {
+        "date": "2017",
+        "event": "Volta architecture with Tensor Cores — first GPU designed specifically for AI workloads.",
+        "type": "product"
+      },
+      {
+        "date": "2018",
+        "event": "Turing architecture with RT Cores — real-time ray tracing for consumer GPUs (GeForce RTX 20 series).",
+        "type": "product"
+      },
+      {
+        "date": "2019",
+        "event": "Acquired Mellanox Technologies for $6.9 billion — gained control of InfiniBand networking, critical for connecting thousands of GPUs in AI clusters.",
+        "type": "acquisition"
+      },
+      {
+        "date": "2020",
+        "event": "Attempted to acquire Arm Holdings from SoftBank for $40 billion. Deal abandoned in February 2022 due to regulatory opposition.",
+        "type": "corporate"
+      },
+      {
+        "date": "2022.11",
+        "event": "ChatGPT launched (trained on NVIDIA A100 GPUs). AI demand exploded. NVIDIA became the central infrastructure provider for the generative AI era.",
+        "type": "industry_event"
+      },
+      {
+        "date": "2023-2024",
+        "event": "H100 GPU became 'the most sought-after product in Silicon Valley history' (Wall Street Journal). Supply constrained, multi-month waitlists. NVIDIA's data center revenue exceeded $47.5B in FY2024.",
+        "type": "growth"
+      },
+      {
+        "date": "2024",
+        "event": "Blackwell platform (B200/GB200) announced at GTC 2024. Named after David Blackwell, the first African American inducted into the National Academy of Sciences. Delivers 4x training performance and 30x inference performance vs Hopper.",
+        "type": "product"
+      },
+      {
+        "date": "2025",
+        "event": "Market cap exceeded $4 trillion — first company in history. Revenue topped $215 billion in FY2026. Data center business alone larger than entire semiconductor industry peers combined.",
+        "type": "milestone"
+      }
     ],
     "major_turning_points": [
       "1997 RIVA 128 saved the company from near-bankruptcy after NV1 failure",
@@ -61,7 +141,98 @@
       "Crypto mining GPU shortage (2017-2018, 2020-2021) — Gamers unable to buy GPUs at MSRP. Created lasting brand resentment despite being a supply-demand issue.",
       "12VHPWR connector melting on RTX 4090 (2022-2023) — New power connector design caused melting due to improper insertion. Multiple class-action lawsuits filed."
     ],
-    "notes": "NVIDIA's history is defined by near-death experiences (NV1, Bumpgate) followed by strategic bets that took a decade to mature (CUDA). The pattern: survive a crisis → invest counterintuitively for future → wait for the market to come to them. This requires a founder-CEO willing to ignore Wall Street for 10+ years — something nearly impossible in a professional-manager-led company."
+    "notes": "NVIDIA's history is defined by near-death experiences (NV1, Bumpgate) followed by strategic bets that took a decade to mature (CUDA). The pattern: survive a crisis → invest counterintuitively for future → wait for the market to come to them. This requires a founder-CEO willing to ignore Wall Street for 10+ years — something nearly impossible in a professional-manager-led company.",
+    "founder_profiles": [
+      {
+        "name": "Jensen Huang",
+        "role": "Co-founder / CEO",
+        "background_summary": "Co-founded NVIDIA in 1993 after engineering and chip-industry roles; became the central strategic figure behind GPU computing and AI acceleration.",
+        "profile_links": [
+          {
+            "title": "NVIDIA executive profile: Jensen Huang",
+            "url": "https://www.nvidia.com/en-us/about-nvidia/leadership/jensen-huang/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "NVIDIA company history",
+            "url": "https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Chris Malachowsky",
+        "role": "Co-founder",
+        "background_summary": "Chip engineer and NVIDIA co-founder.",
+        "profile_links": [
+          {
+            "title": "NVIDIA corporate timeline",
+            "url": "https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Curtis Priem",
+        "role": "Co-founder",
+        "background_summary": "Graphics architect and NVIDIA co-founder.",
+        "profile_links": [
+          {
+            "title": "NVIDIA corporate timeline",
+            "url": "https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "1993",
+        "event": "founding",
+        "amount": "about $40K founder capital often cited in company lore",
+        "currency": "USD",
+        "description": "NVIDIA was founded by Jensen Huang, Chris Malachowsky, and Curtis Priem.",
+        "source": {
+          "title": "NVIDIA corporate timeline",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1999",
+        "event": "ipo",
+        "amount": "IPO at $12/share; proceeds vary by source",
+        "currency": "USD",
+        "description": "NVIDIA went public in 1999, giving it capital to scale GPU R&D and distribution.",
+        "source": {
+          "title": "NVIDIA corporate timeline",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/corporate-timeline/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2024",
+        "event": "revenue",
+        "amount": "annual revenue disclosed in NVIDIA filings",
+        "currency": "USD",
+        "description": "AI data center revenue became the dominant financial driver; use latest 10-K for exact audited numbers.",
+        "source": {
+          "title": "NVIDIA investor relations",
+          "url": "https://investor.nvidia.com/financial-info/annual-reports-and-proxies/default.aspx",
+          "source_type": "filing",
+          "confidence": "medium"
+        },
+        "confidence": "high"
+      }
+    ]
   },
   "gtm_extension": {
     "summary": "NVIDIA 是全球最有价值的半导体公司，也是 AI 时代的核心基础设施提供商。它的 GTM 路径非常独特——不是传统的\"做产品→卖产品\"路径，而是\"创造平台→培育生态→让生态创造需求→产品自然销售\"的平台驱动模式。NVIDIA 的核心增长引擎经历了三次范式转移：1990s 的 PC 游戏 GPU（GeForce 打开消费市场）、2006 年的 CUDA 平台（将 GPU 变成通用并行计算平台）、2016 年至今的 AI 数据中心全栈系统（DGX + NVLink + InfiniBand + CUDA 形成系统级锁定）。当前数据中心业务贡献 91% 营收（FY2026），毛利率 75.2%，净利率 55%+——这在任何半导体公司中都是史无前例的。NVIDIA 的 GTM 不是传统意义上的销售和市场，而是\"生态孵育 → 开发者锁定 → 全栈系统销售 → 投资客户形成资本闭环\"的四步飞轮。对于想要学习平台型公司 GTM 的人，NVIDIA 最关键的一课是：18 年漫长的生态投入（CUDA 2006-2024）最终在 AI 时代获得了指数级回报——但这种\"耐心资本\"的玩法需要极其特殊的 CEO、治理结构和市场条件。",
@@ -77,14 +248,11 @@
       "主权 AI + AI 工厂直销各国政府和大型企业，构建国家级 AI 基础设施（2024-至今）"
     ],
     "channels": {
-      "crowdfunding": "not_found_or_not_core — NVIDIA 成立于 1993 年，远在众筹时代之前。融资通过传统 VC（Sequoia/Sutter Hill $20M）和 1999 年 IPO 完成。",
       "dtc": "NVIDIA 通过官网 nvidia.com 直接销售 Founders Edition 显卡、Shield 设备和 NVIDIA AI Enterprise 软件订阅。GeForce NOW 云游戏服务为直接面向消费者的订阅服务。但 DTC 在 NVIDIA 总体营收中占比很小（<5%），核心业务以 B2B 和合作伙伴渠道为主。",
       "amazon": "NVIDIA 本身不依赖 Amazon.com 作为核心渠道。但 AWS 是 NVIDIA GPU 最大的云部署平台之一。Amazon 也为 NVIDIA 提供零售渠道销售消费级 GPU（GeForce）和 Shield 设备。AWS 自研 Trainium2 芯片同时也采购 NVIDIA GPU，形成合作与竞争并存的关系。",
-      "ecommerce": "not_found_or_not_core — NVIDIA 不自建电商平台体系。消费级 GPU 主要通过 Newegg、Amazon、Best Buy 等第三方电商和零售商销售。",
       "social_media": "NVIDIA 的社交媒体策略聚焦 B2B 开发者布道和品牌建设，而非直接转化销售。Jensen Huang 本人成为了强大的个人品牌 IP——GTC 主题演讲（被媒体称为 'AI 界的超级碗'）在线观看量达数千万。NVIDIA 官方 YouTube 频道提供 GTC 录播、技术 Demo、产品发布视频。Twitter/X、LinkedIn 用于发布技术论文和合作公告。Reddit r/NVIDIA 社区有 120 万+成员，是重要的用户和开发者活跃社区。",
       "retail": "消费级 GeForce GPU 通过 Best Buy、Micro Center、Newegg、Amazon 等零售商销售。但零售只是 NVIDIA 的 '面子'——真正赚钱的是 B2B 数据中心渠道。零售端的 GeForce 品牌价值在于维持消费者心智：'NVIDIA = 最好的显卡'，间接影响企业在采购 AI 基础设施时的品牌偏好。",
       "dealer": "NVIDIA Partner Network (NPN) 是全球授权合作伙伴体系，覆盖解决方案集成商、增值经销商(VAR)、系统集成商(SI)、云服务合作伙伴。NPN 合作伙伴帮助企业客户部署 NVIDIA AI 解决方案。NPN 分为多个级别（Preferred/Elite 等），提供培训、技术支持和联合营销。全球有数千家 NPN 合作伙伴，但具体硬件分销商利润率和渠道结构公开资料较少。",
-      "authorized_store": "not_found_or_not_core — NVIDIA 不以授权店模式运营。没有类似 Apple Store 的自营零售门店。消费者接触 NVIDIA 品牌主要通过合作伙伴产品（AIB 显卡）和 GTC 大会等。",
       "offline": "NVIDIA 的线下存在主要体现在：1) GTC 大会（San Jose 及全球多站）——每年吸引数万人参加，是 AI 行业最重要的线下活动；2) 与 OEM/系统集成商共同出现在客户的数据中心部署中；3) 消费级 GPU 通过 Best Buy/Micro Center 等零售商的线下门店销售。NVIDIA 不自建实体门店。",
       "service_network": "NVIDIA AI Enterprise (NVAIE) 提供企业级支持和专业服务。DGX 系统附带白金/黄金级支持合同（24/7 技术支持、现场硬件替换、固件升级等）。NVIDIA Deep Learning Institute (DLI) 提供培训和认证服务。GeForce NOW 云游戏会员提供在线技术支持。整体而言，NVIDIA 的服务网络以 B2B 技术支持为主，不以消费级售后为中心。"
     },
@@ -97,10 +265,7 @@
     "business_model": {
       "hardware": "核心商业模式。数据中心 GPU + 系统占 FY2026 营收的 91%。产品从单个 GPU 芯片（H100、B200）到 DGX 全栈系统（DGX H100、DGX B200）到 HGX 参考设计（供 OEM 使用）。消费级 GPU（GeForce）约占营收 6-8%。专业可视化（Quadro/RTX workstation）约占 2%。汽车（Drive 平台、Nintendo Switch 芯片）约占 1-2%。硬件毛利率 75%+，远高于传统半导体公司（AMD 47%、Intel 41%）。",
       "subscription": "NVIDIA AI Enterprise (NVAIE) 是面向企业的 AI 软件订阅，定价约 $4,500/GPU/年。提供优化的 AI 框架、预训练模型、推理微服务（NIM）、和企业级支持。GeForce NOW 云游戏订阅：$9.99-19.99/月，为用户提供云端 GeForce RTX 游戏体验。DGX Cloud 提供云端 AI 训练和推理的订阅服务。订阅收入目前占总营收的比例较低（<3%），但增速快，是 NVIDIA 从'卖铲子'向'铲子即服务'转型的关键布局。",
-      "consumables": "not_found_or_not_core — 芯片不产生消耗品收入。但 GPU 的生命周期（通常 3-5 年）和持续的 AI 需求升级（从训练到推理到再训练）形成了自然的产品升级周期，类似于间接的'消耗品'效应。",
-      "accessories": "not_found_or_not_core — NVIDIA 主要以芯片和系统销售为主，配件（如 NVLink 桥接器、电源适配器）通常包含在系统方案中。",
       "service": "NVIDIA 通过 Partner Network 和 DGX 支持合同提供企业级服务。DLI (Deep Learning Institute) 提供 AI 培训课程和认证（收费）。GTC 大会门票和赞助费也贡献服务收入。整体服务收入在总营收中占比极低，NVIDIA 的核心价值是技术 IP 而非服务。",
-      "repair": "not_found_or_not_core — 硬件保修和替换主要通过 OEM 合作伙伴（DGX 系统）或 AIB 合作伙伴（消费级 GPU）执行。NVIDIA 不直接运营大规模维修网络。",
       "training": "NVIDIA Deep Learning Institute (DLI) 提供结构化的 AI 和加速计算培训课程，包括在线自定进度课程和讲师主导的工作坊。培训覆盖 CUDA 编程、深度学习、数据科学、自动驾驶等方向。DLI 既是收入来源，更是开发者生态培育工具——培训过的开发者更可能使用 NVIDIA 技术栈。大学合作项目（NVIDIA CUDA Teaching Center）将 CUDA 纳入全球高校课程体系，从源头锁定未来开发者。",
       "dealer_margin_or_channel": "NVIDIA 通过多级渠道体系分销产品。消费级 GPU：NVIDIA 销售 GPU 芯片给 AIB 合作伙伴（ASUS、MSI、Gigabyte 等），AIB 设计显卡并分销给零售商。数据中心 GPU：直接销售给大型 CSP 和超大规模客户；通过 OEM（Dell、HPE、Lenovo、Supermicro）嵌入服务器销售；通过 Partner Network 的增值经销商(VAR)覆盖中小企业。具体各级利润率和分销加价比例是行业机密，公开资料极少。",
       "other": "NVIDIA 通过投资客户形成独特的'投资-销售'闭环：2023-2025 年向 OpenAI、xAI、Anthropic、CoreWeave 等 AI 公司投资数十亿至千亿美元。这些投资既是股权增值机会，也是锁定客户长期采购的手段。NVIDIA 的 CUDA 虽然免费，但它是商业模式中最强大的'非货币化锁定工具'——一旦客户基于 CUDA 构建了工作流，切换成本高到不可能。这种'免费核心平台 + 硬件变现'的模式与微软 Windows + Office 的经典玩法一脉相承。Mellanox InfiniBand 网络设备是另一个高增长收入来源——客户部署 NVIDIA GPU 集群时几乎必须同时购买 NVIDIA 的 InfiniBand 交换机（因为 NVLink+InfiniBand 的端到端性能优化无法用第三方网络替代）。"
@@ -115,7 +280,6 @@
         "Amazon.com"
       ],
       "dealer_or_distributor": "NVIDIA Partner Network (NPN) 是核心渠道体系。NPN 包含多个合作伙伴类型：Solution Advisor (解决方案顾问)、Solution Integrator (方案集成商)、Service Delivery Partner (服务交付伙伴)、Cloud Partner (云合作伙伴)。合作伙伴分为 Registered → Preferred → Elite 三级。Elite 级合作伙伴获得直销级别的定价和技术支持。全球数千家 NPN 合作伙伴覆盖各行各业的企业客户。主要分销商包括 Ingram Micro、Tech Data、Arrow Electronics 等全球电子元器件分销巨头。",
-      "authorized_store": "not_found_or_not_core — NVIDIA 不运营授权专卖店体系。消费者通过第三方零售商购买 NVIDIA 品牌产品（Founders Edition 显卡、Shield）。",
       "service_and_repair": "硬件售后服务主要通过 OEM/AIB 合作伙伴执行。DGX 系统附带 NVIDIA 原厂支持（白金/黄金服务级别，含 24/7 技术支持、4 小时现场响应、预防性维护）。消费级 GPU 的保修由 AIB 品牌（ASUS/MSI/Gigabyte）而非 NVIDIA 直接负责。NVIDIA 官网提供驱动下载、知识库和社区论坛支持。",
       "training_or_demo": "GTC (GPU Technology Conference) 是 NVIDIA 最重要的线下培训+布道+销售活动。每年在 San Jose 举办全球旗舰大会，并在全球多个城市举办 GTC 分站。GTC 包含主题演讲（Jensen Huang 的 Keynote 被行业称为 'AI Coachella'）、技术工作坊、动手实验室、合作伙伴展示。DLI (Deep Learning Institute) 在所有 GTC 现场提供认证培训。NVIDIA 还在多个城市设有 AI 体验中心和客户演示实验室。",
       "notes": "NVIDIA 的线下和经销商模式是为 B2B 企业级销售设计的，与消费品牌的零售+门店模式完全不同。最值得学习的是 GTC 作为'行业布道平台'的角色——它不只是产品发布会，而是定义行业方向、教育市场、锁定生态的综合性平台。NPN 的分级体系（Registered → Preferred → Elite）为 B2B 合作伙伴提供了阶梯式的成长路径，既能覆盖长尾中小企业又能深度服务大客户。"
@@ -127,12 +291,21 @@
         "type": "product_line",
         "rank": 1,
         "why_selected": "GeForce 是 NVIDIA 一切的基础——没有 GeForce 就没有 CUDA，没有 CUDA 就没有 AI 数据中心帝国。GeForce 256（1999）定义了 'GPU' 这个词，25 年后 GeForce 品牌仍然统治 PC 游戏市场（80%+ 独立显卡份额）。更重要的是，GeForce 的大规模消费市场出货量为 NVIDIA 提供了持续的收入和现金流，支持了 CUDA 长达 18 年的战略投资。GeForce 的品牌价值延伸到 B2B：当企业 CIO 决定采购 AI 基础设施时，'NVIDIA GeForce = 最好的显卡' 的心智认知降低了决策阻力。GeForce 也一直是 GPU 架构创新的试验场——新技术（RT 光线追踪、DLSS AI 超分、Tensor Core）先在 GeForce 上推出验证，再扩展到数据中心产品线。一句话：GeForce 是 NVIDIA 的 '技术源泉 + 收入基本盘 + 品牌发动机'。",
-        "success_type": ["market_share_dominance", "brand_equity", "technology_platform", "revenue_foundation"],
+        "success_type": [
+          "market_share_dominance",
+          "brand_equity",
+          "technology_platform",
+          "revenue_foundation"
+        ],
         "confidence": "high",
         "origin_story": {
           "initial_problem": "1990s 初期，PC 上的 3D 图形处理极不成熟——没有统一的 3D API、每个游戏需要为不同显卡写驱动、3D 渲染质量极差。多家初创公司（3dfx、S3、Matrox、ATI 等）都在争夺这个新兴市场。玩家想要 'arcade quality 的 3D 游戏体验' 但当时的 PC 硬件做不到。",
           "founder_or_team_insight": "Jensen Huang 和团队洞察到一个关键趋势：PC 正在从 2D 办公工具变成 3D 娱乐平台，而对 3D 图形处理的需求会呈指数级增长（因为 3D 渲染的计算复杂度远高于 2D）。他们提出的核心假说是：'如果有一个专门的处理器来处理 3D 图形，释放 CPU 去做其他事情，PC 的能力将大幅提升。' 这个洞察催生了 GPU（Graphics Processing Unit）的概念。",
-          "early_users": ["PC 游戏玩家和硬件发烧友", "游戏开发商（id Software、Epic Games 等）", "PC OEM 厂商（Dell、Compaq、Gateway 等预装 GPU）"],
+          "early_users": [
+            "PC 游戏玩家和硬件发烧友",
+            "游戏开发商（id Software、Epic Games 等）",
+            "PC OEM 厂商（Dell、Compaq、Gateway 等预装 GPU）"
+          ],
           "early_product_form": "GeForce 256（NV10 架构），1999 年 10 月发布。世界首款集成硬件 T&L（Transform & Lighting）引擎的图形芯片。PCI/AGP 接口的独立显卡，由 AIB 合作伙伴（ASUS、MSI、Gigabyte 等）制成成品显卡销售。早期定价 $249-299（旗舰），与 3dfx Voodoo 系列正面竞争。",
           "why_it_mattered": "GeForce 256 定义了一个新品类——GPU。在此之前，'显卡' 只是负责把像素画到屏幕上。GeForce 256 的硬件 T&L 引擎将几何变换和光照计算从 CPU 卸载到 GPU，显著提升了 3D 游戏性能和画质。这个架构决策影响深远——它奠定了 GPU 作为 '专用并行处理器' 的定位，为后来 CUDA 的通用计算打下了硬件基础。",
           "confidence": "high"
@@ -244,7 +417,13 @@
           "cost_reduction": "一张 $300 的 GeForce 显卡可以替代数十台 CPU 服务器做并行渲染——对于小型工作室和个人创作者是革命性的成本下降。",
           "income_opportunity": "YouTube/Twitch 游戏直播和内容创作成为一个数百亿美元的产业——这个产业的硬件基础是 GeForce GPU。独立的 PC 游戏开发者可以通过 Steam 等平台直接发布游戏，而全球 13 亿+ PC 游戏玩家的硬件平台几乎都是 GeForce。",
           "experience_change": "从 640x480 16fps 低画质到 4K 144fps HDR + 实时光追。PC 游戏的视觉体验在过去 25 年发生了质的飞跃，GeForce 在每一次画质革命中都扮演了核心角色。",
-          "who_benefited_most": ["PC 游戏玩家", "独立游戏开发者", "3D 内容创作者", "PC 硬件生态（主板/内存/电源/散热品牌都受益于 GPU 带动的换机需求）", "电子竞技产业链（GeForce 高帧率是竞技游戏的基础设施）"]
+          "who_benefited_most": [
+            "PC 游戏玩家",
+            "独立游戏开发者",
+            "3D 内容创作者",
+            "PC 硬件生态（主板/内存/电源/散热品牌都受益于 GPU 带动的换机需求）",
+            "电子竞技产业链（GeForce 高帧率是竞技游戏的基础设施）"
+          ]
         },
         "ecosystem_impact": {
           "new_roles": [
@@ -336,14 +515,50 @@
             "note": "JPR 是 GPU 市场份额数据的行业标准来源。NVIDIA 在独立 GPU 市场长期维持 80%+ 份额",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "GeForce MSRP varies by generation; RTX 4090 launched at $1,599 and RTX 5090-class high-end cards have been reported around $1,999 MSRP, with street prices often higher.",
+          "current_price": "Street price fluctuates by supply, board partner, and memory market; verify current NVIDIA/retailer price before publishing.",
+          "accessory_price": "Board partner coolers, power supplies, cables, cases, and warranty add-ons are separate ecosystem costs.",
+          "software_subscription": "GeForce drivers and core gaming software are free; GeForce NOW is a separate subscription service.",
+          "service_fee": "Warranty varies by board partner; extended warranty prices vary.",
+          "competitor_price": "AMD Radeon high-end cards often undercut NVIDIA MSRP; Intel Arc competes in lower price tiers.",
+          "competitor_accessory_price": "Similar PSU/case/cooling accessory costs apply across competitors.",
+          "competitor_subscription": "Cloud gaming alternatives include GeForce NOW, Xbox Cloud Gaming, and other subscriptions.",
+          "notes": "Use MSRP only as launch anchor; actual GPU street price can diverge materially.",
+          "sources": [
+            {
+              "title": "NVIDIA GeForce graphics cards",
+              "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AMD Radeon graphics cards",
+              "url": "https://www.amd.com/en/products/graphics/desktops.html",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "NVIDIA GeForce NOW memberships",
+              "url": "https://www.nvidia.com/en-us/geforce-now/memberships/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "CUDA Platform",
         "type": "product_or_platform",
         "rank": 2,
         "why_selected": "CUDA 是商业史上最成功的 '耐心资本' 案例之一，也是理解 NVIDIA 护城河的核心。2006 年推出时被华尔街批评为 '为一个不存在的市场烧钱'，经过 18 年的持续投入，CUDA 成长为 AI 时代的 '操作系统'——500 万+ 开发者、所有主流 AI 框架（PyTorch, TensorFlow, JAX）都构建在 CUDA 之上。CUDA 让硬件竞争从 '谁的芯片更快' 变成了 '谁能说服 500 万开发者重写代码'——这是一个几乎不可能被攻破的护城河。对于任何想学习平台型商业模式的人，CUDA 是最详尽的案例：如何从一个微小的开发者社区开始培育一个生态，如何在生态成熟前忍受亏损，以及如何让免费产品成为商业上最有价值的资产。",
-        "success_type": ["ecosystem_lock_in", "platform_moat", "industry_standard", "developer_platform"],
+        "success_type": [
+          "ecosystem_lock_in",
+          "platform_moat",
+          "industry_standard",
+          "developer_platform"
+        ],
         "confidence": "high",
         "origin_story": {
           "initial_problem": "2000 年代初期，GPU 被视为 '游戏专用硬件'。科学计算、工程仿真、石油勘探等领域需要巨大的并行计算能力，但当时的解决方案是昂贵的超级计算机（CPU 集群）或专用 FPGA/DSP——前者极其昂贵（数百万到数亿美元），后者极其难编（需要硬件描述语言 HDL，天下没几个人会写）。Ian Buck（NVIDIA 工程师，斯坦福博士）在斯坦福的博士论文中提出了 'Brook' 编程语言——一种让 GPU 变得可编程用于通用计算的尝试。Buck 2004 年加入 NVIDIA 后，带领一个小团队把 Brook 的概念发展成了 CUDA。",
@@ -465,7 +680,12 @@
           "cost_reduction": "同样计算能力，GPU + CUDA 的成本约为 CPU 集群的 1/10 到 1/100。对于 AI 初创公司，这省下的钱就是生与死的区别——如果训练一次 GPT-3 级别的模型需要 $10M 而不是 $100K，世界上的 AI 初创公司数量会减少 99%。",
           "income_opportunity": "CUDA 创造了一个全新的职业角色：CUDA 工程师 / GPU 性能优化工程师——这是目前薪酬最高的软件工程细分之一（$200K-500K+ total comp at top AI companies）。AI 研究员和 ML 工程师的职业路径也因为 CUDA 的存在而成为可能——如果 GPU 训练比 CPU 快 100 倍，你就能在一个 PhD 项目的时间里尝试 100 倍多的想法。",
           "experience_change": "从 '等程序跑完' 到 '实时交互式开发'——AI 研究者在 Jupyter Notebook 中改一行模型代码，几十秒后就能看到训练结果。这种快速的试错循环是 AI 技术进步速度被极大加速的根本原因之一。",
-          "who_benefited_most": ["AI 研究人员和博士生", "AI 初创公司（降低了训练基础设施成本 10-100x）", "大学和公共研究机构（能够用消费级 GPU 做前沿研究）", "所有使用 AI 产品的终端用户（搜索、翻译、推荐、自动驾驶）"]
+          "who_benefited_most": [
+            "AI 研究人员和博士生",
+            "AI 初创公司（降低了训练基础设施成本 10-100x）",
+            "大学和公共研究机构（能够用消费级 GPU 做前沿研究）",
+            "所有使用 AI 产品的终端用户（搜索、翻译、推荐、自动驾驶）"
+          ]
         },
         "ecosystem_impact": {
           "new_roles": [
@@ -560,14 +780,50 @@
             "note": "NVIDIA 官方关于 CUDA 生态规模的博文",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "CUDA Toolkit is free to download; monetization comes through NVIDIA GPUs, enterprise software, support, and cloud instances.",
+          "current_price": "CUDA Toolkit: free; NVIDIA AI Enterprise and enterprise support are paid, often quoted or priced by subscription/cloud marketplace.",
+          "accessory_price": "Developer workstations, GPUs, networking, and storage are required hardware costs.",
+          "software_subscription": "NVIDIA AI Enterprise is the main paid enterprise software layer; exact subscription price depends on license and partner.",
+          "service_fee": "Enterprise support / professional services priced by contract.",
+          "competitor_price": "AMD ROCm is free/open-source; cloud GPU instances charge hourly across NVIDIA/AMD accelerators.",
+          "competitor_accessory_price": "Comparable developer hardware and cloud costs apply.",
+          "competitor_subscription": "Cloud AI platforms charge usage/subscription fees; ROCm itself is not typically sold as a subscription.",
+          "notes": "For CUDA, the price is hidden in hardware attach and enterprise support, not the toolkit download.",
+          "sources": [
+            {
+              "title": "CUDA Toolkit",
+              "url": "https://developer.nvidia.com/cuda-toolkit",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "NVIDIA AI Enterprise",
+              "url": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AMD ROCm",
+              "url": "https://rocm.docs.amd.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "DGX / Data Center AI Platform (H100-Blackwell)",
         "type": "product_line",
         "rank": 3,
         "why_selected": "DGX 和数据中心 AI 平台是 NVIDIA 当前的 '印钞机'——贡献了 FY2026 营收的 91%（约 $1,960 亿）。DGX 代表了 NVIDIA 从 '卖芯片' 到 '卖 AI 工厂' 的战略升级：不只是卖一颗 GPU，而是销售包含 GPU + NVLink 互联 + InfiniBand 网络 + 散热 + 软件的整机或参考设计，单价从 $250K (DGX H100) 到 $500K+ (DGX B200)，客户排队等候 4-8 个月仍然供不应求。2024 年发布的 Blackwell 平台代表了 NVIDIA 路线图的顶峰——训练性能是 Hopper 的 4 倍，推理性能是 30 倍，能效提升 25 倍。但更重要的是，DGX/数据中心业务展示了 '全栈锁定' 的商业模式——客户一旦选择了 NVIDIA 的端到端方案，任何单点替换（比如换成 AMD 的 GPU）都会拖累整个系统的性能。这是平台型企业战略的最高形态。",
-        "success_type": ["revenue_dominance", "full_stack_lock_in", "enterprise_sales", "ecosystem_moat"],
+        "success_type": [
+          "revenue_dominance",
+          "full_stack_lock_in",
+          "enterprise_sales",
+          "ecosystem_moat"
+        ],
         "confidence": "high",
         "origin_story": {
           "initial_problem": "2010 年代深度学习兴起后，AI 研究者面临一个实际的工程问题：用 1-2 张消费级 GTX GPU 就能训练一个小模型，但如果要训练更大的模型（比如在 ImageNet 上训练的 ResNet-152），8 张 GPU 的互联、散热、电源管理就变成了一个巨大的工程挑战。每个 AI 实验室都得自己拼装 'GPU 训练机'——买 GPU、找合适的服务器、调试多 GPU 通信、解决散热和供电——这就像在 1970 年代要自己组装一台电脑才能用。",
@@ -689,7 +945,14 @@
           "cost_reduction": "Blackwell 的 25x 能效提升意味着：做同样的 AI 推理，电费降至原来的 1/25。对于运营大规模 AI 服务的公司（如 ChatGPT 每天处理数亿请求），这是每年数亿美元的成本差异。",
           "income_opportunity": "AI 基础设施建设和运营创造了一个全新的产业——GPU 云计算（CoreWeave $19B 估值, Lambda Labs $1.5B+）、AI 模型训练即服务、MLOps 平台。AI 研究员和基础设施工程师的薪酬在过去 3 年翻倍。个人开发者可以通过 GPU 云服务以小时计费的方式租用顶级算力（$1-3/GPU/小时）——在 2015 年之前这是不可能的。",
           "experience_change": "AI 训练从 '等待数周' 到 '隔夜出结果'。AI 推理从 '请求后需要等几秒' 到 '实时流式响应'。这个体验差距就是 ChatGPT 和之前所有对话 AI 的本质区别——不是因为算法好了多少，而是因为推理速度让人感觉 'AI 是活的'。",
-          "who_benefited_most": ["大型云服务商 (CSP)", "AI 实验室和初创公司", "企业 AI 转型者（金融、医疗、制造业）", "主权国家和政府 AI 项目", "GPU 云计算新兴公司（CoreWeave, Lambda Labs 等）", "AI 基础设施工程师和 MLOps 从业者"]
+          "who_benefited_most": [
+            "大型云服务商 (CSP)",
+            "AI 实验室和初创公司",
+            "企业 AI 转型者（金融、医疗、制造业）",
+            "主权国家和政府 AI 项目",
+            "GPU 云计算新兴公司（CoreWeave, Lambda Labs 等）",
+            "AI 基础设施工程师和 MLOps 从业者"
+          ]
         },
         "ecosystem_impact": {
           "new_roles": [
@@ -795,7 +1058,39 @@
             "note": "WSJ 关于 H100 GPU 供不应求的深度报道",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "DGX systems are high-end enterprise AI servers; DGX H100-class systems have been widely reported around the hundreds-of-thousands-dollar band, often about $200K+ depending on configuration.",
+          "current_price": "Quote-based for many DGX / GB200 / Blackwell systems; verify through NVIDIA or authorized partner.",
+          "accessory_price": "Networking, storage, support, rack/power/cooling, InfiniBand, and software licenses can exceed base server cost in cluster deployments.",
+          "software_subscription": "NVIDIA AI Enterprise / Base Command / support subscriptions may attach depending on deployment.",
+          "service_fee": "Enterprise support, installation, and managed cluster services priced by contract.",
+          "enterprise_or_raas_price": "Cloud alternatives charge hourly for H100/B200 instances; on-prem DGX is capex plus support.",
+          "competitor_price": "AMD MI300X / MI325X OEM servers and hyperscaler TPU/Trainium instances compete on total cluster cost rather than single server MSRP.",
+          "competitor_accessory_price": "Comparable network/storage/power/cooling stack is required for AMD or custom AI clusters.",
+          "competitor_subscription": "Cloud AI infrastructure subscriptions or reserved instances compete with DGX capex.",
+          "notes": "DGX pricing must be framed as system + network + software + support, not just GPU MSRP.",
+          "sources": [
+            {
+              "title": "NVIDIA DGX systems",
+              "url": "https://www.nvidia.com/en-us/data-center/dgx/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "NVIDIA AI Enterprise",
+              "url": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AMD Instinct accelerators",
+              "url": "https://www.amd.com/en/products/accelerators/instinct.html",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       }
     ],
     "learning_summary": {
@@ -921,5 +1216,6 @@
         "confidence": "medium"
       }
     ]
-  }
+  },
+  "research_checked_at": "2026-06-17"
 }

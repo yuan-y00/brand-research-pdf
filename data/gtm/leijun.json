@@ -1,0 +1,466 @@
+{
+  "brand": "Lei Jun / Xiaomi",
+  "brand_slug": "leijun",
+  "market_focus": "Global / China where relevant",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; consumer GTM repair 2026-06-17",
+  "disclaimer": "Only sourced money events are written as facts. Unsupported founder cash, margin, burn, loss, CAC, refund or subsidy amounts remain in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "雷军 Lei Jun: Wuhan University CS graduate; Kingsoft executive, Joyo.com founder/seller, angel investor and Xiaomi founder; his public persona is a distribution asset.",
+      "Lin Bin and Xiaomi co-founders: Xiaomi was co-founded by Lei Jun with Lin Bin and other technology/product leaders; do not reduce the company to one person operationally."
+    ],
+    "brand_timeline": [
+      "2004: exit $75M - Joyo.com was sold to Amazon, giving Lei Jun a proven pre-Xiaomi entrepreneurial track record.",
+      "2010: series_a $41M - Xiaomi raised Series A funding in 2010 after founding.",
+      "2011: series_b $90M - Xiaomi raised Series B funding in December 2011.",
+      "2012: series_c $216M - Xiaomi raised Series C at about $4B valuation.",
+      "2018: ipo up to $6.1B target - Xiaomi’s Hong Kong IPO roadshow targeted a large raise; use filings for exact final proceeds.",
+      "2021: ev_commitment RMB 10B initial / USD 10B over decade - Lei Jun announced Xiaomi’s smart EV entry and long-term investment plan.",
+      "2024-Q2: ev_loss $252M loss - Media reported EV branch loss before scale, illustrating the cash pressure of entering cars.",
+      "2025: revenue RMB 457.29B revenue - Media coverage of Xiaomi 2025 earnings reports record revenue and strong EV growth."
+    ],
+    "founder_profiles": [
+      {
+        "name": "雷军 Lei Jun",
+        "role": "Founder / Chairman / CEO of Xiaomi",
+        "background_summary": "Wuhan University CS graduate; Kingsoft executive, Joyo.com founder/seller, angel investor and Xiaomi founder; his public persona is a distribution asset.",
+        "profile_links": [
+          {
+            "title": "Lei Jun public profile",
+            "url": "https://en.wikipedia.org/wiki/Lei_Jun",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Time profile: Lei Jun",
+            "url": "https://time.com/3741842/meet-lei-jun-chinas-phone-king/",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Lin Bin and Xiaomi co-founders",
+        "role": "Co-founders",
+        "background_summary": "Xiaomi was co-founded by Lei Jun with Lin Bin and other technology/product leaders; do not reduce the company to one person operationally.",
+        "profile_links": [
+          {
+            "title": "Xiaomi public profile",
+            "url": "https://en.wikipedia.org/wiki/Xiaomi",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Lin Bin profile",
+            "url": "https://en.wikipedia.org/wiki/Lin_Bin",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2004",
+        "event": "exit",
+        "amount": "$75M",
+        "currency": "USD",
+        "description": "Joyo.com was sold to Amazon, giving Lei Jun a proven pre-Xiaomi entrepreneurial track record.",
+        "source": {
+          "title": "Lei Jun public profile",
+          "url": "https://en.wikipedia.org/wiki/Lei_Jun",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2010",
+        "event": "series_a",
+        "amount": "$41M",
+        "currency": "USD",
+        "description": "Xiaomi raised Series A funding in 2010 after founding.",
+        "source": {
+          "title": "Xiaomi public profile",
+          "url": "https://en.wikipedia.org/wiki/Xiaomi",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2011",
+        "event": "series_b",
+        "amount": "$90M",
+        "currency": "USD",
+        "description": "Xiaomi raised Series B funding in December 2011.",
+        "source": {
+          "title": "Xiaomi public profile",
+          "url": "https://en.wikipedia.org/wiki/Xiaomi",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2012",
+        "event": "series_c",
+        "amount": "$216M",
+        "currency": "USD",
+        "description": "Xiaomi raised Series C at about $4B valuation.",
+        "source": {
+          "title": "Xiaomi public profile",
+          "url": "https://en.wikipedia.org/wiki/Xiaomi",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2018",
+        "event": "ipo",
+        "amount": "up to $6.1B target",
+        "currency": "USD",
+        "description": "Xiaomi’s Hong Kong IPO roadshow targeted a large raise; use filings for exact final proceeds.",
+        "source": {
+          "title": "Lei Jun public profile",
+          "url": "https://en.wikipedia.org/wiki/Lei_Jun",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2021",
+        "event": "ev_commitment",
+        "amount": "RMB 10B initial / USD 10B over decade",
+        "currency": "CNY/USD",
+        "description": "Lei Jun announced Xiaomi’s smart EV entry and long-term investment plan.",
+        "source": {
+          "title": "Xiaomi SU7 public profile",
+          "url": "https://en.wikipedia.org/wiki/Xiaomi_SU7",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2024-Q2",
+        "event": "ev_loss",
+        "amount": "$252M loss",
+        "currency": "USD",
+        "description": "Media reported EV branch loss before scale, illustrating the cash pressure of entering cars.",
+        "source": {
+          "title": "Business Insider Xiaomi EV profitability report",
+          "url": "https://www.businessinsider.com/xiaomi-ev-profitable-china-tesla-byd-2025-11",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "revenue",
+        "amount": "RMB 457.29B revenue",
+        "currency": "CNY",
+        "description": "Media coverage of Xiaomi 2025 earnings reports record revenue and strong EV growth.",
+        "source": {
+          "title": "WSJ Xiaomi 2025 earnings coverage",
+          "url": "https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Lei Jun personal cash put into Xiaomi is not written without a reliable source.",
+      "Exact Xiaomi Auto per-car margin, warranty reserve and customer acquisition cost need official filings.",
+      "Use Xiaomi annual/interim reports for investor-grade financial numbers."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "雷军报告的 GTM 应该写成“创始人 IP + 极致性价比 + 生态链 + 发布会转化 + 小米汽车放大器”，而不是把雷军个人经历当成单一品牌财务表。雷军的核心作用是把小米的产品故事人格化：手机时代靠 MIUI 社群和性价比，IoT 时代靠生态链，汽车时代靠 SU7/YU7 发布会、工厂叙事和极强社交传播完成高客单价迁移。",
+    "one_sentence_gtm": "雷军报告的 GTM 应该写成“创始人 IP + 极致性价比 + 生态链 + 发布会转化 + 小米汽车放大器”，而不是把雷军个人经历当成单一品牌财务表。",
+    "channel_path": [
+      "Kingsoft/Joyo/angel investing creates founder credibility",
+      "MIUI community validates software-first phone demand",
+      "Xiaomi phone + online flash sale builds price-performance identity",
+      "IoT ecosystem expands household touchpoints",
+      "SU7/YU7 uses Lei Jun personal IP to sell high-ticket EVs"
+    ],
+    "channels": {
+      "dtc": "Official site/store is the clearest conversion path and pricing source.",
+      "ecommerce": "Marketplaces, retailers, and regional stores broaden reach beyond owned traffic.",
+      "pr_media": "Reviews, launch events, and credible media explain why the product deserves attention.",
+      "community": "User reviews, forums, creator content, or owner communities decide whether early demand becomes trust.",
+      "service": "Warranty, repair, delivery, setup, installation, and support determine long-term brand quality.",
+      "founder_ip": "Lei Jun’s launch events, social media and personal credibility are a core channel.",
+      "ecosystem": "Xiaomi Home, HyperOS and IoT devices cross-sell from phone to car to appliances."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Smartphones",
+        "IoT/lifestyle products",
+        "EVs",
+        "Internet services",
+        "Accessories and ecosystem devices"
+      ],
+      "pricing_logic": "High spec at aggressive price, then monetize scale through services, accessories, ecosystem and premium upgrades.",
+      "channel_economics": "Online launch and founder-led content lower trust friction but create delivery and quality pressure."
+    },
+    "top_products_selection_rule": "最多选 3 个产品或产品线；按公开证据、价格结构、GTM 学习价值和用户购买决策选择。",
+    "top_products": [
+      {
+        "name": "Xiaomi SU7 / YU7 Auto",
+        "type": "ev_line",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "Xiaomi Auto is the biggest test of Lei Jun’s founder-led GTM.",
+        "origin_story": "Lei Jun announced Xiaomi’s EV entry in 2021 and personally led the project narrative.",
+        "pre_market": "Before launch, users compared Xiaomi to Tesla, BYD, Nio and Porsche/Taycan-like design cues.",
+        "innovation": "Consumer electronics speed, HyperOS cockpit, aggressive pricing and direct-to-consumer launch events.",
+        "breakout": "SU7/YU7 generated huge orders and moved Xiaomi from phone brand into mobility brand.",
+        "customer_impact": "Users buy a car partly because they trust Xiaomi’s device ecosystem and Lei Jun’s promise of value.",
+        "ecosystem_impact": "It shows how founder IP can move from low/medium-ticket electronics into high-ticket cars.",
+        "pricing_model": {
+          "product_price": "SU7 original prices: RMB 215,900 / 245,900 / 299,900; SU7 Ultra launched at RMB 529,900; YU7 reported starting price RMB 253,500 with Pro/Max at RMB 279,900 / 329,900.",
+          "subscription_fee": "Software boundary: HyperOS/cockpit and updates are part of vehicle experience; no reliable mandatory consumer software subscription is written here.",
+          "accessory_service_fee": "Accessory/service price: insurance, charging, autonomous-driving options, maintenance, tires, accessories and extended warranty need buyer-level quote; do not invent fixed service fee.",
+          "competitor_price": "Competitor price comparison: Tesla Model 3/Y, BYD Han/Seal, Nio ET/ES and Xpeng compete; YU7 was reported as slightly below Tesla Model Y in China.",
+          "sources": [
+            {
+              "title": "Xiaomi SU7 public profile",
+              "url": "https://en.wikipedia.org/wiki/Xiaomi_SU7",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Xiaomi YU7 public profile",
+              "url": "https://en.wikipedia.org/wiki/Xiaomi_YU7",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Business Insider YU7 orders and price",
+              "url": "https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Xiaomi SU7 public profile",
+            "url": "https://en.wikipedia.org/wiki/Xiaomi_SU7",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Business Insider YU7 orders and price",
+            "url": "https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Xiaomi 15 / 15 Ultra + HyperOS",
+        "type": "smartphone_line",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "Smartphones remain the ecosystem entry and Apple/Huawei comparison point.",
+        "origin_story": "Xiaomi began with MIUI before hardware; phone GTM is software/community-first.",
+        "pre_market": "Users compare Xiaomi to Apple, Samsung, Huawei, OPPO and vivo on camera, chip, price and ecosystem.",
+        "innovation": "Flagship camera partnerships, HyperOS device continuity and aggressive specs.",
+        "breakout": "Xiaomi uses flagship phones to pull brand upward while Redmi covers mass price bands.",
+        "customer_impact": "Consumers get near-premium hardware at lower or more flexible price bands than Apple/Samsung Ultra.",
+        "ecosystem_impact": "It keeps Xiaomi’s installed base large enough to feed IoT and EV awareness.",
+        "pricing_model": {
+          "product_price": "European launch coverage: Xiaomi 15 from €999 / £899; Xiaomi 15 Ultra from €1,499 / £1,299; China prices vary by SKU and promotion.",
+          "subscription_fee": "Software/subscription boundary: HyperOS is included; Xiaomi Cloud, app store, content and internet services monetize users separately.",
+          "accessory_service_fee": "Accessory/service price: photography kit for Xiaomi 15 Ultra reported at £179; cases, chargers, warranties and cloud storage add cost.",
+          "competitor_price": "Competitor price comparison: iPhone 17 family, Galaxy S Ultra and Huawei Pura/Mate occupy similar high-end bands; Apple iPhone 17 starts around $799 and Pro models price higher by storage.",
+          "sources": [
+            {
+              "title": "The Verge Xiaomi 15 / 15 Ultra Europe price",
+              "url": "https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple iPhone official page",
+              "url": "https://www.apple.com/iphone/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "The Verge Xiaomi 15 / 15 Ultra Europe price",
+            "url": "https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Xiaomi public profile",
+            "url": "https://en.wikipedia.org/wiki/Xiaomi",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Xiaomi AIoT / Home ecosystem",
+        "type": "ecosystem_line",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "生态链是雷军方法论从手机扩张到家庭和汽车的中间层。",
+        "origin_story": "Xiaomi used investee/ecosystem companies and Xiaomi Home to broaden device categories.",
+        "pre_market": "Users first enter through low-friction smart bands, cameras, TVs, appliances or scooters.",
+        "innovation": "HyperOS connects phone, watch, TV, appliance and car interfaces.",
+        "breakout": "IoT/lifestyle revenue became a major segment and store-traffic engine.",
+        "customer_impact": "Users get one account and one app logic across many devices.",
+        "ecosystem_impact": "It gives Xiaomi a distribution advantage that pure phone or pure EV companies do not have.",
+        "pricing_model": {
+          "product_price": "Product prices vary widely from smart bands to TVs, appliances and scooters; use official Xiaomi regional stores for live SKU prices.",
+          "subscription_fee": "Subscription/software boundary: many devices work without subscription, but cloud storage, content services and app services may be paid.",
+          "accessory_service_fee": "Accessory/service price: installation, filters, consumables, batteries, spare parts and warranties are meaningful total-cost items.",
+          "competitor_price": "Competitor price comparison: Apple Home, Samsung SmartThings, Huawei HarmonyOS, Anker/Eufy, DJI ecosystem and Roborock/Dreame compete by category.",
+          "sources": [
+            {
+              "title": "Xiaomi public profile",
+              "url": "https://en.wikipedia.org/wiki/Xiaomi",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "WSJ Xiaomi 2025 earnings coverage",
+              "url": "https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple One official pricing",
+              "url": "https://www.apple.com/apple-one/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Xiaomi public profile",
+            "url": "https://en.wikipedia.org/wiki/Xiaomi",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "WSJ Xiaomi 2025 earnings coverage",
+            "url": "https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "雷军 GTM 的关键不是“模仿乔布斯”，而是把创始人信任变成产品转化。",
+      "小米汽车证明人物 IP 可以迁移到高客单价，但交付和安全风险同步放大。",
+      "人物报告必须把个人履历、公司融资和产品价格分层写。"
+    ],
+    "evidence_boundary": "找不到的内容不补写；缺失的创始人现金、单台毛利、广告投放、退货损失、售后成本留在 research_gaps。",
+    "sources": [
+      {
+        "title": "Lei Jun public profile",
+        "url": "https://en.wikipedia.org/wiki/Lei_Jun",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Xiaomi public profile",
+        "url": "https://en.wikipedia.org/wiki/Xiaomi",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Xiaomi SU7 public profile",
+        "url": "https://en.wikipedia.org/wiki/Xiaomi_SU7",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Xiaomi YU7 public profile",
+        "url": "https://en.wikipedia.org/wiki/Xiaomi_YU7",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Business Insider Xiaomi EV profitability report",
+        "url": "https://www.businessinsider.com/xiaomi-ev-profitable-china-tesla-byd-2025-11",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "WSJ Xiaomi 2025 earnings coverage",
+        "url": "https://www.wsj.com/business/earnings/xiaomi-quarterly-profit-falls-amid-rising-memory-costs-fd3a7c3a",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Verge Xiaomi 15 / 15 Ultra Europe price",
+        "url": "https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Business Insider YU7 orders and price",
+        "url": "https://www.businessinsider.com/xiaomi-sold-over-200000-units-of-new-car-tesla-rival-2025-6",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Time profile: Lei Jun",
+        "url": "https://time.com/3741842/meet-lei-jun-chinas-phone-king/",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "brand": "Peloton",
+  "brand_slug": "peloton",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "John Foley: Former Barnes & Noble executive; co-founded Peloton in 2012 with Tom Cortese, Yony Feng, Hisao Kushi and Graham Stanton.",
+      "Tom Cortese, Yony Feng, Hisao Kushi, Graham Stanton: Peloton co-founding group; several came from media/internet operating backgrounds."
+    ],
+    "brand_timeline": [
+      "2012-02: seed $400K - Early seed funding before the first connected bike campaign.",
+      "2012-12: funding $3.5M - Additional early financing recorded in public company history.",
+      "2013: crowdfunding $1,500 early-bird bike price - Kickstarter early-bird price anchored first product demand.",
+      "2019-09: ipo $1.16B - IPO raised about $1.16B at about $8.1B valuation.",
+      "2025: loss $119M - FY2025 net loss in public financial profile; annual report should be used for exact filing values."
+    ],
+    "founder_profiles": [
+      {
+        "name": "John Foley",
+        "role": "Co-founder / former CEO",
+        "background_summary": "Former Barnes & Noble executive; co-founded Peloton in 2012 with Tom Cortese, Yony Feng, Hisao Kushi and Graham Stanton.",
+        "profile_links": [
+          {
+            "title": "John Foley profile",
+            "url": "https://en.wikipedia.org/wiki/John_Foley_(executive)",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Peloton Interactive public profile",
+            "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Tom Cortese, Yony Feng, Hisao Kushi, Graham Stanton",
+        "role": "Co-founders",
+        "background_summary": "Peloton co-founding group; several came from media/internet operating backgrounds.",
+        "profile_links": [
+          {
+            "title": "Peloton Interactive public profile",
+            "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Business Insider Peloton history",
+            "url": "https://www.businessinsider.com/peloton-company-history-rise-fall-2022-2",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2012-02",
+        "event": "seed",
+        "amount": "$400K",
+        "currency": "USD",
+        "description": "Early seed funding before the first connected bike campaign.",
+        "source": {
+          "title": "Peloton Interactive public profile",
+          "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2012-12",
+        "event": "funding",
+        "amount": "$3.5M",
+        "currency": "USD",
+        "description": "Additional early financing recorded in public company history.",
+        "source": {
+          "title": "Peloton Interactive public profile",
+          "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2013",
+        "event": "crowdfunding",
+        "amount": "$1,500 early-bird bike price",
+        "currency": "USD",
+        "description": "Kickstarter early-bird price anchored first product demand.",
+        "source": {
+          "title": "Peloton Interactive public profile",
+          "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2019-09",
+        "event": "ipo",
+        "amount": "$1.16B",
+        "currency": "USD",
+        "description": "IPO raised about $1.16B at about $8.1B valuation.",
+        "source": {
+          "title": "Peloton Interactive public profile",
+          "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "loss",
+        "amount": "$119M",
+        "currency": "USD",
+        "description": "FY2025 net loss in public financial profile; annual report should be used for exact filing values.",
+        "source": {
+          "title": "Peloton SEC filings",
+          "url": "https://investor.onepeloton.com/financial-information/sec-filings",
+          "source_type": "filing",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Exact customer acquisition cost by period and product line requires filings/paid datasets.",
+      "Founder personal cash contribution before seed is not reliable enough to write."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Peloton 的 GTM 是“内容工作室 + 互联硬件 + 社区排行榜”的经典案例：它把精品团课搬进家里，用 Bike/Tread/Row 承接高频内容消费，再用 All-Access 会员变成经常性收入。它的问题不是用户不爱产品，而是疫情期间把短期需求当成永久趋势，导致库存、裁员、召回、债务和估值回撤。",
+    "one_sentence_gtm": "Peloton 的 GTM 是“内容工作室 + 互联硬件 + 社区排行榜”的经典案例：它把精品团课搬进家里，用 Bike/Tread/Row 承接高频内容消费，再用 All-Access 会员变成经常性收入。",
+    "channel_path": [
+      "Kickstarter 和天使投资验证第一辆车",
+      "纽约工作室和明星教练制造内容心智",
+      "DTC + 门店体验推动高客单硬件",
+      "All-Access 会员形成家庭账号与社区网络效应",
+      "疫情后从硬件增长转向订阅、AI 和企业/酒店场景"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "retail": "历史上门店/showroom 承担体验转化。",
+      "filings": "上市公司财报提供真实财务审计。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Bike/Bike+",
+        "Tread/Tread+",
+        "Row+",
+        "All-Access membership",
+        "App membership",
+        "配件/服饰/安装/保修"
+      ],
+      "pricing_logic": "硬件降门槛，会员提高 LTV；2025/2026 Cross Training 系列重新上调价格。",
+      "channel_economics": "订阅毛利支撑公司，硬件毛利和库存风险曾拖累现金流。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "Cross Training Bike / Bike+",
+        "type": "connected_bike",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "品牌心智和用户规模最大的硬件入口。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "硬件 + 屏幕 + 实时课 + 排行榜组合。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Peloton homepage financing footnote lists Cross Training Bike at $1,695 and Bike+ at $2,695; refurbished Bike/Bike+ as low as $1,145/$1,395.",
+          "subscription_fee": "Peloton All-Access Membership required for all content/features on hardware; public profile and current site indicate $49.99/mo in the US.",
+          "accessory_service_fee": "Accessory/service price: accessories, taxes, delivery/installation and possible return fees are separate; used equipment may face activation/onboarding fees per local report.",
+          "competitor_price": "Competitor price comparison: Tonal 2 $4,295 + $59.95/mo; Speediance GM2 $3,390-$4,799 no mandatory subscription; FightCamp starts $299; Growl $4,500 + $60/mo.",
+          "sources": [
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton app membership",
+              "url": "https://www.onepeloton.com/app-membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Peloton official site",
+            "url": "https://www.onepeloton.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Peloton Interactive public profile",
+            "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Tread / Tread+",
+        "type": "connected_tread",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "高客单扩品类代表，也暴露安全和召回风险。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "大屏、课程、训练计划和 Peloton IQ。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Peloton homepage footnote lists Tread at $3,295 and Tread+ at $6,695.",
+          "subscription_fee": "All-Access Membership required on hardware; current signal $49.99/mo US.",
+          "accessory_service_fee": "Accessory/service price: delivery, haulaway, accessories, warranty and return fee may apply.",
+          "competitor_price": "Competitor price comparison: Growl four-year plan $7,200 is close to premium treadmill total cost; Tonal and Speediance compete for strength budget rather than running budget.",
+          "sources": [
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton app membership",
+              "url": "https://www.onepeloton.com/app-membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Peloton official site",
+            "url": "https://www.onepeloton.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Peloton SEC filings",
+            "url": "https://investor.onepeloton.com/financial-information/sec-filings",
+            "source_type": "filing",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "All-Access / App Membership",
+        "type": "subscription",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "Peloton 真正的长期资产是内容订阅和社区。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "多学科内容、AI 计划、家庭账号。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "App membership pricing is on official app-membership page; All-Access public profile gives $49.99/mo US.",
+          "subscription_fee": "Subscription/software fee: All-Access for hardware; App-only lower tiers for non-equipment users.",
+          "accessory_service_fee": "Accessory/service price: no required hardware accessory for App; hardware users still pay equipment and service fees.",
+          "competitor_price": "Competitor subscription comparison: Tonal $59.95/mo required; Speediance Wellness+ optional $19.99/mo; FightCamp $39/mo legacy; Growl planned $60/mo.",
+          "sources": [
+            {
+              "title": "Peloton app membership",
+              "url": "https://www.onepeloton.com/app-membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal membership official page",
+              "url": "https://tonal.com/pages/membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Wellness+ official page",
+              "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Peloton app membership",
+            "url": "https://www.onepeloton.com/app-membership",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Investopedia Peloton revenue model",
+            "url": "https://www.investopedia.com/insights/how-peloton-makes-money/",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Peloton 证明内容和社区能卖硬件。",
+      "疫情红利不能当长期增长率。",
+      "上市公司报告比二手文章更值得作为财务底座。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "Peloton official site",
+        "url": "https://www.onepeloton.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Peloton app membership",
+        "url": "https://www.onepeloton.com/app-membership",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Peloton SEC filings",
+        "url": "https://investor.onepeloton.com/financial-information/sec-filings",
+        "source_type": "filing",
+        "confidence": "medium"
+      },
+      {
+        "title": "Peloton Interactive public profile",
+        "url": "https://en.wikipedia.org/wiki/Peloton_Interactive",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "John Foley profile",
+        "url": "https://en.wikipedia.org/wiki/John_Foley_(executive)",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Business Insider Peloton history",
+        "url": "https://www.businessinsider.com/peloton-company-history-rise-fall-2022-2",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Investopedia Peloton revenue model",
+        "url": "https://www.investopedia.com/insights/how-peloton-makes-money/",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Peloton Trustpilot",
+        "url": "https://www.trustpilot.com/review/onepeloton.com",
+        "source_type": "review",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

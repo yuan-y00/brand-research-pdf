@@ -4,7 +4,7 @@
   "market_focus": "US / Global",
   "report_type": "gtm_extension",
   "version": "1.0",
-  "generated_by": "VSCode AI research",
+  "generated_by": "AI-assisted public-source research; evidence repair 2026-06-17",
   "disclaimer": "This report is for learning and pattern recognition. It does not perform strict fact auditing. Bambu Lab is a private company; revenue and market share figures are based on media reports and industry estimates.",
   "brand_context": {
     "founder_background": [
@@ -25,18 +25,54 @@
       "创始人陶冶持股 33.76%，为实际控制人"
     ],
     "brand_timeline": [
-      { "year": "2020-11", "event": "陶冶在深圳南山创立拓竹科技，五名前大疆工程师组成核心团队，80 平米办公室内开始闭关研发" },
-      { "year": "2021", "event": "7 版原型机迭代，700+ 次测试；自研驱动芯片，拒用行业标准 TMC 芯片；被 VC 因「市场太小」拒绝" },
-      { "year": "2022-05", "event": "X1 系列 Kickstarter 众筹上线，最终募资 4728 万元人民币，5575 名支持者，创 3D 打印类目纪录" },
-      { "year": "2022-11", "event": "X1 Carbon 被 TIME 杂志评为年度最佳发明之一" },
-      { "year": "2023", "event": "A1 Mini / A1 发布，下沉入门市场；P1P/P1S 系列推出；MakerWorld 社区上线；年营收约 27 亿元" },
-      { "year": "2024-02", "event": "A1 热床隐患主动召回 6220 台——业界评为「3D 打印行业的汽车召回标准」" },
-      { "year": "2024", "event": "营收约 60 亿元，出货约 120 万台，全球消费级 3D 打印营收市占率 29% 登顶全球第一；B 轮估值 20 亿美元；Stratasys 发起 10 项核心专利侵权诉讼" },
-      { "year": "2025-01", "event": "「固件门」——推送授权控制固件，限制 Orca Slicer 等第三方软件和 BTT Panda Touch 等第三方硬件；社区大规模抗议" },
-      { "year": "2025", "event": "营收突破 100 亿元；H2D/H2C 发布；MakerWorld 月活超千万；接入腾讯混元 3D AI；大疆投资竞品智能派 (Elegoo)；陶冶公开发千字长文炮轰老东家；MakerWorld 上线 Kickstarter 式众筹功能" },
-      { "year": "2026-01", "event": "向 10 所员工母校捐赠 1 亿元教育基金；年终奖高达 9-25 个月" },
-      { "year": "2026-02", "event": "泡泡玛特著作权诉讼和解；胡润估值 400 亿元；Louis Rossmann / Gamers Nexus 等知名 YouTuber 因固件争议公开抵制 Bambu Lab" },
-      { "year": "2026-03", "event": "X1 系列正式 EOL（停产），支持持续至 2031 年；X2D 接班" }
+      {
+        "year": "2020-11",
+        "event": "陶冶在深圳南山创立拓竹科技，五名前大疆工程师组成核心团队，80 平米办公室内开始闭关研发"
+      },
+      {
+        "year": "2021",
+        "event": "7 版原型机迭代，700+ 次测试；自研驱动芯片，拒用行业标准 TMC 芯片；被 VC 因「市场太小」拒绝"
+      },
+      {
+        "year": "2022-05",
+        "event": "X1 系列 Kickstarter 众筹上线，最终募资 4728 万元人民币，5575 名支持者，创 3D 打印类目纪录"
+      },
+      {
+        "year": "2022-11",
+        "event": "X1 Carbon 被 TIME 杂志评为年度最佳发明之一"
+      },
+      {
+        "year": "2023",
+        "event": "A1 Mini / A1 发布，下沉入门市场；P1P/P1S 系列推出；MakerWorld 社区上线；年营收约 27 亿元"
+      },
+      {
+        "year": "2024-02",
+        "event": "A1 热床隐患主动召回 6220 台——业界评为「3D 打印行业的汽车召回标准」"
+      },
+      {
+        "year": "2024",
+        "event": "营收约 60 亿元，出货约 120 万台，全球消费级 3D 打印营收市占率 29% 登顶全球第一；B 轮估值 20 亿美元；Stratasys 发起 10 项核心专利侵权诉讼"
+      },
+      {
+        "year": "2025-01",
+        "event": "「固件门」——推送授权控制固件，限制 Orca Slicer 等第三方软件和 BTT Panda Touch 等第三方硬件；社区大规模抗议"
+      },
+      {
+        "year": "2025",
+        "event": "营收突破 100 亿元；H2D/H2C 发布；MakerWorld 月活超千万；接入腾讯混元 3D AI；大疆投资竞品智能派 (Elegoo)；陶冶公开发千字长文炮轰老东家；MakerWorld 上线 Kickstarter 式众筹功能"
+      },
+      {
+        "year": "2026-01",
+        "event": "向 10 所员工母校捐赠 1 亿元教育基金；年终奖高达 9-25 个月"
+      },
+      {
+        "year": "2026-02",
+        "event": "泡泡玛特著作权诉讼和解；胡润估值 400 亿元；Louis Rossmann / Gamers Nexus 等知名 YouTuber 因固件争议公开抵制 Bambu Lab"
+      },
+      {
+        "year": "2026-03",
+        "event": "X1 系列正式 EOL（停产），支持持续至 2031 年；X2D 接班"
+      }
     ],
     "major_turning_points": [
       "2022 Kickstarter 众筹 4728 万——从一个未知品牌到全球 Maker 圈最受关注的新玩家",
@@ -55,7 +91,69 @@
       "客服体验严重不足：无电话支持，工单数周甚至数月无回复，Trustpilot 评分波动引发刷分质疑",
       "RFID 加密耗材锁定的「剃刀 + 刀片」模式被社区批评为过度商业化，Prusa 则推动开放 RFID 标准作为差异化竞争"
     ],
-    "notes": "Bambu Lab 是近年来最值得研究的中国智能硬件出海案例之一。它展示了如何将大疆的消费电子方法论（极致体验、全栈自研、开箱即用）系统性地复用到另一个极客驱动的成熟品类（3D 打印），并在 4 年内实现从零到全球营收第一的跨越。但 2025-2026 年的「固件门」和法律威胁事件也暴露了「大疆模式」在 3D 打印领域的不完全适配——3D 打印的开源基因和社区文化远比无人机行业深厚，封闭生态策略面临的反弹也远比无人机行业激烈。Bambu Lab 正处于「Apple 化」的十字路口：继续封闭（短期利润最大化）还是适度开放（长期生态健康），将是决定其下一个五年命运的核心战略选择。"
+    "notes": "Bambu Lab 是近年来最值得研究的中国智能硬件出海案例之一。它展示了如何将大疆的消费电子方法论（极致体验、全栈自研、开箱即用）系统性地复用到另一个极客驱动的成熟品类（3D 打印），并在 4 年内实现从零到全球营收第一的跨越。但 2025-2026 年的「固件门」和法律威胁事件也暴露了「大疆模式」在 3D 打印领域的不完全适配——3D 打印的开源基因和社区文化远比无人机行业深厚，封闭生态策略面临的反弹也远比无人机行业激烈。Bambu Lab 正处于「Apple 化」的十字路口：继续封闭（短期利润最大化）还是适度开放（长期生态健康），将是决定其下一个五年命运的核心战略选择。",
+    "founder_profiles": [
+      {
+        "name": "Ye Tao",
+        "role": "Founder / lead founder",
+        "background_summary": "Former DJI engineer and consumer-drone leader; led the team that founded Bambu Lab in 2020.",
+        "profile_links": [
+          {
+            "title": "Bambu Lab team behind X1",
+            "url": "https://blog.bambulab.com/the-team-behind-bambu-lab-x1/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Bambu Lab company profile",
+            "url": "https://en.wikipedia.org/wiki/Bambu_Lab",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2020",
+        "event": "founding",
+        "currency": "CNY/USD",
+        "source": {
+          "title": "Bambu Lab about / team story",
+          "url": "https://blog.bambulab.com/the-team-behind-bambu-lab-x1/",
+          "source_type": "official",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2022",
+        "event": "crowdfunding",
+        "amount": "$7M+",
+        "currency": "USD",
+        "description": "The X1 Kickstarter campaign raised more than $7M and validated high-end desktop 3D printer demand.",
+        "source": {
+          "title": "Bambu Lab company profile",
+          "url": "https://en.wikipedia.org/wiki/Bambu_Lab",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2023",
+        "event": "funding",
+        "currency": "CNY/USD",
+        "description": "Public reports identified IDG Capital backing, but disclosed amount is not consistently available.",
+        "source": {
+          "title": "Bambu Lab company profile",
+          "url": "https://en.wikipedia.org/wiki/Bambu_Lab",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ]
   },
   "gtm_extension": {
     "summary": "Bambu Lab（拓竹科技）是近年来全球消费级 3D 打印行业最引人注目的颠覆者——五名前大疆工程师在深圳 80 平米办公室里闭关 22 个月，2022 年以 X1 Carbon Kickstarter 众筹 4728 万元一战成名，4 年内从零做到全球消费级 3D 打印营收市占率 29%（#1），2025 年营收突破 100 亿元。Bambu Lab 的 GTM 路径堪称「大疆模式的完美复刻」：以全栈自研（从驱动芯片到切片软件到云平台）建立技术代差 → 用「开箱即用+500mm/s 高速打印+LIDAR 自动校准」将 3D 打印从极客 DIY 工具变为消费电子产品 → 通过 Kickstarter 精准触达全球最硬核 Maker 群体建立权威口碑 → YouTube/Reddit 社区内容驱动有机增长 → MakerWorld（5000 万+用户）构建「硬件+软件+内容+AI」四边飞轮实现生态锁定 → A1 Mini $299 定价下沉消费级市场 → DTC 独立站为主（月访问 1100 万+）+ 逐步拓展线下旗舰店和零售合作。但 2025-2026 年的「固件门」——推送授权控制固件限制第三方切片软件和硬件、委托律所向独立开发者发出 cease-and-desist——引发了 3D 打印社区史上最激烈的反弹，包括 Josef Prusa、Louis Rossmann、Gamers Nexus 在内的重量级人物公开批评或抵制，将 Bambu Lab 推到了「Apple 式封闭生态 vs 开源社区价值观」的行业辩论中心。RFID 加密耗材锁定（2048-bit RSA 密钥工厂端持有）建立了「剃刀+刀片」的高利润耗材模型，但也成为社区批评的焦点。Bambu Lab 的案例展示了：当消费电子方法论进入一个开源基因深厚的行业时，产品力的降维打击可以快速赢得市场，但生态策略若过于封闭，可能触发远超预期的社区信任反噬。",
@@ -72,7 +170,6 @@
     "channels": {
       "crowdfunding": "Kickstarter 是 Bambu Lab 最关键的市场启动渠道。2022 年 5 月 X1 系列在 Kickstarter 众筹，最终获 5575 名支持者、约 4728 万元人民币（~$7M USD），成为 Kickstarter 3D 打印硬件类目第三高。Kickstarter 的价值不仅是资金，更是精准触达了全球最硬核、最具影响力的 Maker 群体——这些早期支持者后来成为 Bambu Lab 在全球社区中最有力的口碑传播者。2025 年 MakerWorld 进一步内置了 Kickstarter 式众筹功能（邀请制），让顶级设计师可以在平台内发起项目众筹（目标 $500-$50,000），MakerWorld 抽成 10%+支付处理费。",
       "dtc": "官方独立站（store.bambulab.com）是 Bambu Lab 最核心的销售渠道，月访问量超过 1100 万（2025 年数据）。DTC 不仅贡献了绝大部分营收，更重要的是让 Bambu Lab 完全掌控定价、品牌体验、用户数据和售后关系——不像大多数中国出海品牌那样依赖 Amazon。独立站也是耗材（Filament）订阅和复购的主要场所。在中国市场，京东、天猫、抖音电商扮演了触达大众消费者的角色，2025 年 618 期间销量同比增长 627%。",
-      "amazon": "not_found_or_not_core — Bambu Lab 的渠道策略是有意绕开 Amazon。与 Anker、Creality 等重度依赖 Amazon 的出海品牌不同，Bambu Lab 选择了 Kickstarter 引爆 + DTC 独立站为主 + 专业经销商为辅的路径。这使其免受 Amazon 抽成、封店、平台政策变动的影响。截至搜索资料，Bambu Lab 在 Amazon 上没有官方旗舰店级别的存在。",
       "ecommerce": "中国国内市场通过京东、天猫、抖音电商覆盖，2025 年 618 期间 3D 打印机销量同比增长 627%。DTC 独立站（store.bambulab.com）覆盖全球 100+ 国家和地区。在部分国家和地区（如菲律宾）通过授权经销商在本地电商平台（如 Lazada/Shopee）分销。Bambu Lab 对电商渠道的态度是「宁缺毋滥」——优先直营控价，而非铺量低价。",
       "social_media": "YouTube 是 Bambu Lab 最重要的社媒引擎。Makers Muse、Teaching Tech、CNC Kitchen 等头部 3D 打印博主的测评视频为 Bambu Lab 提供了权威的第三方背书。Reddit r/BambuLab 社区有超过 20 万成员（2025 年），是用户交流、问题反馈和口碑传播的核心战场。创始人陶冶亲自在 Reddit 做 AMA，早期建立了良好的社区关系——这一关系在 2025 年固件门中严重受损。TikTok 和 Instagram 上的 3D 打印内容（模型展示、打印过程、成品分享）也为 MakerWorld 带来了大量自然流量。",
       "retail": "Bambu Lab 的线下零售尚处于早期探索阶段。已知的零售布局包括：深圳湾万象城全球首家直营旗舰店（2025 年开业）、菲律宾 Makati 购物中心概念店、以及通过 Micro Center 等专业电子零售商的铺货。与 DJI 不同，Bambu Lab 尚未大规模进入 Best Buy、Costco、Walmart 等主流消费电子零售终端，这可能是因为 3D 打印的消费级认知尚未达到无人机当年的水平。线下店的核心作用是让潜在消费者在购买前能亲眼看到打印机的工作过程和成品质量。",
@@ -92,9 +189,7 @@
       "subscription": "目前没有强制订阅模式。Bambu Handy App 提供基本的远程监控和打印管理功能（免费）。MakerWorld 的 Exclusive 会员（¥9.9/月或等值外币）提供去广告、优先体验和增值功能，但这不是核心收入。有社区担忧 Bambu Lab 未来可能推出云打印订阅、AI 模型生成付费等增值服务，但截至 2026 年尚未实现。订阅收入在总营收中占比极小。",
       "consumables": "耗材（Filament / 线材）是 Bambu Lab 最核心的利润引擎——典型的「剃刀+刀片」模式。Bambu Lab 耗材使用 RFID 加密（2048-bit RSA），只有在工厂持有私钥的 Bambu 自有耗材才能在 AMS 中自动识别材料类型、颜色、推荐打印参数和追踪余量。使用第三方耗材会失去所有这些便利。这种锁定机制让 Bambu Lab 可以在打印机硬件上薄利甚至微亏，通过长期耗材销售获取高利润。耗材毛利率估计远高于硬件。2025 年推出的「Refill」线材补充装（用户自行更换到已有的 Bambu RFID 卷轴上）进一步降低了用户的使用成本感知，同时保持了生态锁定。耗材收入在总营收中的占比不公开（private company），但社区普遍认为它是 Bambu Lab 30%+ 净利润率的主要贡献者。",
       "accessories": "配件生态是 Bambu Lab 商业模式的重要组成部分：AMS 多色系统（$349/台，最多 4 台串联）、AMS Lite 轻量版（适配 A1 系列）、替换热端组件（0.2/0.4/0.6/0.8mm）、PEI 打印平台板（纹理/光滑/工程）、LED 灯条、防震脚垫、干燥箱等。AMS 是配件中利润率最高的单品——它将一台普通 FDM 打印机升级为多色/多材料设备，且 AMS 本身也锁定用户更多购买 Bambu 耗材。2025 年推出的超级速热端（SuperTack）和工程板等新配件进一步拓展了配件收入。",
-      "service": "not_found_or_not_core — Bambu Lab 不提供 3D 打印服务（如代打印），这方面的市场由 Shapeways、Xometry、PCBWay 或本地打印农场覆盖。但 MakerWorld 的「On-Demand Models」功能正在探索连接用户和打印服务商的可能。Bambu Care 延保计划提供延长保修和优先客服（但客服质量本身已被广泛批评）。",
       "repair": "Bambu Lab 提供官方维修服务和备件销售（热端、喷嘴、皮带、主板等），用户可以在官网购买备件自行更换。打印机模块化程度较高，有一定动手能力的用户可以自行完成大部分维修。但售后服务响应速度（工单数周无回复）是维修体验的最大痛点。对于不擅长 DIY 的大众消费者来说，维修困难可能成为购买决策的阻力。",
-      "training": "not_found_or_not_core — Bambu Lab 不运营正式的培训业务。MakerWorld 社区内有用户自制的教程和指南，Bambu Lab 官方维护了一个 Wiki 知识库，但不通过培训收费。3D 打印培训的市场主要由 YouTube 博主、Udemy/Coursera 课程和本地 MakerSpace 覆盖。",
       "dealer_margin_or_channel": "Bambu Lab 的渠道利润结构不如 DJI 透明，因为其主要依赖 DTC 直达消费者（无需渠道分成）。对于授权经销商和零售合作（如 Micro Center、菲律宾购物中心店），具体的经销商折扣和利润空间未公开。Bambu Lab 的控价策略非常严格——即使在京东/天猫等平台上也不参与价格战，维持全球统一定价策略。这与 Creality 的「以量取胜+渠道铺货」模式形成鲜明对比。",
       "other": "MakerWorld 平台本身正在成为一个独立的收入来源：平台众筹抽成 10%、广告收入（目前免费，未来可能引入竞价排名）、Exclusive 会员订阅（¥9.9/月）、以及未来可能推出的「Powered by MakerWorld」品牌授权或联名商品。2025 年接入了腾讯混元 3D AI 模型，用户可以通过文本/图片生成 3D 模型，这为未来的 AI 增值服务开辟了可能性。"
     },
@@ -367,7 +462,38 @@
             "note": "分析 Bambu Lab 爆火的原因和产品差异化",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "X1 Carbon historically listed around $1,199 printer-only and $1,449 with AMS combo; later tariff-era prices were reported higher.",
+          "current_price": "Check Bambu official store; X1 series availability changes as newer X/H series replace it.",
+          "bundle_price": "X1 Carbon + AMS combo historically around $1,449; later reports cite $1,749.99 during tariff-affected pricing.",
+          "accessory_price": "AMS, nozzles, build plates, hotends, and filament are separate accessory / consumable costs.",
+          "software_subscription": "Bambu Studio / Bambu Handy / MakerWorld core use is free; no required slicer subscription found.",
+          "competitor_price": "Prusa MK4S / CORE One and Creality K-series are key alternatives; Prusa XL toolchanger is much higher, around the multi-thousand-dollar range.",
+          "competitor_accessory_price": "Prusa MMU / toolchanger options and Creality accessories add separate cost.",
+          "competitor_subscription": "Competitor slicers are generally free; cloud services vary by ecosystem.",
+          "notes": "Use current Bambu store for exact live price because model transitions and tariffs changed X1 pricing.",
+          "sources": [
+            {
+              "title": "Bambu Lab X1 official product page",
+              "url": "https://us.store.bambulab.com/products/x1-carbon",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Creative Bloq X1 Carbon review with price history",
+              "url": "https://www.creativebloq.com/3d/i-finally-got-a-bambu-lab-x1-carbon-3d-printer-and-im-never-going-back",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Prusa 3D printers official store",
+              "url": "https://www.prusa3d.com/category/3d-printers/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "AMS 多色系统 + RFID 耗材生态 — 「剃刀+刀片」的利润引擎",
@@ -596,7 +722,37 @@
             "note": "第三方分析 Bambu Lab 生态和 AMS 多色体系的价值",
             "confidence": "medium"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "AMS is the accessory/ecosystem product; common public pricing has been around the low hundreds of dollars depending on AMS, AMS Lite, or AMS 2 Pro.",
+          "current_price": "Check Bambu official store for AMS / AMS Lite / AMS 2 Pro live price.",
+          "bundle_price": "AMS is often bundled with X/P/A printers as combo SKUs; bundle discount varies.",
+          "accessory_price": "Filament spools, RFID filament, PTFE tubes, hotends, and build plates create recurring consumable / accessory spend.",
+          "software_subscription": "No required MakerWorld/Bambu Studio subscription found; software ecosystem is monetized indirectly through hardware and filament.",
+          "competitor_price": "Prusa MMU3 and multi-tool Prusa XL are major alternatives; Snapmaker U1 Kickstarter positioned a toolchanger below Prusa XL pricing.",
+          "competitor_accessory_price": "Prusa filament, nozzles, sheets, and MMU/toolchanger components are separate.",
+          "notes": "AMS should be treated as both an accessory and a lock-in mechanism because it increases filament and parts attachment.",
+          "sources": [
+            {
+              "title": "Bambu Lab AMS official product page",
+              "url": "https://us.store.bambulab.com/products/ams-multicolor-printing",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Bambu Lab filament official store",
+              "url": "https://us.store.bambulab.com/collections/filament",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tom's Hardware Snapmaker U1 / Prusa XL comparison",
+              "url": "https://www.tomshardware.com/3d-printing/3d-printer-maker-snapmaker-raised-a-staggering-usd7-8-million-on-the-first-day-of-kickstarter-for-its-affordable-tool-changer-breaking-bambus-record",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        }
       },
       {
         "name": "A1 Mini + MakerWorld — 从 Prosumer 向消费级市场的战略下沉",
@@ -828,7 +984,37 @@
             "note": "深度报道 Bambu Lab 从创业到百亿估值的完整发展历程，含中国市场渠道爆发数据",
             "confidence": "high"
           }
-        ]
+        ],
+        "pricing_model": {
+          "product_price": "A1 Mini is Bambu Lab entry-level hardware; public pricing is commonly in the low hundreds, with AMS Lite combo higher.",
+          "current_price": "Check Bambu official store for exact A1 Mini and A1 Mini Combo live prices.",
+          "bundle_price": "A1 Mini Combo includes AMS Lite; common public references place combo pricing in the several-hundred-dollar band.",
+          "accessory_price": "AMS Lite, filament, nozzles, plates, and maintenance parts are the main attachments.",
+          "software_subscription": "Bambu Studio / Bambu Handy / MakerWorld core use is free; no required subscription found.",
+          "competitor_price": "Creality Ender/K series and Prusa Mini compete in entry-to-mid desktop 3D printing; prices vary from budget sub-$300 to higher Prusa positioning.",
+          "competitor_accessory_price": "Competitor filament, beds, nozzles, and enclosure/accessory kits are separate.",
+          "notes": "A1 Mini GTM logic is low entry price plus upsell into AMS Lite and filament ecosystem.",
+          "sources": [
+            {
+              "title": "Bambu Lab A1 Mini official page",
+              "url": "https://us.store.bambulab.com/products/a1-mini",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tom's Guide A1 Combo price reference",
+              "url": "https://www.tomsguide.com/computing/3d-printers/im-addicted-to-3d-printing-with-my-bambu-lab-a1-combo-and-its-usd200-off-right-now",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Creality official store",
+              "url": "https://store.creality.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        }
       }
     ],
     "learning_summary": {
@@ -971,5 +1157,6 @@
         "confidence": "high"
       }
     ]
-  }
+  },
+  "research_checked_at": "2026-06-17"
 }

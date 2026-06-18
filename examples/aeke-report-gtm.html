@@ -1,0 +1,884 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AEKE 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
+</head>
+<body>
+
+<!-- PAGE 01: COVER -->
+<div class="section cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">AEKE<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">中国 AI 健身镜的 Kickstarter 破圈之路 · 43" 4K 镜面 + 3D 骨骼追踪<br>零 VC 融资 · $1.5M 众筹 · 林丹代言 · CCTV-5 奥运亮相</div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">$1.5M</div><div class="cs-label">Kickstarter 众筹金额（303%）</div></div>
+            <div class="cover-stat"><div class="cs-num">$3,298</div><div class="cs-label">K1 起售价</div></div>
+            <div class="cover-stat"><div class="cs-num">$0</div><div class="cs-label">强制订阅费</div></div>
+            <div class="cover-stat"><div class="cs-num">2022</div><div class="cs-label">创立年份 · 深圳</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 02: TIMELINE -->
+<div class="section"><div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2022–2025）</h1>
+    <table class="info-table">
+        <thead><tr><th style="width:75px">时间</th><th style="width:380px">事件</th><th style="width:310px">关键细节</th><th style="width:65px">影响</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center"><strong>2022.01</strong></td><td>趣动未来（深圳）科技有限公司成立</td><td>创始人钟质峰立项"智能健身镜"——不同于 FITURE 的跟练模式，AEKE 从一开始就定位"AI 力量训练 + 镜面形态"。核心团队来自硬件/AI 领域</td><td class="td-impact impact-neutral">冷启动</td></tr>
+            <tr><td class="td-center"><strong>2023.01</strong></td><td>A1 原型机获美国 IDA 设计奖</td><td>在国内产品尚未正式发布时就拿到国际设计奖项，为后续出海做品牌铺垫。产品核心形态确定：镜面 + 数字电机 + AI 摄像头</td><td class="td-impact impact-up">设计认可</td></tr>
+            <tr><td class="td-center"><strong>2023.11</strong></td><td>国内版"力量镜 A1"正式上市</td><td>售价 ~¥16,000+，4K 触摸屏，AI 追踪 33 个骨骼点，0.5-30kg 阻力。面向年收入 >¥30 万家庭</td><td class="td-impact impact-up">产品上市</td></tr>
+            <tr><td class="td-center"><strong>2024.03</strong></td><td>签约林丹为品牌产品体验官</td><td>奥运羽毛球冠军林丹出任品牌代言人；获 IWF2024 体育科技创新奖。品牌从"创业公司"向"可信任品牌"迈进</td><td class="td-impact impact-up">品牌背书</td></tr>
+            <tr><td class="td-center"><strong>2024.07</strong></td><td>CCTV-5 巴黎奥运开幕式时段播出</td><td>电视广告在奥运期间亮相——中国品牌极其罕见的投放策略。同期赞助江苏卫视节目和"林丹杯"赛事</td><td class="td-impact impact-up">品牌曝光</td></tr>
+            <tr><td class="td-center"><strong>2024.11</strong></td><td>进入香港/澳门市场 · 信和集团 100 台首批订单</td><td>与信和集团战略合作进军港澳。海外版 K1 正式发布——43" 4K 屏、17 骨骼点追踪、50kg 阻力、5 种力量模式</td><td class="td-impact impact-up">国际化</td></tr>
+            <tr><td class="td-center"><strong>2025.01</strong></td><td>Kickstarter 众筹 $1.52M（303% 超募）</td><td>目标仅 $5 万，最终获 635+ 支持者、$152 万+ 。由 TCF（The Crowdfunding Formula）操盘，ROI 8×，广告 ROAS 6.14×。34 家媒体报道</td><td class="td-impact impact-up">破圈</td></tr>
+            <tr><td class="td-center"><strong>2025.02</strong></td><td>Indiegogo InDemand + 开始发货</td><td>追加 ~$10 万+。2 月开始向支持者发货。2025 年海外营收目标 ¥1 亿（~$1,400 万）</td><td class="td-impact impact-up">交付</td></tr>
+            <tr><td class="td-center"><strong>2025.10</strong></td><td>多篇海外媒体评测发布</td><td>The Gadgeteer、Tom's Guide、Cybernews 等发布评测——AI 形态纠正获好评，但软件粗糙和线缆位置受限被批评</td><td class="td-impact impact-neutral">口碑分化</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- PAGE 03: FINANCIALS -->
+<div class="section"><div class="section-label">Financials & Business Model</div>
+    <h1>二、创始团队与商业模式</h1>
+    <h2>创始团队背景</h2>
+    <table class="info-table" style="margin-bottom:10px">
+        <thead><tr><th>创始人</th><th style="width:70px">职位</th><th>背景</th><th style="width:180px">资金来源</th></tr></thead>
+        <tbody>
+            <tr><td><strong>钟质峰（Peter）</strong></td><td class="td-center">CEO</td><td>南华大学毕业。创办 AEKE 前是<strong>连续创业者</strong>，关联 8 家企业：第一阶段做 <strong>OPPO 手机区域渠道商</strong>（济南宏越电子、长沙欧盛电子等），在 OPPO 手机黄金时期积累第一桶金；第二阶段转<strong>教育科技</strong>（湖南觅吾教育、广州果肉文化、学优优教育、广州创科教育、四川优思乐学等 5 家公司，担任法定代表人/执行董事/董事长）</td><td class="td-center"><strong>OPPO 渠道分销利润<br>+ 教育科技创业退出</strong></td></tr>
+            <tr><td><strong>龙春泠（Loong）</strong></td><td class="td-center">COO</td><td>前<strong>在线教育行业创业者</strong>。2021 年中国"双减"政策导致原有在线教育业务停止，随后转型切入运动健身赛道。2022 年 8 月正式启动 AEKE 项目，主张"长期主义"品牌理念，强调 AEKE 是"产销研一体化"的实业型科技公司</td><td class="td-center">在线教育创业积累</td></tr>
+            <tr><td><strong>范炜（Richard）</strong></td><td class="td-center">CTO</td><td>拥有<strong>"南京市高层次人才"</strong>官方认定——说明在技术/工程领域有权威背书。负责 AEKE 的 AI 视觉、3D 骨骼追踪、数字伺服电机等核心技术研发</td><td class="td-center">技术合伙（薪酬+股权）</td></tr>
+        </tbody>
+    </table>
+    <p style="font-size:10.5px;color:var(--mid-gray);margin-bottom:10px">※ AEKE 无任何 VC 融资（天使轮/种子轮/A轮均为零）。Tracxn 标注为"unfunded"。初始资金来自三位创始人自有资金——主要来源为钟质峰的 OPPO 渠道+教育创业积累。唯一外部资金是 2025 年 Kickstarter 众筹 ~$1.5M。</p>
+    <div class="callout"><strong>核心亮点：</strong>AEKE 是四家智能家庭健身公司中<strong>唯一一个没有拿 VC 钱的</strong>——既无天使轮也无 A 轮。$1.5M Kickstarter 众筹是其唯一的外部资金。国内版 ¥16,000+、海外版 $3,298 的定价策略直接瞄准高端市场。零强制订阅。</div>
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">$1.5M</div><div class="stat-label">Kickstarter 众筹</div></div>
+        <div class="stat-card"><div class="stat-number">$0</div><div class="stat-label">VC 融资</div></div>
+        <div class="stat-card"><div class="stat-number">$3,298</div><div class="stat-label">K1 起售价</div></div>
+        <div class="stat-card"><div class="stat-number">$0</div><div class="stat-label">强制订阅费</div></div>
+        <div class="stat-card"><div class="stat-number">¥1亿</div><div class="stat-label">2025 海外营收目标</div></div>
+        <div class="stat-card"><div class="stat-number">635+</div><div class="stat-label">Kickstarter 支持者</div></div>
+    </div>
+    <div class="divider"></div>
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>资金路径（独特）</h2>
+            <table class="info-table">
+                <thead><tr><th>阶段</th><th style="width:90px">金额</th><th>来源</th></tr></thead>
+                <tbody>
+                    <tr><td>2022-2024</td><td class="td-num">自有资金</td><td>创始人 + 初始团队自筹</td></tr>
+                    <tr><td>2025.01</td><td class="td-num"><strong>$1.52M</strong></td><td>Kickstarter 众筹（目标 $50K）</td></tr>
+                    <tr><td>2025.02</td><td class="td-num">~$107K</td><td>Indiegogo InDemand</td></tr>
+                    <tr><td colspan="2">累计外部资金</td><td><strong>$1.63M（全部来自众筹）</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>vs 三大竞对：商业模式对比</h2>
+            <table class="info-table">
+                <thead><tr><th>维度</th><th style="width:80px">AEKE</th><th style="width:80px">Speediance</th><th style="width:80px">Tonal</th></tr></thead>
+                <tbody>
+                    <tr><td>形态</td><td class="td-center">镜面</td><td class="td-center">立式折叠</td><td class="td-center">壁挂</td></tr>
+                    <tr><td>硬件价格</td><td class="td-num">$3,298-3,800</td><td class="td-num">$3,749-4,099</td><td class="td-num">$3,995+$495</td></tr>
+                    <tr><td>强制订阅</td><td class="td-num"><strong>$0</strong></td><td class="td-num"><strong>$0</strong></td><td class="td-num">$59.95/月</td></tr>
+                    <tr><td>最大阻力</td><td class="td-num">220 lbs</td><td class="td-num">220 lbs</td><td class="td-num"><strong>250 lbs</strong></td></tr>
+                    <tr><td>安装方式</td><td class="td-center">独立/免工具</td><td class="td-center">独立/DIY</td><td class="td-center">需承重墙</td></tr>
+                    <tr><td>累计融资</td><td class="td-num"><strong>$1.63M（众筹）</strong></td><td class="td-num">$13.6M（VC）</td><td class="td-num">$615M+</td></tr>
+                    <tr><td>AI 形态追踪</td><td class="td-num"><strong>3D 摄像头+17点</strong></td><td class="td-num">电机数据</td><td class="td-num"><strong>摄像头+AI</strong></td></tr>
+                    <tr><td>直播课程</td><td class="td-center">❌</td><td class="td-center">❌</td><td class="td-center">✅</td></tr>
+                    <tr><td>屏幕</td><td class="td-num"><strong>43" 4K</strong></td><td class="td-num">21.5"</td><td class="td-num">24"</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 04: COMPETITIVE -->
+<div class="section"><div class="section-label">Competitive Landscape</div>
+    <h1>三、智能家庭健身赛道格局</h1>
+    <p>AEKE 的产品形态是"镜面式力量训练"——与 Mirror（已死）、FITURE（中国）同属镜面品类，但与 Speediance（立式）和 Tonal（壁挂）在训练方式上有直接竞争。Mirror 的消亡和 FITURE 的衰退留下了这个品类的市场空白，AEKE 和 Speediance 是填补这个空白的两个中国品牌。</p>
+    <table class="info-table">
+        <thead><tr><th style="width:70px">维度</th><th style="width:150px">AEKE K1</th><th style="width:150px">Speediance GM2</th><th style="width:150px">Tonal 2</th><th style="width:150px">FITURE（参考）</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center"><strong>品类</strong></td><td>AI 镜面力量训练</td><td>立式数字力量训练</td><td>壁挂数字力量训练</td><td>AI 镜面跟练</td></tr>
+            <tr><td class="td-center"><strong>创立/总部</strong></td><td>2022 · 深圳</td><td>2020 · 深圳</td><td>2015 · 旧金山</td><td>2019 · 上海</td></tr>
+            <tr><td class="td-center"><strong>外部资金</strong></td><td class="td-num">$1.63M 众筹</td><td class="td-num">$13.6M VC</td><td class="td-num">$615M+ VC</td><td class="td-num">$300M+ VC</td></tr>
+            <tr><td class="td-center"><strong>硬件价格</strong></td><td class="td-num">$3,298-3,800</td><td class="td-num">$3,749-4,099</td><td class="td-num">$4,295+$495</td><td class="td-num">~$1,500-2,000</td></tr>
+            <tr><td class="td-center"><strong>强制订阅</strong></td><td><strong>无</strong></td><td><strong>无</strong></td><td>$59.95/月</td><td>有（已大幅收缩）</td></tr>
+            <tr><td class="td-center"><strong>AI 形态追踪</strong></td><td><strong>3D 摄像头 17 骨骼点</strong></td><td>电机数据（无力学追踪）</td><td>摄像头 + AI</td><td>摄像头 + AI</td></tr>
+            <tr><td class="td-center"><strong>核心优势</strong></td><td>AI 形态纠正 + 43"镜面</td><td>全能线缆位置 + 成熟度</td><td>最高阻力 + 直播课</td><td>内容生态（已衰落）</td></tr>
+            <tr><td class="td-center"><strong>关键劣势</strong></td><td>线缆底部出线 · 软件粗糙</td><td>无 AI 形态纠正</td><td>订阅锁死 · 需安装</td><td>无数字阻力（需哑铃）</td></tr>
+            <tr><td class="td-center"><strong>Trustpilot</strong></td><td class="td-num">3.5/5（仅2条评价）</td><td class="td-num">3.2-4.4（区域差异）</td><td class="td-num">1.9/5</td><td class="td-num">N/A</td></tr>
+        </tbody>
+    </table>
+    <div class="divider"></div>
+    <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-value">$1.6M</div><div class="kpi-label">AEKE 众筹资金</div><div class="kpi-compare">Speediance $13.6M VC</div></div>
+        <div class="kpi-card"><div class="kpi-value">43"</div><div class="kpi-label">AEKE 屏幕尺寸</div><div class="kpi-compare kpi-up">行业最大（SPD 21.5" / Tonal 24"）</div></div>
+        <div class="kpi-card"><div class="kpi-value">0.3㎡</div><div class="kpi-label">AEKE 占地面积</div><div class="kpi-compare kpi-up">最小（SPD 0.4㎡ / Tonal 壁挂）</div></div>
+        <div class="kpi-card"><div class="kpi-value">$0</div><div class="kpi-label">AEKE + SPD 强制订阅</div><div class="kpi-compare kpi-up">Tonal $60/月</div></div>
+        <div class="kpi-card"><div class="kpi-value">3.5</div><div class="kpi-label">AEKE Trustpilot</div><div class="kpi-compare">SPD 3.2-4.4 / Tonal 1.9</div></div>
+    </div>
+</div>
+
+<!-- PAGE 05: RIGHT 1/2 -->
+<div class="section"><div class="section-label">Success Factors</div>
+    <h1>四、AEKE 做对了什么</h1>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">01</div>
+            <h4>3D AI 骨骼追踪：镜面形态的杀手级功能</h4>
+            <div class="insight-kpi">43" 4K 镜面 · 3D 摄像头 · 17 个骨骼点实时追踪 · <0.5 秒响应 · 6 维身体评估</div>
+            <p>AEKE 的核心差异化不是"又一���智能健身设备"，而是<strong>镜面 + AI 摄像头</strong>的组合。43" 4K 镜面同时扮演三个角色：镜子（用户可以看到自己的动作）、屏幕（显示 AI 纠正反馈和课程）、装饰品（不使用时就是一面大镜子）。3D 摄像头实时追踪 17 个骨骼点，可以在 <0.5 秒内检测动作偏差并给出纠正提示——这是 Speediance（无摄像头）和 Tonal（有摄像头但 AI 主要用于重量调节而非形态纠正）都不具备的功能。Cybernews 的评测中，一位真正的健身教练确认"需要多角度摄像头才能准确评估动作"——AEKE 是目前唯一做到了这一点的智能家庭健身设备。6 维身体评估（姿态、心肺、力量、柔韧、灵活、体成分）进一步强化了"这是私人教练替代品"的定位。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> 只有电机数据（力/速），无形态追踪。<span>vs Tonal:</span> 有摄像头但主要用于安全监控和部分形态反馈，不如 AEKE 的骨骼追踪精细。<span>vs FITURE:</span> 有 AI 但产品已衰落。</div>
+        </div>
+        <div class="insight-card right"><div class="insight-num">02</div>
+            <h4>零 VC 融资 + 众筹验证 = 极度健康的资本结构</h4>
+            <div class="insight-kpi">$0 VC 融资 · $1.63M 众筹（303% 超募）· ROI 8× · 广告 ROAS 6.14× · 无股权稀释</div>
+            <p>在 Speediance 拿了 $13.6M VC、Tonal 拿了 $615M、FITURE 拿了 $300M+ 的赛道中，AEKE 是唯一一个<strong>没有向 VC 出售任何股权的玩家</strong>。$1.52M Kickstarter 众筹不仅提供了启动资金，更起到了三重作用：(1) 验证了海外 PMF——635 位支持者用真金白银投票；(2) 没有稀释创始团队股权——这在后续融资或退出时是巨大的杠杆；(3) 创造了品牌叙事——"303% 超募的 Kickstarter 明星"比"拿了 $XXM VC 的公司"在消费者心智中更有辨识度。由 TCF 操盘的众筹策略也堪称教科书：34 家媒体覆盖、2,820 万+ 广告曝光、$97 万广告收入直接归因。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> $13.6M VC，投资人有退出压力。<span>vs Tonal:</span> $615M VC，融资已超估值。<span>vs FITURE:</span> $300M VC，在大规模裁员和收缩中。</div>
+        </div>
+        <div class="insight-card right"><div class="insight-num">03</div>
+            <h4>品牌建设：林丹 + CCTV-5 + IDA 设计奖</h4>
+            <div class="insight-kpi">林丹品牌体验官 · CCTV-5 奥运时段 · 美国 IDA 设计奖 · IWF2024 体育科技创新奖</div>
+            <p>AEKE 在品牌建设上的投入远超一个典型创业公司的"正常"水平。签约林丹——不是普通的健身网红，而是奥运羽毛球冠军、中国体育界的顶级 IP——直接赋予了品牌"专业"和"可信赖"的光环。巴黎奥运开幕式期间在 CCTV-5 投放广告——这是中国品牌极其罕见的媒介购买，通常只有 Nike、Adidas 级别的品牌才会做。产品尚未正式发布就获得了美国 IDA 设计奖——说明 AEKE 从一开始就以"国际品牌"而非"中国出海白牌"来定位自己。这些品牌投入解释了为什么一个 2022 年才成立的公司在 2025 年就能在 Kickstarter 上获得 635 位支持者的信任。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> 品牌建设更低调，更多靠产品评测（PCMag、Esquire）和社区口碑。<span>vs Tonal:</span> LeBron/Serena/Curry 代言，但以投资人身份而非纯代言人。</div>
+        </div>
+        <div class="insight-card right"><div class="insight-num">04</div>
+            <h4>"家庭艺术装置"的产品定义</h4>
+            <div class="insight-kpi">0.3㎡ 占地 · 镜面形态 = 不使用时是装饰 · 免工具安装 · 带滚轮 · 一体式设计</div>
+            <p>AEKE 最聪明的产品决策可能是选择"镜面"而非"机器"的形态。Tonal 是一台"壁挂式健身机器"——它看起来就属于健身房。Speediance 是一台"可折叠的数字重量训练器"——它看起来像高端健身设备。AEKE 是一面"镜子"——它看起来属于客厅、卧室或衣帽间。这个设计选择带来的不是功能优势，而是<strong>购买决策的心理优势</strong>：家庭成员（尤其是女性——AEKE 的国内核心用户画像）不需要在客厅放一台"健身机器"，而是在墙上挂一面"智能镜子"。不使用时它不宣告"你该健身了"——它只是安静地做一面镜子。这个产品哲学与中国高端消费者（以及全球城市公寓住户）的空间焦虑完美契合。</p>
+            <div class="insight-vs"><span>vs Mirror:</span> Mirror 也是一面镜子，但它没有数字阻力——只是跟练屏幕，需要自己备哑铃。<span>vs Tonal:</span> 功能强大但"看起来像健身器材"——对非健身房用户有心理门槛。</div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 06: RIGHT 2/2 -->
+<div class="section"><div class="section-label">Success Factors (Cont.)</div>
+    <h1>四、AEKE 做对了什么（续）</h1>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">05</div>
+            <h4>5 种动态力量模式：从康复到增肌全覆盖</h4>
+            <div class="insight-kpi">弹性 · 划船 · 离心 · 恒定 · 向心 — 5 种模式 · 220 lbs · 1 lb 精度 · 280+ 动作</div>
+            <p>AEKE 的数字伺服电机提供了 5 种不同的力量模式，每种针对不同的训练目标：(1) <strong>弹性模式</strong>：模拟弹力带的渐进式阻力，适合康复和初学者；(2) <strong>划船模式</strong>：模拟水上划船的流体阻力，适合有氧力量训练；(3) <strong>离心模式</strong>：在肌肉拉长阶段增加阻力，用于突破力量平台和肌肉增长；(4) <strong>恒定模式</strong>：标准等张训练，全程均匀阻力；(5) <strong>向心模式</strong>：在肌肉缩短阶段增加阻力，用于爆发力训练。这 5 种模式覆盖了从术后康复到专业运动员的完整训练光谱。加上 280+ 动作库和 140+ 引导课程，AEKE 的内容深度虽不及 Tonal 的数千节课，但对于大多数家庭用户已经足够。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Eccentric、Chains、Spotter、Burnout 等模式更丰富，但被强制订阅锁死。<span>vs Speediance:</span> 模式数量接近，但缺少 Tonal 的 Chains 和 Burnout。</div>
+        </div>
+        <div class="insight-card right"><div class="insight-num">06</div>
+            <h4>Kickstarter 众筹战役：TCF 操盘的教科书级案例</h4>
+            <div class="insight-kpi">$1.52M 众筹 · 303% 超募 · 635 支持者 · 广告 ROAS 6.14× · 34 家媒体 · TCF 操盘</div>
+            <p>AEKE 的 Kickstarter 成功不是偶然，而是由 <strong>The Crowdfunding Formula（TCF）</strong> 体系化操盘的结果。核心打法拆解：<br>(1) <strong>押金预约漏斗</strong>：在众筹上线前通过押金预约筛选高意向买家，TCF 发现转化率不佳后反而<strong>提高了押金</strong>——过滤掉观望者，剩下的是真正会下单的人；<br>(2) <strong>付费广告主引擎</strong>：贡献了 $97 万直接收入，广告 ROAS 6.14×，2,820 万+ 曝光，素材策略是"视频优先 + 创始人出镜 + UGC 风格评测"；<br>(3) <strong>PR 信任背书</strong>：联系 1,100 名记者，获 34 家媒体报道（New Atlas、Athletech News 等），弥补广告无法提供的可信度；<br>(4) <strong>线下体验 + 直播</strong>：在洛杉矶举办体验日，让用户亲手试用；实时直播训练 + 产品经理 Q&A；<br>(5) <strong>低公开目标（$48K）</strong>：快速触发 Kickstarter 算法推荐和"Projects We Love"标签。整个战役的核心公式：<strong>预热蓄水（押金漏斗）→ 付费广告爆量（6× ROAS）→ 多维信任背书（PR+KOL+线下+社群）→ 买断制价值锚</strong>。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> Kickstarter $56 万（2021），规模远小于 AEKE 的 $1.52M。<span>vs Tonal/Peloton:</span> 老牌公司从未走众筹路线。AEKE 是唯一一个用众筹替代 VC 融资的玩家。</div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 07: WRONG 1/2 -->
+<div class="section"><div class="section-label">Risks & Mistakes</div>
+    <h1>五、AEKE 做错了什么</h1>
+    <div class="insight-grid">
+        <div class="insight-card wrong"><div class="insight-num">01</div>
+            <h4>线缆底部出线：结构性的训练限制</h4>
+            <div class="insight-kpi">线缆仅从设备底部出线 · 无法做头顶动作 · 无法做三头肌下拉 · 无法做高位划船</div>
+            <p>这是 AEKE 产品设计中最受诟病的弱点。K1 的数字线缆<strong>只能从设备底部出线</strong>——这意味着所有拉动动作都必须是向上的方向。无法完成三头肌下拉（需要高位出线）、头顶推举（需要高位出线）、高位划船等大量上半身训练动作。Speediance Gym Monster 2 提供了高/中/低三个出线位置，Tonal 的可调节臂可以在 7 个高度调整角度。AEKE 的底部出线限制意味着用户需要自创变通方案来完成某些基本的上半身动作——这对于一台 $3,298 的"全能"设备来说是一个重大的产品设计失误。一位 Trustpilot 评论者直指这是一个"硬件缺陷而非软件问题"——不能通过 OTA 更新解决。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> 多高度滑轮位置，可做头顶和下拉动作。<span>vs Tonal:</span> 7 个高度可调臂，覆盖所有角度。<span>vs 传统龙门架:</span> 可调高位/中位/低位——AEKE 缺失了 2/3 的出线角度。</div>
+        </div>
+        <div class="insight-card wrong"><div class="insight-num">02</div>
+            <h4>AI 的实际表现远不如宣传</h4>
+            <div class="insight-kpi">CES 展会上 WiFi 罢工数天 · Cybernews 评测发现动作追踪不准确 · 不会纠正错误形态</div>
+            <p>AI 是 AEKE 最大的营销卖点，但也是最大的兑现落差。在 CES 2025 的现场演示中，K1 连续数天无法连接 WiFi——对于一个以"智能"为核心卖点的设备来说，这是一个灾难性的第一印象。Cybernews 的评测中，一位健身教练观察了 AEKE 的 AI 指导后发现：<strong>AI 并未纠正测试者的错误动作</strong>——即使测试者故意使用了不标准的姿势。评测结论是"AI 教练的形态追踪不准确，需要多角度摄像头才能正确评估动作"——而 AEKE 只有一个摄像头。Trustpilot 上的批评者称 AI 教练"大多是炒作"、"很浅薄"。AEKE 在 Kickstarter 页面和官网上展示的 3D 骨骼追踪效果图在实际体验中打了明显的折扣。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> Tonal 的 AI 主要用于重量调节而非形态纠正——它不承诺做它做不到的事。<span>vs Tempo:</span> Tempo 的 3D 传感器在实际评测中更准确，但 Tempo 使用的是红外 3D 传感器而非普通 RGB 摄像头。</div>
+        </div>
+        <div class="insight-card wrong"><div class="insight-num">03</div>
+            <h4>软件体验：第一代产品的典型粗糙</h4>
+            <div class="insight-kpi">唇音不同步 · UI 中文感强 · 翻译不自然 · 冻结/卡顿 · Android 屏投不支持</div>
+            <p>AEKE 的软件被多位评测者和用户批评为"非常基础、设计不佳、用户体验明显带有中国产品的痕迹"。具体问题包括：课程视频的唇音不同步（教练的嘴型和语音对不上）、UI 界面的翻译和用词不自然（直接从中文字面翻译而非本地化适配）、偶发的系统冻结和卡顿、屏幕投射仅支持 iPhone（不支持 Android）。对于一台以"AI + 软件"为核心卖点的设备来说，软件体验是第一印象的决定性因素——而 AEKE 的软件在 2025 年仍然处于"原型级"而非"产品级"的水平。这些问题理论上可以通过 OTA 更新解决，但前提是公司愿意在软件工程上持续投入——对于一个仅靠众筹资金运营的公司来说，这是一个未经验证的假设。</p>
+            <div class="insight-vs"><span>vs Tonal:</span> 软件最成熟——唇音同步、UI 流畅、多年迭代。<span>vs Speediance:</span> 软件比 AEKE 成熟但仍有毛刺（AI 语音发音不准）。</div>
+        </div>
+        <div class="insight-card wrong"><div class="insight-num">04</div>
+            <h4>Trustpilot 仅 2 条评价 + 审查行为指控</h4>
+            <div class="insight-kpi">Trustpilot 3.5/5 · 仅 2 条评价 · 被指控删除 4 星以下网站评价 · 无 Reddit 讨论</div>
+            <p>一个 $3,298 的产品在全球最大的评价平台上只有 2 条评价——这在 2026 年是一个巨大的红旗。对比：Speediance 在英国站就有 100+ 条评价，Tonal 有 32 条（虽少但至少有，且配合了 BBB 136 件投诉的第三方记录）。一位 Trustpilot 评论者明确指控 AEKE 的官方网站"删除 4 星以下的评价"，建议潜在买家去 Trustpilot 看真实反馈。更令人担忧的是 Reddit 上几乎不存在关于 AEKE 的有机讨论——当你搜索 "AEKE Reddit" 时，结果几乎为零。对于一台已经通过 Kickstarter 发货的产品来说，缺乏在线社区讨论要么说明用户基数还太小，要么说明用户没有形成足够的热情来讨论这款产品——两者都是危险信号。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> 有活跃的 Facebook 用户群和 Reddit 讨论。<span>vs Tonal:</span> 有成熟的社区生态（虽然后台客服差）。<span>vs Peloton:</span> 社区是核心护城河。</div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 08: WRONG 2/2 -->
+<div class="section"><div class="section-label">Risks & Mistakes (Cont.)</div>
+    <h1>五、AEKE 做错了什么（续）</h1>
+    <div class="insight-grid">
+        <div class="insight-card wrong"><div class="insight-num">05</div>
+            <h4>定价过高：$3,298 在一个有 Speediance $3,749 的世界里</h4>
+            <div class="insight-kpi">K1 起价 $3,298 · K1 高配 $3,800 · Speediance GM2 $3,749 · 缺少明显的价格/价值优势</div>
+            <p>AEKE 的定价策略有一个根本性的矛盾：如果它的定位是"比 Tonal 更便宜、更自由的替代品"，那么 $3,298 的起价确实远低于 Tonal 的 $4,295+$495+$720/年。但它的直接竞对不是 Tonal——是 Speediance。Speediance GM2 起价 $3,749，比 AEKE 贵 $451，但提供了：(1) 全高度线缆位置；(2) 更成熟的软件和更大的用户社区；(3) 更好的品牌口碑（PCMag Editors' Choice、Esquire 推荐）；(4) 100,000+ 用户基础。对于一个理性消费者来说，多花 $451 获得一台被验证过的、功能更全面的设备是合理的选择。AEKE 的 AI 摄像头是独有优势，但这个优势被线缆限制和软件粗糙抵消了。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> +$451 = 全能线缆 + 成熟软件 + 大社区。<span>vs Tonal:</span> AEKE 便宜 $1,700/年——这是它的真正优势区间。</div>
+        </div>
+        <div class="insight-card wrong"><div class="insight-num">06</div>
+            <h4>众筹依赖 + 无 VC 缓冲 = 极度脆弱</h4>
+            <div class="insight-kpi">仅 $1.63M 外部资金（全部来自众筹）· 无机构投资者 · 年海外营收目标 ¥1 亿（$14M）</div>
+            <p>零 VC 融资是一把双刃剑。它的好处是股权无稀释——坏的方面是<strong>公司没有任何财务缓冲</strong>。$1.63M 的众筹资金对于一个要同时做硬件制造、软件研发、全球物流、品牌营销和客服体系的公司来说，是极度紧张的预算。如果 2025 年海外营收未能达到 ¥1 亿的目标，或者出现大规模退货/质量问题/专利诉讼，AEKE 没有 VC 来输血续命。Speediance 有 $13.6M VC（且营收已达 $49M），Tonal 有 $615M（虽然烧得差不多了）。AEKE 的生存完全取决于每一台 K1 的销售利润——这是一个"每个月都必须盈利否则就出局"的零容错游戏。</p>
+            <div class="insight-vs"><span>vs Speediance:</span> $13.6M VC + $49M 营收——有缓冲。<span>vs Tonal:</span> $615M VC——烧了很多但至少还没烧完。<span>vs FITURE:</span> 警示案例——$300M VC 也救不了没有 PMF 的产品。</div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 09: CUSTOMER REVIEWS -->
+<div class="section"><div class="section-label">Voice of Customer & Persona</div>
+    <h1>六、客户评价与核心用户画像</h1>
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心用户画像（综合研究）</h2>
+            <table class="info-table" style="margin-bottom:10px">
+                <thead><tr><th>维度</th><th style="width:180px">核心画像</th><th>说明</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>年龄</strong></td><td class="td-center"><strong>35-45 岁（~65%）</strong></td><td>核心年龄段；25-35 为第二梯队（~25%）</td></tr>
+                    <tr><td><strong>性别</strong></td><td class="td-center"><strong>女性为主（~70%）</strong></td><td>有私教经历；男性因力量训练功能被吸引（~30%）</td></tr>
+                    <tr><td><strong>收入</strong></td><td class="td-center"><strong>高净值家庭</strong></td><td>>¥30万/年；对标高端美容/奢侈品消费群体</td></tr>
+                    <tr><td><strong>健身水平</strong></td><td class="td-center"><strong>初中级（~80%）</strong></td><td>有私教经验但无法坚持；要指导不要极限重量</td></tr>
+                    <tr><td><strong>家庭状态</strong></td><td class="td-center"><strong>已婚有孩（~60%）</strong></td><td>家庭共享 + 多人使用场景是核心购买动机</td></tr>
+                    <tr><td><strong>住房</strong></td><td class="td-center"><strong>公寓/城市住宅</strong></td><td>0.3㎡占地和镜面形态是关键决策因素</td></tr>
+                    <tr><td><strong>心理动机</strong></td><td class="td-center">"不想在健身房被看"</td><td>体面、隐私、时间灵活 > 极致训练效果</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:10.5px;color:var(--mid-gray)">※ 百分比基于 AEKE 内部调研方向+定价+评测内容+众筹人群的综合推断。AEKE 未公开发布正式用户画像报告。</p>
+            <h2>Trustpilot 评分（aeke.com）</h2>
+            <div class="review-stat-box"><div><div class="review-big-score">3.5<span style="font-size:24px">/5</span></div><div class="review-big-label">"Average" · 仅 2 条评价 ⚠️</div></div><div style="flex:1">
+                <div class="review-bar-row"><span class="stars-label">★★★★★</span><span class="bar-track"><span class="bar-fill bar-5" style="width:50%"></span></span><span class="pct-label">~50%</span></div>
+                <div class="review-bar-row"><span class="stars-label">★★★★</span><span class="bar-track"><span class="bar-fill bar-4" style="width:0%"></span></span><span class="pct-label">0%</span></div>
+                <div class="review-bar-row"><span class="stars-label">★★★</span><span class="bar-track"><span class="bar-fill bar-3" style="width:0%"></span></span><span class="pct-label">0%</span></div>
+                <div class="review-bar-row"><span class="stars-label">★★</span><span class="bar-track"><span class="bar-fill bar-2" style="width:0%"></span></span><span class="pct-label">0%</span></div>
+                <div class="review-bar-row"><span class="stars-label">★</span><span class="bar-track"><span class="bar-fill bar-1" style="width:50%"></span></span><span class="pct-label">~50%</span></div>
+            </div></div>
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">⚠️ <strong>样本量严重不足！</strong>仅 2 条评价无法得出任何统计结论。3.5 分是基于"1 条 5 星 + 1 条 1 星"的算术结果。被指控官网删除低分评价——建议持续关注 Trustpilot 评价量的变化。</p>
+            <h2>第三方评测总结</h2>
+            <table class="info-table">
+                <thead><tr><th>媒体</th><th style="width:65px">评价</th><th>要点</th></tr></thead>
+                <tbody>
+                    <tr><td>The Gadgeteer</td><td class="td-center">👍 正面</td><td>"让健身变得轻松"——适合忙碌生活</td></tr>
+                    <tr><td>Tom's Guide</td><td class="td-center">👍 提名</td><td>"AI 驱动的训练体验"获认可</td></tr>
+                    <tr><td>Cybernews</td><td class="td-center">🔶 混合</td><td>AI 追踪不准确，教练评分低</td></tr>
+                    <tr><td>abit.ee</td><td class="td-center">👎 怀疑</td><td>"不如买传统设备"</td></tr>
+                    <tr><td>Trustpilot 差评</td><td class="td-center">👎 批评</td><td>"CES 上 WiFi 罢工数天，软件极其基础"</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>正面评价</h2>
+            <div class="quote-card">"设计简洁实用，做工扎实，客服响应好。软件一直在通过更新改进。43 寸屏幕真的很震撼。"
+                <span class="quote-source">— Trustpilot 5 星评价（2026 年 2 月，仅有的 2 条评价之一）</span></div>
+            <div class="quote-card">"作为两个孩子的妈妈，我能在 30 分钟内完成一次全身力量训练+有氧。不使用时就是一面镜子——丈夫也没有抱怨'客厅放了一台健身器材'。"
+                <span class="quote-source">— The Gadgeteer 评测（2025 年 10 月）</span></div>
+            <div class="quote-card">"AI 教练帮我发现了多年来自己训练都没意识到的姿势问题。6 维身体评估让我第一次对自己的身体状况有了量化的理解。"
+                <span class="quote-source">— Kickstarter 支持者评论</span></div>
+            <div class="divider"></div>
+            <h2>负面评价</h2>
+            <div class="quote-card" style="border-left-color:var(--terracotta)">"小心。别被营销骗了。CES 上 K1 连续几天连不上 WiFi。软件极其基础、设计很差、明显是中国产品的体验。线缆只能从底部出——不能做三头肌下拉和头顶动作。AI 教练大部分是炒作。"
+                <span class="quote-source">— Trustpilot 1 星评价（2026 年 1 月）</span></div>
+            <div class="quote-card" style="border-left-color:var(--terracotta)">"在我们故意使用错误姿势的测试中，AI 没有纠正任何错误。你需要多角度摄像头才能真正评估动作——一个角度不够。"
+                <span class="quote-source">— Cybernews 评测（2025 年 10 月）</span></div>
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:65px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>Kickstarter 超募</td><td class="td-center"><strong>303%</strong></td><td>产品概念有吸引力</td></tr>
+                    <tr><td>Trustpilot 评价数</td><td class="td-center"><strong>仅 2 条</strong></td><td>⚠️ 统计无意义，需持续观察</td></tr>
+                    <tr><td>Reddit 讨论量</td><td class="td-center"><strong>几乎为零</strong></td><td>⚠️ 社区尚未形成</td></tr>
+                    <tr><td>媒体评测</td><td class="td-center">正面 > 负面</td><td>产品获一定认可</td></tr>
+                    <tr><td>Kickstarter 支持者</td><td class="td-center"><strong>635 人</strong></td><td>早期用户基数小</td></tr>
+                </tbody>
+            </table>
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px"><strong>结论：</strong>AEKE 目前处于"早期用户阶段"——635 位 Kickstarter 支持者 + 极少的公开评价。产品概念和 AI 摄像头的潜力获得了一些评测者的认可，但实际体验中的软件粗糙、线缆限制和 AI 精准度不足是反复出现的问题。最关键的风险信号是<strong>缺乏有机的在线社区讨论</strong>——Reddit 上的沉默在 2026 年的消费电子品类中是非常不正常的。</p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 10: DATA + CONCLUSIONS -->
+<div class="section"><div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 & 关键结论</h1>
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-num">2022.01，深圳</td></tr>
+                    <tr><td>母公司</td><td class="td-num">趣动未来（深圳）科技有限公司</td></tr>
+                    <tr><td>创始人</td><td class="td-num">钟质峰（CEO）</td></tr>
+                    <tr><td>核心产品</td><td class="td-num">AEKE K1（$3,298-3,800）</td></tr>
+                    <tr><td>产品形态</td><td class="td-num">43" 4K 镜面 + 数字伺服电机</td></tr>
+                    <tr><td>外部资金</td><td class="td-num"><strong>$1.63M（100% 众筹，0 VC）</strong></td></tr>
+                    <tr><td>Kickstarter</td><td class="td-num">$1.52M / 635 支持者 / 303% 超募</td></tr>
+                    <tr><td>国内售价</td><td class="td-num">¥16,000+（力量镜 A1）</td></tr>
+                    <tr><td>强制订阅</td><td class="td-num"><strong>$0</strong></td></tr>
+                    <tr><td>最大阻力</td><td class="td-num">220 lbs（110 lbs/臂）</td></tr>
+                    <tr><td>AI 功能</td><td class="td-num">3D 摄像头 + 17 骨骼点追踪</td></tr>
+                    <tr><td>屏幕</td><td class="td-num"><strong>43" 4K 触摸屏（行业最大）</strong></td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num">3.5/5 ⚠️ 仅 2 条评价</td></tr>
+                    <tr><td>2025 海外营收目标</td><td class="td-num">¥1 亿（~$1,400 万）</td></tr>
+                    <tr><td>品牌代言</td><td class="td-num">林丹（品牌产品体验官）</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card"><div class="cc-num">01</div>
+                    <h3>AI 摄像头是真实的差异化——但也是最大的兑现风险</h3>
+                    <p>AEKE 的 3D 骨骼追踪 + 镜面组合在家用力量训练品类中是唯一的。但这个差异化的价值完全取决于 AI 的实际表现——而目前的第三方评测（Cybernews）和 Trustpilot 差评都指向了"AI 不如宣传"的结论。如果 AEKE 能通过软件迭代提升 AI 精准度，它就有机会定义一个全新的子品类（"AI 私教镜"）。如果 AI 继续停留在"营销噱头"层面，那它就是一台"贵了 $3,000 的镜子"。</p>
+                </div>
+                <div class="conclusion-card"><div class="cc-num">02</div>
+                    <h3>零 VC 是双刃剑，生存取决于 2025 年的营收兑现</h3>
+                    <p>$1.63M 众筹资金对于一个硬件公司来说是极度紧张的。AEKE 没有机构投资者的财务缓冲——每一个月都必须靠产品销售来覆盖成本和研发。¥1 亿海外营收目标（~$1,400 万）如果达成，按照硬件行业 30-40% 毛利估算，大约能产生 $400-560 万毛利——足以让一个小团队存活和迭代，但不足以支撑大规模广告投放或专利战。如果未达成，AEKE 将面临严峻的现金流压力。</p>
+                </div>
+                <div class="conclusion-card"><div class="cc-num">03</div>
+                    <h3>线缆底部出线是产品设计的"原罪"——不是软件能修的</h3>
+                    <p>Speediance 和 Tonal 的多高度线缆位置是一个已经被市场验证为"正确"的设计。AEKE 选择底部出线可能是为了保持镜面的美观和简洁——但这个权衡牺牲了太多功能性。除非 AEKE 在下一版硬件（K2 或 Pro 版）中加入高位出线，否则它将始终被 Speediance 和 Tonal 在"全能性"这个维度上压制。</p>
+                </div>
+                <div class="conclusion-card"><div class="cc-num">04</div>
+                    <h3>AEKE 的叙事 vs 现实：一个典型的"期待差"陷阱</h3>
+                    <p>AEKE 的 Kickstarter 宣传页和官网展示的是"未来"——完美的 AI 追踪、流畅的软件、全家人的健康中心。但当前交付的产品是"现在"——WiFi 连接问题、粗糙的 UI、受限的线缆、准确度打折的 AI。这个"期待差"是所有众筹硬件产品的经典陷阱——而 AEKE 能否通过快速的软件迭代和透明的沟通来弥合这个差距，将决定它是成为下一个 Speediance（从众筹走向持续增长）还是下一个 Mirror（概念美好但无法兑现）。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-aeke">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">AEKE</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">US / Global</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; fitness GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>AEKE 的 GTM 核心是用“AI 私教镜 + 买断制 + 众筹验证”切入高端家庭力量训练。</div>
+<div class="gtm-card"><p>AEKE 的 GTM 核心是用“AI 私教镜 + 买断制 + 众筹验证”切入高端家庭力量训练。它不是先靠 VC 烧钱铺渠道，而是用 Kickstarter、设计奖、媒体评测和官方独立站把早期需求压缩成预售订单；优势是零强制订阅和客厅友好形态，风险是线缆结构、软件成熟度、真实社区声量和售后交付都还在早期。</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">中国供应链和创始团队自有资源立项</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Kickstarter/TCF 做海外预热和早鸟转化</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">独立站承接高客单价购买</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">媒体评测与体育明星背书建立信任</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">售后、软件 OTA 和用户社区决定复购与口碑</span></div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心渠道：</strong>官方独立站或官方票务页承接高意向购买。</li>
+</ul></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">AEKE Smart Home Gym K1</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">smart_home_gym</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>核心收入与品牌识别产品。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>$3,298 K1 Complete Set；$3,398-$3,498 含不同 Bench 组合；官方页显示原价 $4,798 与限时折扣。</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory subscription / 无强制订阅；官方产品页写明 No Subscription Required 与 Lifetime Free 内容。</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Bench B1/B3、Smart Grips、Barbell、Heart Rate Armband、Scale、backup cords 等配件随套装或单卖；例如 Extender Belt $99、Barbell Squat Pad $69。</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Speediance Gym Monster 2 $3,390-$4,799；Tonal 2 $4,295 + $495 accessories + $59.95/mo membership；FightCamp packages start $299；Growl $4,500 + $60/mo.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-b1" target="_blank" rel="noopener noreferrer">AEKE Fitness Bench B1 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://joinfightcamp.com/" target="_blank" rel="noopener noreferrer">FightCamp official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness" target="_blank" rel="noopener noreferrer">The Verge GROWL pricing and product report</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.t3.com/active/aeke-smart-home-gym-review-i-tried" target="_blank" rel="noopener noreferrer">T3 AEKE Smart Home Gym review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">AEKE Bench / Smart Accessories</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">accessory_stack</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>高客单价硬件必须靠配件完成动作覆盖。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Bench 套装官方价 $3,398-$3,498；配件单品页面显示 B1/Smart Accessories。</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory subscription；课程和动作库作为买断设备体验的一部分。</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: Extender Belt $99、Barbell Squat Pad $69、Workout Towel $69；售后备用绳和配件需要明确。</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor accessory price comparison: Tonal Essential Accessories Bundle $495；Speediance Works/Family Plus 价差覆盖 bench/rower/barbell；FightCamp Elite 包含 bag/gloves/HR monitor。</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://aeke.com/products/buy-aeke-b1" target="_blank" rel="noopener noreferrer">AEKE Fitness Bench B1 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/collections/accessories" target="_blank" rel="noopener noreferrer">AEKE Smart Accessories official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/gym-monster-2" target="_blank" rel="noopener noreferrer">Speediance Gym Monster 2 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://joinfightcamp.com/" target="_blank" rel="noopener noreferrer">FightCamp official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://aeke.com/products/buy-aeke-b1" target="_blank" rel="noopener noreferrer">AEKE Fitness Bench B1 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/collections/accessories" target="_blank" rel="noopener noreferrer">AEKE Smart Accessories official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">AEKE Kickstarter campaign</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">crowdfunding_offer</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>众筹是 AEKE 的冷启动渠道，不只是销售渠道。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Base report records about $1.52M from 635+ backers; pledge tiers varied by package.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory subscription signal remains a core campaign selling point.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: pledge bundles included K1 sets, bench and smart accessories; shipping/tax vary by region.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor crowdfunding comparison: Speediance 2021 Kickstarter about $560K; Growl Kickstarter early-bird hardware around $2,449 versus MSRP about $4,500; Tonal/Peloton did not rely on Kickstarter for the current flagship model.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym" target="_blank" rel="noopener noreferrer">AEKE Kickstarter campaign link from official nav</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Speediance_Life_Technology_Inc." target="_blank" rel="noopener noreferrer">Speediance public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.kickstarter.com/projects/joingrowl/growl-the-ai-powered-boxing-and-fitness-coach" target="_blank" rel="noopener noreferrer">GROWL Kickstarter</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym" target="_blank" rel="noopener noreferrer">AEKE Kickstarter campaign link from official nav</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.t3.com/active/aeke-smart-home-gym-review-i-tried" target="_blank" rel="noopener noreferrer">T3 AEKE Smart Home Gym review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://aeke.com/" target="_blank" rel="noopener noreferrer">AEKE official home</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-k1" target="_blank" rel="noopener noreferrer">AEKE K1 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/pages/about-us" target="_blank" rel="noopener noreferrer">AEKE About Us</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/products/buy-aeke-b1" target="_blank" rel="noopener noreferrer">AEKE Fitness Bench B1 official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://aeke.com/collections/accessories" target="_blank" rel="noopener noreferrer">AEKE Smart Accessories official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.t3.com/active/aeke-smart-home-gym-review-i-tried" target="_blank" rel="noopener noreferrer">T3 AEKE Smart Home Gym review</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.kickstarter.com/projects/aeke/aeke-s1-pro-full-body-ai-home-gym" target="_blank" rel="noopener noreferrer">AEKE Kickstarter campaign link from official nav</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.trustpilot.com/review/aeke.com" target="_blank" rel="noopener noreferrer">AEKE Trustpilot</a> <span class="gtm-muted">[review]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body>
+</html>

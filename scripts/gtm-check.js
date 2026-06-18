@@ -2,7 +2,8 @@
  * gtm-check.js
  *
  * Lightweight quality check for GTM extension JSON files.
- * Checks structure completeness, minimum content, and English-source signals.
+ * Checks structure completeness, minimum content, English-source signals,
+ * pricing depth, founder profile links, and capital-history signals.
  * Does NOT perform fact-checking, scraping, or audit.
  *
  * Usage:
@@ -42,6 +43,26 @@ function countEnglishChars(str) {
 function countChineseChars(str) {
   if (typeof str !== 'string') return 0;
   return (str.match(/[一-鿿]/g) || []).length;
+}
+
+function deepText(val) {
+  if (val == null) return '';
+  if (typeof val === 'string') return val;
+  if (Array.isArray(val)) return val.map(deepText).join(' ');
+  if (typeof val === 'object') return Object.values(val).map(deepText).join(' ');
+  return String(val);
+}
+
+function hasHttpUrl(val) {
+  return /https?:\/\//i.test(deepText(val));
+}
+
+function hasPlaceholder(val) {
+  return /not_found|not found|not_disclosed|not disclosed|not_public|not public|unknown|google\.com\/search|placeholder/i.test(deepText(val));
+}
+
+function getBrandContext(data) {
+  return (data && data.brand_context) || (data && data.gtm_extension && data.gtm_extension.brand_context) || null;
 }
 
 // ============================================================================
@@ -270,7 +291,7 @@ function checkBrandContext(data, requireBrandContext) {
   const results = [];
   if (!requireBrandContext) return results;
 
-  const bc = (data.gtm_extension && data.gtm_extension.brand_context) || data.brand_context;
+  const bc = getBrandContext(data);
   if (!bc || typeof bc !== 'object') {
     results.push({ pass: false, msg: 'brand_context not found. Use --require-brand-context to enforce.', level: 'warning' });
     return results;
@@ -281,6 +302,103 @@ function checkBrandContext(data, requireBrandContext) {
   }
   if (!isNonEmpty(bc.brand_timeline)) {
     results.push({ pass: false, msg: 'brand_context.brand_timeline is empty.', level: 'warning' });
+  }
+
+  return results;
+}
+
+function checkResearchEvidenceDepth(data) {
+  const results = [];
+  const gtm = (data && data.gtm_extension) || {};
+  const bc = getBrandContext(data);
+  const products = Array.isArray(gtm.top_products) ? gtm.top_products : [];
+
+  if (!bc || typeof bc !== 'object') {
+    results.push({
+      pass: false,
+      msg: 'brand_context is missing. Add founder profiles, verified links, and capital_history so the base report can cite founder background and money events.',
+      level: 'warning',
+    });
+  } else {
+    const founderProfiles = bc.founder_profiles || bc.founders || bc.founder_background;
+    if (!hasHttpUrl(founderProfiles)) {
+      results.push({
+        pass: false,
+        msg: 'brand_context founder info has no explicit URL. Add founder profile links such as LinkedIn, official bio, company page, Wikipedia, SEC filing, podcast/interview, or credible media profile.',
+        level: 'warning',
+      });
+    }
+
+    const capitalHistory = bc.capital_history || bc.funding_history || bc.funding_or_capital_background;
+    if (!isNonEmpty(capitalHistory)) {
+      results.push({
+        pass: false,
+        msg: 'brand_context.capital_history is missing. Add chronological money events: founder cash, first revenue, spend/burn, funding rounds, losses, recalls, write-downs, exits, or IPO proceeds.',
+        level: 'warning',
+      });
+    } else {
+      const capitalText = deepText(capitalHistory).toLowerCase();
+      const hasMoneySignal = /[$¥€£]|usd|rmb|cny|million|billion|万|亿|融资|营收|亏损|损失|烧钱|召回|ipo|valuation|revenue|loss|profit|burn|raise|raised|funding/.test(capitalText);
+      if (!hasMoneySignal) {
+        results.push({
+          pass: false,
+          msg: 'brand_context.capital_history exists but has weak money-event detail. Include concrete sourced amounts, or omit the event and leave it for the audit queue.',
+          level: 'warning',
+        });
+      }
+    }
+  }
+
+  for (let i = 0; i < products.length; i++) {
+    const p = products[i] || {};
+    const pricing = p.pricing_model || p.price_stack || p.pricing;
+    if (!pricing || typeof pricing !== 'object') {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '] missing pricing_model. Include sourced product price, accessory/consumables price, software/subscription fee, service fee, and competitor price comparison when available.',
+        level: 'warning',
+      });
+      continue;
+    }
+
+    const pricingText = deepText(pricing).toLowerCase();
+    const pricingKeys = Object.keys(pricing).join(' ').toLowerCase();
+    const combined = pricingText + ' ' + pricingKeys;
+    if (!/(competitor|vs|对比|竞品)/i.test(combined)) {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '].pricing_model has no competitor price comparison signal.',
+        level: 'warning',
+      });
+    }
+    if (!/(subscription|software|saas|app|会员|订阅|软件|raas)/i.test(combined)) {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '].pricing_model has no sourced software/subscription/RaaS fee signal.',
+        level: 'warning',
+      });
+    }
+    if (!/(accessory|consumable|parts|配件|耗材|安装|service|warranty|repair|维护|保修)/i.test(combined)) {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '].pricing_model has no sourced accessory/consumables/service fee signal.',
+        level: 'warning',
+      });
+    }
+    if (!hasHttpUrl(pricing.sources || pricing)) {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '].pricing_model has no pricing source URL. Add official store, marketplace, filing, pricing page, review, or credible media source.',
+        level: 'warning',
+      });
+    }
+    if (hasPlaceholder(pricing)) {
+      results.push({
+        pass: false,
+        msg: 'top_products[' + i + '].pricing_model contains placeholder text. Remove not_found/unknown/search placeholders from report data; missing facts belong in the audit queue.',
+        level: 'warning',
+      });
+    }
   }
 
   return results;
@@ -367,7 +485,7 @@ function showHelp() {
   console.log([
     'gtm-check.js — Lightweight quality check for GTM extension JSON files.',
     '',
-    'Checks structure completeness, minimum content, and English-source signals.',
+    'Checks structure completeness, minimum content, English-source signals, pricing depth, founder links, and capital-history signals.',
     'Does NOT perform fact-checking, scraping, or audit.',
     '',
     'Usage:',
@@ -443,6 +561,7 @@ function main(argv) {
     ...checkQuality(data.gtm_extension || {}),
     ...checkEnglishSources(data.gtm_extension || {}),
     ...checkBrandContext(data, requireBrandContext),
+    ...checkResearchEvidenceDepth(data),
   ];
 
   const exitCode = printReport(jsonPath, data, allResults, strict);

@@ -1,0 +1,771 @@
+{
+  "schema_version": "1.0",
+  "case_context": {
+    "case_name": "Mammotion 创业案例",
+    "slug": "mammotion",
+    "case_type": "product_company_case",
+    "learning_objective": "给创业者看清 Mammotion 为什么先做无边界线割草机器人，它解决了什么真实痛点，开发难点和成本信号在哪里，公开证据能证明什么回报，为什么目前还不能计算真实 ROI，以及官网和招聘信息能怎样帮助判断下一步业务线。",
+    "first_principle": "Mammotion 值得研究，不是因为它会讲机器人故事，而是因为它把已有的机器人导航和硬件工程能力，放进了一个价格高、痛点强、传统玩家行动慢的户外维护场景：不用埋边界线的智能割草。",
+    "target_reader": "正在做高客单价硬件、机器人、户外设备或消费级智能设备的创业者",
+    "evidence_boundary": "创始人自有启动资金、精确融资额、BOM、研发工资、模具认证、CAC、退款损失、质保准备金、毛利率和真实 ROI，公开材料不足时不写成事实，只列为待验证输入。"
+  },
+  "founder_company_context": {
+    "founder_profiles": [
+      {
+        "name": "Jayden Wei",
+        "role": "创始人 / CEO",
+        "summary": "可用于创业学习的重点不是个人神话，而是团队能力：公开资料和既有底稿把 Wei 与 DJI RoboMaster、机器人导航、AgileX 机器人背景联系在一起，这解释了团队为什么能把工业/机器人导航能力迁移到消费级庭院机器人。",
+        "links": [
+          {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          },
+          {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "name": "Mammotion / AgileX 机器人团队",
+        "role": "创始团队能力背景",
+        "summary": "这家公司最值得学习的地方，是把机器人定位、户外自主移动、深圳硬件供应链和海外消费市场结合起来，而不是简单复制一个割草机外壳。",
+        "links": [
+          {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2022",
+        "event_type": "众筹",
+        "amount": "$3.37M",
+        "currency": "USD",
+        "description": "既有底稿记录 LUBA Kickstarter 众筹约 337 万美元。这里应该把它当作需求验证和早期现金流信号，不能当作完整研发成本。",
+        "sources": [
+          {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2022-2024",
+        "event_type": "众筹合计",
+        "amount": "$5.57M",
+        "currency": "USD",
+        "description": "既有底稿记录两次众筹合计约 557 万美元。这个数字在投资级使用前需要回到具体活动页复核；当前用途是判断早期市场是否愿意付钱。",
+        "sources": [
+          {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          }
+        ],
+        "confidence": "medium"
+      },
+      {
+        "date": "2024",
+        "event_type": "收入线索",
+        "amount": "522M",
+        "currency": "CNY",
+        "description": "既有底稿记录 2024 年割草机器人收入约 5.22 亿元、约 3 万台。它能证明产品线已经超过众筹玩具阶段，但不能单独证明利润 ROI。",
+        "sources": [
+          {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ]
+  },
+  "core_product_cases": [
+    {
+      "name": "LUBA AWD 无边界线割草机器人系列",
+      "case_role": "已验证的核心产品线，也是 Mammotion 真正应该重点学习的成功案例",
+      "status": "verified_core",
+      "why_developed": "Mammotion 选择割草机器人，是因为欧美大草坪维护有强复购痛点，人工和时间成本高，而传统机器人割草机常常需要埋边界线。团队的机器人导航能力刚好能切入这个痛点：让用户不用施工，也能让机器知道哪里该割、哪里不能割。",
+      "original_pain": "用户想少花时间割草，但旧方案安装麻烦、埋线痛苦、坡地难处理、设备看起来像专业工具，不像普通家庭能轻松购买和使用的消费品。",
+      "why_incumbents_failed": "传统园林设备品牌有机械、渠道和经销商优势，但在 RTK、视觉、激光雷达、App 建图、DTC 教育和快速迭代上动作较慢，给新玩家留下了窗口。",
+      "development_difficulties": [
+        {
+          "label": "户外自主移动比室内清洁更难",
+          "value": "割草机器人要处理坡地、湿草、树木遮挡卫星信号、复杂边界、宠物、玩具、花坛边缘和季节变化。这个环境比扫地机器人更不稳定。",
+          "source": {
+            "label": "The Verge 关于 LUBA 3 AWD 的报道",
+            "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "导航方案越来越重",
+          "value": "LUBA 3 增加 360 度激光雷达、双 1080p 摄像头、NetRTK 和 AI 障碍识别，说明最初的 RTK 方案还需要更多传感器来降低安装和可靠性问题。",
+          "source": {
+            "label": "The Verge 关于 LUBA 3 AWD 的报道",
+            "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "售后本身就是产品的一部分",
+          "value": "高客单价户外机器人不是只看发布参数，用户会用建图稳定性、维修、配件、季节可靠性和客服来评价产品。",
+          "source": {
+            "label": "Mammotion Trustpilot 评价页",
+            "url": "https://www.trustpilot.com/review/mammotion.com"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "development_costs": [
+        {
+          "label": "众筹金额不等于研发成本",
+          "value": "LUBA 约 337 万美元众筹额是发布和需求验证信号，不包括更早期的机器人研发、模具、认证、工资、质保准备金、物流和退货成本。",
+          "source": {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "传感器堆叠意味着 BOM 和软件复杂度上升",
+          "value": "从 RTK 到激光雷达、摄像头、NetRTK、AI 识别的组合，说明产品为了可靠性和易用性付出了更高硬件和算法成本；但公开资料没有披露单机 BOM。",
+          "source": {
+            "label": "The Verge 关于 LUBA 3 AWD 的报道",
+            "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "commercialization_path": [
+        {
+          "label": "先用 Kickstarter 验证付费意愿",
+          "value": "LUBA 用众筹证明用户愿意为无边界线割草付钱，再进入更广泛的 DTC、评测和零售渠道。",
+          "source": {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "DTC 和评测承担教育任务",
+          "value": "RTK、建图、坡地、避障这些价值点不是普通用户天然理解的，必须通过官网、视频、评测和用户案例解释清楚。",
+          "source": {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "零售和本地服务提供购买信心",
+          "value": "高价庭院机器人会让用户担心退货、维修和安装失败，所以本地服务覆盖、配件供应和零售背书会影响成交。",
+          "source": {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "pricing_stack": {
+        "product_price": {
+          "label": "LUBA 3 AWD 起售价",
+          "value": "The Verge 报道 LUBA 3 AWD 起售价为 2,399 美元 / 2,099 英镑 / 2,299 欧元；既有底稿中 LUBA 2 高端价格大约在 2,599-4,999 美元区间。",
+          "source": {
+            "label": "The Verge 关于 LUBA 3 AWD 的报道",
+            "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026"
+          },
+          "confidence": "medium"
+        },
+        "accessory_service": {
+          "label": "配件和服务才是真实总成本",
+          "value": "RTK 基站、车库、刀片、通信、充电部件、维修、质保和安装时间都应该计入用户总拥有成本。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "subscription_software": {
+          "label": "当前不写强制订阅",
+          "value": "公开页面把核心 App、建图和 OTA 当作产品能力。NetRTK、4G 或云服务是否收费可能因地区变化，写成订阅事实前必须回到官方价格页验证。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "competitor_prices": [
+          {
+            "label": "Husqvarna EPOS / Automower",
+            "value": "高端无边界线或专业割草机器人替代方案通常可达数千美元，比较时要看草坪面积、坡度、安装方式和本地服务。",
+            "source": {
+              "label": "Husqvarna Automower 官网",
+              "url": "https://www.husqvarna.com/us/robotic-lawn-mowers/"
+            },
+            "confidence": "medium"
+          },
+          {
+            "label": "Segway Navimow / Dreame / Eufy",
+            "value": "中低价无边界线竞品会从价格、摄像头方案和安装简单度上挑战 Mammotion。",
+            "source": {
+              "label": "TechRadar Yuka Mini 评测",
+              "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+            },
+            "confidence": "medium"
+          }
+        ]
+      },
+      "return_evidence": [
+        {
+          "label": "众筹回报信号",
+          "value": "既有底稿记录 LUBA Kickstarter 约 337 万美元。它证明早期用户愿意预付，但不能证明单品利润。",
+          "source": {
+            "label": "Mammotion Kickstarter 主页",
+            "url": "https://www.kickstarter.com/profile/mammotion/created"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "收入放大信号",
+          "value": "既有底稿记录 2024 年割草机器人收入约 5.22 亿元、约 3 万台，说明产品线已经从众筹新品走向规模化销售。",
+          "source": {
+            "label": "Mammotion 官网",
+            "url": "https://www.mammotion.com/"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "roi_assessment": {
+        "calculable": false,
+        "formula": "ROI = (LUBA 产品线毛利 - 研发工资 - 模具 - 认证 - 发布营销 - 物流 - 退款 - 质保准备金 - 售后成本) / 总投入",
+        "known_inputs": [
+          {
+            "label": "已知收入信号",
+            "value": "既有底稿记录 2024 年割草机器人收入约 5.22 亿元。",
+            "source": {
+              "label": "Mammotion 官网",
+              "url": "https://www.mammotion.com/"
+            },
+            "confidence": "medium"
+          },
+          {
+            "label": "已知众筹信号",
+            "value": "LUBA Kickstarter 约 337 万美元，用来判断需求验证强度。",
+            "source": {
+              "label": "Mammotion Kickstarter 主页",
+              "url": "https://www.kickstarter.com/profile/mammotion/created"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "missing_inputs": [
+          "各代产品 BOM",
+          "研发团队工资",
+          "模具和认证成本",
+          "CAC 和 Kickstarter 投放费用",
+          "退款 / 退货率",
+          "质保准备金和维修成本",
+          "各 SKU 毛利率",
+          "渠道扣点和物流成本"
+        ],
+        "conclusion": "公开证据足以说明 LUBA 创造了真实需求和收入，但不足以计算真实 ROI。创业者可以先判断“收入相对众筹金额的放大效应很强”，但不能把它等同于利润回报。"
+      },
+      "entrepreneur_lessons": [
+        "优先找高客单价、强痛点、用户已经愿意花钱但旧方案很笨重的场景。",
+        "机器人产品发布不是终点，建图、配件、维修、客服和季节可靠性都属于产品。",
+        "众筹验证的是需求和现金流，不是利润率。"
+      ]
+    },
+    {
+      "name": "YUKA / LUBA Mini 低门槛扩展线",
+      "case_role": "市场扩展产品线，不是最初成功证明",
+      "status": "market_expansion",
+      "why_developed": "LUBA 在大草坪和高端市场证明需求后，Mammotion 需要更小、更便宜的型号扩大可服务市场。",
+      "original_pain": "许多家庭草坪面积更小，也想要无边界线割草，但 LUBA AWD 的尺寸和价格超过他们需要。",
+      "why_incumbents_failed": "新老玩家都在降低安装复杂度和入门价格，Mammotion 如果只守高端旗舰，会丢掉更大的中小草坪市场。",
+      "development_difficulties": [
+        {
+          "label": "降本不能牺牲可靠性",
+          "value": "低价机型要减少成本，同时保留足够导航可靠性。户外场景里，省掉传感器或软件能力很容易伤害体验。",
+          "source": {
+            "label": "TechRadar Yuka Mini 评测",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "小型机也逃不开安装和建图",
+          "value": "评测强调，即使是更小的无边界线机器人，也需要认真处理基站位置、建图和初始设置。",
+          "source": {
+            "label": "T3 LUBA Mini AWD 评测",
+            "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "development_costs": [
+        {
+          "label": "价格梯度是成本压力信号",
+          "value": "TechRadar 报道 Yuka Mini 美国价格从约 1,099 美元起，说明公司在主动做更低入口价格，但公开资料没有披露降本幅度。",
+          "source": {
+            "label": "TechRadar Yuka Mini 评测",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "commercialization_path": [
+        {
+          "label": "从大草坪高端用户向中小草坪扩张",
+          "value": "这条线的任务是扩大 TAM，而不是替代 LUBA 旗舰。",
+          "source": {
+            "label": "TechRadar Yuka Mini 评测",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "依靠评测解释低价版是否仍然可靠",
+          "value": "用户会关心价格降下来以后，Mammotion 的无边界线承诺是否还成立。",
+          "source": {
+            "label": "T3 LUBA Mini AWD 评测",
+            "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "pricing_stack": {
+        "product_price": {
+          "label": "Yuka Mini 价格",
+          "value": "TechRadar 报道美国 Yuka Mini S 为 1,099 美元，600H 为 1,099 美元，800H 为 1,299 美元。",
+          "source": {
+            "label": "TechRadar Yuka Mini 评测",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+          },
+          "confidence": "medium"
+        },
+        "accessory_service": {
+          "label": "安装和替换件成本",
+          "value": "充电站、RTK / 基站位置、刀片、车库和季节性售后仍然是总成本的一部分。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "subscription_software": {
+          "label": "软件收费边界",
+          "value": "引用来源没有证明强制订阅；App、建图和 OTA 先按产品功能处理。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "competitor_prices": [
+          {
+            "label": "Dreame / Eufy / Segway 中低价挑战者",
+            "value": "这些竞品会用更低价格和更简单安装抢中小草坪用户，Mammotion 必须证明导航质量和服务值回价格。",
+            "source": {
+              "label": "TechRadar Yuka Mini 评测",
+              "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+            },
+            "confidence": "medium"
+          },
+          {
+            "label": "LUBA Mini AWD",
+            "value": "T3 提到 LUBA Mini AWD 800 价格为 1,599 美元，是更小但仍偏高端的选择。",
+            "source": {
+              "label": "T3 LUBA Mini AWD 评测",
+              "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd"
+            },
+            "confidence": "medium"
+          }
+        ]
+      },
+      "return_evidence": [
+        {
+          "label": "单独回报尚未被公开证明",
+          "value": "公开资料能支持价格和评测兴趣，但没有给出 YUKA / LUBA Mini 单独收入、销量、毛利或 ROI。",
+          "source": {
+            "label": "TechRadar Yuka Mini 评测",
+            "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "roi_assessment": {
+        "calculable": false,
+        "formula": "ROI = 低价产品线毛利 - 降本研发 - 模具 - 发布 - 物流 - 售后 - 质保成本，再除以产品线投入",
+        "known_inputs": [
+          {
+            "label": "已知价格输入",
+            "value": "TechRadar 报道 Yuka Mini 美国价格约 1,099-1,299 美元。",
+            "source": {
+              "label": "TechRadar Yuka Mini 评测",
+              "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "missing_inputs": [
+          "各型号销量",
+          "毛利率",
+          "降本研发投入",
+          "售后成本",
+          "退货率",
+          "渠道扣点"
+        ],
+        "conclusion": "这是一条扩大市场的产品线，可能带来更大销量，但公开数据还不能证明它像 LUBA AWD 一样成功。"
+      },
+      "entrepreneur_lessons": [
+        "旗舰验证成功后，扩展产品要保留核心承诺，同时降低价格和使用门槛。",
+        "机器人产品降价太快，可能会用可靠性和售后压力换销量。"
+      ]
+    },
+    {
+      "name": "SPINO 泳池机器人线",
+      "case_role": "面向户外家庭机器人的战略实验，不应写成已验证成功业务",
+      "status": "strategic_experiment",
+      "why_developed": "泳池清洁和庭院割草面对相似的富裕户外家庭用户，也能复用机器人移动、清洁、充电和 App 体验能力。",
+      "original_pain": "泳池用户想减少人工清洁，也不想频繁打捞、充电、维护泳池机器人。",
+      "why_incumbents_failed": "泳池机器人老玩家能解决一部分清洁问题，但在自动回收、底座、维护便利和智能体验上仍有改进空间。",
+      "development_difficulties": [
+        {
+          "label": "水下环境是另一类机器人问题",
+          "value": "泳池机器人要处理防水密封、水下运动、垃圾收集、打捞和充电，这些难点与割草不同。",
+          "source": {
+            "label": "WIRED Spino E1 评测",
+            "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "自动上岸 / 自回收可能是新痛点",
+          "value": "The Verge 报道的 Spino S1 Pro 使用自回收底座概念，说明 Mammotion 想解决的不只是刷泳池，还包括打捞和充电麻烦。",
+          "source": {
+            "label": "The Verge Spino S1 Pro 报道",
+            "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "development_costs": [
+        {
+          "label": "新场景复杂度是成本信号",
+          "value": "公开资料没有给出 SPINO 研发成本。可确认的成本信号是：它需要防水结构、水下运动、过滤系统、底座 / 回收机构和另一套售后能力。",
+          "source": {
+            "label": "The Verge Spino S1 Pro 报道",
+            "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "commercialization_path": [
+        {
+          "label": "先用入门泳池机器人测试品类",
+          "value": "WIRED 评测 Spino E1，把它作为较低成本泳池机器人观察，说明 Mammotion 正在测试草坪之外的户外清洁场景。",
+          "source": {
+            "label": "WIRED Spino E1 评测",
+            "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot"
+          },
+          "confidence": "medium"
+        },
+        {
+          "label": "再尝试高端自回收概念",
+          "value": "Spino S1 Pro 指向更高端的第二次尝试：解决回收和充电，而不仅是清洗泳池底部。",
+          "source": {
+            "label": "The Verge Spino S1 Pro 报道",
+            "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "pricing_stack": {
+        "product_price": {
+          "label": "Spino E1 价格信号",
+          "value": "WIRED 把 Spino E1 作为低成本泳池机器人评测；S1 Pro 的最终价格和规格需要以官方页面为准。",
+          "source": {
+            "label": "WIRED Spino E1 评测",
+            "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot"
+          },
+          "confidence": "medium"
+        },
+        "accessory_service": {
+          "label": "泳池耗材和服务",
+          "value": "滤网、刷子、密封电池、底座、回收结构和进水损坏支持，会成为真实服务边界。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "subscription_software": {
+          "label": "不写软件订阅",
+          "value": "引用来源没有证明强制软件订阅；当前价值主要是硬件和服务。",
+          "source": {
+            "label": "Mammotion 支持页",
+            "url": "https://www.mammotion.com/pages/support"
+          },
+          "confidence": "medium"
+        },
+        "competitor_prices": [
+          {
+            "label": "Aiper / Beatbot / Dolphin / Wybot",
+            "value": "泳池机器人已经有从低价到高端的竞品，Mammotion 必须证明清洁、回收和服务体验更好。",
+            "source": {
+              "label": "WIRED Spino E1 评测",
+              "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot"
+            },
+            "confidence": "medium"
+          },
+          {
+            "label": "Mammotion S1 Pro 未来价格",
+            "value": "引用文章里的 S1 Pro 价格尚不能当作稳定官方价格，写固定价格前需要重新核对官网。",
+            "source": {
+              "label": "The Verge Spino S1 Pro 报道",
+              "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+            },
+            "confidence": "medium"
+          }
+        ]
+      },
+      "return_evidence": [
+        {
+          "label": "回报尚未被证明",
+          "value": "SPINO 有产品和评测证据，但没有公开收入、销量、毛利或复购证据，应写成战略实验。",
+          "source": {
+            "label": "WIRED Spino E1 评测",
+            "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "roi_assessment": {
+        "calculable": false,
+        "formula": "ROI = 泳池机器人产品线毛利 - 新品类研发 - 模具 - 售后 - 质保 - 库存 - 渠道启动成本，再除以产品线投入",
+        "known_inputs": [
+          {
+            "label": "已知产品存在信号",
+            "value": "Spino E1 评测和 Spino S1 Pro 报道证明这条业务线存在，但不能证明它的回报。",
+            "source": {
+              "label": "The Verge Spino S1 Pro 报道",
+              "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "missing_inputs": [
+          "销量",
+          "毛利率",
+          "新品类研发投入",
+          "售后成本",
+          "进水损坏质保准备金",
+          "渠道扣点",
+          "退货率"
+        ],
+        "conclusion": "SPINO 应该被写成未来选项，而不是成功产品线。公开证据不足以计算 ROI。"
+      },
+      "entrepreneur_lessons": [
+        "相邻品类扩张必须复用能力和用户，而不是只复用品牌名。",
+        "第二曲线在没有收入和售后证据前，只能写成押注。"
+      ]
+    }
+  ],
+  "recruitment_signals": [
+    {
+      "signal": "机器人感知 / SLAM / 激光雷达 / RTK 岗位",
+      "evidence_status": "watchlist_not_yet_captured",
+      "source": {
+        "label": "Mammotion LinkedIn 招聘页",
+        "url": "https://www.linkedin.com/company/mammotion/jobs/"
+      },
+      "capability_gap": "户外自主移动、传感器融合、地图可靠性和弱化基站依赖。",
+      "inferred_direction": "如果后续捕捉到当前 JD 文本，这会支持 Mammotion 继续加码户外自主导航，而不只是经典 RTK 割草。",
+      "confidence": "low",
+      "validation_needed": "抓取当前岗位标题、地点、发布时间和 JD 原文，再把它写成已观察证据。"
+    },
+    {
+      "signal": "泳池机器人 / 防水结构 / 底座系统岗位",
+      "evidence_status": "watchlist_not_yet_captured",
+      "source": {
+        "label": "Mammotion LinkedIn 招聘页",
+        "url": "https://www.linkedin.com/company/mammotion/jobs/"
+      },
+      "capability_gap": "防水硬件、水下运动、过滤系统、自回收和充电底座。",
+      "inferred_direction": "如果捕捉到这类岗位，会加强 SPINO 是真实第二业务线的判断。",
+      "confidence": "low",
+      "validation_needed": "寻找包含 pool robot、underwater robot、waterproofing、fluid mechanics、dock、pool cleaning 等关键词的稳定岗位页。"
+    },
+    {
+      "signal": "北美 / 欧洲售后、配件、现场服务、零售运营岗位",
+      "evidence_status": "watchlist_not_yet_captured",
+      "source": {
+        "label": "Mammotion LinkedIn 招聘页",
+        "url": "https://www.linkedin.com/company/mammotion/jobs/"
+      },
+      "capability_gap": "维修周转、替换件、质保处理、零售退货和本地服务覆盖。",
+      "inferred_direction": "如果捕捉到这类岗位，说明公司可能从发布增长转向规模化交付质量。",
+      "confidence": "low",
+      "validation_needed": "抓取 service manager、repair center、spare parts、technical support、retail operations 等岗位。"
+    },
+    {
+      "signal": "云服务 / App / OTA / 4G 连接岗位",
+      "evidence_status": "watchlist_not_yet_captured",
+      "source": {
+        "label": "Mammotion LinkedIn 招聘页",
+        "url": "https://www.linkedin.com/company/mammotion/jobs/"
+      },
+      "capability_gap": "联网机器人管理、远程诊断、地图 / 云同步和服务遥测。",
+      "inferred_direction": "如果捕捉到这类岗位，可能支持未来软件或服务层，但不能单独证明订阅收入。",
+      "confidence": "low",
+      "validation_needed": "抓取 JD 原文，并与官方支持页、价格页交叉验证是否存在付费软件或云服务。"
+    }
+  ],
+  "official_site_signals": [
+    {
+      "signal": "LUBA 3 增加激光雷达 + NetRTK + AI 视觉",
+      "source": {
+        "label": "The Verge 关于 LUBA 3 AWD 的报道",
+        "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026"
+      },
+      "insight": "Mammotion 仍在把核心割草线推向更重的自主导航和更低安装门槛，而不是只做便宜硬件。",
+      "confidence": "medium"
+    },
+    {
+      "signal": "YUKA Mini / LUBA Mini 低门槛产品",
+      "source": {
+        "label": "TechRadar Yuka Mini 评测",
+        "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review"
+      },
+      "insight": "公司在 LUBA 高端楔子验证后，按草坪面积和预算切分市场。",
+      "confidence": "medium"
+    },
+    {
+      "signal": "SPINO 泳池机器人线",
+      "source": {
+        "label": "The Verge Spino S1 Pro 报道",
+        "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026"
+      },
+      "insight": "SPINO 说明 Mammotion 想从割草扩到更广义的户外家庭机器人，但公开回报证据还不足。",
+      "confidence": "medium"
+    },
+    {
+      "signal": "支持页和 Trustpilot 评价可见",
+      "source": {
+        "label": "Mammotion 支持页",
+        "url": "https://www.mammotion.com/pages/support"
+      },
+      "insight": "高客单价户外机器人里，服务和维修就是产品能力，报告不能把售后当成附录。",
+      "confidence": "medium"
+    }
+  ],
+  "future_bets": [
+    {
+      "bet": "户外自主机器人平台",
+      "why_it_matters": "如果 Mammotion 能把建图、感知、定位、App 和服务系统复用到割草、泳池和更多户外场景，它就不只是割草机公司。",
+      "supporting_signals": [
+        "LUBA 3 传感器融合变重",
+        "SPINO 泳池机器人扩张",
+        "招聘观察清单指向 SLAM / 感知 / 云服务 / 售后"
+      ],
+      "confidence": "medium",
+      "watch_next": "继续抓取感知、云诊断、泳池机器人、海外售后岗位；同时观察官方价格页是否出现付费连接或服务计划。"
+    },
+    {
+      "bet": "低价割草机扩张",
+      "why_it_matters": "YUKA 和 LUBA Mini 能扩大市场，但也可能压低毛利并增加售后压力。",
+      "supporting_signals": [
+        "Yuka Mini 价格约 1,099-1,299 美元",
+        "LUBA Mini AWD 评测价格信号",
+        "更多竞品进入中低价无边界线割草机市场"
+      ],
+      "confidence": "medium",
+      "watch_next": "跟踪单品销量排名、评测数量、退货投诉、配件购买和支持评价是否改善。"
+    },
+    {
+      "bet": "服务网络成为真正护城河",
+      "why_it_matters": "高客单价户外机器人如果安装、维修、配件和质保弱，商业化会被售后拖住。",
+      "supporting_signals": [
+        "Trustpilot 和评测里出现支持 / 可靠性风险",
+        "零售扩张需要退货和维修能力",
+        "招聘观察清单包含现场服务和配件角色"
+      ],
+      "confidence": "medium",
+      "watch_next": "抓取海外服务岗位、维修中心页面、备件可得性和质保条款变化。"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Mammotion 官网",
+      "url": "https://www.mammotion.com/",
+      "publisher": "Mammotion",
+      "used_for": "官方产品和公司信息"
+    },
+    {
+      "label": "Mammotion 支持页",
+      "url": "https://www.mammotion.com/pages/support",
+      "publisher": "Mammotion",
+      "used_for": "售后、服务和支持边界"
+    },
+    {
+      "label": "Mammotion Kickstarter 主页",
+      "url": "https://www.kickstarter.com/profile/mammotion/created",
+      "publisher": "Kickstarter",
+      "used_for": "众筹证据"
+    },
+    {
+      "label": "The Verge 关于 LUBA 3 AWD 的报道",
+      "url": "https://www.theverge.com/news/850763/mammotion-luba-3-awd-robot-lawnmower-lidar-ces-2026",
+      "publisher": "The Verge",
+      "used_for": "割草机新技术和价格信号"
+    },
+    {
+      "label": "TechRadar Yuka Mini 评测",
+      "url": "https://www.techradar.com/home/small-appliances/mammotion-yuka-mini-lawnbot-review",
+      "publisher": "TechRadar",
+      "used_for": "低门槛割草机价格和评测信号"
+    },
+    {
+      "label": "T3 LUBA Mini AWD 评测",
+      "url": "https://www.t3.com/home-living/garden/mammotion-luba-mini-awd",
+      "publisher": "T3",
+      "used_for": "LUBA Mini 价格和体验信号"
+    },
+    {
+      "label": "WIRED Spino E1 评测",
+      "url": "https://www.wired.com/review/mammotion-spino-e1-pool-robot",
+      "publisher": "WIRED",
+      "used_for": "泳池机器人战略实验信号"
+    },
+    {
+      "label": "The Verge Spino S1 Pro 报道",
+      "url": "https://www.theverge.com/tech/854835/mammotion-spino-s1-pro-robot-pool-cleaner-ces-2026",
+      "publisher": "The Verge",
+      "used_for": "泳池机器人未来方向"
+    },
+    {
+      "label": "Mammotion Trustpilot 评价页",
+      "url": "https://www.trustpilot.com/review/mammotion.com",
+      "publisher": "Trustpilot",
+      "used_for": "支持和可靠性风险信号"
+    },
+    {
+      "label": "Mammotion LinkedIn 招聘页",
+      "url": "https://www.linkedin.com/company/mammotion/jobs/",
+      "publisher": "LinkedIn",
+      "used_for": "招聘观察来源；本轮没有捕捉单个稳定 JD"
+    },
+    {
+      "label": "Husqvarna Automower 官网",
+      "url": "https://www.husqvarna.com/us/robotic-lawn-mowers/",
+      "publisher": "Husqvarna",
+      "used_for": "竞品品类和价格背景"
+    }
+  ]
+}

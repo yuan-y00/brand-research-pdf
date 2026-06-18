@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "case_context": {
+    "case_name": "Example Company",
+    "slug": "example-company",
+    "case_type": "product_company_case",
+    "learning_objective": "What an entrepreneur should learn from this case.",
+    "first_principle": "The one reason this case is worth studying.",
+    "target_reader": "Founder / operator",
+    "evidence_boundary": "Do not write unsupported founder cash, margin, burn, CAC, losses, or ROI."
+  },
+  "founder_company_context": {
+    "founder_profiles": [
+      {
+        "name": "Founder Name",
+        "role": "Founder / CEO",
+        "summary": "Sourced background only.",
+        "links": [
+          {
+            "label": "Official bio",
+            "url": "https://example.com"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "YYYY",
+        "event_type": "first_order / crowdfunding / funding / revenue / loss / acquisition",
+        "amount": "Amount or non-cash metric",
+        "currency": "USD / CNY / units",
+        "description": "What happened and why it matters.",
+        "sources": [
+          {
+            "label": "Source",
+            "url": "https://example.com"
+          }
+        ],
+        "confidence": "medium"
+      }
+    ]
+  },
+  "core_product_cases": [
+    {
+      "name": "Core product line",
+      "case_role": "verified core product line / market expansion / strategic experiment",
+      "status": "verified_core",
+      "why_developed": "Why this product was developed.",
+      "original_pain": "The customer pain and market gap.",
+      "why_incumbents_failed": "Why existing players left the opportunity open.",
+      "development_difficulties": [
+        {
+          "label": "Hard technical or operating problem",
+          "value": "Evidence-based description.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "development_costs": [
+        {
+          "label": "Known cost signal",
+          "value": "Use funding, campaign spend, supply commitment, team scale, or explicitly say not calculable.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "commercialization_path": [
+        {
+          "label": "Launch channel",
+          "value": "Kickstarter / DTC / Amazon / retail / enterprise.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "pricing_stack": {
+        "product_price": {
+          "label": "Main product price",
+          "value": "Price or price range.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        },
+        "accessory_service": {
+          "label": "Accessory/service boundary",
+          "value": "Installation, warranty, consumables, repair, parts.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        },
+        "subscription_software": {
+          "label": "Subscription/software boundary",
+          "value": "Paid plan or sourced no-subscription boundary.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        },
+        "competitor_prices": [
+          {
+            "label": "Competitor",
+            "value": "Sourced competitor price or total-cost comparison.",
+            "source": {
+              "label": "Source",
+              "url": "https://example.com"
+            },
+            "confidence": "medium"
+          }
+        ]
+      },
+      "return_evidence": [
+        {
+          "label": "Return signal",
+          "value": "Crowdfunding, revenue, units, profit, acquisition, valuation.",
+          "source": {
+            "label": "Source",
+            "url": "https://example.com"
+          },
+          "confidence": "medium"
+        }
+      ],
+      "roi_assessment": {
+        "calculable": false,
+        "formula": "ROI = (gross profit - all development / launch / support costs) / all costs",
+        "known_inputs": [
+          {
+            "label": "Known input",
+            "value": "Sourced input.",
+            "source": {
+              "label": "Source",
+              "url": "https://example.com"
+            },
+            "confidence": "medium"
+          }
+        ],
+        "missing_inputs": ["BOM", "R&D payroll", "tooling", "CAC", "returns", "warranty reserve"],
+        "conclusion": "State what can and cannot be concluded."
+      },
+      "entrepreneur_lessons": [
+        "Actionable lesson for founders."
+      ]
+    }
+  ],
+  "recruitment_signals": [
+    {
+      "signal": "Role family or captured job post title",
+      "evidence_status": "watchlist_not_yet_captured",
+      "source": {
+        "label": "Job board or careers page",
+        "url": "https://example.com"
+      },
+      "capability_gap": "What capability this hire would add.",
+      "inferred_direction": "What business direction this suggests.",
+      "confidence": "low",
+      "validation_needed": "What to verify before treating this as fact."
+    }
+  ],
+  "official_site_signals": [
+    {
+      "signal": "New product, technology keyword, channel, service, pricing, country, or investor page change",
+      "source": {
+        "label": "Official page",
+        "url": "https://example.com"
+      },
+      "insight": "What this reveals.",
+      "confidence": "medium"
+    }
+  ],
+  "future_bets": [
+    {
+      "bet": "Likely future business line",
+      "why_it_matters": "Why this matters to the company.",
+      "supporting_signals": ["Official site signal", "Recruitment signal", "Patent/channel/source signal"],
+      "confidence": "medium",
+      "watch_next": "What would confirm or disconfirm it."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Source",
+      "url": "https://example.com",
+      "publisher": "Publisher",
+      "used_for": "What the source supports"
+    }
+  ]
+}

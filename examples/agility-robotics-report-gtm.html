@@ -3,204 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agility Robotics 品牌调研报告</title>
+<title>Agility Robotics 深度调研报告</title>
 <style>
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif; max-width: 860px; margin: 0 auto; padding: 40px 24px; background: #F5F0E8; color: #2B2D42; line-height: 1.7; }
-h1 { font-size: 32px; font-weight: 900; margin-bottom: 4px; }
-h2 { font-size: 22px; margin-top: 36px; border-bottom: 2px solid #E07A5F; padding-bottom: 6px; }
-h3 { font-size: 17px; margin-top: 24px; }
-.subtitle { color: #8B8B8B; font-size: 14px; margin-bottom: 24px; }
-.tag { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #FDF2EC; color: #E07A5F; font-weight: 500; margin-right: 6px; }
-.section { background: white; border-radius: 10px; padding: 20px 24px; margin: 20px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
-.section h3 { margin-top: 0; }
-ul { padding-left: 20px; }
-li { margin-bottom: 6px; }
-a { color: #E07A5F; }
-.footer { text-align: center; margin-top: 48px; font-size: 13px; color: #BBB; }
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --shadow-hover: 0 4px 16px rgba(0,0,0,0.06); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); line-height: 1.1; }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0%, var(--accent) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); }
+.impact-down { color: var(--negative); }
+.impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); line-height: 1.1; }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); }
+.insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); }
+.insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+.source-list ol { padding-left: 20px; }
+.source-list li { margin-bottom: 8px; color: var(--ink-light); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } .cover-stat-block { grid-template-columns: 1fr 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; page-break-after: always; } .section:last-child { page-break-after: auto; } h1, h2, h3 { page-break-after: avoid; } }
 </style>
 </head>
 <body>
 
-<h1>Agility Robotics 品牌调研报告</h1>
-<div class="subtitle">人形机器人 · 仓储物流 · 美国 · 2015 年创立</div>
-<div><span class="tag">$2.5B 估值</span><span class="tag">Digit 人形机器人</span><span class="tag">RaaS 商业模式</span><span class="tag">GXO/Spanx 部署</span><span class="tag">RoboFab 工厂</span></div>
-
-<div class="section">
-<h3>一句话总结</h3>
-<p>Agility Robotics 是全球第一家将双足人形机器人（Digit）投入商业仓储物流运营的公司，从 Oregon State University 的学术研究（ATRIAS → Cassie → Digit）逐步演进为可规模化的 RaaS 部署平台。</p>
+<div class="section cover">
+    <div>
+        <div class="cover-label">Humanoid Robotics · Warehouse Automation</div>
+        <div class="cover-title">Agility Robotics</div>
+        <div class="cover-subtitle">全球最早把双足人形机器人投入付费仓储场景的公司<br>从 OSU 动态机器人实验室到 Digit + Arc + RoboFab 的商业化路径</div>
+        <div class="cover-line"></div>
+        <div class="cover-footer">AGILITY ROBOTICS · DIGIT · EST. 2015 · OREGON</div>
+    </div>
+    <div class="cover-stat-block">
+        <div class="cover-stat"><div class="cs-num">$330M+</div><div class="cs-label">累计融资公开口径</div></div>
+        <div class="cover-stat"><div class="cs-num">$2.5B</div><div class="cs-label">媒体报道目标估值</div></div>
+        <div class="cover-stat"><div class="cs-num">100K+</div><div class="cs-label">GXO 累计搬运 totes</div></div>
+        <div class="cover-stat"><div class="cs-num">10,000</div><div class="cs-label">RoboFab 长期年产能目标</div></div>
+    </div>
 </div>
 
 <div class="section">
-<h2>创始人 / 核心团队背景</h2>
-
-<h3>Jonathan Hurst — 联合创始人 & 首席机器人官</h3>
-<ul>
-<li>Carnegie Mellon University 机器人学 PhD，师从 legged locomotion 领域先驱</li>
-<li>2008 年加入 Oregon State University，成为 OSU 第一位机器人学教授，建立 Dynamic Robotics Laboratory</li>
-<li>从 DARPA $1M 资助起家，二十年间坚持"先解决 mobility，再考虑形态"的技术路线</li>
-<li>ATRIAS 项目奠定了弹簧-质量步行模型基础，直接影响 Cassie 和 Digit 的腿部设计</li>
-<li>不以 Elon Musk 式 hype 著称，属于学院派出身、偏稳健工程风格的机器人创业者</li>
-</ul>
-
-<h3>Damion Shelton — 联合创始人 & President</h3>
-<ul>
-<li>Carnegie Mellon University 同窗，与 Hurst 在 Pittsburgh 相识</li>
-<li>早期担任 CEO，2024 年 3 月 Peggy Johnson 接任后转任 President，专注生产与装配运营</li>
-<li>负责 RoboFab 工厂建设和制造流程</li>
-</ul>
-
-<h3>Mikhail Jones — 联合创始人</h3>
-<ul>
-<li>OSU Dynamic Robotics Lab 研究生，Cassie 的技术核心贡献者</li>
-</ul>
-
-<h3>Peggy Johnson — CEO（2024 年 3 月 - 至今）</h3>
-<ul>
-<li>Qualcomm 24 年（1990-2014）：从工程师做到 EVP、全球市场发展总裁，BREW 平台创造 $1B+ 应用收入</li>
-<li>Microsoft EVP of Business Development（2014-2020）：直接向 Satya Nadella 汇报，创办 M12 企业风投基金，投出 80+ 公司</li>
-<li>Magic Leap CEO（2020-2023）：主导从消费级向企业级 AR 的 pivot</li>
-<li>2024 年 3 月被任命为 Agility Robotics CEO，标志着公司从 R&D 阶段向规模化商业部署转型</li>
-</ul>
+    <div class="section-label">Section 01</div>
+    <h1>公司概况与起源</h1>
+    <h2>创始团队背景</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:120px">姓名</th><th style="width:150px">角色</th><th>核心履历</th><th style="width:170px">对公司的意义</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center">Jonathan Hurst</td><td>联合创始人 / Chief Robot Officer</td><td>Carnegie Mellon 机器人学 PhD；2008 年加入 Oregon State University，建立 Dynamic Robotics Laboratory；长期研究双足动态步态和 legged locomotion。</td><td>技术源头。ATRIAS、Cassie、Digit 的底层运动控制路线都来自其二十年研究积累。</td></tr>
+            <tr><td class="td-center">Damion Shelton</td><td>联合创始人 / President</td><td>Carnegie Mellon 背景；早期担任 CEO；2024 年 3 月 Peggy Johnson 接任 CEO 后转任 President，专注 RoboFab 制造和装配运营。</td><td>把实验室机器人推向公司化运营，并承担规模化制造落地。</td></tr>
+            <tr><td class="td-center">Mikhail Jones</td><td>联合创始人</td><td>OSU Dynamic Robotics Lab 研究生，Cassie 设计的核心技术贡献者。</td><td>早期产品从学术原型走向商业研究平台的重要工程力量。</td></tr>
+            <tr><td class="td-center">Peggy Johnson</td><td>CEO（2024 年 3 月起）</td><td>Qualcomm 24 年，从工程师做到 EVP；Microsoft EVP of Business Development；Magic Leap CEO。</td><td>公司从 R&D 阶段转向商业部署、战略合作和规模化组织的信号。</td></tr>
+        </tbody>
+    </table>
+    <div class="callout"><strong>关键判断：</strong>Agility Robotics 不是从“我要做人形机器人”开始，而是从“先解决双足 mobility”开始。人形外观是后来为了进入人类设计的仓库空间而逐步加上的形态结果。</div>
+    <hr class="divider">
+    <h2>公司起源：OSU 实验室到仓储物流</h2>
+    <p>Agility Robotics 于 2015 年末在 Oregon 州 Albany / Corvallis 一带成立，源自 Oregon State University Dynamic Robotics Lab。技术路线先经历 ATRIAS 的弹簧-质量步行模型验证，再到 Cassie 的双足研究平台，最后演进为带躯干、双臂和感知系统的 Digit。</p>
+    <p>早期公司曾尝试 last-mile delivery 场景，并与 Ford 合作展示 Digit 从无人车搬运包裹的可能性。约 2020 年后，公司战略重心转向仓储物流，因为室内仓库环境更可控、任务更窄、ROI 更容易被客户理解。</p>
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">2015</div><div class="stat-label">公司成立</div></div>
+        <div class="stat-card"><div class="stat-number">2024</div><div class="stat-label">GXO 多年期 RaaS 协议</div></div>
+        <div class="stat-card"><div class="stat-number">70K ft²</div><div class="stat-label">RoboFab 工厂面积</div></div>
+        <div class="stat-card"><div class="stat-number">RBR50</div><div class="stat-label">2025 Robot of the Year</div></div>
+    </div>
 </div>
 
 <div class="section">
-<h2>公司起源</h2>
-<p>Agility Robotics 于 2015 年末在 Oregon 州 Albany/Corvallis 正式成立，根源在 OSU Dynamic Robotics Lab 的学术研究。创始人 Hurst 反复强调："我们并没有刻意去造一个'人形机器人'，我们只是想解决 mobility 问题。"</p>
-<p>技术路线演进：</p>
-<ul>
-<li><strong>ATRIAS（2009-2016）</strong>：DARPA 资助 $1M 的理论验证平台，名字意为 "Assume The Robot Is A Sphere"，证明弹簧-质量步行模型可行，但效率低、无转向、需防跌落吊索</li>
-<li><strong>Cassie（2016-2017）</strong>：第一代可商业化研究平台，仅双腿（无上身），3-DOF 髋关节、动力脚踝、密封防雨雪、5-8 小时续航，售予 Caltech、Harvard、UC Berkeley、UMich 等研究实验室，定价 <$100K（后期 ~$300K），擅长跑 5K（53 分钟）和 100m 吉尼斯世界纪录</li>
-<li><strong>Digit V1-V5（2017-至今）</strong>：全尺寸人形机器人，增加躯干、双臂和感知系统，经历 last-mile delivery（Ford 合作）→ warehouse logistics 的战略转向，V4 为首个商业化量产版本，V5 预计 2025/2026 推出</li>
-</ul>
-<p>公司的核心叙事围绕"劳动力短缺"和"在人类空间工作的机器人"展开：仓储物流长期面临招工难、离职率高、重复性劳动损伤大，而 Digit 不需要改造仓库基础设施就能在人类设计的空间中工作。</p>
+    <div class="section-label">Section 02</div>
+    <h1>融资与品牌大事年表</h1>
+    <h2>融资 / 资本背景</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:100px">时间</th><th style="width:150px">轮次</th><th style="width:130px">金额</th><th>投资方 / 备注</th></tr></thead>
+        <tbody>
+            <tr><td>2018-03</td><td>Seed</td><td class="td-num">$8M</td><td>Playground Global 领投，Sony Innovation Fund 参投。</td></tr>
+            <tr><td>2020-04</td><td>Series A</td><td class="td-num">$20.25M</td><td>DCVC 与 Playground Global 共同领投，Sony、TDK Ventures 等参投。</td></tr>
+            <tr><td>2022-04</td><td>Series B</td><td class="td-num">$150M</td><td>DCVC / Playground Global 领投，Amazon Industrial Innovation Fund 参投。</td></tr>
+            <tr><td>2024-11</td><td>Series C</td><td class="td-num">$150M</td><td>DCVC 主导，Schaeffler Group 战略投资，媒体称公司进入独角兽阶段。</td></tr>
+            <tr><td>2025</td><td>媒体报道新一轮</td><td class="td-num">~$400M</td><td>WP Global 领投、SoftBank 参与；投前估值约 $1.75B，投后目标约 $2.5B。Agility 为私有公司，估值非官方披露。</td></tr>
+        </tbody>
+    </table>
+    <hr class="divider">
+    <h2>品牌大事年表</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:110px">时间</th><th>关键事件</th><th style="width:140px">战略意义</th></tr></thead>
+        <tbody>
+            <tr><td>2008</td><td>Jonathan Hurst 加入 OSU，建立 Dynamic Robotics Laboratory。</td><td class="td-impact impact-neutral">技术起点</td></tr>
+            <tr><td>2009</td><td>ATRIAS 项目启动，DARPA 资助，验证双足步行理论。</td><td class="td-impact impact-neutral">基础研究</td></tr>
+            <tr><td>2015</td><td>Agility Robotics 正式成立。</td><td class="td-impact impact-up">公司化</td></tr>
+            <tr><td>2016-2017</td><td>Cassie 亮相并销售给高校实验室；完成 5K 跑和 100m 纪录等技术验证。</td><td class="td-impact impact-up">研究平台商业化</td></tr>
+            <tr><td>2019</td><td>Digit V2 与 Ford last-mile delivery 概念合作公开。</td><td class="td-impact impact-neutral">场景探索</td></tr>
+            <tr><td>2020</td><td>完成 A 轮融资，战略重心转向仓储物流。</td><td class="td-impact impact-up">商业聚焦</td></tr>
+            <tr><td>2022</td><td>B 轮 $150M，Amazon Industrial Innovation Fund 参投。</td><td class="td-impact impact-up">产业背书</td></tr>
+            <tr><td>2023-12</td><td>Digit 在 GXO / Spanx 仓库开始试点。</td><td class="td-impact impact-up">真实部署</td></tr>
+            <tr><td>2024-06</td><td>GXO 签署行业首个多年期人形机器人 RaaS 商业协议。</td><td class="td-impact impact-up">付费验证</td></tr>
+            <tr><td>2024-10</td><td>RoboFab 投产，Digit V4 推出。</td><td class="td-impact impact-up">制造化</td></tr>
+            <tr><td>2025</td><td>Digit 在 GXO 场景累计搬运 100,000+ totes，获 RBR50 首届 Robot of the Year。</td><td class="td-impact impact-up">可靠性证明</td></tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="section">
-<h2>融资 / 资本背景</h2>
-<ul>
-<li><strong>种子轮（2018 年 3 月）</strong>：$8M，Playground Global 领投，Sony Innovation Fund 参投</li>
-<li><strong>A 轮（2020 年 4 月）</strong>：$20.25M，DCVC + Playground Global 领投，Sony、TDK Ventures、MFV Partners 参投</li>
-<li><strong>B 轮（2022 年 4 月）</strong>：$150M，DCVC + Playground Global 领投，Amazon Industrial Innovation Fund 参投</li>
-<li><strong>C 轮（2024 年 11 月）</strong>：$150M，DCVC 主导，Schaeffler Group 战略投资</li>
-<li><strong>新一轮（2025 年，进行中）</strong>：~$400M，WP Global 领投，SoftBank 参投；投前估值 ~$1.75B，投后估值可能 ~$2.5B</li>
-</ul>
-<p>累计融资额约 $330M+，核心投资人 DCVC 和 Playground Global 每轮均参与。关键产业投资者包括 Amazon、Sony、Schaeffler。</p>
+    <div class="section-label">Section 03</div>
+    <h1>代表产品与系统</h1>
+    <h2>1. ATRIAS / Cassie：从理论验证到研究平台</h2>
+    <div class="callout"><strong>核心数据：</strong>ATRIAS 起于 DARPA 资助的双足动态步态研究；Cassie 是 Agility 的第一代可商业化研究平台，仅有双腿，无上身和感知系统，曾销售给 Caltech、Harvard、UC Berkeley、University of Michigan 等机器人实验室。</div>
+    <p>Cassie 的价值不在于它能直接进入仓库，而在于它把动态步态、腿部硬件、户外稳定性和研究社区口碑变成了可销售的工程资产。它是 Agility 从大学实验室走向商业公司的第一步。</p>
+
+    <h2>2. Digit：仓储场景的人形机器人</h2>
+    <div class="callout"><strong>核心数据：</strong>Digit 身高约 5'9"（175cm），负载约 35-55 lbs；核心任务是从 AMR 上取 tote 并放上传送带或堆叠到指定位置。V4 开始进入更明确的商业化量产版本，配备头部、安全停止系统和 FSoE 协议。</div>
+    <p>Digit 的产品定位很克制：不是通用工人，而是在仓库里完成一个高频、重复、可测量的任务。它的优势是能够在为人类设计的通道、货架、传送带和 tote 工作流中运转，减少客户改造基础设施的成本。</p>
+
+    <h2>3. Agility Arc + RoboFab：从单机到部署系统</h2>
+    <div class="callout"><strong>核心数据：</strong>Agility Arc 是云端 fleet management / workflow 平台；RoboFab 位于 Salem, Oregon，占地约 70,000 sq ft，目标长期年产能 10,000 台。</div>
+    <p>Arc 与 RoboFab 说明 Agility 的护城河不只在机器人本体。仓库客户需要的是“能部署、能监控、能维护、能扩展”的系统，而不是一台会走路的 demo。RoboFab 负责把实验室装配转为制造流程，Arc 负责把单台机器人转为可管理的 fleet。</p>
 </div>
 
 <div class="section">
-<h2>品牌大事年表</h2>
-<ul>
-<li><strong>2008</strong>：Jonathan Hurst 加入 OSU 成为首位机器人学教授</li>
-<li><strong>2009</strong>：ATRIAS 项目启动，DARPA $1M 资助</li>
-<li><strong>2015</strong>：Agility Robotics 正式成立</li>
-<li><strong>2016</strong>：Cassie 亮相，首批售罄</li>
-<li><strong>2017</strong>：Cassie 完成首次 5K 跑（53 分钟）；Digit V1 概念发布</li>
-<li><strong>2018</strong>：种子轮 $8M</li>
-<li><strong>2019</strong>：Digit V2 面世，Ford 合作 last-mile delivery 实验</li>
-<li><strong>2020</strong>：A 轮 $20.25M；战略转向仓储物流</li>
-<li><strong>2021</strong>：Cassie 创 100m 吉尼斯世界纪录（24.73 秒）</li>
-<li><strong>2022</strong>：B 轮 $150M（Amazon 参投）</li>
-<li><strong>2023 年 9 月</strong>：RoboFab 工厂宣布建设（70,000 sq ft）</li>
-<li><strong>2023 年 10 月</strong>：Digit 进入 Amazon 仓库测试</li>
-<li><strong>2023 年 12 月</strong>：Digit 在 GXO/Spanx 仓库开始试点</li>
-<li><strong>2024 年 3 月</strong>：Peggy Johnson 出任 CEO；Agility Arc 云平台发布</li>
-<li><strong>2024 年 6 月</strong>：GXO 签署行业首个多年期人形机器人 RaaS 商业协议</li>
-<li><strong>2024 年 10 月</strong>：RoboFab 工厂投产；Digit V4 发布（首次有头部）</li>
-<li><strong>2024 年 11 月</strong>：C 轮 $150M，晋升独角兽；Schaeffler 签约（100 家全球工厂目标）</li>
-<li><strong>2025 年初</strong>：Digit 在 GXO 累计搬运 100,000+ totes；获 RBR50 首届 Robot of the Year</li>
-<li><strong>2025 年</strong>：新一轮 ~$400M 融资推进中；RoboFab 年产量规划数百台，长期 10,000 台/年</li>
-</ul>
+    <div class="section-label">Section 04</div>
+    <h1>商业模式与客户生态</h1>
+    <h2>商业模式概览</h2>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">01</div><h4>Robot-as-a-Service</h4><p>核心模式是客户不一次性购买机器人，而是按使用时长或服务付费。公开估算常以约 $30/hr 作为参考口径。RaaS 降低客户采用新品类的前期风险，也让 Agility 持续承担维护和升级责任。</p></div>
+        <div class="insight-card right"><div class="insight-num">02</div><h4>硬件直购 / 战略采购</h4><p>对于 Schaeffler 这类战略合作伙伴，Agility 也存在硬件采购或部署协议。此类客户更像共同定义工业场景的 partner，而不是单纯买设备的终端客户。</p></div>
+        <div class="insight-card right"><div class="insight-num">03</div><h4>Agility Arc SaaS</h4><p>Arc 提供 facility mapping、workflow definition、实时监控、KPI dashboard、WMS/WES/MES API 集成等能力。长期看，它可能成为硬件之外的订阅收入和客户锁定层。</p></div>
+        <div class="insight-card right"><div class="insight-num">04</div><h4>服务与维护</h4><p>机器人在仓库运行后的维护、远程诊断、现场支持和“Robot Hospital”式维修能力，是 RaaS 模式能否赚钱的关键成本项。</p></div>
+    </div>
+    <hr class="divider">
+    <h2>核心客户和生态</h2>
+    <table class="info-table">
+        <thead><tr><th style="width:140px">客户 / 伙伴</th><th>关系</th><th style="width:160px">战略意义</th></tr></thead>
+        <tbody>
+            <tr><td class="td-center">GXO Logistics</td><td>行业首个多年期人形机器人 RaaS 客户，Digit 在 GXO / Spanx 仓库累计搬运 100,000+ totes。</td><td class="td-impact impact-up">付费验证</td></tr>
+            <tr><td class="td-center">Amazon</td><td>2022 年通过 Amazon Industrial Innovation Fund 投资，2023 年在 Seattle 地区设施测试 Digit。</td><td class="td-impact impact-up">产业背书</td></tr>
+            <tr><td class="td-center">Schaeffler</td><td>2024 年 11 月战略投资并签署部署合作，目标覆盖全球 100 家工厂。</td><td class="td-impact impact-up">国际工业客户</td></tr>
+            <tr><td class="td-center">Manhattan Associates</td><td>WMS 集成合作。</td><td class="td-impact impact-neutral">软件生态</td></tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="section">
-<h2>代表产品 / 系统</h2>
-
-<h3>1. Cassie — 双足研究平台</h3>
-<ul>
-<li>仅双腿，无上身和感知系统，鸟腿式（ostrich/cassowary）结构</li>
-<li>16 个月开发周期，DARPA $1M 资助</li>
-<li>售予全球多个顶尖机器人实验室，定价 <$100K-$300K</li>
-<li>完成户外 5K 跑（53 分钟单次充电）和 100m 吉尼斯纪录</li>
-<li>为 Digit 的腿部硬件和控制算法提供了完整技术验证</li>
-</ul>
-
-<h3>2. Digit — 仓储人形机器人（V4 量产版）</h3>
-<ul>
-<li>身高 5'9"（175cm），自重 125-143 lbs，负载 35-55 lbs</li>
-<li>双足行走 + 双臂操作，能在人类设计的空间中工作，无需改造仓库</li>
-<li>核心工作：从 AMR 上取 tote → 放上传送带 / 地板堆叠（tote-to-conveyor / tote-stacking）</li>
-<li>V4 特点：首次配备头部、Cat 1 Stop 安全系统、FailSafe over EtherCAT（FSoE）</li>
-<li>效率约 65-75% 人类速度，运行/充电比 2:1（V5 目标 10:1）</li>
-<li>RBR50 2025 首届 Robot of the Year</li>
-</ul>
-
-<h3>3. Agility Arc + RoboFab — 部署与制造平台</h3>
-<ul>
-<li><strong>Arc</strong>：云端编队管理平台（2024 年 3 月发布），支持 facility mapping、workflow definition、实时监控、KPI dashboard、WMS/WES/MES API 集成，SaaS 模式</li>
-<li><strong>RoboFab</strong>：全球首家人形机器人量产工厂（Salem, OR，70,000 sq ft），2024 年 10 月投产，~150 名工人，1 条产线运行（最多 4 条），年产能目标 10,000 台</li>
-</ul>
+    <div class="section-label">Section 05</div>
+    <h1>护城河与做对了什么</h1>
+    <div class="kpi-grid">
+        <div class="kpi-card"><div class="kpi-value">20Y</div><div class="kpi-label">Legged locomotion 积累</div></div>
+        <div class="kpi-card"><div class="kpi-value">3 Step</div><div class="kpi-label">ATRIAS → Cassie → Digit</div></div>
+        <div class="kpi-card"><div class="kpi-value">RaaS</div><div class="kpi-label">降低客户采用风险</div></div>
+        <div class="kpi-card"><div class="kpi-value">Factory</div><div class="kpi-label">RoboFab 制造能力</div></div>
+    </div>
+    <div class="insight-grid">
+        <div class="insight-card right"><div class="insight-num">01</div><h4>技术路线克制</h4><p>Agility 没有一开始就承诺“通用人形机器人”。它先解决双足移动，再做研究平台，再进入仓储窄任务。每一步只增加一个复杂维度，降低了硬科技产品的失败概率。</p></div>
+        <div class="insight-card right"><div class="insight-num">02</div><h4>先卖给研究社区</h4><p>Cassie 作为研究平台卖给高校实验室，既获得收入，也获得技术反馈和学术声誉。这是深科技从实验室 spin-out 走向商业化的经典过渡方式。</p></div>
+        <div class="insight-card right"><div class="insight-num">03</div><h4>用真实仓库数据代替 demo</h4><p>Digit 在 GXO 搬运 100,000+ totes，是比发布会视频更强的商业证据。它证明客户愿意为窄任务的可靠性付费。</p></div>
+        <div class="insight-card right"><div class="insight-num">04</div><h4>硬件 + 云平台 + 制造</h4><p>Arc 和 RoboFab 让 Agility 从单个机器人产品扩展为部署系统。竞争对手可以复制 demo，但很难快速复制运行数据、客户流程、制造和维护能力。</p></div>
+    </div>
 </div>
 
 <div class="section">
-<h2>商业模式概览</h2>
-<ul>
-<li><strong>Robot-as-a-Service（RaaS）</strong>：客户按使用付费（~$30/hr），不购买硬件，Agility 负责部署、维护和升级；客户 ROI 周期 <2 年</li>
-<li><strong>直接销售</strong>：也提供硬件直购选项，面向战略合作伙伴（如 Schaeffler）</li>
-<li><strong>Agility Arc SaaS</strong>：云端编队管理订阅收入</li>
-<li><strong>服务与支持</strong>：RoboFab 内设 "Robot Hospital" 维修中心，提供远程支持和现场服务</li>
-</ul>
+    <div class="section-label">Section 06</div>
+    <h1>争议、失败与风险</h1>
+    <div class="insight-grid">
+        <div class="insight-card wrong"><div class="insight-num">01</div><h4>人形机器人 hype 过热</h4><p>2025 年大量资本涌入人形机器人赛道，但行业技术成熟度仍容易被高估。Agility 相对务实，但也无法完全脱离赛道泡沫对融资、人才和客户预期的影响。</p></div>
+        <div class="insight-card wrong"><div class="insight-num">02</div><h4>任务范围仍很窄</h4><p>Digit 当前核心能力集中在 tote 搬运等可预定义仓储任务。离“通用仓库工人”仍有很长距离，商业规模取决于能否扩展到更多稳定、高频、可计费的任务。</p></div>
+        <div class="insight-card wrong"><div class="insight-num">03</div><h4>部署成本和安全集成重</h4><p>真实仓库部署需要安全 PLC、停止机制、场地流程适配、WMS/WES/MES 集成和现场维护。每台机器人之外的集成成本，可能比硬件本体更决定单位经济模型。</p></div>
+        <div class="insight-card wrong"><div class="insight-num">04</div><h4>制造规模化尚未证明</h4><p>RoboFab 进入生产不等于已完成大规模制造。若年产量、良率、维修成本和 uptime 无法同步提升，RaaS 模式可能承受较大现金流压力。</p></div>
+        <div class="insight-card wrong"><div class="insight-num">05</div><h4>Amazon 试点结果不透明</h4><p>Amazon 是投资者也是潜在客户，但公开信息没有显示其已签署类似 GXO 的多年期商业协议。Amazon 可能继续测试、延迟采购，或选择自研/多供应商策略。</p></div>
+        <div class="insight-card wrong"><div class="insight-num">06</div><h4>低价竞争和中国供应链</h4><p>Unitree、UBTech、AgiBot 等中国厂商在价格、出货量和迭代速度上有压力优势。Agility 的高可靠工业路线需要证明其高成本结构能被客户 ROI 覆盖。</p></div>
+    </div>
 </div>
 
 <div class="section">
-<h2>客户和生态</h2>
-<ul>
-<li><strong>GXO Logistics</strong>：行业首个多年期 RaaS 客户，Spanx 仓库（Flowery Branch, GA），100,000+ totes</li>
-<li><strong>Amazon</strong>：2023 年试点，2022 年通过 Industrial Innovation Fund 投资，试点结果 97% 任务完成率、7.5 小时续航</li>
-<li><strong>Schaeffler Group</strong>：2024 年 11 月战略投资 + 购买协议，计划在全球 100 家工厂部署 Digit</li>
-<li><strong>Manhattan Associates</strong>：WMS 集成合作</li>
-<li>生态兼容：AMR 对接（协同移动机器人运送 tote）、传送带无缝衔接、标准 API 集成现有 WMS/WES/MES</li>
-</ul>
+    <div class="section-label">Section 07</div>
+    <h1>核心结论与来源</h1>
+    <h2>关键结论</h2>
+    <div class="conclusion-grid">
+        <div class="conclusion-card"><div class="cc-num">01</div><h3>Agility 是务实派人形机器人样本</h3><p>它的核心资产不是 viral demo，而是从研究平台到付费仓库部署的连续证据链。</p></div>
+        <div class="conclusion-card"><div class="cc-num">02</div><h3>Digit 的价值来自窄任务可靠性</h3><p>在 tote 搬运这种窄任务里证明 uptime，比承诺通用智能更接近真实采购决策。</p></div>
+        <div class="conclusion-card"><div class="cc-num">03</div><h3>RaaS 降低采用门槛但加重运营责任</h3><p>客户少承担 capex，Agility 则必须承担部署、维修、软件和 uptime 的长期成本。</p></div>
+        <div class="conclusion-card"><div class="cc-num">04</div><h3>真正的考验是规模化经济模型</h3><p>GXO 是关键里程碑，但能否扩展到更多客户、更多站点、更多任务，仍是未解问题。</p></div>
+    </div>
+    <hr class="divider">
+    <h2>Sources</h2>
+    <div class="source-list">
+        <ol>
+            <li><a href="https://www.wweek.com/technology/2026/03/11/osu-robotics-professor-jonathan-hurst-helped-create-a-25-billion-company-that-makes-humanoid-robots-with-ai-intelligence/">Willamette Week — OSU Robotics Professor Jonathan Hurst Helped Create a $2.5 Billion Company (2026)</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Agility_Robotics">Wikipedia — Agility Robotics</a></li>
+            <li><a href="https://www.agilityrobotics.com/company">Agility Robotics — Official Company Page</a></li>
+            <li><a href="https://engineering.oregonstate.edu/all-stories/cassie-steps-limelight">OSU College of Engineering — Cassie Steps into the Limelight</a></li>
+            <li><a href="https://terra.oregonstate.edu/2017/05/new-way-walking/">OSU Terra Magazine — A New Way of Walking (2017)</a></li>
+            <li><a href="https://www.therobotreport.com/veteran-tech-exec-peggy-johnson-named-agility-robotics-ceo/">The Robot Report — Peggy Johnson Named Agility Robotics CEO (2024)</a></li>
+            <li><a href="https://www.agilityrobotics.com/content/digit-moves-over-100k-totes">Agility Robotics — Digit Moves Over 100,000 Totes</a></li>
+            <li><a href="https://www.therobotreport.com/rbr50-company-2025/digit-is-first-humanoid-deployed-in-a-commercial-application/">The Robot Report — RBR50: Digit First Humanoid in Commercial Application (2025)</a></li>
+            <li><a href="https://www.nasdaq.com/press-release/gxo-signs-industry-first-multi-year-agreement-agility-robotics-2024-06-27">NASDAQ — GXO Signs Industry-First Multi-Year Agreement with Agility Robotics (2024)</a></li>
+            <li><a href="https://www.oregonlive.com/silicon-forest/2025/08/oregon-factory-builds-the-walking-robots-of-tomorrow-these-are-going-to-be-a-part-of-everyday-life.html">OregonLive — Oregon Factory Builds the Walking Robots of Tomorrow (2025)</a></li>
+            <li><a href="https://finance.yahoo.com/news/agility-robotics-brings-operational-visibility-120000517.html">Yahoo Finance — Agility Arc Launch at MODEX 2024</a></li>
+            <li><a href="https://parsers.vc/startup/agilityrobotics.com/">Parsers VC — Agility Robotics Funding History</a></li>
+            <li><a href="https://newatlas.com/robotics/humanoid-robots-work-amazon">New Atlas — Humanoid Robots Get to Work at Amazon Facility (2024)</a></li>
+            <li><a href="https://www.techspot.com/news/110738-people-building-humanoid-robots-hype-running-ahead-reality.html">TechSpot — Humanoid Robot Hype Running Ahead of Reality (2025)</a></li>
+            <li><a href="https://newo.ai/humanoid-robot-hype-real-timeline/">Newo.ai — Beyond Hype: The Real Timeline for Humanoid Robots (2025)</a></li>
+        </ol>
+    </div>
 </div>
-
-<div class="section">
-<h2>争议和风险</h2>
-<ul>
-<li><strong>人形机器人 hype vs 真实 ROI</strong>：2025 年 $5B 涌入人形机器人赛道，但多位创始人（包括 Agility 自身 CTO）公开警告技术成熟度被高估，当前更像是"这个时代的 Apple Newton"——方向正确但为时过早</li>
-<li><strong>任务范围狭窄</strong>：Digit 目前仅能完成 tote 搬运等少数预定义任务，离"通用仓库工人"还很远</li>
-<li><strong>安全与人机协作</strong>：当前仍需安全区隔，真正的无护栏协作尚未达标；每 $100 部署成本中约 $80 花在安全集成上而非机器人本身</li>
-<li><strong>自主 vs 脚本化</strong>：Digit 的"自主"实际是预编排 workflow 而非真正自主学习，灵活性有限</li>
-<li><strong>制造规模化风险</strong>：RoboFab 仍处于中试阶段，2025 年目标仅数百台，距离 10,000 台/年的盈亏平衡点尚远</li>
-<li><strong>可靠性与维护</strong>：从 99% 到 99.9% 的可靠性鸿沟——99% 时每 10 秒一个 cycle 每天仍然失败数十次</li>
-<li><strong>中国厂商数量碾压</strong>：Unitree、UBTech、AgiBot 等 5 家中国公司占全球人形机器人出货 85%，美国企业仅 3%</li>
-<li><strong>劳动力替代社会阻力</strong>：仓储岗位涉及大量低收入就业，全面替代可能引发工会和政治反弹</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Sources</h2>
-<ol>
-<li><a href="https://www.wweek.com/technology/2026/03/11/osu-robotics-professor-jonathan-hurst-helped-create-a-25-billion-company-that-makes-humanoid-robots-with-ai-intelligence/">Willamette Week — OSU Robotics Professor Jonathan Hurst Helped Create a $2.5 Billion Company (2026)</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Agility_Robotics">Wikipedia — Agility Robotics</a></li>
-<li><a href="https://www.agilityrobotics.com/company">Agility Robotics — Official Company Page</a></li>
-<li><a href="https://engineering.oregonstate.edu/all-stories/cassie-steps-limelight">OSU College of Engineering — Cassie Steps into the Limelight</a></li>
-<li><a href="https://terra.oregonstate.edu/2017/05/new-way-walking/">OSU Terra Magazine — A New Way of Walking (2017)</a></li>
-<li><a href="https://www.therobotreport.com/veteran-tech-exec-peggy-johnson-named-agility-robotics-ceo/">The Robot Report — Peggy Johnson Named Agility Robotics CEO (2024)</a></li>
-<li><a href="https://www.agilityrobotics.com/content/digit-moves-over-100k-totes">Agility Robotics — Digit Moves Over 100,000 Totes</a></li>
-<li><a href="https://www.therobotreport.com/rbr50-company-2025/digit-is-first-humanoid-deployed-in-a-commercial-application/">The Robot Report — RBR50: Digit First Humanoid in Commercial Application (2025)</a></li>
-<li><a href="https://www.nasdaq.com/press-release/gxo-signs-industry-first-multi-year-agreement-agility-robotics-2024-06-27">NASDAQ — GXO Signs Industry-First Multi-Year Agreement with Agility Robotics (2024)</a></li>
-<li><a href="https://www.oregonlive.com/silicon-forest/2025/08/oregon-factory-builds-the-walking-robots-of-tomorrow-these-are-going-to-be-a-part-of-everyday-life.html">OregonLive — Oregon Factory Builds the Walking Robots of Tomorrow (2025)</a></li>
-<li><a href="https://finance.yahoo.com/news/agility-robotics-brings-operational-visibility-120000517.html">Yahoo Finance — Agility Arc Launch at MODEX 2024</a></li>
-<li><a href="https://parsers.vc/startup/agilityrobotics.com/">Parsers VC — Agility Robotics Funding History</a></li>
-<li><a href="https://newatlas.com/robotics/humanoid-robots-work-amazon">New Atlas — Humanoid Robots Get to Work at Amazon Facility (2024)</a></li>
-<li><a href="https://www.techspot.com/news/110738-people-building-humanoid-robots-hype-running-ahead-reality.html">TechSpot — Humanoid Robot Hype Running Ahead of Reality (2025)</a></li>
-<li><a href="https://newo.ai/humanoid-robot-hype-real-timeline/">Newo.ai — Beyond Hype: The Real Timeline for Humanoid Robots (2025)</a></li>
-</ol>
-</div>
-
-<div class="footer">
-Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Research
-</div>
-
 
 <!-- GTM_EXTENSION_START -->
 <style id="gtm-extension-style">
@@ -519,63 +567,22 @@ Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Res
 <div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">Agility Robotics</span></div>
 <div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">US / Global</span></div>
 <div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
-<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">VSCode AI research — English-first</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; evidence repair 2026-06-17</span></div>
 <p class="gtm-disclaimer">This report is for learning and pattern recognition. It does not perform strict fact auditing. Agility Robotics is a private company; revenue figures and unit costs are third-party estimates unless sourced from official announcements.</p>
 </div>
 <h2>GTM 总览</h2>
 <div class="gtm-callout"><strong>一句话 GTM：</strong>Agility Robotics 的 GTM 是从 DARPA 资助的大学实验室出发，用二十年的时间走通了 学术研究→研究平台销售→工业 RaaS 部署 的全链条，核心策略是不靠 hype 靠 uptime, 在 GXO 和 Amazon 的仓库里用搬运 tote 的真实数据说服下一个客户。</div>
-<div class="gtm-card"><p>Agility Robotics 的 GTM 路径遵循一条极其罕见的轨迹：从大学实验室的基础科学研究（DARPA 资助的弹簧-质量步行模型）到可销售的研究平台（Cassie），再到全尺寸商业人形机器人（Digit），最终通过 Robot-as-a-Service 模式进入仓储物流的付费部署。这条路走了近二十年。公司的核心 GTM 策略不是靠发布会和社交媒体造势——与 Figure AI 或 Tesla Optimus 形成鲜明对比——而是靠在真实仓库里搬运真实的 tote 来证明价值。关键转折点包括：2022 年 Amazon 通过 Industrial Innovation Fund 投资，2023 年 Digit 进入 Amazon 和 GXO 仓库试点，2024 年 6 月 GXO 签署行业首个多年期人形机器人 RaaS 商业协议。同年，Peggy Johnson 出任 CEO、Agility Arc 云平台发布、RoboFab 工厂投产，标志着从 R&amp;D 向规模化商业部署的系统性转型。Agility Robotics 不卖 hype，卖的是搬箱子的 uptime。这既是它最大的差异化优势，也是它最大的增长限制：在一个被 $5B 资本涌入、被 Elon Musk 和 Jensen Huang 站台的赛道里，过于务实的叙事可能在融资和人才争夺战中处于劣势。但反过来看，当行业泡沫破裂时，已经拥有真实付费客户和运行中工厂的公司可能成为幸存者。对中国硬件创业者而言，Agility Robotics 提供了一个特殊的参照：如何在不依赖消费电子供应链和电商渠道的情况下，从学术研究逐步孵化出一个硬科技商业平台。</p></div>
+<div class="gtm-card"><p>Agility Robotics 的 GTM 路径遵循一条极其罕见的轨迹：从大学实验室的基础科学研究（DARPA 资助的弹簧-质量步行模型）到可销售的研究平台（Cassie），再到全尺寸商业人形机器人（Digit），最终通过 Robot-as-a-Service 模式进入仓储物流的付费部署。这条路走了近二十年。公司的核心 GTM 策略不是靠发布会和社交媒体造势——与 Figure AI 或 Tesla Optimus 形成鲜明对比——而是靠在真实仓库里搬运真实的 tote 来证明价值。关键转折点包括：2022 年 Amazon 通过 Industrial Innovation Fund 投资，2023 年 Digit 进入 Amazon 和 GXO 仓库试点，2024 年 6 月 GXO 签署行业首个多年期人形机器人 RaaS 商业协议。同年，Peggy Johnson 出任 CEO、Agility Arc 云平台发布、RoboFab 工厂投产，标志着从 R&amp;D 向规模化商业部署的系统性转型。Agility Robotics 不卖 hype，卖的是搬箱子的...</p></div>
 <hr class="divider">
 <h2>渠道路径</h2>
 <div class="gtm-path">
 <span class="gtm-path-step">Step 1 — 大学实验室 / DARPA 资助：ATRIAS 验证弹簧-质量步行理论，建立 OSU Dynamic Robotics Lab 学术信誉</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Step 2 — 研究平台销售（Cassie）：向 Caltech、Harvard、UMich、UC Berkeley 等顶尖实验室销售 Cassie，每台 &lt;$100K-$300K，建立 legged robotics 领域的品牌认知和技术信誉</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Step 3 — 产业投资者引入：DCVC + Playground Global 长期陪跑，Amazon Industrial Innovation Fund 战略投资（2022），将最大潜在客户变为股东</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Step 4 — 仓库试点部署：Amazon（2023.10）+ GXO/Spanx（2023.12）仓库试点，在真实运营环境中跑出 100,000+ tote 搬运数据</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Step 5 — RaaS 商业协议：GXO 多年期合同（2024.6），按使用付费 ~$30/hr，客户 ROI &lt;2 年</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Step 6 — 规模化制造 + 云平台：RoboFab 工厂（2024.10）+ Agility Arc 编队管理 SaaS，形成「硬件制造 + 云服务 + RaaS 收入」三层模型</span></div>
-<h3 class="gtm-subsection-title">市场进入</h3>
-<table class="gtm-table">
-<thead><tr><th style="width:160px">市场</th><th>说明</th></tr></thead>
-<tbody>
-<tr><td class="gtm-td-label">美国市场</td><td>核心市场。总部 Oregon，客户站点集中在 Georgia（GXO/Spanx）和 Seattle（Amazon 测试）。主要从 Southern US 物流枢纽开始，因为这些地区仓储集中、劳动力紧缺、工资上涨压力大，对自动化替代方案接受度高。</td></tr>
-<tr><td class="gtm-td-label">中国市场</td><td>not_found — Agility Robotics 目前无公开的中国市场计划。中国本土人形机器人公司（Unitree、UBTech、AgiBot 等）在价格和出货量上占据绝对优势，Agility 进入中国市场的可能性低。</td></tr>
-<tr><td class="gtm-td-label">全球市场</td><td>2024 年 11 月与德国 Schaeffler Group 签署战略合作，计划未来在全球 100 家 Schaeffler 工厂部署 Digit。这是 Agility Robotics 首次明确的全球化信号，以欧洲制造业为切入点。日本和韩国市场目前 not_found。</td></tr>
-<tr><td class="gtm-td-label">备注</td><td>Agility Robotics 的国际化路径依赖战略投资者（Schaeffler）和市场拉动力（客户主动需求），而非主动铺设海外销售网络。这种模式风险较低但扩张速度慢。</td></tr>
-</tbody></table>
-<h3 class="gtm-subsection-title">渠道分析</h3>
-<table class="gtm-table">
-<thead><tr><th style="width:160px">渠道</th><th>说明</th></tr></thead>
-<tbody>
-<tr><td class="gtm-td-label">众筹</td><td>not_found_or_not_core — Agility Robotics 从未使用 Kickstarter 或 Indiegogo。Cassie 早期销售是直接面向大学实验室的 B2B 模式。</td></tr>
-<tr><td class="gtm-td-label">独立站 / DTC</td><td>not_found_or_not_core — 不面向消费者。所有部署均为 B2B 企业级 RaaS 协议或直接销售。</td></tr>
-<tr><td class="gtm-td-label">Amazon</td><td>Amazon 的双重角色：(1) 2022 年通过 Amazon Industrial Innovation Fund 投资 Agility Robotics B 轮；(2) 2023 年 10 月起在 Seattle 地区 R&amp;D 设施内测试 Digit，用于 tote 回收等重复性任务。Amazon 是潜在客户也是股东，但尚未签署类似 GXO 级别的多年期商业协议。Amazon 自 2024 年初 Key Media Day 后对外公开信息较少。</td></tr>
-<tr><td class="gtm-td-label">电商</td><td>not_found_or_not_core — 无电商销售渠道。</td></tr>
-<tr><td class="gtm-td-label">社媒</td><td>Agility Robotics 维护 YouTube、LinkedIn、X (Twitter) 账号，主要用于发布部署里程碑（如 100K totes、RoboFab 投产、Digit V4 发布）和技术 demo 视频。内容风格偏工程务实而非 viral marketing。相比 Figure AI 和 Tesla Optimus 的高频社交媒体造势，Agility Robotics 的社媒存在感明显较弱。LinkedIn 是 B2B 线索的主要社媒渠道。</td></tr>
-<tr><td class="gtm-td-label">商超 / 零售</td><td>not_found_or_not_core — 无零售渠道。</td></tr>
-<tr><td class="gtm-td-label">代理 / 经销商</td><td>not_found_or_not_core — 目前无经销商/分销商网络。客户关系为直销+RaaS 模式，由 Agility Robotics 内部销售和客户成功团队直接管理。</td></tr>
-<tr><td class="gtm-td-label">授权店</td><td>not_found_or_not_core — 无授权门店。</td></tr>
-<tr><td class="gtm-td-label">线下</td><td>RoboFab（Salem, OR, 70,000 sq ft）兼具工厂展厅功能——潜在客户可实地参观 Digit 产线和运行 demo。行业展会（MODEX 2024、Humanoids Summit 等）是主要的线下获客场景。2024 年 MODEX 上发布 Agility Arc 平台。</td></tr>
-<tr><td class="gtm-td-label">服务网络</td><td>Agility Robotics 通过 Agility Arc 云平台提供远程监控、故障排查和软件升级。RoboFab 内设 &#39;Robot Hospital&#39; 维修中心处理硬件故障。目前服务网络规模有限（仅覆盖已部署的少数客户站点），未来将随部署量扩展。Schaeffler 合作可能包含欧洲本地化服务支持。</td></tr>
-</tbody></table>
-<h3 class="gtm-subsection-title">商业模式</h3>
-<table class="gtm-table">
-<thead><tr><th style="width:160px">商业模式</th><th>说明</th></tr></thead>
-<tbody>
-<tr><td class="gtm-td-label">硬件</td><td>Digit 机器人硬件 — RaaS 模式下由 Agility 保有资产所有权，客户按使用付费；也提供直接销售选项（面向战略合作伙伴如 Schaeffler）。Digit V4 单台制造成本估算 $150K-$250K（行业估算，非官方数据，low_confidence），售价不公开。</td></tr>
-<tr><td class="gtm-td-label">订阅</td><td>Agility Arc 云平台 — SaaS 订阅模式，提供编队管理、workflow 设计、实时监控、KPI dashboard、WMS/WES/MES API 集成。具体定价未公开。</td></tr>
-<tr><td class="gtm-td-label">耗材</td><td>Digit 电池组为可更换设计，长期可能形成耗材收入。但当前部署规模太小，耗材收入模型尚未成型。not_found_or_not_core。</td></tr>
-<tr><td class="gtm-td-label">配件</td><td>末端执行器（end effector）可能根据不同 tote/容器类型定制。目前 not_found_or_not_core，但随任务类型扩展可能成为配件收入来源。</td></tr>
-<tr><td class="gtm-td-label">服务</td><td>RaaS 协议包含部署、维护、升级和客户支持服务。Agility Arc 提供远程故障排查和软件升级。RoboFab 内设维修中心。服务收入已集成在 RaaS 费率 (~$30/hr) 中，而非独立收费项目。</td></tr>
-<tr><td class="gtm-td-label">维修</td><td>RoboFab &#39;Robot Hospital&#39; 提供硬件维修。RaaS 协议下维修成本由 Agility 承担（已计入服务费率）。直接销售客户的维修条款 not_found。</td></tr>
-<tr><td class="gtm-td-label">培训</td><td>Agility Arc 平台包含 workflow 定义工具，允许客户自己编排 Digit 的工作流程（类似&#39;教&#39;机器人新任务）。可能需要 Agility 人员的现场培训支持。独立培训收费 not_found。</td></tr>
-<tr><td class="gtm-td-label">代理 / 渠道利润</td><td>not_found_or_not_core — 无经销商/代理商体系，所有收入来自直销+RaaS。未来若进入更多国际市场（如通过 Schaeffler 渠道），可能出现类似代理/集成商的角色。</td></tr>
-<tr><td class="gtm-td-label">其他</td><td>Schaeffler 战略投资+购买协议（2024.11）展示了一种特殊的 GTM 模式：让大客户成为股东，然后用投资协议绑定长期采购承诺。这比传统的&#39;先造产品再找客户&#39;风险更低。</td></tr>
-</tbody></table>
-<h2>线下与代理模式</h2>
-<div class="gtm-card">
-<p><strong>有无线下模式：</strong>有限但战略性 — RoboFab 工厂参观 + 行业展会（MODEX、Humanoids Summit）+ 客户站点现场部署。没有传统意义上的零售门店或经销商网络。</p>
-<p><strong>代理 / 经销商：</strong>not_found_or_not_core — 当前无经销商/分销商。未来 Schaeffler 可能充当欧洲市场的类渠道角色，但尚未明确。</p>
-<p><strong>授权店：</strong>not_found_or_not_core</p>
-<p><strong>服务与维修：</strong>Agility Arc 远程服务 + RoboFab &#39;Robot Hospital&#39; 集中维修 + 客户站点现场支持。随部署量扩大需要建立区域服务中心，但目前仅覆盖美国少数客户站点。</p>
-<p><strong>培训 / 演示：</strong>Agility Arc workflow 定义工具（客户自助编排）；行业展会现场 demo；RoboFab 客户参观 demo。</p>
-<p class="gtm-muted">Agility Robotics 本质上是一个 B2B 工业自动化公司，而非消费硬件公司。线下模型的核心不是门店和经销商，而是客户站点的部署和支持能力、RoboFab 的制造和维修能力、以及行业展会的获客能力。</p>
-</div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心市场：</strong>核心市场。总部 Oregon，客户站点集中在 Georgia（GXO/Spanx）和 Seattle（Amazon 测试）。主要从 Southern US 物流枢纽开始，因为这些地区仓储集中、劳动力紧缺、工资上涨压力大，对自动化替代方案接受度高。</li>
+<li><strong>核心渠道：</strong>Amazon 的双重角色：(1) 2022 年通过 Amazon Industrial Innovation Fund 投资 Agility Robotics B 轮；(2) 2023 年 10 月起在 Seattle 地区 R&amp;D 设施内测试 Digit，用于 tote 回收等重复性任务。Amazon 是潜在客户也是股东，但尚未签署类似 GXO...</li>
+<li><strong>收入结构：</strong>Digit 机器人硬件 — RaaS 模式下由 Agility 保有资产所有权，客户按使用付费；也提供直接销售选项（面向战略合作伙伴如 Schaeffler）。Digit V4 单台制造成本估算 $150K-$250K（行业估算，非官方数据，low_confidence），售价不公开。</li>
+<li><strong>线下/服务：</strong>Agility Arc 远程服务 + RoboFab &#39;Robot Hospital&#39; 集中维修 + 客户站点现场支持。随部署量扩大需要建立区域服务中心，但目前仅覆盖美国少数客户站点。</li>
+</ul></div>
 <hr class="divider">
 <h2>最成功产品 / 产品线</h2>
 <p class="gtm-muted">Choose no more than 3 products or product lines based on public evidence of success, market impact, GTM learning value, and product innovation.</p>
@@ -589,70 +596,34 @@ Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Res
 </div></div>
 <div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Cassie 是 Agility Robotics 的第一个商业产品，也是 Digit 所有腿部硬件和控制算法的技术前身。没有 Cassie 在大学实验室的验证，就没有 Digit 在仓库里搬 tote 的今天。Cassie 代表了一种特殊的 GTM 路径：把学术研究成果包装成可销售的研究平台（而不是直接冲刺商业产品），用研究社区的口碑积累技术信誉和早期收入。</p></div>
 <div class="gtm-subsection"><span class="gtm-tag-list"><span class="gtm-tag">技术验证平台</span><span class="gtm-tag">学术口碑积累</span><span class="gtm-tag">早期收入来源</span><span class="gtm-tag">人才吸引磁石</span></span></div>
-<div class="gtm-subsection"><h4>产品诞生故事</h4>
-<p><strong>最初问题：</strong>2015 年前后，全球 legged locomotion 研究社区缺乏一个可靠、高效、能在户外运行的标准化双足平台。已有的 ATRIAS 效率低、无转向能力、需要防跌落吊索，无法用于实际场景研究。机器人实验室要么自研硬件（耗时数年），要么在仿真中做研究（脱离真实物理约束）。</p>
-<p><strong>创始人/团队洞察：</strong>Hurst 团队意识到 ATRIAS 的理论验证已经完成（弹簧-质量步行模型的能效和稳定性是可行的），下一步不是继续发论文，而是把它做成别人也可以用的产品。这个洞察——把学术工具商业化——是典型的深科技创业思维。</p>
-<p><strong>早期用户：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">University of Michigan (Jessy Grizzle lab — 第一台)</span><span class="gtm-tag">Caltech</span><span class="gtm-tag">UC Berkeley</span><span class="gtm-tag">Harvard</span><span class="gtm-tag">多个国际机器人研究实验室</span></span>
-<p><strong>早期产品形态：</strong>仅双腿，无躯干无手臂无头部。3-DOF 髋关节、动力脚踝、密封防雨雪系统、5-8 小时电池续航。外观像一对没身体的鸵鸟腿（ostrich/cassowary），重量约 31kg（ATRIAS 的一半）。定价 &lt;$100K（后涨至 ~$300K）。</p>
-<p><strong>为什么重要：</strong>Cassie 证明了一件事：一个从 DARPA 学术资助起步的机器人硬件可以被包装成产品并卖给付费客户。这给了 Agility Robotics 第一笔真实收入，也给了投资人和人才市场一个信号——这个团队不只是会写论文。</p>
-</div>
-<div class="gtm-subsection"><h4>出现前市场痛点</h4>
-<p><strong>旧有解决方案：</strong></p><ul><li>各实验室自研双足硬件（耗时 3-5 年，通常只出一篇 PhD 论文就废弃）</li><li>ATRIAS（无转向、需吊索、不能户外、效率低）</li><li>Boston Dynamics 的液压双足平台（价格极高、不开放销售给学术实验室）</li><li>纯仿真研究（脱离真实物理约束，sim-to-real gap 巨大）</li></ul>
-<p><strong>痛点：</strong></p><ul><li>实验室没有能力也没有预算自研可靠的双足硬件</li><li>已有平台要么太贵（Boston Dynamics）要么太原始（ATRIAS）</li><li>sim-to-real gap 使得纯仿真研究的论文难以被工业界采纳</li><li>legged robotics 作为一个领域缺乏标准化硬件平台，实验结果不可复现</li></ul>
-<p><strong>市场壁垒：</strong>双足机器人硬件的可靠性要求极高——跌倒一次可能毁掉几个月的实验进度。在 Cassie 之前，没有人在 $100K 价位提供过能不系吊索在户外跑步的双足平台。</p>
-<p><strong>为什么旧方案不够：</strong>ATRIAS 是科学实验工具，不是产品。Boston Dynamics 是军事/工业级，不卖给学术界。仿真便宜但不可信。Cassie 填补了一个精准的利基：$100K 级别、可靠、户外可用、开放控制接口的标准化双足研究平台。</p>
-</div>
-<div class="gtm-subsection"><h4>当时创新点</h4>
-<p><strong>技术创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">3-DOF 髋关节（人类级别的运动范围：前后+左右+旋转）</span><span class="gtm-tag">动力脚踝（使 Cassie 能静止站立，ATRIAS 必须不断踏步才能保持平衡）</span><span class="gtm-tag">密封防雨雪系统（首个能在俄勒冈冬天户外运行的双足机器人）</span><span class="gtm-tag">弹簧-质量步行模型的工程实现（源自 ATRIAS 理论，Cassie 做到了实用化）</span><span class="gtm-tag">5-8 小时电池续航（远超市面上其他双足平台）</span></span>
-<p><strong>用户体验创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">开放控制接口——研究人员可以编写自己的控制算法，不被黑盒系统限制</span><span class="gtm-tag">跌倒可存活——不像 ATRIAS 或早期人形机器人那样一次跌倒就损坏</span><span class="gtm-tag">标准化硬件平台——使不同实验室的实验结果可以横向比较和复现</span></span>
-<p><strong>定价创新：</strong>&lt;$100K 起售价（首批发售），远低于自研成本和一个 PhD 学生 3-5 年的时间投入。后期配置升级后价格涨至 ~$300K，但仍低于 Boston Dynamics 平台。</p>
-<p><strong>渠道创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">直接销售给大学实验室（B2B 直销）</span><span class="gtm-tag">学术会议和机器人竞赛展示（口碑传播）</span><span class="gtm-tag">OSU 学术网络的天然信任基础</span></span>
-<p><strong>商业模式创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">一次性硬件销售（非 RaaS）</span><span class="gtm-tag">早期收入来源，支撑公司继续研发 Digit</span></span>
-<p><strong>生态创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">在 legged locomotion 研究社区建立了品牌认知</span><span class="gtm-tag">Cassie 用户发表的论文天然成为 Agility Robotics 的免费技术背书</span><span class="gtm-tag">为 Digit 吸引人才——在 Cassie 上做过研究的 PhD 学生是 Digit 招聘的首选人才池</span></span>
-<p><strong>当时为什么新：</strong>Cassie 是第一个同时满足以下条件的产品化双足平台：(1) 买得起 (2) 能在户外雨雪中运行 (3) 开放控制接口 (4) 跌倒不会坏 (5) 能真正跑起来。在 2016-2017 年，这些条件的任意组合在市场上都是不存在的。</p>
-</div>
-<div class="gtm-subsection"><h4>爆发路径</h4>
-<p><strong>主要原因：</strong></p><ul><li>填补了标准化双足研究平台的市场空白</li><li>OSU + DARPA 学术背书提供了技术可信度</li><li>首批售罄制造了稀缺效应和口碑传播</li><li>价格区间合理（&lt;$100K vs 自研成本和时间）</li></ul>
-<p><strong>关键事件：</strong></p>
-<div class="gtm-key-events">
-<div class="gtm-event-item"><span class="gtm-event-date">2016</span> <span class="gtm-event-text">Cassie 在 OSU 首次公开亮相（前身为 ATRIAS 的后继者）</span> <span class="gtm-tag gtm-tag-sm">product_launch</span> <span class="gtm-muted">(学术会议 / 科技媒体)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：建立 legged robotics 社区认知</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2017-02</span> <span class="gtm-event-text">Cassie 正式对外发布，首批生产售罄</span> <span class="gtm-tag gtm-tag-sm">product_launch</span> <span class="gtm-muted">(科技媒体（New Atlas, Digital Trends, TechCrunch）)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：证明存在付费市场——学术实验室愿意花 $100K+ 购买标准化双足平台</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2021</span> <span class="gtm-event-text">Cassie 创 100m 跑吉尼斯世界纪录（24.73 秒）</span> <span class="gtm-tag gtm-tag-sm">media_event</span> <span class="gtm-muted">(Guinness World Records / 社交媒体 / 科技媒体)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：主流媒体曝光，为 Agility Robotics 品牌增加公众认知，间接帮助后续 Digit 融资叙事</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2021</span> <span class="gtm-event-text">Cassie 完成 5K 户外跑（53 分钟，单次充电，无系绳，深度强化学习训练步态）</span> <span class="gtm-tag gtm-tag-sm">media_event</span> <span class="gtm-muted">(科技媒体 / YouTube)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：证明 legged robot 的户外长时间运行可靠性，强化&#39;不是实验室玩具&#39;的认知</span></div>
-</div>
-<p><strong>GTM 路径：</strong></p>
-<div class="gtm-path">
-<span class="gtm-path-step">DARPA/OSU 学术论文发表 → 学术社区认知</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Cassie 原型展示 → 科技媒体报道</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">首批限量发售 + 售罄 → 稀缺效应 + 口碑</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">顶级实验室（UMich、Caltech、Berkeley）采用 → 学术背书</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">吉尼斯世界纪录 + 5K 跑 → 主流媒体曝光 → 品牌知名度 → 帮助 Digit 融资叙事</span></div>
-</div>
-<div class="gtm-subsection"><h4>对客户的影响</h4>
-<p><strong>新能力：</strong>研究人员获得了标准化的、可靠的、能户外运行的双足硬件平台，可以在真实物理世界中测试控制算法而非仅仅在仿真中。</p>
-<p><strong>节省时间：</strong>一个 PhD 学生不再需要花 3-5 年自研双足硬件——可以直接在 Cassie 上开始算法研究，将研究周期缩短至 1-2 年。</p>
-<p><strong>降低成本：</strong>~$100K-$300K vs 自研成本（含 3-5 年 PhD 学生人力成本、材料、失败迭代）可轻易超过 $500K-$1M。</p>
-<p><strong>收入机会：</strong>在 Cassie 上发表论文的 PhD 学生更容易被 Agility Robotics、Boston Dynamics、Tesla Optimus 等公司聘用——Cassie 经验成为人形机器人行业的入场券。</p>
-<p><strong>体验变化：</strong>从仿真-only 到仿真实体 hybrid 研究的范式转变。Cassie 使 legged robotics 研究从理论走向可复现的实验科学。</p>
-<p><strong>谁受益最大：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">大学机器人实验室（降低硬件门槛）</span><span class="gtm-tag">PhD 学生（缩短研究周期，提升就业竞争力）</span><span class="gtm-tag">Agility Robotics 自身（技术验证 + 品牌信誉 + 人才管道）</span><span class="gtm-tag">整个 legged locomotion 研究社区（标准化平台推动领域进步）</span></span>
-</div>
-<div class="gtm-subsection"><h4>对生态 / 职业 / 收入机会的影响</h4>
-<p><strong>新角色/岗位：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">legged robotics 控制算法工程师（需求因 Cassie 平台而增长）</span><span class="gtm-tag">sim-to-real transfer 研究员</span><span class="gtm-tag">双足机器人测试工程师</span></span>
-<p><strong>受影响的角色：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">自研硬件的机器人实验室（减少了自研需求，但也降低了进入门槛）</span></span>
-<p><strong>新服务：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Cassie 维修和配件供应（规模小但存在）</span><span class="gtm-tag">基于 Cassie 的控制算法培训和 workshop</span></span>
-<p><strong>新渠道：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">学术硬件直销渠道（B2B 学术销售）</span><span class="gtm-tag">机器人学术会议的产品展示和 live demo</span></span>
-<p><strong>内容/社区：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Cassie 用户的论文形成非正式的技术社区</span><span class="gtm-tag">YouTube 上的 Cassie 跑步/户外测试视频（自然传播）</span><span class="gtm-tag">GitHub 上的开源控制代码和仿真模型（部分来自 Cassie 用户社区）</span></span>
-<p><strong>供应链/配件：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">定制执行器、传感器、电池组供应链（小批量但高价值）</span><span class="gtm-tag">Oregon 本地的精密机械加工和组装供应商</span></span>
-<p><strong>职业与收入机会信号：</strong>legged robotics 控制算法工程师的薪资因 Cassie/Digit 带动的行业需求增长而上升，但缺乏精确薪资数据。适合记录为职业与收入机会信号，而非确定结论。</p>
-</div>
-<div class="gtm-subsection gtm-lessons"><h4>学习与启示</h4>
-<p><strong>可学习点：</strong></p><ul><li>学术工具商业化是一种被低估的深科技 GTM 路径：不直接冲刺消费者产品，而是先把研究工具卖给同行，用同行口碑和论文积累信誉，同时养活公司（Cassie 的收入支撑了 Digit 的早期研发）。</li><li>渐进式技术路线（ATRIAS→Cassie→Digit）降低了每一步的技术风险：每次只增加一个新维度（先 mobility，再 manipulation，再 perception），而不是一次性挑战所有难题。</li><li>标准化平台对研究社区的价值巨大：Cassie 的成功不是因为硬件参数最强，而是因为它是第一个被多个顶尖实验室同时使用的标准化双足平台——这种网络效应使后来者很难替代它（即使技术上更好）。</li><li>不要低估&#39;不依赖 hype&#39;的品牌价值：在一个被 Tesla Optimus 和 Figure AI 的病毒视频充斥的赛道里，Agility Robotics 的&#39;我们就是默默搬箱子&#39;叙事反而吸引了真正有采购需求的物流客户。</li></ul>
-<p><strong>不能照抄的地方：</strong></p><ul><li>学术硬件市场的天花板极低——全球能买得起 $100K-$300K 双足平台的机器人实验室可能只有几十个。Cassie 的收入足以养活一个 20 人的 startup，但不足以支撑 $2.5B 估值。Cassie 是跳板，不是终点。</li><li>DARPA/政府资助的路径不可复制——Hurst 在 OSU 有终身教职保障和 DARPA 资助，可以花 10 年慢慢研究 mobility。没有学术职位保护的创业者无法复制这种节奏。</li><li>Cassie 的成功部分依赖于时机——2016-2017 年恰逢深度强化学习（DRL）爆发，而 Cassie 恰好是 DRL 研究者梦寐以求的物理测试平台。如果是 2010 年推出，可能无人问津。</li><li>纯粹的研究平台销售无法支撑一个 unicorn 估值——从 Cassie 到 Digit 的跨越需要大量的额外融资和战略 pivot，不能假设&#39;卖出研究平台→自然演化出商业产品&#39;。</li></ul>
-<p><strong>适合什么类型的公司学习：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">从大学实验室 spin-out 的深科技硬件创业公司</span><span class="gtm-tag">需要先用学术/专业市场建立技术信誉再做消费/工业市场的公司</span><span class="gtm-tag">有长期学术合作关系的技术团队</span></span>
-<p><strong>不适合什么类型的公司：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">需要快速规模化营收的 VC 驱动型 startup</span><span class="gtm-tag">纯消费硬件创业（Cassie 的 B2B 学术逻辑不适用于 DTC）</span><span class="gtm-tag">没有学术背景或研究社区关系的团队</span></span>
-</div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Unitree G1 is publicly promoted around $16K; Boston Dynamics Spot has been listed around $74.5K but is quadruped, not biped; high-end humanoid research platforms are generally quote-based.</td></tr>
+<tr><td class="gtm-td-label">Competitor accessory price</td><td>Unitree and Boston Dynamics accessories/spares vary by configuration; many enterprise bundles are quote-based.</td></tr>
+<tr><td class="gtm-td-label">Notes</td><td>Treat Cassie pricing as historical and low-confidence; official current pricing is not published.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://spectrum.ieee.org/agility-robotics-cassie" target="_blank" rel="noopener noreferrer">IEEE Spectrum: Agility introduces Cassie</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.unitree.com/g1" target="_blank" rel="noopener noreferrer">Unitree G1 product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.agilityrobotics.com/" target="_blank" rel="noopener noreferrer">Agility Robotics company overview</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>原始洞察：</strong>2015 年前后，全球 legged locomotion 研究社区缺乏一个可靠、高效、能在户外运行的标准化双足平台。已有的 ATRIAS 效率低、无转向能力、需要防跌落吊索，无法用于实际场景研究。机器人实验室要么自研硬件（耗时数年），要么在仿真中做研究（脱离真实物理约束）。</li>
+<li><strong>旧方案缺口：</strong>ATRIAS 是科学实验工具，不是产品。Boston Dynamics 是军事/工业级，不卖给学术界。仿真便宜但不可信。Cassie 填补了一个精准的利基：$100K 级别、可靠、户外可用、开放控制接口的标准化双足研究平台。</li>
+<li><strong>定价/商业模式：</strong>&lt;$100K 起售价（首批发售），远低于自研成本和一个 PhD 学生 3-5 年的时间投入。后期配置升级后价格涨至 ~$300K，但仍低于 Boston Dynamics 平台。</li>
+<li><strong>增长触发：</strong>DARPA/OSU 学术论文发表 → 学术社区认知 -&gt; Cassie 原型展示 → 科技媒体报道</li>
+<li><strong>客户收益：</strong>~$100K-$300K vs 自研成本（含 3-5 年 PhD 学生人力成本、材料、失败迭代）可轻易超过 $500K-$1M。</li>
+<li><strong>可学习：</strong>学术工具商业化是一种被低估的深科技 GTM 路径：不直接冲刺消费者产品，而是先把研究工具卖给同行，用同行口碑和论文积累信誉，同时养活公司（Cassie 的收入支撑了 Digit 的早期研发）。</li>
+</ul></div>
 <div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
 <ol>
 <li><a href="https://newatlas.com/cassie-bipedal-robot/47845/" target="_blank" rel="noopener noreferrer">New Atlas — Walking robot takes first steps into the market (Cassie debut, 2017)</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— Cassie 发布时的详细技术报道，含定价和首批客户信息</span></li>
 <li><a href="https://terra.oregonstate.edu/2017/05/new-way-walking/" target="_blank" rel="noopener noreferrer">OSU Terra Magazine — A New Way of Walking (2017)</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— OSU 官方杂志对 Cassie 和 Hurst 实验室的深度报道，含 ATRIAS 到 Cassie 的技术演进</span></li>
 <li><a href="https://engineering.oregonstate.edu/all-stories/cassie-steps-limelight" target="_blank" rel="noopener noreferrer">OSU College of Engineering — Cassie Steps into the Limelight</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— OSU 工程学院对 Cassie 的官方介绍，含技术背景和早期影响</span></li>
-<li><a href="https://robotsguide.com/robots/cassie" target="_blank" rel="noopener noreferrer">ROBOTS Guide — Cassie specs and history</a> <span class="gtm-muted">[other]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— IEEE Spectrum 旗下的机器人数据库，含 Cassie 技术规格和历史</span></li>
+<li class="gtm-muted">... 还有 1 条来源未显示</li>
 </ol></div>
 </div>
 <div class="gtm-product-card">
@@ -664,73 +635,33 @@ Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Res
 </div></div>
 <div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Digit 是 Agility Robotics 的核心商业产品，也是全球第一个在付费客户仓库中持续运行的人形机器人。截至 2025 年初已完成 100,000+ tote 搬运。Digit 的 GTM 路径代表了一种极其务实的人形机器人商业化方式：不追求通用 AI，只做好一件事（从 AMR 取 tote 放上传送带），并做到让客户愿意签多年合同。</p></div>
 <div class="gtm-subsection"><span class="gtm-tag-list"><span class="gtm-tag">全球首个商业部署的人形机器人</span><span class="gtm-tag">RaaS 商业模式验证</span><span class="gtm-tag">仓储物流自动化标杆</span><span class="gtm-tag">RBR50 2025 Robot of the Year</span></span></div>
-<div class="gtm-subsection"><h4>产品诞生故事</h4>
-<p><strong>最初问题：</strong>美国仓储物流行业长期面临严重的劳动力短缺：招工难（失业率低 + 电商需求暴涨）、离职率高（仓储工作重复且劳累，年均 turnover 可达 50-100%+）、重复性劳动损伤（搬运 tote 导致肌肉骨骼疾病）。同时，仓库内的自动化&#39;孤岛&#39;（AMR、传送带、分拣机）之间存在大量&#39;最后一米&#39;缺口，需要人类工人手动衔接。</p>
-<p><strong>创始人/团队洞察：</strong>Hurst 团队在 2017 年最初把 Digit 定位为 last-mile delivery 机器人（与 Ford 合作实验），但大约在 2020 年前后意识到：仓库是比城市人行道更可控的环境，也是更大更迫切的市场。仓库有平整的地面、已知的布局、标准化的 tote 尺寸，非常适合当前技术水平的双足机器人。这个 pivot 是商业导向的，不是技术导向的——双足行走在仓库里和在街道上是一样的技术，但仓库的商业可行性高了几个数量级。</p>
-<p><strong>早期用户：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Amazon（2023.10 起在 Seattle R&amp;D 设施测试）</span><span class="gtm-tag">GXO Logistics / Spanx（2023.12 起在 Georgia 仓库试点 → 2024.6 签署多年合同）</span></span>
-<p><strong>早期产品形态：</strong>Digit V1-V3 为原型阶段，在外形、传感器配置和可靠性上逐步迭代。V4（2024.10 发布）是首个大规模量产版本：首次配备头部（含感知系统）、Cat 1 Stop 安全系统、FailSafe over EtherCAT (FSoE)、负载 35-55 lbs、身高 5&#39;9&quot;（175cm）、体重 125-143 lbs。V5 预计 2025/2026 推出，重点是提升运行/充电比至 10:1 和增强 AI 安全协作能力。</p>
-<p><strong>为什么重要：</strong>Digit 是第一个也是（截至 2025 年）唯一一个在付费客户仓库中持续商业运行的人形机器人。无论数字大小，&#39;有人真的在付钱&#39;这个事实是整个人形机器人行业最重要的验证点之一。</p>
-</div>
-<div class="gtm-subsection"><h4>出现前市场痛点</h4>
-<p><strong>旧有解决方案：</strong></p><ul><li>人类工人手动搬运 tote（灵活性最高但成本上升、招工难、离职率高）</li><li>固定式传送带和分拣系统（高效但不灵活，无法处理波动需求和 SKU 变化）</li><li>AMR/AGV（擅长水平运输，但无法做垂直操作如从地板上取 tote 放到传送带）</li><li>传统工业机器人手臂（需要安全围栏和精确定位，无法在人类共享空间中灵活移动）</li></ul>
-<p><strong>痛点：</strong></p><ul><li>仓储劳动力年 turnover 50-100%+，招聘和培训成本不断上升</li><li>AMR 和传送带之间的&#39;最后一米&#39;缺口需要人类填补</li><li>电商峰值（黑五、Prime Day）需要临时大量增员，但临时工培训不足、效率低</li><li>重复性搬运导致员工肌肉骨骼损伤，增加工伤赔偿和保险成本</li></ul>
-<p><strong>市场壁垒：</strong>人形机器人在 2023 年之前从未在真实仓库中运行过。安全标准、可靠性要求、客户信任、投资回报率——所有这些都是从零建立的。GXO 作为第一个签多年合同的客户，承担了巨大的先发风险。</p>
-<p><strong>为什么旧方案不够：</strong>所有的现有解决方案都是&#39;点&#39;解决方案——AMR 解决水平移动，传送带解决固定路线搬运，机器人手臂解决精确定位操作。但没有一种方案能在一个人类设计的空间中灵活移动并操作非标准化的物品。Digit 的理论价值主张正是填补这个 gap：像人一样在人类空间中移动和操作。</p>
-</div>
-<div class="gtm-subsection"><h4>当时创新点</h4>
-<p><strong>技术创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">双足行走 + 双臂操作的一体化设计（Mobile Manipulation Robot / MMR 品类）</span><span class="gtm-tag">Cat 1 Stop + FSoE 安全协议（使 Digit 能在人类附近工作而无物理护栏）</span><span class="gtm-tag">Agility Arc 云端编队管理（facility mapping、workflow 定义、实时 KPI、WMS/WES/MES API 集成）</span><span class="gtm-tag">从 Cassie 继承的弹簧-质量步行模型（高能效、软着陆、跌倒可存活）</span><span class="gtm-tag">V5 计划中的 AI/LLM 集成用于自然语言任务指令和安全协作</span></span>
-<p><strong>用户体验创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">仓库工人通过 Arc 平台定义 Digit 的工作流程（类似&#39;教&#39;机器人新任务）</span><span class="gtm-tag">Digit 在视觉上被设计为&#39;友好的机器人同事&#39;——柔和的蓝绿色、发光眼睛、类人但不恐怖的外观</span><span class="gtm-tag">不需要改造仓库——Digit 在现有的人类空间和基础设施中直接工作</span></span>
-<p><strong>定价创新：</strong>RaaS 模式 ~$30/hr 全额费用（含硬件、软件、维护、支持）。客户 ROI 周期 &lt;2 年（vs 人类仓库工人年均成本 $40K-$60K+ 含福利和 turnover 损失）。直接售价 not_found（仅面向战略合作伙伴如 Schaeffler）。</p>
-<p><strong>渠道创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">直接 B2B 企业销售（Agility Robotics 内部销售团队）</span><span class="gtm-tag">行业展会 demo（MODEX 2024 等）+ RoboFab 客户参观</span><span class="gtm-tag">战略投资者 → 客户的转化（Amazon、Schaeffler）</span></span>
-<p><strong>商业模式创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">RaaS 按使用付费（核心模式）——降低客户初始投资门槛，提供持续收入流</span><span class="gtm-tag">直接销售（面向战略合作伙伴）</span><span class="gtm-tag">Agility Arc SaaS 订阅（编队管理、监控、workflow 编排）</span></span>
-<p><strong>生态创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">与 AMR 制造商协同（Digit 从 AMR 上取 tote）</span><span class="gtm-tag">WMS/WES/MES 系统集成（Arc API）</span><span class="gtm-tag">Manhattan Associates WMS 集成合作</span><span class="gtm-tag">Schaeffler 全球 100 家工厂部署计划——从物流扩展到制造业</span></span>
-<p><strong>当时为什么新：</strong>2023-2024 年，Digit 是全球唯一一个能在付费客户的真实仓库中持续运行的人形机器人。Figure 01/02 有更 viral 的 demo，Tesla Optimus 有更大的 hype，但只有 Digit 有 paying customer。这个&#39;第一&#39;是实质性的，不仅仅是叙事。</p>
-</div>
-<div class="gtm-subsection"><h4>爆发路径</h4>
-<p><strong>主要原因：</strong></p><ul><li>Amazon 投资（2022）+ 试点（2023）提供了不可替代的行业背书</li><li>GXO 多年合同（2024.6）创造了&#39;人形机器人 RaaS&#39;这个品类</li><li>100,000+ tote 里程碑（2025 初）提供了可量化的 deployment proof</li><li>Peggy Johnson 的 CEO 任命（2024.3）和 RoboFab 投产（2024.10）向市场传递了规模化信号</li></ul>
-<p><strong>关键事件：</strong></p>
-<div class="gtm-key-events">
-<div class="gtm-event-item"><span class="gtm-event-date">2022-04</span> <span class="gtm-event-text">Amazon Industrial Innovation Fund 参与 B 轮 $150M 投资</span> <span class="gtm-tag gtm-tag-sm">funding</span> <span class="gtm-muted">(investor_relations)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：全球最大仓库运营商成为股东，为后续试点和潜在大规模采购打开大门</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2023-10</span> <span class="gtm-event-text">Digit 进入 Amazon Seattle R&amp;D 设施测试 tote 回收任务</span> <span class="gtm-tag gtm-tag-sm">pilot</span> <span class="gtm-muted">(direct_customer)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：在 Amazon 的仓库环境中验证 Digit 的 technical readiness；Amazon Key Media Day 公开了 97% 成功率和 7.5h 续航数据</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2023-12</span> <span class="gtm-event-text">Digit 在 GXO/Spanx Georgia 仓库开始试点</span> <span class="gtm-tag gtm-tag-sm">pilot</span> <span class="gtm-muted">(direct_customer)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：证明了 Digit 可以在非 Amazon 的第三方物流仓库中创造价值</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2024-06-27</span> <span class="gtm-event-text">GXO 签署行业首个多年期人形机器人 RaaS 商业协议</span> <span class="gtm-tag gtm-tag-sm">commercial_deal</span> <span class="gtm-muted">(direct_customer / press_release)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：人形机器人行业的分水岭——从&#39;酷 demo&#39;到&#39;有人付钱了&#39;。被广泛引用为人形机器人商业化的起点。</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2024-10</span> <span class="gtm-event-text">RoboFab 工厂投产 + Digit V4 发布</span> <span class="gtm-tag gtm-tag-sm">product_launch</span> <span class="gtm-muted">(factory_open_house / media)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：向市场证明 Agility Robotics 可以制造机器人（不只是研发原型）；V4 首次配备头部，标志着产品成熟度提升</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2024-11</span> <span class="gtm-event-text">Schaeffler Group C 轮战略投资 + 全球 100 家工厂部署签约</span> <span class="gtm-tag gtm-tag-sm">commercial_deal</span> <span class="gtm-muted">(strategic_partnership)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：从物流扩展到制造业的第一个重大信号；欧洲市场首次进入</span></div>
-<div class="gtm-muted">... 还有 1 条事件未显示</div>
-</div>
-<p><strong>GTM 路径：</strong></p>
-<div class="gtm-path">
-<span class="gtm-path-step">Cassie 学术口碑 → legged robotics 技术信誉</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">DCVC + Playground Global 长期资本支持 → R&amp;D 投入能力</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Amazon 投资 (2022) → 行业背书 + 潜在最大客户 relationship</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Amazon 试点 (2023.10) + GXO 试点 (2023.12) → 双客户验证</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">GXO 多年合同 (2024.6) → RaaS 模式验证 → &#39;人形机器人 RaaS 品类创造者&#39;</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Peggy Johnson CEO + RoboFab + Agility Arc (2024) → 规模化叙事</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Schaeffler 战略合作 (2024.11) → 制造业扩展 + 欧洲市场入口</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">100K totes + Robot of the Year (2025) → 行业领导地位巩固 → 新一轮 $400M 融资</span></div>
-</div>
-<div class="gtm-subsection"><h4>对客户的影响</h4>
-<p><strong>新能力：</strong>仓库运营商获得了一种可以灵活部署、不需要改造基础设施的自动化搬运能力——填补了 AMR 和传送带之间的&#39;最后一米&#39;缺口。</p>
-<p><strong>节省时间：</strong>Digit 可以不间断运行（V4 运行/充电比 2:1，V5 目标 10:1），不请假、不离职、不需要培训。在 tote 搬运这个特定任务上，Robot Report 估算 Digit 效率约为人类工人的 65-75%。</p>
-<p><strong>降低成本：</strong>RaaS ~$30/hr 全额费用 vs 人类仓库工人年均成本 $40K-$60K+（含工资、福利、工伤赔偿、招聘和培训成本）。Agility Robotics 声称客户 ROI 周期 &lt;2 年。注意：$30/hr 定价来自媒体报道（Interact Analysis 引用），非官方公开价格表，confidence 为 medium。</p>
-<p><strong>收入机会：</strong>Digit 的部署可能创造新的技术岗位（机器人操作员、workflow 编排工程师、维修技师），但数量和薪资水平缺乏公开数据。不适合作为确定结论。</p>
-<p><strong>体验变化：</strong>仓库工人从&#39;重复搬运工&#39;转变为&#39;机器人工作流编排员和异常处理者&#39;——工作从体力劳动转向脑力劳动。但这种转型的实际进展取决于部署规模和工作流复杂度。</p>
-<p><strong>谁受益最大：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">大型第三方物流企业（3PL）如 GXO——降低劳动力依赖和运营成本</span><span class="gtm-tag">电商和零售品牌（如 Spanx）——通过 3PL 间接获得更高效、更具弹性的履约能力</span><span class="gtm-tag">面临最严重劳动力短缺的地区（美国南部物流枢纽）</span><span class="gtm-tag">Agility Robotics 自身和整个人形机器人行业——获得商业验证</span></span>
-</div>
-<div class="gtm-subsection"><h4>对生态 / 职业 / 收入机会的影响</h4>
-<p><strong>新角色/岗位：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">人形机器人 workflow 编排工程师</span><span class="gtm-tag">RaaS 客户成功经理</span><span class="gtm-tag">机器人维修技师（RoboFab &#39;Robot Hospital&#39;）</span><span class="gtm-tag">仓库人机协作安全专员</span></span>
-<p><strong>受影响的角色：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">仓库搬运工 / picker / packer——Digit 当前仅替代 tote 搬运这一极窄任务，整体替代影响目前较小（数百台 vs 数百万仓库工人）</span><span class="gtm-tag">AMR 操作员——Digit 与 AMR 协同工作，可能扩大 AMR 的需求而非替代</span></span>
-<p><strong>新服务：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Agility Arc 云平台订阅（SaaS）</span><span class="gtm-tag">RaaS 部署和集成服务</span><span class="gtm-tag">Digit 维修和备件供应链</span><span class="gtm-tag">仓库人形机器人安全评估和合规咨询</span></span>
-<p><strong>新渠道：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">B2B 人形机器人 RaaS 合同（新品类，此前不存在）</span><span class="gtm-tag">战略投资者→客户的转化渠道（Amazon、Schaeffler 模型）</span></span>
-<p><strong>内容/社区：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">RBR50 Robot of the Year 行业认可</span><span class="gtm-tag">MODEX 等物流自动化展会的 Digit live demo</span><span class="gtm-tag">YouTube 上的部署里程碑视频</span><span class="gtm-tag">行业分析师报告（Interact Analysis、Bernstein Research 等）频繁引用 Digit 作为商业部署标杆</span></span>
-<p><strong>供应链/配件：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Digit 供应链：执行器、传感器、电池组、结构件（~5,000 个部件）</span><span class="gtm-tag">Oregon 本地精密制造生态（受益于 RoboFab 的本地化采购）</span><span class="gtm-tag">AMR 制造商——Digit 与 AMR 的协同扩大了整个仓库自动化生态的 TAM</span></span>
-<p><strong>职业与收入机会信号：</strong>Digit 当前部署规模（数百台级别）对整体仓储劳动力市场影响极小。长期如果人形机器人渗透率显著提升（如 Bernstein 预测 2032 年全球 100 万+ 台），低收入仓库岗位可能受到显著影响，但也会创造新的技术运维岗位。目前缺乏可靠的数据来量化这个 trade-off。适合记录为职业与收入机会信号，而非确定结论。</p>
-</div>
-<div class="gtm-subsection gtm-lessons"><h4>学习与启示</h4>
-<p><strong>可学习点：</strong></p><ul><li>在 hype 型赛道里做务实派是一种差异化 GTM 策略：Agility Robotics 不与 Figure AI 和 Tesla 比谁的视频更 viral，而是比谁先签到付费客户。在 2023-2024 年，这个策略被证明有效——GXO 合同比任何 demo 视频都有说服力。</li><li>&#39;先做窄、再做广&#39;是硬科技商业化的安全路径：Digit 只做 tote 搬运（不做 order picking、不做 palletizing、不做 truck unloading），但在这个窄任务上做到了 100,000+ tote 的 reliability proof，然后才考虑扩展任务类型。</li><li>把最大客户变成股东是一种高明的 GTM 策略：Amazon 的投资不是单纯的财务投资，而是锁定了优先试点权和深度合作。Schaeffler 的投资同样附带了 100 家工厂的部署承诺。这种&#39;投资+采购&#39;捆绑模式降低了销售周期。</li><li>RaaS 模式对于高单价、高技术风险的新品类至关重要：客户不愿意花 $150K-$250K 买一个可能有 reliability 问题的机器人，但愿意按 $30/hr 租用——因为风险在 Agility 一方。这种&#39;风险不对称&#39;的定价策略是新品类渗透的标准做法。</li></ul>
-<p><strong>不能照抄的地方：</strong></p><ul><li>Digit 的&#39;做窄&#39;策略虽然降低了技术风险，但也严重限制了 TAM——搬 tote 的市场远比&#39;通用仓库机器人&#39;小。一旦 AMR/传送带厂商推出更低成本的集成方案，Digit 的&#39;最后一米&#39;价值可能被削弱。</li><li>Amazon 的投资者+客户双重角色是一把双刃剑——Amazon 可能利用其股东身份获取技术洞察，然后内部自研替代方案（Amazon 已有庞大的机器人团队）。对 Amazon 的过度依赖是战略风险。</li><li>RaaS 模式的单位经济学尚未在大规模下验证：$30/hr 定价是否能覆盖 Digit 的制造成本（估算 $150K-$250K/台）+ 部署/维护/维修成本 + Arc SaaS 成本？在数百台规模下可能亏损，需要数千台规模才能实现 unit profitability。</li><li>Agility Robotics 的低调务实风格可能在人才争夺战中处于劣势——顶级 AI/机器人工程师往往被 Figure AI 的 $40B 估值叙事或 Tesla Optimus 的&#39;改变世界&#39;叙事所吸引。一家&#39;默默搬箱子&#39;的公司需要找到与之匹配的人才策略。</li></ul>
-<p><strong>适合什么类型的公司学习：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">工业自动化硬科技公司</span><span class="gtm-tag">有长研发周期、需要先做窄场景验证然后扩展的公司</span><span class="gtm-tag">有战略投资者愿意兼做早期客户的 B2B 深科技公司</span><span class="gtm-tag">在 hype 赛道里想走差异化务实路线的公司</span></span>
-<p><strong>不适合什么类型的公司：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">消费硬件公司（RaaS 模式不适用于消费者）</span><span class="gtm-tag">需要快速规模化营收的 SaaS 公司（Digit 的部署是物理过程，无法 viral growth）</span><span class="gtm-tag">依赖社交媒体 viral marketing 的品牌（Agility 的模式是 B2B 关系型销售+行业展会，不是社媒驱动）</span></span>
-</div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Digit is not sold as a normal public SKU; commercial deployments are enterprise quote / RaaS.</td></tr>
+<tr><td class="gtm-td-label">Enterprise / RaaS price</td><td>Business Insider reported a model with monthly fees covering robot, work cell, and operating software; third-party estimates cite hourly RaaS economics, but no official public rate.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.businessinsider.com/agility-robotics-humanoid-robots-are-filling-labor-gaps-warehouses-factories-2024-11" target="_blank" rel="noopener noreferrer">Business Insider: Agility robots entering workforce and getting paid</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.gxo.com/news-releases/news-release-details/gxo-signs-multi-year-agreement-agility-robotics" target="_blank" rel="noopener noreferrer">GXO multi-year agreement with Agility Robotics</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.unitree.com/g1" target="_blank" rel="noopener noreferrer">Unitree G1 product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>原始洞察：</strong>美国仓储物流行业长期面临严重的劳动力短缺：招工难（失业率低 + 电商需求暴涨）、离职率高（仓储工作重复且劳累，年均 turnover 可达 50-100%+）、重复性劳动损伤（搬运 tote 导致肌肉骨骼疾病）。同时，仓库内的自动化&#39;孤岛&#39;（AMR、传送带、分拣机）之间存在大量&#39;最后一米&#39;缺口，需要人类工人手动衔接。</li>
+<li><strong>旧方案缺口：</strong>所有的现有解决方案都是&#39;点&#39;解决方案——AMR 解决水平移动，传送带解决固定路线搬运，机器人手臂解决精确定位操作。但没有一种方案能在一个人类设计的空间中灵活移动并操作非标准化的物品。Digit 的理论价值主张正是填补这个 gap：像人一样在人类空间中移动和操作。</li>
+<li><strong>定价/商业模式：</strong>RaaS 按使用付费（核心模式）——降低客户初始投资门槛，提供持续收入流</li>
+<li><strong>增长触发：</strong>Cassie 学术口碑 → legged robotics 技术信誉 -&gt; DCVC + Playground Global 长期资本支持 → R&amp;D 投入能力</li>
+<li><strong>客户收益：</strong>RaaS ~$30/hr 全额费用 vs 人类仓库工人年均成本 $40K-$60K+（含工资、福利、工伤赔偿、招聘和培训成本）。Agility Robotics 声称客户 ROI 周期 &lt;2 年。注意：$30/hr 定价来自媒体报道（Interact Analysis 引用），非官方公开价格表，confidence 为 medium。</li>
+<li><strong>可学习：</strong>在 hype 型赛道里做务实派是一种差异化 GTM 策略：Agility Robotics 不与 Figure AI 和 Tesla 比谁的视频更 viral，而是比谁先签到付费客户。在 2023-2024 年，这个策略被证明有效——GXO 合同比任何 demo 视频都有说服力。</li>
+</ul></div>
 <div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
 <ol>
 <li><a href="https://www.agilityrobotics.com/content/digit-moves-over-100k-totes" target="_blank" rel="noopener noreferrer">Agility Robotics — Digit Moves Over 100,000 Totes in Commercial Deployment</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— 官方发布 100K tote 里程碑，含 GXO 部署细节和 Digit V4 性能数据</span></li>
 <li><a href="https://www.therobotreport.com/rbr50-company-2025/digit-is-first-humanoid-deployed-in-a-commercial-application/" target="_blank" rel="noopener noreferrer">The Robot Report — RBR50 2025: Digit is First Humanoid Deployed in a Commercial Application</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— 行业权威媒体对 Digit 商业部署的深度分析，确认&#39;第一个商业部署的人形机器人&#39;地位</span></li>
 <li><a href="https://www.nasdaq.com/press-release/gxo-signs-industry-first-multi-year-agreement-agility-robotics-2024-06-27" target="_blank" rel="noopener noreferrer">NASDAQ/GlobeNewswire — GXO Signs Industry-First Multi-Year Agreement with Agility Robotics (2024-06-27)</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— GXO 多年期 RaaS 协议的官方新闻稿，人形机器人行业的分水岭事件</span></li>
-<li><a href="https://newatlas.com/robotics/humanoid-robots-work-amazon" target="_blank" rel="noopener noreferrer">New Atlas — Humanoid Robots Get to Work at Amazon Facility (2024)</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— Amazon Key Media Day 的 Digit 试点报道，含 97% 成功率和 7.5h 续航数据</span></li>
+<li class="gtm-muted">... 还有 1 条来源未显示</li>
 </ol></div>
 </div>
 <div class="gtm-product-card">
@@ -742,70 +673,34 @@ Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Res
 </div></div>
 <div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>Arc 和 RoboFab 分别是 Digit 的&#39;软件大脑&#39;和&#39;硬件身体&#39;的规模化基础设施。它们是 Digit 从&#39;酷 demo&#39;到&#39;可持续商业&#39;的关键支撑——没有 Arc，Digit 只是一个个孤立的机器人；没有 RoboFab，Digit 永远停留在实验室手工组装阶段。这两个平台共同构成了 Agility Robotics 的护城河：竞争对手可以造出一个会走路的机器人（很多已经做到了），但要复制一个云端编队管理平台 + 年产能 10,000 台的工厂，需要的时间和资本远超融资 PPT 上的规划。</p></div>
 <div class="gtm-subsection"><span class="gtm-tag-list"><span class="gtm-tag">规模化基础设施</span><span class="gtm-tag">软件+制造双重护城河</span><span class="gtm-tag">SaaS 订阅收入</span><span class="gtm-tag">全球首个人形机器人工厂</span></span></div>
-<div class="gtm-subsection"><h4>产品诞生故事</h4>
-<p><strong>最初问题：</strong>2023 年前后，Agility Robotics 面临两个根本性挑战：(1) 如何让客户部署和管理多个 Digit（而非单个 demo 单元）？(2) 如何从实验室手工组装（年产几十台）跨越到可规模化生产（年产数千至万台）？这两个问题如果不解决，Digit 永远只能是一个昂贵的科学项目。</p>
-<p><strong>创始人/团队洞察：</strong>Agility Robotics 很早就意识到&#39;部署&#39;和&#39;制造&#39;跟&#39;研发&#39;一样重要。RoboFab 的设计不是传统的重资产自动化工厂，而是&#39;capex-light&#39;模式——大量使用人工组装和手动工具，降低初始资本投入同时保留工艺灵活性。Arc 的发布时机选在 MODEX 2024（物流自动化行业最大展会），直接面向目标客户展示 operational visibility 和 fleet management 能力。</p>
-<p><strong>早期用户：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">GXO/Spanx（Arc 的第一个商业用户，用于 Digit 编队管理）</span><span class="gtm-tag">RoboFab 内部团队（~150 名员工，作为 Digit 制造和测试的 power user）</span></span>
-<p><strong>早期产品形态：</strong>Arc：云端 SaaS 平台，包含 facility mapping、workflow definition、operational management、troubleshooting、KPI dashboard（uptime、throughput、MTBI）、WMS/WES/MES API 集成。RoboFab：70,000 sq ft 工厂、4 条产线容量、~5,000 个部件组装、&#39;Robot Hospital&#39; 维修中心。</p>
-<p><strong>为什么重要：</strong>Arc 和 RoboFab 把 Agility Robotics 从一个机器人公司变成一个平台公司。平台公司的估值倍数、收入可预测性和竞争壁垒都远超单纯的硬件制造商。这是 Peggy Johnson 接任 CEO 后的核心战略转向。</p>
-</div>
-<div class="gtm-subsection"><h4>出现前市场痛点</h4>
-<p><strong>旧有解决方案：</strong></p><ul><li>机器人公司各自开发私有控制器和离线部署工具</li><li>客户无法在一个平台上管理多品牌、多型号的机器人编队</li><li>人形机器人的制造停留在实验室手工组装（每台都是 unique snowflake，质量一致性和成本都无法控制）</li><li>工业机器人的传统制造模式（重资产、高自动化、长 ROI 周期）不适用于仍在快速迭代中的人形机器人产品</li></ul>
-<p><strong>痛点：</strong></p><ul><li>客户需要 operational visibility——我的机器人在干什么？uptime 多少？throughput 多少？</li><li>客户需要自己定义 workflow，而不是每次改变任务都要请 Agility 工程师飞来现场</li><li>投资者需要看到规模化路径，而不只是技术 demo</li><li>竞争对手可以复制一个 robot，但很难复制一个 factory + cloud platform</li></ul>
-<p><strong>市场壁垒：</strong>Arc 的竞争壁垒在于与 Digit 硬件的深度集成——它是一个专用平台，不是通用机器人管理软件。RoboFab 的壁垒在于它是全球第一个也是目前唯一一个专门设计用于规模化生产人形机器人的工厂，后来者需要投入类似的时间和资本（2-3 年 + $100M+）才能复制。</p>
-<p><strong>为什么旧方案不够：</strong>通用仓库自动化管理软件（如 Blue Yonder、Manhattan Associates WMS）管理的是流程和库存，不是机器人编队。通用机器人操作系统（ROS-based 方案）缺乏企业级的安全、可靠性和 KPI 管理功能。两类现有方案之间的 gap 正是 Arc 的价值空间。</p>
-</div>
-<div class="gtm-subsection"><h4>当时创新点</h4>
-<p><strong>技术创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc：行业首个专门为人形机器人设计的云端编队管理平台，集成 facility mapping、workflow orchestration、实时 KPI dashboard、WMS/WES/MES API</span><span class="gtm-tag">RoboFab：70,000 sq ft capex-light 人形机器人专用工厂设计——灵活可扩展、支持快速产品迭代、人工+工具为主而非全自动产线</span><span class="gtm-tag">Arc + Digit 的深度集成：Cat 1 Stop 安全状态、FSoE 协议、实时电池/负载/位置数据全部通过 Arc dashboard 可见</span></span>
-<p><strong>用户体验创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">仓库经理可以通过 Arc 的 web dashboard 实时看到每个 Digit 的状态、位置、任务进度、电池电量</span><span class="gtm-tag">workflow 编排工具让客户自助定义 Digit 的新任务（不需要写代码，类似拖拽式流程设计）</span><span class="gtm-tag">RoboFab 的客户参观和 demo 功能——潜在客户可以实地看到 Digit 如何被制造和测试</span></span>
-<p><strong>定价创新：</strong>Arc SaaS 定价未公开（作为 RaaS 协议的一部分或独立订阅）。RoboFab 的建设成本未公开（Marion County assessor 记录设备/库存价值约 $40M）。整体模型是 capex-light + opex-heavy。</p>
-<p><strong>渠道创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc：SaaS 直销（随 Digit RaaS 协议捆绑或独立订阅）</span><span class="gtm-tag">RoboFab：制造和维修中心（非销售渠道），但兼具客户参观和 demo 功能</span></span>
-<p><strong>商业模式创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc：SaaS 订阅收入（recurring revenue，提高整体 gross margin）</span><span class="gtm-tag">RoboFab：制造成本中心（非直接收入来源），但通过规模效应降低单台 Digit 成本，提升 RaaS gross margin</span></span>
-<p><strong>生态创新：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc API 使第三方 WMS/WES/MES 厂商可以集成 Digit 编队管理</span><span class="gtm-tag">Manhattan Associates WMS 集成合作伙伴关系</span><span class="gtm-tag">RoboFab 的 Oregon 本地供应链生态（精密加工、执行器、传感器供应商）</span><span class="gtm-tag">Schaeffler 的全球制造网络——可能成为 RoboFab 模式向欧洲输出的模板</span></span>
-<p><strong>当时为什么新：</strong>2024 年同时发布云端编队管理平台和人形机器人工厂，在行业中是首创。在此之前，人形机器人公司的主要叙事是&#39;我们的机器人能做 X&#39;，而不是&#39;我们有平台来部署和管理 1,000 个机器人&#39;。Arc + RoboFab 的组合叙事把对话从&#39;if&#39;转到了&#39;when and how many&#39;。</p>
-</div>
-<div class="gtm-subsection"><h4>爆发路径</h4>
-<p><strong>主要原因：</strong></p><ul><li>Digit 进入商业部署后自然产生的客户需求（operational visibility + fleet management）</li><li>从创业公司到规模企业的组织转型需求（Peggy Johnson 的运营经验）</li><li>制造是硬件公司永远的瓶颈——RoboFab 是解决这个瓶颈的关键基础设施</li></ul>
-<p><strong>关键事件：</strong></p>
-<div class="gtm-key-events">
-<div class="gtm-event-item"><span class="gtm-event-date">2023-09</span> <span class="gtm-event-text">RoboFab 工厂宣布建设计划（Salem, OR, 70,000 sq ft）</span> <span class="gtm-tag gtm-tag-sm">infrastructure</span> <span class="gtm-muted">(press_release)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：向市场传递&#39;我们不仅在做 demo，我们在建工厂&#39;的信号，直接支持后续 C 轮融资叙事</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2024-03</span> <span class="gtm-event-text">Agility Arc 云平台在 MODEX 2024 正式发布</span> <span class="gtm-tag gtm-tag-sm">product_launch</span> <span class="gtm-muted">(trade_show)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：面向物流自动化行业决策者直接展示 operational visibility 和 fleet management 能力</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2024-10</span> <span class="gtm-event-text">RoboFab 正式投产 + Digit V4 发布</span> <span class="gtm-tag gtm-tag-sm">infrastructure + product_launch</span> <span class="gtm-muted">(factory_open_house / media)</span> <span class="gtm-confidence gtm-conf-high">high</span><br><span class="gtm-muted">影响：全球首个人形机器人量产工厂从宣布到投产仅 13 个月，展示了执行速度</span></div>
-<div class="gtm-event-item"><span class="gtm-event-date">2025</span> <span class="gtm-event-text">RoboFab 目标年产数百台，长期产能 10,000 台/年</span> <span class="gtm-tag gtm-tag-sm">scaling</span> <span class="gtm-muted">(investor_update)</span> <span class="gtm-confidence gtm-conf-med">medium</span><br><span class="gtm-muted">影响：规模化路径的量化目标，用于支撑新一轮 $400M 融资的 DCF 模型</span></div>
-</div>
-<p><strong>GTM 路径：</strong></p>
-<div class="gtm-path">
-<span class="gtm-path-step">Digit 商业部署 → 客户提出 operational visibility 需求 → Arc 平台研发</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">GXO 多年合同签署 (2024.6) → 制造规模化需求明确 → RoboFab 加速投产</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">MODEX 2024 Arc 发布 → 物流行业 CIO/CTO 直接接触 → B2B 销售线索</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">RoboFab 投产 (2024.10) → 客户参观 → 增强采购信心（&#39;这个公司真的有工厂&#39;）</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Arc + RoboFab 双重基础设施 → 支撑新一轮 $400M 融资 → 支撑 Schaeffler 全球 100 家工厂部署</span></div>
-</div>
-<div class="gtm-subsection"><h4>对客户的影响</h4>
-<p><strong>新能力：</strong>仓库和制造企业首次获得了一个集成的硬件+软件+制造平台来管理多台人形机器人——而不是管理一堆孤立的 demo 单元。Arc 提供的 operational visibility 使 Digit 从&#39;黑科技实验&#39;变成&#39;可管理的运营资产&#39;。</p>
-<p><strong>节省时间：</strong>workflow 编排工具使客户可以在不依赖 Agility 工程师现场支持的情况下重新配置 Digit 的任务——减少了部署和调整的时间成本（从数周降至数天级别，low_confidence 估算）。</p>
-<p><strong>降低成本：</strong>RoboFab 的规模效应目标是将单台 Digit 成本从早期 $250K+ 降至 $100K 以下（长期），这将直接改善 RaaS 的单位经济模型。目前仍处于早期——数百台规模的单位成本远高于 10,000 台规模。</p>
-<p><strong>收入机会：</strong>Arc 和 RoboFab 直接创造了 ~150 个制造岗位（RoboFab 员工）+ 软件工程和技术支持岗位。间接可能催生第三方 Arc 集成商和 Digit 运维服务商——但目前规模太小，不适合作为确定结论。</p>
-<p><strong>体验变化：</strong>客户从&#39;买/租一个机器人&#39;变成&#39;订阅一个机器人管理平台&#39;——体验更接近企业 SaaS 而非传统工业设备采购。这可能加速 adoption（熟悉的采购模式）但也会提高客户对软件体验的期望值。</p>
-<p><strong>谁受益最大：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">GXO 等早期客户——获得了一个专门为 Digit 优化的管理平台（而竞争对手可能需要自己拼凑方案）</span><span class="gtm-tag">Agility Robotics 的投资人——Arc + RoboFab 提供了更清晰的可规模化收入模型（硬件 + SaaS + 制造）</span><span class="gtm-tag">Oregon 本地经济——RoboFab 创造了制造业就业和本地供应链需求</span><span class="gtm-tag">仓储物流行业的自动化决策者——有了一个可参考的&#39;人形机器人管理平台&#39;标准</span></span>
-</div>
-<div class="gtm-subsection"><h4>对生态 / 职业 / 收入机会的影响</h4>
-<p><strong>新角色/岗位：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">人形机器人编队管理员 (fleet operator)</span><span class="gtm-tag">workflow 编排工程师</span><span class="gtm-tag">RoboFab 制造技术员和装配工</span><span class="gtm-tag">Arc 平台集成工程师（对接 WMS/WES/MES）</span></span>
-<p><strong>受影响的角色：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">传统工业自动化集成商——如果 Arc 的易用性足够高，客户可能减少对第三方集成商的依赖</span><span class="gtm-tag">机器人维修技师——从&#39;修一台机器&#39;变成&#39;管理一个维修中心&#39;（Robot Hospital 模式）</span></span>
-<p><strong>新服务：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc SaaS 订阅（recurring revenue）</span><span class="gtm-tag">RoboFab 的客户参观和 demo 体验</span><span class="gtm-tag">Digit 维修和翻新服务（Robot Hospital）</span><span class="gtm-tag">基于 Arc API 的第三方应用开发（类似 Salesforce AppExchange 的潜力，但目前太早期）</span></span>
-<p><strong>新渠道：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">行业展会（MODEX）的 live demo → B2B 销售线索</span><span class="gtm-tag">RoboFab 客户参观 → B2B 销售转化</span><span class="gtm-tag">战略投资者网络（Amazon、Schaeffler）→ 客户推荐</span></span>
-<p><strong>内容/社区：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Arc dashboard 截图和 workflow demo 视频在 LinkedIn 上的 B2B 传播</span><span class="gtm-tag">MODEX 和 Humanoids Summit 的 keynote 演讲</span><span class="gtm-tag">行业分析师报告将 Arc + RoboFab 作为规模化 benchmark</span></span>
-<p><strong>供应链/配件：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">Oregon 本地的精密制造、执行器、传感器、结构件供应商（受益于 RoboFab 本地采购）</span><span class="gtm-tag">工厂设备和工具供应商（capex-light 但仍需采购装配线工具、测试设备、AGV 等）</span><span class="gtm-tag">物流自动化生态（AMR、传送带、WMS）——Arc API 集成扩大了整个生态的 interoperability</span></span>
-<p><strong>职业与收入机会信号：</strong>RoboFab 直接创造了 ~150 个制造业岗位（2025 年），计划随产能扩展持续增加。这些岗位（机器人装配、测试、维修）要求的技能高于传统仓库工人但低于软件工程师，可能为 Oregon 本地创造新的中等技能就业机会。长期 (2030+) 如果 RoboFab 模式被复制到更多地区，可能形成一个新的&#39;人形机器人制造技工&#39;职业类别。</p>
-</div>
-<div class="gtm-subsection gtm-lessons"><h4>学习与启示</h4>
-<p><strong>可学习点：</strong></p><ul><li>硬件创业公司必须在&#39;做出一个机器人&#39;的同时考虑&#39;怎么制造 1,000 个机器人&#39;和&#39;客户怎么管理 1,000 个机器人&#39;——这三点不是先后关系，是并行工程。RoboFab 在 Digit 只有两个试点客户时就开工了。</li><li>capex-light 制造模式是一种适合硬件迭代期的务实选择：RoboFab 不用全自动产线而用大量人工+手动工具，不是因为没有钱，而是因为 Digit 设计还在快速迭代（V4→V5）。重资产自动线会锁死产品设计。</li><li>云端管理平台是硬件公司提高估值倍数的最有效方式——投资人对&#39;SaaS+Hardware&#39;的估值远高于&#39;纯 Hardware&#39;。Arc 即使订阅收入目前微不足道，它的存在本身就改变了 Agility Robotics 的估值逻辑。</li><li>把工厂变成销售工具：RoboFab 的客户参观功能不是附加价值，而是 B2B 销售漏斗的核心环节。让潜在客户看到机器人怎么制造、怎么测试、怎么维修，比任何 PPT 都有说服力。</li></ul>
-<p><strong>不能照抄的地方：</strong></p><ul><li>capex-light 制造的优势（灵活性高、资本投入低）也是它最大的劣势——在劳动力成本高的市场（如美国），人工组装很难达到消费电子（如 iPhone）的成本效率。长期来看，Agility Robotics 必须在某个时间点转向更高程度的自动化制造。</li><li>Arc 作为封闭平台（只管理 Digit）在早期是优势（深度集成），但如果未来仓库里同时运行多品牌人形机器人，客户可能更倾向于使用跨品牌编排平台（类似于 Kubernetes vs 私有云）。Arc 的长期生态策略需要考虑开放性问题。</li><li>RoboFab 的 10,000 台/年产能目标在 2025 年仍是一个未被验证的承诺。硬件制造从 100 台到 10,000 台之间的&#39;死亡谷&#39;曾杀死了无数硬件创业公司（从 Jawbone 到 Magic Leap）。不要因为 RoboFab 的存在就认为 scaling 是必然事件。</li><li>Arc + RoboFab 的双重投资对资本要求极高（估计两者加起来投入 $100M+），只有融到 $300M+ 的公司才能复制。这不是轻资产创业者可以参考的路径。</li></ul>
-<p><strong>适合什么类型的公司学习：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">有足够融资的高端硬件创业公司</span><span class="gtm-tag">需要从单件原型跨越到规模制造的深科技公司</span><span class="gtm-tag">B2B 企业级硬件+软件平台公司</span><span class="gtm-tag">有战略投资者兼客户的工业自动化公司</span></span>
-<p><strong>不适合什么类型的公司：</strong></p><span class="gtm-tag-list"><span class="gtm-tag">种子/A 轮 startup（Arc+RoboFab 级别的投资需要 $100M+）</span><span class="gtm-tag">消费硬件公司（消费者不需要 fleet management cloud platform）</span><span class="gtm-tag">纯软件公司（不涉及制造）</span></span>
-</div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Accessory / consumables price</td><td>RoboFab is manufacturing capacity, not a customer accessory; customer-side deployment hardware is quote-based.</td></tr>
+<tr><td class="gtm-td-label">Service / warranty / installation fee</td><td>Integration, safety cell, maintenance, and support priced case by case.</td></tr>
+<tr><td class="gtm-td-label">Enterprise / RaaS price</td><td>Bundled with Digit deployment and RaaS agreements; no public rate card.</td></tr>
+<tr><td class="gtm-td-label">Notes</td><td>Do not present Arc or RoboFab as having published SaaS pricing.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.agilityrobotics.com/news/agility-arc-cloud-automation-platform" target="_blank" rel="noopener noreferrer">Agility Arc announcement</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.agilityrobotics.com/news/robofab-the-worlds-first-humanoid-robot-factory" target="_blank" rel="noopener noreferrer">RoboFab manufacturing announcement</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>原始洞察：</strong>2023 年前后，Agility Robotics 面临两个根本性挑战：(1) 如何让客户部署和管理多个 Digit（而非单个 demo 单元）？(2) 如何从实验室手工组装（年产几十台）跨越到可规模化生产（年产数千至万台）？这两个问题如果不解决，Digit 永远只能是一个昂贵的科学项目。</li>
+<li><strong>旧方案缺口：</strong>通用仓库自动化管理软件（如 Blue Yonder、Manhattan Associates WMS）管理的是流程和库存，不是机器人编队。通用机器人操作系统（ROS-based 方案）缺乏企业级的安全、可靠性和 KPI 管理功能。两类现有方案之间的 gap 正是 Arc 的价值空间。</li>
+<li><strong>定价/商业模式：</strong>Arc SaaS 定价未公开（作为 RaaS 协议的一部分或独立订阅）。RoboFab 的建设成本未公开（Marion County assessor 记录设备/库存价值约 $40M）。整体模型是 capex-light + opex-heavy。</li>
+<li><strong>增长触发：</strong>Digit 商业部署 → 客户提出 operational visibility 需求 → Arc 平台研发 -&gt; GXO 多年合同签署 (2024.6) → 制造规模化需求明确 → RoboFab 加速投产</li>
+<li><strong>客户收益：</strong>RoboFab 的规模效应目标是将单台 Digit 成本从早期 $250K+ 降至 $100K 以下（长期），这将直接改善 RaaS 的单位经济模型。目前仍处于早期——数百台规模的单位成本远高于 10,000 台规模。</li>
+<li><strong>可学习：</strong>硬件创业公司必须在&#39;做出一个机器人&#39;的同时考虑&#39;怎么制造 1,000 个机器人&#39;和&#39;客户怎么管理 1,000 个机器人&#39;——这三点不是先后关系，是并行工程。RoboFab 在 Digit 只有两个试点客户时就开工了。</li>
+</ul></div>
 <div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
 <ol>
 <li><a href="https://finance.yahoo.com/news/agility-robotics-brings-operational-visibility-120000517.html" target="_blank" rel="noopener noreferrer">Yahoo Finance — Agility Robotics Brings Operational Visibility to Deployment of Digit Fleets with Agility Arc (2024-03-11)</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— MODEX 2024 上 Arc 平台的官方发布，含功能描述和 B2B 定位</span></li>
 <li><a href="https://www.oregonlive.com/silicon-forest/2025/08/oregon-factory-builds-the-walking-robots-of-tomorrow-these-are-going-to-be-a-part-of-everyday-life.html" target="_blank" rel="noopener noreferrer">OregonLive — Oregon Factory Builds the Walking Robots of Tomorrow (2025-08)</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— RoboFab 工厂的深度报道，含员工数、产线数、设备价值、税收优惠等详细信息</span></li>
 <li><a href="https://www.supplychain247.com/article/modex_2024_agility_robotics_brings_operational_visibility_to_deployment_of_digit_fleets_with_launch_of_agility_arc/agility_robotics" target="_blank" rel="noopener noreferrer">SupplyChain247 — MODEX 2024: Agility Robotics Brings Operational Visibility to Deployment of Digit Fleets with Agility Arc</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— 物流自动化行业媒体对 Arc 的分析，面向仓储行业决策者</span></li>
-<li><a href="https://www.agilityrobotics.com/solutions" target="_blank" rel="noopener noreferrer">Agility Robotics — Official Solutions Page (Arc and Digit deployment)</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-high">high</span> <span class="gtm-muted">— Agility Robotics 官网对 Digit + Arc 解决方案的描述</span></li>
+<li class="gtm-muted">... 还有 1 条来源未显示</li>
 </ol></div>
 </div>
 </div>
@@ -814,7 +709,7 @@ Agility Robotics 品牌调研报告 · Generated 2026-05-25 · English-first Res
 <div class="gtm-card gtm-learn-card gtm-learn-can"><h4>可以学习</h4><ul><li>学术工具商业化作为深科技 GTM 的第一步：Cassie 模式——先卖给研究社区攒口碑和收入，再冲刺商业市场——适用于很多从实验室 spin-out 的硬件公司</li><li>&#39;先做窄再做广&#39;的硬科技安全策略：Digit 只做 tote 搬运但做到 100,000+ tote，用 reliability proof 打开市场</li><li>把最大客户变成股东：Amazon + Schaeffler 的&#39;投资+采购&#39;捆绑模式是 B2B 深科技的高效 GTM 策略</li><li>RaaS 定价模式降低新品类 adoption 的客户风险：客户不敢花 $150K+ 买未知可靠性的人形机器人，但愿意按 $30/hr 租用</li><li>capex-light 制造 + 云端管理平台的双重基础设施：硬件公司不能只关注产品本身，需要同时建设&#39;怎么造&#39;和&#39;怎么管&#39;的能力</li></ul></div>
 <div class="gtm-card gtm-learn-card gtm-learn-cannot"><h4>不能照抄</h4><ul><li>DARPA/OSU 二十年的学术积累不是可复制的资源优势——Hurst 有终身教职保障和 DARPA 资助，可以花 10 年慢慢研究 mobility</li><li>DCVC + Playground Global 的长期陪跑资本（每轮都跟投，累计 ~$330M）对于大多数硬件创业公司来说是不可及的资金量</li><li>Amazon 作为投资者兼客户的特殊关系——全球没有第二个 Amazon，也没有第二个能同时提供资金+仓库测试场+行业背书的客户</li><li>Peggy Johnson 级别的高管招聘（Qualcomm 24 年 + Microsoft EVP + Magic Leap CEO）需要 $1B+ 估值的股权包和董事会关系网络</li></ul></div>
 <div class="gtm-card gtm-learn-card gtm-learn-best"><h4>最重要启发</h4><ul><li>在 hype 赛道做务实派是一种被低估的竞争策略：当所有对手都在比拼谁的 demo 视频更 viral 时，默默签到第一个付费合同就是最好的 marketing</li><li>从 ATRIAS 到 Cassie 到 Digit 到 Arc+RoboFab——每一步只增加一个新维度（mobility → manipulation → perception → fleet management → manufacturing），这种渐进式技术路线比&#39;一步到位造通用人形机器人&#39;的失败概率低得多</li><li>硬件+软件+制造的垂直整合在早期可能显得&#39;重&#39;，但在规模化阶段构成难以复制的竞争壁垒——竞争对手可以快速复制一个 demo，但无法快速复制一个 factory + cloud platform</li><li>把&#39;第一&#39;当作核心资产：&#39;第一个商业部署的人形机器人&#39;、&#39;第一个人形机器人 RaaS 合同&#39;、&#39;第一个人形机器人工厂&#39;——这些&#39;第一&#39;在融资、PR、销售和人才招聘中都是杠杆</li></ul></div>
-<div class="gtm-card gtm-learn-card gtm-learn-open"><h4>仍需确认的问题</h4><ul><li>Digit 的 RaaS 单位经济模型在数百台规模下是否已经打平？$30/hr 全额费率是否能覆盖单台 $150K-$250K 的制造成本 + 部署/维护/Arc SaaS 成本？（未公开数据，行业估算 low_confidence）</li><li>GXO 合同的续约和扩展情况如何？是否从 Spanx 一个站点扩展到更多 GXO 运营的仓库或更多客户品牌？（2025 年 not_found）</li><li>Amazon 试点的最终评估结论？Amazon 是否会签署类似 GXO 的多年合同，还是选择内部自研替代方案？（2025 年 not_found——Amazon 未公开发布试点结论）</li><li>Schaeffler 100 家工厂的部署时间表和首批 Digit 交付进展？（2025 年 not_found——合作签署于 2024 年 11 月，首批交付数量和时间未知）</li><li>Digit V5 的开发进度和实际性能提升（payload 50 lbs、运行/充电比 10:1、AI 安全协作）是否符合时间表？2025/2026 能否如期发布？</li><li>中国市场完全缺席是策略性选择还是被动的能力限制？如果中国厂商（Unitree $16K G1、UBTech Walker S2）开始向欧美市场出口低价人形机器人，Agility 如何应对？</li><li>当行业泡沫破裂（假设 2026-2027 年部分竞争对手资金耗尽），Agility 是否能凭借真实收入和制造能力成为整合者/幸存者——还是整个赛道的&#39;务实派&#39;也会被拖累？</li></ul></div>
+<div class="gtm-card gtm-learn-card gtm-learn-open"><h4>仍需确认的问题</h4><ul><li>Digit 的 RaaS 单位经济模型在数百台规模下是否已经打平？$30/hr 全额费率是否能覆盖单台 $150K-$250K 的制造成本 + 部署/维护/Arc SaaS 成本？（未公开数据，行业估算 low_confidence）</li><li>Digit V5 的开发进度和实际性能提升（payload 50 lbs、运行/充电比 10:1、AI 安全协作）是否符合时间表？2025/2026 能否如期发布？</li><li>中国市场完全缺席是策略性选择还是被动的能力限制？如果中国厂商（Unitree $16K G1、UBTech Walker S2）开始向欧美市场出口低价人形机器人，Agility 如何应对？</li><li>当行业泡沫破裂（假设 2026-2027 年部分竞争对手资金耗尽），Agility 是否能凭借真实收入和制造能力成为整合者/幸存者——还是整个赛道的&#39;务实派&#39;也会被拖累？</li></ul></div>
 </div>
 <hr class="divider">
 <div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>

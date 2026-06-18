@@ -37,7 +37,7 @@ prompts/brand-gtm-extension.md
 - brand_slug 字段使用品牌名转小写 slug（空格、下划线转 `-`）
 - 不要在 JSON 外写 Markdown 或解释
 - top_products 最多 3 个（至少 1 个）
-- 不确定的内容写 unknown / not_found / low_confidence
+- 不确定且没有可靠来源的内容不要写进报告；省略该字段，并让审计清单暴露缺口
 - 每个重要结论尽量标注来源
 
 ---
@@ -96,7 +96,7 @@ node scripts/gtm-workflow.js "{{BRAND_NAME}}" --find-report
 - [ ] 是否优先使用了英文资料（而不是只看中文）？
 - [ ] founder_background 和 brand_timeline 是否在 summary 或 brand_context 中保留？
 - [ ] JSON 外是否没有任何 Markdown 代码块标记？
-- [ ] 不确定的数字是否标注了 low_confidence 或 not_found？
+- [ ] 不确定的数字是否已从正文删除，或改为带来源的低置信度表述？
 
 如果发现问题，请修正 JSON 后再继续。
 

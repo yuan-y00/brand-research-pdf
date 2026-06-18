@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BR-Theme Demo — 品牌调研主题演示</title>
+
+<!-- 推荐字体导入（可选，不导入则使用系统字体） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+
+<!-- 主题 CSS -->
+<link rel="stylesheet" href="./brand-research-theme.css">
+</head>
+<body class="br-theme">
+
+<!-- ======================================================================= -->
+<!-- Hero -->
+<!-- ======================================================================= -->
+<div class="br-hero">
+  <h1>Brand Research Theme Demo</h1>
+  <p class="br-subtitle">所有组件预览 · BR-Theme 品牌调研视觉主题</p>
+</div>
+
+<div class="br-page">
+
+<!-- ======================================================================= -->
+<!-- Section -->
+<!-- ======================================================================= -->
+<h2>1. Section 内容区</h2>
+
+<div class="br-section">
+  <div class="br-section-label">Section 01</div>
+  <h3>这是一个 Section 卡片</h3>
+  <p>Section 用于包裹报告中的每个独立内容块。白色背景 + 圆角 + 轻微阴影，在暖色页面背景上形成清晰的视觉分层。每个 Section 之间保持 20px 间距。</p>
+  <p>段落之间自动保持 10px 间距。链接颜色使用 <a href="#">accent 色</a>（#C2513B / #E07A5F）。</p>
+</div>
+
+<div class="br-section">
+  <h3>Section 可以包含任何内容</h3>
+  <ul>
+    <li>品牌背景介绍</li>
+    <li>创始团队分析</li>
+    <li>融资时间线</li>
+    <li>产品分析</li>
+    <li>竞争格局</li>
+  </ul>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Card Grid -->
+<!-- ======================================================================= -->
+<h2>2. Card Grid 卡片网格</h2>
+
+<div class="br-card-grid">
+  <a href="#" class="br-card br-card-accent">
+    <h2>Agility Robotics</h2>
+    <div class="br-subtitle">人形机器人 · 仓储物流 · 美国 · 2015 年创立</div>
+    <div class="br-tags">
+      <span class="br-tag">$2.5B 估值</span>
+      <span class="br-tag">RaaS 模式</span>
+      <span class="br-tag">GXO 部署</span>
+    </div>
+  </a>
+
+  <div class="br-card">
+    <h2>Figure AI</h2>
+    <div class="br-subtitle">具身智能 · 人形机器人 · 美国 · 2022 年创立</div>
+    <div class="br-tags">
+      <span class="br-tag">$40B 估值</span>
+      <span class="br-tag">BMW 试点</span>
+      <span class="br-tag">Helix VLA</span>
+    </div>
+  </div>
+
+  <div class="br-card">
+    <h2>SpaceX</h2>
+    <div class="br-subtitle">航天发射 · 卫星互联网 · 美国 · 2002 年创立</div>
+    <div class="br-tags">
+      <span class="br-tag">Falcon 9</span>
+      <span class="br-tag">Starlink</span>
+      <span class="br-tag">Starship</span>
+    </div>
+  </div>
+
+  <div class="br-card">
+    <h2>NVIDIA</h2>
+    <div class="br-subtitle">AI 基础设施 · 半导体 · 美国 · 1993 年创立</div>
+    <div class="br-tags">
+      <span class="br-tag">GPU</span>
+      <span class="br-tag">CUDA</span>
+      <span class="br-tag">Data Center</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Tag -->
+<!-- ======================================================================= -->
+<h2>3. Tag 标签</h2>
+
+<div class="br-section">
+  <div class="br-tags">
+    <span class="br-tag">默认标签</span>
+    <span class="br-tag">GTM 扩展</span>
+    <span class="br-tag">产品学习</span>
+    <span class="br-tag">渠道模式</span>
+    <span class="br-tag-sm">小号标签</span>
+    <span class="br-tag-sm">sm</span>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Table -->
+<!-- ======================================================================= -->
+<h2>4. Table 表格</h2>
+
+<div class="br-section">
+  <h3>融资历程</h3>
+  <table class="br-table">
+    <thead>
+      <tr>
+        <th style="width:80px">年份</th>
+        <th style="width:120px">轮次</th>
+        <th style="width:140px">金额</th>
+        <th>领投方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="br-td-label">2018</td>
+        <td>种子轮</td>
+        <td>$8M</td>
+        <td>Playground Global</td>
+      </tr>
+      <tr>
+        <td class="br-td-label">2020</td>
+        <td>A 轮</td>
+        <td>$20.25M</td>
+        <td>DCVC, Playground Global</td>
+      </tr>
+      <tr>
+        <td class="br-td-label">2022</td>
+        <td>B 轮</td>
+        <td>$150M</td>
+        <td>DCVC, Playground, Amazon</td>
+      </tr>
+      <tr>
+        <td class="br-td-label">2024</td>
+        <td>C 轮</td>
+        <td>$150M</td>
+        <td>DCVC, Schaeffler</td>
+      </tr>
+      <tr>
+        <td class="br-td-label">2025</td>
+        <td>新一轮（进行中）</td>
+        <td>~$400M</td>
+        <td>WP Global, SoftBank</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Callout -->
+<!-- ======================================================================= -->
+<h2>5. Callout 强调框</h2>
+
+<div class="br-callout">
+  <strong>关键发现：</strong>Agility Robotics 是全球第一家将双足人形机器人投入商业仓储物流运营的公司。截至 2025 年初，Digit 已在 GXO/Spanx 仓库累计搬运超过 100,000 个 tote——这是人形机器人行业最重要的商业化验证点之一。
+</div>
+
+<div class="br-callout br-callout-info">
+  <strong>提示：</strong>所有估值数据来自媒体公开报道。Agility Robotics 为私有公司，未公开财务数据。$1.75B pre-money 估值和 $400M 新融资来自 The Information 2025 年 4 月报道。
+</div>
+
+<div class="br-callout br-callout-positive">
+  <strong>正面信号：</strong>GXO 签署了行业首个多年期人形机器人 RaaS 商业协议——从 "酷 demo" 到 "有人付钱了" 的分水岭事件。
+</div>
+
+<!-- ======================================================================= -->
+<!-- Stat Cards -->
+<!-- ======================================================================= -->
+<h2>6. Stat Card 统计卡片</h2>
+
+<div class="br-stat-row">
+  <div class="br-stat-card">
+    <div class="br-stat-number">100K+</div>
+    <div class="br-stat-label">Totes Moved</div>
+  </div>
+  <div class="br-stat-card">
+    <div class="br-stat-number">$2.5B</div>
+    <div class="br-stat-label">Estimated Valuation</div>
+  </div>
+  <div class="br-stat-card">
+    <div class="br-stat-number">10,000</div>
+    <div class="br-stat-label">Annual Capacity (RoboFab)</div>
+  </div>
+  <div class="br-stat-card">
+    <div class="br-stat-number">2015</div>
+    <div class="br-stat-label">Founded</div>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Insight Cards -->
+<!-- ======================================================================= -->
+<h2>7. Insight Card 分析卡片</h2>
+
+<div class="br-insight-grid">
+  <div class="br-insight-card br-insight-right">
+    <div class="br-insight-num">01</div>
+    <h4>先做窄再做广：tote 搬运 → 扩展任务</h4>
+    <p>Digit 目前只做一件事——从 AMR 取 tote 放上传送带。但在这个窄任务上做到了 100,000+ tote 的 reliability proof。这是硬科技公司降低初始风险的经典策略。</p>
+  </div>
+  <div class="br-insight-card br-insight-wrong">
+    <div class="br-insight-num">02</div>
+    <h4>不能因为 "第一" 就假设壁垒不可逾越</h4>
+    <p>Digit 是第一个商业部署的人形机器人，但这个 "第一" 的时间窗口很短——Figure AI、Apptronik、Tesla Optimus 都在快速追赶。先发优势不等于持续优势。</p>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Divider -->
+<!-- ======================================================================= -->
+<h2>8. Divider 分割线</h2>
+
+<hr class="br-divider">
+
+<p>使用 br-divider 替代普通的 hr，创造 accent 色到透明的渐变效果。</p>
+
+<!-- ======================================================================= -->
+<!-- Source List -->
+<!-- ======================================================================= -->
+<h2>9. Source List 来源列表</h2>
+
+<div class="br-section">
+  <h3>Sources</h3>
+  <div class="br-source-list">
+    <ol>
+      <li><a href="#">Agility Robotics — Official Company Page</a> — 公司介绍、团队、历史 (official, high confidence)</li>
+      <li><a href="#">Agility Robotics — Digit Moves Over 100,000 Totes</a> — 100K tote 里程碑官方发布 (official, high confidence)</li>
+      <li><a href="#">Willamette Week — OSU Robotics Professor Helped Create a $2.5B Company (2026)</a> — 深度报道 (media, high confidence)</li>
+      <li><a href="#">NASDAQ — GXO Signs Multi-Year Agreement with Agility Robotics (2024-06-27)</a> — 官方新闻稿 (official, high confidence)</li>
+      <li><a href="#">The Robot Report — RBR50 2025: Digit First Humanoid Commercial Deployment</a> — 行业分析 (media, high confidence)</li>
+      <li><a href="#">TechSpot — Humanoid Robot Hype Running Ahead of Reality (2025)</a> — 行业冷静分析 (media, high confidence)</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Timeline / Path -->
+<!-- ======================================================================= -->
+<h2>10. Path 渠道路径 / Timeline</h2>
+
+<div class="br-section">
+  <h3>GTM 渠道路径</h3>
+  <div class="br-path">
+    <span class="br-path-step">DARPA / OSU 实验室</span>
+    <span class="br-path-arrow">→</span>
+    <span class="br-path-step">Cassie 研究平台销售</span>
+    <span class="br-path-arrow">→</span>
+    <span class="br-path-step">产业投资者引入</span>
+    <span class="br-path-arrow">→</span>
+    <span class="br-path-step">Amazon / GXO 仓库试点</span>
+    <span class="br-path-arrow">→</span>
+    <span class="br-path-step">RaaS 商业协议</span>
+    <span class="br-path-arrow">→</span>
+    <span class="br-path-step">RoboFab + Arc 规模化</span>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Key Events -->
+<!-- ======================================================================= -->
+<h2>11. Key Events 事件列表</h2>
+
+<div class="br-section">
+  <h3>品牌大事记</h3>
+  <div class="br-key-events">
+    <div class="br-event-item">
+      <span class="br-event-date">2015</span>
+      <span class="br-event-text">Agility Robotics 在 Oregon 州 Albany 正式成立</span>
+    </div>
+    <div class="br-event-item">
+      <span class="br-event-date">2016</span>
+      <span class="br-event-text">Cassie 双足研究平台亮相，首批售罄</span>
+    </div>
+    <div class="br-event-item">
+      <span class="br-event-date">2022-04</span>
+      <span class="br-event-text">B 轮 $150M，Amazon Industrial Innovation Fund 参投</span>
+    </div>
+    <div class="br-event-item">
+      <span class="br-event-date">2023-10</span>
+      <span class="br-event-text">Digit 进入 Amazon 仓库测试</span>
+    </div>
+    <div class="br-event-item">
+      <span class="br-event-date">2024-06</span>
+      <span class="br-event-text">GXO 签署行业首个多年期人形机器人 RaaS 协议</span>
+    </div>
+    <div class="br-event-item">
+      <span class="br-event-date">2025 年初</span>
+      <span class="br-event-text">Digit 累计搬运 100,000+ totes，获 RBR50 Robot of the Year</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Product Card -->
+<!-- ======================================================================= -->
+<h2>12. Product Card 产品分析卡片</h2>
+
+<div class="br-product-card">
+  <div class="br-product-header">
+    <div class="br-product-rank">01</div>
+    <div>
+      <div class="br-product-name">Digit — 仓储人形机器人</div>
+      <div class="br-product-meta">
+        <span class="br-product-type">product_line</span>
+        <span class="br-confidence br-conf-high">high confidence</span>
+      </div>
+    </div>
+  </div>
+  <div class="br-product-body">
+    <p>Digit 是 Agility Robotics 的核心商业产品，也是全球第一个在付费客户仓库中持续运行的人形机器人。</p>
+    <h4>为什么选择它</h4>
+    <p>全球首个商业部署的人形机器人。RBR50 2025 首届 Robot of the Year。在 GXO/Spanx 仓库累计搬运 100,000+ tote，证明人形机器人可以在真实运营环境中创造商业价值。</p>
+    <h4>关键创新</h4>
+    <ul>
+      <li>双足行走 + 双臂操作的 Mobile Manipulation Robot（MMR）品类定义</li>
+      <li>Cat 1 Stop + FSoE 安全协议——能在人类附近工作而无需物理护栏</li>
+      <li>Agility Arc 云端编队管理——为客户提供 operational visibility</li>
+    </ul>
+  </div>
+  <div class="br-callout">
+    <strong>学习要点：</strong>在 hype 赛道里做务实派——不和竞争对手比拼谁的 demo 更 viral，而是比谁先签到付费客户。GXO 合同比任何视频都有说服力。
+  </div>
+</div>
+
+<div class="br-product-card">
+  <div class="br-product-header">
+    <div class="br-product-rank">02</div>
+    <div>
+      <div class="br-product-name">Cassie — 双足研究平台</div>
+      <div class="br-product-meta">
+        <span class="br-product-type">product</span>
+        <span class="br-confidence br-conf-high">high confidence</span>
+      </div>
+    </div>
+  </div>
+  <div class="br-product-body">
+    <p>Cassie 是 Digit 的技术前身。从 DARPA $1M 资助的 ATRIAS 项目衍生而来，作为标准化双足研究平台售予全球多个顶尖实验室。</p>
+    <h4>核心启示</h4>
+    <p>把学术研究成果包装成可销售的研究平台（而非直接冲刺商业产品），用研究社区的口碑积累技术信誉和早期收入——这是一种被低估的深科技 GTM 路径。</p>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Learning Cards -->
+<!-- ======================================================================= -->
+<h2>13. Learning Cards 经验总结</h2>
+
+<div class="br-learn-grid">
+  <div class="br-learn-card br-learn-can">
+    <h4>✅ 可以学习</h4>
+    <ul>
+      <li>学术工具商业化的深科技 GTM 路径</li>
+      <li>"先做窄再做广"的安全策略</li>
+      <li>把最大客户变成股东的高效模式</li>
+      <li>RaaS 降低新品类 adoption 门槛</li>
+    </ul>
+  </div>
+  <div class="br-learn-card br-learn-cannot">
+    <h4>❌ 不能照抄</h4>
+    <ul>
+      <li>DARPA/OSU 二十年的学术积累不可复制</li>
+      <li>$330M+ 长期陪跑资本大多数人不可及</li>
+      <li>Amazon 作为投资者兼客户的特殊关系独一无二</li>
+    </ul>
+  </div>
+  <div class="br-learn-card br-learn-best">
+    <h4>💡 最佳经验</h4>
+    <ul>
+      <li>在 hype 赛道做务实派是有效竞争策略</li>
+      <li>渐进式技术路线降低失败概率</li>
+      <li>硬件+软件+制造垂直整合构成壁垒</li>
+    </ul>
+  </div>
+  <div class="br-learn-card br-learn-open">
+    <h4>🔮 开放问题</h4>
+    <ul>
+      <li>RaaS 单位经济模型在大规模下能否打平？</li>
+      <li>Amazon 试点最终结论？是否签多年合同？</li>
+      <li>当行业泡沫破裂，务实派能否幸存？</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Lessons Box -->
+<!-- ======================================================================= -->
+<h2>14. Lessons Box 经验框</h2>
+
+<div class="br-section">
+  <h3>产品策略经验</h3>
+  <div class="br-lessons">
+    <h4>可以学习</h4>
+    <ul>
+      <li>Cassie 模式——先卖给研究社区攒口碑和收入，再冲刺商业市场</li>
+      <li>Digit 模式——只做 tote 搬运一件事，但做到极致</li>
+      <li>RoboFab 模式——capex-light 制造，保留产品迭代灵活性</li>
+    </ul>
+  </div>
+  <div class="br-lessons" style="margin-top: 12px;">
+    <h4>不能照抄</h4>
+    <ul>
+      <li>DARPA/OSU 二十年的学术积累路径</li>
+      <li>DCVC + Playground Global 每轮跟投的长期资本</li>
+      <li>Peggy Johnson 级别高管的人才储备</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Grid 2 -->
+<!-- ======================================================================= -->
+<h2>15. Grid 2 双栏布局</h2>
+
+<div class="br-grid-2">
+  <div class="br-section">
+    <h3>左侧栏</h3>
+    <p>适合展示对比信息、中英文对照、或者将内容分为两个逻辑上并列的区域。</p>
+  </div>
+  <div class="br-section">
+    <h3>右侧栏</h3>
+    <p>在小屏幕（700px 以下）会自动变为单栏布局。适合做 pros/cons 对比、before/after 展示、中英文翻译等场景。</p>
+  </div>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Confidence Badges -->
+<!-- ======================================================================= -->
+<h2>16. Confidence Badge 可信度</h2>
+
+<div class="br-section">
+  <div class="br-tags">
+    <span class="br-confidence br-conf-high">high confidence</span>
+    <span class="br-confidence br-conf-medium">medium confidence</span>
+    <span class="br-confidence br-conf-low">low confidence</span>
+  </div>
+  <p class="br-muted" style="margin-top: 12px;">用于标注每个数据点和结论的可信度等级。high = 官方/权威来源确认，medium = 行业估算/多方交叉验证，low = 单一来源/推测。</p>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Disclaimer -->
+<!-- ======================================================================= -->
+<h2>17. Disclaimer</h2>
+
+<div class="br-section">
+  <p class="br-disclaimer">This report is for learning and pattern recognition. It does not perform strict fact auditing. Agility Robotics is a private company; revenue figures and unit costs are third-party estimates unless sourced from official announcements.</p>
+</div>
+
+<!-- ======================================================================= -->
+<!-- Footer -->
+<!-- ======================================================================= -->
+<div class="br-footer">
+  BR-Theme v1.0 · Powered by <a href="#">brand-research-pdf</a> · Generated 2026-05-25
+</div>
+
+</div><!-- .br-page -->
+
+</body>
+</html>

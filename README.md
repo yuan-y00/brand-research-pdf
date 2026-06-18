@@ -1,148 +1,166 @@
-# Brand Research PDF
+# Brand Research Reports
 
-输入品牌名，自动生成深度调研报告。基于 [nice-pdf](https://github.com/yuan-y00/nice-pdf) 高级设计系统。
+这是一个品牌研究报告项目。当前目标是把历史手写 HTML 报告逐步迁移成结构化数据驱动的报告系统。
 
-## 效果
+项目现在有两条可执行流水线：
 
-对任意品牌/公司，自动完成 Web 调研并生成精美连续网页报告：
+- 基础报告：`data/reports/<slug>.json` -> `scripts/report-check.js` -> `templates/report.html` -> `examples/<slug>-report.html`
+- GTM 扩展：`data/gtm/<slug>.json` -> `scripts/gtm-check.js` -> `scripts/gtm-append.js` -> `examples/<slug>-report-gtm.html`
 
-| 章节 | 内容 |
+> 重要说明：脚本不会自动联网调研，也不会自动判断事实真伪。研究事实必须由人或当前使用的 AI 工具补齐，并保留来源链接。
+
+## 当前能做什么
+
+### 1. 查看已有报告
+
+已有报告位于 `examples/`。历史报告仍然保留为可读 HTML；新报告应优先从 `data/reports/*.json` 生成。
+
+GTM 追加版通常命名为：
+
+```bash
+examples/<slug>-report-gtm.html
+```
+
+### 2. 生成基础报告研究 prompt
+
+```bash
+node scripts/report-workflow.js "Anker"
+```
+
+输出：
+
+```bash
+tmp/anker-report-research-prompt.txt
+```
+
+把 prompt 交给当前使用的 AI 工具或人工研究流程，产出：
+
+```bash
+data/reports/anker.json
+```
+
+### 3. 检查并渲染基础报告
+
+```bash
+node scripts/report-workflow.js "Anker" --check
+node scripts/report-workflow.js "Anker" --render --force
+```
+
+一步执行：
+
+```bash
+node scripts/report-workflow.js "Anker" --publish --force
+```
+
+### 4. 生成 GTM 研究 prompt
+
+```bash
+node scripts/gtm-workflow.js "Anker"
+```
+
+输出：
+
+```bash
+tmp/anker-gtm-research-prompt.txt
+```
+
+把该 prompt 交给当前使用的 AI 工具，产出：
+
+```bash
+data/gtm/anker.json
+```
+
+### 5. 检查并追加 GTM
+
+```bash
+node scripts/gtm-check.js data/gtm/anker.json
+node scripts/gtm-workflow.js "Anker" --append --force
+```
+
+基础报告和 GTM 可以合并执行：
+
+```bash
+node scripts/report-workflow.js "Anker" --publish --with-gtm --force
+```
+
+### 6. 审核所有报告缺口
+
+```bash
+node scripts/report-audit.js
+```
+
+输出：
+
+```bash
+docs/report-gap-audit.md
+```
+
+这份审计是启发式检查，用来定位明显缺口；它不能替代事实核验。
+
+### 7. 盘点所有生成文件
+
+```bash
+node scripts/generated-inventory.js
+```
+
+输出：
+
+```bash
+docs/generated-files.md
+```
+
+## 项目结构
+
+| 路径 | 用途 |
 |------|------|
-| 封面 | 品牌名 + 4 个核心 KPI 卡片 |
-| 一 | 创始团队（含初始资金来源具体金额） + 品牌大事年表 |
-| 二 | 财务表现与竞争格局 |
-| 三 | 护城河与商业模式 |
-| 四 | 做对了什么（6 张详细分析卡片，含竞对对比） |
-| 五 | 做错了什么/风险（6 张卡片） |
-| 六 | 用户画像（含百分比） + 客户评价（Trustpilot/投诉分布/Reddit/YouTube） |
-| 七 | 核心数据汇总 + 4 条关键结论 |
+| `data/reports/` | 新基础报告结构化 JSON、schema 和模板 |
+| `data/gtm/` | GTM / 产品学习结构化 JSON |
+| `templates/report.html` | 基础报告 HTML 壳模板 |
+| `theme/` | 新基础报告统一视觉主题 |
+| `examples/` | 静态 HTML 报告输出和历史报告集合 |
+| `prompts/brand-report.md` | 基础报告研究 prompt 模板 |
+| `prompts/brand-gtm-extension.md` | GTM 研究 prompt 模板 |
+| `scripts/report-workflow.js` | 基础报告 prompt / check / render 总入口 |
+| `scripts/report-check.js` | 检查基础报告 JSON 内容质量 |
+| `scripts/report-render.js` | 基础报告 JSON 渲染为 HTML |
+| `scripts/report-audit.js` | 扫描基础报告与 GTM JSON 的缺漏 |
+| `scripts/gtm-workflow.js` | GTM prompt 生成与追加总入口 |
+| `scripts/gtm-check.js` | 检查 GTM JSON 内容质量 |
+| `scripts/gtm-render.js` | GTM JSON 渲染为 HTML |
+| `scripts/gtm-append.js` | 把 GTM HTML 插入既有报告 |
+| `scripts/generated-inventory.js` | 盘点正式报告、结构化数据和临时生成文件 |
+| `docs/report-data-requirements.md` | 报告必须包含的数据要求 |
+| `docs/report-gap-audit.md` | 自动生成的报告缺口审计 |
+| `docs/generated-files.md` | 自动生成的文件台账 |
+| `SKILL.md` | 旧 Claude Code skill 遗留说明，不再作为当前执行规范 |
 
-## 已生成报告
+## 数据要求
 
-| 品牌 | 品类 | 亮点 |
-|------|------|------|
-| [Hyrox](examples/hyrox-report.html) | 健身赛事 | $1.4亿营收 · 650K参赛者 · $0付费广告 |
-| [Tonal](examples/tonal-report.html) | 智能家庭力量训练 | $1.6B峰值→$550M · >$100M ARR |
-| [Peloton](examples/peloton-report.html) | 互联健身 | $50B→$1.2B · 2.88M订阅用户 |
-| [Speediance](examples/speediance-report.html) | 中国智能健身出海 | $49M营收 · $13.6M融资 · 零订阅 |
-| [AEKE](examples/aeke-report.html) | AI镜面力量训练 | $1.5M众筹 · HK$2万创始人自筹 |
-| [Growl](examples/growl-report.html) | AI投影拳击沙袋 | $4.75M种子 · 2026发货 |
-| [FightCamp](examples/fightcamp-report.html) | 居家拳击健身 | $94M融资 · $699起 · 5年量产 |
-| [周群飞 & 蓝思科技](examples/lens-report.html) | 手机玻璃女王 | HK$2万→¥700亿 · 全球50%+份额 |
+新增或修复报告时，至少要补齐这些内容：
 
-## 设计特点
+- 产品价格：主机、核心 SKU、常见套装
+- 配件价格：配件、耗材、保修、服务、安装、配送等
+- 软件费用：订阅、会员、SaaS、RaaS、App Pro、云服务；如果没有，要写有来源的边界说明
+- 竞品价格：同类产品和替代方案的价格区间
+- 创始人履历：创始人姓名、过往经历、可信网页链接
+- 资金路径：自筹、第一笔钱、收入、开支、融资轮次、亏损、裁员、并购等关键金额
+- 来源链接：价格、融资、收入、用户评价、创始人履历都要有可追溯来源
 
-- **连续流畅网页**：自然滚动，底部细线分隔，响应式适配
-- **高级配色**：暖白底(#F9F7F2) + 陶土红强调(#C2513B) + 鼠尾草绿正面(#5B8C6F)
-- **字体**：Playfair Display + DM Sans + Crimson Pro + Noto Sans/Serif SC
-- **9 种组件**：封面、callout、表格、KPI、insight卡片、引用卡、星级柱状图、结论卡、stat-row
-
-## 安装
-
-```bash
-claude skill install github:yuan-y00/brand-research-pdf
-```
-
-也可以同时安装底层设计 skill（可选，提供更多设计自定义能力）：
+详细规则见：
 
 ```bash
-claude skill install github:linyao-create/nice-pdf-skill
+docs/report-data-requirements.md
+docs/gtm-quality-rules.md
 ```
 
-## 使用
+## 迁移状态
 
-在 Claude Code 中说：
-
-```
-帮我调研 Lululemon
-```
-
-```
-/brand-research Nike
-```
-
-```
-生成特斯拉的调研报告 PDF
-```
-
-Claude 会自动：
-1. 搜索品牌历史、收入、竞对、用户评价等信息
-2. 按结构化框架组织内容
-3. 生成横版 A4 HTML 文件
-4. 在浏览器中打开，你 `Ctrl + P` 导出 PDF
-
-## 设计特点
-
-- **横版 A4**（297mm × 210mm），适合数据密集的调研报告
-- **暖色系配色**：奶油底 + 陶土红强调 + 鼠尾草绿（正面）+ 海军蓝
-- **字体**：Playfair Display + DM Sans + Crimson Pro + Noto Sans/Serif SC
-- **组件**：KPI 卡片、对比表格、insight 卡片网格、星级分布柱状图、结论卡
-
-## 依赖
-
-- [Claude Code](https://claude.ai/code)（已包含 WebSearch 能力）
-- 浏览器（Chrome 推荐，用于导出 PDF）
+- 新报告已经有统一 schema、检查器、渲染器和模板。
+- 历史 `examples/*-report.html` 还没有全部迁移为 `data/reports/*.json`。
+- `examples/` 在迁移期同时保存历史产物和新渲染产物。
+- `scripts/report-check.js` 与 `scripts/gtm-check.js` 只检查结构和证据信号，不做事实核验。
+- `scripts/report-audit.js` 是总缺口队列，修复后需要重新生成。
 
 ## License
 
 MIT
-
----
-
-## GTM Extension / 增长路径与代表产品学习
-
-在原品牌报告后面追加"GTM & Product Learning"板块，用于学习品牌增长路径、渠道、商业模式和最成功产品。
-
-### 标准使用流程
-
-```
-# 1. 生成研究 prompt
-node scripts/gtm-workflow.js "Anker"
-
-# 2. 把 tmp/anker-gtm-research-prompt.txt 复制给 VSCode AI
-# AI 会自动研究公开资料并输出 JSON
-
-# 3. 保存 AI 输出
-# → data/gtm/anker.json
-
-# 4. 质量检查
-node scripts/gtm-check.js data/gtm/anker.json
-
-# 5. 追加到报告
-node scripts/gtm-workflow.js "Anker" --append
-
-# 6. 打开报告
-# examples/anker-report-gtm.html
-```
-
-### English-first research
-
-研究美国 / 全球品牌时，务必优先使用英文资料搜索。中文资料只作为补充。详见 [docs/gtm-quality-rules.md](docs/gtm-quality-rules.md)。
-
-### 项目边界
-
-- 不做爬虫
-- 不做数据库
-- 不做事实审计
-- 不覆盖旧报告
-- 零依赖（纯 Node.js 原生模块）
-- AI 负责研究和生成 JSON
-- 工具只负责渲染和追加
-
-### 脚本一览
-
-| 脚本 | 用途 |
-|------|------|
-| `scripts/gtm-workflow.js` | 品牌名工作流（prepare + append） |
-| `scripts/gtm-render.js` | JSON → HTML section 渲染 |
-| `scripts/gtm-append.js` | HTML section 插入报告 |
-| `scripts/gtm-check.js` | 质量检查 |
-
-### Anker 示例
-
-完整端到端样例：[examples/anker-report-gtm.html](examples/anker-report-gtm.html)
-
-基于 [examples/anker-report.html](examples/anker-report.html)（原始报告未修改）追加 GTM section：
-- 3 个代表产品分析（GaN 充电器、PowerCore 移动电源、eufy 智能家居）
-- 6 步渠道路径 + 10 个渠道分析 + 商业模式 + 线下代理
-- 10 条全局来源，每个产品 2-4 条来源

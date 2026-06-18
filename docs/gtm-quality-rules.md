@@ -106,7 +106,7 @@ GTM 扩展不能替代品牌基础研究。每次研究品牌时，应保留：
 - 不做爬虫
 - 不做数据库
 - 不做自动事实校验
-- 不强求每个字段完美（不确定的写 unknown / not_found）
+- 不强求每个字段完美；找不到可靠来源时省略字段，让审计报告暴露缺口
 - 不为了完整而编造数据
 
 ---
@@ -130,3 +130,39 @@ node scripts/gtm-check.js data/gtm/anker.json --strict
 ```
 node scripts/gtm-check.js data/gtm/anker.json --require-brand-context
 ```
+
+---
+
+## 7. 新增必查项：价格、创始人链接、资金流水
+
+每个 GTM JSON 现在建议包含三类更硬的数据。`gtm-check.js` 会对缺项给 warning：
+
+### 产品价格栈
+
+每个 `gtm_extension.top_products[]` 应包含 `pricing_model`：
+- 产品本体价格：MSRP、首发价、当前官网/电商价。
+- 配件/耗材/服务价格：替换件、安装、保修、维修、培训等。
+- 软件/订阅费：App、会员、SaaS、云平台、RaaS、按小时/按月/按年价格。
+- 竞品价格：至少 2 个可比竞品的产品价格，以及能找到的配件/订阅/服务价格。
+- 单位经济信号：毛利率、硬件成本、部署成本、召回损失、payback 等。
+- 价格来源 URL：官方、marketplace、filing、review、dealer quote 或可信媒体。
+
+### 创始人履历链接
+
+`brand_context.founder_profiles` 应包含创始人或关键 CEO 的履历摘要和来源链接。优先级：
+1. 公司官网 / team page
+2. LinkedIn
+3. SEC filing / S-1 / DEF14A / annual report
+4. 大学、实验室、专利或基金会页面
+5. 可信媒体专访、播客、Wikipedia
+
+### 资金事件流水
+
+`brand_context.capital_history` 应按时间记录：
+- 创始人第一笔钱从哪里来，金额多少。
+- 第一笔收入、预售、众筹、订单或客户付款。
+- 每轮融资金额、领投方、估值。
+- 重大花费、亏损、召回损失、库存减值、诉讼赔偿、裁员重组。
+- IPO、并购、退出、市值变化。
+
+找不到公开数据时不要编造，也不要把 `not_found` / `unknown` / 搜索占位链接写进正文或 JSON。省略该字段，让审计报告记录缺口。

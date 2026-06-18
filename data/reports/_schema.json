@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/brand-report.schema.json",
+  "title": "Brand Research Report",
+  "type": "object",
+  "required": ["schema_version", "brand_context", "pricing", "sections", "sources"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version used by scripts/report-check.js and scripts/report-render.js.",
+      "const": "1.0"
+    },
+    "brand_context": {
+      "type": "object",
+      "required": ["brand_name", "slug", "category", "one_line", "founder_profiles", "capital_history"],
+      "properties": {
+        "brand_name": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "one_line": { "type": "string" },
+        "founder_profiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "role", "summary", "links"],
+            "properties": {
+              "name": { "type": "string" },
+              "role": { "type": "string" },
+              "summary": { "type": "string" },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["label", "url"],
+                  "properties": {
+                    "label": { "type": "string" },
+                    "url": { "type": "string" }
+                  }
+                }
+              },
+              "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          }
+        },
+        "capital_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "event_type", "description", "sources", "confidence"],
+            "properties": {
+              "date": { "type": "string" },
+              "event_type": { "type": "string" },
+              "amount": { "type": "string" },
+              "currency": { "type": "string" },
+              "description": { "type": "string" },
+              "sources": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["label", "url"],
+                  "properties": {
+                    "label": { "type": "string" },
+                    "url": { "type": "string" }
+                  }
+                }
+              },
+              "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          }
+        }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["products"],
+      "properties": {
+        "boundary_notes": {
+          "type": "object",
+          "properties": {
+            "accessory_service": { "$ref": "#/$defs/evidence_note" },
+            "subscription_software": { "$ref": "#/$defs/evidence_note" }
+          },
+          "description": "Use when the category genuinely has no separate accessory/service fee or subscription/software fee."
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "product_price", "competitors"],
+            "properties": {
+              "name": { "type": "string" },
+              "category": { "type": "string" },
+              "product_price": { "$ref": "#/$defs/price_item" },
+              "bundle_price": { "$ref": "#/$defs/price_item" },
+              "accessories": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/price_item" }
+              },
+              "subscriptions": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/price_item" }
+              },
+              "services": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/price_item" }
+              },
+              "competitors": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["brand", "product", "price"],
+                  "properties": {
+                    "brand": { "type": "string" },
+                    "product": { "type": "string" },
+                    "price": { "$ref": "#/$defs/price_item" },
+                    "notes": { "type": "string" }
+                  }
+                }
+              },
+              "unit_economics": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/evidence_note" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "blocks"],
+        "properties": {
+          "kicker": { "type": "string" },
+          "title": { "type": "string" },
+          "summary": { "type": "string" },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": ["paragraph", "callout", "table", "stat_grid", "insight_grid", "key_events", "source_list", "lessons"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "url"],
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string" },
+          "publisher": { "type": "string" },
+          "used_for": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "price_item": {
+      "type": "object",
+      "required": ["label", "amount", "currency", "source"],
+      "properties": {
+        "label": { "type": "string" },
+        "amount": { "type": "string" },
+        "currency": { "type": "string" },
+        "period": { "type": "string" },
+        "notes": { "type": "string" },
+        "source": {
+          "type": "object",
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+      }
+    },
+    "evidence_note": {
+      "type": "object",
+      "required": ["label", "value", "source"],
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" },
+        "source": {
+          "type": "object",
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+      }
+    }
+  }
+}

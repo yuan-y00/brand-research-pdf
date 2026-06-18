@@ -1,0 +1,439 @@
+{
+  "brand": "Steve Jobs / Apple-Pixar-NeXT",
+  "brand_slug": "stevejobs",
+  "market_focus": "Person / platform methodology",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; person-platform GTM repair 2026-06-17",
+  "disclaimer": "This is not a normal brand SKU report. It maps product methodology to commercialization paths. Unsupported founder cash, exact margins, live valuations, private-company losses, or platform fee rates are kept in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Steve Jobs: Apple co-founder, NeXT founder and Pixar majority owner; best studied as a product-methodology operator.",
+      "Steve Wozniak: Technical creator of Apple I/II; needed to keep Jobs product-commercial role separate from invention role.",
+      "Ronald Wayne: Early co-founder who exited quickly; useful for founding-history boundary."
+    ],
+    "brand_timeline": [
+      "1976: first_order 50 units x $500 - Byte Shop order created the first real Apple I commercial pull.",
+      "1977: angel_credit $92K + $250K credit line - Mike Markkula invested and helped secure credit, according to public Apple history.",
+      "1985: NeXT_funding $7M - Jobs founded NeXT with about $7M after leaving Apple.",
+      "1986: Pixar_purchase $5M purchase + $5M investment - Jobs bought Lucasfilm’s computer graphics division and invested additional capital, later Pixar.",
+      "1996-1997: NeXT_acquisition $427M - Apple acquired NeXT, bringing Jobs and NeXTSTEP back into Apple.",
+      "2006: Pixar_sale $7.4B - Disney acquired Pixar, making Jobs Disney’s largest individual shareholder."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Steve Jobs",
+        "role": "Co-founder / product leader",
+        "background_summary": "Apple co-founder, NeXT founder and Pixar majority owner; best studied as a product-methodology operator.",
+        "profile_links": [
+          {
+            "title": "Steve Jobs public profile",
+            "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Wired obituary: Steve Jobs 1955-2011",
+            "url": "https://www.wired.com/2011/10/steve-jobs-1955-2011",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Steve Wozniak",
+        "role": "Apple co-founder",
+        "background_summary": "Technical creator of Apple I/II; needed to keep Jobs product-commercial role separate from invention role.",
+        "profile_links": [
+          {
+            "title": "Steve Wozniak public profile",
+            "url": "https://en.wikipedia.org/wiki/Steve_Wozniak",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Ronald Wayne",
+        "role": "Apple co-founder",
+        "background_summary": "Early co-founder who exited quickly; useful for founding-history boundary.",
+        "profile_links": [
+          {
+            "title": "Ronald Wayne public profile",
+            "url": "https://en.wikipedia.org/wiki/Ronald_Wayne",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "1976",
+        "event": "first_order",
+        "amount": "50 units x $500",
+        "currency": "USD",
+        "description": "Byte Shop order created the first real Apple I commercial pull.",
+        "source": {
+          "title": "Byte Shop public profile",
+          "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1977",
+        "event": "angel_credit",
+        "amount": "$92K + $250K credit line",
+        "currency": "USD",
+        "description": "Mike Markkula invested and helped secure credit, according to public Apple history.",
+        "source": {
+          "title": "Apple history public profile",
+          "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1985",
+        "event": "NeXT_funding",
+        "amount": "$7M",
+        "currency": "USD",
+        "description": "Jobs founded NeXT with about $7M after leaving Apple.",
+        "source": {
+          "title": "Steve Jobs public profile",
+          "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1986",
+        "event": "Pixar_purchase",
+        "amount": "$5M purchase + $5M investment",
+        "currency": "USD",
+        "description": "Jobs bought Lucasfilm’s computer graphics division and invested additional capital, later Pixar.",
+        "source": {
+          "title": "Pixar public profile",
+          "url": "https://en.wikipedia.org/wiki/Pixar",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1996-1997",
+        "event": "NeXT_acquisition",
+        "amount": "$427M",
+        "currency": "USD",
+        "description": "Apple acquired NeXT, bringing Jobs and NeXTSTEP back into Apple.",
+        "source": {
+          "title": "NeXT public profile",
+          "url": "https://en.wikipedia.org/wiki/NeXT",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2006",
+        "event": "Pixar_sale",
+        "amount": "$7.4B",
+        "currency": "USD",
+        "description": "Disney acquired Pixar, making Jobs Disney’s largest individual shareholder.",
+        "source": {
+          "title": "Pixar public profile",
+          "url": "https://en.wikipedia.org/wiki/Pixar",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Do not write exact product margins without Apple filings.",
+      "Do not over-attribute Wozniak’s engineering to Jobs.",
+      "Jobs personal net worth should be sourced by date if used."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Steve Jobs should be mapped as a product-methodology case: end-to-end control, taste as strategy, category reframing, launch theater and ecosystem monetization. His commercialization path moved from Apple I hobbyist demand to Apple II scale, Macintosh design premium, NeXT technology salvage, Pixar storytelling economics, and finally iPod/iPhone/App Store platform economics. The report should not reduce Jobs to a single Apple SKU or generic founder myth.",
+    "one_sentence_gtm": "Steve Jobs should be mapped as a product-methodology case: end-to-end control, taste as strategy, category reframing, launch theater and ecosystem monetization.",
+    "channel_path": [
+      "Hobbyist order validates Apple I",
+      "Apple II proves mass personal-computer business",
+      "Macintosh / NeXT build integrated design philosophy",
+      "Pixar proves creative-platform commercialization",
+      "iPod / iPhone / App Store turn product taste into ecosystem economics"
+    ],
+    "channels": {
+      "product_method": "The person creates a repeatable product principle, not just a single product launch.",
+      "platform": "The strongest outputs become platforms, ecosystems, or distribution standards.",
+      "commercialization": "Monetization appears through hardware margin, services, commissions, ads, subscriptions, contracts, or enterprise fees.",
+      "community": "Developers, merchants, fans, users, channels, or government customers become the adoption network.",
+      "governance": "Platform risk comes from rules, support, safety, regulation, succession, and founder overreach.",
+      "launch_theater": "Keynotes and product reveals were distribution assets.",
+      "retail_ecosystem": "Apple Store, iTunes and App Store converted product love into controlled commerce.",
+      "developer_platform": "App Store turned iPhone from device into platform."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Premium hardware margin",
+        "Software and OS integration",
+        "App Store commissions",
+        "Music/media sales",
+        "Pixar/Disney equity value"
+      ],
+      "pricing_logic": "Use premium pricing when the product reframes the category and reduces user complexity.",
+      "channel_economics": "Control the full stack so margins, experience and developer distribution stay inside the ecosystem."
+    },
+    "top_products_selection_rule": "For person/platform reports, choose no more than 3 product-methodology platforms, not ordinary SKUs.",
+    "top_products": [
+      {
+        "name": "Apple I -> Apple II: hobbyist demand to packaged computer",
+        "type": "product_methodology",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "This shows Jobs turning Wozniak’s engineering into a sellable product.",
+        "origin_story": "Wozniak built the technical core; Jobs pushed packaging, sales and company formation.",
+        "pre_market": "The Byte Shop order forced Apple to deliver assembled computers rather than loose hobby boards.",
+        "innovation": "Apple II reframed personal computing as an appliance-like consumer/business product.",
+        "breakout": "It created Apple’s first scale business.",
+        "customer_impact": "Customers paid for a usable product, not only technical possibility.",
+        "ecosystem_impact": "This is the origin of Jobs’s pattern: simplify and package complexity.",
+        "pricing_model": {
+          "product_price": "Apple I listed at $666.66; Byte Shop first order was 50 units at $500 each wholesale; Apple II launched at premium microcomputer pricing.",
+          "subscription_fee": "No subscription/software fee; monetization was hardware sale and later software ecosystem around the platform.",
+          "accessory_service_fee": "Accessory/service price: monitor, cassette/disk drive, expansion cards, software and support were part of total ownership cost.",
+          "competitor_price": "Competitor price comparison: Altair/IMSAI kits were cheaper hobbyist options; Apple’s premium came from assembly, usability and packaging.",
+          "sources": [
+            {
+              "title": "Byte Shop public profile",
+              "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple history public profile",
+              "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Byte Shop public profile",
+            "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple history public profile",
+            "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "iPod / iPhone / App Store platform",
+        "type": "platform_commercialization",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "This is Jobs’s strongest product-to-platform commercialization path.",
+        "origin_story": "After returning to Apple, Jobs simplified the product line, then expanded from Mac to music to phone.",
+        "pre_market": "Users wanted fewer devices and easier media/mobile internet experiences.",
+        "innovation": "iPod + iTunes solved music; iPhone solved phone + internet; App Store solved developer distribution.",
+        "breakout": "The iPhone/App Store became a recurring platform business after Jobs’s era.",
+        "customer_impact": "Users paid premium hardware prices and then kept buying apps, services and accessories.",
+        "ecosystem_impact": "It became the global template for mobile ecosystem monetization.",
+        "pricing_model": {
+          "product_price": "Original iPhone launched at $499/$599 with carrier contract; current iPhone prices vary by model and storage on Apple official store.",
+          "subscription_fee": "App Store monetization historically used 30% commission, with 15% Small Business Program for eligible developers.",
+          "accessory_service_fee": "Accessory/service price: cases, chargers, AppleCare, carrier plans, storage upgrades and app purchases shape total cost.",
+          "competitor_price": "Competitor price comparison: BlackBerry/Nokia/Palm sold devices; Google Android gave OS to OEMs; Apple captured integrated hardware plus platform economics.",
+          "sources": [
+            {
+              "title": "Apple App Store Small Business Program",
+              "url": "https://developer.apple.com/app-store/small-business-program/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple iPhone official page",
+              "url": "https://www.apple.com/iphone/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple public profile",
+              "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "Steve Jobs public profile",
+            "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple App Store Small Business Program",
+            "url": "https://developer.apple.com/app-store/small-business-program/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "NeXT + Pixar: failure salvage and creative platform economics",
+        "type": "capital_recycling_method",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "Jobs’s non-Apple years show how failure and taste became future leverage.",
+        "origin_story": "After leaving Apple, Jobs funded NeXT and bought Pixar, neither a straightforward early win.",
+        "pre_market": "NeXT hardware was expensive and niche; Pixar needed a business model beyond demos and hardware.",
+        "innovation": "NeXTSTEP became the foundation for modern Apple OS; Pixar turned animation technology into story-driven studio economics.",
+        "breakout": "Apple bought NeXT for $427M; Disney bought Pixar for $7.4B.",
+        "customer_impact": "Customers did not buy NeXT at scale, but Apple later bought the technology; audiences bought Pixar stories.",
+        "ecosystem_impact": "The lesson is that technical failure can become platform infrastructure if the underlying system is valuable.",
+        "pricing_model": {
+          "product_price": "NeXT Computer launched at a very high workstation price; Apple acquired NeXT for $427M; Jobs bought Pixar from Lucasfilm for about $5M plus investment and Disney later acquired Pixar for $7.4B.",
+          "subscription_fee": "No consumer subscription; monetization came from workstation sales, OS value, film box office, distribution deals and equity sale.",
+          "accessory_service_fee": "Accessory/service price: NeXT required expensive workstation ecosystem; Pixar required production/distribution capital rather than consumer accessories.",
+          "competitor_price": "Competitor price comparison: Sun/SGI workstations competed with NeXT; Disney/DreamWorks competed in animation; Jobs won through OS leverage and Pixar storytelling economics rather than SKU volume.",
+          "sources": [
+            {
+              "title": "NeXT public profile",
+              "url": "https://en.wikipedia.org/wiki/NeXT",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Pixar public profile",
+              "url": "https://en.wikipedia.org/wiki/Pixar",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "Study the product principle first, then the commercialization path.",
+            "Separate the person from the company balance sheet and from platform economics.",
+            "For platforms, price often appears as commission, ad auction, subscription, service fee, or switching cost rather than SKU price."
+          ],
+          "do_not_copy_blindly": [
+            "Do not force a normal brand template onto a person or platform report.",
+            "Do not invent founder cash, margin, loss, valuation, or fee rates when sources are weak."
+          ]
+        },
+        "sources": [
+          {
+            "title": "NeXT public profile",
+            "url": "https://en.wikipedia.org/wiki/NeXT",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Pixar public profile",
+            "url": "https://en.wikipedia.org/wiki/Pixar",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Jobs’s GTM is taste plus full-stack control turned into platform economics.",
+      "The commercial path matters more than the myth: order, packaging, launch, retail, developers, services.",
+      "NeXT and Pixar show that apparent failure can become infrastructure or equity leverage."
+    ],
+    "evidence_boundary": "Missing founder cash, exact platform take rates, CAC, refund loss, warranty reserve, private valuation, or live net worth is not filled unless a reliable source is present.",
+    "sources": [
+      {
+        "title": "Steve Jobs public profile",
+        "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple public profile",
+        "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Byte Shop public profile",
+        "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple history public profile",
+        "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "NeXT public profile",
+        "url": "https://en.wikipedia.org/wiki/NeXT",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Pixar public profile",
+        "url": "https://en.wikipedia.org/wiki/Pixar",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple App Store Small Business Program",
+        "url": "https://developer.apple.com/app-store/small-business-program/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple iPhone official page",
+        "url": "https://www.apple.com/iphone/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Wired obituary: Steve Jobs 1955-2011",
+        "url": "https://www.wired.com/2011/10/steve-jobs-1955-2011",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

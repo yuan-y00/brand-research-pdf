@@ -10,7 +10,7 @@
 - 本地检查通过后再 push。
 - 如果报告变短，优先补 JSON 和 prompt，不要改代码。
 - 不要做爬虫、不要接 API、不要创建 package.json、不要重构项目。
-- 对不确定内容写 `unknown` / `not_found` / `not_found_or_not_core` / `low_confidence`。
+- 对不确定且没有可靠来源的内容不要写进报告正文；省略该字段，让审计清单记录缺口。
 
 ## 2. P0 优先级
 
@@ -257,4 +257,3 @@
 - GXO / Amazon / Schaeffler / RaaS / Arc / RoboFab / safety / ROI / labor shortage / humanoid hype / China volume dominance / reliability gap 分析：均包含
 - 争议和风险：humanoid hype vs real ROI、narrow task scope、safety 集成成本高（$80/$100）、autonomy vs workflow scripting、制造规模化风险、99%→99.9% 可靠性鸿沟、中国厂商出货量碾压（85% vs 3%）、劳动力替代社会阻力
 - 下一步建议：Apptronik（Mercedes-Benz/GXO 试点，与 Agility 在同一 3PL 直接竞争，可对比两种人形机器人 GTM 策略）
-

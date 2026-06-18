@@ -1,0 +1,1091 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Hyrox 深度调研报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap');
+:root { --bg-page: #F9F7F2; --bg-card: #FFFFFF; --bg-stripe: #F5F2EC; --ink: #1C1C1C; --ink-light: #555555; --ink-muted: #999999; --accent: #C2513B; --positive: #5B8C6F; --negative: #C2513B; --neutral: #4A6FA5; --border: #E8E4DA; --border-light: #F0EDE5; --shadow: 0 1px 3px rgba(0,0,0,0.04); --radius: 12px; --radius-sm: 8px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', 'Noto Sans SC', sans-serif; font-size: 15px; line-height: 1.7; color: var(--ink); background: #E8E5DE; -webkit-font-smoothing: antialiased; }
+.section { width: 100%; max-width: 1040px; margin: 0 auto; background: var(--bg-page); padding: 56px 72px; border-bottom: 1px solid var(--border-light); }
+.section:last-child { border-bottom: none; }
+.section.cover { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 80px; min-height: 55vh; background: linear-gradient(160deg, #F9F7F2 0%, #F4EFE6 50%, #EDE4D4 100%); padding: 64px 80px; }
+.cover-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; font-weight: 600; }
+.cover-title { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 56px; font-weight: 900; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+.cover-subtitle { font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 19px; color: var(--neutral); line-height: 1.6; }
+.cover-line { width: 60px; height: 2px; background: var(--accent); margin: 28px 0; }
+.cover-footer { font-size: 11px; color: var(--ink-muted); letter-spacing: 2px; }
+.cover-stat-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cover-stat { background: rgba(255,255,255,0.6); border-radius: var(--radius); padding: 22px 28px; text-align: center; backdrop-filter: blur(8px); border: 1px solid rgba(0,0,0,0.04); }
+.cover-stat .cs-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 36px; font-weight: 900; color: var(--accent); }
+.cover-stat .cs-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+h1 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 32px; font-weight: 900; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.3px; }
+h2 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 21px; font-weight: 700; color: var(--neutral); margin: 28px 0 14px 0; }
+h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+p { margin-bottom: 10px; color: var(--ink-light); }
+.divider { border: none; height: 1px; background: linear-gradient(to right, var(--accent) 0px, rgba(194,81,59,0.3) 60px, var(--border) 60px, transparent 100%); margin: 32px 0; }
+.callout { background: #FDF6F2; border-left: 3px solid var(--accent); padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 14px; color: #5D3A2E; }
+.callout strong { color: var(--accent); }
+.info-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 16px 0; }
+.info-table thead th { background: var(--ink); color: white; font-size: 10.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+.info-table tbody td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; line-height: 1.5; }
+.info-table tbody tr:nth-child(even) { background: var(--bg-stripe); }
+.td-center { text-align: center !important; }
+.td-num { text-align: left; font-variant-numeric: tabular-nums; }
+.td-impact { text-align: center; font-weight: 600; }
+.impact-up { color: var(--positive); } .impact-down { color: var(--negative); } .impact-neutral { color: var(--neutral); }
+.stat-row { display: flex; gap: 14px; margin: 20px 0; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 130px; background: var(--bg-card); border-radius: var(--radius-sm); padding: 18px 16px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.stat-number { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--ink-muted); letter-spacing: 1px; margin-top: 4px; }
+.stat-detail { font-size: 9.5px; color: var(--neutral); margin-top: 2px; }
+.kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-sm); padding: 14px 12px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.kpi-value { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 22px; font-weight: 900; color: var(--accent); }
+.kpi-label { font-size: 10px; color: var(--ink-muted); } .kpi-compare { font-size: 9.5px; margin-top: 3px; }
+.kpi-up { color: var(--positive); } .kpi-down { color: var(--negative); }
+.insight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 20px 0; }
+.insight-card { background: var(--bg-card); border-radius: var(--radius); padding: 24px 28px; position: relative; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.insight-card.right { border-top: 3px solid var(--positive); } .insight-card.wrong { border-top: 3px solid var(--negative); }
+.insight-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 44px; font-weight: 900; opacity: 0.08; position: absolute; top: 10px; right: 18px; }
+.insight-card.right .insight-num { color: var(--positive); } .insight-card.wrong .insight-num { color: var(--negative); }
+.insight-card h4 { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-right: 44px; line-height: 1.3; }
+.insight-kpi { font-size: 13px; font-weight: 600; margin-bottom: 10px; line-height: 1.4; }
+.insight-card.right .insight-kpi { color: var(--positive); } .insight-card.wrong .insight-kpi { color: var(--negative); }
+.insight-card p { font-size: 13.5px; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+.insight-vs { font-size: 11.5px; color: var(--ink-muted); padding-top: 10px; border-top: 1px solid var(--border-light); line-height: 1.5; }
+.insight-vs span { font-weight: 600; color: var(--neutral); }
+.col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 20px 0; }
+.quote-card { background: var(--bg-card); border-left: 3px solid var(--positive); padding: 14px 18px; margin: 10px 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: 'Crimson Pro', 'Noto Serif SC', serif; font-size: 15px; font-style: italic; color: var(--ink-light); box-shadow: var(--shadow); }
+.quote-card.critical { border-left-color: var(--negative); }
+.quote-source { display: block; margin-top: 6px; font-size: 11px; font-style: normal; color: var(--ink-muted); }
+.review-stat-box { display: flex; align-items: center; gap: 28px; background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin-bottom: 16px; border: 1px solid var(--border-light); }
+.review-big-score { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 48px; font-weight: 900; color: var(--neutral); }
+.review-big-label { font-size: 11px; color: var(--ink-muted); }
+.review-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 11px; }
+.stars-label { width: 50px; text-align: right; font-weight: 600; color: var(--ink); }
+.bar-track { flex: 1; height: 14px; background: #EDE8DE; border-radius: 7px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 7px; }
+.bar-5 { background: var(--positive); } .bar-4 { background: #84A88D; } .bar-3 { background: #C4B08A; } .bar-2 { background: #D4957A; } .bar-1 { background: var(--negative); }
+.pct-label { width: 36px; text-align: right; font-weight: 600; color: var(--ink); }
+.conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.conclusion-card { background: var(--bg-card); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); border: 1px solid var(--border-light); }
+.conclusion-card .cc-num { font-family: 'Playfair Display', 'Noto Serif SC', serif; font-size: 28px; font-weight: 900; color: var(--accent); opacity: 0.7; }
+.conclusion-card h3 { margin-top: 4px; font-size: 16px; color: var(--neutral); }
+.conclusion-card p { font-size: 13px; color: var(--ink-light); margin-top: 6px; line-height: 1.6; }
+@media (max-width: 900px) { .section { padding: 32px 24px; } .section.cover { flex-direction: column; text-align: center; } .insight-grid, .col-2, .conclusion-grid, .kpi-grid { grid-template-columns: 1fr; } }
+@media print { * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; } body { background: white; } .section { border-bottom: none; } h1, h2, h3 { page-break-after: avoid; } .callout, .info-table, .stat-row, .insight-card, .insight-grid, .conclusion-card, .col-2, .review-stat-box, .kpi-grid { page-break-inside: avoid; } }</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 01: COVER ==================== -->
+<div class="section cover">
+    <div class="cover-left">
+        <div class="cover-label">Industry Research Report · 2026.05</div>
+        <div class="cover-title">Hyrox<br>深度调研报告</div>
+        <div class="cover-line"></div>
+        <div class="cover-subtitle">
+            从 650 人到 65 万参赛者 · 七年增长解密<br>竞争优势分析 · 品牌策略 · 风险与挑战
+        </div>
+        <div class="cover-footer">CONFIDENTIAL · 仅限内部参考</div>
+    </div>
+    <div class="cover-right">
+        <div class="cover-stat-block">
+            <div class="cover-stat"><div class="cs-num">650</div><div class="cs-label">2017 首场参赛者</div></div>
+            <div class="cover-stat"><div class="cs-num">650K</div><div class="cs-label">2025 全球参赛者</div></div>
+            <div class="cover-stat"><div class="cs-num">$1.4亿</div><div class="cs-label">2025 年营收</div></div>
+            <div class="cover-stat"><div class="cs-num">$0</div><div class="cs-label">付费广告支出</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 02: TIMELINE ==================== -->
+<div class="section"><div class="section-label">Brand Timeline</div>
+    <h1>一、品牌大事年表（2017–2026）</h1>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:75px">时间</th>
+                <th style="width:380px">事件</th>
+                <th style="width:310px">关键细节</th>
+                <th style="width:65px">影响</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2017.11</strong></td>
+                <td>Christian Toetzke + Moritz Fürste 在德国汉堡创立 Hyrox</td>
+                <td>首场测试赛仅 650 人；定位"健身界马拉松"，8 station + 8km 格式从第一天起固定不变</td>
+                <td class="td-impact impact-neutral">概念验证</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2018.04</strong></td>
+                <td>首场正式赛举办，第一季世锦赛在奥伯豪森</td>
+                <td>冠军：Imke Salander（女）/ Lukas Storath（男）；室内展会模式获初步验证</td>
+                <td class="td-impact impact-neutral">冷启动</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2019.12</strong></td>
+                <td>Infront Sports &amp; Media 首次投资（少数股权）</td>
+                <td>Red Bull、Puma 签约赞助；资本+品牌双加持；同年推出合作健身房项目</td>
+                <td class="td-impact impact-up">资金注入</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>COVID-19 — 几乎所有赛事取消</td>
+                <td>全球健身赛事行业归零；仅保留精简版世锦赛；团队濒死求生</td>
+                <td class="td-impact impact-down">濒死</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2021</strong></td>
+                <td>疫情后缓慢重启</td>
+                <td>伦敦首场仅 ~600 人参赛；联合创始人开始挨家敲健身房大门推广</td>
+                <td class="td-impact impact-neutral">缓慢复苏</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022.10</strong></td>
+                <td>Infront 增持至控股（>50%）</td>
+                <td>创始人保留运营主导权；资本推动下赛事从 ~40 场扩大至 65 场</td>
+                <td class="td-impact impact-up">资本推动</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>爆发拐点：全球 65 场 175K 参赛者</td>
+                <td>伦敦单场 24K 人；英国引入抢票抽签制；TikTok #hyrox 话题开始病毒传播</td>
+                <td class="td-impact impact-up">破圈</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024</strong></td>
+                <td>TIME100 最具影响力公司；首次进入中国</td>
+                <td>北京 2K+ 人；全球 26 国 81 场 260K+ 参赛者；Puma 合作延至 2030 年；合作健身房突破 5,000</td>
+                <td class="td-impact impact-up">全球化</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>83 场 650K 参赛者，营收 ~$1.4 亿</td>
+                <td>芝加哥世锦赛草坪/雪橇丑闻；Hunter McIntyre 撞人 DQ；合作健身房突破 10,000</td>
+                <td class="td-impact impact-neutral">高光 + 危机</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2026E</strong></td>
+                <td>预测 125 场 1.3M+ 参赛者，$2.2 亿营收</td>
+                <td>质量控制是最大变量；若再出草坪级事故，品牌信任受损将不可逆</td>
+                <td class="td-impact impact-up">冲刺</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ==================== PAGE 03: GROWTH METRICS ==================== -->
+<div class="section"><div class="section-label">Growth Metrics</div>
+    <h1>二、创始团队与收入增长</h1>
+    <h2>创始团队</h2>
+    <table class="info-table" style="margin-bottom:10px"><thead><tr><th style="width:130px">创始人</th><th>背景</th><th style="width:140px">初始资金</th></tr></thead><tbody>
+    <tr><td><strong>Christian Toetzke</strong></td><td>德国大众参与赛事组织者（马拉松/铁三背景），深谙"标准化"价值。2017 年用赛事运营经验+个人积蓄创立 Hyrox</td><td class="td-center">赛事运营收入+个人积蓄</td></tr>
+    <tr><td><strong>Moritz Fürste</strong></td><td>三届奥运奖牌得主·德国曲棍球世界冠军。退役后用运动员 IP 和行业人脉推动品牌</td><td class="td-center">运动员收入+品牌代言</td></tr></tbody></table>
+    <p style="font-size:10.5px;color:var(--mid-gray);margin-bottom:10px">※ 2017 年未拿任何 VC。2019 年 Infront 首次投资（少数股权），2022 年 Infront 增持至控股（>50%）。两位创始人用赛事收入+运动员 IP 置换早期股权。</p>
+
+    <div class="callout">
+        <strong>核心结论：</strong>5 年内 <strong>1,081%</strong> 增长，零付费广告。参赛人数几乎每年翻倍：2021 年 ~3K → 2025 年 650K+。毛利率 ~80%，EBITDA 利润率 30–40%。同期 CrossFit Open 参赛人数 <strong>-32%</strong>，F45 市值蒸发 <strong>99.7%</strong>。
+    </div>
+
+    <div class="stat-row">
+        <div class="stat-card"><div class="stat-number">650</div><div class="stat-label">2017 首场</div><div class="stat-detail">1 城市 / 德国</div></div>
+        <div class="stat-card"><div class="stat-number">175K</div><div class="stat-label">2023 参赛者</div><div class="stat-detail">65 场 / 12 国</div></div>
+        <div class="stat-card"><div class="stat-number">650K</div><div class="stat-label">2025 参赛者</div><div class="stat-detail">83 场 / 31 市场</div></div>
+        <div class="stat-card"><div class="stat-number">1.3M</div><div class="stat-label">2026E 参赛者</div><div class="stat-detail">125 场 / 目标</div></div>
+        <div class="stat-card"><div class="stat-number">$1.4亿</div><div class="stat-label">2025 营收</div><div class="stat-detail">+100% YoY</div></div>
+        <div class="stat-card"><div class="stat-number">$2.2亿</div><div class="stat-label">2026E 营收</div><div class="stat-detail">目标</div></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>营收结构（2025 年估算）</h2>
+            <table class="info-table">
+                <thead><tr><th>收入来源</th><th style="width:85px">金额/规模</th><th style="width:50px">占比</th></tr></thead>
+                <tbody>
+                    <tr><td>门票（均价 ~$100–110/人）</td><td class="td-num">~$9,620 万</td><td class="td-center">~69%</td></tr>
+                    <tr><td>合作健身房年费（10,000+ 馆）</td><td class="td-num">~$1,500 万</td><td class="td-center">~11%</td></tr>
+                    <tr><td>周边商品 + 赛照销售</td><td class="td-num">快速增长</td><td class="td-center">—</td></tr>
+                    <tr><td>Puma / Red Bull / Centr 等赞助</td><td class="td-num">未公开</td><td class="td-center">—</td></tr>
+                    <tr><td>观众门票</td><td class="td-num">快速增长</td><td class="td-center">—</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>利润率 &amp; 单位经济</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:90px">数值</th></tr></thead>
+                <tbody>
+                    <tr><td>毛利率</td><td class="td-num"><strong>~80%</strong></td></tr>
+                    <tr><td>EBITDA 利润率</td><td class="td-num"><strong>30–40%</strong></td></tr>
+                    <tr><td>单场盈亏平衡点</td><td class="td-num">~1,500 人</td></tr>
+                    <tr><td>实际场均参赛者</td><td class="td-num">~7,800 人</td></tr>
+                    <tr><td>营销支出</td><td class="td-num"><strong>$0 付费广告</strong></td></tr>
+                    <tr><td>单场搭建时间</td><td class="td-num">36–48 小时</td></tr>
+                    <tr><td>员工数（PitchBook）</td><td class="td-num">~304 人</td></tr>
+                    <tr><td>历史总融资</td><td class="td-num"><strong>仅 ~$552 万</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 04: COMPETITIVE LANDSCAPE ==================== -->
+<div class="section"><div class="section-label">Competitive Landscape</div>
+    <h1>三、竞争对手同期对比</h1>
+
+    <p>Hyrox 崛起的核心背景：三大竞争对手在 2020–2025 年间同时陷入各自危机，释放大量市场空白。下表按年份横向对比。</p>
+
+    <table class="info-table">
+        <thead>
+            <tr>
+                <th style="width:60px">时间</th>
+                <th style="width:200px">Hyrox</th>
+                <th style="width:200px">Spartan Race</th>
+                <th style="width:200px">CrossFit</th>
+                <th style="width:170px">F45 Training</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="td-center"><strong>2017</strong></td>
+                <td>650 人冷启动，首场测试赛在汉堡</td>
+                <td>巅峰期，年收入 ~$1 亿，OCR 品类第一</td>
+                <td>巅峰期，全球 14,000+ 加盟馆</td>
+                <td>高速扩张中，全球化布局</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2020</strong></td>
+                <td>COVID 停摆，仅保留精简世锦赛</td>
+                <td>刚收购 Tough Mudder 即停摆，月收入清零</td>
+                <td>Glassman 因种族歧视言论下台，出售公司</td>
+                <td>疫情闭店潮，加盟商承压</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2022</strong></td>
+                <td>Infront 控股，重启后 40+ 场</td>
+                <td>现金流危机（WSJ），裁员+停付供应商，欠 $9,000 万免费票</td>
+                <td>CEO Roza 下台，Don Faul 接任</td>
+                <td>NYSE 股价 <strong>-93%</strong>，CEO 离职，裁员 50%</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2023</strong></td>
+                <td>爆发拐点，175K 参赛，伦敦单场 24K</td>
+                <td>恢复盈利，回至疫情前 90%；推 DEKA/Highlander 多元化</td>
+                <td>加盟馆降至 ~10K（<strong>-28%</strong> vs 峰值）</td>
+                <td>NYSE 退市，市值 $14亿→$385万（<strong>-99.7%</strong>）</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2024</strong></td>
+                <td>TIME100，进入中国，260K+ 参赛</td>
+                <td>获阿布扎比 3 年合约，1,300 场/年</td>
+                <td>Lazar Đukić 溺亡；Open 参赛 <strong>-32%</strong></td>
+                <td>换 CEO（Tom Dowd），尝试转型</td>
+            </tr>
+            <tr>
+                <td class="td-center"><strong>2025</strong></td>
+                <td>650K 参赛，$1.4 亿营收，草坪丑闻</td>
+                <td>寻求主赞助商，DEKA ~100K 参赛者</td>
+                <td>再次出售（BeSport 竞购），加盟馆 ~9,900</td>
+                <td>低价求生，~1,500 馆运营</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-value">650K</div>
+            <div class="kpi-label">Hyrox 2025 参赛者</div>
+            <div class="kpi-compare kpi-up">+271% vs 2023</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">233K</div>
+            <div class="kpi-label">CrossFit Open 2025</div>
+            <div class="kpi-compare kpi-down">-32% vs 2024</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">100K</div>
+            <div class="kpi-label">DEKA 2025 参赛者</div>
+            <div class="kpi-compare">≈Hyrox 的 15%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">10K</div>
+            <div class="kpi-label">Hyrox 合作健身房</div>
+            <div class="kpi-compare kpi-up">+400% vs 2023 (800)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-value">~9.9K</div>
+            <div class="kpi-label">CrossFit 现存加盟馆</div>
+            <div class="kpi-compare kpi-down">-29% vs 峰值 14K</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 05: WHAT THEY DID RIGHT ==================== -->
+<div class="section"><div class="section-label">Success Factors & Competitive Moat</div>
+    <h1>四、Hyrox 做对了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card right">
+            <div class="insight-num">01</div>
+            <h4>标准化格式永不改变</h4>
+            <div class="insight-kpi">7 个赛季 · 完整世界纪录体系 · 全球成绩横向可比</div>
+            <p>8 station + 8km 的格式从 2017 年第一天起从未改变。创始人 Christian Toetzke 研究马拉松、铁三、高尔夫、网球后得出结论：<strong>伟大的运动从不改变基本规则</strong>。面对无数次来自内部和外部的"换动作以保持新鲜感"的压力，Toetzke 一律拒绝。这一定力带来了 Hyrox 最深层的竞争优势：<strong>全球任意一场比赛的成绩都可以直接对比，由此产生了世界纪录和冠军谱系</strong>。Toetzke 将世界纪录称为"体育界最强大的营销工具之一"——它创造全年无休的参与感和讨论度，而不是仅限比赛日的昙花一现。</p>
+            <div class="insight-vs"><span>vs CrossFit:</span> CrossFit 每年更换 workout，不存在"100 米短跑式"的世界纪录，无法进行跨时间和跨地区的成绩对比。<span>vs Spartan:</span> Spartan 每场比赛因地形、天气、障碍设置不同，成绩不可比。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">02</div>
+            <h4>$0 付费广告 · 全有机社交裂变</h4>
+            <div class="insight-kpi">TikTok 3.9 亿播放 · 469K+ 帖子 · Instagram 300 亿+ 总曝光 · 单 NYC 周末 3,000 万曝光</div>
+            <p>Hyrox <strong>从未在付费广告上花过一分钱</strong>。联合创始人 Moritz Fürste 将营销策略描述为"社区驱动的有机社交传播，而非付费数字广告"。核心机制：(1) 每位参赛者赛后自动获得 <strong>50-60 张专业照片</strong>，自带美颜滤镜，天然适合社交分享；(2) 65 万参赛者 × 平均 500 粉丝 = <strong>3.25 亿潜在覆盖</strong>；(3) 不给 KOL 现金，只给参赛名额——让他们以选手身份体验而非代言人身份站台；(4) K-pop 明星 Choi Minho 的赛前训练 vlog 在 YouTube 获得 <strong>20 万+ 播放</strong>，品牌方几乎零成本。Fürste 形容这种模式类似于"买车"——是一个长决策周期，口碑比广告更有效。</p>
+            <div class="insight-vs"><span>vs F45:</span> F45 在 IPO 后烧掉 $2.79 亿，其中大量用于营销和名人代言（Mark Wahlberg、David Beckham），结果 2 年内股价跌 99.7%。<span>vs 行业平均:</span> 健身行业 CAC（获客成本）通常在 $50-150，Hyrox 通过社交裂变将 CAC 压至接近零。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">03</div>
+            <h4>极低门槛 · "健身界的马拉松"</h4>
+            <div class="insight-kpi">参赛者画像：35 岁女性（中位） · 73% 年龄 25–39 · 48% 女性（伦敦） · 16–85 岁年龄跨度 · 124 国籍（阿布扎比站）</div>
+            <p>Hyrox 的动作设计哲学是<strong>只用人类最基础的运动模式</strong>：推（Sled Push）、拉（Sled Pull）、提（Farmer's Carry）、蹲（Wall Ball）、跑（8km）。不需要学高翻、不需要会双力臂、不需要任何技术门槛。标语"Fitness for Every Body"不是口号而是产品设计的真实体现：<strong>任何人都可以在几个月的训练后完赛</strong>。无需资格赛，无需推荐信，直接购票即可参赛。这使 Hyrox 的可触达市场远远超过 CrossFit（局限于掌握复杂举重技术的硬核健身人群）或 Spartan（需要户外体能与冒险意愿）。新加坡数据显示 73% 参与者年龄在 25-39 岁之间，说明它精准打中了<strong>千禧一代的核心社交和健康需求</strong>。</p>
+            <div class="insight-vs"><span>vs CrossFit:</span> 通常需要数月甚至数年才能安全完成高翻、抓举等技术动作，Open 参赛人数持续下降至 2014 年以来最低（233K）。<span>vs Spartan:</span> 户外障碍赛对体能和冒险意愿要求更高，受众更窄。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">04</div>
+            <h4>室内会展模型 · 轻资产、高毛利、可无限复制</h4>
+            <div class="insight-kpi">毛利率 ~80% · 盈亏平衡点 ~1,500 人/场 · 实际场均 ~7,800 人 · 单场容纳 2–4 万人</div>
+            <p>这是 Hyrox 商业模式中最被低估的聪明之处。Toetzke 从一开始就将赛事设计为<strong>室内活动</strong>——使用会展中心、体育馆等现成场地。20 辆卡车进场，<strong>36-48 小时</strong>完成搭建和撤场。对比之下：(1) 不需要向市政府申请道路封闭许可（马拉松/铁三的噩梦）；(2) 不受天气影响，全年可办，不会因下雨取消亏损；(3) 单场赛事盈亏平衡仅需 <strong>~1,500 人</strong>，而实际场均 ~7,800 人，意味着每场都是高利润的；(4) 可标准化复制到全球任何有会展中心的城市——<strong>扩张的边际成本极低</strong>。这解释了为什么 Hyrox 能在 5 年内从 1 个城市扩展到 31 个市场：不是因为他们跑得快，而是因为这个模式本质上就是为快速复制而设计的。</p>
+            <div class="insight-vs"><span>vs Spartan:</span> 户外赛事需要封路许可、天气保险、山地/林地场地成本，单场盈亏平衡点远高于 Hyrox。Spartan 至今未恢复到疫情前收入水平。<span>vs 马拉松:</span> 城市马拉松需要封路、警力、医疗站，单场成本 $50-200 万+，且受天气和季节限制。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">05</div>
+            <h4>不拿快钱 · 控制股权 · 拒绝对赌</h4>
+            <div class="insight-kpi">历史总融资仅 ~$552 万 · 2019 年只拿一笔小投资 · 之后全靠门票滚动发展</div>
+            <p>在健身行业"烧钱换增长"的狂热年代，Hyrox 走了完全相反的路径。F45 融资 $2.79 亿然后在 2 年内烧光；CrossFit 被 PE 收购后陷入利润优先的困境。Hyrox 创始人 Christian Toetzke 的哲学是：<strong>"尽量长时间保留尽可能多的股份。别拿快钱，承担风险。"</strong> 2019 年只拿了 Infront 的一小笔少数股权投资，此后完全靠门票收入自给自足。2022 年 Infront 增持至控股（>50%），但<strong>创始人团队保留了运营主导权</strong>。这意味着：(1) 没有对赌协议压力，不会被逼着做短视决策（如随意改变赛事格式迎合市场）；(2) 可以将利润重新投入品质提升而非偿还投资人；(3) 在需要拒绝诱惑时（如"换个动作保持新鲜感"），有绝对的话语权说"不"。</p>
+            <div class="insight-vs"><span>vs F45:</span> IPO 募 $2.79 亿，2 年内几乎全部烧光——高管奖金、未使用的设备、名人代言费——市值蒸发 99.7%。<span>vs CrossFit:</span> 先后两次被 PE 出售，每次出售都带来短期利润压力和社区关系恶化。</div>
+        </div>
+
+        <div class="insight-card right">
+            <div class="insight-num">06</div>
+            <h4>健身房即分销渠道 · 轻加盟网络</h4>
+            <div class="insight-kpi">合作健身房：800（2023.03）→ 5,000（2024.12）→ 10,000+（2025 中）= +1,150% 在 2 年内 · 年费 $1,500 vs CrossFit $4,500</div>
+            <p>Hyrox 不自己开健身房，而是将全球健身房变成自己的获客网络。早期（2021 年疫情后），团队<strong>开着一辆面包车</strong>挨家挨户敲健身房的门，免费带 mini Hyrox 体验课，发 T 恤和 Red Bull，先影响教练再触达会员。今天 10,000+ 合作健身房形成了一个<strong>自我强化的增长飞轮</strong>：健身房培训选手 → 选手参赛 → 选手发社交媒体 → 更多人看到 → 更多人加入健身房 → 更多健身房加入。合作健身房年费仅 <strong>$1,500</strong>，是 CrossFit 加盟费（$4,500）的 <strong>1/3</strong>，且 Hyrox 不干预健身房日常经营——它只是提供训练认证、品牌授权和赛事渠道。这个模式的好处是：不需要自己承担健身房的重资产风险，却拥有了一个覆盖全球的分销网络。2025 年，Hyrox 合作健身房数量已追平 CrossFit（~10K），而 CrossFit 的加盟馆数从 14,000 峰值持续下滑。</p>
+            <div class="insight-vs"><span>vs CrossFit 加盟模式:</span> CrossFit $4,500/年且持续涨价，取消老加盟商保护价，大量流失；Hyrox $1,500/年轻资产模式，不干预经营，快速增长。两者在 2025 年数量交叉——这是一个标志性的行业权力转移时刻。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 06: WHAT THEY DID WRONG ==================== -->
+<div class="section"><div class="section-label">Risks, Mistakes & Failures</div>
+    <h1>五、Hyrox 做错了什么</h1>
+
+    <div class="insight-grid">
+        <div class="insight-card wrong">
+            <div class="insight-num">01</div>
+            <h4>2025 世锦赛草坪/雪橇事故 — 迄今为止最大的品牌危机</h4>
+            <div class="insight-kpi">芝加哥世锦赛 · 赛道摩擦力天差地别 · 选手花费 $2,000+/人参赛 · 成绩因设备故障无效</div>
+            <p>2025 年芝加哥世锦赛，Hyrox 引入了一种新的草坪表面，目标是提高不同赛事间的一致性。但结果适得其反：<strong>不同赛道的摩擦力差异巨大</strong>——部分赛道的雪橇几乎推不动，而另一些赛道的雪橇轻松滑行。选手在社交媒体上大量发布对比视频，证明他们在完全不平等的条件下比赛。联合创始人 Moritz Fürste 事后公开承认："我们太久才发现部分雪橇的质量已经低于可接受标准。"赛事组织者最终封锁了前 5 条赛道——这被视为对设备故障的无声承认。顶级选手为世锦赛花费 <strong>$2,000+/人</strong>（门票 + 机票 + 酒店 + 训练），结果因设备问题导致成绩无效，引发强烈不满。</p>
+            <div class="insight-vs"><span>竞对教训:</span> CrossFit 2024 Games 发生运动员 Lazar Đukić 溺亡后，直接导致 1,461 家加盟馆离开、Open 报名 -32%。Hyrox 的草坪事故虽然在严重程度上不及 CrossFit，但暴露了相同的结构性问题：快速扩张中质量控制的系统性缺失。如果在 2026 年 130 万人规模下再出同类事故，品牌信任损伤可能不可逆。<span>来源:</span> BarBend / Daily Mail / TDPel Media</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">02</div>
+            <h4>裁判标准不统一 — 志愿者模式的系统性缺陷</h4>
+            <div class="insight-kpi">Maastricht 2025：4 名精英选手同时遭遇误判 · 22 个连续 no-rep · 2:15 累计罚时</div>
+            <p>Hyrox 使用<strong>志愿者裁判</strong>来执裁每年 65 万+ 参赛者的比赛。这是一个在 650 人规模时合理的决定，但在 650K 规模时已经变成了系统性问题。最集中的争议在 Wall Ball（墙球深蹲）站——社交媒体上"no-rep"（无效次数）合集大量传播，显示许多参赛者做了明显不达标的浅蹲却被计为有效。Maastricht 2025 站集中爆发：(1) <strong>Sean Noble</strong> 在冲击 55 分钟成绩时收到连续 <strong>22 个 no-rep</strong>，赛后官方承认判罚有误；(2) <strong>Tanja Stroschneider</strong> 累计被罚 <strong>2 分 15 秒</strong>，部分原因是号码布被汗水浸掉延误了罚时执行；(3) 非英语国家比赛中语言障碍使问题雪上加霜——选手听不懂裁判的警告或判罚理由。全球裁判培训官 David Magida 承认："你想抓住每一次违规是不可能的。"</p>
+            <div class="insight-vs"><span>vs CrossFit:</span> CrossFit 使用经过认证培训的裁判体系（虽然也有争议，但至少是系统化的）；<span>vs Spartan:</span> Spartan 使用计时芯片自动记录，减少人为误判。Hyrox 目前正在测试 AI 裁判和传感器面板，但这与"全民参与"的轻松定位存在张力——更严格的执法可能疏远大众参赛者。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">03</div>
+            <h4>选手安全与透明度不足</h4>
+            <div class="insight-kpi">多起赛场心脏骤停、癫痫发作 · 无强制赛前体检 · 安全事件在社媒包装下被淡化</div>
+            <p>随着参赛规模指数级膨胀，赛场安全事故开始浮出水面。已公开报道的包括：<strong>Ashley Whelan</strong> 在 Hyrox Manchester 站突发心脏病——她将胸痛和呼吸困难误当作"赛前紧张"，差点丧命。除此之外还有多起癫痫发作和严重脱水事件被参赛者在社交媒体上分享。批评者指出，Hyrox 光鲜的社交媒体营销（DJ、灯光隧道、完赛照片）<strong>系统性地淡化了赛事的身体风险</strong>。目前 Hyrox 没有强制赛前体检要求，也没有公开的安全事故统计报告。"Fitness for Every Body" 的包容性定位与缺乏安全保障之间存在一个危险的空白地带——当 16 岁和 85 岁的人都在同一个高强度的 8km+8 station 赛道上竞赛时，缺乏分级安全措施是不可持续的。</p>
+            <div class="insight-vs"><span>vs CrossFit:</span> 在 Lazar Đukić 溺亡后，CrossFit 被迫建立了独立安全委员会并加强赛前筛查，虽然是被动应对，但至少启动了制度化改进。Hyrox 尚未跟进。<span>来源:</span> Daily Mail 报道</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">04</div>
+            <h4>运动员冲突处理失当 — 规则执行与危机公关双重失败</h4>
+            <div class="insight-kpi">猎人大战 · 品牌全程沉默 · 3 届冠军公开不满 · 社交媒体分裂</div>
+            <p>2025 世锦赛混合接力赛中，美国队选手 <strong>Hunter McIntyre</strong>（三届男子冠军）在赛道上<strong>故意改变跑步路线撞击爱尔兰选手 Jeremy McConnell</strong>，导致后者被撞入侧边护栏。裁判判定为"非体育道德行为"，美国队被取消资格，澳大利亚队递补冠军。这本可以成为 Hyrox 展示规则权威和体育精神的时刻。但事情随后失控：McIntyre 先发表道歉声明，随后又在 Instagram 上改口——<strong>"I stand by my actions. F**k around and find out."</strong>（我坚持我的行为。惹我就别怪我不客气）。他的双人队友、三届女子冠军 <strong>Lauren Weeks</strong> 公开表示对此"不太舒服"（"It doesn't sit very well with me"）。而 Hyrox 品牌方<strong>全程保持沉默</strong>——没有官方声明、没有追加处罚、没有规则澄清。社交媒体随即分裂为 McIntyre 支持派和批评派，品牌方在争议中的缺席让规则的权威性受到严重质疑。</p>
+            <div class="insight-vs"><span>竞对对比:</span> 成熟的职业体育联盟（NFL、FIFA、马拉松大满贯）在类似事件中会在 24 小时内发布裁决结果和规则解释。Hyrox 的沉默暴露了它仍然在用"初创公司"的公关能力来处理"职业体育"级别的公共事件。<span>来源:</span> BarBend / BOXROX</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">05</div>
+            <h4>客户服务严重拖后腿 — Trustpilot 1.4/5 的根源</h4>
+            <div class="insight-kpi">Trustpilot 1.4/5 · ~82% 为 1 星评价 · 仅 46% 负面评价获回复 · 无人工客服电话</div>
+            <p>Hyrox 的赛事体验和后台客服之间存在<strong>巨大的断层</strong>。hyrox.com 的 Trustpilot 页面被 1 星评价淹没，核心投诉集中在：
+            <br>(1) <strong>拒绝医疗退款</strong>——多位用户在评价中声称，即使提供了癌症诊断书、手术证明、韧带撕裂的医生证明，Hyrox 仍然拒绝退款或转让名额，除非购买了额外的"Flex Add-On"；
+            <br>(2) <strong>客服形同虚设</strong>——用户描述收到的是"模板化、机器人般的回复"，等待时间从数天到数周不等，且没有人工客服电话；
+            <br>(3) <strong>周边商品问题</strong>——hyroxshop.de 评分 2.5-2.9/5，常见投诉包括"寄来两只右脚的鞋"、"第一次训练鞋就坏了"、"退货无人处理"。
+            <br>仅 <strong>46%</strong> 的负面评价获得商家回复——在 Trustpilot 标准中属于非常低的响应率。</p>
+            <div class="insight-vs"><span>vs Spartan / CrossFit:</span> 两者均有明确的医疗退款政策和人工客服通道。Hyrox 的后台系统显然没有随着 650K 参赛者的规模同步扩容。<span>vs 行业最佳实践:</span> 大型赛事（如马拉松大满贯）通常提供赛事取消保险和明确的医疗退款流程。</div>
+        </div>
+
+        <div class="insight-card wrong">
+            <div class="insight-num">06</div>
+            <h4>增长超过管理能力 — 史上最典型的"长得太快"问题</h4>
+            <div class="insight-kpi">参赛者 175K→650K（+271% 在 2 年内） · 合作健身房 800→10,000（+1,150%） · 后台系统未同步</div>
+            <p>上述五个问题的根源都可以追溯到同一个核心矛盾：<strong>Hyrox 的业务规模增长了 3-4 倍，但支撑系统（裁判培训、设备质检、客服、安全、公关）没有同步扩容</strong>。这不是某一个部门的失误，而是公司整体选择了"增长优先"的策略。具体表现：
+            <br>(1) 裁判培训：仍依赖志愿者模式，没有建立认证裁判体系——因为培训裁判的速度跟不上赛事扩张的速度；
+            <br>(2) 设备质检：世锦赛级别的赛事出现草坪和雪橇质量事故——说明供应链质检能力已经触顶；
+            <br>(3) 客服：Trustpilot 1.4/5 的本质不是客服态度差，而是客服团队人数和处理能力无法匹配 65 万人的规模；
+            <br>(4) 2026 年目标 130 万参赛者——意味着所有这些系统的压力将再翻一倍。<strong>核心张力</strong>：继续冲量（公开承诺的 1.3M 目标）vs 停下来修系统（会牺牲短期增速和估值叙事）。Hyrox 已明确选择了前者。</p>
+            <div class="insight-vs"><span>竞对教训:</span> F45 的崩盘不是因为没有需求，而是因为过度扩张和加盟商管理失控——1,555 馆急速扩张后市值蒸发 99.7%，大量加盟商亏损出局。Hyrox 的合作健身房模式虽然比 F45 轻，但"数量 > 质量"的扩张逻辑本质上是一样的——当 10,000 家合作健身房中没有几家能获得有效的培训支持和质量监督时，品牌稀释只是时间问题。</div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 07: CUSTOMER REVIEWS WITH PERCENTAGES ==================== -->
+<div class="section"><div class="section-label">Voice of Customer & Persona</div>
+    <h1>六、用户画像与真实评价</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心用户画像</h2>
+            <table class="info-table" style="margin-bottom:12px">
+                <thead><tr><th>维度</th><th style="width:160px">画像</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>年龄</strong></td><td class="td-center"><strong>30-40 岁（~73%）</strong> · 中位 ~35（女）· 16-85 岁跨度</td></tr>
+                    <tr><td><strong>性别</strong></td><td class="td-center"><strong>女性 ~48%（持续上升）</strong> · 从 42%→48%</td></tr>
+                    <tr><td><strong>收入</strong></td><td class="td-center"><strong>中产偏上</strong> · $100-200/场+差旅 · 单人年均 $500-2,000</td></tr>
+                    <tr><td><strong>健身背景</strong></td><td class="td-center"><strong>CrossFit/跑步/综合训练</strong> · 非新手，有训练基础</td></tr>
+                    <tr><td><strong>核心动机</strong></td><td class="td-center"><strong>"可衡量的进步 + 社群体验"</strong> · 全球成绩可比</td></tr>
+                    <tr><td><strong>复购行为</strong></td><td class="td-center"><strong>"成瘾式" · 完成一场即报名下一场</strong></td></tr>
+                    <tr><td><strong>TikTok</strong></td><td class="td-center"><strong>3.9 亿播放 · 469K+ 帖子</strong> · 核心传播引擎</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Trustpilot 评分（hyrox.com）</h2>
+
+            <div class="review-stat-box">
+                <div>
+                    <div class="review-big-score">1.4<span style="font-size:24px">/5</span></div>
+                    <div class="review-big-label">"Bad" · 基于公开评价</div>
+                </div>
+                <div style="flex:1">
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-5" style="width:5%"></span></span>
+                        <span class="pct-label">~5%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-4" style="width:3%"></span></span>
+                        <span class="pct-label">~3%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-3" style="width:4%"></span></span>
+                        <span class="pct-label">~4%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★★</span>
+                        <span class="bar-track"><span class="bar-fill bar-2" style="width:6%"></span></span>
+                        <span class="pct-label">~6%</span>
+                    </div>
+                    <div class="review-bar-row">
+                        <span class="stars-label">★</span>
+                        <span class="bar-track"><span class="bar-fill bar-1" style="width:82%"></span></span>
+                        <span class="pct-label">~82%</span>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                ※ 以上百分比基于 1.4 均值反推估算。Trustpilot 存在 <strong>选择偏差</strong>（不满用户更倾向评价）。实际赛事体验满意度预计显著高于此数据（650K+ 参赛者以每年翻倍速度增长 + 高复购率可侧面印证）。
+            </p>
+
+            <div class="divider"></div>
+
+            <h2>投诉主题分布（估算）</h2>
+            <table class="info-table">
+                <thead><tr><th>投诉类型</th><th style="width:55px">占比</th><th>代表性内容</th></tr></thead>
+                <tbody>
+                    <tr><td>退款/转让政策</td><td class="td-center"><strong>~45%</strong></td><td>"癌症诊断申请退款被拒"、"韧带撕裂不退款"、"无 Flex Add-On 不能转名额"</td></tr>
+                    <tr><td>客服响应</td><td class="td-center"><strong>~25%</strong></td><td>"等 2 周才收到模板回复"、"没有人工客服电话"、"多封邮件石沉大海"</td></tr>
+                    <tr><td>赛事执裁/组织</td><td class="td-center"><strong>~15%</strong></td><td>"裁判判罚不一致"、"赛道标识不清"、"计时芯片出错"</td></tr>
+                    <tr><td>周边商品质量</td><td class="td-center"><strong>~10%</strong></td><td>"寄来两只右脚的鞋"、"第一次训练就坏了"、"退换货无人处理"</td></tr>
+                    <tr><td>票务/价格</td><td class="td-center"><strong>~5%</strong></td><td>"慈善票未告知 $600+ 募捐要求"、"门票太贵"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-2-right">
+            <h2>正面评价</h2>
+
+            <div class="quote-card">
+                "你觉得自己像是个职业运动员——计时芯片、入场隧道、DJ、灯光，每个业余选手都能体验。跑完拿到成绩的那一刻，比什么都值。"
+                <span class="quote-source">— Reddit 高频评价（数百 upvote）</span>
+            </div>
+
+            <div class="quote-card">
+                "跟 CrossFit 不一样，你不需要学半年技术。找个体能课练几个月就能完赛。Same format everywhere = 你可以跟全世界的自己比赛，这是一种成瘾性的进步感。"
+                <span class="quote-source">— TriTalk UK / BBC 采访</span>
+            </div>
+
+            <div class="quote-card">
+                "这不是比赛，这是社交。你和你最好的朋友一起受苦，然后一起发朋友圈。每完成一场就立刻报名下一场，完全停不下来。"
+                <span class="quote-source">— CNA Lifestyle 新加坡报道</span>
+            </div>
+
+            <div class="quote-card">
+                "他们把一个体能测试包装成了你愿意花 £100 买票、飞越半个地球去参加的事情。而且你还会觉得这钱花得值。这就是 Hyrox 的魔力。"
+                <span class="quote-source">— The Boston Globe</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>间接满意度指标</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:80px">数据</th><th>含义</th></tr></thead>
+                <tbody>
+                    <tr><td>年度参赛增长</td><td class="td-center"><strong>+100% YoY</strong></td><td>如体验差，不可能连续翻倍</td></tr>
+                    <tr><td>复购行为</td><td class="td-center">"上瘾式"</td><td>"完成第一场后立刻报名下一场"</td></tr>
+                    <tr><td>跨城追赛</td><td class="td-center">常见</td><td>"按 Hyrox 赛历规划全年行程"</td></tr>
+                    <tr><td>单人消费</td><td class="td-center">£500–2,000</td><td>高客单价 + 高复购 = 强忠诚度</td></tr>
+                    <tr><td>女性参与率</td><td class="td-center"><strong>41→48%</strong></td><td>持续上升，说明包容性获认可</td></tr>
+                    <tr><td>年龄跨度</td><td class="td-center"><strong>16–85 岁</strong></td><td>真正的"全民参与"</td></tr>
+                </tbody>
+            </table>
+
+            <p style="font-size:11px;color:var(--mid-gray);margin-top:6px">
+                <strong>结论：</strong>Trustpilot 1.4 分与 650K 年参赛者之间看似矛盾，实则反映了两件事：(1) 赛事体验本身优秀 → 高增长 + 高复购；(2) 后台客服系统崩溃 → 漏斗式差评。这是典型的"前台产品优秀、后台系统跟不上"的增长病。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== PAGE 08: KEY DATA + CONCLUSIONS ==================== -->
+<div class="section"><div class="section-label">Data & Conclusions</div>
+    <h1>七、核心数据 &amp; 关键结论</h1>
+
+    <div class="col-2">
+        <div class="col-2-left">
+            <h2>核心数据汇总</h2>
+            <table class="info-table">
+                <thead><tr><th>指标</th><th style="width:115px">数据</th></tr></thead>
+                <tbody>
+                    <tr><td>创立</td><td class="td-num">2017，德国汉堡</td></tr>
+                    <tr><td>创始人</td><td class="td-num">Toetzke + Fürste</td></tr>
+                    <tr><td>控股方</td><td class="td-num">Infront Sports &amp; Media（>50%）</td></tr>
+                    <tr><td>2025 参赛者</td><td class="td-num"><strong>650,000+</strong></td></tr>
+                    <tr><td>2025 营收</td><td class="td-num"><strong>~$1.4 亿</strong></td></tr>
+                    <tr><td>毛利率 / EBITDA 率</td><td class="td-num"><strong>~80% / 30–40%</strong></td></tr>
+                    <tr><td>历史总融资</td><td class="td-num"><strong>仅 ~$552 万</strong></td></tr>
+                    <tr><td>营销支出</td><td class="td-num"><strong>$0 付费广告</strong></td></tr>
+                    <tr><td>TikTok 播放</td><td class="td-num">~3.9 亿 / 469K+ 帖子</td></tr>
+                    <tr><td>合作健身房</td><td class="td-num"><strong>10,000+</strong>（2023→2025: +1,150%）</td></tr>
+                    <tr><td>2025 赛事</td><td class="td-num">83 场 / 31 市场</td></tr>
+                    <tr><td>参赛者画像</td><td class="td-num">35 岁女（中位）/ 73% 25-39</td></tr>
+                    <tr><td>女性参与率</td><td class="td-num">41%→48%（持续上升）</td></tr>
+                    <tr><td>Trustpilot</td><td class="td-num"><strong>1.4/5</strong> · ~82% 1星 · 客服差</td></tr>
+                    <tr><td>2026 目标</td><td class="td-num"><strong>1.3M 参赛 / $2.2 亿</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2-right">
+            <h2>关键结论</h2>
+            <div class="conclusion-grid" style="grid-template-columns:1fr">
+                <div class="conclusion-card">
+                    <div class="cc-num">01</div>
+                    <h3>吃掉了竞对衰退释放的市场空白</h3>
+                    <p>CrossFit Open <strong>-32%</strong> + F45 市值蒸发 <strong>99.7%</strong> + Spartan 现金流危机 = 大量健身消费者寻找新出口。Hyrox 用标准化产品 + 零付费裂变完成弯道超车。参赛人数在竞对下行期逆势增长 <strong>+271%</strong>。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">02</div>
+                    <h3>最大护城河：不变格式 × 社交裂变飞轮</h3>
+                    <p>不变规则 → 全球可比成绩 → 世界纪录 → 激励复购。每个参赛者是媒体渠道（650K × 500 followers = 3.25 亿覆盖）。这个双飞轮目前无竞对复制。Puma 合作延至 2030 证明品牌长期价值获认可。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">03</div>
+                    <h3>最大风险链条：QC + 客服 + 安全</h3>
+                    <p>草坪丑闻 → 裁判不公 → Trustpilot 1.4 分。三个问题同源：<strong>后台系统未随前台规模同步成长</strong>。2026 年 1.3M 参赛者若再出同类事故，参考 CrossFit 的 -32% 教训，品牌信任损伤可能不可逆。</p>
+                </div>
+                <div class="conclusion-card">
+                    <div class="cc-num">04</div>
+                    <h3>窗口期不会永远敞开 — 时间在模仿者一边</h3>
+                    <p>Spartan DEKA 已达 100K 规模、CrossFit 可能在新买家手中重振、更多本地模仿者入场（如中国 CFC）。Hyrox 需要在窗口关闭前将先发优势转化为不可逆的网络效应。目前 10,000 合作健身房的锁定效应是最有效的护城河。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section"><div class="section-label">Verification Notes</div><h1>来源、创始人与参赛成本核验</h1>
+    <table class="info-table"><thead><tr><th style="width:150px">核验点</th><th>结论</th><th>入口</th></tr></thead><tbody>
+        <tr><td>创始人履历</td><td>HYROX 由 Christian Toetzke 与 Moritz Fürste 推出；Fürste 的奥运曲棍球背景和 Toetzke 的赛事运营能力共同塑造了“标准化健身竞赛”模式。</td><td><a href="https://en.wikipedia.org/wiki/Hyrox" target="_blank" rel="noopener">HYROX 公开资料</a> / <a href="https://en.wikipedia.org/wiki/Moritz_F%C3%BCrste" target="_blank" rel="noopener">Moritz Fürste</a></td></tr>
+        <tr><td>价格/配件服务费</td><td>HYROX 没有典型软件订阅；真实成本来自报名费、照片/成绩服务、训练计划、合作健身房、装备、旅行、住宿和补给。比较 CrossFit/Spartan 时要看参赛总成本。</td><td><a href="https://hyrox.com/" target="_blank" rel="noopener">HYROX 官方入口</a></td></tr>
+    </tbody></table>
+</div>
+
+<!-- GTM_EXTENSION_START -->
+<style id="gtm-extension-style">
+/* GTM Extension — scoped styles (prefixed with .gtm-extension) */
+
+.gtm-extension {
+  --gtm-accent: var(--accent, #C2513B);
+  --gtm-positive: var(--positive, #5B8C6F);
+  --gtm-neutral: var(--neutral, #4A6FA5);
+  --gtm-ink: var(--ink, #1C1C1C);
+  --gtm-ink-light: var(--ink-light, #555555);
+  --gtm-ink-muted: var(--ink-muted, #999999);
+  --gtm-bg-card: var(--bg-card, #FFFFFF);
+  --gtm-bg-stripe: var(--bg-stripe, #F5F2EC);
+  --gtm-border: var(--border, #E8E4DA);
+  --gtm-border-light: var(--border-light, #F0EDE5);
+  --gtm-shadow: var(--shadow, 0 1px 3px rgba(0,0,0,0.04));
+  --gtm-radius: var(--radius, 12px);
+  --gtm-radius-sm: var(--radius-sm, 8px);
+}
+
+.gtm-extension h2 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700; color: var(--gtm-neutral);
+  margin: 28px 0 14px 0;
+}
+
+.gtm-extension h3.gtm-subsection-title {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: var(--gtm-ink);
+  margin: 16px 0 10px 0;
+}
+
+.gtm-extension .gtm-subsection h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 15px; font-weight: 600; color: var(--gtm-ink);
+  margin: 14px 0 8px 0;
+}
+
+/* Meta area */
+.gtm-extension .gtm-meta {
+  margin-bottom: 20px;
+}
+.gtm-extension .gtm-meta-row {
+  font-size: 13.5px; margin-bottom: 4px;
+}
+.gtm-extension .gtm-meta-label {
+  font-weight: 600; color: var(--gtm-ink);
+}
+.gtm-extension .gtm-meta-value {
+  color: var(--gtm-ink-light);
+}
+.gtm-extension .gtm-disclaimer {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  font-style: italic; margin-top: 8px;
+}
+
+/* Card */
+.gtm-extension .gtm-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 20px 24px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-card p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 8px;
+}
+
+/* Callout */
+.gtm-extension .gtm-callout {
+  background: #FDF6F2;
+  border-left: 3px solid var(--gtm-accent);
+  padding: 14px 20px;
+  margin: 16px 0;
+  border-radius: 0 var(--gtm-radius-sm) var(--gtm-radius-sm) 0;
+  font-size: 14px;
+  color: #5D3A2E;
+}
+.gtm-extension .gtm-callout strong {
+  color: var(--gtm-accent);
+}
+
+/* Grid */
+.gtm-extension .gtm-grid {
+  display: grid; gap: 16px; margin: 16px 0;
+}
+.gtm-extension .gtm-grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Path */
+.gtm-extension .gtm-path {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; margin: 16px 0;
+}
+.gtm-extension .gtm-path-step {
+  background: var(--gtm-bg-card);
+  border: 1px solid var(--gtm-border);
+  border-radius: var(--gtm-radius-sm);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--gtm-ink);
+  white-space: nowrap;
+}
+.gtm-extension .gtm-path-arrow {
+  color: var(--gtm-accent);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Tables */
+.gtm-extension .gtm-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; margin: 12px 0 20px 0;
+}
+.gtm-extension .gtm-table thead th {
+  background: var(--gtm-ink); color: #fff;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 10px 16px; text-align: left;
+}
+.gtm-extension .gtm-table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--gtm-border);
+  vertical-align: middle; line-height: 1.5;
+}
+.gtm-extension .gtm-table tbody tr:nth-child(even) {
+  background: var(--gtm-bg-stripe);
+}
+.gtm-extension .gtm-td-label {
+  font-weight: 600; color: var(--gtm-ink);
+  white-space: nowrap;
+}
+
+/* Tags */
+.gtm-extension .gtm-tag-list {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.gtm-extension .gtm-tag {
+  display: inline-block;
+  font-size: 11.5px; padding: 3px 10px;
+  border-radius: 20px;
+  background: #FDF2EC;
+  color: var(--gtm-accent);
+  font-weight: 500;
+  border: 1px solid rgba(194,81,59,0.15);
+}
+.gtm-extension .gtm-tag-sm {
+  font-size: 10.5px; padding: 2px 7px;
+}
+
+/* Confidence badge */
+.gtm-extension .gtm-confidence {
+  display: inline-block;
+  font-size: 10px; padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.gtm-extension .gtm-conf-high {
+  background: #E8F0E8; color: #3A6B47;
+}
+.gtm-extension .gtm-conf-med {
+  background: #F5F0E0; color: #8B6914;
+}
+.gtm-extension .gtm-conf-low {
+  background: #FDEEDD; color: #A04030;
+}
+
+/* Product card */
+.gtm-extension .gtm-products-grid {
+  display: flex; flex-direction: column; gap: 24px; margin: 16px 0;
+}
+.gtm-extension .gtm-product-card {
+  background: var(--gtm-bg-card);
+  border-radius: var(--gtm-radius);
+  padding: 28px 32px;
+  box-shadow: var(--gtm-shadow);
+  border: 1px solid var(--gtm-border-light);
+  border-top: 3px solid var(--gtm-neutral);
+}
+.gtm-extension .gtm-product-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--gtm-border-light);
+}
+.gtm-extension .gtm-product-rank {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--gtm-accent);
+  opacity: 0.3;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.gtm-extension .gtm-product-name {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 21px; font-weight: 700;
+  color: var(--gtm-ink);
+  margin: 0;
+}
+.gtm-extension .gtm-product-subtitle {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 4px;
+}
+.gtm-extension .gtm-product-type {
+  font-size: 12px; color: var(--gtm-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product subsections */
+.gtm-extension .gtm-subsection {
+  margin-bottom: 16px;
+}
+.gtm-extension .gtm-subsection p {
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65; margin-bottom: 6px;
+}
+.gtm-extension .gtm-subsection ul {
+  margin: 6px 0 6px 18px;
+  font-size: 13.5px; color: var(--gtm-ink-light);
+  line-height: 1.65;
+}
+.gtm-extension .gtm-subsection ul li {
+  margin-bottom: 3px;
+}
+
+/* Key events */
+.gtm-extension .gtm-key-events {
+  margin: 8px 0;
+}
+.gtm-extension .gtm-event-item {
+  padding: 8px 0;
+  border-bottom: 1px dotted var(--gtm-border-light);
+  font-size: 13.5px;
+}
+.gtm-extension .gtm-event-date {
+  font-weight: 600; color: var(--gtm-neutral);
+  margin-right: 8px;
+}
+.gtm-extension .gtm-event-text {
+  color: var(--gtm-ink-light);
+}
+
+/* Learning summary cards */
+.gtm-extension .gtm-learn-card {
+  padding: 20px 24px;
+}
+.gtm-extension .gtm-learn-card h4 {
+  font-family: 'Playfair Display', 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.gtm-extension .gtm-learn-can h4 { color: var(--gtm-positive); }
+.gtm-extension .gtm-learn-cannot h4 { color: var(--gtm-accent); }
+.gtm-extension .gtm-learn-best h4 { color: var(--gtm-neutral); }
+.gtm-extension .gtm-learn-open h4 { color: #B8860B; }
+
+/* Lessons section */
+.gtm-extension .gtm-lessons {
+  background: #FAFAF7;
+  border-radius: var(--gtm-radius-sm);
+  padding: 16px 20px;
+  border: 1px solid var(--gtm-border-light);
+}
+
+/* Source list */
+.gtm-extension .gtm-source-list {
+  margin-top: 8px;
+}
+.gtm-extension .gtm-source-list ol {
+  margin: 8px 0 8px 20px;
+  font-size: 12.5px; color: var(--gtm-ink-light);
+  line-height: 1.7;
+}
+.gtm-extension .gtm-source-list ol li {
+  margin-bottom: 3px;
+}
+.gtm-extension .gtm-source-list a {
+  color: var(--gtm-neutral);
+  text-decoration: none;
+}
+.gtm-extension .gtm-source-list a:hover {
+  text-decoration: underline;
+}
+
+/* Muted text */
+.gtm-extension .gtm-muted {
+  color: var(--gtm-ink-muted);
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gtm-extension .gtm-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gtm-extension .gtm-product-card {
+    padding: 20px;
+  }
+  .gtm-extension .gtm-product-rank {
+    font-size: 28px;
+  }
+}
+</style>
+<div class="section gtm-extension" id="gtm-extension-hyrox">
+<div class="section-label">GTM & Product Learning</div>
+<h1>增长路径与代表产品学习</h1>
+<div class="gtm-meta">
+<div class="gtm-meta-row"><span class="gtm-meta-label">品牌：</span><span class="gtm-meta-value">HYROX</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">市场重点：</span><span class="gtm-meta-value">US / Global</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">版本：</span><span class="gtm-meta-value">1.0</span></div>
+<div class="gtm-meta-row"><span class="gtm-meta-label">生成方式：</span><span class="gtm-meta-value">AI-assisted public-source research; fitness GTM repair 2026-06-17</span></div>
+<p class="gtm-disclaimer">This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.</p>
+</div>
+<h2>GTM 总览</h2>
+<div class="gtm-callout"><strong>一句话 GTM：</strong>HYROX 的 GTM 不是卖家用硬件，而是把“标准化健身比赛”做成可全球复制的运动品牌。</div>
+<div class="gtm-card"><p>HYROX 的 GTM 不是卖家用硬件，而是把“标准化健身比赛”做成可全球复制的运动品牌。它用固定赛制、城市赛事、合作健身房、成绩榜、照片分享和赞助商形成增长飞轮；成本不是订阅费，而是报名、训练、装备、旅行、照片和合作健身房费用。</p></div>
+<hr class="divider">
+<h2>渠道路径</h2>
+<div class="gtm-path">
+<span class="gtm-path-step">创始人用赛事运营和奥运运动员 IP 定义标准赛制</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">先在欧洲城市验证参赛需求</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">Infront 投资/控股后扩大赛事网络</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">合作健身房承担训练和获客</span><span class="gtm-path-arrow">&rarr;</span><span class="gtm-path-step">官方成绩、照片和社交传播推动下一轮参赛</span></div>
+<div class="gtm-subsection"><h4>GTM 要点</h4><ul>
+<li><strong>核心渠道：</strong>官方独立站或官方票务页承接高意向购买。</li>
+</ul></div>
+<hr class="divider">
+<h2>最成功产品 / 产品线</h2>
+<p class="gtm-muted">最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。</p>
+<div class="gtm-products-grid">
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#1</span>
+<div>
+<h3 class="gtm-product-name">HYROX Race Entry</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">event_ticket</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>HYROX 的核心产品就是参赛资格。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Race entry price varies by city, division and batch; official Find My Race/ticket pages are the source for live price, so no single fixed global ticket price is written.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory subscription/software fee; rankings/results are event ecosystem features.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: real athlete cost includes training plan, gym access, shoes, travel, lodging, photos/merch and race-day services.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Spartan/Tough Mudder sell event entries; CrossFit boxes charge gym memberships; Peloton/Tonal/Speediance sell hardware plus memberships or optional software.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://hyrox.com/" target="_blank" rel="noopener noreferrer">HYROX official global site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://hyroxus.com/" target="_blank" rel="noopener noreferrer">HYROX US official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://hyrox.com/find-my-race/" target="_blank" rel="noopener noreferrer">HYROX find my race</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/pages/membership" target="_blank" rel="noopener noreferrer">Tonal membership official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.speediance.com/pages/wellness-ai-personal-trainer" target="_blank" rel="noopener noreferrer">Speediance Wellness+ official page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://hyrox.com/" target="_blank" rel="noopener noreferrer">HYROX official global site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://hyrox.com/find-my-race/" target="_blank" rel="noopener noreferrer">HYROX find my race</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#2</span>
+<div>
+<h3 class="gtm-product-name">HYROX365 / Training Clubs</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">affiliate_training_network</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>合作健身房是 HYROX 的低资产获客网络。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>The Times reports about £100/month for gyms to become HYROX affiliated.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>Subscription/software boundary: this is gym affiliation/training access, not consumer hardware subscription.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: gyms need SkiErg, sleds, rowers, kettlebells, wall balls and coaching education.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: CrossFit affiliation commonly higher than HYROX affiliate fee in local report; Peloton/Tonal enterprise terms are quote-based; FightCamp gym extension is quote-based.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br" target="_blank" rel="noopener noreferrer">The Times HYROX business profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.hyrox365.com/" target="_blank" rel="noopener noreferrer">HYROX365 affiliation</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://joinfightcamp.com/" target="_blank" rel="noopener noreferrer">FightCamp official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://tonal.com/products/tonal-2" target="_blank" rel="noopener noreferrer">Tonal 2 official product page</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://www.hyrox365.com/" target="_blank" rel="noopener noreferrer">HYROX365 affiliation</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br" target="_blank" rel="noopener noreferrer">The Times HYROX business profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<div class="gtm-product-card">
+<div class="gtm-product-header">
+<span class="gtm-product-rank">#3</span>
+<div>
+<h3 class="gtm-product-name">HYROX World Championships / Sponsors / Shop</h3>
+<div class="gtm-product-subtitle"><span class="gtm-product-type">event_media_commerce</span> <span class="gtm-confidence gtm-conf-med">medium</span></div>
+</div></div>
+<div class="gtm-subsection"><p><strong>为什么选择这个产品：</strong>赛事品牌的上限来自冠军、赞助和商品，而不只是报名费。</p></div>
+<h3 class="gtm-subsection-title">价格体系与竞品对比</h3>
+<table class="gtm-table">
+<thead><tr><th style="width:160px">价格维度</th><th>公开信息 / 估算</th></tr></thead>
+<tbody>
+<tr><td class="gtm-td-label">Product price / MSRP</td><td>Shop prices vary by item on official HYROX shop.</td></tr>
+<tr><td class="gtm-td-label">subscription_fee</td><td>No mandatory software subscription; commerce is merchandise/sponsor driven.</td></tr>
+<tr><td class="gtm-td-label">accessory_service_fee</td><td>Accessory/service price: apparel, shoes, grips, nutrition, travel and event photos are real add-on costs.</td></tr>
+<tr><td class="gtm-td-label">Competitor price comparison</td><td>Competitor price comparison: Peloton apparel and accessories are secondary; FightCamp/Growl sell training hardware; HYROX sells participation and identity.</td></tr>
+</tbody></table>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://hyrox.com/" target="_blank" rel="noopener noreferrer">HYROX official global site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://us.hyrox-shop.com/" target="_blank" rel="noopener noreferrer">HYROX official shop</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.onepeloton.com/" target="_blank" rel="noopener noreferrer">Peloton official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://joinfightcamp.com/" target="_blank" rel="noopener noreferrer">FightCamp official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.joingrowl.com/" target="_blank" rel="noopener noreferrer">GROWL official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+<div class="gtm-subsection"><h4>关键学习</h4><ul>
+<li><strong>可学习：</strong>先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。</li>
+<li><strong>可学习：</strong>价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。</li>
+<li><strong>别照抄：</strong>不要把众筹、疫情红利或媒体报道当成长期留存。</li>
+</ul></div>
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://hyrox.com/" target="_blank" rel="noopener noreferrer">HYROX official global site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://us.hyrox-shop.com/" target="_blank" rel="noopener noreferrer">HYROX official shop</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+</div>
+<hr class="divider">
+<div class="gtm-source-list"><h3 class="gtm-subsection-title">来源</h3>
+<ol>
+<li><a href="https://hyrox.com/" target="_blank" rel="noopener noreferrer">HYROX official global site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://hyroxus.com/" target="_blank" rel="noopener noreferrer">HYROX US official site</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://hyrox.com/find-my-race/" target="_blank" rel="noopener noreferrer">HYROX find my race</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.hyrox365.com/" target="_blank" rel="noopener noreferrer">HYROX365 affiliation</a> <span class="gtm-muted">[official]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br" target="_blank" rel="noopener noreferrer">The Times HYROX business profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Hyrox" target="_blank" rel="noopener noreferrer">HYROX public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://en.wikipedia.org/wiki/Moritz_F%C3%BCrste" target="_blank" rel="noopener noreferrer">Moritz Fuerste public profile</a> <span class="gtm-muted">[media]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+<li><a href="https://us.hyrox-shop.com/" target="_blank" rel="noopener noreferrer">HYROX official shop</a> <span class="gtm-muted">[marketplace]</span> <span class="gtm-confidence gtm-conf-med">medium</span></li>
+</ol></div>
+</div>
+<!-- GTM_EXTENSION_END -->
+</body>
+</html>

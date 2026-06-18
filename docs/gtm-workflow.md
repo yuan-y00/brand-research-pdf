@@ -1,8 +1,10 @@
 # GTM Workflow
 
+本文只说明 GTM / 产品学习扩展工作流，不负责生成完整基础报告。
+
 ## 1. 最简单使用方式
 
-只输入品牌名，其余工具自动处理。
+输入品牌名后，脚本会准备 GTM 研究 prompt。研究、事实核验和 JSON 内容补齐仍需要由当前使用的 AI 工具或人工完成。
 
 ### Step 1 — 生成研究 prompt
 
@@ -12,10 +14,10 @@ node scripts/gtm-workflow.js "Anker"
 
 这会生成 `tmp/anker-gtm-research-prompt.txt`，并告诉你下一步做什么。
 
-### Step 2 — 复制 prompt 给 VSCode AI
+### Step 2 — 复制 prompt 给当前 AI 工具
 
-打开 `tmp/anker-gtm-research-prompt.txt`，把全部内容复制给 VSCode AI。
-AI 会自动研究公开资料，并输出一份 GTM 扩展 JSON。
+打开 `tmp/anker-gtm-research-prompt.txt`，把全部内容复制给当前使用的 AI 工具。
+AI 或人工研究公开资料后，输出一份 GTM 扩展 JSON。
 
 ### Step 3 — 保存 AI 输出的 JSON
 
@@ -125,7 +127,7 @@ node scripts/gtm-workflow.js "Anker" --dry-run
 - 不做后台服务
 - 不做事实审计
 - 不覆盖旧报告
-- 不自动生成真实研究内容（那是 VSCode AI 的工作）
+- 不自动生成真实研究内容（需要当前 AI 工具或人工研究完成）
 - 不接第三方 API
 - 不登录社交媒体
 

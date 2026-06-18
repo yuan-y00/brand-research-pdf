@@ -97,6 +97,10 @@ function isNonEmpty(value) {
   return true;
 }
 
+function isPlaceholder(value) {
+  return /not_found|not found|not_disclosed|not disclosed|not_public|not public|unknown|google\.com\/search|placeholder/i.test(safeText(value));
+}
+
 function toArray(value) {
   if (value == null) return [];
   if (Array.isArray(value)) return value.filter((v) => v != null && String(v).trim() !== '');
@@ -167,6 +171,71 @@ function renderList(items) {
   return '<ul>' + arr.map((t) => '<li>' + escapeHtml(t) + '</li>').join('') + '</ul>';
 }
 
+function truncateText(value, maxChars) {
+  const text = safeText(value, '');
+  if (!text || text.length <= maxChars) return text;
+  return text.slice(0, maxChars).replace(/\s+\S*$/, '') + '...';
+}
+
+function pushText(items, label, value, maxChars) {
+  const text = truncateText(value, maxChars || 220);
+  if (text && !isPlaceholder(text)) {
+    items.push({ label: label, text: text });
+  }
+}
+
+function renderCompactBullets(title, items, limit) {
+  const shown = (items || []).filter(Boolean).slice(0, limit || 5);
+  if (shown.length === 0) return '';
+
+  let html = '<div class="gtm-subsection"><h4>' + escapeHtml(title) + '</h4><ul>\n';
+  for (const item of shown) {
+    if (typeof item === 'string') {
+      html += '<li>' + escapeHtml(truncateText(item, 220)) + '</li>\n';
+    } else {
+      html += '<li><strong>' + escapeHtml(item.label) + '：</strong>' + escapeHtml(item.text) + '</li>\n';
+    }
+  }
+  html += '</ul></div>\n';
+  return html;
+}
+
+function renderPricingModel(product) {
+  const pricing = product && (product.pricing_model || product.price_stack || product.pricing);
+  if (!pricing || typeof pricing !== 'object') return '';
+
+  const labelMap = {
+    product_price: 'Product price / MSRP',
+    launch_price: 'Launch price',
+    current_price: 'Current street price',
+    bundle_price: 'Bundle price',
+    accessory_price: 'Accessory / consumables price',
+    software_subscription: 'Software / subscription fee',
+    service_fee: 'Service / warranty / installation fee',
+    enterprise_or_raas_price: 'Enterprise / RaaS price',
+    competitor_price: 'Competitor price comparison',
+    competitor_accessory_price: 'Competitor accessory price',
+    competitor_subscription: 'Competitor software / subscription',
+    gross_margin_or_unit_economics: 'Margin / unit economics signal',
+    notes: 'Notes',
+  };
+
+  const tableRows = Object.assign({}, pricing);
+  delete tableRows.sources;
+
+  let html = renderTable('价格体系与竞品对比', tableRows, {
+    labelMap: labelMap,
+    keyHeader: '价格维度',
+    valHeader: '公开信息 / 估算',
+  });
+
+  if (Array.isArray(pricing.sources) && pricing.sources.length > 0) {
+    html += renderSources(pricing.sources, 6);
+  }
+
+  return html;
+}
+
 function renderTable(title, rows, options) {
   options = options || {};
   const labelMap = options.labelMap || {};
@@ -174,7 +243,7 @@ function renderTable(title, rows, options) {
 
   const entries = [];
   for (const [key, val] of Object.entries(rows)) {
-    if (isNonEmpty(val)) {
+    if (isNonEmpty(val) && !isPlaceholder(val)) {
       entries.push({ label: labelMap[key] || key, value: safeText(val) });
     }
   }
@@ -257,7 +326,7 @@ function renderMeta(data) {
 
 function renderSummary(gtm) {
   const oneLine = safeText(gtm.one_sentence_gtm, '');
-  const summary = safeText(gtm.summary, '');
+  const summary = truncateText(gtm.summary, 520);
 
   if (!oneLine && !summary) return '';
 
@@ -379,6 +448,49 @@ function renderOfflineDealer(gtm) {
   return html;
 }
 
+function renderGtmEssentials(gtm) {
+  const items = [];
+  const me = gtm.market_entry || {};
+  const bm = gtm.business_model || {};
+  const ch = gtm.channels || {};
+
+  pushText(items, '核心市场', me.us_market || me.global_market || me.china_market || me.notes, 190);
+  pushText(items, '核心渠道', ch.amazon || ch.dtc || ch.ecommerce || ch.retail || ch.social_media || ch.offline, 190);
+  pushText(items, '收入结构', bm.hardware || bm.subscription || bm.consumables || bm.accessories || bm.service || bm.other, 190);
+  pushText(items, '线下/服务', (gtm.offline_and_dealer_model || {}).service_and_repair || (gtm.offline_and_dealer_model || {}).dealer_or_distributor, 190);
+
+  if (items.length === 0) return '';
+  return renderCompactBullets('GTM 要点', items, 4);
+}
+
+function renderProductLearningDigest(product) {
+  const items = [];
+  const origin = product.origin_story || {};
+  const pre = product.pre_market || {};
+  const innov = product.innovation || {};
+  const breakout = product.breakout || {};
+  const impact = product.customer_impact || {};
+  const lessons = product.lessons || {};
+
+  pushText(items, '原始洞察', origin.initial_problem || origin.founder_or_team_insight, 210);
+  pushText(items, '旧方案缺口', pre.why_existing_solutions_were_not_enough || pre.market_barrier, 210);
+  pushText(items, '定价/商业模式', innov.pricing || toArray(innov.business_model)[0], 210);
+  pushText(items, '增长触发', toArray(breakout.gtm_path).slice(0, 2).join(' -> '), 150);
+  pushText(items, '客户收益', impact.cost_reduction || impact.time_saved || impact.new_capability || impact.experience_change, 210);
+
+  const learn = toArray(lessons.what_to_learn).slice(0, 2);
+  for (const lesson of learn) {
+    pushText(items, '可学习', lesson, 180);
+  }
+
+  const avoid = toArray(lessons.do_not_copy_blindly).slice(0, 1);
+  for (const lesson of avoid) {
+    pushText(items, '别照抄', lesson, 180);
+  }
+
+  return renderCompactBullets('关键学习', items, 6);
+}
+
 // ============================================================================
 // PRODUCT CARD RENDERER
 // ============================================================================
@@ -415,6 +527,18 @@ function renderProduct(product, index) {
   if (successTypes.length > 0) {
     html += '<div class="gtm-subsection">' + renderTags(successTypes) + '</div>\n';
   }
+
+  html += renderPricingModel(product);
+
+  html += renderProductLearningDigest(product);
+
+  const compactSources = product.sources;
+  if (compactSources) {
+    html += renderSources(compactSources, 3);
+  }
+
+  html += '</div>\n'; // close gtm-product-card
+  return html;
 
   // Origin story
   const origin = product.origin_story;
@@ -736,17 +860,9 @@ function renderGtmSection(data, options) {
   // 3. Channel path
   html += renderChannelPath(gtm);
 
-  // 4. Market entry
-  html += renderMarketEntry(gtm);
-
-  // 5. Channels table
-  html += renderChannelsTable(gtm);
-
-  // 6. Business model table
-  html += renderBusinessModelTable(gtm);
-
-  // 7. Offline and dealer
-  html += renderOfflineDealer(gtm);
+  // 4. Compact GTM essentials. Full channel/business tables are intentionally
+  // omitted here because they often duplicate the base report and product cards.
+  html += renderGtmEssentials(gtm);
 
   // Divider
   html += '<hr class="divider">\n';

@@ -1,12 +1,14 @@
 # GTM Extension Implementation Plan
 
+> Legacy note: this was the original GTM implementation plan. It is kept for history only. Current project logic lives in `README.md` and `docs/project-logic.md`.
+
 ## 1. Project Snapshot
 
 **Date:** 2026-05-21
 
 ### Key Files at Project Root
 - `README.md` — project documentation
-- `SKILL.md` — Claude Code skill definition (the core of this project)
+- `SKILL.md` — legacy Claude Code skill notice, not the current project core
 - `index.html` — report gallery page (lists all generated reports as cards)
 - `dongmingzhu-report.html` — one legacy report at root level
 
@@ -47,7 +49,7 @@
 Append a "GTM & Product Learning" module to existing brand research HTML reports.
 
 - User inputs only a **brand name**
-- **VSCode AI / Claude / Copilot** does the research and generates JSON
+- **Current AI tool or human researcher** does the research and generates JSON
 - Users paste the `prompts/brand-gtm-extension.md` prompt into their AI tool
 - AI outputs a JSON file saved to `data/gtm/{brand-slug}.json`
 - This project **only** reads JSON, renders it to an HTML section, and appends it to the existing report
@@ -71,7 +73,7 @@ Append a "GTM & Product Learning" module to existing brand research HTML reports
 ```
 Brand Name (user input)
        ↓
-VSCode AI / Claude uses prompts/brand-gtm-extension.md to research
+Current AI tool or human researcher uses prompts/brand-gtm-extension.md to research
        ↓
 Generates data/gtm/{brand-slug}.json
        ↓
@@ -98,7 +100,7 @@ Given the project structure:
 ```
 data/gtm/_template.brand-gtm-extension.json   ← JSON template (created Round 1)
 data/gtm/{brand-slug}.json                    ← AI-generated per brand
-prompts/brand-gtm-extension.md                ← Research prompt for VSCode AI (created Round 1)
+prompts/brand-gtm-extension.md                ← Research prompt for the current AI tool or researcher
 docs/gtm-extension-implementation-plan.md     ← This file (created Round 1)
 scripts/gtm-render.js                         ← JSON → HTML section renderer (Round 2)
 scripts/gtm-append.js                         ← Append HTML section to report (Round 3)

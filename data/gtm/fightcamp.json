@@ -1,0 +1,439 @@
+{
+  "brand": "FightCamp",
+  "brand_slug": "fightcamp",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "Khalil Zahar: YC page lists Khalil Zahar as Founder/CEO of FightCamp/Hykso.",
+      "Patrick Chandler: YC page lists Patrick Chandler as Founder/CMO with paid social, content and attribution background.",
+      "Alexandre Marcotte: YC page lists Alexandre Marcotte as Founder/CTO."
+    ],
+    "brand_timeline": [
+      "2016: accelerator YC W2016 - FightCamp/Hykso participated in Y Combinator Winter 2016; batch signal only, no invented founder cash amount.",
+      "2021-06: funding $90M - TechCrunch reports a $90M round led by NEA/Connect Ventures with famous fighters investing.",
+      "2021-06: total_funding $98M - TechCrunch reports $8M raised before the $90M round, bringing total to $98M."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Khalil Zahar",
+        "role": "Founder / CEO",
+        "background_summary": "YC page lists Khalil Zahar as Founder/CEO of FightCamp/Hykso.",
+        "profile_links": [
+          {
+            "title": "FightCamp YC company page",
+            "url": "https://www.ycombinator.com/companies/fightcamp",
+            "source_type": "database",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Patrick Chandler",
+        "role": "Founder / CMO",
+        "background_summary": "YC page lists Patrick Chandler as Founder/CMO with paid social, content and attribution background.",
+        "profile_links": [
+          {
+            "title": "FightCamp YC company page",
+            "url": "https://www.ycombinator.com/companies/fightcamp",
+            "source_type": "database",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Alexandre Marcotte",
+        "role": "Founder / CTO",
+        "background_summary": "YC page lists Alexandre Marcotte as Founder/CTO.",
+        "profile_links": [
+          {
+            "title": "FightCamp YC company page",
+            "url": "https://www.ycombinator.com/companies/fightcamp",
+            "source_type": "database",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2016",
+        "event": "accelerator",
+        "amount": "YC W2016",
+        "currency": "USD",
+        "description": "FightCamp/Hykso participated in Y Combinator Winter 2016; batch signal only, no invented founder cash amount.",
+        "source": {
+          "title": "FightCamp YC company page",
+          "url": "https://www.ycombinator.com/companies/fightcamp",
+          "source_type": "database",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2021-06",
+        "event": "funding",
+        "amount": "$90M",
+        "currency": "USD",
+        "description": "TechCrunch reports a $90M round led by NEA/Connect Ventures with famous fighters investing.",
+        "source": {
+          "title": "TechCrunch FightCamp $90M round",
+          "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2021-06",
+        "event": "total_funding",
+        "amount": "$98M",
+        "currency": "USD",
+        "description": "TechCrunch reports $8M raised before the $90M round, bringing total to $98M.",
+        "source": {
+          "title": "TechCrunch FightCamp $90M round",
+          "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Current membership price needs checkout/account confirmation before treating as live price.",
+      "Revenue and profitability are not reliably public."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "FightCamp 的 GTM 是“真实拳击器材 + 传感器追踪 + 订阅课程”的垂直化 Peloton。它不像 Growl 那样押注昂贵投影硬件，也不像 Peloton 那样覆盖全运动，而是把用户的拳击动机、可量化击打数据和名人/拳手背书组合成家庭拳击训练系统。重点是垂直场景如何用更低硬件门槛换取持续训练数据。",
+    "one_sentence_gtm": "FightCamp 的 GTM 是“真实拳击器材 + 传感器追踪 + 订阅课程”的垂直化 Peloton。",
+    "channel_path": [
+      "Hykso 传感器硬件起步",
+      "YC 背书和早期硬件用户验证",
+      "转向 FightCamp 订阅内容和完整套装",
+      "名人拳手和 $90M 融资扩大声量",
+      "当前用更低入门包和 App/AI Motion 延续转化"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "yc": "YC 页面提供创始人和早期公司信任。",
+      "celebrity": "拳王和 UFC 投资人带来品类权威。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "Connect/Core/Elite packages",
+        "App membership",
+        "配件/服饰",
+        "B2B gym offering"
+      ],
+      "pricing_logic": "用 $299+ 入门降低尝试门槛，过去完整套装可达 $1,219-$1,349。",
+      "channel_economics": "硬件比 Growl/Tonal 轻，内容和会员承担长期价值。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "FightCamp Connect / Core / Elite",
+        "type": "boxing_package",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "当前官网主转化产品线。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "Console + trackers + wraps + optional bag/gloves/HR monitor。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Current official site says packages starting at $299; TechCrunch/WIRED historical kit prices ranged $439-$1,349 and Personal package around $1,219.",
+          "subscription_fee": "Legacy membership in TechCrunch/WIRED: $39/month for streaming workouts; current official account pages should confirm active plans.",
+          "accessory_service_fee": "Accessory/service price: Elite includes free-standing bag, bag ring, boxing gloves, heart-rate monitor; Connect excludes bag for users with existing gear.",
+          "competitor_price": "Competitor price comparison: Growl $4,500 + $60/mo or $150-$190/mo financing; Peloton Bike $1,695 + $49.99/mo; Tonal 2 $4,295 + $59.95/mo; Speediance GM2 $3,390-$4,799 no mandatory subscription.",
+          "sources": [
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "WIRED FightCamp review",
+              "url": "https://www.wired.com/review/fightcamp-home-boxing-workouts/",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "FightCamp official site",
+            "url": "https://joinfightcamp.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "TechCrunch FightCamp $90M round",
+            "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "FightCamp App / tracking content",
+        "type": "subscription_content",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "数据化拳击课程是复购核心。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "传感器把拳击变成可量化游戏。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "App access bundled or sold with membership depending on plan.",
+          "subscription_fee": "Subscription/software fee: historical $39/mo membership for workouts and tutorials.",
+          "accessory_service_fee": "Accessory/service price: trackers, wraps, gloves and bag are required for full metric experience.",
+          "competitor_price": "Competitor subscription comparison: Peloton $49.99/mo All-Access; Tonal $59.95/mo; Speediance optional $19.99/mo; Growl planned $60/mo.",
+          "sources": [
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "WIRED FightCamp review",
+              "url": "https://www.wired.com/review/fightcamp-home-boxing-workouts/",
+              "source_type": "review",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton app membership",
+              "url": "https://www.onepeloton.com/app-membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal membership official page",
+              "url": "https://tonal.com/pages/membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Wellness+ official page",
+              "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "FightCamp YC company page",
+            "url": "https://www.ycombinator.com/companies/fightcamp",
+            "source_type": "database",
+            "confidence": "medium"
+          },
+          {
+            "title": "WIRED FightCamp review",
+            "url": "https://www.wired.com/review/fightcamp-home-boxing-workouts/",
+            "source_type": "review",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "FightCamp at the Gym / B2B extension",
+        "type": "b2b_extension",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "说明 FightCamp 不只卖家庭套装，也可进入健身房。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "把 trackers 和课程系统变成场馆工具。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "B2B price is quote-based on official channel, so report avoids fixed amount.",
+          "subscription_fee": "Subscription/software boundary: gym deployment likely service/account based; exact fee should be quoted by FightCamp.",
+          "accessory_service_fee": "Accessory/service price: studios need bags, trackers, wraps, consoles and replacement parts.",
+          "competitor_price": "Competitor price comparison: HYROX gym affiliation about £100/month in media report; Peloton commercial/hotel placements use enterprise terms; Tonal for Business quote-based.",
+          "sources": [
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Times HYROX business profile",
+              "url": "https://www.thetimes.com/business/companies-markets/article/inside-hyrox-the-high-intensity-fitness-craze-gripping-the-city-f8dxnt5br",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "FightCamp official site",
+            "url": "https://joinfightcamp.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "FightCamp YC company page",
+            "url": "https://www.ycombinator.com/companies/fightcamp",
+            "source_type": "database",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "FightCamp shows a focused vertical can compete against broad fitness ecosystems.",
+      "Hardware price is much lower than Growl/Tonal, but content freshness matters.",
+      "名人投资要转化为真实训练信任，而不只是曝光。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "FightCamp official site",
+        "url": "https://joinfightcamp.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "FightCamp YC company page",
+        "url": "https://www.ycombinator.com/companies/fightcamp",
+        "source_type": "database",
+        "confidence": "medium"
+      },
+      {
+        "title": "TechCrunch FightCamp $90M round",
+        "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "WIRED FightCamp review",
+        "url": "https://www.wired.com/review/fightcamp-home-boxing-workouts/",
+        "source_type": "review",
+        "confidence": "medium"
+      },
+      {
+        "title": "FightCamp Help Center",
+        "url": "https://fightcamp.zendesk.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "FightCamp App Store",
+        "url": "https://apps.apple.com/us/app/fightcamp-home-boxing-workouts/id1329666333",
+        "source_type": "marketplace",
+        "confidence": "medium"
+      },
+      {
+        "title": "FightCamp Crunchbase profile",
+        "url": "https://www.crunchbase.com/organization/hykso",
+        "source_type": "database",
+        "confidence": "medium"
+      },
+      {
+        "title": "FightCamp Trustpilot",
+        "url": "https://www.trustpilot.com/review/joinfightcamp.com",
+        "source_type": "review",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

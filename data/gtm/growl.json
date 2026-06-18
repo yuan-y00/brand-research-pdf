@@ -1,0 +1,431 @@
+{
+  "brand": "Growl",
+  "brand_slug": "growl",
+  "market_focus": "US / Global",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; fitness GTM repair 2026-06-17",
+  "disclaimer": "This GTM extension uses public sources and local base-report facts. Private-company revenue, founder self-funding, unit economics and losses are included only when a source gives a concrete amount; unsupported amounts are deliberately omitted.",
+  "brand_context": {
+    "founder_background": [
+      "Léo Desrumaux: TechCrunch identifies Desrumaux as co-founder/CEO; French/Austin-Paris context and boxing motivation appear in interviews.",
+      "Sam Bowen: TechCrunch reports former hardware engineering VP experience at Amazon, Peloton and Tonal as adviser."
+    ],
+    "brand_timeline": [
+      "2024-12: funding $4.75M - Seed funding from Skip Capital, Kima Ventures, Teampact Ventures and angels including Ciryl Gane.",
+      "2025: crowdfunding $144K+ - Local base report records Kickstarter at $144K+ and 658+ backers during campaign; verify final amount before using in investor-grade deck.",
+      "2026-02: planned_delivery $4,500 MSRP - The Verge reports planned upfront price and first delivery timeline is tied to preorder schedule."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Léo Desrumaux",
+        "role": "Co-founder / CEO",
+        "background_summary": "TechCrunch identifies Desrumaux as co-founder/CEO; French/Austin-Paris context and boxing motivation appear in interviews.",
+        "profile_links": [
+          {
+            "title": "TechCrunch GROWL seed funding report",
+            "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "GROWL official site",
+            "url": "https://www.joingrowl.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Sam Bowen",
+        "role": "Advisor",
+        "background_summary": "TechCrunch reports former hardware engineering VP experience at Amazon, Peloton and Tonal as adviser.",
+        "profile_links": [
+          {
+            "title": "TechCrunch GROWL seed funding report",
+            "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2024-12",
+        "event": "funding",
+        "amount": "$4.75M",
+        "currency": "USD",
+        "description": "Seed funding from Skip Capital, Kima Ventures, Teampact Ventures and angels including Ciryl Gane.",
+        "source": {
+          "title": "TechCrunch GROWL seed funding report",
+          "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "crowdfunding",
+        "amount": "$144K+",
+        "currency": "USD",
+        "description": "Local base report records Kickstarter at $144K+ and 658+ backers during campaign; verify final amount before using in investor-grade deck.",
+        "source": {
+          "title": "GROWL Kickstarter",
+          "url": "https://www.kickstarter.com/projects/joingrowl/growl-the-ai-powered-boxing-and-fitness-coach",
+          "source_type": "marketplace",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-02",
+        "event": "planned_delivery",
+        "amount": "$4,500 MSRP",
+        "currency": "USD",
+        "description": "The Verge reports planned upfront price and first delivery timeline is tied to preorder schedule.",
+        "source": {
+          "title": "The Verge GROWL pricing and product report",
+          "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "No real post-delivery churn, NPS, defect rate or revenue yet.",
+      "Founder personal cash input and burn rate are not reliably public."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Growl 的 GTM 是“AI 投影拳击教练 + 高端家庭硬件 + 预购/众筹”的早期赌注。它试图做拳击版 Peloton/Tonal，但当前仍是未大规模交付阶段：价格、融资、顾问和媒体报道可核验，真实留存、故障率、内容质量和售后成本还不能硬写。它现在更像待验证的高端承诺，而不是成熟规模化案例。",
+    "one_sentence_gtm": "Growl 的 GTM 是“AI 投影拳击教练 + 高端家庭硬件 + 预购/众筹”的早期赌注。",
+    "channel_path": [
+      "种子轮和顾问阵容建立可信度",
+      "The Verge/TechCrunch 等媒体同步曝光",
+      "预购和 Kickstarter 收集早期需求",
+      "Austin showroom/体验降低高价疑虑",
+      "2026 首批交付后才进入真实口碑阶段"
+    ],
+    "channels": {
+      "dtc": "官方独立站或官方票务页承接高意向购买。",
+      "pr_media": "评测、报道、创始人资料和公开数据库提供基础信任。",
+      "community": "用户评价、成绩榜、课程社区或赛事照片决定口碑扩散。",
+      "partners": "经销商、合作健身房、顾问、赞助商或明星投资人提供第二层信任。",
+      "service": "售后、安装、退换、维修和交付节奏决定高客单价是否可持续。",
+      "crowdfunding": "Kickstarter 用低目标验证早期需求。",
+      "showroom": "Austin showroom 解决“原型机是否真实”疑虑。"
+    },
+    "business_model": {
+      "revenue_streams": [
+        "$4,500 upfront hardware",
+        "planned $60/mo content subscription",
+        "financing bundles $150-$190/mo",
+        "future content/games/services"
+      ],
+      "pricing_logic": "定价接近 Tonal 而非 FightCamp，用“实体可打 AI 教练”解释溢价。",
+      "channel_economics": "种子轮 $4.75M 对复杂硬件非常紧，预购现金和交付节奏关键。"
+    },
+    "top_products_selection_rule": "最多选 3 个产品线；按用户购买决策、价格结构、GTM 学习价值和公开证据选择。",
+    "top_products": [
+      {
+        "name": "GROWL Wall-mounted AI boxing trainer",
+        "type": "ai_boxing_hardware",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "品牌全部叙事集中在这个硬件上。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "4K projector、hit sensors、3D motion tracking、可击打表面。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "The Verge reports upfront hardware about $4,500.",
+          "subscription_fee": "If purchased upfront, The Verge reports planned subscription about $60/month.",
+          "accessory_service_fee": "Accessory/service price: wall installation, punching surface wear, sensors, projector and support are critical future service costs; exact replacement fees not yet evidenced.",
+          "competitor_price": "Competitor price comparison: FightCamp packages start $299 and historical full package $1,219 with $39/mo; Tonal 2 $4,295 + $59.95/mo; Speediance GM2 $3,390-$4,799; Peloton Bike $1,695 + $49.99/mo.",
+          "sources": [
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch GROWL seed funding report",
+              "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Gym Monster 2 official page",
+              "url": "https://www.speediance.com/pages/gym-monster-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "GROWL official site",
+            "url": "https://www.joingrowl.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "The Verge GROWL pricing and product report",
+            "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "GROWL financing family access plan",
+        "type": "financing_plan",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "高价硬件需要月付包装才可能进入家庭预算。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "用 $150-$190/mo 降低一次性支付心理阻力。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "The Verge reports anticipated $150/mo for 48 months or $190/mo for 36 months, totaling about $7,200 or $6,840.",
+          "subscription_fee": "Plan includes unlimited family access per The Verge; subscription boundary differs from upfront $60/mo plan.",
+          "accessory_service_fee": "Accessory/service price: plan may include hardware and content; damage, installation and replacement terms need contract confirmation.",
+          "competitor_price": "Competitor price comparison: Peloton Tread+ four-year total in The Verge comparison about $7,407; Tonal rental official page $219/mo first 3 months then $279/mo; FightCamp is far cheaper upfront.",
+          "sources": [
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal 2 official product page",
+              "url": "https://tonal.com/products/tonal-2",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "FightCamp official site",
+              "url": "https://joinfightcamp.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton official site",
+              "url": "https://www.onepeloton.com/",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "The Verge GROWL pricing and product report",
+            "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Tonal 2 official product page",
+            "url": "https://tonal.com/products/tonal-2",
+            "source_type": "official",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "GROWL content, games and AI coach",
+        "type": "content_software",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "如果硬件交付，内容和 AI 才是长期留存。",
+        "origin_story": "该产品线是品牌 GTM 的主要承载物，负责把定位、价格、渠道和交付能力变成用户可购买的方案。",
+        "pre_market": "上市或预售前的关键动作是明确用户要替代什么：私教、健身房、精品团课、拳击馆、赛事报名，还是一台传统器械。",
+        "innovation": "投影把教练变成人形实体，传感器反馈动作。",
+        "breakout": "突破点不只在产品参数，而在价格结构、渠道叙事和真实用户可验证的交付结果。",
+        "customer_impact": "用户购买时会同时计算硬件价、配件价、服务费、软件/订阅边界、竞品总成本和售后风险。",
+        "ecosystem_impact": "它改变了同类品牌解释价值的方式：要么证明自己更专业，要么证明自己总拥有成本更低。",
+        "pricing_model": {
+          "product_price": "Content sold through subscription or financing bundle, not as standalone verified price.",
+          "subscription_fee": "Subscription/software fee: planned $60/mo if upfront hardware purchased; financing bundle includes family access.",
+          "accessory_service_fee": "Accessory/service price: camera/projector calibration and bag surface replacement may become service costs; no fixed public price written.",
+          "competitor_price": "Competitor subscription comparison: FightCamp $39/mo historical, Peloton $49.99/mo, Tonal $59.95/mo, Speediance optional $19.99/mo.",
+          "sources": [
+            {
+              "title": "The Verge GROWL pricing and product report",
+              "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch GROWL seed funding report",
+              "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "TechCrunch FightCamp $90M round",
+              "url": "https://techcrunch.com/2021/06/30/fightcamp-punches-its-way-to-a-90m-round/",
+              "source_type": "media",
+              "confidence": "medium"
+            },
+            {
+              "title": "Peloton app membership",
+              "url": "https://www.onepeloton.com/app-membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Tonal membership official page",
+              "url": "https://tonal.com/pages/membership",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Speediance Wellness+ official page",
+              "url": "https://www.speediance.com/pages/wellness-ai-personal-trainer",
+              "source_type": "official",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "先把用户的替代对象讲清楚，再决定硬件复杂度和渠道顺序。",
+            "价格表必须包含产品本体、配件/服务、软件/订阅和竞品总成本。",
+            "GTM 的重点不是曝光，而是让用户相信交付、售后和长期内容能兑现。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把众筹、疫情红利或媒体报道当成长期留存。",
+            "不要在没有可靠来源时补写创始人自筹金额、单台毛利或亏损数字。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "GROWL official site",
+            "url": "https://www.joingrowl.com/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "TechCrunch GROWL seed funding report",
+            "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Growl 目前是承诺型 GTM，不是已验证规模化 GTM。",
+      "它必须用交付质量证明 $4,500 + 订阅合理。",
+      "与 FightCamp 对比时，最重要的是真实训练效果和售后交付。"
+    ],
+    "evidence_boundary": "没有可靠金额来源的创始人自筹、单台毛利、广告花费、退货损失不写入事实表，只在研究缺口中说明。",
+    "sources": [
+      {
+        "title": "GROWL official site",
+        "url": "https://www.joingrowl.com/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "The Verge GROWL pricing and product report",
+        "url": "https://www.theverge.com/2024/12/4/24305788/growl-boxing-punching-bag-interactive-trainer-fitness",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "TechCrunch GROWL seed funding report",
+        "url": "https://techcrunch.com/2024/12/04/growl-is-building-the-peloton-of-boxing/",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Athletech News GROWL funding coverage",
+        "url": "https://athletechnews.com/growl-raises-4-75m-for-boxing-bag-that-puts-a-coach-in-your-living-room/",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "VentureBeat GROWL AI boxing coverage",
+        "url": "https://venturebeat.com/ai/growl-is-an-ai-interactive-boxing-coach-to-punch-up-your-family-workouts/",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Fast Company GROWL product coverage",
+        "url": "https://www.fastcompany.com/91242504/this-ai-powered-punching-bag-looks-like-the-future-of-fitness",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "GROWL Kickstarter",
+        "url": "https://www.kickstarter.com/projects/joingrowl/growl-the-ai-powered-boxing-and-fitness-coach",
+        "source_type": "marketplace",
+        "confidence": "medium"
+      },
+      {
+        "title": "GROWL Linktree / signup",
+        "url": "https://linktr.ee/joingrowl",
+        "source_type": "official",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "brand": "Apple",
+  "brand_slug": "apple",
+  "market_focus": "Global / China where relevant",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; consumer GTM repair 2026-06-17",
+  "disclaimer": "Only sourced money events are written as facts. Unsupported founder cash, margin, burn, loss, CAC, refund or subsidy amounts remain in research_gaps.",
+  "brand_context": {
+    "founder_background": [
+      "Steve Jobs: Co-founded Apple in 1976 and drove product, brand and integrated hardware/software philosophy.",
+      "Steve Wozniak: Designed Apple I hardware and early Apple technical foundation.",
+      "Ronald Wayne: Drafted early partnership documents and exited shortly after founding; useful as a risk-boundary lesson.",
+      "Tim Cook: Not a founder; represents Apple’s supply-chain, services and operating-system era."
+    ],
+    "brand_timeline": [
+      "1976: founder_cash Volkswagen van + HP calculator - Jobs and Wozniak sold personal items to fund early Apple I work; do not overstate as audited startup capital.",
+      "1976: first_order 50 units x $500 - Byte Shop ordered 50 assembled Apple I units at $500 each, creating the first real commercial pull.",
+      "1977: angel_credit $92K + $250K line of credit - Mike Markkula invested personal capital and helped secure credit, according to public Apple history.",
+      "2025: revenue $416.16B revenue / $112.01B net income - FY2025 revenue and net income from public financial summaries; exact audited values should be checked in SEC filing."
+    ],
+    "founder_profiles": [
+      {
+        "name": "Steve Jobs",
+        "role": "Co-founder",
+        "background_summary": "Co-founded Apple in 1976 and drove product, brand and integrated hardware/software philosophy.",
+        "profile_links": [
+          {
+            "title": "Steve Jobs profile",
+            "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple public profile",
+            "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Steve Wozniak",
+        "role": "Co-founder",
+        "background_summary": "Designed Apple I hardware and early Apple technical foundation.",
+        "profile_links": [
+          {
+            "title": "Steve Wozniak profile",
+            "url": "https://en.wikipedia.org/wiki/Steve_Wozniak",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple public profile",
+            "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Ronald Wayne",
+        "role": "Co-founder",
+        "background_summary": "Drafted early partnership documents and exited shortly after founding; useful as a risk-boundary lesson.",
+        "profile_links": [
+          {
+            "title": "Ronald Wayne profile",
+            "url": "https://en.wikipedia.org/wiki/Ronald_Wayne",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Tim Cook",
+        "role": "CEO",
+        "background_summary": "Not a founder; represents Apple’s supply-chain, services and operating-system era.",
+        "profile_links": [
+          {
+            "title": "Tim Cook profile",
+            "url": "https://en.wikipedia.org/wiki/Tim_Cook",
+            "source_type": "media",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple SEC filings",
+            "url": "https://investor.apple.com/sec-filings/default.aspx",
+            "source_type": "filing",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "1976",
+        "event": "founder_cash",
+        "amount": "Volkswagen van + HP calculator",
+        "currency": "assets",
+        "description": "Jobs and Wozniak sold personal items to fund early Apple I work; do not overstate as audited startup capital.",
+        "source": {
+          "title": "Steve Wozniak profile",
+          "url": "https://en.wikipedia.org/wiki/Steve_Wozniak",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1976",
+        "event": "first_order",
+        "amount": "50 units x $500",
+        "currency": "USD",
+        "description": "Byte Shop ordered 50 assembled Apple I units at $500 each, creating the first real commercial pull.",
+        "source": {
+          "title": "Byte Shop first Apple I order",
+          "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "1977",
+        "event": "angel_credit",
+        "amount": "$92K + $250K line of credit",
+        "currency": "USD",
+        "description": "Mike Markkula invested personal capital and helped secure credit, according to public Apple history.",
+        "source": {
+          "title": "History of Apple Inc.",
+          "url": "https://en.wikipedia.org/wiki/History_of_Apple_Inc.",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2025",
+        "event": "revenue",
+        "amount": "$416.16B revenue / $112.01B net income",
+        "currency": "USD",
+        "description": "FY2025 revenue and net income from public financial summaries; exact audited values should be checked in SEC filing.",
+        "source": {
+          "title": "Investopedia Apple revenue by segment FY2025",
+          "url": "https://www.investopedia.com/how-apple-makes-money-4798689",
+          "source_type": "media",
+          "confidence": "medium"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "research_gaps": [
+      "Live Apple Store prices vary by storage, carrier and region; use official product pages for final quote.",
+      "Do not infer product-level margins beyond Apple segment disclosures.",
+      "Vision Pro return rate and unit loss are not written without primary/credible source."
+    ]
+  },
+  "gtm_extension": {
+    "summary": "Apple 的 GTM 是“高端硬件入口 + 操作系统锁定 + 服务订阅 + 官方零售体验”的复合模型。它不是单卖 iPhone，而是用 iPhone、Mac、Watch、AirPods 和 Vision 把用户带进 Apple ID，再通过 iCloud、Apple One、AppleCare、App Store 和配件持续变现。学习重点是生态系统如何把一次性硬件购买变成多年复购和订阅，但监管、AI 落后、Vision Pro 定价和中国竞争会持续削弱这套围墙。",
+    "one_sentence_gtm": "Apple 的 GTM 是“高端硬件入口 + 操作系统锁定 + 服务订阅 + 官方零售体验”的复合模型。",
+    "channel_path": [
+      "Apple I first order and early hobbyist trust",
+      "Apple Store / carrier / online store control purchase experience",
+      "iPhone as primary device entry",
+      "Apple ID and ecosystem features raise switching cost",
+      "Services, AppleCare, accessories and trade-in extend lifetime value"
+    ],
+    "channels": {
+      "dtc": "Official site/store is the clearest conversion path and pricing source.",
+      "ecommerce": "Marketplaces, retailers, and regional stores broaden reach beyond owned traffic.",
+      "pr_media": "Reviews, launch events, and credible media explain why the product deserves attention.",
+      "community": "User reviews, forums, creator content, or owner communities decide whether early demand becomes trust.",
+      "service": "Warranty, repair, delivery, setup, installation, and support determine long-term brand quality.",
+      "retail": "Apple Store and carriers turn high-price devices into assisted purchases.",
+      "services": "Apple One, iCloud, AppleCare and App Store monetize installed base."
+    },
+    "business_model": {
+      "revenue_streams": [
+        "iPhone, Mac, iPad, Wearables hardware",
+        "Services and Apple One",
+        "AppleCare",
+        "Accessories",
+        "App Store commissions"
+      ],
+      "pricing_logic": "Premium hardware anchors brand margin; service bundles and care plans monetize active devices.",
+      "channel_economics": "Owned retail and OS integration reduce channel leakage and raise lifetime value."
+    },
+    "top_products_selection_rule": "最多选 3 个产品或产品线；按公开证据、价格结构、GTM 学习价值和用户购买决策选择。",
+    "top_products": [
+      {
+        "name": "iPhone 17 / Air / Pro line",
+        "type": "hardware_line",
+        "rank": 1,
+        "confidence": "medium",
+        "why_selected": "iPhone is Apple’s core revenue engine and the gateway to the services stack.",
+        "origin_story": "Apple’s first product-market wedge was integrated personal computing; iPhone became the modern ecosystem anchor.",
+        "pre_market": "Consumers compare iPhone against Samsung, Google Pixel, Huawei and Xiaomi on camera, AI, trade-in, carrier subsidy and ecosystem lock-in.",
+        "innovation": "A19/A19 Pro, Apple Intelligence integration, camera upgrades, iOS continuity and trade-in support.",
+        "breakout": "iPhone keeps Apple in the global premium smartphone profit pool.",
+        "customer_impact": "Users buy not just a phone, but iMessage, AirDrop, iCloud, Watch, AirPods and resale value.",
+        "ecosystem_impact": "It sets the pricing umbrella for premium smartphones and forces competitors to bundle AI and ecosystem features.",
+        "pricing_model": {
+          "product_price": "Current Apple lineup includes iPhone 17 family; media/retail signals put iPhone 17 from about $799, iPhone Air around $999, Pro models above that depending on storage.",
+          "subscription_fee": "Apple Intelligence is included with compatible devices; software monetization comes through iCloud+, Apple One, App Store and other services rather than a mandatory iPhone OS subscription.",
+          "accessory_service_fee": "Accessory/service price: cases, MagSafe accessories, adapters, AppleCare+ or AppleCare One; AppleCare One starts at $19.99/mo for three Apple devices.",
+          "competitor_price": "Competitor price comparison: Samsung Galaxy S/Ultra, Google Pixel Pro, Huawei Mate/Pura and Xiaomi 15/15 Ultra compete across $799-$1,499+ premium bands; Xiaomi 15 Ultra Europe launch started at €1,499 / £1,299.",
+          "sources": [
+            {
+              "title": "Apple iPhone official page",
+              "url": "https://www.apple.com/iphone/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "AppleCare official pricing",
+              "url": "https://www.apple.com/applecare/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "The Verge Xiaomi 15 / 15 Ultra Europe price",
+              "url": "https://www.theverge.com/news/622406/xiaomi-15-ultra-pad-7-launch-europe-price-mwc",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Apple iPhone official page",
+            "url": "https://www.apple.com/iphone/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Investopedia Apple revenue by segment FY2025",
+            "url": "https://www.investopedia.com/how-apple-makes-money-4798689",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Apple One / Services",
+        "type": "subscription_bundle",
+        "rank": 2,
+        "confidence": "medium",
+        "why_selected": "Services convert installed base into recurring high-margin revenue.",
+        "origin_story": "After iPhone scale matured, Apple used Apple ID and device integration to bundle media, storage, games, fitness and news.",
+        "pre_market": "Users first subscribe because iCloud storage, music, TV, games and family sharing solve daily friction.",
+        "innovation": "Apple One bundles multiple services and makes cancellation psychologically harder than single subscriptions.",
+        "breakout": "FY2025 services revenue and margin show the second growth curve.",
+        "customer_impact": "Families can share bundles across devices, increasing stickiness.",
+        "ecosystem_impact": "Apple’s service bundle is the template for device-first recurring revenue.",
+        "pricing_model": {
+          "product_price": "Apple One official US pricing: Individual $19.95/mo, Family $25.95/mo, Premier $37.95/mo.",
+          "subscription_fee": "Subscription/software fee is the product: Apple One is monthly with no long-term commitment; individual subscriptions can remain separate.",
+          "accessory_service_fee": "Accessory/service price: iCloud storage upgrades, AppleCare, App Store purchases and paid apps add to total Apple ID spend.",
+          "competitor_price": "Competitor subscription comparison: Google One / YouTube Premium / Play Pass, Amazon Prime, Samsung/Galaxy services and Microsoft 365 compete for household software spend, but none are as tightly tied to a premium hardware installed base.",
+          "sources": [
+            {
+              "title": "Apple One official pricing",
+              "url": "https://www.apple.com/apple-one/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Investopedia Apple revenue by segment FY2025",
+              "url": "https://www.investopedia.com/how-apple-makes-money-4798689",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Apple One official pricing",
+            "url": "https://www.apple.com/apple-one/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple SEC filings",
+            "url": "https://investor.apple.com/sec-filings/default.aspx",
+            "source_type": "filing",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "name": "Apple Vision Pro / spatial computing",
+        "type": "new_category_hardware",
+        "rank": 3,
+        "confidence": "medium",
+        "why_selected": "Vision Pro is the clearest example of Apple’s premium GTM risk.",
+        "origin_story": "Apple tried to define spatial computing as a post-iPhone category through high-end hardware and developer ecosystem.",
+        "pre_market": "Pre-market excitement came from Apple brand trust, not proven daily usage.",
+        "innovation": "High-resolution displays, eye/hand interface, spatial media and Apple ecosystem integration.",
+        "breakout": "It created attention but not mass adoption because price, comfort and app depth were weak.",
+        "customer_impact": "Early users paid for a developer/prosumer experiment rather than a mainstream device.",
+        "ecosystem_impact": "It shows that Apple’s premium formula does not work if the job-to-be-done is unclear.",
+        "pricing_model": {
+          "product_price": "Vision Pro launched at $3,499 in the US; current product pricing varies by storage and region.",
+          "subscription_fee": "No mandatory standalone software subscription; value depends on apps, media subscriptions, Apple TV+, iCloud and developer ecosystem.",
+          "accessory_service_fee": "Accessory/service price: inserts, cases, batteries, straps and AppleCare; AppleCare page lists AppleCare One from $19.99/mo and Vision Pro AppleCare section as separate coverage source.",
+          "competitor_price": "Competitor price comparison: Meta Quest line is far cheaper; Ray-Ban Meta and other AI glasses attack a lighter, cheaper use case instead of full spatial computing.",
+          "sources": [
+            {
+              "title": "AppleCare official pricing",
+              "url": "https://www.apple.com/applecare/",
+              "source_type": "official",
+              "confidence": "medium"
+            },
+            {
+              "title": "Apple public profile",
+              "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+              "source_type": "media",
+              "confidence": "medium"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "把产品本体价格、配件服务费、软件订阅费和竞品总成本放在同一张账上。",
+            "GTM 的重点是让用户相信长期价值，而不是只看首发声量。",
+            "创始人履历和公司资本链条要分开写，避免把人物叙事当成财务事实。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把找不到来源的自筹金额、毛利、亏损或补贴硬写进报告。",
+            "不要复制表面的发布会打法，先确认供应链、售后和复购逻辑。"
+          ]
+        },
+        "sources": [
+          {
+            "title": "AppleCare official pricing",
+            "url": "https://www.apple.com/applecare/",
+            "source_type": "official",
+            "confidence": "medium"
+          },
+          {
+            "title": "Apple public profile",
+            "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+            "source_type": "media",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "learning_summary": [
+      "Apple 的第一性原理是把硬件入口变成长期生态税。",
+      "服务业务是第二增长曲线，但它依赖硬件安装基数和监管边界。",
+      "高端定价只有在明确日常使用场景成立时才成立。"
+    ],
+    "evidence_boundary": "找不到的内容不补写；缺失的创始人现金、单台毛利、广告投放、退货损失、售后成本留在 research_gaps。",
+    "sources": [
+      {
+        "title": "Apple iPhone official page",
+        "url": "https://www.apple.com/iphone/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple One official pricing",
+        "url": "https://www.apple.com/apple-one/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "AppleCare official pricing",
+        "url": "https://www.apple.com/applecare/",
+        "source_type": "official",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple SEC filings",
+        "url": "https://investor.apple.com/sec-filings/default.aspx",
+        "source_type": "filing",
+        "confidence": "medium"
+      },
+      {
+        "title": "Apple public profile",
+        "url": "https://en.wikipedia.org/wiki/Apple_Inc.",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Steve Jobs profile",
+        "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Steve Wozniak profile",
+        "url": "https://en.wikipedia.org/wiki/Steve_Wozniak",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Byte Shop first Apple I order",
+        "url": "https://en.wikipedia.org/wiki/Byte_Shop",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Investopedia Apple revenue by segment FY2025",
+        "url": "https://www.investopedia.com/how-apple-makes-money-4798689",
+        "source_type": "media",
+        "confidence": "medium"
+      }
+    ]
+  }
+}
