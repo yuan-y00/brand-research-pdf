@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>舞肌科技证据研究页</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'DM Sans', 'Noto Sans SC', sans-serif;
+  background: #f7f8f5;
+  color: #17201d;
+}
+a { color: #176b87; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+.hero {
+  padding: 42px 0 26px;
+  border-bottom: 1px solid #d9dfd8;
+}
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #66716b;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+.hero h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(34px, 6vw, 68px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+.hero p {
+  max-width: 820px;
+  margin: 18px 0 0;
+  color: #52615b;
+  font-size: 18px;
+  line-height: 1.75;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.pill {
+  border: 1px solid #c8d4cf;
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #fff;
+  color: #314039;
+  font-size: 13px;
+  font-weight: 700;
+}
+.section { padding: 34px 0 8px; }
+.section h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 1.25;
+}
+.section-lead {
+  max-width: 880px;
+  margin: -4px 0 18px;
+  color: #52615b;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+.card {
+  background: #fff;
+  border: 1px solid #dce4df;
+  border-radius: 8px;
+  padding: 18px;
+  min-height: 100%;
+}
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.35;
+}
+.card p, .card li {
+  color: #46544e;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.card p { margin: 0; }
+.card ul { padding-left: 18px; margin: 0; }
+.badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e9f1ed;
+  color: #2b5a48;
+  font-size: 12px;
+  font-weight: 800;
+}
+.badge.warn {
+  background: #fff2d9;
+  color: #79520d;
+}
+.badge.no {
+  background: #f1e8e5;
+  color: #7d3c2b;
+}
+.chain {
+  display: grid;
+  gap: 10px;
+}
+.chain-step {
+  display: grid;
+  grid-template-columns: 145px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 0;
+  border-top: 1px solid #dce4df;
+}
+.chain-step:first-child { border-top: 0; }
+.chain-label {
+  color: #176b87;
+  font-weight: 900;
+}
+.chain-step p {
+  margin: 0;
+  color: #46544e;
+  line-height: 1.78;
+}
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid #dce4df;
+  border-radius: 8px;
+  background: #fff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px;
+  border-bottom: 1px solid #edf1ee;
+  font-size: 14px;
+  line-height: 1.65;
+}
+th {
+  background: #eef4f1;
+  color: #26332e;
+  font-size: 13px;
+}
+tr:last-child td { border-bottom: 0; }
+.quote-block {
+  background: #12352f;
+  color: #f6fbf8;
+  border-radius: 8px;
+  padding: 22px;
+}
+.quote-block h2 { color: #fff; }
+.quote-block p {
+  margin: 0;
+  color: #dbe9e3;
+  line-height: 1.85;
+  font-size: 16px;
+}
+.source-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+  padding-left: 18px;
+}
+.source-list li {
+  color: #46544e;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.footer {
+  margin-top: 34px;
+  padding: 28px 0 44px;
+  border-top: 1px solid #d9dfd8;
+  color: #66716b;
+  font-size: 13px;
+}
+@media (max-width: 860px) {
+  .grid, .grid.two, .source-list { grid-template-columns: 1fr; }
+  .chain-step { grid-template-columns: 1fr; gap: 6px; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <a class="crumb" href="../index.html">返回主页</a>
+    <h1>舞肌科技证据研究页</h1>
+    <p>这页不按标准品牌报告模板写，只保留能帮助创业判断的证据：最新产品为什么存在，技术迭代在哪里，开源和论文说明了什么，招聘和公众号线索应该怎样继续追。</p>
+    <div class="hero-meta">
+      <span class="pill">最后更新：2026-06-22</span>
+      <span class="pill">对象：Wuji Hand / Hand 2 / Wuji Glove</span>
+      <span class="pill">边界：不硬写价格、收入、ROI</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>一眼结论</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge">产品判断</span>
+        <h3>舞肌最新产品不是一只孤立的机械手</h3>
+        <p>Wuji Hand 2 的重点是把手接入遥操作、重定向、仿真、ROS2、SDK、Studio、VLA 训练和真实机器人部署链路。创业者要看的不是“它有 20 个自由度”，而是它把手、手套、软件、数据和客户工程连成了一个平台。</p>
+      </article>
+      <article class="card">
+        <span class="badge">技术迭代</span>
+        <h3>从第一代手到 Hand 2，迭代重点在闭环和平台化</h3>
+        <p>第一代 Wuji Hand 已经公开 20 DOF、FOC、约 580g、15N 指尖力、10kg 静态抓握等指标。Hand 2 进一步强调 Ethernet、1000Hz x 20 轴、MIT 力位混合控制、可回驱直驱关节、多轴力/力矩指尖传感和模块化。</p>
+      </article>
+      <article class="card">
+        <span class="badge no">证据边界</span>
+        <h3>价格、收入、亏损、ROI 现在不能写成结论</h3>
+        <p>公开资料没有可靠的成交价、配件价、软件订阅费、客户订单、出货量、收入、毛利、售后成本和回款周期。这里不再用“未知”堆版面，只把这些列为必须向公司、客户或投资人求证的问题。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>产品为什么这样迭代</h2>
+    <p class="section-lead">我把现有证据串成一条因果链。每一步都对应一个创业问题：先解决什么瓶颈，为什么需要下一层能力，下一层能力如何变成商业化入口。</p>
+    <div class="card chain">
+      <div class="chain-step">
+        <div class="chain-label">1. 执行器能力</div>
+        <p>舞肌早期公开叙事多次指向高扭矩密度电机。对灵巧手来说，这不是背景故事，而是产品可行性的根：重量、指尖力、寿命、体积和控制都受执行器约束。</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-label">2. 第一代手</div>
+        <p>Wuji Hand 官方页给出 20 个主动自由度、串联直驱旋转关节、FOC 矢量控制、15N 指尖力、10kg 整手静态抓握、约 580g 裸手重量、80cm 跌落测试和 30 万次空载循环寿命。这一步证明它不是概念外壳，而是能交付的末端执行硬件。</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-label">3. 数据入口</div>
+        <p>Wuji Glove 的关键不是“配件”，而是示教和数据采集入口。官方页给出 24 x 32 触觉矩阵、526 个有效触觉点、120 FPS、5 个电磁接收模块、6DOF 跟踪、IMU 和以太网通信，这说明舞肌在补机器人手最难规模化的数据问题。</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-label">4. Hand 2 平台化</div>
+        <p>Hand 2 页面强调 1000Hz 控制、Ethernet、MIT 力位混合模式、ROS2、MuJoCo / Isaac Sim、Wuji SDK / Studio、Vision Pro / RealSense / Wuji Glove 遥操作。这一步是把硬件变成开发者和机器人团队能接入的系统。</p>
+      </div>
+      <div class="chain-step">
+        <div class="chain-label">5. 开源和论文</div>
+        <p>GitHub 上的 retargeting、ROS2、SDK、mjlab、openpi 仓库，以及 TopoRetarget、Kilohertz-Safe 等论文，说明舞肌正在用真实任务、仿真到实机、VLA 微调、遥操作和安全重定向建立技术可信度。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>官方产品证据</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>证据</th><th>能说明什么</th><th>创业者应该追问</th><th>来源</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Wuji Hand</td>
+            <td>20 DOF、每指 4 个主动自由度、FOC 矢量控制、15N 指尖力、10kg 静态抓握、约 580g 裸手重量、30 万次空载循环寿命。</td>
+            <td>量产良率、售后返修、手指模块成本、跌落后的校准成本、不同任务的真实寿命。</td>
+            <td><a href="https://wuji.tech/en/hand" target="_blank" rel="noopener">官方产品页</a></td>
+          </tr>
+          <tr>
+            <td>Wuji Hand 2</td>
+            <td>20 DOF、1000Hz x 20 轴、Ethernet、MIT 力位混合、直驱可回驱、模块化、仿真和遥操作生态。</td>
+            <td>Hand 2 相比第一代的客户迁移理由，Beta1 后规格迭代节奏，是否有早期付费客户。</td>
+            <td><a href="https://wuji.tech/en/hand2" target="_blank" rel="noopener">官方产品页</a></td>
+          </tr>
+          <tr>
+            <td>Wuji Glove</td>
+            <td>526 个触觉点、120 FPS、EMF 6DOF 跟踪、IMU、以太网和 USB-C。它更像数据采集硬件，不只是操控附件。</td>
+            <td>手套是否单独销售，是否绑定 Hand 2，标定时间，数据格式，客户是否为训练数据付费。</td>
+            <td><a href="https://wuji.tech/en/glove" target="_blank" rel="noopener">官方产品页</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>开源仓库说明的真实方向</h2>
+    <p class="section-lead">截至本页整理时，舞肌 GitHub 组织公开仓库的最新更新集中在 2026 年 6 月前后。它不像普通硬件公司只放说明书，而是在把客户开发链路拆成 SDK、Studio、ROS2、重定向、仿真、VLA 训练和硬件描述文件。</p>
+    <div class="grid two">
+      <article class="card">
+        <span class="badge">SDK / 工具</span>
+        <h3><a href="https://github.com/wuji-technology/wuji-sdk" target="_blank" rel="noopener">wuji-sdk</a> 与 <a href="https://github.com/wuji-technology/wuji-studio" target="_blank" rel="noopener">wuji-studio</a></h3>
+        <p>SDK 说明自动设备发现、连接管理、实时数据流、手部追踪、触觉/电磁传感和 MCAP 记录。Studio 是设备管理、数据可视化和固件升级桌面应用。判断：舞肌在降低客户接入门槛。</p>
+      </article>
+      <article class="card">
+        <span class="badge">重定向</span>
+        <h3><a href="https://github.com/wuji-technology/wuji-retargeting" target="_blank" rel="noopener">wuji-retargeting</a></h3>
+        <p>仓库描述支持 Wuji Glove、Vision Pro、RealSense、ZED、视频等输入，WH120 对应网络化 Wuji Hand 2。判断：舞肌把“人怎么教手”作为产品核心，而不是只卖本体。</p>
+      </article>
+      <article class="card">
+        <span class="badge">机器人接入</span>
+        <h3><a href="https://github.com/wuji-technology/wujihandros2" target="_blank" rel="noopener">wujihandros2</a> 与 <a href="https://github.com/wuji-technology/wuji-hand-teleop" target="_blank" rel="noopener">wuji-hand-teleop</a></h3>
+        <p>ROS2 驱动强调 1000Hz joint state publishing、实时控制、多手配置和 RViz。Teleop 仓库做实时手和机械臂控制。判断：目标客户很可能是机器人实验室、人形机器人团队和具身智能团队。</p>
+      </article>
+      <article class="card">
+        <span class="badge">仿真 / VLA</span>
+        <h3><a href="https://github.com/wuji-technology/wuji-mjlab" target="_blank" rel="noopener">wuji-mjlab</a> 与 <a href="https://github.com/wuji-technology/wuji-openpi" target="_blank" rel="noopener">wuji-openpi</a></h3>
+        <p>mjlab 做 Wuji Hand 立方体手内重定向 RL 和 sim2real；openpi 面向双臂加 Wuji Hand 的 pi0 / pi0.5 VLA 微调和 ROS2 部署。判断：最新方向已经进入“数据加模型加实机”的完整闭环。</p>
+      </article>
+      <article class="card">
+        <span class="badge">硬件文件</span>
+        <h3><a href="https://github.com/wuji-technology/wuji-hand-description" target="_blank" rel="noopener">wuji-hand-description</a> 与 <a href="https://github.com/wuji-technology/wujihand-hardware-design" target="_blank" rel="noopener">hardware-design</a></h3>
+        <p>URDF、MJCF、mesh、RViz 配置，以及 STEP 格式的转接件和结构文件，能让客户更快做仿真、装配和集成。它们不是拆机报告，但比普通宣传图更接近工程证据。</p>
+      </article>
+      <article class="card">
+        <span class="badge warn">人员线索</span>
+        <h3>公开 GitHub 组织成员</h3>
+        <p>GitHub 公开组织成员页只显示 Siqiao Huang / knightnemo。这个页面能作为技术贡献者线索，但我没有找到公开证据证明其 CTO 身份，因此不把他写成 CTO。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>论文能证明什么</h2>
+    <div class="grid two">
+      <article class="card">
+        <span class="badge">2026-06</span>
+        <h3><a href="https://arxiv.org/abs/2606.16272" target="_blank" rel="noopener">TopoRetarget: Interaction-Preserving Retargeting for Dexterous Manipulation</a></h3>
+        <p>论文用交互图、Laplacian 变形、方向一致性、运动学约束和穿透处理做灵巧操作重定向，报告 Pen-Spin 训练成功率提升 40.6 个百分点，并展示到 Wuji Hand 硬件的零样本迁移。它能证明技术验证方向，不能证明商业订单。</p>
+      </article>
+      <article class="card">
+        <span class="badge">2026-03</span>
+        <h3><a href="https://arxiv.org/abs/2603.29213" target="_blank" rel="noopener">Kilohertz-Safe: A Scalable Framework for Constrained Dexterous Retargeting</a></h3>
+        <p>论文把非线性重定向改写为关节微分空间里的凸 QP，并用控制障碍函数处理安全约束；在 Wuji Hand 平台做硬件验证，报告平均延迟 9.05ms，超过 95% 帧满足安全标准。它说明实时安全重定向是舞肌生态里的关键问题。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>招聘和公众号应该怎么用</h2>
+    <div class="grid two">
+      <article class="card">
+        <span class="badge">招聘</span>
+        <h3>招聘不是“公司介绍”，是未来业务线的前置信号</h3>
+        <p>Moka 招聘页曾显示研发、算法、交付、质量、制造、数采平台、全球业务等岗位线索。对这类公司，岗位比宣传稿更有用，因为岗位会暴露正在补的能力：数据采集、客户交付、硬件可靠性、海外支持、量产质量。</p>
+      </article>
+      <article class="card">
+        <span class="badge warn">公众号</span>
+        <h3>公众号要收集原文，不拿搜索摘要当事实</h3>
+        <p>有价值的公众号材料应优先来自从业者、客户、员工、实验室和拆解者。搜索摘要里出现过“95 后创始人”“F13016 电机”“中国移动入股”“Wuji Hand 2 迭代”等线索，但在没有原文、截图或可保存链接前，只能作为待核查线索。</p>
+      </article>
+    </div>
+    <div class="table-wrap" style="margin-top:14px;">
+      <table>
+        <thead><tr><th>待手工存档线索</th><th>应该提取什么</th><th>不能做什么</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>创始人潘韫哲、UIUC、2019 创业、电机不满意等访谈或行业文章</td>
+            <td>创业动机、早期资金来源、第一批客户、早期失败、为什么从电机转向灵巧手。</td>
+            <td>不能只凭摘要扩写完整履历。</td>
+          </tr>
+          <tr>
+            <td>F13016 / Pan Motor / 高扭矩密度电机相关文章</td>
+            <td>电机指标、研发周期、成本难点、槽满率、供应链、量产问题。</td>
+            <td>不能把电机指标直接等同于整手性能。</td>
+          </tr>
+          <tr>
+            <td>Wuji Hand 2、ICRA、灵巧手拼数据、客户试用评论</td>
+            <td>为什么升级到 Hand 2，真实任务表现，哪些客户痛点逼出了新规格。</td>
+            <td>不能把展会展示写成已商业化规模收入。</td>
+          </tr>
+          <tr>
+            <td>中国移动入股、融资、股权变化</td>
+            <td>投资主体、金额、股权比例、战略协同、是否带来客户或渠道。</td>
+            <td>不能只写“入股”却不说明金额和业务意义。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>拆机和实测</h2>
+    <div class="quote-block">
+      <h2>结论：暂未找到可引用的公开拆机报告</h2>
+      <p>我没有找到可靠的 Wuji Hand / Wuji Hand 2 拆机或第三方长测原文。现在可用的替代证据是官方结构和规格、URDF / MJCF / mesh、STEP 硬件文件、ROS2 驱动、sim2real 仓库和论文硬件实验。下一步最该找的是 B 站、知乎、公众号、客户实验室和会议 demo 的实测视频，重点看噪音、发热、手指间隙、掉线、标定、故障恢复和连续工作寿命。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>这页故意不写什么</h2>
+    <div class="grid">
+      <article class="card">
+        <span class="badge no">不写爆款</span>
+        <h3>不把论文 demo 或展会展示写成“最成功产品”</h3>
+        <p>Wuji Hand 2 是最新重点产品线，但公开资料还不能证明它已经是商业爆款。</p>
+      </article>
+      <article class="card">
+        <span class="badge no">不算 ROI</span>
+        <h3>没有价格、成本和收入就不算 ROI</h3>
+        <p>ROI 至少需要成交价、BOM / 制造成本、交付成本、售后成本、客户复购和回款周期。现在公开证据不够。</p>
+      </article>
+      <article class="card">
+        <span class="badge no">不硬套模板</span>
+        <h3>不为了填满“品牌报告结构”制造无效内容</h3>
+        <p>找不到的就删掉或列为求证问题，把阅读时间留给真正能形成创业判断的材料。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>来源</h2>
+    <ul class="source-list">
+      <li><a href="https://wuji.tech/en/hand" target="_blank" rel="noopener">Wuji Hand 官方页</a></li>
+      <li><a href="https://wuji.tech/en/hand2" target="_blank" rel="noopener">Wuji Hand 2 官方页</a></li>
+      <li><a href="https://wuji.tech/en/glove" target="_blank" rel="noopener">Wuji Glove 官方页</a></li>
+      <li><a href="https://github.com/wuji-technology" target="_blank" rel="noopener">Wuji Technology GitHub 组织</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-sdk" target="_blank" rel="noopener">wuji-sdk</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-retargeting" target="_blank" rel="noopener">wuji-retargeting</a></li>
+      <li><a href="https://github.com/wuji-technology/wujihandros2" target="_blank" rel="noopener">wujihandros2</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-hand-teleop" target="_blank" rel="noopener">wuji-hand-teleop</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-mjlab" target="_blank" rel="noopener">wuji-mjlab</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-openpi" target="_blank" rel="noopener">wuji-openpi</a></li>
+      <li><a href="https://github.com/wuji-technology/wuji-hand-description" target="_blank" rel="noopener">wuji-hand-description</a></li>
+      <li><a href="https://github.com/wuji-technology/wujihand-hardware-design" target="_blank" rel="noopener">wujihand-hardware-design</a></li>
+      <li><a href="https://arxiv.org/abs/2606.16272" target="_blank" rel="noopener">TopoRetarget arXiv</a></li>
+      <li><a href="https://arxiv.org/abs/2603.29213" target="_blank" rel="noopener">Kilohertz-Safe arXiv</a></li>
+      <li><a href="https://jobs.wuji.tech/social-recruitment/wuji/145172" target="_blank" rel="noopener">Moka 招聘页线索</a></li>
+      <li><a href="https://weixin.sogou.com/weixin?type=2&query=%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%20%E6%BD%98%E9%9F%AB%E5%93%B2" target="_blank" rel="noopener">搜狗微信线索页</a></li>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    本页是舞肌科技的证据驱动研究页。旧版基础报告和 GTM 报告暂保留，但本页优先级更高。
+  </footer>
+</main>
+</body>
+</html>
