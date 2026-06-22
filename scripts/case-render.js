@@ -77,6 +77,7 @@ function confidence(level) {
 function statusLabel(status) {
   const labels = {
     verified_core: '已验证核心产品',
+    core_hypothesis: '核心假设待验证',
     market_expansion: '市场扩展产品线',
     strategic_experiment: '战略实验',
     observed_job_post: '已捕捉岗位',

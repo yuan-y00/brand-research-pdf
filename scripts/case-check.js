@@ -137,9 +137,9 @@ function checkCase(data, options = {}) {
     push(results, false, 'core_product_cases has more than 5 items.', strict ? 'critical' : 'warning');
   }
 
-  let hasVerifiedCore = false;
+  let hasCoreAnchor = false;
   cases.forEach((item, i) => {
-    if (item.status === 'verified_core') hasVerifiedCore = true;
+    if (item.status === 'verified_core' || item.status === 'core_hypothesis') hasCoreAnchor = true;
     ['name', 'case_role', 'status', 'why_developed', 'original_pain'].forEach((key) => {
       if (!isNonEmpty(item[key])) push(results, false, `core_product_cases[${i}].${key} is missing.`);
     });
@@ -174,8 +174,8 @@ function checkCase(data, options = {}) {
     if (!isNonEmpty(roi.conclusion)) push(results, false, `core_product_cases[${i}].roi_assessment.conclusion is missing.`);
   });
 
-  if (!hasVerifiedCore) {
-    push(results, false, 'No core_product_case has status "verified_core".');
+  if (!hasCoreAnchor) {
+    push(results, false, 'No core_product_case has status "verified_core" or "core_hypothesis".');
   }
 
   const recruitment = Array.isArray(data.recruitment_signals) ? data.recruitment_signals : [];

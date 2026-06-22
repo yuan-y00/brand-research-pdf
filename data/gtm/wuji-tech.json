@@ -1,0 +1,674 @@
+{
+  "brand": "舞肌科技 / Wuji Technology",
+  "brand_slug": "wuji-tech",
+  "market_focus": "China / global humanoid dexterous-hand platform",
+  "report_type": "gtm_extension",
+  "version": "1.0",
+  "generated_by": "AI-assisted public-source research; official, Tianyancha, Moka, WeChat Sogou and paper rewrite on 2026-06-18",
+  "disclaimer": "本版把舞肌作为潘韫哲创立的机器人核心部件公司处理：官网确认其从高扭矩密度电机扩展到多自由度灵巧手和数据采集设备；天眼查、Moka、微信搜狗和论文提供公司、融资、招聘与技术验证线索。产品售价、配件售价、软件订阅费、客户订单、收入、亏损和 ROI 未披露，正文不把这些写成事实。",
+  "brand_context": {
+    "founder_background": [
+      "天眼查搜索页显示上海舞肌科技有限公司法定代表人为潘韫哲，成立日期 2019-03-15，注册资本 240.9063 万人民币。",
+      "微信搜狗结果页显示多篇文章称潘韫哲为舞肌科技创始人/CEO，并提到 UIUC 计算机和化学背景；因结果页不是完整原文，本报告只把它作为媒体线索使用。",
+      "官网称 Wuji Technology 成立于 2019 年，从高扭矩密度电机扩展到多自由度灵巧手和数据采集设备，目标是为人形机器人提供通用操作能力。"
+    ],
+    "brand_timeline": [
+      "2019-03-15: 上海舞肌科技有限公司成立，天眼查搜索页显示注册资本 240.9063 万人民币。",
+      "早期三年: 天眼查品牌信息提到 Pan Motor 团队推出 F 系列，200g 可产生 8Nm 峰值扭矩。",
+      "2024-2026: 官网产品体系显示 Wuji Hand、Wuji Hand 2、Wuji Glove、Docs、Cooperation 和 Careers 等入口。",
+      "2025-2026: Moka 招聘页称舞肌获得红杉资本、真格基金、明势资本等近亿元融资，并显示 78 个社招岗位。",
+      "2026-03: Kilohertz-Safe 在 Wuji Hand 平台验证实时安全重定向，报告平均延迟 9.05ms，超过 95% 帧满足安全标准。",
+      "2026-06: TopoRetarget 报告 Pen-Spin 训练成功率提升 40.6 个百分点，并展示 Wuji Hand 零样本真实任务迁移。"
+    ],
+    "founder_profiles": [
+      {
+        "name": "潘韫哲",
+        "role": "Founder / CEO signal; legal representative of 上海舞肌科技有限公司",
+        "background_summary": "工商线索确认潘韫哲为上海舞肌科技有限公司法定代表人；微信搜狗结果页提供创始人/CEO、UIUC 背景和早期电机路径线索；官网确认公司从高扭矩密度电机扩展到灵巧手和数据采集设备。",
+        "profile_links": [
+          {
+            "title": "Wuji Technology official site",
+            "url": "https://wuji.tech/",
+            "source_type": "official",
+            "confidence": "high"
+          },
+          {
+            "title": "Tianyancha search result for 上海舞肌科技有限公司",
+            "url": "https://www.tianyancha.com/search?key=%E4%B8%8A%E6%B5%B7%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+            "source_type": "company-registry",
+            "confidence": "high"
+          },
+          {
+            "title": "WeChat Sogou search for 舞肌科技 潘韫哲",
+            "url": "https://weixin.sogou.com/weixin?type=2&query=%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%20%E6%BD%98%E9%9F%AB%E5%93%B2",
+            "source_type": "media-search",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ],
+    "capital_history": [
+      {
+        "date": "2019-03-15",
+        "event": "company_founding_registered_capital",
+        "amount": "240.9063万",
+        "currency": "人民币",
+        "description": "天眼查搜索页显示上海舞肌科技有限公司成立，法定代表人为潘韫哲，注册资本 240.9063 万人民币。第一笔创始人自筹资金、天使资金或早期收入金额未披露。",
+        "source": {
+          "title": "Tianyancha search result for 上海舞肌科技有限公司",
+          "url": "https://www.tianyancha.com/search?key=%E4%B8%8A%E6%B5%B7%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+          "source_type": "company-registry",
+          "confidence": "high"
+        },
+        "confidence": "high"
+      },
+      {
+        "date": "2025-2026",
+        "event": "institutional_financing_signal",
+        "amount": "近亿元",
+        "currency": "人民币",
+        "description": "Moka 招聘页公司介绍称舞肌已获得红杉资本、真格基金、明势资本等知名机构近亿元融资。天眼查搜索页显示 A 轮线索；微信搜狗结果页另有中国移动入股文章线索，具体金额未披露。",
+        "source": {
+          "title": "Moka social recruitment for 深圳舞肌科技有限公司",
+          "url": "https://jobs.wuji.tech/social-recruitment/wuji/145172",
+          "source_type": "recruiting",
+          "confidence": "high"
+        },
+        "confidence": "medium"
+      },
+      {
+        "date": "2026-06",
+        "event": "commercial_roi_gap",
+        "amount": "未披露",
+        "currency": "人民币",
+        "description": "公开资料没有产品成交价、订单、出货量、收入、毛利、亏损、售后成本和回款周期，所以不能计算 ROI。",
+        "source": {
+          "title": "Wuji Technology cooperation page",
+          "url": "https://wuji.tech/en/cooperation",
+          "source_type": "official",
+          "confidence": "high"
+        },
+        "confidence": "high"
+      }
+    ],
+    "research_gaps": [
+      "Wuji Hand / Wuji Hand 2 / Wuji Glove 的正式报价、交期、保修和支持费用",
+      "SDK、Studio、仿真、重定向、远程诊断是否收费",
+      "客户订单、出货量、收入、毛利、亏损、售后成本、回款周期和复购率",
+      "中国移动入股的具体金额、股权比例和工商变更详情",
+      "逐条 JD 原文中的数据平台、云端工具、量产、海外销售和客户交付要求"
+    ]
+  },
+  "gtm_extension": {
+    "summary": "舞肌的 GTM 不应该套普通消费品牌模板。它更像一条 B2B 硬科技路径：先用高扭矩密度电机能力建立底层执行器优势，再把 Wuji Hand、Wuji Hand 2、Wuji Glove、SDK/Studio、重定向、仿真和客户交付包装成开发者与人形机器人团队可评估的平台。官网负责建立产品入口，论文负责证明真实任务能力，招聘负责暴露商业化组织建设，RFQ 和交付支持负责把技术转成订单。当前最大的缺口是价格、客户、收入和 ROI，因此 GTM 报告必须把技术可信和商业回报分开。",
+    "one_sentence_gtm": "Wuji 的 GTM 是“底层电机能力 -> 灵巧手硬件平台 -> 手套/数据/重定向工作流 -> B2B RFQ -> 客户交付和全球业务”的硬科技商业化路径。",
+    "channel_path": [
+      "官网产品页建立 Wuji Hand / Hand 2 / Glove 认知",
+      "论文和项目页证明真实任务、重定向和安全控制能力",
+      "Docs / SDK / Studio 降低开发者评估门槛",
+      "Cooperation / Contact 进入 RFQ 和技术销售",
+      "交付、质量、制造和全球业务岗位支持客户部署",
+      "用客户案例、报价、交期和售后数据验证商业化"
+    ],
+    "channels": {
+      "official_site": "官网是第一入口，展示产品、文档、合作、联系和招聘，但未公开价格。",
+      "technical_publications": "TopoRetarget 和 Kilohertz-Safe 是早期信任渠道，证明 Wuji Hand 能进入真实任务和安全重定向实验。",
+      "direct_sales": "这类灵巧手更适合 B2B 技术销售和 RFQ，而不是普通电商转化。",
+      "developer_docs": "Docs、SDK、Studio 和仿真资料是开发者评估套件能否落地的关键。",
+      "recruiting_signal": "78 个社招岗位，尤其是交付、质量、制造、数采平台和全球业务岗位，是判断商业化阶段的重要信号。",
+      "partnerships": "高校实验室、人形机器人公司、操作数据团队和算法公司是优先合作对象。"
+    },
+    "business_model": {
+      "hardware": "Wuji Hand / Wuji Hand 2 作为 RFQ 灵巧手硬件平台销售。",
+      "accessory": "Wuji Glove、控制器、线束、电源、软质配件、转接配件和备件应单独拆价。",
+      "software": "SDK、Studio、仿真、重定向和远程诊断可能成为软件或服务层，但订阅收费未披露。",
+      "service": "标定、任务适配、安全约束调参、现场部署、维修保修和 FAE 支持应进入报价。",
+      "pricing_logic": "报价要拆成本体、配件、软件边界、部署服务、保修和备件，不能写单一价格。",
+      "unit_economics": "缺少 BOM、良率、支持工时、售后成本、订单和毛利，不能计算商业 ROI。"
+    },
+    "top_products_selection_rule": "只选公开证据能支撑的产品层：Wuji Hand / Hand 2 是核心硬件平台，Wuji Glove / 数据采集与重定向是平台扩展。不编官网未证明的 SKU、爆款或收入。",
+    "top_products": [
+      {
+        "name": "Wuji Hand / Wuji Hand 2 灵巧手平台",
+        "type": "core_dexterous_hand_platform",
+        "rank": 1,
+        "confidence": "high",
+        "success_type": [
+          "官网核心产品",
+          "论文真实硬件验证",
+          "商业成功待核验"
+        ],
+        "why_selected": "官网有 Wuji Hand 和 Wuji Hand 2 产品页，且 TopoRetarget、Kilohertz-Safe 都使用 Wuji Hand 作为真实硬件平台。它是舞肌最应该研究的核心产品层，但公开证据只能证明技术和产品入口，不能证明爆款销量或盈利。",
+        "origin_story": {
+          "initial_problem": "人形机器人需要能完成真实抓取、旋转、笔旋转等接触丰富任务的末端执行器；只靠普通夹爪或低自由度手无法承载复杂示教和操作数据。",
+          "founder_or_team_insight": "舞肌先从高扭矩密度电机切入，再扩展到整只灵巧手，说明团队把底层执行器能力视为机器人操作平台的基础。",
+          "early_users": [
+            "机器人学习实验室",
+            "人形机器人公司",
+            "遥操作和数据采集团队",
+            "灵巧操作算法团队"
+          ],
+          "early_product_form": "灵巧手本体 + 控制器 + Wuji Glove + SDK/Studio + 仿真和重定向样例。",
+          "why_it_mattered": "客户真正购买的是能接入算法、能完成任务、能被支持部署的操作平台，而不是五指外观。"
+        },
+        "pre_market": {
+          "old_solution": [
+            "Shadow Dexterous Hand 等高端科研手",
+            "Allegro Hand 等科研平台",
+            "低价人形机器人手",
+            "客户自研末端执行器"
+          ],
+          "pain_points": [
+            "高端手部署和采购门槛高",
+            "低价手可能缺自由度、力控、寿命或任务验证",
+            "自研会消耗机械、电子、控制和调试时间",
+            "算法团队需要真实硬件承载接触任务"
+          ],
+          "market_barrier": "壁垒不是单个机械结构，而是扭矩密度、自由度、控制、可靠性、重定向、仿真、SDK 和交付支持的组合。",
+          "why_existing_solutions_were_not_enough": "只会开合的手无法满足 pen spinning、cube reorientation、遥操作和数据采集需求。"
+        },
+        "innovation": {
+          "technology": [
+            "20 active DOF",
+            "FOC vector control",
+            "15N fingertip force",
+            "Hand 2 1000Hz x 20 axes",
+            "MIT force-position hybrid mode"
+          ],
+          "user_experience": [
+            "客户可从官网、文档和合作入口进入评估",
+            "手套、视觉和仿真输入降低开发者集成门槛",
+            "论文任务展示增强技术信任"
+          ],
+          "pricing": "公开价格未披露，按 RFQ 处理，并拆分硬件、accessory、software、service 和 warranty。",
+          "channel": [
+            "官网产品页",
+            "论文和项目页",
+            "Docs / SDK",
+            "B2B 技术销售"
+          ],
+          "business_model": [
+            "硬件平台",
+            "开发者套件",
+            "部署和售后服务"
+          ],
+          "what_was_new_at_that_time": "把早期电机能力、灵巧手结构、控制和真实任务验证连接起来，形成可被算法团队评估的平台。"
+        },
+        "breakout": {
+          "main_reasons": [
+            "官网清晰展示 Wuji Hand 和 Wuji Hand 2 产品页。",
+            "TopoRetarget 报告 Pen-Spin 训练成功率提升 40.6 个百分点，并展示 Wuji Hand 零样本真实任务迁移。",
+            "Kilohertz-Safe 报告 Wuji Hand 平台平均延迟 9.05ms，超过 95% 帧满足安全标准。",
+            "Moka 招聘显示交付、质量、制造和全球业务岗位，说明公司在补商业化能力。"
+          ],
+          "key_events": [
+            {
+              "date": "2026-03",
+              "event": "Kilohertz-Safe validates real-time safe retargeting on Wuji Hand.",
+              "type": "technical_validation",
+              "channel": "arXiv",
+              "impact": "证明安全约束和低延迟是平台价值的一部分。",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-06",
+              "event": "TopoRetarget reports zero-shot transfer to Wuji Hand hardware.",
+              "type": "technical_validation",
+              "channel": "arXiv and project page",
+              "impact": "增强 Wuji Hand 作为研究和开发平台的可信度。",
+              "confidence": "high"
+            }
+          ],
+          "gtm_path": [
+            "官网产品入口",
+            "论文验证",
+            "开发者评估",
+            "RFQ 报价",
+            "客户部署",
+            "案例和复购验证"
+          ]
+        },
+        "customer_impact": {
+          "new_capability": "客户可以在真实灵巧手上测试接触丰富任务、遥操作和重定向，而不是从零做末端执行器。",
+          "time_saved": "若套件成熟，可节省机械设计、控制器调试、手套集成、仿真和任务 demo 的时间。",
+          "cost_reduction": "成本降低尚未被公开价格证明；必须和 Shadow、Allegro、LinkerBot、自研方案做总拥有成本对比。",
+          "experience_change": "采购标准从外观和单个参数转向任务成功率、延迟、安全帧、SDK 和支持能力。",
+          "who_benefited_most": [
+            "机器人实验室",
+            "人形机器人团队",
+            "遥操作数据公司",
+            "灵巧操作算法团队"
+          ]
+        },
+        "ecosystem_impact": {
+          "new_roles": [
+            "dexterous hand FAE",
+            "robot hand reliability engineer",
+            "retargeting and simulation engineer",
+            "teleoperation data engineer"
+          ],
+          "changed_partnerships": [
+            "灵巧手公司 + 算法实验室",
+            "硬件供应商 + 人形机器人本体厂",
+            "数据采集平台 + 操作模型团队"
+          ],
+          "market_expansion": "如果交付能力成立，Wuji Hand 可从科研平台扩展到人形机器人末端执行器和操作数据采集。",
+          "risks": [
+            "低价灵巧手压缩硬件价格",
+            "论文 demo 难以转化为付费部署",
+            "早期客户支持成本吞掉毛利"
+          ]
+        },
+        "pricing_model": {
+          "product_price": "Wuji Hand / Wuji Hand 2 公开 MSRP 未披露，按 RFQ 处理。",
+          "accessory_price": "Accessory price 应包括 Wuji Glove、控制器、线束、电源、软质配件、转接配件和备件；官网条款确认这些边界，但未披露价格。",
+          "software_subscription": "Software / subscription fee 未披露；Docs、SDK、Studio、仿真、重定向和远程诊断只能列为软件或服务报价边界。",
+          "service_fee": "Service fee 应覆盖标定、任务适配、安全约束调参、现场部署、维修保修和 FAE 支持；招聘页显示交付和质量团队。",
+          "competitor_price": "Competitor comparison: Shadow Robot 和 Allegro Hand 都偏 RFQ；WIRED 报道 LinkerBot 中国灵巧手低至 USD 600，是低价竞争锚点。",
+          "gross_margin_or_unit_economics": "BOM、良率、支持工时、售后成本、订单金额和毛利未披露，商业 ROI 不可计算。",
+          "sources": [
+            {
+              "title": "Wuji Technology cooperation page",
+              "url": "https://wuji.tech/en/cooperation"
+            },
+            {
+              "title": "Wuji Technology terms",
+              "url": "https://wuji.tech/en/terms"
+            },
+            {
+              "title": "Shadow Dexterous Hand Series",
+              "url": "https://shadowrobot.com/dexterous-hand-series/"
+            },
+            {
+              "title": "Allegro Hand official site",
+              "url": "https://www.allegrohand.com/"
+            },
+            {
+              "title": "WIRED LinkerBot report",
+              "url": "https://www.wired.com/story/made-in-china-the-dollar6-billion-chinese-startup-making-hands-for-humanoids"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "硬科技 GTM 的第一步是用真实任务验证建立信任，而不是先做大规模营销。",
+            "报价要拆硬件、配件、软件、服务、保修和备件，否则看不懂真实商业模型。",
+            "招聘中的交付、质量、制造和全球业务，是判断产品是否进入商业化的强信号。"
+          ],
+          "do_not_copy_blindly": [
+            "不要把论文结果当成付费订单。",
+            "不要在没有价格和客户证据时计算 ROI。"
+          ],
+          "entrepreneur_questions": [
+            "第一批付费客户是实验室、人形机器人公司还是数据采集团队？",
+            "完整开发者套件报价包含哪些硬件、软件和服务？",
+            "交付和售后支持需要多少人力，是否会吞掉毛利？"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Wuji Hand official page",
+            "url": "https://wuji.tech/en/hand",
+            "source_type": "official",
+            "confidence": "high"
+          },
+          {
+            "title": "Wuji Hand 2 official page",
+            "url": "https://wuji.tech/en/hand2",
+            "source_type": "official",
+            "confidence": "high"
+          },
+          {
+            "title": "TopoRetarget arXiv",
+            "url": "https://arxiv.org/abs/2606.16272",
+            "source_type": "paper",
+            "confidence": "high"
+          },
+          {
+            "title": "Kilohertz-Safe arXiv",
+            "url": "https://arxiv.org/abs/2603.29213",
+            "source_type": "paper",
+            "confidence": "high"
+          }
+        ]
+      },
+      {
+        "name": "Wuji Glove / 数据采集与重定向平台",
+        "type": "data_and_retargeting_layer",
+        "rank": 2,
+        "confidence": "high",
+        "success_type": [
+          "官网产品",
+          "数据入口",
+          "平台扩展层"
+        ],
+        "why_selected": "官网展示 Wuji Glove，并给出 526 触觉点、120 FPS、EMF 姿态追踪和 IMU 指标。Moka 招聘中出现数采平台组和机器人算法工程师（数据采集），说明手套和数据层不是边缘配件，而是舞肌未来平台化的重要线索。",
+        "origin_story": {
+          "initial_problem": "灵巧手需要人类示教和遥操作数据，但人手动作映射到机器人手会产生接触关系丢失、自碰撞、穿透和不可执行姿态。",
+          "founder_or_team_insight": "如果只卖灵巧手本体，客户仍要自己解决采集、标定、重定向、仿真和安全控制；平台价值来自把这些复杂环节打包。",
+          "early_users": [
+            "遥操作研究团队",
+            "机器人学习团队",
+            "人形机器人数据工厂",
+            "操作数据集建设团队"
+          ],
+          "early_product_form": "数据手套 + Wuji Hand + 控制器 + 重定向 / 仿真 / 安全约束软件。",
+          "why_it_mattered": "数据入口决定灵巧手能否从硬件供应商升级为操作数据和部署平台。"
+        },
+        "pre_market": {
+          "old_solution": [
+            "手动机器人编程",
+            "独立数据手套",
+            "开源重定向代码",
+            "客户自建动作捕捉和标定流程"
+          ],
+          "pain_points": [
+            "手动编程对接触丰富任务太慢",
+            "开源代码仍需要部署和安全调参",
+            "独立手套不一定匹配目标手运动学",
+            "客户需要可重复的数据采集流程"
+          ],
+          "market_barrier": "难点是从人手动作到机器人真实任务的端到端闭环，而不是手套硬件本身。",
+          "why_existing_solutions_were_not_enough": "客户要的是可交付的采集、重定向、仿真、安全和真实硬件执行流程。"
+        },
+        "innovation": {
+          "technology": [
+            "24 x 32 matrix",
+            "526 tactile points",
+            "120 FPS real-time capture",
+            "EMF 6DOF tracking",
+            "800Hz 6-axis IMU"
+          ],
+          "user_experience": [
+            "更直接的人手示教入口",
+            "更少手动轨迹编程",
+            "更适合和 Wuji Hand 形成套件"
+          ],
+          "pricing": "公开价格未披露，按 RFQ 处理；software 和 service 边界要和硬件分开。",
+          "channel": [
+            "官网产品页",
+            "开发者文档",
+            "Wuji Hand 套件捆绑",
+            "客户数据项目"
+          ],
+          "business_model": [
+            "硬件配件",
+            "数据采集方案",
+            "部署服务",
+            "软件工具链"
+          ],
+          "what_was_new_at_that_time": "把手套、灵巧手和重定向连接成可采集、可训练、可部署的工作流。"
+        },
+        "breakout": {
+          "main_reasons": [
+            "官网给出 Wuji Glove 的明确产品指标。",
+            "Moka 招聘显示数采平台组和数据采集算法岗位。",
+            "TopoRetarget 和 Kilohertz-Safe 说明重定向和安全控制是 Wuji Hand 生态的核心。"
+          ],
+          "key_events": [
+            {
+              "date": "2026-03",
+              "event": "Kilohertz-Safe validates safety-constrained retargeting.",
+              "type": "software_validation",
+              "channel": "arXiv",
+              "impact": "让遥操作和部署服务具备论文级可信度。",
+              "confidence": "high"
+            },
+            {
+              "date": "2026-06",
+              "event": "TopoRetarget connects demonstrations to Wuji Hand execution.",
+              "type": "data_and_retargeting_validation",
+              "channel": "arXiv and project page",
+              "impact": "说明数据和手部硬件可以被包装为一个平台。",
+              "confidence": "medium"
+            }
+          ],
+          "gtm_path": [
+            "手套产品页",
+            "手部数据采集",
+            "重定向算法验证",
+            "Wuji Hand 套件捆绑",
+            "客户数据和部署项目"
+          ]
+        },
+        "customer_impact": {
+          "new_capability": "客户可以把人手动作采集、重定向和机器人执行接到同一条工作流。",
+          "time_saved": "成熟套件可减少动作采集、标定、仿真和真实手调试时间。",
+          "cost_reduction": "成本降低需要报价和项目工时证明；开源软件会压低纯软件收费预期。",
+          "experience_change": "客户评估的不是手套本身，而是采集数据能否驱动真实任务成功。",
+          "who_benefited_most": [
+            "数据采集团队",
+            "机器人学习实验室",
+            "人形机器人开发者",
+            "远程操作团队"
+          ]
+        },
+        "ecosystem_impact": {
+          "new_roles": [
+            "robot data engineer",
+            "retargeting engineer",
+            "simulation engineer",
+            "customer deployment engineer"
+          ],
+          "changed_partnerships": [
+            "灵巧手硬件 + 数据采集团队",
+            "遥操作平台 + 人形机器人公司",
+            "高校数据集团队 + 硬件平台"
+          ],
+          "market_expansion": "数据层如果被验证，可提高硬件附着率，并打开部署服务或数据项目收入。",
+          "risks": [
+            "软件沦为一次性集成项目",
+            "客户使用开源方案替代收费软件",
+            "数据权属和安全问题拖慢部署"
+          ]
+        },
+        "pricing_model": {
+          "product_price": "Wuji Glove 公开售价未披露，按 RFQ 处理。",
+          "accessory_price": "Accessory price 应包括传感、控制器、线缆、标定工具和备件；官网仅展示产品能力，未展示价格。",
+          "software_subscription": "Software / subscription fee 未披露；重定向、仿真、SDK、Studio 和远程诊断可能作为服务或授权边界。",
+          "service_fee": "Service fee 应包括数据采集流程、标定、重定向部署、安全约束调参和客户现场支持。",
+          "competitor_price": "Competitor comparison: Shadow Glove / Teleoperation System 为 RFQ；Dex-Retargeting 开源代码价格为 USD 0，但商业部署仍有集成成本。",
+          "gross_margin_or_unit_economics": "手套 BOM、传感器良率、标定工时、数据项目收费和售后成本未披露。",
+          "sources": [
+            {
+              "title": "Wuji Glove official page",
+              "url": "https://wuji.tech/en/glove"
+            },
+            {
+              "title": "Moka social recruitment for 深圳舞肌科技有限公司",
+              "url": "https://jobs.wuji.tech/social-recruitment/wuji/145172"
+            },
+            {
+              "title": "Shadow Dexterous Hand Series",
+              "url": "https://shadowrobot.com/dexterous-hand-series/"
+            },
+            {
+              "title": "Dex-Retargeting GitHub",
+              "url": "https://github.com/dexsuite/dex-retargeting"
+            }
+          ]
+        },
+        "lessons": {
+          "what_to_learn": [
+            "灵巧手公司的第二曲线可能不是另一只手，而是数据采集和部署工作流。",
+            "招聘里的数采平台岗位可以提前暴露未来业务方向。",
+            "开源软件会改变收费逻辑，商业价值要落在集成、可靠性和支持上。"
+          ],
+          "do_not_copy_blindly": [
+            "不要在没有客户数据合同前说已经形成数据平台收入。",
+            "不要把手套参数当成商业成功。"
+          ],
+          "entrepreneur_questions": [
+            "Wuji Glove 是单独销售还是随 Wuji Hand 捆绑？",
+            "客户是否为数据采集项目付费？",
+            "数据权属、隐私和复用边界如何定义？"
+          ]
+        },
+        "sources": [
+          {
+            "title": "Wuji Glove official page",
+            "url": "https://wuji.tech/en/glove",
+            "source_type": "official",
+            "confidence": "high"
+          },
+          {
+            "title": "Moka social recruitment for 深圳舞肌科技有限公司",
+            "url": "https://jobs.wuji.tech/social-recruitment/wuji/145172",
+            "source_type": "recruiting",
+            "confidence": "high"
+          },
+          {
+            "title": "TopoRetarget arXiv",
+            "url": "https://arxiv.org/abs/2606.16272",
+            "source_type": "paper",
+            "confidence": "high"
+          },
+          {
+            "title": "Kilohertz-Safe arXiv",
+            "url": "https://arxiv.org/abs/2603.29213",
+            "source_type": "paper",
+            "confidence": "high"
+          }
+        ]
+      }
+    ],
+    "market_entry": {
+      "beachhead": "机器人学习实验室、人形机器人公司、遥操作数据团队和灵巧操作算法团队。",
+      "why_now": "人形机器人进入操作能力竞争阶段，客户需要真实灵巧手、数据采集、重定向、仿真和安全控制，而不是单个机械部件。",
+      "entry_offer": "RFQ 开发者套件：Wuji Hand / Hand 2 + Wuji Glove + 控制器 + SDK/Studio + 仿真/重定向样例 + 部署支持。",
+      "first_10_customers": [
+        "高校机器人学习实验室",
+        "人形机器人本体公司",
+        "遥操作数据采集团队",
+        "AI 操作模型创业公司"
+      ],
+      "proof_needed": [
+        "正式报价",
+        "交付周期",
+        "保修和维修条款",
+        "付费客户案例",
+        "可靠性和售后成本数据"
+      ]
+    },
+    "gtm_essentials": [
+      {
+        "principle": "技术证明和商业证明要分开。",
+        "application": "论文证明 Wuji Hand 有真实任务能力，但订单、收入和 ROI 必须靠报价、客户和财务证据证明。"
+      },
+      {
+        "principle": "卖工作流，不只卖硬件。",
+        "application": "把手、本体控制、手套、SDK、仿真、重定向、安全和交付支持打包，才能降低客户集成风险。"
+      },
+      {
+        "principle": "招聘信息能预测下一阶段业务。",
+        "application": "数采平台、交付质量、工程制造、全球业务和系统软件岗位，分别指向数据层、客户部署、量产和海外销售。"
+      }
+    ],
+    "learning_summary": {
+      "best_lessons": [
+        "舞肌的学习价值在于从底层电机能力切入，再扩展到灵巧手平台，而不是单纯讲机器人概念。",
+        "Wuji Hand 的商业化要看完整报价栈：本体、配件、软件、服务、保修和备件。",
+        "Wuji Glove 和数采平台岗位说明数据入口可能是第二增长层。",
+        "找不到的价格、收入、亏损、客户和 ROI 必须留作缺口，不能写成结论。"
+      ],
+      "open_questions": [
+        "Wuji Hand / Hand 2 / Glove 的正式报价、交期、保修和支持费是多少？",
+        "SDK、Studio、仿真、重定向和远程诊断是否单独收费？",
+        "是否已有付费客户、出货量、收入、毛利和复购证据？",
+        "中国移动入股的金额、股权比例和战略协同是什么？",
+        "数采平台岗位是否会发展为独立数据产品或客户数据服务？"
+      ],
+      "do_not_copy": [
+        "不要把论文 demo 当成市场成功。",
+        "不要把竞品价格套成舞肌价格。",
+        "不要在没有 JD 原文和客户证据时断言新业务线已经成立。"
+      ]
+    },
+    "sources": [
+      {
+        "title": "Wuji Technology official site",
+        "url": "https://wuji.tech/",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Wuji Hand official page",
+        "url": "https://wuji.tech/en/hand",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Wuji Hand 2 official page",
+        "url": "https://wuji.tech/en/hand2",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Wuji Glove official page",
+        "url": "https://wuji.tech/en/glove",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Wuji Technology terms",
+        "url": "https://wuji.tech/en/terms",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Moka social recruitment for 深圳舞肌科技有限公司",
+        "url": "https://jobs.wuji.tech/social-recruitment/wuji/145172",
+        "source_type": "recruiting",
+        "confidence": "high"
+      },
+      {
+        "title": "Tianyancha search result for 上海舞肌科技有限公司",
+        "url": "https://www.tianyancha.com/search?key=%E4%B8%8A%E6%B5%B7%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8",
+        "source_type": "company-registry",
+        "confidence": "high"
+      },
+      {
+        "title": "WeChat Sogou search for 舞肌科技 潘韫哲",
+        "url": "https://weixin.sogou.com/weixin?type=2&query=%E8%88%9E%E8%82%8C%E7%A7%91%E6%8A%80%20%E6%BD%98%E9%9F%AB%E5%93%B2",
+        "source_type": "media-search",
+        "confidence": "medium"
+      },
+      {
+        "title": "TopoRetarget arXiv",
+        "url": "https://arxiv.org/abs/2606.16272",
+        "source_type": "paper",
+        "confidence": "high"
+      },
+      {
+        "title": "Kilohertz-Safe arXiv",
+        "url": "https://arxiv.org/abs/2603.29213",
+        "source_type": "paper",
+        "confidence": "high"
+      },
+      {
+        "title": "Shadow Dexterous Hand Series",
+        "url": "https://shadowrobot.com/dexterous-hand-series/",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "Allegro Hand official site",
+        "url": "https://www.allegrohand.com/",
+        "source_type": "official",
+        "confidence": "high"
+      },
+      {
+        "title": "WIRED LinkerBot report",
+        "url": "https://www.wired.com/story/made-in-china-the-dollar6-billion-chinese-startup-making-hands-for-humanoids",
+        "source_type": "media",
+        "confidence": "medium"
+      },
+      {
+        "title": "Dex-Retargeting GitHub",
+        "url": "https://github.com/dexsuite/dex-retargeting",
+        "source_type": "software",
+        "confidence": "medium"
+      }
+    ]
+  }
+}

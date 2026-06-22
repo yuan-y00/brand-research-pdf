@@ -93,7 +93,7 @@
           "case_role": { "type": "string" },
           "status": {
             "type": "string",
-            "enum": ["verified_core", "market_expansion", "strategic_experiment", "failure_boundary", "platform_layer"]
+            "enum": ["verified_core", "core_hypothesis", "market_expansion", "strategic_experiment", "failure_boundary", "platform_layer"]
           },
           "why_developed": { "type": "string" },
           "original_pain": { "type": "string" },
